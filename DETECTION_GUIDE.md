@@ -324,3 +324,35 @@ GET https://api.github.com/repos/{owner}/{repo}/releases/latest
 - AIDA64原用increment模式需探测8.41~8.45多个版本（超时），改用scrape+动态URL后单次请求完成
 - scrape模式MD5计算添加100MB限制，避免大文件下载超时
 - GitHub API失败时保留配置默认值，不覆盖为空
+
+## 14. CyberLink PowerDirector / PhotoDirector 探测方式
+
+### 特点
+- 离线安装包是自解压7z格式，包含PE加载器 + 7z资源包
+- API: `https://www.cyberlink.com/prog/util/downloader/get-link-v2.jsp`
+- 需要VID参数，VID会随版本更新失效
+- 返回链接和MD5，不返回版本号
+
+### VID自动检测
+1. 从下载器PE版本号获取VID候选（如4.1.1.15102）
+2. 测试配置的VID候选列表（4.2.1.14316, 4.1.1.15102, 4.1.1.14809）
+3. 调用API验证VID有效性，自动切换到有效VID
+4. 调用API 15次收集候选令牌（token），选择最新的
+
+### 版本号获取
+- PhotoDirector: 7z包内含主程序PhotoDirector_365.exe，可从PE头读取版本号
+- PowerDirector: 7z包是纯资源包（9160+文件），不含主程序exe，无法从PE头读取
+- PowerDirector版本号需使用default_version配置，当前为25.0.0.0904.0
+- 备选：尝试从7z包中其他exe/dll获取版本号（如MUIStartMenu.exe，但版本不匹配）
+
+### 配置示例
+```python
+{
+    'name': 'PowerDirector',
+    'detect_type': 'fixed',
+    'version': '25.0.0.0904.0',  # default_version，手动维护
+    'size': 691 * 1024 * 1024,
+    'md5': 'be7750903c07baa523c0ab0328a1b27a',
+    'download_url': 'https://build.cyberlink.com/Retail/PowerDirector/...',
+}
+```
