@@ -196,7 +196,8 @@ PRODUCTS = [
         'check_url': 'https://raw.githubusercontent.com/Bush2021/chrome_installer/main/readme.md',
         'version_regex': r'\*\*x64\*\*\s*\|\s*`(\d+\.\d+\.\d+\.\d+)',
         'download_url_regex': r'\*\*x64\*\*.*?\]\((https://[^)]+)\)',
-        'version': '153.0.8010.37',
+        'prefer_scraped_version': True,
+        'version': '153.0.8010.48',
         'download_url': 'https://github.com/Bush2021/chrome_installer/releases',
         'official_site': 'https://github.com/Bush2021/chrome_installer',
     },
@@ -1253,8 +1254,13 @@ def detect_scrape(product):
     except Exception as e:
         print(f"  ⚠️ 官网抓取失败: {e}")
 
-    # 版本号决策：优先使用配置的默认版本号
-    if default_version and default_version != '未知':
+    # 版本号决策：默认优先使用配置的默认版本号，配置prefer_scraped_version时优先使用抓取版本
+    prefer_scraped = product.get('prefer_scraped_version', False)
+    if prefer_scraped and scraped_version:
+        version = scraped_version
+        if default_version and default_version != scraped_version:
+            print(f"  ℹ️ 使用官网抓取版本: {scraped_version} (配置版本: {default_version})")
+    elif default_version and default_version != '未知':
         version = default_version
         if scraped_version and scraped_version not in default_version:
             print(f"  ⚠️ 官网版本({scraped_version})与配置版本({default_version})不一致，以配置为准")

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-16T00:36:49.363530+00:00",
+  "updated_at": "2026-09-16T01:36:13.746609+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -9,7 +9,7 @@
       "category": "模拟器",
       "version": "9.5.38",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.38.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.38.exe?v=1789518968658&n=ldinst_9.5.38_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.38.exe?v=1789522500780&n=ldinst_9.5.38_ld_407594_ld.exe",
       "size": 602016744,
       "size_mb": 574.1,
       "last_modified": "Tue, 15 Sep 2026 11:21:53 GMT",
@@ -24,7 +24,7 @@
       "category": "模拟器",
       "version": "14.0.28",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.28.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.28.exe?v=1789518966929&n=ldinst_14.0.28_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.28.exe?v=1789522500155&n=ldinst_14.0.28_ld_412570_ld.exe",
       "size": 744157152,
       "size_mb": 709.7,
       "last_modified": "Tue, 15 Sep 2026 11:14:53 GMT",
@@ -187,7 +187,7 @@
       "icon": "C",
       "icon_color": "linear-gradient(135deg, #4285f4, #34a853)",
       "category": "浏览器",
-      "version": "153.0.8010.37",
+      "version": "153.0.8010.48",
       "download_url": "https://dl.google.com/release2/chrome/ig4nfm6sbdjzxk3yt25rexgqeq_153.0.8010.48/153.0.8010.48_chrome_installer_uncompressed.exe",
       "download_url_with_params": "https://dl.google.com/release2/chrome/ig4nfm6sbdjzxk3yt25rexgqeq_153.0.8010.48/153.0.8010.48_chrome_installer_uncompressed.exe",
       "size": 517913512,
@@ -312,7 +312,7 @@
       "download_url_with_params": "https://flash-player-links.pages.dev/",
       "size": 0,
       "size_mb": 0,
-      "last_modified": "",
+      "last_modified": "2026-09-08",
       "md5": "",
       "official_site": "https://flash-player-links.pages.dev/"
     },
