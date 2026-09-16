@@ -484,7 +484,7 @@ PRODUCTS = [
         'icon_color': 'linear-gradient(135deg, #2c3e50, #f39c12)',
         'category': '视频编辑',
         'detect_type': 'fixed',
-        'version': '24.6.1917.0',
+        'version': '25.0.0.0904.0',
         'size': 691 * 1024 * 1024,
         'date': '2026-09-14',
         'md5': 'be7750903c07baa523c0ab0328a1b27a',
