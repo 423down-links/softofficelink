@@ -1431,15 +1431,32 @@
       "icon": "N",
       "icon_color": "linear-gradient(135deg, #4a6fa5, #2b3f63)",
       "category": "资源站",
-      "version": "2026-10-10",
+      "version": "2026-10-09",
       "download_url": "https://nsaneforums.com/nsane.down/",
       "download_url_with_params": "https://nsaneforums.com/nsane.down/",
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-10-10",
+      "last_modified": "2026-10-09",
       "md5": "",
       "official_site": "https://nsaneforums.com/",
-      "update_items": []
+      "update_items": [
+        {
+          "title": "Advanced Installer Architect v24.1",
+          "url": "https://nsaneforums.com/topic/490040-advanced-installer-architect-v241/"
+        },
+        {
+          "title": "CyberLink PowerDirector Ultimate 2027 v25.0.1007",
+          "url": "https://nsaneforums.com/topic/490025-cyberlink-powerdirector-ultimate-2027-v2501007/"
+        },
+        {
+          "title": "Ventoy 1.1.18",
+          "url": "https://nsaneforums.com/topic/490038-ventoy-1118/"
+        },
+        {
+          "title": "Microsoft Edge 155.0.4283.45",
+          "url": "https://nsaneforums.com/topic/490026-microsoft-edge-1550428345/"
+        }
+      ]
     },
     {
       "name": "7-Zip",

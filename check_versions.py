@@ -4362,10 +4362,14 @@ def detect_downtopc(product):
                 matched.append({'title': title, 'url': url})
                 print(f"    ✓ [{key}] {title[:70]}")
 
-        if matched:
-            _site_items[product['name']] = matched
         if not date_str:
             date_str = latest.strftime('%Y-%m-%d')
+        # 抓通了但一篇都没命中「已添加软件」→ 不算更新（同 nsane）
+        if not matched:
+            print(f"  downtopc {date_str}: 当天无命中文章（共 {len(articles)} 篇），本轮不更新")
+            return '', site_url, site_url, 0, '', ''
+
+        _site_items[product['name']] = matched
         print(f"  downtopc 更新: {date_str} 共 {len(articles)} 篇，命中 {len(matched)} 篇")
         return date_str, site_url, site_url, 0, date_str, ''
 
@@ -4540,8 +4544,13 @@ def detect_nsane(product):
             print("  ⚠️ nsane 站点无响应，本轮跳过")
             return '', site_url, site_url, 0, '', ''
 
-        if matched:
-            _site_items[product['name']] = matched
+        # 抓通了，但今天没有命中「已添加软件」的新帖 → 不算更新。
+        # 返回空版本交给 detect_one 沿用旧数据，避免「无任何文章也把前端日期刷成今天」。
+        if not matched:
+            print(f"  nsane {today}: 今日无命中文章，本轮不更新（沿用上次数据）")
+            return '', site_url, site_url, 0, '', ''
+
+        _site_items[product['name']] = matched
         print(f"  nsane 更新: {today} 候选 {len(seen)} 帖，命中 {len(matched)} 篇")
         return today, site_url, site_url, 0, today, ''
 
@@ -4852,13 +4861,13 @@ def main():
 
         allow_no_size = product.get('allow_no_size', False)
 
-        # 资源站类：整轮一个源都没抓通（站点抽风，版本为空）→ 沿用旧数据，别把清单清空。
-        # 注意：抓通了但当天确实没命中，会返回非空更新日期，不走这条分支（正常显示空清单）。
+        # 资源站类：站点抽风（一个源都没抓通）或当天没有命中文章时，检测函数返回空版本
+        # → 沿用旧数据，既不清空清单，也不把前端日期刷成今天（无文章不该显示"有更新"）。
         if allow_no_size and info is not None and not info.get('version') and name in old_data:
             info = old_data[name].copy()
             _bump('fallback')
-            _note(name, '资源站未抓通', f"沿用 {info.get('last_modified', '')}")
-            print(f"  ⚠️ 资源站本轮未抓通，沿用上次数据: {info.get('last_modified', '')}")
+            _note(name, '资源站无本轮数据', f"沿用 {info.get('last_modified', '')}")
+            print(f"  ⚠️ 资源站本轮无有效数据（未抓通或无新内容），沿用上次数据: {info.get('last_modified', '')}")
 
         # 有结果但拿不到体积 → 快速失败，允许重试一次
         # 资源站类（如 monkrus）本身就是站点、没有安装包，配置 allow_no_size 后跳过该判定
