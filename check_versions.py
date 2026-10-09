@@ -95,8 +95,11 @@ PRODUCTS = [
         'category': '社交沟通',
         'detect_type': 'increment',
         'base_version': '4.1.15',
+        # 真实产品版本 = 安装包 install.7z 内的版本号目录（如 4.1.15.50）。
+        # ⚠️ 不要开 pe_version：该安装包 PE 的 FileVersion 是占位 build（4.1.15.1000），
+        # 数值上比真实版本大，会把防降级拦截误触发，导致页面永远显示 4.1.15.1000。
         'nsis_version': True,
-        'pe_version': True,
+        'version_authority': 'nsis',
         'url_pattern': 'https://dldir1v6.qq.com/weixin/Universal/Windows/WeChatWin_{ver}.exe',
         'param_format': '',
         'channel': '',
@@ -1776,6 +1779,11 @@ def _url_ver(version, product):
     return version
 
 
+# 记录每款软件「本轮版本号来自哪个源」，供防降级拦截判断是否该放行。
+# 键=产品名，值 ∈ {'nsis','pe','increment'}。仅 increment 探测模式写入。
+_VER_SOURCE = {}
+
+
 def detect_increment(product):
     """递增检测模式：多级进位探测
     第1层：递增最后一段（build号），遇到不存在的版本跳过（最多5个）
@@ -1970,12 +1978,15 @@ def detect_increment(product):
         return _ver_tuple(v)
 
     # NSIS版本优先（最精确的真实版本），否则PE与increment取最高
+    ver_source = 'increment'
     if nsis_ver:
         display_version = nsis_ver
+        ver_source = 'nsis'
         print(f"  采用NSIS精确版本: {display_version}")
     elif pe_ver:
         # PE版本与increment版本取最高的
         display_version = max([latest, pe_ver], key=version_key)
+        ver_source = 'pe'
         if display_version != latest:
             print(f"  PE版本更高，采用: {display_version} (increment={latest})")
     else:
@@ -2001,6 +2012,7 @@ def detect_increment(product):
                     latest = wg_ver
                     full_url = wg_url
                     param_url = wg_url
+                    ver_source = 'winget'
                     if w_size:
                         latest_size = w_size
                     if w_date:
@@ -2010,6 +2022,9 @@ def detect_increment(product):
                     print(f"  ⚠️ winget 版本 {wg_ver} 下载链接不可用，保留 {display_version}")
             else:
                 print(f"  winget 版本不新，保留 {display_version}")
+
+    # 落盘来源标记（供上层防降级拦截判断权威源是否命中）
+    _VER_SOURCE[product['name']] = ver_source
 
     # 第3层：MD5计算（小于100MB才计算）
     md5 = ''
@@ -4869,13 +4884,20 @@ def main():
 
         # 防版本降级：本轮探测出的版本号比 data.json 里的旧值更小 → 判定为探测降级
         # （PE/NSIS 解析偶发失败、官网页面临时异常等），保留旧值，避免前端版本号来回跳
+        # 例外：产品声明了 version_authority（如微信=nsis）且本轮正是权威源命中 →
+        #       说明新值来自安装包内部真实版本，与旧值（可能是 PE 占位 build）不可比，
+        #       此时放行，避免权威值被数值更大的占位值永久顶掉。
         if info and name in old_data and (info.get('size_mb', 0) > 0 or allow_no_size):
             old_v = old_data[name].get('version', '')
             new_v = info.get('version', '')
-            if old_v and new_v and _ver_tuple(new_v) < _ver_tuple(old_v):
+            auth = product.get('version_authority')
+            from_authority = bool(auth) and _VER_SOURCE.get(name) == auth
+            if old_v and new_v and not from_authority and _ver_tuple(new_v) < _ver_tuple(old_v):
                 print(f"  ⚠️ 探测版本 {new_v} 低于已有 {old_v}，判定为降级，保留旧值")
                 _note(name, '版本降级已拦截', f"{new_v} -> {old_v}")
                 info['version'] = old_v
+            elif from_authority and old_v and new_v and _ver_tuple(new_v) < _ver_tuple(old_v):
+                print(f"  ℹ️ 权威源({auth})版本 {new_v} 低于旧值 {old_v}，按权威值放行（旧值疑为占位 build）")
 
         if info and (info.get('size_mb', 0) > 0 or allow_no_size):
             _bump('success')

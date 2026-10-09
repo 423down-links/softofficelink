@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T11:22:21.257204+00:00",
+  "updated_at": "2026-10-09T11:43:14.009059+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -54,7 +54,7 @@
       "icon": "微",
       "icon_color": "linear-gradient(135deg, #07c160, #10ad56)",
       "category": "社交沟通",
-      "version": "4.1.15.1000",
+      "version": "4.1.15.50",
       "download_url": "https://dldir1v6.qq.com/weixin/Universal/Windows/WeChatWin_4.1.15.exe",
       "download_url_with_params": "https://dldir1v6.qq.com/weixin/Universal/Windows/WeChatWin_4.1.15.exe",
       "size": 256471400,
