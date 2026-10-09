@@ -1,14 +1,14 @@
 name: Detect & Push
 
 # 双层调度：
-#   - 每小时（UTC 整点 :00）跑 fast+normal 快检（63 款纯 API/网页 HEAD）
-#   - 每 30 分钟（UTC :15 / :45）跑全量（92 款含 increment/资源站），与整点快检错开
+#   - 每小时（UTC 整点 :00）跑 快检+资源站（fast+normal+resource），资源站单独降到每小时一轮
+#   - 每 30 分钟（UTC :15 / :45）跑 全量非资源站（fast+normal+slow），与整点快检错开
 # 检测到版本/大小/日期变化时立即 embed + commit + push 到 main；
 # main 的推送会直接触发站点（Pages）重新构建部署，即「改完即上线」。
 on:
   schedule:
-    - cron: '0 * * * *'      # 每小时整点：快检（fast+normal）
-    - cron: '15,45 * * * *'  # 每 30 分钟：全量（含资源站，错开整点避免并发排队）
+    - cron: '0 * * * *'      # 每小时整点：快检 + 资源站
+    - cron: '15,45 * * * *'  # 每 30 分钟：全量（不含资源站）
   workflow_dispatch:
 
 # 同一时刻只跑一个任务（并发组自动排队）
@@ -28,11 +28,11 @@ jobs:
         with: { python-version: '3.x' }
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq p7zip-full
       - run: pip install -q py7zr
-      - name: Hourly fast+normal detect
+      - name: Hourly fast+normal+resource detect
         id: detect
         env: { GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} }
         run: |
-          output=$(python check_versions.py --priority hourly --parallel 8 2>&1 | tee /tmp/detect.log)
+          output=$(python check_versions.py --priority fast,normal,resource --parallel 8 2>&1 | tee /tmp/detect.log)
           echo "$output"
           echo "changed=$(echo "$output" | grep -q 'CHANGED=true' && echo true || echo false)" >> $GITHUB_OUTPUT
       - uses: actions/upload-artifact@v4
@@ -71,11 +71,11 @@ jobs:
         with: { python-version: '3.x' }
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq p7zip-full
       - run: pip install -q py7zr
-      - name: Full detect (92 products)
+      - name: Full detect (non-resource)
         id: detect
         env: { GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} }
         run: |
-          output=$(python check_versions.py --parallel 8 2>&1 | tee /tmp/detect.log)
+          output=$(python check_versions.py --priority fast,normal,slow --parallel 8 2>&1 | tee /tmp/detect.log)
           echo "$output"
           echo "changed=$(echo "$output" | grep -q 'CHANGED=true' && echo true || echo false)" >> $GITHUB_OUTPUT
       - uses: actions/upload-artifact@v4

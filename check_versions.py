@@ -4755,8 +4755,8 @@ def main():
     parser = argparse.ArgumentParser(description='软件版本检测')
     parser.add_argument('--only', help='只检测指定软件名称')
     parser.add_argument('--priority', default='all',
-                        choices=['fast', 'normal', 'slow', 'resource', 'all', 'hourly'],
-                        help='按优先级筛选产品：hourly=fast+normal（每小时快检）')
+                        help='按优先级筛选，逗号可组合：fast,normal,slow,resource；'
+                             '别名 all=不过滤、hourly=fast,normal')
     parser.add_argument('--parallel', type=int, default=DEFAULT_PARALLEL, help='并行检测线程数')
     parser.add_argument('--retry', type=int, default=DEFAULT_RETRY, help='检测失败重试次数')
     parser.add_argument('--no-save', action='store_true', help='不保存到data.json（仅检测）')
@@ -4779,16 +4779,22 @@ def main():
         if not products_to_check:
             print(f"未找到软件: {args.only}")
             sys.exit(1)
-    # 按优先级过滤（hourly = fast + normal，全量 all = 四个都跑）
+    # 按优先级过滤（支持逗号组合：fast,normal,slow,resource）
+    #   hourly = fast+normal（历史别名）；all = 不过滤（四个都跑）
+    # 资源站请求重、易被限流，单独分层后可只并进每小时那轮，不跟着全量高频跑。
     if args.priority != 'all' and not args.only:
-        if args.priority == 'hourly':
-            want = {'fast', 'normal'}
-        else:
-            want = {args.priority}
+        raw = 'fast,normal' if args.priority == 'hourly' else str(args.priority)
+        want = {x.strip() for x in raw.split(',') if x.strip()}
+        valid = {'fast', 'normal', 'slow', 'resource'}
+        unknown = want - valid
+        if unknown:
+            print(f"未知优先级: {', '.join(sorted(unknown))}"
+                  f"（可选 fast/normal/slow/resource，或 all/hourly）")
+            sys.exit(2)
         products_to_check = [p for p in PRODUCTS if _detect_priority(p) in want]
-        labels = {'fast': '快源', 'normal': '常规', 'slow': '重探测',
-                  'resource': '资源站', 'hourly': '每小时快检（fast+normal）'}
-        print(f"🎯 优先级筛选: {labels.get(args.priority, args.priority)} → {len(products_to_check)}/{len(PRODUCTS)} 款")
+        labels = {'fast': '快源', 'normal': '常规', 'slow': '重探测', 'resource': '资源站'}
+        shown = '+'.join(labels[x] for x in ('fast', 'normal', 'slow', 'resource') if x in want)
+        print(f"🎯 优先级筛选: {shown} → {len(products_to_check)}/{len(PRODUCTS)} 款")
 
     # 检测统计（多线程共享，用锁保护自增避免竞态丢计数）
     stats = {'success': 0, 'retry': 0, 'timeout': 0, 'failed': 0, 'fallback': 0}
