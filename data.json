@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T15:37:33.836061+00:00",
+  "updated_at": "2026-10-09T16:06:33.252218+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -183,8 +183,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "155.0.4283.45",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792164995&P2=404&P3=2&P4=Be2QZ3P4Tz4kX9VabMZgs9UQ1YxKLK3IvX1jDSGW1dJZzWGjLBGU3M7LJ8e%2bAVTxWf6LQY6hPL0SQn3Bdw9NVQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792164995&P2=404&P3=2&P4=Be2QZ3P4Tz4kX9VabMZgs9UQ1YxKLK3IvX1jDSGW1dJZzWGjLBGU3M7LJ8e%2bAVTxWf6LQY6hPL0SQn3Bdw9NVQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792166766&P2=404&P3=2&P4=LlZ8K4hebQBnKnTqcBT68PIUg%2fxPSSrp4zun9kjjqpbCHdUaHTiIRB4qPg7c9vtIsqNR2LJgmCDMF3UOh7%2bHFA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792166766&P2=404&P3=2&P4=LlZ8K4hebQBnKnTqcBT68PIUg%2fxPSSrp4zun9kjjqpbCHdUaHTiIRB4qPg7c9vtIsqNR2LJgmCDMF3UOh7%2bHFA%3d%3d",
       "size": 207667024,
       "size_mb": 198.0,
       "last_modified": "2026-10-09",
@@ -1431,32 +1431,15 @@
       "icon": "N",
       "icon_color": "linear-gradient(135deg, #4a6fa5, #2b3f63)",
       "category": "资源站",
-      "version": "2026-10-09",
+      "version": "2026-10-10",
       "download_url": "https://nsaneforums.com/nsane.down/",
       "download_url_with_params": "https://nsaneforums.com/nsane.down/",
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-10-09",
+      "last_modified": "2026-10-10",
       "md5": "",
       "official_site": "https://nsaneforums.com/",
-      "update_items": [
-        {
-          "title": "Advanced Installer Architect v24.1",
-          "url": "https://nsaneforums.com/topic/490040-advanced-installer-architect-v241/"
-        },
-        {
-          "title": "CyberLink PowerDirector Ultimate 2027 v25.0.1007",
-          "url": "https://nsaneforums.com/topic/490025-cyberlink-powerdirector-ultimate-2027-v2501007/"
-        },
-        {
-          "title": "Ventoy 1.1.18",
-          "url": "https://nsaneforums.com/topic/490038-ventoy-1118/"
-        },
-        {
-          "title": "Microsoft Edge 155.0.4283.45",
-          "url": "https://nsaneforums.com/topic/490026-microsoft-edge-1550428345/"
-        }
-      ]
+      "update_items": []
     },
     {
       "name": "7-Zip",
