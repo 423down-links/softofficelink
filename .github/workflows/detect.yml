@@ -10,6 +10,13 @@ on:
     - cron: '0 * * * *'      # 每小时整点：快检 + 资源站
     - cron: '15,45 * * * *'  # 每 30 分钟：全量（不含资源站）
   workflow_dispatch:
+    inputs:
+      mode:
+        description: '检测模式：hourly=快检+资源站 / full=全量非资源站'
+        required: false
+        default: 'hourly'
+        type: choice
+        options: [hourly, full]
 
 # 同一时刻只跑一个任务（并发组自动排队）
 concurrency:
@@ -18,7 +25,7 @@ concurrency:
 
 jobs:
   detect-hourly:
-    if: github.event.schedule == '0 * * * *'
+    if: github.event.schedule == '0 * * * *' || (github.event_name == 'workflow_dispatch' && inputs.mode == 'hourly')
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -67,7 +74,7 @@ jobs:
           git push origin HEAD:main
 
   detect-full:
-    if: github.event.schedule == '15,45 * * * *' || github.event_name == 'workflow_dispatch'
+    if: github.event.schedule == '15,45 * * * *' || (github.event_name == 'workflow_dispatch' && inputs.mode == 'full')
     runs-on: ubuntu-latest
     permissions:
       contents: write
