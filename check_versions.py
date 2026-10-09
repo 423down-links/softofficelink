@@ -1440,6 +1440,25 @@ PRODUCTS = [
         'detect_timeout': 120,
         'official_site': 'https://www.yamicsoft.com/cn/whats-new.php',
     },
+    {
+        'name': 'Advanced Installer',
+        'name_cn': 'Advanced Installer',
+        'icon': 'AI',
+        'icon_color': 'linear-gradient(135deg, #3498db, #2980b9)',
+        'category': '开发工具',
+        # 探测方式：版本路径 {major.minor}/advinst.msi 递增探测（如 24.1 -> 24.2 -> ... -> 25.0）。
+        # 注意：前端下载地址恒定 302 到 storage.advancedupdater.cloud，需跟随重定向判存在性
+        # （check_url 默认跟随重定向，不存在的版本最终返回 404）。
+        'detect_type': 'increment',
+        'base_version': '24.1',
+        'url_pattern': 'https://www.advancedinstaller.com/downloads/{ver}/advinst.msi',
+        'param_format': '',
+        'channel': '',
+        'max_skip': 3,      # 连续3个404后进位（24.x -> 25.0）
+        'max_carry': 2,     # 最多进位2次，保证能跨到下一个大版本（24.x -> 25.0 -> 26.0）
+        'skip_md5': True,   # 安装包约 300MB，跳过 MD5
+        'official_site': 'https://www.advancedinstaller.com/',
+    },
 ]
 
 MAX_INCREMENT = 30  # 最多递增检测30个版本
