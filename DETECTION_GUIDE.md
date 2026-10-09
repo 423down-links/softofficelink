@@ -532,6 +532,12 @@ def calc_md5_streaming(url, max_size=500*1024*1024, timeout=300):
 - PhotoDirector 的下载器 `info.ini` 是其自身框架版本（如 17.6.1826.0），≠ 产品版本（18.x），
   因此 PhotoDirector 暂仍用 `fixed` 模式，不要直接套用本流程
 - 官方「最新版」不等于下载站的破解版；官方离线包更新有滞后（见下）
+- **防降级保护（2026-10-09 起）**：试用通道滞后于最新构建时（PD 试用仅铺到 `25.0.0904.0`，
+  最新 Ultimate 构建 `25.0.1007.0` 走零售/资源站渠道），配置 `base_version`=试用通道当前版、
+  `version_display`=最新构建；探测值不超过基线就显示 `version_display`，官方铺开后自动对齐
+- 版本号一律过 `_cyberlink_canon_ver()` 归一成 4 段式：`25.0.0.0904.0`（5 段 PE 式）与
+  `25.0.0904.0`（4 段 info.ini 式）按段比较不相等，混用会把防降级保护击穿；
+  build 段补齐前导零（`904` → `0904`），与官方 DisplayBuildNumber 写法一致
 
 ---
 
@@ -820,6 +826,16 @@ def parse_lanzou_date(date_str):
 3. 下载下载器（约 10MB），7z 解出 `$_1_/info.ini`，读 `DisplayBuildNumber` = 产品版本
 
 **已验证**：PowerDirector 365（返回 `25.0.0904.0`，与官方离线包一致）
+
+**2026-10-09 复测（试用通道滞后 → 防降级）**：
+- PD 试用下载器 `LJZVDVSX0QV1A/CyberLink_PowerDirector_Downloader.exe`（9.4MB）→
+  `DisplayBuildNumber=25.0.0904.0`（SR_No=VDE260910-01）；离线包 `CGQC8ZH75VM6` 直链
+  Last-Modified 仍为 2026-09-14 —— 官方渠道尚未铺开 1007
+- 最新构建 `25.0.1007.0` 为 Ultimate 零售版（本地包 info.ini：`SR_No=VDE261008-02`、
+  `Kernel=1007_25.0.10_365`，2026-10-08），nsane 帖已入 update_items；版本显示用
+  `base_version='25.0.0904.0'` + `version_display='25.0.1007.0'` 兜底，官方铺开后自动对齐
+- PhD 试用下载器 `430LJXSN7DH2N0`（8.2MB）→ `DisplayBuildNumber=17.6.1826.0`、
+  `SR_No=PTD260514-01`，再次确认 ≠ 产品版本 18.x，fixed 模式维持
 
 **关键技术点**：
 - 不要再去页面 JS 里正则抓 VID，令牌已改为服务端实时下发

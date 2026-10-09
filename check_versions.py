@@ -547,7 +547,13 @@ PRODUCTS = [
         'category': '视频编辑',
         'detect_type': 'cyberlink',
         'cyberlink_product_id': 4,
-        'version': '25.0.0.0904.0',
+        # 官方试用通道滞后：试用下载器/离线包直链当前仅铺到 25.0.0904.0（VDE260910-01，
+        # 2026-09-14），最新构建 25.0.1007.0（Ultimate 零售版，SR_No=VDE261008-02，
+        # 2026-10-08）只在零售兑换/资源站渠道。用 base_version + version_display 防降级：
+        # 探测值不比试用通道基线新 → 显示 version_display；官方铺开 1007 后自动对齐。
+        'version': '25.0.0904.0',
+        'base_version': '25.0.0904.0',
+        'version_display': '25.0.1007.0',
         'size': 691 * 1024 * 1024,
         'date': '2026-09-14',
         'md5': 'be7750903c07baa523c0ab0328a1b27a',
@@ -560,6 +566,10 @@ PRODUCTS = [
         'icon': 'PhD',
         'icon_color': 'linear-gradient(135deg, #8e44ad, #3498db)',
         'category': '图像处理',
+        # 官方试用下载器 info.ini 的 DisplayBuildNumber 是安装框架版本（2026-10-09 复测：
+        # 17.6.1826.0，SR_No=PTD260514-01），≠ 产品版本 18.x，无法当版本源 → 保持 fixed。
+        # fixed 模式仍会 HEAD 刷新 size/date：官方替换新包时大小/日期会先动起来，
+        # 版本号/md5 等拿到新包实测值后手动更新（或配 CYBERLINK_RETAIL_KEY 走兑换通道）。
         'detect_type': 'fixed',
         'version': '18.0.8.0908.0',
         'size': 639 * 1024 * 1024,
@@ -2177,6 +2187,27 @@ def detect_fixed(product):
     return version, url, url, size, date, md5
 
 
+def _cyberlink_canon_ver(v):
+    """CyberLink 版本号归一：统一成下载器 info.ini DisplayBuildNumber 的 4 段式。
+
+    同一构建存在两种写法：5 段 PE 式 '25.0.0.0904.0'（build 在第 4 段，第 3 段恒 0）
+    与 4 段 info.ini 式 '25.0.0904.0'（build 在第 3 段）。_ver_tuple 按段比较时
+    (25,0,0,904) != (25,0,904,0)，旧配置的 5 段写法会把试用通道探测出的同版本
+    误判为「更新」，击穿 base_version/version_display 防降级保护，这里统一归一。
+    非「5 段且第 3 段为 0」的输入原样返回，不影响其它格式。
+    """
+    s = str(v).strip()
+    parts = []
+    for p in s.split('.'):
+        m = re.match(r'(\d+)', p)
+        if not m:
+            return s
+        parts.append(int(m.group(1)))
+    if len(parts) == 5 and parts[2] == 0:
+        return f'{parts[0]}.{parts[1]}.{parts[3]:04d}.{parts[4]}'
+    return s
+
+
 def _cyberlink_extract_build(url, referer=None):
     """下载 CyberLink 官方安装器（下载器约 10MB），解出内部 info.ini 的 DisplayBuildNumber。
     返回版本号字符串，失败返回空字符串。"""
@@ -2317,7 +2348,7 @@ def detect_cyberlink(product):
                 with urllib.request.urlopen(req2, timeout=20) as resp2:
                     downloader_url = resp2.geturl()
                 print(f"  官方下载器: {downloader_url[:90]}...")
-                detected = _cyberlink_extract_build(downloader_url)
+                detected = _cyberlink_canon_ver(_cyberlink_extract_build(downloader_url))
                 if detected:
                     version = detected
                     print(f"  官方版本: {version}")
@@ -2344,10 +2375,10 @@ def detect_cyberlink(product):
                 download_url = rb['url']
             if rb['size']:
                 size = rb['size']
-            # 文件名里若带 4 段版本号，则用它覆盖官方试用版版本号
-            m = re.search(r'(\d+\.\d+\.\d+\.\d+)', rb['url'])
+            # 文件名里若带版本号，则用它覆盖官方试用版版本号（归一成 4 段式）
+            m = re.search(r'(\d+(?:\.\d+){3,4})', rb['url'])
             if m:
-                version = m.group(1)
+                version = _cyberlink_canon_ver(m.group(1))
                 print(f"  零售买断版版本: {version}")
             break
 
