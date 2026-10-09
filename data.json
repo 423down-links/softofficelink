@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T01:44:16.430465+00:00",
+  "updated_at": "2026-10-09T06:17:59.245739+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -821,12 +821,12 @@
       "icon": "WF",
       "icon_color": "linear-gradient(135deg, #e67e22, #d35400)",
       "category": "服务器工具",
-      "version": "8.2.5",
+      "version": "8.2.6",
       "download_url": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "download_url_with_params": "https://www.wftpserver.com/download/WingFtpServer.exe",
-      "size": 81255712,
+      "size": 81257656,
       "size_mb": 77.5,
-      "last_modified": "2026-09-30",
+      "last_modified": "2026-10-09",
       "md5": "",
       "official_site": "https://www.wftpserver.com/",
       "update_items": []
@@ -877,6 +877,22 @@
       "last_modified": "2026-09-20",
       "md5": "",
       "official_site": "https://www.poweriso.com/",
+      "update_items": []
+    },
+    {
+      "name": "Ventoy",
+      "name_cn": "Ventoy",
+      "icon": "VT",
+      "icon_color": "linear-gradient(135deg, #16a085, #2ecc71)",
+      "category": "光盘工具",
+      "version": "1.1.18",
+      "download_url": "https://github.com/ventoy/Ventoy/releases/download/v1.1.18/ventoy-1.1.18-windows.zip",
+      "download_url_with_params": "https://github.com/ventoy/Ventoy/releases/download/v1.1.18/ventoy-1.1.18-windows.zip",
+      "size": 16680699,
+      "size_mb": 15.9,
+      "last_modified": "2026-10-09",
+      "md5": "",
+      "official_site": "https://www.ventoy.net/en/doc_news.html",
       "update_items": []
     },
     {

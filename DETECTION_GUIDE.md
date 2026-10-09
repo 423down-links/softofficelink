@@ -154,6 +154,21 @@ GET https://api.github.com/repos/{owner}/{repo}/releases/latest
 **缺点**：版本号需手动维护或从其他源获取
 **适用**：IObit、网易云音乐等
 
+**版本滞后兜底：官网页面版本交叉校验（可选）**
+
+二进制版本来得慢：CDN 可能长期缓存安装包（如 wftpserver.com 的 `Cache-Control: max-age=604800`，整整 7 天），本地 PE 缓存也有 TTL（6h），新版发布后版本号会滞后。官网页面是即时更新的，配置 `page_version_url` + `page_version_regex` 后，取「页面版本 与 二进制版本」的较大值：
+```python
+{
+    'detect_type': 'fixed',
+    'pe_version': True,
+    'page_version_url': 'https://www.wftpserver.com/download.htm',
+    'page_version_regex': r'Wing FTP Server\s*<b>\s*v([\d.]+)\s*</b>',
+    'version': '8.2.5.0',
+    'download_url': 'https://www.wftpserver.com/download/WingFtpServer.exe',
+}
+```
+**适用**：安装包被 CDN 长期缓存的软件（Wing FTP Server）
+
 ### 6. increment + 多级进位探测（兜底主力）
 **原理**：从base_version递增版本号，连续5个404后自动进位到上一段
 **配置**：

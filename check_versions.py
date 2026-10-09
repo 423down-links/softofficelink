@@ -793,6 +793,10 @@ PRODUCTS = [
         'category': '服务器工具',
         'detect_type': 'fixed',
         'pe_version': True,
+        # 二进制在 BunnyCDN 上被缓存 7 天（Cache-Control: max-age=604800），
+        # 新版发布后边缘节点可能仍返回旧包；官网下载页即时更新，用它交叉校验版本号。
+        'page_version_url': 'https://www.wftpserver.com/download.htm',
+        'page_version_regex': r'Wing FTP Server\s*<b>\s*v([\d.]+)\s*</b>',
         'version': '8.2.5.0',
         'size': 77 * 1024 * 1024,
         'download_url': 'https://www.wftpserver.com/download/WingFtpServer.exe',
@@ -845,6 +849,25 @@ PRODUCTS = [
         'size': 8.2 * 1024 * 1024,
         'download_url': 'https://www.poweriso.net/PowerISO9-x64.exe',
         'official_site': 'https://www.poweriso.com/',
+    },
+    {
+        'name': 'Ventoy',
+        'name_cn': 'Ventoy',
+        'icon': 'VT',
+        'icon_color': 'linear-gradient(135deg, #16a085, #2ecc71)',
+        'category': '光盘工具',
+        'detect_type': 'github_release',
+        'repo': 'ventoy/Ventoy',
+        'version_regex': r'(\d+\.\d+\.\d+)',
+        # 直取 release 里 Windows 版压缩包（ventoy-x.x.x-windows.zip）的直链，
+        # 大小只算这个包，不含 livecd.iso / linux.tar.gz 等其它分卷
+        'use_asset_url': True,
+        'asset_filter': 'windows',
+        'version': '1.1.18',
+        'size': 17 * 1024 * 1024,
+        'date': '2026-10-09',
+        'download_url': 'https://www.ventoy.net/en/download.html',
+        'official_site': 'https://www.ventoy.net/en/doc_news.html',
     },
     {
         'name': 'PicPick Professional',
@@ -2090,6 +2113,27 @@ def detect_fixed(product):
             if pe_ver:
                 print(f"  PE版本(缓存兜底): {pe_ver}")
                 version = pe_ver
+    # 官网页面版本交叉校验（可选）：二进制可能被 CDN 长期缓存（如 wftpserver.com 的
+    # Cache-Control: max-age=604800，整整 7 天），或被本地 PE 缓存（TTL 6h）挡住，
+    # 导致刚发布的新版本号滞后。官网页面即时更新，配置 page_version_url + regex 后，
+    # 取「页面版本 与 二进制版本」的较大值，保证新版本能被及时发现。
+    page_url = product.get('page_version_url')
+    page_regex = product.get('page_version_regex')
+    if page_url and page_regex:
+        try:
+            req = urllib.request.Request(page_url, headers={'User-Agent': UA})
+            with urllib.request.urlopen(req, timeout=20) as resp:
+                html = resp.read().decode('utf-8', errors='ignore')
+            m = re.search(page_regex, html, re.I)
+            if m and m.group(1):
+                page_ver = m.group(1)
+                if _ver_newer(page_ver, version):
+                    print(f"  官网页面版本: {page_ver} (高于 {version}，采用)")
+                    version = page_ver
+                else:
+                    print(f"  官网页面版本: {page_ver} (不高于 {version}，忽略)")
+        except Exception as e:
+            print(f"  ⚠️ 官网页面版本抓取失败: {e}")
     return version, url, url, size, date, md5
 
 
