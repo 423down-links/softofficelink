@@ -1,0 +1,10 @@
+# 反收录 + 反 AI 训练：搜索引擎/爬虫一律不索引、不跟踪、不留快照、不生成摘要、不得用于训练
+/*
+  Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate
+  Pragma: no-cache
+  Expires: 0
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet, noimageindex, notranslate, nocache, noai, noimageai

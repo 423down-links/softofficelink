@@ -1,0 +1,27 @@
+# 编译缓存
+__pycache__/
+*.pyc
+*.pyo
+
+# 工具二进制（本地可选，CI 环境靠 apt 装）
+tools/7zz
+tools/7z.tar.xz
+
+# IDE / Trae 自动产物
+.trae-html-share-packages/
+.trae*
+.vscode/
+.idea/
+
+# 本地临时脚本（CI 不运行）
+.tmp_main.js
+
+# 分析用临时产物（不属于项目，勿提交）
+_tmp_analysis/
+
+# 系统
+.DS_Store
+Thumbs.db
+
+# 截图/分析产物
+.uploads/

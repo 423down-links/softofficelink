@@ -1,0 +1,83 @@
+name: Detect & Push
+
+# 每 3 小时一次实时探测 + 每天北京时间 5:00 全量发布
+# （UTC 21:00 = 北京时间次日 5:00；publish.yml 已合并进本条 workflow）
+on:
+  schedule:
+    - cron: '0 */3 * * *'
+    - cron: '0 21 * * *'
+  workflow_dispatch:
+
+# 同一时刻只跑一个任务：并发组自动排队，不再需要 push 重试循环
+concurrency:
+  group: main-push
+  cancel-in-progress: false
+
+jobs:
+  detect:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.x'
+
+      - name: Install deps (p7zip-full + py7zr)
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq p7zip-full
+          pip install -q py7zr
+
+      - name: Run detection
+        id: detect
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          output=$(python check_versions.py --parallel 8 2>&1 | tee /tmp/detect.log)
+          echo "$output"
+          if echo "$output" | grep -q "CHANGED=true"; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Upload detection log (排查用, 保留 7 天)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: detect-log
+          path: /tmp/detect.log
+          retention-days: 7
+
+      - name: Embed data into HTML
+        if: steps.detect.outputs.changed == 'true'
+        run: python embed_data.py
+
+      - name: Commit + push (有变化)
+        if: steps.detect.outputs.changed == 'true'
+        run: |
+          set -euo pipefail
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
+          git add -A
+          git commit -m "detect: version update"
+          git push origin HEAD:main
+
+      - name: Commit + push (无变化, 仅刷新探测缓存)
+        if: steps.detect.outputs.changed != 'true'
+        run: |
+          set -euo pipefail
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
+          git add md5_cache.json pe_version_cache.json startallback_dll_cache.json
+          if git diff --staged --quiet; then
+            echo "缓存也无变化，跳过"
+            exit 0
+          fi
+          git commit -m "chore: refresh probe caches"
+          git push origin HEAD:main
