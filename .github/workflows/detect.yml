@@ -20,24 +20,30 @@ jobs:
   detect-hourly:
     if: github.event.schedule == '0 * * * *'
     runs-on: ubuntu-latest
-    permissions: { contents: write }
+    permissions:
+      contents: write
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
-        with: { python-version: '3.x' }
+        with:
+          python-version: '3.x'
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq p7zip-full
       - run: pip install -q py7zr
       - name: Hourly fast+normal+resource detect
         id: detect
-        env: { GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} }
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           output=$(python check_versions.py --priority fast,normal,resource --parallel 8 2>&1 | tee /tmp/detect.log)
           echo "$output"
           echo "changed=$(echo "$output" | grep -q 'CHANGED=true' && echo true || echo false)" >> $GITHUB_OUTPUT
       - uses: actions/upload-artifact@v4
         if: always()
-        with: { name: detect-log-hourly, path: /tmp/detect.log, retention-days: 3 }
+        with:
+          name: detect-log-hourly
+          path: /tmp/detect.log
+          retention-days: 3
       - name: Embed & push (有变化)
         if: steps.detect.outputs.changed == 'true'
         run: |
@@ -63,24 +69,30 @@ jobs:
   detect-full:
     if: github.event.schedule == '15,45 * * * *' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
-    permissions: { contents: write }
+    permissions:
+      contents: write
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
-        with: { python-version: '3.x' }
+        with:
+          python-version: '3.x'
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq p7zip-full
       - run: pip install -q py7zr
       - name: Full detect (non-resource)
         id: detect
-        env: { GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} }
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           output=$(python check_versions.py --priority fast,normal,slow --parallel 8 2>&1 | tee /tmp/detect.log)
           echo "$output"
           echo "changed=$(echo "$output" | grep -q 'CHANGED=true' && echo true || echo false)" >> $GITHUB_OUTPUT
       - uses: actions/upload-artifact@v4
         if: always()
-        with: { name: detect-log-full, path: /tmp/detect.log, retention-days: 7 }
+        with:
+          name: detect-log-full
+          path: /tmp/detect.log
+          retention-days: 7
       - name: Embed & push (有变化)
         if: steps.detect.outputs.changed == 'true'
         run: |
