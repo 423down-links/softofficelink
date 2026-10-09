@@ -12,7 +12,7 @@
 | increment+进位 | URL含版本号，可跨版本 | ⭐⭐⭐⭐ | 高 | 5-20 | 雷电、迅雷、微信 |
 | scrape | 从网页抓取版本信息 | ⭐⭐⭐ | 中 | 1-2 | Edge、Chrome、Xshell |
 | lanzou | 蓝奏云网盘API探测 | ⭐⭐⭐⭐ | 高 | 2 | 闪豆下载器 |
-| PE版本 | 从exe.rsrc段读FileVersion | ⭐⭐⭐⭐ | 高 | 2-3 | 微信、YY、360浏览器 |
+| PE版本 | 从exe.rsrc段读FileVersion | ⭐⭐⭐⭐ | 高 | 2-3 | YY、360浏览器 |
 | NSIS版本 | 从install.7z读版本文件夹 | ⭐⭐⭐ | 极高 | 4-5 | 微信 |
 | RSS/Atom订阅 | 官网有更新日志Feed | ⭐⭐⭐⭐ | 高 | 1 | 待探索 |
 | MD5校验 | 小文件完整性校验 | ⭐ | 高 | 完整下载 | <100MB文件 |
@@ -246,7 +246,9 @@ GET https://api.github.com/repos/{owner}/{repo}/releases/latest
 {
     'detect_type': 'increment',
     'nsis_version': True,
-    'pe_version': True,  # 兜底
+    'version_authority': 'nsis',   # 声明 NSIS 为权威源，防降级拦截不得覆盖（见第38节「防版本降级拦截」）
+    # 注意：这一档不要加 pe_version。微信安装包 PE 的 FileVersion 是占位 build
+    # （4.1.15.1000），数值比真实版本大，会把防降级拦截误触发，页面永远显示占位值。
 }
 ```
 **探测流程**：
@@ -256,8 +258,9 @@ GET https://api.github.com/repos/{owner}/{repo}/releases/latest
 4. 下载install.7z头尾(32KB+128KB) → 构造文件用7z列出内容
 5. 提取第一个文件夹名称作为版本号
 **总下载量**：约3.2MB（vs 完整下载244MB，节省98.7%）
+**单软件耗时**：约 3～4 秒（微信实测整轮 3.2s）
 **7z工具**：项目内置 `tools/7zz`，不依赖系统安装
-**适用**：NSIS打包且install.7z内含版本号文件夹的软件（微信4.1.15.9）
+**适用**：NSIS打包且install.7z内含版本号文件夹的软件（微信 4.1.15.50）
 
 ### 9. scrape（网页抓取）
 **原理**：请求官方页面，用正则提取版本号、日期、下载链接
@@ -364,7 +367,9 @@ def calc_md5_streaming(url, max_size=500*1024*1024, timeout=300):
    └─ 否 → 下载地址是否含版本号？
            ├─ 是 → increment+多级进位模式
            │       ├─ 安装包是NSIS且install.7z有版本文件夹？→ 加nsis_version
-           │       ├─ PE头版本与显示版本不同？→ 加pe_version
+           │       │      └─ 该值即真实版本？→ 同时声明 version_authority: 'nsis'
+           │       │         （PE头若是占位 build，不要加 pe_version，否则会被防降级拦截顶掉）
+           │       ├─ PE头版本与显示版本不同（且可信）？→ 加pe_version
            │       └─ 版本号可能不连续/跨版本？→ 已自动支持进位
            └─ 否 → 版本信息是否在网页上？
                    ├─ 是 → scrape模式
@@ -379,8 +384,9 @@ def calc_md5_streaming(url, max_size=500*1024*1024, timeout=300):
 |--------|--------|--------|------|
 | increment跳过版本 | 遇404停止 | 跳过最多5个 | 微信可检测到跳过版本 |
 | increment跨版本 | 只递增最后一段 | 多级进位（最多2次） | 可探测25.1.15、25.2.0 |
-| 微信版本探测 | 手动维护4.1.13.65 | NSIS自动获取4.1.15.9 | 全自动 |
+| 微信版本探测 | 手动维护4.1.13.65 | NSIS自动获取4.1.15.50 | 全自动 |
 | NSIS版本探测 | 下载244MB完整包 | 下载3.2MB头尾 | 98.7%流量节省 |
+| 微信明细版本 | 被PE占位值4.1.15.1000顶掉 | 权威源(nsis)放行，显示真值4.1.15.50 | 2026-10-09 修复 |
 | 7z工具依赖 | 需系统安装p7zip | 内置tools/7zz | 跨环境可用 |
 | 单软件超时 | 无（一个卡住全部卡住） | 45秒超时+重试2次 | 可靠性提升 |
 | 检测失败处理 | 覆盖为空 | 保留上次成功数据 | 数据不丢失 |
@@ -925,9 +931,14 @@ def detect_discourse_release(category_url, version_regex):
 
 ---
 
-## 第22节：PE资源段读取版本号（微信/YY/360/QQ音乐模式）
+## 第22节：PE资源段读取版本号（YY/360/QQ音乐模式）
 
-**适用场景**：安装包文件名只有大版本号（如 `WeChatWin_4.1.15.exe`），但安装后显示详细小版本号（如 `4.1.15.9`）。
+**适用场景**：安装包文件名只有大版本号（如 `WeChatWin_4.1.15.exe` 这类只带大版本的命名），但安装后显示详细小版本号。
+
+> ⚠️ **不是所有软件都适用**：得先确认 PE 里的 FileVersion 就是产品真实版本。
+> 反例：微信安装包 PE 的 FileVersion 是占位 build `4.1.15.1000`，而真实版本是
+> install.7z 里的 `4.1.15.50`（来源不可比，数值还更大）。这类软件**不要**配 `pe_version`，
+> 改用 NSIS 探测 + `version_authority`（见第23节与第38节）。
 
 **探测原理**：
 1. 下载安装包（或用Range请求只下载PE头部分）
@@ -952,10 +963,10 @@ def read_pe_version(filepath_or_url, max_read=1024*1024):
     # ... 遍历资源目录找到VS_VERSION_INFO
     # ... 读取FileVersion字符串
     
-    return file_version  # 如 "4.1.15.9"
+    return file_version  # 如 "4.1.15.9"（仅当该值与产品真实版本一致时才可用）
 ```
 
-**已验证软件**：微信、YY语音、360浏览器系列、QQ音乐
+**已验证软件**：YY语音、360浏览器系列、QQ音乐（微信不适用，见下方说明）
 
 **关键技术点**：
 - 只需下载PE文件前1MB（资源段通常在文件前部），用 `Range` 请求
@@ -968,40 +979,33 @@ def read_pe_version(filepath_or_url, max_read=1024*1024):
 
 ## 第23节：7z内部版本号探测（微信详细版本模式）
 
-**适用场景**：安装包是7z自解压格式，内部文件夹名称包含详细版本号。
+**适用场景**：安装包是 NSIS/7z 自解压格式，内部 `install.7z` 的**版本号文件夹名**就是产品真实版本。
 
-**探测原理**：
-1. 下载安装包（或用Range请求下载文件末尾的7z目录）
-2. 解析7z压缩包的文件列表（不完整解压）
-3. 从内部文件夹名称提取详细版本号（如 `4.1.15.9`）
+**探测原理**（实现见 `check_versions.py` 的 `get_nsis_install_version`，**无需下载完整包**）：
+1. 取 PE 头(1KB) → 算 overlay 偏移，定位 NSIS 数据段
+2. 取 NSIS 头部(3MB) → 搜 `37 7A BC AF 27 1C` 7z 签名，拿到 install.7z 偏移
+3. 取 install.7z 头 32B → 读 `next_header_offset/next_header_size`，算出精确大小
+4. 取 install.7z 头 32KB + 尾 128KB → 构造稀疏文件，用 py7zr / 7z 列出条目
+5. 取第一个 `\d+\.\d+\.\d+\.\d+/` 目录名即真实版本
 
-**7z文件列表读取**：
+**总下载量**：约 3.2MB（vs 完整包 244MB，省 98.7%）；**单软件耗时**：约 3～4 秒。
+
+**配置**：
 ```python
-import subprocess
-import tempfile
-
-def detect_7z_internal_version(url, version_regex=r'(\d+\.\d+\.\d+\.\d+)'):
-    \"\"\"从7z自解压包内部文件夹名提取版本号\"\"\"
-    # 方法1: 用7z命令行列出内容（需下载完整文件）
-    with tempfile.NamedTemporaryFile(suffix='.exe', delete=False) as f:
-        f.write(requests.get(url).content)
-        tmp_path = f.name
-    
-    result = subprocess.run(['7z', 'l', tmp_path], capture_output=True, text=True)
-    for line in result.stdout.split('\n'):
-        m = re.search(version_regex, line)
-        if m:
-            return m.group(1)
-    return None
+{
+    'detect_type': 'increment',
+    'nsis_version': True,          # 启用 NSIS 版本解析
+    'version_authority': 'nsis',   # 该值即真实版本 → 防降级拦截放行（第38节）
+    # 不要配 pe_version：微信 PE 是占位 build，会把真值顶掉
+}
 ```
 
-**已验证软件**：微信（WeChat）
+**已验证软件**：微信（WeChat）——真值 `4.1.15.50`（对应文件名 `WeChatWin_4.1.15.exe`）
 
 **关键技术点**：
-- 微信安装包是7z自解压格式，内部 `$PLUGINSDIR` 或版本文件夹包含详细版本号
-- 需安装7z命令行工具（`7z l` 列出内容）
-- 可结合PE资源段读取双重验证
-- 大文件下载耗时，优先用PE资源段方法，7z作为备选
+- 真值来自 install.7z 内的版本号目录，比 PE 的占位 build 可信，故声明为权威源
+- 抽头尾构造稀疏文件即可列目录（7z 目录在文件尾），不需要整包下载
+- 依赖 py7zr（CI 已装）或内置 `tools/7zz`；两者都没有时跳过，退回 increment 版本
 
 ---
 
@@ -1283,9 +1287,10 @@ def _get_by_jsonpath(data, path, default=None):
 | luminar_api（XML API） | 1 | Luminar Neo |
 | lanzou（网盘API） | 1 | 闪豆下载器 |
 | github_release（API） | 8 | Edge/Chrome/开源工具 |
-| PE资源段/7z内部 | 融合 | 微信、YY、360、QQ音乐 |
+| PE资源段 | 融合 | YY、360、QQ音乐 |
+| 7z内部（NSIS） | 融合 | 微信 |
 
-**更新日期**：2026-09-16
+**更新日期**：2026-10-09（微信由 PE 改为 NSIS 权威源）
 
 
 ### 天翼云盘分享探测 (detect_189pan)
@@ -1692,6 +1697,24 @@ if _ver_tuple(new_v) < _ver_tuple(old_v):
     info['version'] = old_v
 ```
 这是**兜底中的兜底**——前面所有缓存/重试都可能是"这一轮恰好失败"，这一层保证数据单调递增。
+
+**例外：权威源放行（2026-10-09 新增）**
+上面这条规则默认「数值大的更可信」，但同一条目的不同来源版本号**不可比**时会误伤：
+微信安装包 PE 的 FileVersion 是占位 build `4.1.15.1000`，比 install.7z 里的真实版本
+`4.1.15.50` 数值大，导致真实版本每轮都被"降级"回占位值，页面上永远看不到真版本。
+
+处理办法：`detect_increment` 把本轮版本来源记到 `_VER_SOURCE[产品名]`（`nsis`/`pe`/`increment`/`winget`），
+配置里声明 `version_authority` 后，凡是**权威源命中**的一轮一律放行：
+
+```python
+auth = product.get('version_authority')
+from_authority = bool(auth) and _VER_SOURCE.get(name) == auth
+if old_v and new_v and not from_authority and _ver_tuple(new_v) < _ver_tuple(old_v):
+    ...保留旧值...
+```
+即：权威源没命中（解析失败退化成 increment/PE 值）→ 仍然拦截降级；权威源命中 → 以权威值为准。
+
+**已配置**：`WeChat`（`version_authority: 'nsis'`）。
 
 ### 9. 并行度与超时的配比
 
