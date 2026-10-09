@@ -386,7 +386,7 @@ def calc_md5_streaming(url, max_size=500*1024*1024, timeout=300):
 | 检测失败处理 | 覆盖为空 | 保留上次成功数据 | 数据不丢失 |
 | MD5计算 | 全文件下载 | >100MB跳过 | 大文件不超时 |
 | 检测方式 | 串行逐个 | 并行8线程 | 5-10分钟 → 1.5分钟 |
-| 工作流 | 单3小时全量 | 每小时快检(fast+normal) + 3小时全量兜底 | 快频软件延迟缩短 |
+| 工作流 | 单3小时全量 | 每小时快检(fast+normal) + 每30分钟全量（:15/:45 错开整点） | 快频软件延迟缩短 |
 | PE缓存 TTL | 固定6h | LM/size 没变时 HEAD 续期 | CDN长期缓存场景不误废 |
 | fixed+pe_version | 每次都 Range 下载 PE | 先发 HEAD 比 LM/size 没变就跳过 | 省掉 90% 的 Range 请求 |
 | 优先级分层 | 一刀切全跑 | fast(15)/normal(48)/slow(21)/resource(8) 四层 | hourly 58s vs full 79s |
