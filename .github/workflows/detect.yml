@@ -1,83 +1,103 @@
 name: Detect & Push
 
-# 每 3 小时一次实时探测 + 每天北京时间 5:00 全量发布
-# （UTC 21:00 = 北京时间次日 5:00；publish.yml 已合并进本条 workflow）
+# 双层调度：
+#   - 每小时（UTC 整点）跑 fast+normal 快检（63 款纯 API/网页 HEAD），50s 内完成
+#   - 每 3 小时（UTC 0/3/6...）跑全量（92 款含 increment/资源站），兜底慢频
+# 检测到版本/大小/日期变化时立即 embed + commit + push，不再等下一轮。
 on:
   schedule:
-    - cron: '0 */3 * * *'
-    - cron: '0 21 * * *'
+    - cron: '0 * * * *'    # 每小时：快检（fast+normal）
+    - cron: '0 */3 * * *'  # 每 3 小时：全量（兜底慢频 + 资源站）
   workflow_dispatch:
 
-# 同一时刻只跑一个任务：并发组自动排队，不再需要 push 重试循环
+# 同一时刻只跑一个任务（并发组自动排队）
 concurrency:
   group: main-push
   cancel-in-progress: false
 
 jobs:
-  detect:
+  detect-hourly:
+    if: github.event.schedule == '0 * * * *'
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    timeout-minutes: 20
+    permissions: { contents: write }
+    timeout-minutes: 10
     steps:
-      - name: Checkout
-        uses: actions/checkout@v5
-
-      - name: Setup Python
-        uses: actions/setup-python@v6
-        with:
-          python-version: '3.x'
-
-      - name: Install deps (p7zip-full + py7zr)
-        run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq p7zip-full
-          pip install -q py7zr
-
-      - name: Run detection
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with: { python-version: '3.x' }
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq p7zip-full
+      - run: pip install -q py7zr
+      - name: Hourly fast+normal detect
         id: detect
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        env: { GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} }
         run: |
-          output=$(python check_versions.py --parallel 8 2>&1 | tee /tmp/detect.log)
+          output=$(python check_versions.py --priority hourly --parallel 8 2>&1 | tee /tmp/detect.log)
           echo "$output"
-          if echo "$output" | grep -q "CHANGED=true"; then
-            echo "changed=true" >> $GITHUB_OUTPUT
-          else
-            echo "changed=false" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Upload detection log (排查用, 保留 7 天)
+          echo "changed=$(echo "$output" | grep -q 'CHANGED=true' && echo true || echo false)" >> $GITHUB_OUTPUT
+      - uses: actions/upload-artifact@v4
         if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: detect-log
-          path: /tmp/detect.log
-          retention-days: 7
-
-      - name: Embed data into HTML
-        if: steps.detect.outputs.changed == 'true'
-        run: python embed_data.py
-
-      - name: Commit + push (有变化)
+        with: { name: detect-log-hourly, path: /tmp/detect.log, retention-days: 3 }
+      - name: Embed & push (有变化)
         if: steps.detect.outputs.changed == 'true'
         run: |
           set -euo pipefail
+          python embed_data.py
           git config user.email "action@github.com"
           git config user.name "GitHub Action"
           git add -A
-          git commit -m "detect: version update"
+          git commit -m "detect(hourly): $(grep '🔄 版本变化' /tmp/detect.log | sed 's/🔄 版本变化: //')"
           git push origin HEAD:main
-
-      - name: Commit + push (无变化, 仅刷新探测缓存)
+      - name: Refresh caches only (无变化)
         if: steps.detect.outputs.changed != 'true'
         run: |
           set -euo pipefail
+          python embed_data.py || true
           git config user.email "action@github.com"
           git config user.name "GitHub Action"
-          git add md5_cache.json pe_version_cache.json startallback_dll_cache.json
-          if git diff --staged --quiet; then
-            echo "缓存也无变化，跳过"
-            exit 0
-          fi
+          git add md5_cache.json pe_version_cache.json startallback_dll_cache.json data.json
+          git diff --staged --quiet && { echo "无变化，跳过"; exit 0; }
+          git commit -m "chore: refresh probe caches"
+          git push origin HEAD:main
+
+  detect-full:
+    if: github.event.schedule == '0 */3 * * *' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    permissions: { contents: write }
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with: { python-version: '3.x' }
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq p7zip-full
+      - run: pip install -q py7zr
+      - name: Full detect (92 products)
+        id: detect
+        env: { GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} }
+        run: |
+          output=$(python check_versions.py --parallel 8 2>&1 | tee /tmp/detect.log)
+          echo "$output"
+          echo "changed=$(echo "$output" | grep -q 'CHANGED=true' && echo true || echo false)" >> $GITHUB_OUTPUT
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: detect-log-full, path: /tmp/detect.log, retention-days: 7 }
+      - name: Embed & push (有变化)
+        if: steps.detect.outputs.changed == 'true'
+        run: |
+          set -euo pipefail
+          python embed_data.py
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
+          git add -A
+          git commit -m "detect(full): $(grep '🔄 版本变化' /tmp/detect.log | sed 's/🔄 版本变化: //')"
+          git push origin HEAD:main
+      - name: Refresh caches only (无变化)
+        if: steps.detect.outputs.changed != 'true'
+        run: |
+          set -euo pipefail
+          python embed_data.py || true
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
+          git add md5_cache.json pe_version_cache.json startallback_dll_cache.json data.json
+          git diff --staged --quiet && { echo "无变化，跳过"; exit 0; }
           git commit -m "chore: refresh probe caches"
           git push origin HEAD:main

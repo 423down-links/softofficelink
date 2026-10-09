@@ -2095,24 +2095,45 @@ def detect_fixed(product):
         except Exception as e:
             print(f"  DLL版本读取失败: {e}")
     elif product.get('pe_version') and not is_webpage:
+        # HEAD-first 快路径：check_url_follow 已经拿到了 cur_size/cur_lm，
+        # 跟 PE 缓存比没变就跳过 Range 下载，省掉两次分片请求（每次 200ms+）。
+        # 绝大多数 fixed 产品（Wing FTP、IObit 系列、PotPlayer 等）一天只更一次，
+        # 99% 场景 LM 没变 → 直接命中缓存，耗时从 2-5s 降到 < 1s。
+        head_skip_pe = False
+        cached_pe = ''
+        cache_hot = False
         try:
-            pe_ver = get_pe_version(url, referer=product.get('referer'))
-            if pe_ver:
-                print(f"  PE版本: {pe_ver}")
-                version = pe_ver
-            else:
-                # PE 探测失败（服务器掐连接等偶发因素）会退回配置里的旧版本号，
-                # 造成 data.json 里的版本被"降级"。这里用 PE 缓存兜底。
+            _c = _pe_cache_load()
+            with _pe_cache_lock:
+                hit = _c.get(url)
+            if hit and detected_size and detected_size == hit.get('size') and (
+                    not hit.get('lm') or detected_date == hit['lm'] or detected_date == hit.get('date')):
+                # LM/size 没变 → 二进制没换，缓存版本仍然正确
+                cached_pe = hit.get('ver', '')
+                cache_hot = cached_pe and (time.time() - hit.get('ts', 0)) < PE_CACHE_TTL
+                if cached_pe:
+                    print(f"  PE版本(HEAD命中缓存): {cached_pe}")
+                    version = cached_pe
+                    head_skip_pe = True
+        except Exception:
+            pass
+        if not head_skip_pe:
+            try:
+                pe_ver = get_pe_version(url, referer=product.get('referer'))
+                if pe_ver:
+                    print(f"  PE版本: {pe_ver}")
+                    version = pe_ver
+                else:
+                    pe_ver = _pe_version_cached(url)
+                    if pe_ver:
+                        print(f"  PE版本(缓存): {pe_ver}")
+                    version = pe_ver
+            except Exception as e:
+                print(f"  PE版本读取失败: {e}")
                 pe_ver = _pe_version_cached(url)
                 if pe_ver:
-                    print(f"  PE版本(缓存): {pe_ver}")
+                    print(f"  PE版本(缓存兜底): {pe_ver}")
                     version = pe_ver
-        except Exception as e:
-            print(f"  PE版本读取失败: {e}")
-            pe_ver = _pe_version_cached(url)
-            if pe_ver:
-                print(f"  PE版本(缓存兜底): {pe_ver}")
-                version = pe_ver
     # 官网页面版本交叉校验（可选）：二进制可能被 CDN 长期缓存（如 wftpserver.com 的
     # Cache-Control: max-age=604800，整整 7 天），或被本地 PE 缓存（TTL 6h）挡住，
     # 导致刚发布的新版本号滞后。官网页面即时更新，配置 page_version_url + regex 后，
@@ -2441,6 +2462,9 @@ PE_CACHE_TTL = 6 * 3600
 
 
 def _pe_cache_load():
+    """加载 PE 缓存并做 TTL 自适应续期：TTL 过期但 Last-Modified/size 没变
+    说明二进制没换（CDN 可能缓存很久），主动发一次 HEAD 探测，没变就续期。
+    这样既不会把过期缓存泄漏给调用方，又避免了固定 TTL 导致的无效 Range 下载。"""
     global _pe_cache
     with _pe_cache_lock:
         if _pe_cache:
@@ -2449,9 +2473,28 @@ def _pe_cache_load():
             with open(PE_CACHE_FILE, 'r', encoding='utf-8') as f:
                 raw = json.load(f)
             now = time.time()
+            expired = []
             for k, v in (raw.get('entries') or {}).items():
-                if now - v.get('ts', 0) < PE_CACHE_TTL:
+                age = now - v.get('ts', 0)
+                if age < PE_CACHE_TTL:
                     _pe_cache[k] = v
+                else:
+                    expired.append((k, v))
+            # 过期但 LM/size 没变 → 续期（省掉 Range 下载）
+            for url, hit in expired:
+                try:
+                    req = urllib.request.Request(url, method='HEAD',
+                                                 headers={'User-Agent': UA})
+                    with urllib.request.urlopen(req, timeout=15) as resp:
+                        cur_lm = resp.headers.get('Last-Modified', '') or ''
+                        cur_size = int(resp.headers.get('Content-Length', 0) or 0)
+                    if cur_lm and cur_lm == hit.get('lm') and (not hit.get('size')
+                            or cur_size == hit['size']):
+                        hit['ts'] = now
+                        _pe_cache[url] = hit
+                        print(f"  PE缓存续期(HEAD): {hit['ver']} ({os.path.basename(url)[:40]})")
+                except Exception as _e:
+                    pass
         except Exception:
             pass
         return _pe_cache
@@ -4633,12 +4676,37 @@ def detect_with_timeout(product, timeout=30):
     return result[0], 'ok'
 
 
+def _detect_priority(product):
+    """自动推断产品检测优先级（未显式配置 detect_priority 时使用）：
+      fast      github_release/chrome_api/edge_api/redirect/luminar_api/yandex/bwcx （API/重定向 <1s/款）
+      normal    scrape/fixed/cyberlink/startallback （网页抓取/HEAD 1-3s/款）
+      slow      increment （多重试/MD5/大文件 HEAD 10-60s/款）
+      resource  资源站（nsane/downtopc/monkrus/discourse/lanzou/189pan 等，整轮扫描）
+    产品可显式配置 detect_priority='fast|normal|slow|resource' 覆盖推断。"""
+    explicit = product.get('detect_priority')
+    if explicit in ('fast', 'normal', 'slow', 'resource'):
+        return explicit
+    dt = product.get('detect_type', 'increment')
+    cat = product.get('category', '')
+    if cat == '资源站' or dt in ('nsane', 'downtopc', 'monkrus', 'discourse', 'lanzou', '189pan'):
+        return 'resource'
+    if dt in ('github_release', 'chrome_api', 'edge_api', 'redirect',
+              'luminar_api', 'yandex', 'bwcx'):
+        return 'fast'
+    if dt == 'increment':
+        return 'slow'
+    return 'normal'
+
+
 def main():
     import sys
     import argparse
 
     parser = argparse.ArgumentParser(description='软件版本检测')
     parser.add_argument('--only', help='只检测指定软件名称')
+    parser.add_argument('--priority', default='all',
+                        choices=['fast', 'normal', 'slow', 'resource', 'all', 'hourly'],
+                        help='按优先级筛选产品：hourly=fast+normal（每小时快检）')
     parser.add_argument('--parallel', type=int, default=DEFAULT_PARALLEL, help='并行检测线程数')
     parser.add_argument('--retry', type=int, default=DEFAULT_RETRY, help='检测失败重试次数')
     parser.add_argument('--no-save', action='store_true', help='不保存到data.json（仅检测）')
@@ -4661,6 +4729,16 @@ def main():
         if not products_to_check:
             print(f"未找到软件: {args.only}")
             sys.exit(1)
+    # 按优先级过滤（hourly = fast + normal，全量 all = 四个都跑）
+    if args.priority != 'all' and not args.only:
+        if args.priority == 'hourly':
+            want = {'fast', 'normal'}
+        else:
+            want = {args.priority}
+        products_to_check = [p for p in PRODUCTS if _detect_priority(p) in want]
+        labels = {'fast': '快源', 'normal': '常规', 'slow': '重探测',
+                  'resource': '资源站', 'hourly': '每小时快检（fast+normal）'}
+        print(f"🎯 优先级筛选: {labels.get(args.priority, args.priority)} → {len(products_to_check)}/{len(PRODUCTS)} 款")
 
     # 检测统计（多线程共享，用锁保护自增避免竞态丢计数）
     stats = {'success': 0, 'retry': 0, 'timeout': 0, 'failed': 0, 'fallback': 0}

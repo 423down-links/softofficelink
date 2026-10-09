@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T06:17:59.245739+00:00",
+  "updated_at": "2026-10-09T06:33:52.403386+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -9,7 +9,7 @@
       "category": "模拟器",
       "version": "9.5.39",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.39.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.39.exe?v=1791507126442&n=ldinst_9.5.39_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.39.exe?v=1791527559940&n=ldinst_9.5.39_ld_407594_ld.exe",
       "size": 602869216,
       "size_mb": 574.9,
       "last_modified": "2026-09-22",
@@ -25,7 +25,7 @@
       "category": "模拟器",
       "version": "14.0.29",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.29.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.29.exe?v=1791507125569&n=ldinst_14.0.29_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.29.exe?v=1791527559847&n=ldinst_14.0.29_ld_412570_ld.exe",
       "size": 745021928,
       "size_mb": 710.5,
       "last_modified": "2026-09-22",
@@ -54,7 +54,7 @@
       "icon": "微",
       "icon_color": "linear-gradient(135deg, #07c160, #10ad56)",
       "category": "社交沟通",
-      "version": "4.1.15.50",
+      "version": "4.1.15.1000",
       "download_url": "https://dldir1v6.qq.com/weixin/Universal/Windows/WeChatWin_4.1.15.exe",
       "download_url_with_params": "https://dldir1v6.qq.com/weixin/Universal/Windows/WeChatWin_4.1.15.exe",
       "size": 256471400,
@@ -183,8 +183,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "155.0.4283.45",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792111928&P2=404&P3=2&P4=QbhMOYp9IekpZns5qv2Woz%2b4WlyaqFUdiiP3PgMDegHMKOoNXRVbcoq4HWsFosHtyXq4NrxMIeO8ruAkFkW8Qw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792111928&P2=404&P3=2&P4=QbhMOYp9IekpZns5qv2Woz%2b4WlyaqFUdiiP3PgMDegHMKOoNXRVbcoq4HWsFosHtyXq4NrxMIeO8ruAkFkW8Qw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792132362&P2=404&P3=2&P4=SuxpbFdvcveP0K1V4mlcwj6d%2bygv54O0eXgjqRS6Tj2o4hSURkEt3NKz%2fLEO%2fZMqjPhphP3evNzk%2b8D4RtkXBg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792132362&P2=404&P3=2&P4=SuxpbFdvcveP0K1V4mlcwj6d%2bygv54O0eXgjqRS6Tj2o4hSURkEt3NKz%2fLEO%2fZMqjPhphP3evNzk%2b8D4RtkXBg%3d%3d",
       "size": 207667024,
       "size_mb": 198.0,
       "last_modified": "2026-10-09",
@@ -920,8 +920,8 @@
       "version": "4.11.0.0",
       "download_url": "https://www.winxdvd.com/download/winxvideo-ai.exe",
       "download_url_with_params": "https://www.winxdvd.com/download/winxvideo-ai.exe",
-      "size": 307118576,
-      "size_mb": 292.9,
+      "size": 307232768,
+      "size_mb": 293.0,
       "last_modified": "2026-09-20",
       "md5": "",
       "official_site": "https://www.winxdvd.com/winxvideo-ai/",
@@ -968,8 +968,8 @@
       "version": "2.81",
       "download_url": "https://stardock.cachefly.net/software/Start11/v2/Start11v2_Setup.exe",
       "download_url_with_params": "https://stardock.cachefly.net/software/Start11/v2/Start11v2_Setup.exe",
-      "size": 57556400,
-      "size_mb": 54.9,
+      "size": 57671680,
+      "size_mb": 55.0,
       "last_modified": "2026-09-21",
       "md5": "",
       "official_site": "https://www.stardock.com/products/start11/history",
@@ -1386,34 +1386,18 @@
       "icon": "D",
       "icon_color": "linear-gradient(135deg, #2e7d32, #1b5e20)",
       "category": "资源站",
-      "version": "2026-10-08",
+      "version": "2026-10-09",
       "download_url": "https://downtopc.com/software/",
       "download_url_with_params": "https://downtopc.com/software/",
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-10-08",
+      "last_modified": "2026-10-09",
       "md5": "",
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
-          "title": "CyberLink PowerDirector Ultimate 2027 v25.0.1007.0 Multilingual Portable",
-          "url": "https://downtopc.com/343427-cyberlink-powerdirector-ultimate-2027-v25010070-multilingual-portable.html"
-        },
-        {
-          "title": "CyberLink PowerDirector Ultimate 2027 v25.0.1007.0 Multilingual",
-          "url": "https://downtopc.com/343426-cyberlink-powerdirector-ultimate-2027-v25010070-multilingual.html"
-        },
-        {
-          "title": "Internet Download Manager 6.43 Build 15 Multilingual Portable",
-          "url": "https://downtopc.com/343410-internet-download-manager-643-build-15-multilingual-portable.html"
-        },
-        {
-          "title": "Internet Download Manager 6.43 Build 15 Multilingual + Retail",
-          "url": "https://downtopc.com/343409-internet-download-manager-643-build-15-multilingual-retail.html"
-        },
-        {
-          "title": "Emurasoft EmEditor Professional 26.3.0 (x64) Multilingual",
-          "url": "https://downtopc.com/343383-emurasoft-emeditor-professional-2630-x64-multilingual.html"
+          "title": "Wing FTP Server Corporate 8.2.6 (x64) Multilingual",
+          "url": "https://downtopc.com/343428-wing-ftp-server-corporate-826-x64-multilingual.html"
         }
       ]
     },
@@ -1435,6 +1419,10 @@
         {
           "title": "CyberLink PowerDirector Ultimate 2027 v25.0.1007",
           "url": "https://nsaneforums.com/topic/490025-cyberlink-powerdirector-ultimate-2027-v2501007/"
+        },
+        {
+          "title": "Ventoy 1.1.17",
+          "url": "https://nsaneforums.com/topic/490038-ventoy-1117/"
         },
         {
           "title": "Microsoft Edge 155.0.4283.45",
