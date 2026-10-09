@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T09:30:17.484281+00:00",
+  "updated_at": "2026-10-09T10:13:20.423739+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -183,8 +183,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "155.0.4283.45",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792142964&P2=404&P3=2&P4=aO0Iup731l7aRvOqRb6zz136x%2bBF%2bny9zSWiqPqHC1an5SUNJNV6xa8Y2kRteHg7XD98VL5KqsDFt5CLdSeomg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792142964&P2=404&P3=2&P4=aO0Iup731l7aRvOqRb6zz136x%2bBF%2bny9zSWiqPqHC1an5SUNJNV6xa8Y2kRteHg7XD98VL5KqsDFt5CLdSeomg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792145584&P2=404&P3=2&P4=HKGr97IXIk7tXC1TKoMHycMDBkndTxtQcEBPhcqzARZEWp3104%2bQ0%2fHNMNyWMMx%2fj3XszZRQqHdQ3Pdo8dBPYg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792145584&P2=404&P3=2&P4=HKGr97IXIk7tXC1TKoMHycMDBkndTxtQcEBPhcqzARZEWp3104%2bQ0%2fHNMNyWMMx%2fj3XszZRQqHdQ3Pdo8dBPYg%3d%3d",
       "size": 207667024,
       "size_mb": 198.0,
       "last_modified": "2026-10-09",
@@ -1374,6 +1374,10 @@
       "md5": "",
       "official_site": "https://w18.monkrus.ws/",
       "update_items": [
+        {
+          "title": "Adobe Substance 3D Stager v3.1.9 Multilingual",
+          "url": "https://w18.monkrus.ws/2026/10/adobe-substance-3d-stager-v319.html"
+        },
         {
           "title": "Adobe Dimension v4.1.9 Multilingual",
           "url": "https://w18.monkrus.ws/2026/10/adobe-dimension-v419-multilingual.html"
