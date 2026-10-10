@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-10T16:22:13.684251+00:00",
+  "updated_at": "2026-10-10T16:30:07.331676+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -1524,6 +1524,22 @@
       "last_modified": "2026-10-09",
       "md5": "",
       "official_site": "https://www.advancedinstaller.com/",
+      "update_items": []
+    },
+    {
+      "name": "Operit",
+      "name_cn": "Operit AI",
+      "icon": "OP",
+      "icon_color": "linear-gradient(135deg, #6366f1, #8b5cf6)",
+      "category": "安卓应用",
+      "version": "1.12.2",
+      "download_url": "https://github.com/AAswordman/Operit/releases/download/v1.12.2/app-release.apk",
+      "download_url_with_params": "https://github.com/AAswordman/Operit/releases/download/v1.12.2/app-release.apk",
+      "size": 404265417,
+      "size_mb": 385.5,
+      "last_modified": "2026-09-18",
+      "md5": "",
+      "official_site": "https://github.com/AAswordman/Operit/releases",
       "update_items": []
     }
   ]

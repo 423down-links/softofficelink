@@ -1472,6 +1472,26 @@ PRODUCTS = [
         'skip_md5': True,   # 安装包约 300MB，跳过 MD5
         'official_site': 'https://www.advancedinstaller.com/',
     },
+    {
+        'name': 'Operit',
+        'name_cn': 'Operit AI',
+        'icon': 'OP',
+        'icon_color': 'linear-gradient(135deg, #6366f1, #8b5cf6)',
+        'category': '安卓应用',
+        # 探测方式：GitHub Releases API 取最新正式版 tag（vX.Y.Z），
+        # 直取 release 里 APK（app-release.apk）的直链
+        'detect_type': 'github_release',
+        'repo': 'AAswordman/Operit',
+        'version_regex': r'v?(\d+\.\d+\.\d+)',
+        'use_asset_url': True,
+        'asset_filter': 'apk',
+        'skip_md5': True,   # APK 约 385MB，跳过 MD5
+        'version': '1.12.2',
+        'size': 404265417,
+        'date': '2026-09-18',
+        'download_url': 'https://github.com/AAswordman/Operit/releases',
+        'official_site': 'https://github.com/AAswordman/Operit/releases',
+    },
 ]
 
 MAX_INCREMENT = 30  # 最多递增检测30个版本
