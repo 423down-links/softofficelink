@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-10T01:52:07.199538+00:00",
+  "updated_at": "2026-10-10T02:22:31.710882+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -9,7 +9,7 @@
       "category": "模拟器",
       "version": "9.5.39",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.39.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.39.exe?v=1791597078108&n=ldinst_9.5.39_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.39.exe?v=1791598887055&n=ldinst_9.5.39_ld_407594_ld.exe",
       "size": 602869216,
       "size_mb": 574.9,
       "last_modified": "2026-09-22",
@@ -25,7 +25,7 @@
       "category": "模拟器",
       "version": "14.0.29",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.29.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.29.exe?v=1791597078044&n=ldinst_14.0.29_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.29.exe?v=1791598888910&n=ldinst_14.0.29_ld_412570_ld.exe",
       "size": 745021928,
       "size_mb": 710.5,
       "last_modified": "2026-09-22",
@@ -183,8 +183,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "155.0.4283.45",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792201872&P2=404&P3=2&P4=PhB%2flhp20fgUvWoNrYSn%2b6PSKm8LTFHdexsuVR%2fSGJu%2bt%2bzX40Giarn5i3Le3Zh6m7%2fO3rboFcOZR4upafHhoA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792201872&P2=404&P3=2&P4=PhB%2flhp20fgUvWoNrYSn%2b6PSKm8LTFHdexsuVR%2fSGJu%2bt%2bzX40Giarn5i3Le3Zh6m7%2fO3rboFcOZR4upafHhoA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792203684&P2=404&P3=2&P4=WoBZva4q%2bpzRko88hFZqC2W%2fYkDfemYUAIvFkIq%2b7L4wPZsNOjwDemKnFLCH%2f1XXVwM5M775KBOrTbWnWxgGwg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792203684&P2=404&P3=2&P4=WoBZva4q%2bpzRko88hFZqC2W%2fYkDfemYUAIvFkIq%2b7L4wPZsNOjwDemKnFLCH%2f1XXVwM5M775KBOrTbWnWxgGwg%3d%3d",
       "size": 207667024,
       "size_mb": 198.0,
       "last_modified": "2026-10-09",
@@ -203,7 +203,7 @@
       "download_url_with_params": "https://edgedl.me.gvt1.com/dl/release2/chrome/adeicfs34nqhzmry2l2sdlpo7l2q_155.0.8059.40/155.0.8059.40_chrome_installer_uncompressed.exe",
       "size": 522619304,
       "size_mb": 498.4,
-      "last_modified": "2026-10-06",
+      "last_modified": "",
       "md5": "",
       "official_site": "https://github.com/Bush2021/chrome_installer",
       "update_items": []
