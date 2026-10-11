@@ -354,6 +354,10 @@ def calc_md5_streaming(url, max_size=500*1024*1024, timeout=300):
 
 ## 新增软件探测方式选择流程
 
+> ⚠️ **新增软件必须先走工作流技能 `.trae/skills/add-software-detection/SKILL.md`**：
+> 按决策树定型 → 配置 → `--only` 验证判据 → 通过后入库。
+> 禁止跳过分析直接裸配 `increment`（既不稳又慢）。下面的流程图是该技能的速览版。
+
 ```
 1. 软件是否有官方更新检查API？
    ├─ 是 → 优先级1：官方API（需逆向签名）
