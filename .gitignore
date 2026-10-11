@@ -10,6 +10,10 @@ tools/7z.tar.xz
 # IDE / Trae 自动产物
 .trae-html-share-packages/
 .trae*
+# 但手工维护的技能要进仓库（排除 .trae/skills 下的 SKILL.md）
+!.trae/
+!.trae/skills/
+!.trae/skills/**
 .vscode/
 .idea/
 

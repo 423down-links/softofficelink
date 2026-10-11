@@ -1,5 +1,7 @@
 # 软件版本探测方式指南
 
+> 最后更新：2026-10-10 ｜ 覆盖 95 款软件 ｜ 代表软件以当前 `data.json` 为准
+
 ## 探测方式总览
 
 | 方式 | 适用场景 | 效率 | 准确度 | 请求数 | 代表软件 |
@@ -10,9 +12,10 @@
 | redirect | 固定地址302跳转 | ⭐⭐⭐⭐⭐ | 高 | 1 | XMind |
 | fixed+变化检测 | 固定地址始终最新版 | ⭐⭐⭐⭐⭐ | 中 | 1 | IObit、网易云 |
 | increment+进位 | URL含版本号，可跨版本 | ⭐⭐⭐⭐ | 高 | 5-20 | 雷电、迅雷、微信 |
+| increment+列车扫描 | 版本按第2段跳变，CDN只留最新包 | ⭐⭐⭐⭐⭐ | 高 | 2轮并发 | YY |
 | scrape | 从网页抓取版本信息 | ⭐⭐⭐ | 中 | 1-2 | Edge、Chrome、Xshell |
 | lanzou | 蓝奏云网盘API探测 | ⭐⭐⭐⭐ | 高 | 2 | 闪豆下载器 |
-| PE版本 | 从exe.rsrc段读FileVersion | ⭐⭐⭐⭐ | 高 | 2-3 | YY、360浏览器 |
+| PE版本 | 从exe.rsrc段读FileVersion | ⭐⭐⭐⭐ | 高 | 2-3 | 360浏览器、AnyDesk |
 | NSIS版本 | 从install.7z读版本文件夹 | ⭐⭐⭐ | 极高 | 4-5 | 微信 |
 | RSS/Atom订阅 | 官网有更新日志Feed | ⭐⭐⭐⭐ | 高 | 1 | 待探索 |
 | MD5校验 | 小文件完整性校验 | ⭐ | 高 | 完整下载 | <100MB文件 |
@@ -170,7 +173,9 @@ GET https://api.github.com/repos/{owner}/{repo}/releases/latest
 **适用**：安装包被 CDN 长期缓存的软件（Wing FTP Server）
 
 ### 6. increment + 多级进位探测（兜底主力）
-**原理**：从base_version递增版本号，连续5个404后自动进位到上一段
+**原理**：从 base_version 递增版本号，连续 N 个 404 后自动进位到上一段。
+默认 N=3、最多进位 1 次，可用 `max_skip` / `max_carry` 按软件覆写。
+
 **配置**：
 ```python
 {
@@ -179,22 +184,46 @@ GET https://api.github.com/repos/{owner}/{repo}/releases/latest
     'url_pattern': 'https://down.sandai.net/thunder_pc/ThunderSetup{ver}up.exe',
 }
 ```
+
 **探测流程**（以迅雷为例）：
 ```
 25.1.13.1631 → 递增 → ... → 25.1.13.1636 ✓ (最新)
-→ 继续递增 → 1637(404) 1638(404) 1639(404) 1640(404) 1641(404)
-→ 连续5个404，自动进位: 25.1.13.1641 → 25.1.14.0
-→ 递增探测 25.1.14.x → 连续5个404
-→ 再次进位: 25.1.14.4 → 25.1.15.0 ← 跨版本可探测
-→ 最多进位2次，防止无限探测
+→ 继续递增 → 1637(404) 1638(404) 1639(404)
+→ 连续3个404，自动进位: 25.1.13.1639 → 25.1.14.0
+→ 递增探测 25.1.14.x → 再连续404 → 进位 25.1.15.0 ← 可跨小版本
 ```
-**进位规则**：
-- `25.1.13.1636` → `25.1.14.0`（倒数第二段+1，后面重置为0）
-- `4.1.15` → `4.2.0`
-- `9.5.37` → `9.6.0`
-**参数**：
-- `MAX_SKIP = 5`：最多跳过5个不存在版本
-- `MAX_CARRY = 2`：最多进位2次
+
+**进位规则**：`25.1.13.1636` → `25.1.14.0`（倒数第二段 +1，其后重置为 0）；
+`9.5.37` → `9.6.0`。
+
+**参数**：`MAX_INCREMENT = 30`（单轮递增上限）；`max_skip`（默认 3）；
+`max_carry`（默认 1）。位数更多、跨度更大的软件（如 Advanced Installer）配 `max_skip: 3, max_carry: 2`。
+
+#### 6.0 小版本「列车」并发扫描（`minor_scan`，版本按第 2 段跳变时用）
+
+**适用**：版本号按**第 2 段**递增、且第三段归 0、CDN 只保留最新几个包（典型：YY `9.59 -> 9.60`）。
+这类软件照上面的逐段递增**永远进不到位**——进位只动倒数第二段，够不着第 2 段。
+
+```python
+{
+    'detect_type': 'increment',
+    'base_version': '9.60.0.0',
+    'url_pattern': 'https://dl-limit.yystatic.com/4/setup/YYSetup-{ver}-zh-CN.exe',
+    'minor_scan': True,          # 开启列车扫描
+    'minor_scan_count': 6,       # 第2段向后扫 +1..+6
+    'minor_scan_builds': 4,      # 命中段内再扫构建号 0..4
+}
+```
+
+**两轮并发定位**：
+1. 把 `base` 和第 2 段 `+1..+N` 放**同一批并发**探测，取最大命中；
+2. 命中段内并发扫构建号 `0..B`，取最大命中。
+
+命中后**跳过第 1~3 层**逐段递增，省掉每次 0.2~0.3s 的节流 sleep。
+
+**优点**：不依赖 API，纯 URL 探测，可覆盖跨版本更新
+**缺点**：需要多次请求，版本号无规律时失效
+**适用**：雷电、迅雷、微信、搜狗、360浏览器等（YY 用 `minor_scan` 列车扫描）
 
 **url_ver_format（版本号URL格式转换）**：
 | 格式 | 示例 | 适用软件 |
@@ -204,9 +233,6 @@ GET https://api.github.com/repos/{owner}/{repo}/releases/latest
 | `major_minor` | 8.40.5000 → 8.40 | 部分软件 |
 | `acdsee_year` | 20.0.0.4660 → 2027-0-0-4660 | ACDSee（主版本+2007=年份） |
 | `adobe_build` | 2600221996 → 2026.002.21996 | Adobe Acrobat |
-**优点**：不依赖API，纯URL探测，可覆盖跨版本更新
-**缺点**：需要多次请求（5-20次），版本号无规律时失效
-**适用**：雷电、迅雷、微信、搜狗、YY、360浏览器等
 
 ### 6.1 Adobe build 号稀疏跳跃（adobe_build 专用）
 **问题**：Adobe 的 10 位 build 号（YYMM+序号）在小版本更新时会**跳过几十个序号**，
@@ -227,40 +253,21 @@ GET https://api.github.com/repos/{owner}/{repo}/releases/latest
 实测 20 并发扫描 700 个号约 23~32 秒，可接受。
 
 ### 7. increment + PE版本探测
-**原理**：increment检测到大版本后，从PE文件.rsrc段读取四段版本号
+**原理**：increment 检测到大版本后，用 Range 只下载 PE 头 + `.rsrc` 段读 FileVersion（约 200KB）。
+
 ```python
 {
     'detect_type': 'increment',
     'pe_version': True,
 }
 ```
-**探测流程**：
-1. 下载PE头(1KB) + section headers → 找.rsrc段偏移
-2. 下载.rsrc段 → UTF-16LE解码 → 找FileVersion字段
-**总下载量**：约200KB
-**适用**：安装包PE头版本与显示版本不同的软件（YY、360浏览器）
+**适用**：安装包 PE 头版本与显示版本一致、且比文件名更精确的软件（360浏览器）。
+> 微信、YY 等 PE 不可信或解析不出的软件**不要**配 `pe_version`：微信见第 23 节，
+> YY 的文件名即真实版本、改用列车扫描（见 6.0）。
 
 ### 8. increment + NSIS版本探测
-**原理**：increment检测到版本后，解析NSIS安装包内install.7z的版本号文件夹
-```python
-{
-    'detect_type': 'increment',
-    'nsis_version': True,
-    'version_authority': 'nsis',   # 声明 NSIS 为权威源，防降级拦截不得覆盖（见第38节「防版本降级拦截」）
-    # 注意：这一档不要加 pe_version。微信安装包 PE 的 FileVersion 是占位 build
-    # （4.1.15.1000），数值比真实版本大，会把防降级拦截误触发，页面永远显示占位值。
-}
-```
-**探测流程**：
-1. 下载PE头(1KB) → 获取overlay偏移
-2. 下载NSIS头部(3MB) → 搜索7z签名获取install.7z偏移
-3. 下载install.7z头部(32B) → 读取next_header_offset计算精确大小
-4. 下载install.7z头尾(32KB+128KB) → 构造文件用7z列出内容
-5. 提取第一个文件夹名称作为版本号
-**总下载量**：约3.2MB（vs 完整下载244MB，节省98.7%）
-**单软件耗时**：约 3～4 秒（微信实测整轮 3.2s）
-**7z工具**：项目内置 `tools/7zz`，不依赖系统安装
-**适用**：NSIS打包且install.7z内含版本号文件夹的软件（微信 4.1.15.50）
+**原理**：解析 NSIS 安装包内 `install.7z` 的版本号文件夹（微信真值来源）。
+详见第 23 节；要点：配 `nsis_version: True`，**不要**同时配 `pe_version`（微信 PE 是占位 build）。
 
 ### 9. scrape（网页抓取）
 **原理**：请求官方页面，用正则提取版本号、日期、下载链接
@@ -398,6 +405,7 @@ def calc_md5_streaming(url, max_size=500*1024*1024, timeout=300):
 | 优先级分层 | 一刀切全跑 | fast(15)/normal(48)/slow(21)/resource(8) 四层 | hourly 58s vs full 79s |
 | 单软件检测 | 不支持 | --only + --priority 参数 | 调试/分层调度 |
 | 变更即推 | 跑完等 cron 下一轮 | 每轮跑完立即 embed+push | 版本变更 1 分钟内推前端 |
+| YY跨版本探测 | 逐段递增（够不着第2段） | 列车扫描两轮并发（见6.0） | 59→60 可探测，1.4s → 0.5s |
 
 ---
 
@@ -457,47 +465,6 @@ def calc_md5_streaming(url, max_size=500*1024*1024, timeout=300):
 6. **腾讯软件中心 API**：尚未融合；winget 官方索引已融合（见第36节），Luminar/蓝奏云/GitHub API已实现
 
 ---
-
-**最后更新**: 2026.10.06
-**版本**: v2.2（双地址轮询 + 全量检测效率优化）
-
-## v2.1 更新（2026-09-15）
-
-### 新增探测方式
-
-#### 12. GitHub Releases API 探测（github_release）
-- **适用场景**：软件发布在GitHub Releases，多分卷ISO等
-- **配置**：`repo='owner/repo'`, `tag_filter='关键词'`, `version_regex='从tag提取版本号'`
-- **原理**：调用 `https://api.github.com/repos/{repo}/releases`，过滤tag，取最新release
-- **获取信息**：版本号（从tag提取）、发布日期（published_at转北京时间）、总大小（所有assets求和）、下载链接（发布页html_url）
-- **示例**：Windows 11 LTSC 2024 / Windows 10 LTSC 2021（adavak/win_iso_build）
-- **注意**：匿名API限流60次/小时，GitHub Actions环境有token不限流；失败时保留配置默认值
-
-#### 13. 页面抓取+动态URL构造（scrape + url_pattern）
-- **适用场景**：版本号从官网页面抓取，下载URL需根据版本号动态构造
-- **配置**：`detect_type='scrape'`, `check_url='官网下载页'`, `version_regex='抓取版本号'`, `url_pattern='URL模板'`, `url_ver_format='short'`
-- **原理**：先从页面抓取版本号，再用_url_ver()转换为URL格式，构造下载链接
-- **url_ver_format选项**：
-  - `full`：完整版本号（默认），如 8.40.5000
-  - `short`：前两段去掉点，如 8.40 -> 840
-  - `major_minor`：前两段带点，如 8.40
-- **示例**：AIDA64（页面抓8.40.5000 → URL aida64extreme840.zip）
-
-### 新增配置项
-
-| 配置项 | 适用模式 | 说明 |
-|--------|---------|------|
-| `url_ver_format` | increment/scrape | URL版本号格式转换（full/short/major_minor） |
-| `url_pattern` | scrape | 动态构造下载URL的模板 |
-| `skip_md5` | scrape/fixed | 跳过MD5计算（大文件或下载慢时） |
-| `size` | github_release | API失败时的默认大小（字节） |
-| `date` | github_release | API失败时的默认日期 |
-
-### 效率优化记录
-
-- AIDA64原用increment模式需探测8.41~8.45多个版本（超时），改用scrape+动态URL后单次请求完成
-- scrape模式MD5计算添加100MB限制，避免大文件下载超时
-- GitHub API失败时保留配置默认值，不覆盖为空
 
 ## 14. CyberLink PowerDirector 探测方式（detect_type = cyberlink）
 
@@ -822,33 +789,22 @@ def parse_lanzou_date(date_str):
 
 ---
 
-## 第20节：CyberLink 官方版本自动探测（cyberlink 模式）
+## 第20节：CyberLink 复测与零售通道（承接第14节）
 
-**适用场景**：PowerDirector（ProductId=4）等 CyberLink 产品，需要拿到「当前官方最新版本号」而不依赖硬编码令牌。
-
-**探测原理**（实现见 `detect_cyberlink` / `_cyberlink_extract_build`）：
-1. `GET /api/download/thank-you-page?ProductId={pid}&ostype=Windows` → JSON 的 `buildLink`
-2. 跟随 `buildLink`（`user-add.do`）的 302 → 官方下载器直链（令牌由官方实时下发，不会过期）
-3. 下载下载器（约 10MB），7z 解出 `$_1_/info.ini`，读 `DisplayBuildNumber` = 产品版本
-
-**已验证**：PowerDirector 365（返回 `25.0.0904.0`，与官方离线包一致）
+> 官方接口的自动探测流程（thank-you-page → buildLink → 解下载器读 DisplayBuildNumber）
+> 见第 14 节，不再重复。本节只记录复测结论与买断版零售通道。
 
 **2026-10-09 复测（试用通道滞后 → 防降级）**：
 - PD 试用下载器 `LJZVDVSX0QV1A/CyberLink_PowerDirector_Downloader.exe`（9.4MB）→
   `DisplayBuildNumber=25.0.0904.0`（SR_No=VDE260910-01）；离线包 `CGQC8ZH75VM6` 直链
   Last-Modified 仍为 2026-09-14 —— 官方渠道尚未铺开 1007
 - 最新构建 `25.0.1007.0` 为 Ultimate 零售版（本地包 info.ini：`SR_No=VDE261008-02`、
-  `Kernel=1007_25.0.10_365`，2026-10-08），nsane 帖已入 update_items；版本显示用
+  `Kernel=1007_25.0.10_365`，2026-10-08）；版本显示用
   `base_version='25.0.0904.0'` + `version_display='25.0.1007.0'` 兜底，官方铺开后自动对齐
 - PhD 试用下载器 `430LJXSN7DH2N0`（8.2MB）→ `DisplayBuildNumber=17.6.1826.0`、
   `SR_No=PTD260514-01`，再次确认 ≠ 产品版本 18.x，fixed 模式维持
-
-**关键技术点**：
-- 不要再去页面 JS 里正则抓 VID，令牌已改为服务端实时下发
-- 版本号格式：`25.0.0904.0`（4段式）
-- 只解下载器，不下 600–700MB 的完整离线包
-- 下载站（0daydown 等）会推送尚未在官方渠道铺开的构建（如 `25.0.1005.1`），
-  属于「Ultimate 2027」零售/破解版，官方接口暂取不到，不能当作官方最新版
+- 下载站（0daydown 等）会推送尚未铺开的构建（如 `25.0.1005.1`），
+  属零售/破解版，官方接口取不到，**不能**当作官方最新版
 
 ### 20.1 买断版（Ultimate / Ultra）零售通道：产品密钥兑换
 
@@ -931,14 +887,14 @@ def detect_discourse_release(category_url, version_regex):
 
 ---
 
-## 第22节：PE资源段读取版本号（YY/360/QQ音乐模式）
+## 第22节：PE资源段读取版本号（360/QQ音乐模式）
 
 **适用场景**：安装包文件名只有大版本号（如 `WeChatWin_4.1.15.exe` 这类只带大版本的命名），但安装后显示详细小版本号。
 
 > ⚠️ **不是所有软件都适用**：得先确认 PE 里的 FileVersion 就是产品真实版本。
-> 反例：微信安装包 PE 的 FileVersion 是占位 build `4.1.15.1000`，而真实版本是
-> install.7z 里的 `4.1.15.50`（来源不可比，数值还更大）。这类软件**不要**配 `pe_version`，
-> 改用 NSIS 探测 + `version_authority`（见第23节与第38节）。
+> 反例：微信安装包 PE 的 FileVersion 是占位 build `4.1.15.1000`（真值在 install.7z，见第23节）；
+> YY 安装包的 PE 解析不出 FileVersion，且文件名本身即真实版本（见 6.0 列车扫描）。
+> 这类软件**不要**配 `pe_version`。
 
 **探测原理**：
 1. 下载安装包（或用Range请求只下载PE头部分）
@@ -966,7 +922,7 @@ def read_pe_version(filepath_or_url, max_read=1024*1024):
     return file_version  # 如 "4.1.15.9"（仅当该值与产品真实版本一致时才可用）
 ```
 
-**已验证软件**：YY语音、360浏览器系列、QQ音乐（微信不适用，见下方说明）
+**已验证软件**：360浏览器系列、QQ音乐（微信、YY 不适用，见下方说明）
 
 **关键技术点**：
 - 只需下载PE文件前1MB（资源段通常在文件前部），用 `Range` 请求
@@ -1271,26 +1227,26 @@ def _get_by_jsonpath(data, path, default=None):
 3. **多源融合** → API探测失败自动降级到increment/scrape
 
 
-## 探测方式速查表（50款软件）
+## 探测方式速查表
 
-| 探测方式 | 软件数量 | 代表软件 |
-|----------|----------|----------|
-| increment + 多级进位 | 8 | 雷电、迅雷、微信、AIDA64、PDFelement |
-| fixed + 文件名提取 | 6 | IObit系列、Vuescan、WinCam、WinHex |
-| github_release | 9 | Edge、Chrome、Win LTSC、Notepad4、Open-Shell |
-| scrape | 7 | PicPick、微PE、Foobar2000、Xshell、Topaz系列 |
-| fixed（纯固定） | 5 | WPS、WinNTSetup、XYplorer、XMind |
-| lanzou（蓝奏云） | 1 | 闪豆下载器 |
-| cyberlink_vid | 2 | PowerDirector、PhotoDirector |
-| redirect | 1 | 搜狗输入法 |
-| 外部页面引用 | 1 | Adobe Flash Player |
-| luminar_api（XML API） | 1 | Luminar Neo |
-| lanzou（网盘API） | 1 | 闪豆下载器 |
-| github_release（API） | 8 | Edge/Chrome/开源工具 |
-| PE资源段 | 融合 | YY、360、QQ音乐 |
-| 7z内部（NSIS） | 融合 | 微信 |
+| 探测方式 | 代表软件 |
+|----------|----------|
+| increment + 多级进位 | 雷电、迅雷、Adobe Camera Raw、PDF-XChange |
+| increment + 列车扫描 | YY |
+| increment + NSIS 权威源 | 微信 |
+| increment + PE | 360浏览器 |
+| fixed + 文件名提取 | IObit系列、Vuescan、WinCam、WinHex |
+| fixed + PE | IObit Driver Booster、AnyDesk |
+| github_release | Edge、Win LTSC、Notepad4、Open-Shell、Operit、GKD |
+| scrape | PicPick、微PE、Foobar2000、Xshell、Topaz系列 |
+| fixed（纯固定） | WPS、WinNTSetup、XYplorer、XMind |
+| lanzou（蓝奏云网盘API） | 闪豆下载器 |
+| cyberlink | PowerDirector |
+| redirect | 搜狗输入法 |
+| 外部页面引用 | Adobe Flash Player |
+| luminar_api（XML API） | Luminar Neo |
 
-**更新日期**：2026-10-09（微信由 PE 改为 NSIS 权威源）
+**更新日期**：2026-10-10（YY 由逐段递增改为列车扫描；新增 Operit、GKD）
 
 
 ### 天翼云盘分享探测 (detect_189pan)
@@ -1337,10 +1293,6 @@ GET https://api.cloud.189.cn/open/share/getShareInfoByCode.action?shareCode={分
 - `listShareDir.action`需要date/signature签名，无法直接调用
 - 分享页面是SPA，内容由JS动态加载，无法直接爬取
 - 提取码验证API需要session，复杂且不必要
-
----
-
-### 蓝奏云反爬探测 (detect_lanzou)
 
 ---
 
@@ -1486,7 +1438,7 @@ if not match:
 | AnyDesk | fixed + pe_version | PE 资源（9.8.0） | CDN Last-Modified | 官网页面滞后勿用 |
 | EmEditor | increment + scrape | CDN 递增（26.2.9） | CDN Last-Modified | 博客滞后勿覆盖 |
 | PDF-XChange Editor | increment + scrape | CDN 递增（11.1.0.0） | 页面 Released（date_regex） | 383MB msi |
-| Google Chrome | chrome_api | update2 API | CDN Last-Modified | ap="x64-stable" 才返回64位，地址转 gvt1 CDN（见第39节） |
+| Google Chrome | chrome_api | update2 API | CDN Last-Modified | ap="x64-stable" 才返回64位，地址转 gvt1 CDN（见第39.1节） |
 | Microsoft Edge | edge_api | CDP API | CDN Last-Modified | Step2 空body POST |
 | Adobe Camera Raw | increment | CDN 递增 | CDN Last-Modified | {major}.x 目录，3处format传参 |
 | Sublime Text | scrape | 页面 Build XXXX | CDN Last-Modified | ${version} 模板页 |
@@ -1841,11 +1793,11 @@ nsane（nsaneforums.com，Invision Community 论坛）**主题正文要登录**�
 | 每轮都很慢 | 重复下载大文件 | 结果缓存 + 缓存文件纳入 git |
 | 版本号莫名变旧 | 解析偶发失败 | 防降级拦截（比大小） |
 | 某个软件把整轮拖死 | 单点超时 | 产品级超时 + 超时不重试 + 异常隔离 |
-| 官方 API 地址国内下载慢 | 单点域名跨境拥塞 | 换同内容 CDN 域名（Chrome → gvt1，见第39节） |
+| 官方 API 地址国内下载慢 | 单点域名跨境拥塞 | 换同内容 CDN 域名（Chrome → gvt1，见第39.1节） |
 
 ---
 
-## 第39节：官方 API 地址替换为 CDN 域名（Chrome, 2026-10-06）
+## 第39.1节：官方 API 地址替换为 CDN 域名（Chrome, 2026-10-06）
 
 ### 问题
 `detect_chrome_api` 从 Google Update API 拿到的 `codebase` 是 `https://dl.google.com/...`，
