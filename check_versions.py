@@ -131,16 +131,15 @@ PRODUCTS = [
         'icon': 'Y',
         'icon_color': 'linear-gradient(135deg, #00d4ff, #0099cc)',
         'category': '社交沟通',
-        # 探测方式：小版本「列车」并发扫描（9.59 -> 9.60，第三段重置为0），
-        # 再由末段递增补齐构建号。YY 的 CDN 只保留最新几个包，逐段递增永远进不到位。
+        # 探测方式：两轮并发「列车扫描」。YY 按第2段递增（9.59 -> 9.60，第三段归0），
+        # 且 CDN 只保留最新几个包；逐段递增进不到位且慢，这里一次并发直接定位。
+        # 安装包文件名即真实版本，无需再解析 PE（pe_version 对 YY 解析不出来，纯浪费）。
         'detect_type': 'increment',
         'base_version': '9.60.0.0',
-        'pe_version': True,
         'url_pattern': 'https://dl-limit.yystatic.com/4/setup/YYSetup-{ver}-zh-CN.exe',
-        'minor_scan': True,        # 并发扫描第2段 +1..+8，取最大命中
-        'minor_scan_count': 8,
-        'max_skip': 2,             # 构建号冗余很小，连续2个404即停
-        'max_carry': 0,            # 关闭逐段进位（第2段由 minor_scan 负责），避免无意义探测
+        'minor_scan': True,        # ① 小版本段 +1..+6；② 命中段内构建号 0..4
+        'minor_scan_count': 6,
+        'minor_scan_builds': 4,
         'param_format': '',
         'channel': '',
         'official_site': 'https://www.yy.com/web/pcyy_download/',
@@ -1833,7 +1832,8 @@ def detect_increment(product):
     """递增检测模式：多级进位探测
     第0层：小版本「列车」并发扫描（minor_scan=True 时）
            针对版本号按第2段递增、且 CDN 只保留最新包的软件（如 YY 9.59 -> 9.60）。
-           从 base 的小版本段并发探测 +1..+N，取最大命中作为新起点，一次并发即可定位。
+           两轮并发定位：① 小版本段（含 base）+1..+N 取最大命中；
+           ② 命中段内并发扫构建号 0..B 取最大命中。命中后跳过第1~3层，省掉节流 sleep。
     第1层：递增最后一段（build号），遇到不存在的版本跳过（最多5个）
     第2层：连续5个404后进位到上一段（如25.1.13.1636 -> 25.1.14.0），重置后段为0
     第3层：最多进位2次，确保能探测到跨小版本（25.1.15、25.2.0）
@@ -1905,51 +1905,71 @@ def detect_increment(product):
         except Exception as e:
             print(f"  ⚠️ 页面版本获取失败: {e}")
 
-    # 检测基础版本是否存在
-    url, exists, size, date = get_version_url(current)
-    if exists:
-        latest = current
-        latest_size = size
-        latest_date = date
-    else:
-        print(f"  ⚠️ 警告: 基础版本 {current} 不存在，可能已下架或网络异常")
-        # 如果scrape到了版本号但CDN HEAD失败，仍使用scrape版本
-        if scraped_ver:
-            latest = scraped_ver
-            latest_size = product.get('default_size_mb', 0) * 1024 * 1024
-            latest_date = ''
-            print(f"  ✓ 使用scrape版本作为fallback: {latest} ({latest_size/1024/1024:.1f}MB)")
+    # 检测基础版本是否存在（列车扫描会把 base 并入同一轮并发，故这些产品跳过单独 HEAD）
+    if not product.get('minor_scan'):
+        url, exists, size, date = get_version_url(current)
+        if exists:
+            latest = current
+            latest_size = size
+            latest_date = date
+        else:
+            print(f"  ⚠️ 警告: 基础版本 {current} 不存在，可能已下架或网络异常")
+            # 如果scrape到了版本号但CDN HEAD失败，仍使用scrape版本
+            if scraped_ver:
+                latest = scraped_ver
+                latest_size = product.get('default_size_mb', 0) * 1024 * 1024
+                latest_date = ''
+                print(f"  ✓ 使用scrape版本作为fallback: {latest} ({latest_size/1024/1024:.1f}MB)")
 
     # 小版本「列车」并发扫描：版本号按第2段递增、CDN 只留最新包时（如 YY 9.59 -> 9.60），
-    # 逐段递增永远进不到位；这里直接从 base 的小版本段并发 +1..+N，取最大命中作为新起点，
-    # 一次并发即可定位（N 个请求并行，墙钟≈1个请求），再由第1层补齐构建号。
+    # 逐段递增永远进不到位。这里两轮并发即可定位最新版：
+    #   ① 小版本段 base+1..base+N（build 归 0）取最大命中；
+    #   ② 在该小版本内并发扫构建号 0..B 取最大命中。
+    # 命中后跳过下面的逐段递增（含每次 0.2~0.3s 的节流 sleep），墙钟≈两次 RTT。
+    _train_done = False
     if product.get('minor_scan'):
         _scan_n = product.get('minor_scan_count', 8)
-        _scan_w = product.get('minor_scan_workers', _scan_n)
+        _scan_b = product.get('minor_scan_builds', 4)
+        _scan_w = product.get('minor_scan_workers', max(_scan_n, 8))
         _mi = product.get('minor_index', 1)
         _parts = current.split('.')
         if len(_parts) > _mi and _parts[_mi].isdigit():
             _base = int(_parts[_mi])
-            _cands = []
+
+            def _scan(cands):
+                with ThreadPoolExecutor(max_workers=_scan_w) as ex:
+                    res = list(ex.map(get_version_url, cands))
+                best = None
+                for v, (_u, ok, s, d) in zip(cands, res):
+                    if ok and (best is None or _ver_newer(v, best[0])):
+                        best = (v, s, d)
+                return best
+
+            _mcands = [current]  # 并入当前 base，省掉单独的 base HEAD
             for k in range(1, _scan_n + 1):
                 cp = _parts[:]
                 cp[_mi] = str(_base + k)
                 for i in range(_mi + 1, len(cp)):
                     cp[i] = '0'
-                _cands.append('.'.join(cp))
-            print(f"  小版本并发扫描: {_cands[0]} ~ {_cands[-1]} ({_scan_w}并发)")
-            _best = None
-            with ThreadPoolExecutor(max_workers=_scan_w) as ex:
-                _res = list(ex.map(get_version_url, _cands))
-            for _cv, (_cu, _cok, _cs, _cd) in zip(_cands, _res):
-                if _cok and (_best is None or _ver_newer(_cv, _best[0])):
-                    _best = (_cv, _cs, _cd)
-            if _best:
-                latest, latest_size, latest_date = _best
-                current = _best[0]
-                print(f"  ✓ 小版本扫描命中: {latest}")
+                _mcands.append('.'.join(cp))
+            print(f"  小版本并发扫描: {current} ~ {_mcands[-1]} ({_scan_w}并发)")
+            _best = _scan(_mcands)
+            _bp = (_best[0] if _best else current).split('.')
+            _bcands = []
+            for b in range(0, _scan_b + 1):
+                cp = _bp[:]
+                cp[-1] = str(b)
+                _bcands.append('.'.join(cp))
+            _bbest = _scan(_bcands)
+            _final = max([x for x in (_best, _bbest) if x],
+                         key=lambda t: _ver_tuple(t[0]), default=None)
+            if _final:
+                latest, latest_size, latest_date = _final
+                current = _final[0]
+                print(f"  ✓ 列车扫描命中: {latest}")
             else:
-                print(f"  ⏹ 小版本扫描无命中，保留 {latest}")
+                print(f"  ⏹ 列车扫描无命中，保留 {latest}")
+            _train_done = True
 
     # Adobe build 号稀疏跳跃：并发探测 base 之后的号段取最大命中版本
     if product.get('version_format') == 'adobe_build':
@@ -1991,10 +2011,11 @@ def detect_increment(product):
         else:
             print(f"  ⏹ Adobe 探测未发现新版本，保留 {latest}")
 
-    # 多级进位递增探测
+    # 多级进位递增探测（列车扫描已定位时跳过，省掉逐段探测与节流 sleep）
     carry_count = 0
     skip_count = 0
-    for _ in range(MAX_INCREMENT * (MAX_CARRY + 1)):
+    _loop_iters = 0 if _train_done else MAX_INCREMENT * (MAX_CARRY + 1)
+    for _ in range(_loop_iters):
         next_ver = increment_version(current)
         url, exists, size, date = get_version_url(next_ver)
         if exists:
