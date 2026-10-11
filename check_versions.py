@@ -1492,6 +1492,25 @@ PRODUCTS = [
         'download_url': 'https://github.com/AAswordman/Operit/releases',
         'official_site': 'https://github.com/AAswordman/Operit/releases',
     },
+    {
+        'name': 'GKD',
+        'name_cn': 'GKD 搞快点',
+        'icon': 'GKD',
+        'icon_color': 'linear-gradient(135deg, #10b981, #059669)',
+        'category': '安卓应用',
+        # 探测方式：GitHub Releases API 取最新正式版 tag（vX.Y.Z，跳过 beta），
+        # 直取 release 里 APK（gkd-x.y.z.apk）的直链，大小只算这个包
+        'detect_type': 'github_release',
+        'repo': 'gkd-kit/gkd',
+        'version_regex': r'v?(\d+\.\d+\.\d+)',
+        'use_asset_url': True,
+        'asset_filter': 'apk',
+        'version': '1.12.1',
+        'size': 3287479,
+        'date': '2026-05-20',
+        'download_url': 'https://github.com/gkd-kit/gkd/releases',
+        'official_site': 'https://github.com/gkd-kit/gkd/releases',
+    },
 ]
 
 MAX_INCREMENT = 30  # 最多递增检测30个版本
