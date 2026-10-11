@@ -131,10 +131,16 @@ PRODUCTS = [
         'icon': 'Y',
         'icon_color': 'linear-gradient(135deg, #00d4ff, #0099cc)',
         'category': '社交沟通',
+        # 探测方式：小版本「列车」并发扫描（9.59 -> 9.60，第三段重置为0），
+        # 再由末段递增补齐构建号。YY 的 CDN 只保留最新几个包，逐段递增永远进不到位。
         'detect_type': 'increment',
-        'base_version': '9.59.0.0',
+        'base_version': '9.60.0.0',
         'pe_version': True,
         'url_pattern': 'https://dl-limit.yystatic.com/4/setup/YYSetup-{ver}-zh-CN.exe',
+        'minor_scan': True,        # 并发扫描第2段 +1..+8，取最大命中
+        'minor_scan_count': 8,
+        'max_skip': 2,             # 构建号冗余很小，连续2个404即停
+        'max_carry': 0,            # 关闭逐段进位（第2段由 minor_scan 负责），避免无意义探测
         'param_format': '',
         'channel': '',
         'official_site': 'https://www.yy.com/web/pcyy_download/',
@@ -1825,6 +1831,9 @@ _VER_SOURCE = {}
 
 def detect_increment(product):
     """递增检测模式：多级进位探测
+    第0层：小版本「列车」并发扫描（minor_scan=True 时）
+           针对版本号按第2段递增、且 CDN 只保留最新包的软件（如 YY 9.59 -> 9.60）。
+           从 base 的小版本段并发探测 +1..+N，取最大命中作为新起点，一次并发即可定位。
     第1层：递增最后一段（build号），遇到不存在的版本跳过（最多5个）
     第2层：连续5个404后进位到上一段（如25.1.13.1636 -> 25.1.14.0），重置后段为0
     第3层：最多进位2次，确保能探测到跨小版本（25.1.15、25.2.0）
@@ -1910,6 +1919,37 @@ def detect_increment(product):
             latest_size = product.get('default_size_mb', 0) * 1024 * 1024
             latest_date = ''
             print(f"  ✓ 使用scrape版本作为fallback: {latest} ({latest_size/1024/1024:.1f}MB)")
+
+    # 小版本「列车」并发扫描：版本号按第2段递增、CDN 只留最新包时（如 YY 9.59 -> 9.60），
+    # 逐段递增永远进不到位；这里直接从 base 的小版本段并发 +1..+N，取最大命中作为新起点，
+    # 一次并发即可定位（N 个请求并行，墙钟≈1个请求），再由第1层补齐构建号。
+    if product.get('minor_scan'):
+        _scan_n = product.get('minor_scan_count', 8)
+        _scan_w = product.get('minor_scan_workers', _scan_n)
+        _mi = product.get('minor_index', 1)
+        _parts = current.split('.')
+        if len(_parts) > _mi and _parts[_mi].isdigit():
+            _base = int(_parts[_mi])
+            _cands = []
+            for k in range(1, _scan_n + 1):
+                cp = _parts[:]
+                cp[_mi] = str(_base + k)
+                for i in range(_mi + 1, len(cp)):
+                    cp[i] = '0'
+                _cands.append('.'.join(cp))
+            print(f"  小版本并发扫描: {_cands[0]} ~ {_cands[-1]} ({_scan_w}并发)")
+            _best = None
+            with ThreadPoolExecutor(max_workers=_scan_w) as ex:
+                _res = list(ex.map(get_version_url, _cands))
+            for _cv, (_cu, _cok, _cs, _cd) in zip(_cands, _res):
+                if _cok and (_best is None or _ver_newer(_cv, _best[0])):
+                    _best = (_cv, _cs, _cd)
+            if _best:
+                latest, latest_size, latest_date = _best
+                current = _best[0]
+                print(f"  ✓ 小版本扫描命中: {latest}")
+            else:
+                print(f"  ⏹ 小版本扫描无命中，保留 {latest}")
 
     # Adobe build 号稀疏跳跃：并发探测 base 之后的号段取最大命中版本
     if product.get('version_format') == 'adobe_build':

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-11T07:22:11.360710+00:00",
+  "updated_at": "2026-10-11T07:27:42.243909+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -86,12 +86,12 @@
       "icon": "Y",
       "icon_color": "linear-gradient(135deg, #00d4ff, #0099cc)",
       "category": "社交沟通",
-      "version": "9.59.0.1",
-      "download_url": "https://dl-limit.yystatic.com/4/setup/YYSetup-9.59.0.1-zh-CN.exe",
-      "download_url_with_params": "https://dl-limit.yystatic.com/4/setup/YYSetup-9.59.0.1-zh-CN.exe",
-      "size": 143196712,
+      "version": "9.60.0.0",
+      "download_url": "https://dl-limit.yystatic.com/4/setup/YYSetup-9.60.0.0-zh-CN.exe",
+      "download_url_with_params": "https://dl-limit.yystatic.com/4/setup/YYSetup-9.60.0.0-zh-CN.exe",
+      "size": 143206952,
       "size_mb": 136.6,
-      "last_modified": "2026-09-14",
+      "last_modified": "2026-10-10",
       "md5": "",
       "official_site": "https://www.yy.com/web/pcyy_download/",
       "update_items": []
