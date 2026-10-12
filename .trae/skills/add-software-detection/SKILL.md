@@ -20,6 +20,8 @@ description: "为 check_versions.py 新增软件时，按决策树选定最优 d
 3. **新增必验证**：`--only` 跑通且判据全过才允许入库，没跑通不提交。
 4. **只增目标条目**：不改无关产品配置，不手改 `data.json`（它由脚本生成，属输出物）。
 5. **大文件跳过 MD5**：包体 >100MB 配 `skip_md5: True`，别让 MD5 拖超时。
+6. **验证通过即同步前端（强制）**：判据全过就**立即**把改动推到 `main`（前端发布分支）并触发一轮 `detect.yml`，
+   让站点当轮生效——**不等下次整点/半点定时任务，也不再问「要不要推」**。步骤见「同步更新」。
 
 ## 决策树（先定型，再写配置）
 
@@ -87,7 +89,40 @@ description: "为 check_versions.py 新增软件时，按决策树选定最优 d
    `version` 先填已知现值做兜底；顶部加一行注释说明「为什么选这个方式」。
 4. **单点验证**：`python3 check_versions.py --only "<软件名>" --no-save`
 5. **核对判据**（见下），不合格回第 2 步换方式/调字段重试。
-6. **收尾**：临时验证条目验证后删除；正式新增的条目保留，是否提交按用户指令。
+6. **收尾 + 同步前端**：临时验证条目验证后删除；正式新增的条目保留，**判据全过立即按「同步更新」推 `main` 并触发 `detect.yml`**，不等定时任务、不再询问。
+
+## 同步更新（判据全过 → 立即执行，强制）
+
+判据全过后**一步不停**，按下面顺序把改动落到前端发布分支并当轮生效：
+
+```bash
+set -a; . /data/user/skills/gh-cf-tokens/tokens.env; set +a
+
+# 1) 拉远端，避免被 Action 的自动提交挡住
+git fetch origin main && git rebase origin/main
+
+# 2) 只提交本次相关文件（不 git add -A，避免误带临时产物）
+git add check_versions.py .trae/skills/add-software-detection/SKILL.md
+git commit -m "feat(detect): 新增 <软件名> <版本号>"
+
+# 3) 推 main（前端发布分支；推送即触发 Pages 重建）
+git push origin main
+
+# 4) 立即手动触发一轮检测，让站点当轮生效（不等整点/半点）
+#    新条目 detect_priority 含 slow 的用 full；否则用 hourly（含 fast+normal+resource）
+gh workflow run detect.yml --ref main -f mode=hourly   # 或 -f mode=full
+
+# 5) 确认跑起来并盯结果
+gh run list --limit 3
+gh run view <run-id> --log-failed   # 只在失败时看
+```
+
+要点：
+
+- **优先级对应模式**：`detect_priority` 为 `fast`/`normal`/`resource` 的用 `mode=hourly`；含 `slow` 的用 `mode=full`。
+- **推送即上线**：`main` 的推送本身就会触发 Pages 重建，手动跑 detect 是为了让**新条目当轮被检测/回填**，两件事都别省。
+- **不手改 `data.json`**：它由 detect.yml 里的 `embed_data.py` 生成；本地只改 `check_versions.py`。
+- 若 Action 已有提交导致 `git push` 被拒，重复第 1 步 `git fetch && git rebase` 再推，**不要强推**。
 
 ## 验证清单（判据全过才入库）
 
