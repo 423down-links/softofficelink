@@ -1538,6 +1538,28 @@ PRODUCTS = [
         'download_url': 'https://sourceforge.net/projects/crystaldiskinfo/files/latest/download',
         'official_site': 'https://crystalmark.info/en/software/crystaldiskinfo/',
     },
+    {
+        'name': 'FXSound',
+        'name_cn': 'FXSound',
+        'icon': 'FX',
+        'icon_color': 'linear-gradient(135deg, #8e2de2, #4a00e0)',
+        'category': '影音娱乐',
+        # 探测方式：官方下载页(github.com/fxsound2/fxsound-app/releases)直接托管 GitHub Releases。
+        # 稳定版 tag 固定为 'latest'（不含版本号），真实版本在 release name（"Version 1.2.16.0"），
+        # 所以 version_source='name' 从 name 提取；x64/ARM64 双资产用 asset_filter 只取 x64 的
+        # fxsound_setup.exe（子串不含 arm64 包），use_asset_url 返回该资产直链；beta 预发布自动跳过。
+        'detect_type': 'github_release',
+        'repo': 'fxsound2/fxsound-app',
+        'version_source': 'name',
+        'version_regex': r'v?(\d+\.\d+\.\d+\.\d+)',
+        'asset_filter': 'fxsound_setup.exe',
+        'use_asset_url': True,
+        'version': '1.2.16.0',
+        'size': 77988432,
+        'date': '2026-09-17',
+        'download_url': 'https://github.com/fxsound2/fxsound-app/releases/download/latest/fxsound_setup.exe',
+        'official_site': 'https://www.fxsound.com/',
+    },
 ]
 
 MAX_INCREMENT = 30  # 最多递增检测30个版本
