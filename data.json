@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T20:52:11.506443+00:00",
+  "updated_at": "2026-10-12T21:06:23.030057+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -183,8 +183,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "155.0.4283.45",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792443076&P2=404&P3=2&P4=Svxq%2b4%2bZ0rarJOnfrcbBYuIT1I7EvOjAw74zYqoZ4qvDu2ESP%2fpxBNsMYljdQV9t5UjRaTVU5E%2f8qSrG9G5UQg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792443076&P2=404&P3=2&P4=Svxq%2b4%2bZ0rarJOnfrcbBYuIT1I7EvOjAw74zYqoZ4qvDu2ESP%2fpxBNsMYljdQV9t5UjRaTVU5E%2f8qSrG9G5UQg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792443964&P2=404&P3=2&P4=cAWAB63PORxnBs7G8lhNa46tyTVFo%2bP4Td4GLgK8jLOJwkh2mVraXomPtME7VaJbHYry%2f09qNmDpdyH14xc78g%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792443964&P2=404&P3=2&P4=cAWAB63PORxnBs7G8lhNa46tyTVFo%2bP4Td4GLgK8jLOJwkh2mVraXomPtME7VaJbHYry%2f09qNmDpdyH14xc78g%3d%3d",
       "size": 207667024,
       "size_mb": 198.0,
       "last_modified": "2026-10-09",
@@ -294,12 +294,12 @@
       "icon": "G",
       "icon_color": "linear-gradient(135deg, #7b2ff7, #a855f7)",
       "category": "图像处理",
-      "version": "1.3.6",
-      "download_url": "https://downloads.topazlabs.com/deploy/TopazGigapixel/1.3.6/TopazGigapixel-1.3.6.msi",
-      "download_url_with_params": "https://downloads.topazlabs.com/deploy/TopazGigapixel/1.3.6/TopazGigapixel-1.3.6.msi",
-      "size": 432590848,
-      "size_mb": 412.6,
-      "last_modified": "2026-08-28",
+      "version": "1.4.0",
+      "download_url": "https://downloads.topazlabs.com/deploy/TopazGigapixel/1.4.0/TopazGigapixel-1.4.0.msi",
+      "download_url_with_params": "https://downloads.topazlabs.com/deploy/TopazGigapixel/1.4.0/TopazGigapixel-1.4.0.msi",
+      "size": 438001664,
+      "size_mb": 417.7,
+      "last_modified": "2026-10-13",
       "md5": "",
       "official_site": "https://community.topazlabs.com/c/topaz-gigapixel/topaz-gigapixel-releases/128",
       "update_items": []
