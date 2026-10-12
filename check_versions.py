@@ -1516,6 +1516,28 @@ PRODUCTS = [
         'download_url': 'https://github.com/gkd-kit/gkd/releases',
         'official_site': 'https://github.com/gkd-kit/gkd/releases',
     },
+    {
+        'name': 'CrystalDiskInfo',
+        'name_cn': 'CrystalDiskInfo',
+        'icon': 'CD',
+        'icon_color': 'linear-gradient(135deg, #2f80ed, #1c4fd6)',
+        'category': '系统工具',
+        # 探测方式1：官网 history 页抓版本号+发布日期（页面按版本倒序，首个标题即最新版）
+        # 探测方式2：winget 官方索引兜底（crystalmark.info 对部分数据中心 IP 反爬，winget 不依赖官网）
+        # 下载：SourceForge 目录含版本号（目录用点号 9.9.3、文件名用下划线 CrystalDiskInfo9_9_3.zip），
+        #       用 url_pattern 动态构造，{ver}=9.9.3、{ver_us}=9_9_3，随版本自动更新
+        'detect_type': 'scrape',
+        'check_url': 'https://crystalmark.info/en/software/crystaldiskinfo/crystaldiskinfo-history/',
+        'version_regex': r'(\d+\.\d+\.\d+)\s*\[\d{4}/\d{2}/\d{2}\]',
+        'date_regex': r'\d+\.\d+\.\d+\s*\[(\d{4}/\d{2}/\d{2})\]',
+        'winget_id': 'CrystalDewWorld.CrystalDiskInfo',
+        'prefer_scraped_version': True,
+        'url_pattern': 'https://sourceforge.net/projects/crystaldiskinfo/files/{ver}/CrystalDiskInfo{ver_us}.zip/download',
+        'version': '9.9.3',
+        'date': '2026-10-11',
+        'download_url': 'https://sourceforge.net/projects/crystaldiskinfo/files/latest/download',
+        'official_site': 'https://crystalmark.info/en/software/crystaldiskinfo/',
+    },
 ]
 
 MAX_INCREMENT = 30  # 最多递增检测30个版本
@@ -3939,8 +3961,10 @@ def detect_scrape(product):
 
     # 下载链接：优先使用抓取到的，其次用配置的
     # 如果配置了url_pattern，根据版本号动态构造URL（如AIDA64）
+    # {ver_us}：版本号点换下划线（如 9.9.3 -> 9_9_3），应对文件名用下划线、目录用点号的情况
     if product.get('url_pattern'):
-        url = product['url_pattern'].format(ver=_url_ver(version, product), ver_dot=version.replace('.', ''))
+        url = product['url_pattern'].format(ver=_url_ver(version, product), ver_dot=version.replace('.', ''),
+                                            ver_us=version.replace('.', '_'))
         print(f"  动态构造URL: {url}")
     else:
         url = scraped_download_url or product['download_url']
@@ -3972,7 +3996,8 @@ def detect_scrape(product):
                     parts[-1] = str(int(parts[-1]) - 1)
                     base_ver = '.'.join(parts)
                     if product.get('url_pattern'):
-                        fallback_url = product['url_pattern'].format(ver=_url_ver(base_ver, product), ver_dot=base_ver.replace('.', ''))
+                        fallback_url = product['url_pattern'].format(ver=_url_ver(base_ver, product), ver_dot=base_ver.replace('.', ''),
+                                                                     ver_us=base_ver.replace('.', '_'))
                     else:
                         break
                     f_exists, f_size, f_date = check_url_follow(fallback_url)
