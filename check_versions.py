@@ -1565,6 +1565,44 @@ PRODUCTS = [
         'download_url': 'https://github.com/fxsound2/fxsound-app/releases/download/latest/fxsound_setup.exe',
         'official_site': 'https://www.fxsound.com/',
     },
+    {
+        'name': 'Bandizip',
+        'name_cn': 'Bandizip Professional',
+        'icon': 'BZ',
+        'icon_color': 'linear-gradient(135deg, #2e9fe6, #1b6fbf)',
+        'category': '压缩解压',
+        # 探测方式：官方固定下载地址（URL 里无版本号，直出安装包）→ fixed。
+        # 版本号在版本历史页首行（<div class="cell1">v7.47</div>），用 page_version_url +
+        # regex 交叉校验：页面版本比二进制/配置更新时自动采用，免手改。安装包 <10MB，
+        # fixed 只 HEAD 取 size/日期，秒级完成。
+        'detect_type': 'fixed',
+        'version': '7.47',
+        'size': 7356400,
+        'date': '2026-10-13',
+        'download_url': 'https://bandisoft.app/bandizip/BANDIZIP-SETUP-STD-X64.EXE',
+        'page_version_url': 'https://www.bandisoft.com/bandizip/history/',
+        'page_version_regex': r'<div class="cell1">v([\d.]+)</div>',
+        'official_site': 'https://www.bandisoft.com/bandizip/history/',
+    },
+    {
+        'name': 'MPC-BE',
+        'name_cn': 'MPC-BE',
+        'icon': 'MB',
+        'icon_color': 'linear-gradient(135deg, #e74c3c, #c0392b)',
+        'category': '影音播放',
+        # 探测方式：官方 Releases 在 GitHub → github_release。tag 形如 '1.9.2'（无 v 前缀）。
+        # 单个 release 含 x64/x86 的 installer.zip 与 .7z 等多资产，用 asset_filter 只取
+        # x64-installer.zip（子串不含 x86 包），use_asset_url 返回该资产直链。
+        'detect_type': 'github_release',
+        'repo': 'Aleksoid1978/MPC-BE',
+        'version_regex': r'v?(\d+\.\d+\.\d+)',
+        'asset_filter': 'x64-installer.zip',
+        'use_asset_url': True,
+        'version': '1.9.2',
+        'date': '2026-10-13',
+        'download_url': 'https://github.com/Aleksoid1978/MPC-BE/releases/download/1.9.2/MPC-BE.1.9.2.x64-installer.zip',
+        'official_site': 'https://github.com/Aleksoid1978/MPC-BE/releases',
+    },
 ]
 
 MAX_INCREMENT = 30  # 最多递增检测30个版本

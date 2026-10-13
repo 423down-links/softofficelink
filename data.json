@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13T08:52:06.683626+00:00",
+  "updated_at": "2026-10-13T08:58:15.667540+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -1580,6 +1580,38 @@
       "last_modified": "2026-09-17",
       "md5": "",
       "official_site": "https://www.fxsound.com/",
+      "update_items": []
+    },
+    {
+      "name": "Bandizip",
+      "name_cn": "Bandizip Professional",
+      "icon": "BZ",
+      "icon_color": "linear-gradient(135deg, #2e9fe6, #1b6fbf)",
+      "category": "压缩解压",
+      "version": "7.47",
+      "download_url": "https://bandisoft.app/bandizip/BANDIZIP-SETUP-STD-X64.EXE",
+      "download_url_with_params": "https://bandisoft.app/bandizip/BANDIZIP-SETUP-STD-X64.EXE",
+      "size": 7356400,
+      "size_mb": 7.0,
+      "last_modified": "2026-10-13",
+      "md5": "",
+      "official_site": "https://www.bandisoft.com/bandizip/history/",
+      "update_items": []
+    },
+    {
+      "name": "MPC-BE",
+      "name_cn": "MPC-BE",
+      "icon": "MB",
+      "icon_color": "linear-gradient(135deg, #e74c3c, #c0392b)",
+      "category": "影音播放",
+      "version": "1.9.2",
+      "download_url": "https://github.com/Aleksoid1978/MPC-BE/releases/download/1.9.2/MPC-BE.1.9.2.x64-installer.zip",
+      "download_url_with_params": "https://github.com/Aleksoid1978/MPC-BE/releases/download/1.9.2/MPC-BE.1.9.2.x64-installer.zip",
+      "size": 19908437,
+      "size_mb": 19.0,
+      "last_modified": "2026-10-13",
+      "md5": "",
+      "official_site": "https://github.com/Aleksoid1978/MPC-BE/releases",
       "update_items": []
     }
   ]

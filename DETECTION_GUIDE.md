@@ -170,7 +170,7 @@ GET https://api.github.com/repos/{owner}/{repo}/releases/latest
     'download_url': 'https://www.wftpserver.com/download/WingFtpServer.exe',
 }
 ```
-**适用**：安装包被 CDN 长期缓存的软件（Wing FTP Server）
+**适用**：安装包被 CDN 长期缓存的软件（Wing FTP Server）；或固定 URL 里无版本号、版本只在官网页面上的软件（Bandizip，版本历史页首行 `<div class="cell1">v7.47</div>`）
 
 ### 6. increment + 多级进位探测（兜底主力）
 **原理**：从 base_version 递增版本号，连续 N 个 404 后自动进位到上一段。
@@ -1241,7 +1241,8 @@ def _get_by_jsonpath(data, path, default=None):
 | increment + PE | 360浏览器 |
 | fixed + 文件名提取 | IObit系列、Vuescan、WinCam、WinHex |
 | fixed + PE | IObit Driver Booster、AnyDesk |
-| github_release | Edge、Win LTSC、Notepad4、Open-Shell、Operit、GKD |
+| fixed + 官网页面版本 | Bandizip |
+| github_release | Edge、Win LTSC、Notepad4、Open-Shell、MPC-BE、Operit、GKD |
 | scrape | PicPick、微PE、Foobar2000、Xshell、Topaz系列 |
 | fixed（纯固定） | WPS、WinNTSetup、XYplorer、XMind |
 | lanzou（蓝奏云网盘API） | 闪豆下载器 |
@@ -1250,7 +1251,7 @@ def _get_by_jsonpath(data, path, default=None):
 | 外部页面引用 | Adobe Flash Player |
 | luminar_api（XML API） | Luminar Neo |
 
-**更新日期**：2026-10-10（YY 由逐段递增改为列车扫描；新增 Operit、GKD）
+**更新日期**：2026-10-13（新增 Bandizip、MPC-BE；Open-Shell 改用 exe 资产直链）
 
 
 ### 天翼云盘分享探测 (detect_189pan)
