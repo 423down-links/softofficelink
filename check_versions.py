@@ -538,13 +538,18 @@ PRODUCTS = [
         'icon': 'OS',
         'icon_color': 'linear-gradient(135deg, #0078d4, #00bcf2)',
         'category': '系统工具',
+        # 探测方式：GitHub Releases。release 内含多资产（安装包 OpenShellSetup_*.exe + 符号 7z +
+        # Utility.exe），默认会把三者大小相加且推发布页；改用 asset_filter 只取安装包 exe、
+        # use_asset_url 返回该 exe 直链。官方只发预发布（prerelease），故 include_prerelease=True。
         'detect_type': 'github_release',
         'repo': 'Open-Shell/Open-Shell-Menu',
         'version_regex': r'v?(\d+\.\d+\.\d+)',
         'include_prerelease': True,
-        'version': '4.4.201',
-        'date': '2026-09-15',
-        'download_url': 'https://github.com/Open-Shell/Open-Shell-Menu/releases',
+        'asset_filter': 'OpenShellSetup',
+        'use_asset_url': True,
+        'version': '4.4.202',
+        'date': '2026-10-13',
+        'download_url': 'https://github.com/Open-Shell/Open-Shell-Menu/releases/download/v4.4.202/OpenShellSetup_4_4_202.exe',
         'official_site': 'https://github.com/Open-Shell/Open-Shell-Menu/releases',
     },
     {
