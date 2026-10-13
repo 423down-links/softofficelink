@@ -1,0 +1,7 @@
+{
+  "server": "bash",
+  "args": ["/workspace/.trae/skills/ssh-site-maintain/mcp/bin/launch-f2b.sh"],
+  "calls": [
+    { "name": "f2b_status", "arguments": {} }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "server": "node",
+  "args": ["node_modules/@aiondadotcom/mcp-ssh/bin/mcp-ssh.js"],
+  "expectTools": ["listKnownHosts", "runRemoteCommand", "getHostInfo", "checkConnectivity", "uploadFile", "downloadFile", "runCommandBatch"],
+  "calls": [
+    { "name": "listKnownHosts", "arguments": {} },
+    { "name": "checkConnectivity", "arguments": { "hostAlias": "423down" } },
+    { "name": "runRemoteCommand", "arguments": { "hostAlias": "423down", "command": "hostname && whoami && uptime" } },
+    { "name": "getHostInfo", "arguments": { "hostAlias": "423down" } },
+    { "name": "uploadFile", "arguments": { "hostAlias": "423down", "localPath": "/tmp/mcp-e2e-src.txt", "remotePath": "/tmp/mcp-e2e-aion.txt" } },
+    { "name": "runRemoteCommand", "arguments": { "hostAlias": "423down", "command": "md5sum /tmp/mcp-e2e-aion.txt" } },
+    { "name": "downloadFile", "arguments": { "hostAlias": "423down", "remotePath": "/tmp/mcp-e2e-aion.txt", "localPath": "/tmp/mcp-e2e-down-aion.txt" } },
+    { "name": "runCommandBatch", "arguments": { "hostAlias": "423down", "commands": ["echo batch-1-ok", "hostname"] } }
+  ]
+}

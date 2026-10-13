@@ -1,0 +1,22 @@
+{
+  "server": "node",
+  "args": [
+    "node_modules/@fangjunjie/ssh-mcp-server/build/index.js",
+    "--host", "45.151.132.50", "--port", "22", "--username", "root",
+    "--privateKey", "/root/.ssh/id_ed25519",
+    "--proxy", "http://127.0.0.1:18080",
+    "--pty", "false",
+    "--allowed-local-paths", "/tmp",
+    "--allowed-remote-paths", "/tmp",
+    "--blacklist", "rm\\s+-rf\\s+/,mkfs,dd\\s+if=/dev/,shutdown,reboot"
+  ],
+  "expectTools": ["execute-command", "upload", "download", "list-servers"],
+  "calls": [
+    { "name": "list-servers", "arguments": {} },
+    { "name": "execute-command", "arguments": { "cmdString": "hostname && whoami && uptime" } },
+    { "name": "upload", "arguments": { "localPath": "/tmp/mcp-e2e-src.txt", "remotePath": "/tmp/mcp-e2e-up.txt" } },
+    { "name": "execute-command", "arguments": { "cmdString": "md5sum /tmp/mcp-e2e-up.txt" } },
+    { "name": "download", "arguments": { "remotePath": "/tmp/mcp-e2e-up.txt", "localPath": "/tmp/mcp-e2e-down.txt" } },
+    { "name": "execute-command", "arguments": { "cmdString": "shutdown now" }, "expectError": true }
+  ]
+}

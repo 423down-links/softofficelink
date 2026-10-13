@@ -1,0 +1,104 @@
+{
+  "server": "node",
+  "args": [
+    "node_modules/@lhtdeg/ssh-mcp-server/build/index.js",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "22022",
+    "--username",
+    "root",
+    "--privateKey",
+    "/root/.ssh/id_ed25519",
+    "--pty",
+    "false",
+    "--allowed-local-paths",
+    "/tmp",
+    "--allowed-remote-paths",
+    "/tmp,/www/wwwroot,/etc,/root"
+  ],
+  "expectTools": [
+    "execute-command",
+    "upload",
+    "download",
+    "execute-command-task",
+    "get-command-task-result",
+    "snapshot-remote-directory-task",
+    "get-snapshot-task-result"
+  ],
+  "calls": [
+    {
+      "name": "list-servers",
+      "arguments": {}
+    },
+    {
+      "name": "execute-command",
+      "arguments": {
+        "cmdString": "hostname && whoami && uptime"
+      }
+    },
+    {
+      "name": "upload",
+      "arguments": {
+        "localPath": "/tmp/mcp-e2e-src.txt",
+        "remotePath": "/tmp/mcp-e2e-lhtdeg.txt"
+      }
+    },
+    {
+      "name": "execute-command",
+      "arguments": {
+        "cmdString": "md5sum /tmp/mcp-e2e-lhtdeg.txt"
+      }
+    },
+    {
+      "name": "download",
+      "arguments": {
+        "remotePath": "/tmp/mcp-e2e-lhtdeg.txt",
+        "localPath": "/tmp/mcp-e2e-down-lhtdeg.txt"
+      }
+    },
+    {
+      "name": "execute-command-task",
+      "arguments": {
+        "cmdString": "sleep 2 && echo async-ok-423down"
+      },
+      "extract": {
+        "taskId": "(ssh-(?:task|snapshot)-[0-9]+-[0-9a-f]+)"
+      }
+    },
+    {
+      "name": "execute-command",
+      "arguments": {
+        "cmdString": "sleep 3"
+      }
+    },
+    {
+      "name": "get-command-task-result",
+      "arguments": {
+        "taskId": "{{taskId}}"
+      }
+    },
+    {
+      "name": "snapshot-remote-directory-task",
+      "arguments": {
+        "remotePath": "/www/wwwroot/www.423down.com/wp-content/mu-plugins",
+        "localPath": "/tmp/mcp-snapshot-test"
+      },
+      "extract": {
+        "snapId": "(ssh-(?:task|snapshot)-[0-9]+-[0-9a-f]+)"
+      }
+    },
+    {
+      "name": "execute-command",
+      "arguments": {
+        "cmdString": "sleep 8"
+      }
+    },
+    {
+      "name": "get-snapshot-task-result",
+      "arguments": {
+        "taskId": "{{snapId}}"
+      }
+    }
+  ]
+}

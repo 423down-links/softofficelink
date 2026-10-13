@@ -1,0 +1,14 @@
+{
+  "server": "node",
+  "args": ["node_modules/@lhtdeg/ssh-mcp-server/build/index.js", "--host", "127.0.0.1", "--port", "22022", "--username", "root", "--privateKey", "/root/.ssh/id_ed25519", "--pty", "false", "--allowed-local-paths", "/tmp", "--allowed-remote-paths", "/tmp"],
+  "expectTools": ["diagnose-ssh-connection", "list-servers", "add-ssh-connection", "set-active-ssh-connection", "save-ssh-connection"],
+  "calls": [
+    { "name": "diagnose-ssh-connection", "arguments": { "connectionName": "default" } },
+    { "name": "add-ssh-connection", "arguments": { "name": "test-dup", "host": "127.0.0.1", "port": 22022, "username": "root", "privateKey": "~/.ssh/id_ed25519", "setDefault": false } },
+    { "name": "list-servers", "arguments": {} },
+    { "name": "set-active-ssh-connection", "arguments": { "connectionName": "default" } },
+    { "name": "execute-command", "arguments": { "cmdString": "echo active-default-ok" } },
+    { "name": "diagnose-ssh-connection", "arguments": { "connectionName": "test-dup" } },
+    { "name": "save-ssh-connection", "arguments": { "connectionName": "test-dup", "configFilePath": "/tmp/mcp-save-test.json", "includeSensitive": false } }
+  ]
+}

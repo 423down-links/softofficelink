@@ -1,0 +1,14 @@
+{
+  "server": "node",
+  "args": ["mcp-fail2ban/server.mjs"],
+  "expectTools": ["f2b_status", "f2b_jail_status", "f2b_ban", "f2b_unban", "f2b_log_tail"],
+  "calls": [
+    { "name": "f2b_status", "arguments": {} },
+    { "name": "f2b_jail_status", "arguments": { "jail": "sshd" } },
+    { "name": "f2b_ban", "arguments": { "jail": "sshd", "ip": "192.0.2.123" } },
+    { "name": "f2b_jail_status", "arguments": { "jail": "sshd" } },
+    { "name": "f2b_unban", "arguments": { "ip": "192.0.2.123", "jail": "sshd" } },
+    { "name": "f2b_jail_status", "arguments": { "jail": "sshd" } },
+    { "name": "f2b_log_tail", "arguments": { "lines": 10, "grep": "192.0.2.123" } }
+  ]
+}

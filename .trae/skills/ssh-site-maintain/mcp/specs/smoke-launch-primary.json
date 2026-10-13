@@ -1,0 +1,7 @@
+{
+  "server": "bash",
+  "args": ["/workspace/.trae/skills/ssh-site-maintain/mcp/bin/launch-ssh-423down.sh"],
+  "calls": [
+    { "name": "execute-command", "arguments": { "cmdString": "echo launch-primary-ok && hostname" } }
+  ]
+}
