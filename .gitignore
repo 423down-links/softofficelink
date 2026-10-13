@@ -16,6 +16,8 @@ tools/7z.tar.xz
 !.trae/skills/**
 # 技能目录里的字节码缓存仍不入库（上面的 ! 会连它一起放行，这里再关掉）
 .trae/skills/**/__pycache__/
+# ssh-site-maintain 只留技能包（skillpack 私库，冷启动时恢复），仓库不跟踪
+.trae/skills/ssh-site-maintain/
 .vscode/
 .idea/
 
