@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13T18:52:03.559756+00:00",
+  "updated_at": "2026-10-13T19:06:48.222682+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -183,8 +183,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "155.0.4283.45",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792522269&P2=404&P3=2&P4=QRZr%2fSzx0KJrkBBr8OWiGqYnK25sZOh%2fIgsbpv5dh16deO%2b7AZIb4NwylKRUtMAOP0Iq2WiQCdZmBSIIISFsBQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792522269&P2=404&P3=2&P4=QRZr%2fSzx0KJrkBBr8OWiGqYnK25sZOh%2fIgsbpv5dh16deO%2b7AZIb4NwylKRUtMAOP0Iq2WiQCdZmBSIIISFsBQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792523173&P2=404&P3=2&P4=Wljc5CIc3tVwV9v9bAu9j6mQTBihOTHsou3SWMTPSjYFZHuipOcbCtLWPMRSZ9%2bQXM66U1%2fXsvmvhvD3oXAW6A%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792523173&P2=404&P3=2&P4=Wljc5CIc3tVwV9v9bAu9j6mQTBihOTHsou3SWMTPSjYFZHuipOcbCtLWPMRSZ9%2bQXM66U1%2fXsvmvhvD3oXAW6A%3d%3d",
       "size": 207667024,
       "size_mb": 198.0,
       "last_modified": "2026-10-09",
@@ -618,7 +618,7 @@
       "download_url_with_params": "https://www.lanzoui.com/b015c0ksh",
       "size": 94896128,
       "size_mb": 90.5,
-      "last_modified": "2026-09-15",
+      "last_modified": "2026-09-14",
       "md5": "",
       "official_site": "https://www.lanzoui.com/b015c0ksh",
       "update_items": []
@@ -1317,12 +1317,12 @@
       "icon": "BW",
       "icon_color": "linear-gradient(135deg, #9c27b0, #6a1b9a)",
       "category": "操作系统",
-      "version": "v2026.09.16",
-      "download_url": "",
-      "download_url_with_params": "",
+      "version": "v2026.9.27",
+      "download_url": "https://www.wycad.com/4740.html",
+      "download_url_with_params": "https://www.wycad.com/4740.html",
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-09-27",
+      "last_modified": "2026-10-05",
       "md5": "",
       "official_site": "https://www.wycad.com/windows",
       "update_items": []
