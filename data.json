@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13T14:22:29.383059+00:00",
+  "updated_at": "2026-10-13T14:52:18.923862+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -9,7 +9,7 @@
       "category": "模拟器",
       "version": "9.5.41",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.41.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.41.exe?v=1791901292768&n=ldinst_9.5.41_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.41.exe?v=1791903088566&n=ldinst_9.5.41_ld_407594_ld.exe",
       "size": 602897384,
       "size_mb": 575.0,
       "last_modified": "2026-10-12",
@@ -25,7 +25,7 @@
       "category": "模拟器",
       "version": "14.0.31",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.31.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.31.exe?v=1791901293292&n=ldinst_14.0.31_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.31.exe?v=1791903092782&n=ldinst_14.0.31_ld_412570_ld.exe",
       "size": 745055720,
       "size_mb": 710.5,
       "last_modified": "2026-10-13",
@@ -183,8 +183,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "155.0.4283.45",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792506081&P2=404&P3=2&P4=WqVpbxWgH276qZJwaAaR9M8GpEAQpguYEqEtP5HbBHK60v6q18mLPxUUa8GPV3z1yoU0juD7Xl1K7c4jDdvg%2fw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792506081&P2=404&P3=2&P4=WqVpbxWgH276qZJwaAaR9M8GpEAQpguYEqEtP5HbBHK60v6q18mLPxUUa8GPV3z1yoU0juD7Xl1K7c4jDdvg%2fw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792507873&P2=404&P3=2&P4=Kadifvdu0RUVs28Fektioy7UyprP8xSjpn8FMXtcocCP2MQYEea1WPgDgfdaA53exvihQGu2%2fLFS8IJx9gvxCw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792507873&P2=404&P3=2&P4=Kadifvdu0RUVs28Fektioy7UyprP8xSjpn8FMXtcocCP2MQYEea1WPgDgfdaA53exvihQGu2%2fLFS8IJx9gvxCw%3d%3d",
       "size": 207667024,
       "size_mb": 198.0,
       "last_modified": "2026-10-09",
@@ -1050,7 +1050,7 @@
       "download_url_with_params": "https://bits.avcdn.net/productfamily_CCLEANER7/insttype_FREE/platform_WIN/installertype_FULL/build_RELEASE",
       "size": 141678328,
       "size_mb": 135.1,
-      "last_modified": "",
+      "last_modified": "2026-09-29",
       "md5": "",
       "official_site": "https://www.ccleaner.com/zh-cn",
       "update_items": []
