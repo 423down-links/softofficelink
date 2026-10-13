@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13T09:22:04.736052+00:00",
+  "updated_at": "2026-10-13T09:49:50.930928+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -1624,6 +1624,22 @@
       "last_modified": "2026-10-13",
       "md5": "",
       "official_site": "https://github.com/Aleksoid1978/MPC-BE/releases",
+      "update_items": []
+    },
+    {
+      "name": "EdrawMax",
+      "name_cn": "Wondershare EdrawMax",
+      "icon": "EM",
+      "icon_color": "linear-gradient(135deg, #4a6cf7, #2b3fd6)",
+      "category": "办公软件",
+      "version": "16.0.2",
+      "download_url": "https://download.wondershare.com/cbs_down/edraw-max_64bit_16.0.2_full5371.exe",
+      "download_url_with_params": "https://download.wondershare.com/cbs_down/edraw-max_64bit_16.0.2_full5371.exe",
+      "size": 174526984,
+      "size_mb": 166.4,
+      "last_modified": "2026-10-13",
+      "md5": "",
+      "official_site": "https://www.edrawsoft.com/download-edrawmax.html",
       "update_items": []
     }
   ]

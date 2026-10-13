@@ -1603,6 +1603,28 @@ PRODUCTS = [
         'download_url': 'https://github.com/Aleksoid1978/MPC-BE/releases/download/1.9.2/MPC-BE.1.9.2.x64-installer.zip',
         'official_site': 'https://github.com/Aleksoid1978/MPC-BE/releases',
     },
+    {
+        'name': 'EdrawMax',
+        'name_cn': 'Wondershare EdrawMax',
+        'icon': 'EM',
+        'icon_color': 'linear-gradient(135deg, #4a6cf7, #2b3fd6)',
+        'category': '办公软件',
+        # 探测方式：官网固定名 edraw-max_64bit_{ver}_full5371.exe（5371 是发行通道号，恒定），
+        # 版本号就在文件名里 → increment，无需解析 PE。CDN 只保留最近若干版本且跳号稀疏
+        # （实测 15.1.6 / 15.2.9 / 16.0.2 存在，中间 15.2.x、16.0.0~16.0.1 均 404），
+        # 故放宽 max_skip/max_carry，让跨小版本也能摸到；包体 166MB>100MB，跳过 MD5。
+        'detect_type': 'increment',
+        'base_version': '16.0.2',
+        'url_pattern': 'https://download.wondershare.com/cbs_down/edraw-max_64bit_{ver}_full5371.exe',
+        'max_skip': 6,
+        'max_carry': 2,
+        'skip_md5': True,
+        'version': '16.0.2',
+        'size': 174526984,
+        'date': '2026-10-13',
+        'download_url': 'https://download.wondershare.com/cbs_down/edraw-max_64bit_16.0.2_full5371.exe',
+        'official_site': 'https://www.edrawsoft.com/download-edrawmax.html',
+    },
 ]
 
 MAX_INCREMENT = 30  # 最多递增检测30个版本

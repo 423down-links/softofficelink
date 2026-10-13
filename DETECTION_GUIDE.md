@@ -1,6 +1,6 @@
 # 软件版本探测方式指南
 
-> 最后更新：2026-10-13 ｜ 覆盖 99 款软件 ｜ 代表软件以当前 `data.json` 为准
+> 最后更新：2026-10-13 ｜ 覆盖 100 款软件 ｜ 代表软件以当前 `data.json` 为准
 >
 > **新增软件别翻这篇：先跑 `python3 .trae/skills/add-software-detection/probe.py <URL>`，它直接吐定型配置；本文只作原理参考。**
 
@@ -1253,7 +1253,7 @@ def _get_by_jsonpath(data, path, default=None):
 | 外部页面引用 | Adobe Flash Player |
 | luminar_api（XML API） | Luminar Neo |
 
-**更新日期**：2026-10-13（新增 Bandizip、MPC-BE；Open-Shell 改用 exe 资产直链）
+**更新日期**：2026-10-13（新增 Bandizip、MPC-BE、Wondershare EdrawMax；Open-Shell 改用 exe 资产直链）
 
 
 ### 天翼云盘分享探测 (detect_189pan)
