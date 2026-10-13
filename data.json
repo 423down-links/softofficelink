@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13T02:22:12.298808+00:00",
+  "updated_at": "2026-10-13T02:26:06.857231+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -534,10 +534,10 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "系统工具",
       "version": "4.4.202",
-      "download_url": "https://github.com/Open-Shell/Open-Shell-Menu/releases/tag/v4.4.202",
-      "download_url_with_params": "https://github.com/Open-Shell/Open-Shell-Menu/releases/tag/v4.4.202",
-      "size": 40059682,
-      "size_mb": 38.2,
+      "download_url": "https://github.com/Open-Shell/Open-Shell-Menu/releases/download/v4.4.202/OpenShellSetup_4_4_202.exe",
+      "download_url_with_params": "https://github.com/Open-Shell/Open-Shell-Menu/releases/download/v4.4.202/OpenShellSetup_4_4_202.exe",
+      "size": 10126680,
+      "size_mb": 9.7,
       "last_modified": "2026-10-13",
       "md5": "",
       "official_site": "https://github.com/Open-Shell/Open-Shell-Menu/releases",
