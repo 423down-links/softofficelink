@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14T09:52:01.686392+00:00",
+  "updated_at": "2026-10-14T10:06:17.674002+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -183,8 +183,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "155.0.4283.45",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792576261&P2=404&P3=2&P4=C1m7HBIEB78XJwp%2bYMdblrj2fSJx4kRZczHzOh8kv7bVQvnJIYk6XledmQnscwfijnc2nQLJ4urOp7QTdKS2Xw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792576261&P2=404&P3=2&P4=C1m7HBIEB78XJwp%2bYMdblrj2fSJx4kRZczHzOh8kv7bVQvnJIYk6XledmQnscwfijnc2nQLJ4urOp7QTdKS2Xw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792577155&P2=404&P3=2&P4=LkrQl9RLCAQJ1ZpuIHw6U4V2%2bFINAaX%2fUDyhvCGeeqbNteL2VVeVCMJXCrg2NU%2bO2OjTZg8iCYSI4pPb1aMqWg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792577155&P2=404&P3=2&P4=LkrQl9RLCAQJ1ZpuIHw6U4V2%2bFINAaX%2fUDyhvCGeeqbNteL2VVeVCMJXCrg2NU%2bO2OjTZg8iCYSI4pPb1aMqWg%3d%3d",
       "size": 207667024,
       "size_mb": 198.0,
       "last_modified": "2026-10-09",
@@ -714,7 +714,7 @@
       "download_url_with_params": "https://files.hamrick.com/vuex6498.exe",
       "size": 86005880,
       "size_mb": 82.0,
-      "last_modified": "2026-10-07",
+      "last_modified": "2026-09-26",
       "md5": "222303130c6d17431bbebcbf21f4cf8a",
       "official_site": "https://www.hamrick.com/",
       "update_items": []
