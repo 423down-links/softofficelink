@@ -579,15 +579,25 @@ PRODUCTS = [
         'icon': 'PhD',
         'icon_color': 'linear-gradient(135deg, #8e44ad, #3498db)',
         'category': '图像处理',
-        # 官方试用下载器 info.ini 的 DisplayBuildNumber 是安装框架版本（2026-10-09 复测：
-        # 17.6.1826.0，SR_No=PTD260514-01），≠ 产品版本 18.x，无法当版本源 → 保持 fixed。
-        # fixed 模式仍会 HEAD 刷新 size/date：官方替换新包时大小/日期会先动起来，
-        # 版本号/md5 等拿到新包实测值后手动更新（或配 CYBERLINK_RETAIL_KEY 走兑换通道）。
-        'detect_type': 'fixed',
-        'version': '18.0.8.0908.0',
+        # 官方试用下载器 info.ini 的 DisplayBuildNumber 是安装框架版本（复测 17.6.1826.0），
+        # ≠ 产品版本 18.x；零售兑换通道无可用密钥；官方 365 离线包（DirectorSuite365.exe）
+        # 更新滞后（实测仍为 0908 构建，官方 whats-new 也只到 9 月）→ 都不适合当版本源。
+        # 改用 423down 搜索页两步抓取：搜索结果第一条即最新文章，标题直接给真实产品版本
+        # （PhotoDirector v18.0.x.xxxx，与安装包主版本一致：实测 18.0.1011.0 = MajorVersion 18 /
+        # BuildNo 1011），文章 meta-info 给发布日。423down 精修版更新快于官方离线包，故以它为准。
+        'detect_type': 'scrape',
+        'check_url': 'https://www.423down.com/?s=%E7%9B%B8%E7%89%87%E5%A4%A7%E5%B8%88',
+        'detail_url_regex': r'(https://www\.423down\.com/\d+\.html)',
+        'detail_url_index': 0,
+        'version_regex': r'PhotoDirector\s+v(\d+\.\d+\.\d+\.\d+)',
+        'date_regex': r'meta-info">\s*(\d{4}-\d{2}-\d{2})',
+        'prefer_scraped_version': True,
+        'skip_md5': True,
+        'base_version': '18.0.1011.0',
+        'version_display': '18.0.1011.0',
+        'version': '18.0.1011.0',
         'size': 639 * 1024 * 1024,
-        'date': '2026-09-08',
-        'md5': '02769dcdca897ea1574c2de844c4d76e',
+        'date': '2026-10-14',
         'download_url': 'https://build.cyberlink.com/Retail/PhotoDirector/Y2QIW32JB74CH/PhotoDirector_DirectorSuite365.exe',
         'official_site': 'https://www.cyberlink.com/products/photodirector/features_en_US.html',
     },
