@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14T03:51:59.035393+00:00",
+  "updated_at": "2026-10-14T04:06:37.110480+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -183,8 +183,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "155.0.4283.45",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792554658&P2=404&P3=2&P4=j2nIsiaMb5B8gQAJh%2bFPr4WhXzT%2f9Gw54VLhk3wWaucuAHJVQklWmYl3poQ5Y8aVwtdql2h%2fYcMASWPnenNYdQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792554658&P2=404&P3=2&P4=j2nIsiaMb5B8gQAJh%2bFPr4WhXzT%2f9Gw54VLhk3wWaucuAHJVQklWmYl3poQ5Y8aVwtdql2h%2fYcMASWPnenNYdQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792555563&P2=404&P3=2&P4=Sppwvzbe3GfoApPLNQdPTEAJW%2bVjNDUOhwo%2fGoGWVP3ULh%2biSeADu6ysdo4Dsus6VTt0R62Bj9QwSBo3Tco0Dw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/db6b5616-d868-437c-8ebe-096082316a2f?P1=1792555563&P2=404&P3=2&P4=Sppwvzbe3GfoApPLNQdPTEAJW%2bVjNDUOhwo%2fGoGWVP3ULh%2biSeADu6ysdo4Dsus6VTt0R62Bj9QwSBo3Tco0Dw%3d%3d",
       "size": 207667024,
       "size_mb": 198.0,
       "last_modified": "2026-10-09",
@@ -1125,12 +1125,12 @@
       "icon": "79",
       "icon_color": "linear-gradient(135deg, #e74c3c, #c0392b)",
       "category": "便携软件",
-      "version": "2026.09.19",
+      "version": "2026.10.14",
       "download_url": "https://disk.yandex.ru/d/D8xbOSd7XAUbug",
       "download_url_with_params": "https://disk.yandex.ru/d/D8xbOSd7XAUbug",
       "size": 0,
       "size_mb": 0,
-      "last_modified": "",
+      "last_modified": "2026-10-14",
       "md5": "",
       "official_site": "https://disk.yandex.ru/d/D8xbOSd7XAUbug",
       "update_items": []
