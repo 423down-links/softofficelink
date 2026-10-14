@@ -297,6 +297,88 @@
     font-size: 0.72rem;
     color: var(--text-muted);
   }
+  /* 顶部搜索框 */
+  .search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .search-input {
+    width: min(360px, 100%);
+    padding: 7px 12px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color .15s, box-shadow .15s;
+  }
+  .search-input::placeholder { color: var(--text-dim); }
+  .search-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(88,166,255,.15);
+  }
+  .search-count {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    white-space: nowrap;
+  }
+  .section-title {
+    font-size: 0.82rem;
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: .3px;
+    margin: 10px 0 6px;
+  }
+  .no-result {
+    text-align: center;
+    color: var(--text-muted);
+    padding: 24px 12px;
+    font-size: 0.82rem;
+  }
+  /* 更早更新折叠组 */
+  .older-group {
+    margin-top: 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--bg-surface);
+    overflow: hidden;
+  }
+  .older-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 9px 12px;
+    cursor: pointer;
+    list-style: none;
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+    font-weight: 600;
+    user-select: none;
+  }
+  .older-group summary::-webkit-details-marker { display: none; }
+  .older-group summary:hover { background: var(--bg-hover); }
+  .older-group summary::after {
+    content: '▸';
+    color: var(--text-muted);
+    transition: transform .15s;
+  }
+  .older-group[open] summary::after { transform: rotate(90deg); }
+  .older-group .older-hint {
+    color: var(--text-dim);
+    font-size: .72rem;
+    font-weight: 400;
+    margin-left: auto;
+  }
+  .older-group table {
+    border: none;
+    border-radius: 0;
+    border-top: 1px solid var(--border);
+  }
   /* 移动端卡片式布局 */
   @media (max-width: 768px) {
     .container { padding: 8px 6px; }
@@ -347,6 +429,10 @@
 <div class="container">
   <header>
     <p class="subtitle">Soft Official Package Version Check Links</p>
+    <div class="search-bar">
+      <input type="search" id="searchInput" class="search-input" placeholder="搜索软件名（中/英文）..." autocomplete="off" spellcheck="false">
+      <span id="searchCount" class="search-count"></span>
+    </div>
   </header>
 
   <div id="content">
@@ -434,6 +520,36 @@ function isToday(dateStr) {
   return false;
 }
 
+// —— 日期解析与「近 N 天」判定（北京时间）——
+function parseDateParts(dateStr) {
+  if (!dateStr) return null;
+  let m = dateStr.match(/(\d{4})[-/.](\d{1,2})[-/.](\d{1,2})/);
+  if (m) return { y: parseInt(m[1]), m: parseInt(m[2]), d: parseInt(m[3]) };
+  const m2 = dateStr.match(/([A-Za-z]+)\s+(\d{1,2}),?\s*(20\d{2})/);
+  if (m2) {
+    const months = {jan:1,feb:2,mar:3,apr:4,may:5,jun:6,jul:7,aug:8,sep:9,oct:10,nov:11,dec:12};
+    return { y: parseInt(m2[3]), m: months[m2[1].toLowerCase().slice(0,3)] || 1, d: parseInt(m2[2]) };
+  }
+  return null;
+}
+function beijingTodayParts() {
+  const beijingOffset = 8 * 60 * 60 * 1000;
+  const bj = new Date(Date.now() + beijingOffset);
+  return { y: bj.getUTCFullYear(), m: bj.getUTCMonth() + 1, d: bj.getUTCDate() };
+}
+function daysSince(dateStr) {
+  const parts = parseDateParts(dateStr);
+  if (!parts) return Infinity;
+  const today = beijingTodayParts();
+  const t = Date.UTC(today.y, today.m - 1, today.d);
+  const d = Date.UTC(parts.y, parts.m - 1, parts.d);
+  return Math.round((t - d) / 86400000);
+}
+const RECENT_DAYS = 3;
+function isRecent(dateStr) {
+  return daysSince(dateStr) < RECENT_DAYS;
+}
+
 const COPY_ICON = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="9" rx="1.5"/><path d="M10.5 3.5v-1a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h1"/></svg>';
 const CHECK_ICON = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.5 3.5L13 5"/></svg>';
 
@@ -501,21 +617,8 @@ document.addEventListener('click', async e => {
   }, 1500);
 });
 
-function render() {
-  const content = document.getElementById('content');
-  let html = '';
-
-  // 排序优先级：① 今日更新 → ② last_modified 降序
-  const sorted = [...data.products].sort((a, b) => {
-    const aToday = isToday(a.last_modified) ? 1 : 0;
-    const bToday = isToday(b.last_modified) ? 1 : 0;
-    if (aToday !== bToday) return bToday - aToday;
-    const da = a.last_modified ? new Date(a.last_modified).getTime() : 0;
-    const db = b.last_modified ? new Date(b.last_modified).getTime() : 0;
-    return db - da;
-  });
-
-  html += '<table><colgroup>'
+function renderTable(products) {
+  let html = '<table><colgroup>'
     + '<col style="width:22%"><col style="width:26%"><col style="width:8%">'
     + '<col style="width:10%"><col style="width:34%">'
     + '</colgroup><thead><tr>';
@@ -526,7 +629,7 @@ function render() {
   html += '<th class="col-download">下载</th>';
   html += '</tr></thead><tbody>';
 
-  sorted.forEach(p => {
+  products.forEach(p => {
     const dateStr = formatDate(p.last_modified);
     const dlUrl = p.download_url_with_params || p.download_url;
     // 去掉协议前缀和结尾斜杠，保留路径（replace('/','') 只会删第一个斜杠，
@@ -568,8 +671,52 @@ function render() {
   });
 
   html += '</tbody></table>';
+  return html;
+}
 
-  content.innerHTML = html;
+function sortProducts(arr) {
+  // 排序优先级：① 今日更新 → ② last_modified 降序
+  return [...arr].sort((a, b) => {
+    const aToday = isToday(a.last_modified) ? 1 : 0;
+    const bToday = isToday(b.last_modified) ? 1 : 0;
+    if (aToday !== bToday) return bToday - aToday;
+    const da = a.last_modified ? new Date(a.last_modified).getTime() : 0;
+    const db = b.last_modified ? new Date(b.last_modified).getTime() : 0;
+    return db - da;
+  });
+}
+
+function render() {
+  const content = document.getElementById('content');
+  const countEl = document.getElementById('searchCount');
+  const kw = (document.getElementById('searchInput').value || '').trim().toLowerCase();
+
+  if (kw) {
+    // 搜索模式：匹配全部软件（中/英文名），不按时间折叠
+    const matched = sortProducts(data.products).filter(p =>
+      (p.name_cn || '').toLowerCase().includes(kw) ||
+      (p.name || '').toLowerCase().includes(kw)
+    );
+    countEl.textContent = matched.length ? '命中 ' + matched.length + ' 款' : '无匹配';
+    content.innerHTML = matched.length
+      ? renderTable(matched)
+      : '<div class="no-result">未找到包含「' + escapeHtml(kw) + '」的软件</div>';
+  } else {
+    countEl.textContent = '';
+    const recent = sortProducts(data.products.filter(p => isRecent(p.last_modified)));
+    const older = sortProducts(data.products.filter(p => !isRecent(p.last_modified)));
+    let html = '';
+    html += '<div class="section-title">近 ' + RECENT_DAYS + ' 天更新（' + recent.length + ' 款）</div>';
+    html += recent.length ? renderTable(recent) : '<div class="no-result">暂无近 ' + RECENT_DAYS + ' 天更新</div>';
+    if (older.length) {
+      html += '<details class="older-group">'
+        + '<summary><span>更早更新（' + older.length + ' 款）</span><span class="older-hint">点击展开</span></summary>'
+        + renderTable(older)
+        + '</details>';
+    }
+    content.innerHTML = html;
+  }
+
   document.getElementById('lastUpdated').textContent = new Date(data.updated_at).toLocaleString('zh-CN');
 }
 
@@ -582,6 +729,8 @@ async function loadData() {
   } catch (e) {}
   render();
 }
+
+document.getElementById('searchInput').addEventListener('input', render);
 
 loadData();
 </script>
