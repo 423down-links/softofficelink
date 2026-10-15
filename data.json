@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T11:06:14.650644+00:00",
+  "updated_at": "2026-10-15T11:19:34.346857+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -365,7 +365,8 @@
       "last_modified": "2026-10-09",
       "md5": "",
       "official_site": "https://learn.microsoft.com/zh-cn/cpp/windows/latest-supported-vc-redist?view=msvc-170",
-      "update_items": []
+      "update_items": [],
+      "alias": "VC VC++ vcredist"
     },
     {
       "name": "VC Runtimes 整合版",

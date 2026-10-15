@@ -353,6 +353,8 @@ PRODUCTS = [
     {
         'name': 'Microsoft Visual C++ Redistributable',
         'name_cn': 'Microsoft Visual C++ 运行库',
+        # 搜索别名：官方名里没有"VC"字样，用户搜 VC/VC++ 时靠别名命中
+        'alias': 'VC VC++ vcredist',
         'icon': 'VC',
         'icon_color': 'linear-gradient(135deg, #a34aa2, #5c2d91)',
         'category': '运行环境',
@@ -4974,6 +4976,7 @@ def find_latest(product):
     return {
         'name': product['name'],
         'name_cn': product['name_cn'],
+        'alias': product.get('alias', ''),
         'icon': product.get('icon', ''),
         'icon_color': product.get('icon_color', ''),
         'category': product.get('category', '其他'),

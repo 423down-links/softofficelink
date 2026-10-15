@@ -95,6 +95,14 @@ gh run list --limit 3                                    # 403/无 workflow 权�
 - push 被拒就重跑 `git fetch && git rebase`，**不要强推**。
 - 远端历史被重写过时，别硬 rebase 老分支：`git reset origin/main` 对齐后再重放本次改动。
 
+## 仓库与部署事实（死记，别猜别探）
+
+- 仓库：`423down-links/softofficelink`（main 分支）。**私有仓，从未公开过**，别建议转公开/改 Pages 设置。
+- 部署方式：**push 到 main 即自动重建 Cloudflare Pages（线上地址 https://softofficelink.pages.dev/）**，无任何手动步骤；本地预览用 `python3 -m http.server` + OpenPreview。
+- **⚠️ `check_versions.py --only` 不带 `--no-save` 会把 data.json 整个覆盖成单产品结构（实测翻车）**：要回填单产品数据，先 `cp data.json /tmp/备份`，跑完校验产品数=103 才继续；否则用 `--no-save` + 手动改。
+- **本任务与 SSH 服务器（423down.com）完全无关**：这个页面不在服务器上，禁止为此连 SSH、禁止查服务器目录。
+- data.json 是脚本产物且被 Actions 定时自动提交：**动手前必须 `git fetch origin main`，以远端为基准改**，本地旧快照直接提交会把它人的检测增量顶回旧值（2026-10-15 实际翻车：14 款版本/日期被回滚）。
+
 ## 常见坑（现象 → 根因 → 解法）
 
 | 现象 | 根因 | 解法 |
