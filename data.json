@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T10:52:03.739178+00:00",
+  "updated_at": "2026-10-15T10:55:32.058603+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -334,6 +334,70 @@
       "last_modified": "2026-09-08",
       "md5": "",
       "official_site": "https://flash-player-links.pages.dev/",
+      "update_items": []
+    },
+    {
+      "name": "Microsoft Visual C++ Redistributable",
+      "name_cn": "Microsoft Visual C++ 运行库",
+      "icon": "VC",
+      "icon_color": "linear-gradient(135deg, #a34aa2, #5c2d91)",
+      "category": "运行环境",
+      "version": "14.52.37025.0",
+      "download_url": "https://download.visualstudio.microsoft.com/download/pr/98bcc84f-0a9c-417c-a681-d88411dbb90f/7ACA0477C32519E54D888102ECF02495C8C05F83D61858A73BF75958DDC29835/VC_redist.x64.exe",
+      "download_url_with_params": "https://download.visualstudio.microsoft.com/download/pr/98bcc84f-0a9c-417c-a681-d88411dbb90f/7ACA0477C32519E54D888102ECF02495C8C05F83D61858A73BF75958DDC29835/VC_redist.x64.exe",
+      "downloads": [
+        {
+          "name": "x64",
+          "url": "https://download.visualstudio.microsoft.com/download/pr/98bcc84f-0a9c-417c-a681-d88411dbb90f/7ACA0477C32519E54D888102ECF02495C8C05F83D61858A73BF75958DDC29835/VC_redist.x64.exe"
+        },
+        {
+          "name": "x86",
+          "url": "https://download.visualstudio.microsoft.com/download/pr/9b86116f-5f77-4f8f-8eba-bcea3cbdddc6/067B997E8E2D444EDA6F5ADCE816FCAB23154192C4C04F8EEBB24B01A757F4BF/VC_redist.x86.exe"
+        },
+        {
+          "name": "arm64",
+          "url": "https://download.visualstudio.microsoft.com/download/pr/98bcc84f-0a9c-417c-a681-d88411dbb90f/D7396DB95BE3A5F0BC93E02BD915C856081DD5FED9F231A7065F26C57F60ADAC/VC_redist.arm64.exe"
+        }
+      ],
+      "size": 18863152,
+      "size_mb": 18.0,
+      "last_modified": "2026-10-09",
+      "md5": "",
+      "official_site": "https://learn.microsoft.com/zh-cn/cpp/windows/latest-supported-vc-redist?view=msvc-170",
+      "update_items": []
+    },
+    {
+      "name": "VC Runtimes 整合版",
+      "name_cn": "VC运行库整合版 vcredist",
+      "icon": "VR",
+      "icon_color": "linear-gradient(135deg, #0078d4, #005a9e)",
+      "category": "运行环境",
+      "version": "106.0",
+      "download_url": "https://gitlab.com/stdout12/vcredist/-/releases/",
+      "download_url_with_params": "https://gitlab.com/stdout12/vcredist/-/releases/",
+      "downloads": [],
+      "size": 0,
+      "size_mb": 0,
+      "last_modified": "2026-10-15",
+      "md5": "",
+      "official_site": "https://gitlab.com/stdout12/vcredist/-/releases/",
+      "update_items": []
+    },
+    {
+      "name": "InnoExtractor",
+      "name_cn": "InnoExtractor 2027",
+      "icon": "IE",
+      "icon_color": "linear-gradient(135deg, #e67e22, #d35400)",
+      "category": "系统工具",
+      "version": "12.1.1.185",
+      "download_url": "https://www.havysoft.cl/download/IE_Install.zip",
+      "download_url_with_params": "https://www.havysoft.cl/download/IE_Install.zip",
+      "downloads": [],
+      "size": 3668408,
+      "size_mb": 3.5,
+      "last_modified": "2026-10-15",
+      "md5": "",
+      "official_site": "https://www.havysoft.cl/descargar.html",
       "update_items": []
     },
     {
