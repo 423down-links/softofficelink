@@ -560,16 +560,18 @@ PRODUCTS = [
         'category': '视频编辑',
         'detect_type': 'cyberlink',
         'cyberlink_product_id': 4,
-        # 官方试用通道滞后：试用下载器/离线包直链当前仅铺到 25.0.0904.0（VDE260910-01，
-        # 2026-09-14），最新构建 25.0.1007.0（Ultimate 零售版，SR_No=VDE261008-02，
-        # 2026-10-08）只在零售兑换/资源站渠道。用 base_version + version_display 防降级：
-        # 探测值不比试用通道基线新 → 显示 version_display；官方铺开 1007 后自动对齐。
-        'version': '25.0.0904.0',
+        # 官方版本源排查结论（2026-10-15 复测）：试用下载器 info.ini 的
+        # DisplayBuildNumber=25.0.0904.0（VDE260910-01）即试用通道当前基线，官方
+        # 新构建 25.0.1007.0（Ultimate 零售版，SR_No=VDE261008-02，2026-10-08）
+        # 尚未铺到匿名公开通道。用官方 thank-you API 轮询做根源探测（官方换包即
+        # 自动对齐），配合 base_version/version_display 防降级：探测值不比试用基线
+        # 新 → 显示 version_display；官方铺开 1007 后自动对齐。
+        'version': '25.0.1007.0',
         'base_version': '25.0.0904.0',
         'version_display': '25.0.1007.0',
         'size': 691 * 1024 * 1024,
-        'date': '2026-09-14',
-        'md5': 'be7750903c07baa523c0ab0328a1b27a',
+        'date': '2026-10-08',
+        'skip_md5': True,
         'download_url': 'https://build.cyberlink.com/Retail/PowerDirector/CGQC8ZH75VM6/PowerDirector_DirectorSuite365.exe',
         'official_site': 'https://www.cyberlink.com/products/powerdirector-video-editing-software/features_en_US.html',
     },
