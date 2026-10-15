@@ -579,25 +579,22 @@ PRODUCTS = [
         'icon': 'PhD',
         'icon_color': 'linear-gradient(135deg, #8e44ad, #3498db)',
         'category': '图像处理',
-        # 官方试用下载器 info.ini 的 DisplayBuildNumber 是安装框架版本（复测 17.6.1826.0），
-        # ≠ 产品版本 18.x；零售兑换通道无可用密钥；官方 365 离线包（DirectorSuite365.exe）
-        # 更新滞后（实测仍为 0908 构建，官方 whats-new 也只到 9 月）→ 都不适合当版本源。
-        # 改用 423down 搜索页两步抓取：搜索结果第一条即最新文章，标题直接给真实产品版本
-        # （PhotoDirector v18.0.x.xxxx，与安装包主版本一致：实测 18.0.1011.0 = MajorVersion 18 /
-        # BuildNo 1011），文章 meta-info 给发布日。423down 精修版更新快于官方离线包，故以它为准。
-        'detect_type': 'scrape',
-        'check_url': 'https://www.423down.com/?s=%E7%9B%B8%E7%89%87%E5%A4%A7%E5%B8%88',
-        'detail_url_regex': r'(https://www\.423down\.com/\d+\.html)',
-        'detail_url_index': 0,
-        'version_regex': r'PhotoDirector\s+v(\d+\.\d+\.\d+\.\d+)',
-        'date_regex': r'meta-info">\s*(\d{4}-\d{2}-\d{2})',
-        'prefer_scraped_version': True,
-        'skip_md5': True,
+        # 官方版本源排查结论（2026-10-15 复测）：
+        #  - 试用下载器（thank-you API → user-add.do → downloader）info.ini 的
+        #    DisplayBuildNumber=17.6.1826.0 是安装框架版本，≠ 产品版本 18.x（两次复测一致）；
+        #  - build.cyberlink.com 零售直链 Y2QIW32JB74CH 的 S3 对象最后修改仍为 2026-09-08，
+        #    实际还是 0908 包；官方新构建 18.0.1011.0 只走订阅 updater 通道分发；
+        #  - support 补丁中心 prodId=211 只列 2018 年旧补丁；liveupdate /b/b/r 只剩广告接口。
+        # 结论：匿名公开接口均无当前构建 → 用官方 thank-you API 轮询做根源探测（官方换包即自动
+        # 对齐），配合 base_version/version_display 防降级，展示已核实的 18.0.1011.0。
+        'detect_type': 'cyberlink',
+        'cyberlink_product_id': 211,
         'base_version': '18.0.1011.0',
         'version_display': '18.0.1011.0',
         'version': '18.0.1011.0',
-        'size': 639 * 1024 * 1024,
+        'size': 670 * 1024 * 1024,
         'date': '2026-10-14',
+        'skip_md5': True,
         'download_url': 'https://build.cyberlink.com/Retail/PhotoDirector/Y2QIW32JB74CH/PhotoDirector_DirectorSuite365.exe',
         'official_site': 'https://www.cyberlink.com/products/photodirector/features_en_US.html',
     },
