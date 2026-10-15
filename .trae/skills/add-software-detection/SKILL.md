@@ -36,8 +36,9 @@ probe.py 会自动做：GitHub API 挑 x64 安装包资产、HEAD 判 302/fixed�
 | 场景 | detect_type | 关键字段 |
 |------|-------------|----------|
 | GitHub 托管/有 Releases | `github_release` | `repo`, `version_regex`；多资产 `asset_filter`+`use_asset_url` |
+| GitLab 托管/有 Releases | `gitlab_release` | `gitlab_project`, `asset_filter`(取主安装包), `version_regex` |
 | 固定地址 302 跳转 | `redirect` | `check_url`, `version_regex`（从 Location 提版本） |
-| 固定地址直出文件 | `fixed` | `download_url`, `version`(手动)；可选 `pe_version` / `page_version_url`+`page_version_regex` |
+| 固定地址直出文件 | `fixed` | `download_url`, `version`(手动)；可选 `pe_version` / `page_version_url`+`page_version_regex`；**日期被 CDN 覆盖时加 `prefer_config_date: True`** |
 | 版本在网页上 | `scrape` | `check_url`, `version_regex`, `date_regex`, `download_url_regex` |
 | 官方更新检查 API | `chrome_api`/`edge_api`/`luminar_api`/`yandex` | 按软件对应 |
 | URL 含版本、普通递增 | 多级进位（默认） | `base_version`, `url_pattern{ver}`；跨度大配 `max_skip`/`max_carry` |

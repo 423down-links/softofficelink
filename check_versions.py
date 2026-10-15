@@ -361,6 +361,9 @@ PRODUCTS = [
         'detect_type': 'fixed',
         'version': '14.52.37025.0',
         'date': '2026-10-15',
+        # 该安装包的 CDN Last-Modified / 数字签名日期（10-09）早于官方发布日，
+        # 用 prefer_config_date 固定为人工核实的发布日期，不被探测值覆盖。
+        'prefer_config_date': True,
         # 主链接用于 fixed 探测（HEAD 取体积），x64/x86/arm64 三平台走 downloads
         # 二级链接，前端渲染为平台按钮：左键直接下载，右键/长按弹菜单复制完整地址。
         'download_url': 'https://download.visualstudio.microsoft.com/download/pr/98bcc84f-0a9c-417c-a681-d88411dbb90f/7ACA0477C32519E54D888102ECF02495C8C05F83D61858A73BF75958DDC29835/VC_redist.x64.exe',
@@ -377,11 +380,16 @@ PRODUCTS = [
         'icon': 'VR',
         'icon_color': 'linear-gradient(135deg, #0078d4, #005a9e)',
         'category': '运行环境',
-        'detect_type': 'fixed',
-        'is_webpage': True,
-        'allow_no_size': True,
+        # 探测方式：GitLab Releases。版本/日期取自 release，体积取主安装包
+        # （description 里的 /uploads/ 链接，asset_filter 选中 AIO x86+x64 主包）。
+        'detect_type': 'gitlab_release',
+        'gitlab_project': 'stdout12/vcredist',
+        'asset_filter': 'AIO_x86_x64.exe',
+        # tag 形如 v0.106.0，去掉前导"0."得到对外展示的 106.0（AIO 主版本号），
+        # 且保持单调递增，避免被防降级逻辑拦截、也能跟随新 release 自动更新。
+        'version_regex': r'0\.(\d+\.\d+)',
         'version': '106.0',
-        'date': '2026-10-15',
+        'date': '2026-10-14',
         'download_url': 'https://gitlab.com/stdout12/vcredist/-/releases/',
         'official_site': 'https://gitlab.com/stdout12/vcredist/-/releases/',
     },
@@ -2371,7 +2379,9 @@ def detect_fixed(product):
         exists, detected_size, detected_date = check_url_follow(url, referer=referer)
         if exists and detected_size > 0:
             size = detected_size
-            if detected_date:
+            # prefer_config_date: 日期以人工核实的发布日期为准，不被 CDN
+            # Last-Modified 覆盖（如 VC++ 运行库的数字签名日期早于官方发布日）
+            if detected_date and not product.get('prefer_config_date'):
                 date = detected_date
         elif not exists:
             print(f"  ⚠️ 警告: 固定地址不可用，可能链接已失效（使用配置值）")
@@ -3865,6 +3875,86 @@ def detect_github_release(product):
                 product.get('date', ''), '')
 
 
+def detect_gitlab_release(product):
+    """GitLab Releases检测模式：从GitLab API取最新release的版本号、发布日期、体积。
+    版本/日期取自 release（tag_name / released_at）；体积取 description 里
+    /uploads/<secret>/<file> 形式的主安装包，用 API uploads 端点 HEAD Content-Length。
+    下载链接默认用发布页 URL（多文件发布页场景）。
+    配置：gitlab_project='owner/repo', asset_filter='主包含关键词', version_regex
+    """
+    import json
+    import urllib.parse
+    project = product.get('gitlab_project', '')
+    version_regex = product.get('version_regex', r'(\d+\.\d+\.\d+)')
+    page = product.get('download_url', '') or f'https://gitlab.com/{project}/-/releases/'
+
+    def _fallback():
+        return (product.get('version', '未知'), page, page,
+                product.get('size', 0), product.get('date', ''), '')
+
+    if not project:
+        return _fallback()
+
+    enc = urllib.parse.quote(project, safe='')
+    try:
+        api_url = f'https://gitlab.com/api/v4/projects/{enc}/releases?per_page=10'
+        req = urllib.request.Request(api_url, headers={'User-Agent': UA})
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            releases = json.loads(resp.read().decode('utf-8'))
+        if not releases:
+            print("  ⚠️ GitLab 无 release")
+            return _fallback()
+
+        rel = releases[0]
+        tag = rel.get('tag_name', '')
+        released = rel.get('released_at', '') or rel.get('created_at', '')
+        description = rel.get('description', '') or ''
+
+        version = product.get('version', '未知')
+        m = re.search(version_regex, tag or '')
+        if m:
+            version = m.group(1)
+        print(f"  Release: {tag}, 发布: {released[:10]}, 版本: {version}")
+
+        # 发布日期转北京时间
+        date = ''
+        if released:
+            try:
+                dt = datetime.fromisoformat(released.replace('Z', '+00:00'))
+                dt = dt.astimezone(timezone(timedelta(hours=8)))
+                date = dt.strftime('%Y-%m-%d')
+            except Exception:
+                date = released[:10]
+
+        # assets.links 通常为空，安装包以 /uploads/<32位secret>/<文件名> 写在 description；
+        # 只取 asset_filter 命中的主安装包（避免多文件体积相加）
+        asset_filter = product.get('asset_filter', '')
+        size = product.get('size', 0)
+        target = None
+        for secret, fname in re.findall(r'/uploads/([0-9a-f]{32})/([^\s)"\]]+)', description):
+            if not asset_filter or asset_filter.lower() in fname.lower():
+                target = (secret, fname)
+                break
+        if target:
+            secret, fname = target
+            head_url = f'https://gitlab.com/api/v4/projects/{enc}/uploads/{secret}/{urllib.parse.quote(fname)}'
+            try:
+                hreq = urllib.request.Request(head_url, method='HEAD', headers={'User-Agent': UA})
+                with urllib.request.urlopen(hreq, timeout=30) as hresp:
+                    cl = hresp.headers.get('Content-Length', '')
+                    if cl and cl.isdigit() and int(cl) > 0:
+                        size = int(cl)
+                        print(f"  主安装包: {fname}  {size/1024/1024:.1f}MB")
+            except Exception as e:
+                print(f"  ⚠️ 主安装包体积获取失败: {e}")
+
+        return version, page, page, size, date, ''
+
+    except Exception as e:
+        print(f"  ⚠️ GitLab API失败: {e}")
+        return _fallback()
+
+
 def _ver_tuple(v):
     """把版本号转成可比较的元组，缺失段补0，非数字段忽略。
     例：'12.11.9.9' -> (12, 11, 9, 9)；'9.35' -> (9, 35, 0)
@@ -4921,6 +5011,8 @@ def find_latest(product):
         version, full_url, param_url, size, date, md5 = detect_scrape(product)
     elif detect_type == 'github_release':
         version, full_url, param_url, size, date, md5 = detect_github_release(product)
+    elif detect_type == 'gitlab_release':
+        version, full_url, param_url, size, date, md5 = detect_gitlab_release(product)
     elif detect_type == 'lanzou':
         version, full_url, param_url, size, date, md5 = detect_lanzou(product)
     elif detect_type == '189pan':

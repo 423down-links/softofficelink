@@ -396,7 +396,7 @@
       ],
       "size": 18863152,
       "size_mb": 18.0,
-      "last_modified": "2026-10-09",
+      "last_modified": "2026-10-15",
       "md5": "",
       "official_site": "https://learn.microsoft.com/zh-cn/cpp/windows/latest-supported-vc-redist?view=msvc-170",
       "update_items": []
@@ -412,9 +412,9 @@
       "download_url": "https://gitlab.com/stdout12/vcredist/-/releases/",
       "download_url_with_params": "https://gitlab.com/stdout12/vcredist/-/releases/",
       "downloads": [],
-      "size": 0,
-      "size_mb": 0,
-      "last_modified": "2026-10-15",
+      "size": 32652520,
+      "size_mb": 31.1,
+      "last_modified": "2026-10-14",
       "md5": "",
       "official_site": "https://gitlab.com/stdout12/vcredist/-/releases/",
       "update_items": []
