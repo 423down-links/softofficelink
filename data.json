@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T06:52:18.388431+00:00",
+  "updated_at": "2026-10-16T07:07:09.197242+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -204,8 +204,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "155.0.4283.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/c65f45e3-ba24-4607-a4cb-59dfa59fa38b?P1=1792738258&P2=404&P3=2&P4=QnWBRwp8ah10qUruk0BmXfqX8Z87xwNJVIZ7JLLeWpgX%2fgGGIGAUmSpiXilVdIyyBaOmhkFyQH3D%2b6HEsXt8WQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/c65f45e3-ba24-4607-a4cb-59dfa59fa38b?P1=1792738258&P2=404&P3=2&P4=QnWBRwp8ah10qUruk0BmXfqX8Z87xwNJVIZ7JLLeWpgX%2fgGGIGAUmSpiXilVdIyyBaOmhkFyQH3D%2b6HEsXt8WQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/c65f45e3-ba24-4607-a4cb-59dfa59fa38b?P1=1792739156&P2=404&P3=2&P4=Mdr40m6uDynRHvk9APkSLpqP75MpCFzZoteXfFUQsYvOW4jSMUaS4KAblXBkrts4GXwPITYEZHOO3Aas%2bljm0w%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/c65f45e3-ba24-4607-a4cb-59dfa59fa38b?P1=1792739156&P2=404&P3=2&P4=Mdr40m6uDynRHvk9APkSLpqP75MpCFzZoteXfFUQsYvOW4jSMUaS4KAblXBkrts4GXwPITYEZHOO3Aas%2bljm0w%3d%3d",
       "downloads": [],
       "size": 207660920,
       "size_mb": 198.0,
@@ -1626,35 +1626,23 @@
       "icon": "D",
       "icon_color": "linear-gradient(135deg, #2e7d32, #1b5e20)",
       "category": "资源站",
-      "version": "2026-10-15",
+      "version": "2026-10-16",
       "download_url": "https://downtopc.com/software/",
       "download_url_with_params": "https://downtopc.com/software/",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-10-15",
+      "last_modified": "2026-10-16",
       "md5": "",
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
-          "title": "CyberLink PowerDirector Ultimate 2027 v25.0.1014.0 Multilingual Portable",
-          "url": "https://downtopc.com/343704-cyberlink-powerdirector-ultimate-2027-v25010140-multilingual-portable.html"
+          "title": "Yamicsoft Windows Manager 2.4.3 (x64) Multilingual Portable",
+          "url": "https://downtopc.com/343735-yamicsoft-windows-manager-243-x64-multilingual-portable.html"
         },
         {
-          "title": "Bandicam 27.0.7.2687 (x64) Multilingual Portable",
-          "url": "https://downtopc.com/343699-bandicam-27072687-x64-multilingual-portable.html"
-        },
-        {
-          "title": "Bandicam 27.0.7.2687 (x64) Multilingual",
-          "url": "https://downtopc.com/343698-bandicam-27072687-x64-multilingual.html"
-        },
-        {
-          "title": "CyberLink PowerDirector Ultimate 2027 v25.0.1014.0 Multilingual",
-          "url": "https://downtopc.com/343693-cyberlink-powerdirector-ultimate-2027-v25010140-multilingual.html"
-        },
-        {
-          "title": "Adobe Acrobat Pro DC 2026.002.22031 (x86) Multilingual",
-          "url": "https://downtopc.com/343673-adobe-acrobat-pro-dc-202600222031-x86-multilingual.html"
+          "title": "Yamicsoft Windows Manager 2.4.3 (x64) Multilingual",
+          "url": "https://downtopc.com/343734-yamicsoft-windows-manager-243-x64-multilingual.html"
         }
       ]
     },
