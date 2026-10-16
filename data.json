@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T23:51:54.432598+00:00",
+  "updated_at": "2026-10-16T00:06:37.157969+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -204,8 +204,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "155.0.4283.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/c65f45e3-ba24-4607-a4cb-59dfa59fa38b?P1=1792713059&P2=404&P3=2&P4=PNw2t6yANQn3Q5mjwAdC8XSOhTxbXr8YJsldQeia8dj%2fJaQ8D7uXs0OZbglLPGOoDAdGeqgp69GPI7LGA14dxQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/c65f45e3-ba24-4607-a4cb-59dfa59fa38b?P1=1792713059&P2=404&P3=2&P4=PNw2t6yANQn3Q5mjwAdC8XSOhTxbXr8YJsldQeia8dj%2fJaQ8D7uXs0OZbglLPGOoDAdGeqgp69GPI7LGA14dxQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/c65f45e3-ba24-4607-a4cb-59dfa59fa38b?P1=1792713979&P2=404&P3=2&P4=ht5FYpugj1q2rRlkipQDiaYleKjgIJgTg5tOdYGrEsnqzR1gCCfVBc1CuIkl0AvJoLmLEXIQPE9%2bFsDIQ%2bxIPw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/c65f45e3-ba24-4607-a4cb-59dfa59fa38b?P1=1792713979&P2=404&P3=2&P4=ht5FYpugj1q2rRlkipQDiaYleKjgIJgTg5tOdYGrEsnqzR1gCCfVBc1CuIkl0AvJoLmLEXIQPE9%2bFsDIQ%2bxIPw%3d%3d",
       "downloads": [],
       "size": 207660920,
       "size_mb": 198.0,
@@ -1682,6 +1682,14 @@
         {
           "title": "Bandicam v27.0.7.2687",
           "url": "https://nsaneforums.com/topic/490296-bandicam-v27072687/"
+        },
+        {
+          "title": "Google Chrome 155.0.8059.85",
+          "url": "https://nsaneforums.com/topic/490306-google-chrome-1550805985/"
+        },
+        {
+          "title": "Microsoft Edge 155.0.4283.60",
+          "url": "https://nsaneforums.com/topic/490304-microsoft-edge-1550428360/"
         }
       ]
     },
