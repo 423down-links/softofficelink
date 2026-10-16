@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T11:51:57.694950+00:00",
+  "updated_at": "2026-10-16T12:07:04.947740+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -204,8 +204,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "155.0.4283.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/c65f45e3-ba24-4607-a4cb-59dfa59fa38b?P1=1792756264&P2=404&P3=2&P4=FzHZRZF4rzdSZAmXQ4pfj%2f1MvuvEobuQYQqAMJsNmHp34AcPIKtR%2bTcHmMy7Q11GMS3X6YFoOq6rflgyF1i%2f%2bw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/c65f45e3-ba24-4607-a4cb-59dfa59fa38b?P1=1792756264&P2=404&P3=2&P4=FzHZRZF4rzdSZAmXQ4pfj%2f1MvuvEobuQYQqAMJsNmHp34AcPIKtR%2bTcHmMy7Q11GMS3X6YFoOq6rflgyF1i%2f%2bw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/c65f45e3-ba24-4607-a4cb-59dfa59fa38b?P1=1792757152&P2=404&P3=2&P4=lwpJNLnw4DcsH9zOFFKKzbwTk9Kkqt4%2fCiaiH76s5qdVXiQB9DhaR0mR4dF5klDw4bXwEnPF7EtcVgSuieaYzA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/c65f45e3-ba24-4607-a4cb-59dfa59fa38b?P1=1792757152&P2=404&P3=2&P4=lwpJNLnw4DcsH9zOFFKKzbwTk9Kkqt4%2fCiaiH76s5qdVXiQB9DhaR0mR4dF5klDw4bXwEnPF7EtcVgSuieaYzA%3d%3d",
       "downloads": [],
       "size": 207660920,
       "size_mb": 198.0,
@@ -1099,8 +1099,8 @@
       "download_url": "https://www.winxdvd.com/download/winxvideo-ai.exe",
       "download_url_with_params": "https://www.winxdvd.com/download/winxvideo-ai.exe",
       "downloads": [],
-      "size": 307118576,
-      "size_mb": 292.9,
+      "size": 307232768,
+      "size_mb": 293.0,
       "last_modified": "2026-09-20",
       "md5": "",
       "official_site": "https://www.winxdvd.com/winxvideo-ai/",
@@ -1678,6 +1678,14 @@
         {
           "title": "Bandicam v27.0.7.2687",
           "url": "https://nsaneforums.com/topic/490296-bandicam-v27072687/"
+        },
+        {
+          "title": "Advanced SystemCare Pro 20.0.1.256",
+          "url": "https://nsaneforums.com/topic/490327-advanced-systemcare-pro-2001256/"
+        },
+        {
+          "title": "Yamicsoft Windows Manager 2.4.3",
+          "url": "https://nsaneforums.com/topic/490326-yamicsoft-windows-manager-243/"
         },
         {
           "title": "Google Chrome 155.0.8059.85",
