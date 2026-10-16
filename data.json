@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T08:51:54.161873+00:00",
+  "updated_at": "2026-10-16T09:06:15.008328+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -204,8 +204,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "155.0.4283.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/c65f45e3-ba24-4607-a4cb-59dfa59fa38b?P1=1792745454&P2=404&P3=2&P4=kcjzJYlASxPadO5kudACNF1Ow%2ba9hoqY7iOvXaXvqTi93danyenFlQzfLvC6Huic08ufXtFVhWJ5OPDMyped%2bw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/c65f45e3-ba24-4607-a4cb-59dfa59fa38b?P1=1792745454&P2=404&P3=2&P4=kcjzJYlASxPadO5kudACNF1Ow%2ba9hoqY7iOvXaXvqTi93danyenFlQzfLvC6Huic08ufXtFVhWJ5OPDMyped%2bw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/c65f45e3-ba24-4607-a4cb-59dfa59fa38b?P1=1792746350&P2=404&P3=2&P4=mblhgWGoAO%2blYLm4g8u83%2bjUw8b%2bS87SrDlCoKV1yxNmh%2bLhG6WwiusLg7Ialqe%2bv93GI%2baGN6PbnYcJSy4A%2bQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/c65f45e3-ba24-4607-a4cb-59dfa59fa38b?P1=1792746350&P2=404&P3=2&P4=mblhgWGoAO%2blYLm4g8u83%2bjUw8b%2bS87SrDlCoKV1yxNmh%2bLhG6WwiusLg7Ialqe%2bv93GI%2baGN6PbnYcJSy4A%2bQ%3d%3d",
       "downloads": [],
       "size": 207660920,
       "size_mb": 198.0,
@@ -1636,6 +1636,14 @@
       "md5": "",
       "official_site": "https://downtopc.com/software/",
       "update_items": [
+        {
+          "title": "Advanced SystemCare Pro 20.0.1.256 Multilingual Portable",
+          "url": "https://downtopc.com/343742-advanced-systemcare-pro-2001256-multilingual-portable.html"
+        },
+        {
+          "title": "Advanced SystemCare Pro 20.0.1.256 Multilingual",
+          "url": "https://downtopc.com/343741-advanced-systemcare-pro-2001256-multilingual.html"
+        },
         {
           "title": "Yamicsoft Windows Manager 2.4.3 (x64) Multilingual Portable",
           "url": "https://downtopc.com/343735-yamicsoft-windows-manager-243-x64-multilingual-portable.html"
