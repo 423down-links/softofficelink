@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T02:52:12.879798+00:00",
+  "updated_at": "2026-10-16T03:06:54.054661+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -204,8 +204,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "155.0.4283.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/c65f45e3-ba24-4607-a4cb-59dfa59fa38b?P1=1792723870&P2=404&P3=2&P4=bBzECpxnoj2Lt6cUPidCfBV60WQXo%2fUuBcgm57tdGppkrO7Nmal6uhdTj4cdOI6EbIpO2f4IGXktKUi0Efv1hQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/c65f45e3-ba24-4607-a4cb-59dfa59fa38b?P1=1792723870&P2=404&P3=2&P4=bBzECpxnoj2Lt6cUPidCfBV60WQXo%2fUuBcgm57tdGppkrO7Nmal6uhdTj4cdOI6EbIpO2f4IGXktKUi0Efv1hQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/c65f45e3-ba24-4607-a4cb-59dfa59fa38b?P1=1792724755&P2=404&P3=2&P4=NY6GVLb8%2bOFsTaZxBWj5Y4WYxdRxqCIoFq%2b6pJwz%2bkDYV0l%2fibl5sAnpHtuJf5nU%2fyEwOfEw4qeryuX0a2Ow4w%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/c65f45e3-ba24-4607-a4cb-59dfa59fa38b?P1=1792724755&P2=404&P3=2&P4=NY6GVLb8%2bOFsTaZxBWj5Y4WYxdRxqCIoFq%2b6pJwz%2bkDYV0l%2fibl5sAnpHtuJf5nU%2fyEwOfEw4qeryuX0a2Ow4w%3d%3d",
       "downloads": [],
       "size": 207660920,
       "size_mb": 198.0,
@@ -1545,13 +1545,13 @@
       "icon": "BW",
       "icon_color": "linear-gradient(135deg, #9c27b0, #6a1b9a)",
       "category": "操作系统",
-      "version": "v2026.9.27",
-      "download_url": "https://www.wycad.com/4740.html",
-      "download_url_with_params": "https://www.wycad.com/4740.html",
+      "version": "v2026.09.16",
+      "download_url": "",
+      "download_url_with_params": "",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-10-05",
+      "last_modified": "2026-09-27",
       "md5": "",
       "official_site": "https://www.wycad.com/windows",
       "update_items": []
