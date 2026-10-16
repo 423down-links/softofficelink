@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T22:06:23.920690+00:00",
+  "updated_at": "2026-10-16T22:16:05.465893+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -204,8 +204,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "155.0.4283.62",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1792793121&P2=404&P3=2&P4=aQUR8gAKmL4UUPFkvv6Rcu3%2faUxazK5X4RpZPr%2ftZ%2fjmudBeaErejH3c8a20RV2SDuUoKUvVHmDhrYTOmvRghw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1792793121&P2=404&P3=2&P4=aQUR8gAKmL4UUPFkvv6Rcu3%2faUxazK5X4RpZPr%2ftZ%2fjmudBeaErejH3c8a20RV2SDuUoKUvVHmDhrYTOmvRghw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1792793694&P2=404&P3=2&P4=OVGfabllDCsIB%2bG%2bIeAMR7HZtNltfBi5pkKLFIdF8tbn%2bFadK4EtlCwzuVhQHW4XTWUJ%2fNC%2fCOdJD3VN%2b8DDtQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1792793694&P2=404&P3=2&P4=OVGfabllDCsIB%2bG%2bIeAMR7HZtNltfBi5pkKLFIdF8tbn%2bFadK4EtlCwzuVhQHW4XTWUJ%2fNC%2fCOdJD3VN%2b8DDtQ%3d%3d",
       "downloads": [],
       "size": 207695224,
       "size_mb": 198.1,
@@ -1099,8 +1099,8 @@
       "download_url": "https://www.winxdvd.com/download/winxvideo-ai.exe",
       "download_url_with_params": "https://www.winxdvd.com/download/winxvideo-ai.exe",
       "downloads": [],
-      "size": 307118576,
-      "size_mb": 292.9,
+      "size": 307232768,
+      "size_mb": 293.0,
       "last_modified": "2026-09-20",
       "md5": "",
       "official_site": "https://www.winxdvd.com/winxvideo-ai/",
@@ -1636,6 +1636,14 @@
       "md5": "",
       "official_site": "https://downtopc.com/software/",
       "update_items": [
+        {
+          "title": "GoodSync 12.11.11.1 (x64) Multilingual Portable",
+          "url": "https://downtopc.com/343765-goodsync-1211111-x64-multilingual-portable.html"
+        },
+        {
+          "title": "GoodSync 12.11.11.1 (x64) Multilingual",
+          "url": "https://downtopc.com/343764-goodsync-1211111-x64-multilingual.html"
+        },
         {
           "title": "Advanced SystemCare Pro 20.0.1.256 Multilingual Portable",
           "url": "https://downtopc.com/343742-advanced-systemcare-pro-2001256-multilingual-portable.html"
