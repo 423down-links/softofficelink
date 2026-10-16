@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T01:21:52.286478+00:00",
+  "updated_at": "2026-10-16T01:52:03.063029+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.41",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.41.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.41.exe?v=1792113673892&n=ldinst_9.5.41_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.41.exe?v=1792115485482&n=ldinst_9.5.41_ld_407594_ld.exe",
       "downloads": [],
       "size": 602897384,
       "size_mb": 575.0,
@@ -28,7 +28,7 @@
       "category": "模拟器",
       "version": "14.0.31",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.31.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.31.exe?v=1792113673070&n=ldinst_14.0.31_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.31.exe?v=1792115476910&n=ldinst_14.0.31_ld_412570_ld.exe",
       "downloads": [],
       "size": 745055720,
       "size_mb": 710.5,
@@ -204,8 +204,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "155.0.4283.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/c65f45e3-ba24-4607-a4cb-59dfa59fa38b?P1=1792718459&P2=404&P3=2&P4=Vlj6z9p4jxSgB3jHpqu6y%2b2LaKoxG5217gdEF2rjRWhOgMnzzPNCyeoOImaT53lx4O4w7CzS6BBTCwg8BgrkGg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/c65f45e3-ba24-4607-a4cb-59dfa59fa38b?P1=1792718459&P2=404&P3=2&P4=Vlj6z9p4jxSgB3jHpqu6y%2b2LaKoxG5217gdEF2rjRWhOgMnzzPNCyeoOImaT53lx4O4w7CzS6BBTCwg8BgrkGg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/c65f45e3-ba24-4607-a4cb-59dfa59fa38b?P1=1792720256&P2=404&P3=2&P4=AyTbapvVxhANJbk6%2b95is9FyU%2fsmd6q93r4WE75c97iTtqHMmJ%2fDbsleugp%2bQd0w6CQUiGUzISG1j2nlxxM8uQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/c65f45e3-ba24-4607-a4cb-59dfa59fa38b?P1=1792720256&P2=404&P3=2&P4=AyTbapvVxhANJbk6%2b95is9FyU%2fsmd6q93r4WE75c97iTtqHMmJ%2fDbsleugp%2bQd0w6CQUiGUzISG1j2nlxxM8uQ%3d%3d",
       "downloads": [],
       "size": 207660920,
       "size_mb": 198.0,
@@ -1155,7 +1155,7 @@
       "downloads": [],
       "size": 57556400,
       "size_mb": 54.9,
-      "last_modified": "2026-09-09",
+      "last_modified": "2026-09-21",
       "md5": "",
       "official_site": "https://www.stardock.com/products/start11/history",
       "update_items": []
