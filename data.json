@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T22:51:57.257139+00:00",
+  "updated_at": "2026-10-16T23:07:18.914436+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -204,8 +204,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "155.0.4283.62",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1792795862&P2=404&P3=2&P4=BG4G1hfgvtE%2fFpkDVrjDph14LlUudeUjNb5UA%2fZ92ARvYacZRTN0hWdpPe2JOnh5T8QCRtnKHcWE4pll3OQBHQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1792795862&P2=404&P3=2&P4=BG4G1hfgvtE%2fFpkDVrjDph14LlUudeUjNb5UA%2fZ92ARvYacZRTN0hWdpPe2JOnh5T8QCRtnKHcWE4pll3OQBHQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1792796765&P2=404&P3=2&P4=bUV6daSJ2yysotHoOLKxsF1ZmGv%2bUnS34r4nLiNG7tJ1LdyFHSoN0ucj1CS7wTrlnLKKyFIKGEy42K0GhXKt%2bA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1792796765&P2=404&P3=2&P4=bUV6daSJ2yysotHoOLKxsF1ZmGv%2bUnS34r4nLiNG7tJ1LdyFHSoN0ucj1CS7wTrlnLKKyFIKGEy42K0GhXKt%2bA%3d%3d",
       "downloads": [],
       "size": 207695224,
       "size_mb": 198.1,
@@ -1669,39 +1669,19 @@
       "icon": "N",
       "icon_color": "linear-gradient(135deg, #4a6fa5, #2b3f63)",
       "category": "资源站",
-      "version": "2026-10-16",
+      "version": "2026-10-17",
       "download_url": "https://nsaneforums.com/nsane.down/",
       "download_url_with_params": "https://nsaneforums.com/nsane.down/",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-10-16",
+      "last_modified": "2026-10-17",
       "md5": "",
       "official_site": "https://nsaneforums.com/",
       "update_items": [
         {
-          "title": "CyberLink PowerDirector Ultimate 2027 v25.0.1014",
-          "url": "https://nsaneforums.com/topic/490297-cyberlink-powerdirector-ultimate-2027-v2501014/"
-        },
-        {
-          "title": "Bandicam v27.0.7.2687",
-          "url": "https://nsaneforums.com/topic/490296-bandicam-v27072687/"
-        },
-        {
-          "title": "Advanced SystemCare Pro 20.0.1.256",
-          "url": "https://nsaneforums.com/topic/490327-advanced-systemcare-pro-2001256/"
-        },
-        {
-          "title": "Yamicsoft Windows Manager 2.4.3",
-          "url": "https://nsaneforums.com/topic/490326-yamicsoft-windows-manager-243/"
-        },
-        {
-          "title": "Google Chrome 155.0.8059.85",
-          "url": "https://nsaneforums.com/topic/490306-google-chrome-1550805985/"
-        },
-        {
-          "title": "Microsoft Edge 155.0.4283.60",
-          "url": "https://nsaneforums.com/topic/490304-microsoft-edge-1550428360/"
+          "title": "Microsoft Edge 155.0.4283.62",
+          "url": "https://nsaneforums.com/topic/490344-microsoft-edge-1550428362/"
         }
       ]
     },
