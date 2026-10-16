@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T02:06:26.878539+00:00",
+  "updated_at": "2026-10-16T02:21:54.387167+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.41",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.41.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.41.exe?v=1792115485482&n=ldinst_9.5.41_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.41.exe?v=1792117274498&n=ldinst_9.5.41_ld_407594_ld.exe",
       "downloads": [],
       "size": 602897384,
       "size_mb": 575.0,
@@ -28,7 +28,7 @@
       "category": "模拟器",
       "version": "14.0.31",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.31.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.31.exe?v=1792115476910&n=ldinst_14.0.31_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.31.exe?v=1792117272777&n=ldinst_14.0.31_ld_412570_ld.exe",
       "downloads": [],
       "size": 745055720,
       "size_mb": 710.5,
@@ -204,8 +204,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "155.0.4283.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/c65f45e3-ba24-4607-a4cb-59dfa59fa38b?P1=1792721158&P2=404&P3=2&P4=jGQTAbfNNxbC4iJvFdqbSrg%2bsiUVBsuOkbkFW9vpJ7kdlj2ocdvDKSMnEofA33thixQ7197xkC%2f33ughYudrZg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/c65f45e3-ba24-4607-a4cb-59dfa59fa38b?P1=1792721158&P2=404&P3=2&P4=jGQTAbfNNxbC4iJvFdqbSrg%2bsiUVBsuOkbkFW9vpJ7kdlj2ocdvDKSMnEofA33thixQ7197xkC%2f33ughYudrZg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/c65f45e3-ba24-4607-a4cb-59dfa59fa38b?P1=1792722058&P2=404&P3=2&P4=bRzR%2ffMerxYk4IzNC4TXcMZK%2fDkr9L%2feSCEmgaFBHVrupueL4pEpMrp%2b0PoCSim32CHhk7z0GE8RIy%2fmyPoSBg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/c65f45e3-ba24-4607-a4cb-59dfa59fa38b?P1=1792722058&P2=404&P3=2&P4=bRzR%2ffMerxYk4IzNC4TXcMZK%2fDkr9L%2feSCEmgaFBHVrupueL4pEpMrp%2b0PoCSim32CHhk7z0GE8RIy%2fmyPoSBg%3d%3d",
       "downloads": [],
       "size": 207660920,
       "size_mb": 198.0,
@@ -847,9 +847,9 @@
       "download_url": "https://cdn.iobit.com/dl/advanced-systemcare-setup.exe",
       "download_url_with_params": "https://cdn.iobit.com/dl/advanced-systemcare-setup.exe",
       "downloads": [],
-      "size": 63867288,
-      "size_mb": 60.9,
-      "last_modified": "2026-09-09",
+      "size": 61146528,
+      "size_mb": 58.3,
+      "last_modified": "2026-10-16",
       "md5": "",
       "official_site": "https://www.iobit.com/en/advancedsystemcarepro.php",
       "update_items": []
