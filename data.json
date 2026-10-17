@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T04:22:03.876053+00:00",
+  "updated_at": "2026-10-17T04:30:22.172833+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -1581,13 +1581,13 @@
       "icon": "GS",
       "icon_color": "linear-gradient(135deg, #2196f3, #0d47a1)",
       "category": "同步工具",
-      "version": "12.11.9.9",
-      "download_url": "https://services.goodsync.com/download/GoodSync-vsub-2Go-Setup.exe",
-      "download_url_with_params": "https://services.goodsync.com/download/GoodSync-vsub-2Go-Setup.exe",
+      "version": "12.11.11.1",
+      "download_url": "https://services.goodsync.com/download/GoodSync-vsub-Setup.exe",
+      "download_url_with_params": "https://services.goodsync.com/download/GoodSync-vsub-Setup.exe",
       "downloads": [],
       "size": 83390048,
       "size_mb": 79.5,
-      "last_modified": "2026-10-06",
+      "last_modified": "2026-10-16",
       "md5": "",
       "official_site": "https://www.goodsync.com/",
       "update_items": []
