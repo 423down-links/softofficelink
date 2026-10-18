@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18T02:52:00.647105+00:00",
+  "updated_at": "2026-10-18T03:05:55.262601+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -204,8 +204,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "155.0.4283.62",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1792896640&P2=404&P3=2&P4=eS5VG%2f1u4Hwpk4s68JvNvQirLY1oNVeVSn3ccll15LGbVsdGqHsvvSfO7N5IccIqZqh11Or0wNDjTy3DcDnfXA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1792896640&P2=404&P3=2&P4=eS5VG%2f1u4Hwpk4s68JvNvQirLY1oNVeVSn3ccll15LGbVsdGqHsvvSfO7N5IccIqZqh11Or0wNDjTy3DcDnfXA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1792897534&P2=404&P3=2&P4=Hu2Ixf8V6%2bTLcYBaEbR7%2fV1NnJAUjQOVkWLUvfOjo4MP6x59rDOfQmz91%2fh4M%2fjqw3qG9Jp%2bnxJik5CJNdMCdw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1792897534&P2=404&P3=2&P4=Hu2Ixf8V6%2bTLcYBaEbR7%2fV1NnJAUjQOVkWLUvfOjo4MP6x59rDOfQmz91%2fh4M%2fjqw3qG9Jp%2bnxJik5CJNdMCdw%3d%3d",
       "downloads": [],
       "size": 207695224,
       "size_mb": 198.1,
@@ -1329,13 +1329,13 @@
       "icon": "79",
       "icon_color": "linear-gradient(135deg, #e74c3c, #c0392b)",
       "category": "便携软件",
-      "version": "2026.09.19",
+      "version": "2026.10.17",
       "download_url": "https://disk.yandex.ru/d/D8xbOSd7XAUbug",
       "download_url_with_params": "https://disk.yandex.ru/d/D8xbOSd7XAUbug",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "",
+      "last_modified": "2026-10-17",
       "md5": "",
       "official_site": "https://disk.yandex.ru/d/D8xbOSd7XAUbug",
       "update_items": []
