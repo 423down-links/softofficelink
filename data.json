@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T07:52:03.531113+00:00",
+  "updated_at": "2026-10-19T08:07:16.283129+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -204,8 +204,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "155.0.4283.62",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793001064&P2=404&P3=2&P4=ZjkR%2b63REhEwETpNOMT05CjisqeEFUcDJxOCns5RHbhWyREUHaf7f%2fVy2wjoQfq4RnWgDwQKWKaeJbVqJ8Zvbg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793001064&P2=404&P3=2&P4=ZjkR%2b63REhEwETpNOMT05CjisqeEFUcDJxOCns5RHbhWyREUHaf7f%2fVy2wjoQfq4RnWgDwQKWKaeJbVqJ8Zvbg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793001961&P2=404&P3=2&P4=RFGRpOC%2bZaYUTqgAT2N5QIOtEwCXp0BQtCAiujKh5BTbiRlDJQLuN8NjyxZ%2bGqB6ZgT4mhi6ulzdzy3dF8N%2fwA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793001961&P2=404&P3=2&P4=RFGRpOC%2bZaYUTqgAT2N5QIOtEwCXp0BQtCAiujKh5BTbiRlDJQLuN8NjyxZ%2bGqB6ZgT4mhi6ulzdzy3dF8N%2fwA%3d%3d",
       "downloads": [],
       "size": 207695224,
       "size_mb": 198.1,
@@ -1117,9 +1117,9 @@
       "download_url": "https://download.glarysoft.com/gupsetup.exe",
       "download_url_with_params": "https://download.glarysoft.com/gupsetup.exe",
       "downloads": [],
-      "size": 28500240,
+      "size": 28501016,
       "size_mb": 27.2,
-      "last_modified": "2026-09-21",
+      "last_modified": "2026-10-19",
       "md5": "",
       "official_site": "https://www.glarysoft.com/glary-utilities-pro/download",
       "update_items": []
@@ -1626,39 +1626,23 @@
       "icon": "D",
       "icon_color": "linear-gradient(135deg, #2e7d32, #1b5e20)",
       "category": "资源站",
-      "version": "2026-10-16",
+      "version": "2026-10-19",
       "download_url": "https://downtopc.com/software/",
       "download_url_with_params": "https://downtopc.com/software/",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-10-16",
+      "last_modified": "2026-10-19",
       "md5": "",
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
-          "title": "GoodSync 12.11.11.1 (x64) Multilingual Portable",
-          "url": "https://downtopc.com/343765-goodsync-1211111-x64-multilingual-portable.html"
+          "title": "Glary Utilities Pro 6.49.0.53 Multilingual Portable",
+          "url": "https://downtopc.com/343824-glary-utilities-pro-649053-multilingual-portable.html"
         },
         {
-          "title": "GoodSync 12.11.11.1 (x64) Multilingual",
-          "url": "https://downtopc.com/343764-goodsync-1211111-x64-multilingual.html"
-        },
-        {
-          "title": "Advanced SystemCare Pro 20.0.1.256 Multilingual Portable",
-          "url": "https://downtopc.com/343742-advanced-systemcare-pro-2001256-multilingual-portable.html"
-        },
-        {
-          "title": "Advanced SystemCare Pro 20.0.1.256 Multilingual",
-          "url": "https://downtopc.com/343741-advanced-systemcare-pro-2001256-multilingual.html"
-        },
-        {
-          "title": "Yamicsoft Windows Manager 2.4.3 (x64) Multilingual Portable",
-          "url": "https://downtopc.com/343735-yamicsoft-windows-manager-243-x64-multilingual-portable.html"
-        },
-        {
-          "title": "Yamicsoft Windows Manager 2.4.3 (x64) Multilingual",
-          "url": "https://downtopc.com/343734-yamicsoft-windows-manager-243-x64-multilingual.html"
+          "title": "Glary Utilities Pro 6.49.0.53 Multilingual",
+          "url": "https://downtopc.com/343823-glary-utilities-pro-649053-multilingual.html"
         }
       ]
     },
