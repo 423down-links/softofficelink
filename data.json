@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T22:52:00.851867+00:00",
+  "updated_at": "2026-10-19T23:06:56.801343+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -204,8 +204,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "155.0.4283.62",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793055067&P2=404&P3=2&P4=DHhBwKT2lyhlXwucjRvi3uTaM2hme5X0N5XbaUo8hi0kT1Q24XVRWMkkpMe9V23qYRC0UC9co%2fzaTi4wcFemYw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793055067&P2=404&P3=2&P4=DHhBwKT2lyhlXwucjRvi3uTaM2hme5X0N5XbaUo8hi0kT1Q24XVRWMkkpMe9V23qYRC0UC9co%2fzaTi4wcFemYw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793055957&P2=404&P3=2&P4=Zj%2bvuwPNXshPK19luKrMHsSuTG3F6ZpATSVha5vujLfwEclUwQToYyAldZoeOYc3BYfSPZSDM3ikpgTQiM5oiw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793055957&P2=404&P3=2&P4=Zj%2bvuwPNXshPK19luKrMHsSuTG3F6ZpATSVha5vujLfwEclUwQToYyAldZoeOYc3BYfSPZSDM3ikpgTQiM5oiw%3d%3d",
       "downloads": [],
       "size": 207695224,
       "size_mb": 198.1,
@@ -1626,43 +1626,19 @@
       "icon": "D",
       "icon_color": "linear-gradient(135deg, #2e7d32, #1b5e20)",
       "category": "资源站",
-      "version": "2026-10-19",
+      "version": "2026-10-20",
       "download_url": "https://downtopc.com/software/",
       "download_url_with_params": "https://downtopc.com/software/",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-10-19",
+      "last_modified": "2026-10-20",
       "md5": "",
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
-          "title": "R-Studio 9.5 Build 191850 Network / Technician Multilingual Portable",
-          "url": "https://downtopc.com/343841-r-studio-95-build-191850-network-technician-multilingual-portable.html"
-        },
-        {
-          "title": "Light Image Resizer 7.6.7.182 Multilingual Portable",
-          "url": "https://downtopc.com/343840-light-image-resizer-767182-multilingual-portable.html"
-        },
-        {
-          "title": "Light Image Resizer 7.6.7.182 Multilingual",
-          "url": "https://downtopc.com/343839-light-image-resizer-767182-multilingual.html"
-        },
-        {
-          "title": "R-Studio 9.5 Build 191850 Network / Technician Multilingual",
-          "url": "https://downtopc.com/343828-r-studio-95-build-191850-network-technician-multilingual.html"
-        },
-        {
-          "title": "Glary Utilities Pro 6.49.0.53 Multilingual Portable",
-          "url": "https://downtopc.com/343824-glary-utilities-pro-649053-multilingual-portable.html"
-        },
-        {
-          "title": "Glary Utilities Pro 6.49.0.53 Multilingual",
-          "url": "https://downtopc.com/343823-glary-utilities-pro-649053-multilingual.html"
-        },
-        {
-          "title": "PlayerFab 7.0.6.4 (x64) Multilingual",
-          "url": "https://downtopc.com/343817-playerfab-7064-x64-multilingual.html"
+          "title": "R-Studio 9.5 Build 191850 Technician (x64) Multilingual WinPE",
+          "url": "https://downtopc.com/343856-r-studio-95-build-191850-technician-x64-multilingual-winpe.html"
         }
       ]
     },
