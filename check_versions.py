@@ -1636,6 +1636,24 @@ PRODUCTS = [
         'official_site': 'https://www.fxsound.com/',
     },
     {
+        'name': 'Wondershare UniConverter',
+        'name_cn': '万兴转换器',
+        'icon': 'UC',
+        'icon_color': 'linear-gradient(135deg, #536dfe, #304ffe)',
+        'category': '视频转换',
+        # 官方 CDN 固定最新直链（full14204 即 18.0.0 全量包，文件名不含完整版本），
+        # 版本号权威来源 = 安装包 PE FileVersion（18.0.0.58）；带版本号的
+        # uniconverter_64bit_18.0.0_full14204.exe 与 full14204 为同一文件，仅作佐证。
+        'detect_type': 'fixed',
+        'download_url': 'https://download.wondershare.com/cbs_down/uniconverter_64bit_full14204.exe',
+        'pe_version': True,
+        'version': '18.0.0.58',
+        'size': 424551880,
+        'skip_md5': True,
+        'detect_timeout': 60,
+        'official_site': 'https://www.wondershare.com/uniconverter/',
+    },
+    {
         'name': 'Bandizip',
         'name_cn': 'Bandizip Professional',
         'icon': 'BZ',

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T04:06:23.129686+00:00",
+  "updated_at": "2026-10-19T04:16:54.865045+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -1849,6 +1849,24 @@
       "last_modified": "2026-09-17",
       "md5": "",
       "official_site": "https://www.fxsound.com/",
+      "update_items": []
+    },
+    {
+      "name": "Wondershare UniConverter",
+      "name_cn": "万兴转换器",
+      "alias": "",
+      "icon": "UC",
+      "icon_color": "linear-gradient(135deg, #536dfe, #304ffe)",
+      "category": "视频转换",
+      "version": "18.0.0.58",
+      "download_url": "https://download.wondershare.com/cbs_down/uniconverter_64bit_full14204.exe",
+      "download_url_with_params": "https://download.wondershare.com/cbs_down/uniconverter_64bit_full14204.exe",
+      "downloads": [],
+      "size": 424551880,
+      "size_mb": 404.9,
+      "last_modified": "2026-10-15",
+      "md5": "",
+      "official_site": "https://www.wondershare.com/uniconverter/",
       "update_items": []
     },
     {
