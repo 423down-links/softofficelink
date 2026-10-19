@@ -104,6 +104,7 @@ gh run list --limit 3                                    # 403/无 workflow 权�
 - **⚠️ `check_versions.py --only` 不带 `--no-save` 会把 data.json 整个覆盖成单产品结构（实测翻车）**：要回填单产品数据，先 `cp data.json /tmp/备份`，跑完校验产品数=103 才继续；否则用 `--no-save` + 手动改。
 - **本任务与 SSH 服务器（423down.com）完全无关**：这个页面不在服务器上，禁止为此连 SSH、禁止查服务器目录。
 - data.json 是脚本产物且被 Actions 定时自动提交：**动手前必须 `git fetch origin main`，以远端为基准改**，本地旧快照直接提交会把它人的检测增量顶回旧值（2026-10-15 实际翻车：14 款版本/日期被回滚）。
+- **⚠️ 沙箱恢复可能 checkout 到旧 agent 分支（`trae/agent-*`）而非 main，本地会显示旧数据、看着像「回滚」**（2026-10-20 实际发生：凌晨入库的 4 款软件本地全消失，远端/线上其实完好）。开工第一件事：`git checkout main && git fetch origin main && git reset --hard origin/main`，再核对 data.json 里最近入库条目还在再动手，别拿旧分支快照当真相。
 
 ## 常见坑（现象 → 根因 → 解法）
 
