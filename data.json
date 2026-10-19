@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T04:24:25.616151+00:00",
+  "updated_at": "2026-10-19T04:53:04.891893+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.41",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.41.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.41.exe?v=1792381879335&n=ldinst_9.5.41_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.41.exe?v=1792385475840&n=ldinst_9.5.41_ld_407594_ld.exe",
       "downloads": [],
       "size": 602897384,
       "size_mb": 575.0,
@@ -28,7 +28,7 @@
       "category": "模拟器",
       "version": "14.0.31",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.31.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.31.exe?v=1792381878417&n=ldinst_14.0.31_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.31.exe?v=1792385477091&n=ldinst_14.0.31_ld_412570_ld.exe",
       "downloads": [],
       "size": 745055720,
       "size_mb": 710.5,
@@ -204,8 +204,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "155.0.4283.62",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1792987557&P2=404&P3=2&P4=TMcnqAZxhMu%2bvK98aBABl57jU7YxXrkdl76wYenZnmz11hD0rLgHK9FnBv%2bVZBTNFQdMrBVRzWihAUJtrJtz0Q%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1792987557&P2=404&P3=2&P4=TMcnqAZxhMu%2bvK98aBABl57jU7YxXrkdl76wYenZnmz11hD0rLgHK9FnBv%2bVZBTNFQdMrBVRzWihAUJtrJtz0Q%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1792990264&P2=404&P3=2&P4=gvXvwVY7XtEOlJrSggblzKV0C835TQNE7W8AAc2z77wdi8VB%2fQ3nXbfBoDh5lgICjjPnBFB0%2fzrRlquXkwLruQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1792990264&P2=404&P3=2&P4=gvXvwVY7XtEOlJrSggblzKV0C835TQNE7W8AAc2z77wdi8VB%2fQ3nXbfBoDh5lgICjjPnBFB0%2fzrRlquXkwLruQ%3d%3d",
       "downloads": [],
       "size": 207695224,
       "size_mb": 198.1,
@@ -1515,7 +1515,7 @@
       "downloads": [],
       "size": 734003200,
       "size_mb": 700.0,
-      "last_modified": "2026-09-23",
+      "last_modified": "",
       "md5": "",
       "official_site": "https://www.foxit.com/pdf-editor/version-history.html",
       "update_items": []
