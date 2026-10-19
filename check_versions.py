@@ -1713,6 +1713,82 @@ PRODUCTS = [
         'download_url': 'https://download.wondershare.com/cbs_down/edraw-max_64bit_16.0.2_full5371.exe',
         'official_site': 'https://www.edrawsoft.com/download-edrawmax.html',
     },
+    {
+        'name': 'R-Studio',
+        'name_cn': 'R-Studio',
+        'icon': 'RS',
+        'icon_color': 'linear-gradient(135deg, #1e88e5, #0d47a1)',
+        'category': '数据恢复',
+        # 官网无版本号页面（主页无版本、下载目录反爬 403），版本从安装包 PE FileVersion 读取；
+        # RStudio9.exe 是 Network 版固定直链，Technician 版与 Network 同步发版，只测主包
+        'detect_type': 'fixed',
+        'pe_version': True,
+        'version': '9.5.191.85',
+        'size': 74126024,
+        'skip_md5': True,
+        'detect_timeout': 120,
+        'download_url': 'https://www.r-studio.com/downloads/RStudio9.exe',
+        'official_site': 'https://www.r-studio.com/',
+    },
+    {
+        'name': 'MKVToolNix',
+        'name_cn': 'MKVToolNix',
+        'icon': 'MK',
+        'icon_color': 'linear-gradient(135deg, #e53935, #b71c1c)',
+        'category': '视频工具',
+        # 版本历史 NEWS.md 首行 `# Version 103.0 "The Darkness" 2026-10-18` 即最新版本+日期；
+        # 下载 URL 目录只到前两段（releases/103.0/），url_pattern 用 {major_minor} 拼接安装版
+        # exe；版本号由安装包 PE FileVersion 补全末段（103.0 -> 103.0.0），不影响 URL 构造
+        'detect_type': 'scrape',
+        'check_url': 'https://mkvtoolnix.download/doc/NEWS.md',
+        'version_regex': r'# Version (\d+\.\d+(?:\.\d+)?) "',
+        'date_regex': r'# Version \d+\.\d+(?:\.\d+)? "[^"]*" (\d{4}-\d{2}-\d{2})',
+        'url_pattern': 'https://mkvtoolnix.download/windows/releases/{major_minor}/mkvtoolnix-64-bit-{major_minor}-setup.exe',
+        'prefer_scraped_version': True,
+        'pe_version': True,
+        'version': '103.0.0',
+        'size': 31400293,
+        'skip_md5': True,
+        'download_url': 'https://mkvtoolnix.download/windows/releases/103.0/mkvtoolnix-64-bit-103.0-setup.exe',
+        'official_site': 'https://mkvtoolnix.download/',
+    },
+    {
+        'name': 'PlayerFab',
+        'name_cn': 'PlayerFab',
+        'icon': 'PF',
+        'icon_color': 'linear-gradient(135deg, #7c4dff, #512da8)',
+        'category': '影音播放',
+        # 版本页 media-player-new.htm 的 whatsnew 区块 `<strong>7.0.6.4</strong> 2026-10-17`；
+        # 下载为固定 mlink 链接（301 后落地带版本号的 CDN 文件），版本号以页面 whatsnew 为准
+        'detect_type': 'scrape',
+        'check_url': 'https://playerfab.dvdfab.cn/media-player-new.htm?v=7',
+        'version_regex': r'whatsnew[^0-9]{0,100}(\d+\.\d+\.\d+\.\d+)',
+        'date_regex': r'<strong>7\.\d+\.\d+\.\d+</strong>\s*<span>([A-Z][a-z]{2} \d{1,2}, \d{4})',
+        'prefer_scraped_version': True,
+        'skip_md5': True,
+        'version': '7.0.6.4',
+        'download_url': 'https://dvdfab.cn/mlink/download.php?g=PlayerFab_X64_OFFLINE',
+        'official_site': 'https://playerfab.dvdfab.cn/media-player-new.htm?v=7',
+    },
+    {
+        'name': 'Light Image Resizer',
+        'name_cn': 'Light Image Resizer',
+        'icon': 'LI',
+        'icon_color': 'linear-gradient(135deg, #26a69a, #00796b)',
+        'category': '图像工具',
+        # 历史页顶部第一行 `7.6.7.182 – 2026-10-19` 即最新版本+日期；下载 URL 含完整版本号
+        'detect_type': 'scrape',
+        'check_url': 'https://www.obviousidea.com/windows-software/light-image-resizer/light-image-resizer-history/',
+        'version_regex': r'(\d+\.\d+\.\d+\.\d+)\s*&#8211;',
+        'date_regex': r'\d+\.\d+\.\d+\.\d+\s*&#8211;\s*(\d{4}-\d{2}-\d{2})',
+        'url_pattern': 'https://download2.obviousidea.com/light_image_resizer7_setup_{ver}.exe',
+        'prefer_scraped_version': True,
+        'version': '7.6.7.182',
+        'size': 48364072,
+        'skip_md5': True,
+        'download_url': 'https://download2.obviousidea.com/light_image_resizer7_setup_7.6.7.182.exe',
+        'official_site': 'https://www.obviousidea.com/windows-software/light-image-resizer/',
+    },
 ]
 
 MAX_INCREMENT = 30  # 最多递增检测30个版本
@@ -4219,9 +4295,15 @@ def detect_scrape(product):
     # 下载链接：优先使用抓取到的，其次用配置的
     # 如果配置了url_pattern，根据版本号动态构造URL（如AIDA64）
     # {ver_us}：版本号点换下划线（如 9.9.3 -> 9_9_3），应对文件名用下划线、目录用点号的情况
+    # {major}/{major_minor}/{major_minor_underscore}：取版本前1/2段（如 103.0.0 -> major=103, major_minor=103.0），
+    # 应对下载路径只用大版本、而展示版本更完整（如 MKVToolNix releases/103.0/ 目录）
     if product.get('url_pattern'):
-        url = product['url_pattern'].format(ver=_url_ver(version, product), ver_dot=version.replace('.', ''),
-                                            ver_us=version.replace('.', '_'))
+        _vp = version.split('.')
+        url = product['url_pattern'].format(
+            ver=_url_ver(version, product), ver_dot=version.replace('.', ''),
+            ver_us=version.replace('.', '_'),
+            major=_vp[0], major_minor='.'.join(_vp[:2]),
+            major_minor_underscore='_'.join(_vp[:2]))
         print(f"  动态构造URL: {url}")
     else:
         url = scraped_download_url or product['download_url']
@@ -4253,8 +4335,12 @@ def detect_scrape(product):
                     parts[-1] = str(int(parts[-1]) - 1)
                     base_ver = '.'.join(parts)
                     if product.get('url_pattern'):
-                        fallback_url = product['url_pattern'].format(ver=_url_ver(base_ver, product), ver_dot=base_ver.replace('.', ''),
-                                                                     ver_us=base_ver.replace('.', '_'))
+                        _fbp = base_ver.split('.')
+                        fallback_url = product['url_pattern'].format(
+                            ver=_url_ver(base_ver, product), ver_dot=base_ver.replace('.', ''),
+                            ver_us=base_ver.replace('.', '_'),
+                            major=_fbp[0], major_minor='.'.join(_fbp[:2]),
+                            major_minor_underscore='_'.join(_fbp[:2]))
                     else:
                         break
                     f_exists, f_size, f_date = check_url_follow(fallback_url)
