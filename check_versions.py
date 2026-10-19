@@ -2881,15 +2881,6 @@ def _pe_version_cached(url):
     return hit['ver'] if hit else ''
 
 
-def _pe_build_date(url):
-    """只读缓存里的 PE 构建日期（PE 头 TimeDateStamp，UTC，YYYY-MM-DD）。
-    需先调用过 get_pe_version(url) 把该 URL 灌进缓存；无缓存返回空串。"""
-    cache = _pe_cache_load()
-    with _pe_cache_lock:
-        hit = cache.get(url)
-    return (hit or {}).get('date', '') or ''
-
-
 def _range_download(url, headers, start, end, workers=8, timeout=60, min_chunk=64 * 1024):
     """并发分片下载字节区间 [start, end]（含两端），返回拼接后的 bytes。
 
@@ -2962,11 +2953,10 @@ def get_pe_version(url, referer=None):
         print(f"  PE版本(缓存): {hit['ver']}")
         return hit['ver']
 
-    ver, size, lm, build_date = _get_pe_version_raw(url, referer)
+    ver, size, lm = _get_pe_version_raw(url, referer)
     if ver:
         with _pe_cache_lock:
-            _pe_cache[cache_key] = {'ver': ver, 'ts': time.time(), 'size': size,
-                                    'lm': lm, 'date': build_date}
+            _pe_cache[cache_key] = {'ver': ver, 'ts': time.time(), 'size': size, 'lm': lm}
         _pe_cache_save()
         return ver
 
@@ -3017,19 +3007,9 @@ def _get_pe_version_raw(url, referer=None):
                 head = head[:65536]
 
         pe_offset = struct.unpack_from('<I', head, 0x3C)[0]
-        # PE 编译时间戳（COFF 头 TimeDateStamp，位于 pe_offset+8）：安装包的真实构建时间，
-        # 官方页面/winget 常滞后时用它作发布日期更准。解析不出则为空串。
-        build_date = ''
-        try:
-            if pe_offset and pe_offset + 12 <= len(head):
-                ts = struct.unpack_from('<I', head, pe_offset + 8)[0]
-                if ts > 0:
-                    build_date = datetime.fromtimestamp(ts, timezone.utc).strftime('%Y-%m-%d')
-        except Exception:
-            build_date = ''
         if pe_offset == 0 or pe_offset + 24 > len(head):
             print(f"  PE偏移异常: {pe_offset}")
-            return '', size, lm, build_date
+            return '', size, lm
 
         # 2. 直接从这 64KB 里解析段表（pe_offset 及段表都远在 64KB 内）
         pe_data = head[pe_offset:]
@@ -3059,16 +3039,16 @@ def _get_pe_version_raw(url, referer=None):
                 if not match:
                     match = re.search(r'FileVersion[\x00\s]*(\d+\.\d+(?:\.\d+)?)', text)
                 if match:
-                    return match.group(1), size, lm, build_date
+                    return match.group(1), size, lm
                 # 兜底：找所有四段版本号，取出现最多的
                 versions = re.findall(r'\d+\.\d+\.\d+\.\d+', text)
                 if versions:
                     from collections import Counter
-                    return Counter(versions).most_common(1)[0][0], size, lm, build_date
+                    return Counter(versions).most_common(1)[0][0], size, lm
                 break
     except Exception as e:
         print(f"  PE版本解析失败: {e}")
-    return '', size, lm, build_date
+    return '', size, lm
 
 
 def get_nsis_install_version(url, referer=None):
@@ -4306,26 +4286,22 @@ def detect_scrape(product):
     # 配置 alt_download_urls（如「完整包 + 便携包」多个安装包变体）时，逐个读安装包内
     # 真实 PE 版本，取最新者作为下载链接与版本号——因为官方页面/winget 可能滞后于安装包，
     # 而完整包与便携包各自更新节奏不同，只认一个容易停在旧版。
+    # 注意：日期不从这里取，始终用官网发布日 / HTTP Last-Modified（见上方 date 处理）。
     if not is_webpage and product.get('pe_version') and url.lower().endswith('.exe'):
         alt_urls = [u for u in (product.get('alt_download_urls') or []) if u and u != url]
         if alt_urls:
             print(f"  解析PE文件版本信息（{1 + len(alt_urls)} 个安装包变体）...")
-            best_url, best_ver, best_date = url, version, ''
+            best_url, best_ver = url, version
             for cu in [url] + alt_urls:
                 pe_ver = get_pe_version(cu)
                 if not pe_ver:
                     continue
-                bd = _pe_build_date(cu)
-                print(f"  PE版本[{os.path.basename(cu)}]: {pe_ver}" + (f" (构建 {bd})" if bd else ""))
+                print(f"  PE版本[{os.path.basename(cu)}]: {pe_ver}")
                 if _ver_newer(pe_ver, best_ver):
-                    best_ver, best_url, best_date = pe_ver, cu, bd
-                elif pe_ver == best_ver and not best_date:
-                    best_date = bd
+                    best_ver, best_url = pe_ver, cu
             if best_ver != version or best_url != url:
                 print(f"  ℹ️ 采用最新安装包: v{best_ver} @ {os.path.basename(best_url)}")
             version, url = best_ver, best_url
-            if best_date:
-                date = best_date
         else:
             print(f"  解析PE文件版本信息...")
             pe_ver = get_pe_version(url)
