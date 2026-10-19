@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T16:58:58.797377+00:00",
+  "updated_at": "2026-10-19T17:03:25.396438+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -1933,11 +1933,11 @@
       "icon_color": "linear-gradient(135deg, #e53935, #b71c1c)",
       "category": "视频工具",
       "version": "103.0.0",
-      "download_url": "https://mkvtoolnix.download/windows/releases/103.0/mkvtoolnix-64-bit-103.0-setup.exe",
-      "download_url_with_params": "https://mkvtoolnix.download/windows/releases/103.0/mkvtoolnix-64-bit-103.0-setup.exe",
+      "download_url": "https://mkvtoolnix.download/windows/releases/103.0/mkvtoolnix-64-bit-103.0.7z",
+      "download_url_with_params": "https://mkvtoolnix.download/windows/releases/103.0/mkvtoolnix-64-bit-103.0.7z",
       "downloads": [],
-      "size": 36874768,
-      "size_mb": 35.2,
+      "size": 31400293,
+      "size_mb": 29.9,
       "last_modified": "2026-10-18",
       "md5": "",
       "official_site": "https://mkvtoolnix.download/",

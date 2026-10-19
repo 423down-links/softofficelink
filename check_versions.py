@@ -1737,19 +1737,18 @@ PRODUCTS = [
         'icon_color': 'linear-gradient(135deg, #e53935, #b71c1c)',
         'category': '视频工具',
         # 版本历史 NEWS.md 首行 `# Version 103.0 "The Darkness" 2026-10-18` 即最新版本+日期；
-        # 下载 URL 目录只到前两段（releases/103.0/），url_pattern 用 {major_minor} 拼接安装版
-        # exe；版本号由安装包 PE FileVersion 补全末段（103.0 -> 103.0.0），不影响 URL 构造
+        # 下载用官方便携版 .7z（URL 目录只到前两段 releases/103.0/），url_pattern 用
+        # {major_minor} 拼接；.7z 非 PE 无法读完整版，展示版本用配置 103.0.0 兜底
         'detect_type': 'scrape',
         'check_url': 'https://mkvtoolnix.download/doc/NEWS.md',
         'version_regex': r'# Version (\d+\.\d+(?:\.\d+)?) "',
         'date_regex': r'# Version \d+\.\d+(?:\.\d+)? "[^"]*" (\d{4}-\d{2}-\d{2})',
-        'url_pattern': 'https://mkvtoolnix.download/windows/releases/{major_minor}/mkvtoolnix-64-bit-{major_minor}-setup.exe',
-        'prefer_scraped_version': True,
-        'pe_version': True,
+        'url_pattern': 'https://mkvtoolnix.download/windows/releases/{major_minor}/mkvtoolnix-64-bit-{major_minor}.7z',
+        'use_newer_scraped': True,
         'version': '103.0.0',
         'size': 31400293,
         'skip_md5': True,
-        'download_url': 'https://mkvtoolnix.download/windows/releases/103.0/mkvtoolnix-64-bit-103.0-setup.exe',
+        'download_url': 'https://mkvtoolnix.download/windows/releases/103.0/mkvtoolnix-64-bit-103.0.7z',
         'official_site': 'https://mkvtoolnix.download/',
     },
     {
