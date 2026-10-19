@@ -1414,6 +1414,22 @@ if not match:
 
 **配套**：parse_date 需支持序数日期格式 `Sep 29th, 2026`（st/nd/rd/th 后缀）。
 
+## 第32.1节：日期来源统一原则（2026-10-19 修订）
+
+**日期永远用「安装包发布 / 最后修改时间」，禁止用 PE 编译时间戳或数字签名日期**。
+
+| 来源 | 优先级 | 说明 |
+|------|--------|------|
+| 官方发布页日期（`date_regex` / scrape `scraped_date`） | 最高 | 厂商宣告的发布日（GoodSync 官网 `Version 12.11.11 -- 2026-10-17`） |
+| HTTP `Last-Modified` | 次之 | 服务器上文件的最后修改时间（UniConverter CDN `Thu, 15 Oct 2026`） |
+| PE 编译时间戳 / 数字签名时间 | **禁止** | 只是构建/签名时刻，不是发布或修改时间，会与真实发布日期错位 |
+
+**落地**（`check_versions.py`）：
+- `detect_scrape` / `detect_fixed` 的日期一律来自发布页日期或 `check_url_follow` 的 `Last-Modified`；
+- PE 版本探测（`get_pe_version` / `alt_download_urls` 多包取最新）**只产出版本号，不产出日期**；
+- 服务器不返回 `Last-Modified`（如 GoodSync 的 SibHtmlServer 只有 ETag）→ 退回官方发布页日期；
+- 实测教训：曾用 PE 头 TimeDateStamp（编译时间 2026-10-16）当日期，被要求改回官网发布日。
+
 ## 第33节：官网页面滞后场景（CDN 递增为准）
 
 **现象**：官网/博客版本信息滞后于 CDN 实际文件（EmEditor 博客 26.2.8 vs CDN 26.2.9；AnyDesk 页面 8.1.0 vs PE 9.8.0）。
@@ -1449,6 +1465,8 @@ if not match:
 | Microsoft Edge | edge_api | CDP API | CDN Last-Modified | Step2 空body POST |
 | Adobe Camera Raw | increment | CDN 递增 | CDN Last-Modified | {major}.x 目录，3处format传参 |
 | Sublime Text | scrape | 页面 Build XXXX | CDN Last-Modified | ${version} 模板页 |
+| GoodSync | scrape + pe_version | PE 资源（完整包+便携包取最新 12.11.11.1） | 官网发布页（无 Last-Modified） | 官网/winget 滞后于安装包；日期见第32.1节 |
+| Wondershare UniConverter | fixed + pe_version | PE 资源（18.0.0.58） | CDN Last-Modified | full14204 即最新直链，带版本号 URL 是同一文件 |
 
 ## 第36节：winget 官方索引作为第二探测源（2026-10-06 新增）
 
@@ -1485,7 +1503,7 @@ def fetch_winget_version(winget_id, timeout=25):
 ### 本次新增的三款软件（均为双源）
 | 软件 | 探测方式1 | 探测方式2 | winget_id |
 |------|----------|----------|-----------|
-| GoodSync Pro | scrape 官网更新日志（`Version 12.11.9 -- 2026-10-06`） | winget 索引 | `SiberSystems.GoodSync` |
+| GoodSync Pro | scrape 官网更新日志 + PE 双变体（完整包 `-Setup.exe` + 便携包 `-2Go-Setup.exe` 取最新） | winget 索引 | `SiberSystems.GoodSync` |
 | pdfFactory Pro | increment（`pdf{ver}pro.exe`） | winget 索引 | `FineprintSoftware.pdfFactory.Pro` |
 | FinePrint | increment（`fp{ver}.exe`） | winget 索引 | `FineprintSoftware.FinePrint` |
 

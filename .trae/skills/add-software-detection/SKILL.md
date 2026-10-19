@@ -26,10 +26,11 @@ probe.py 会自动做：GitHub API 挑 x64 安装包资产、HEAD 判 302/fixed�
 
 1. **禁止裸配 `increment`**：它是兜底不是默认，能 1 次请求搞定的绝不逐段递增。
 2. **版本来源权威优先**：文件名全量版本 > 官方 API/网页 > PE/NSIS 深度解析（占位值/解析不出的别用）。
-3. **新增必验证**：`--only` 跑通且判据全过才入库，没跑通不提交。
-4. **只增目标条目**：不碰无关产品，不手改 `data.json`（输出物，由脚本生成）。
-5. **大文件跳过 MD5**：包体 >100MB 配 `skip_md5: True`。
-6. **判据全过 → 立即推 main 并当轮生效**：不等定时任务、不再问「要不要推」。见「同步更新」。
+3. **日期来源权威优先**：官方发布页日期 / HTTP `Last-Modified` 优先；**禁止用 PE 编译时间戳（TimeDateStamp）或数字签名日期**当发布日期——那只是构建/签名时间，不是安装包发布或最后修改时间。服务器不给 `Last-Modified` 时退回发布页日期。
+4. **新增必验证**：`--only` 跑通且判据全过才入库，没跑通不提交。
+5. **只增目标条目**：不碰无关产品，不手改 `data.json`（输出物，由脚本生成）。
+6. **大文件跳过 MD5**：包体 >100MB 配 `skip_md5: True`。
+7. **判据全过 → 立即推 main 并当轮生效**：不等定时任务、不再问「要不要推」。见「同步更新」。
 
 ## 定型速查（probe.py 覆盖不到的）
 
@@ -52,7 +53,7 @@ probe.py 会自动做：GitHub API 挑 x64 安装包资产、HEAD 判 302/fixed�
 
 - [ ] 版本号是**新值**，非「未知」、非 `version` 兜底旧值
 - [ ] `size` / `size_mb` 有合理值（`skip_md5` 大文件属正常）
-- [ ] `last_modified` 日期合理（非空、非 1970）
+- [ ] `last_modified` 日期合理（非空、非 1970），且来源是**发布页日期 / HTTP Last-Modified**，不是 PE 编译/签名时间戳
 - [ ] `download_url` 是可达直链（或符合预期形态）
 - [ ] 打印无 `timeout` / `error`（问题清单为空）
 - [ ] 耗时符合优先级：fast <1s、normal 1-3s、slow 10-60s
@@ -111,6 +112,8 @@ gh run list --limit 3                                    # 403/无 workflow 权�
 | 版本停更/扫不到新版 | 逐段递增够不着第2段跳变 | `minor_scan` 列车扫描 |
 | Adobe 新版扫不到 | build 号稀疏跳跃、存在性不单调 | `adobe_build` 并发全扫 |
 | 版本被顶回旧值 | PE 是占位 build（微信）或解析不出（YY） | 别配 `pe_version` |
+| 日期是构建/签名时间 | 把 PE 编译时间戳当发布日期 | 用发布页日期 / HTTP `Last-Modified`（见铁律3） |
+| 官方包和便携包更新节奏不同 | 只测单一安装包漏新版本 | `pe_version` + `alt_download_urls` 多包取最新 |
 | GitHub 大小/直链不对 | 多资产（多平台包）混算 | `asset_filter` + `use_asset_url` |
 | 大文件探测超时 | MD5 全量下载 | `skip_md5: True` |
 | 资源站/论坛被限流 | 请求过重 | `detect_priority='resource'` 单独降频 |
