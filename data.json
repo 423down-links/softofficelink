@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T19:52:42.969734+00:00",
+  "updated_at": "2026-10-20T20:06:30.121890+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -204,8 +204,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "155.0.4283.62",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793130703&P2=404&P3=2&P4=iJi4KPm5ZGYIw9wkAsl3EuW5FPLss1GeJ37H5VEUv0JKoq5xPBhfBKFSapQNIAVoj7AhOyuvzVBC9r6kSN3CKg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793130703&P2=404&P3=2&P4=iJi4KPm5ZGYIw9wkAsl3EuW5FPLss1GeJ37H5VEUv0JKoq5xPBhfBKFSapQNIAVoj7AhOyuvzVBC9r6kSN3CKg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793131572&P2=404&P3=2&P4=ZwJkWjpfXfqBHrt1lzDtWsB6%2fueA1TVyDqzq7IYTeeKO3Kotr6ZRRZfos1Z57oLkiLJg62XyuaQ%2bYuxIojvK9A%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793131572&P2=404&P3=2&P4=ZwJkWjpfXfqBHrt1lzDtWsB6%2fueA1TVyDqzq7IYTeeKO3Kotr6ZRRZfos1Z57oLkiLJg62XyuaQ%2bYuxIojvK9A%3d%3d",
       "downloads": [],
       "size": 207695224,
       "size_mb": 198.1,
@@ -221,13 +221,13 @@
       "icon": "C",
       "icon_color": "linear-gradient(135deg, #4285f4, #34a853)",
       "category": "浏览器",
-      "version": "155.0.8059.85",
-      "download_url": "https://edgedl.me.gvt1.com/dl/release2/chrome/ps7jv2y4q3yo32dl6v6liqauri_155.0.8059.85/155.0.8059.85_chrome_installer_uncompressed.exe",
-      "download_url_with_params": "https://edgedl.me.gvt1.com/dl/release2/chrome/ps7jv2y4q3yo32dl6v6liqauri_155.0.8059.85/155.0.8059.85_chrome_installer_uncompressed.exe",
+      "version": "156.0.8078.48",
+      "download_url": "https://edgedl.me.gvt1.com/dl/release2/chrome/gqqkrczbgbi6dq5qhgethojfv4_156.0.8078.48/156.0.8078.48_chrome_installer_uncompressed.exe",
+      "download_url_with_params": "https://edgedl.me.gvt1.com/dl/release2/chrome/gqqkrczbgbi6dq5qhgethojfv4_156.0.8078.48/156.0.8078.48_chrome_installer_uncompressed.exe",
       "downloads": [],
-      "size": 520460712,
-      "size_mb": 496.4,
-      "last_modified": "2026-10-15",
+      "size": 527126440,
+      "size_mb": 502.7,
+      "last_modified": "2026-10-20",
       "md5": "",
       "official_site": "https://github.com/Bush2021/chrome_installer",
       "update_items": []
