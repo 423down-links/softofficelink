@@ -1788,6 +1788,25 @@ PRODUCTS = [
         'download_url': 'https://download2.obviousidea.com/light_image_resizer7_setup_7.6.7.182.exe',
         'official_site': 'https://www.obviousidea.com/windows-software/light-image-resizer/',
     },
+    {
+        'name': 'HyperSnap',
+        'name_cn': 'HyperSnap',
+        'icon': 'HS',
+        'icon_color': 'linear-gradient(135deg, #e91e63, #ad1457)',
+        'category': '截图工具',
+        # 下载地址固定无版本号（HS10SetupCN.exe），版本号+发布日期在 changelog.asp：
+        #   最新版本 <span class="meta-pill">Version history for HyperSnap 10.4.4</span>
+        #   发布日期 <strong>2026.10.04 Hypersnap 10.4.4</strong>（首个条目为最新）
+        # 走 scrape：一次请求同时拿到版本与发布日，日期符合「发布页优先」铁律3。
+        'detect_type': 'scrape',
+        'check_url': 'https://hyperionics.com/hsdx/changelog.asp',
+        'version_regex': r'Version history for HyperSnap (\d+\.\d+\.\d+)',
+        'date_regex': r'<strong>(\d{4}\.\d{2}\.\d{2}) Hypersnap',
+        'prefer_scraped_version': True,
+        'version': '10.4.4',
+        'download_url': 'https://www.hyperionics.com/downloads/HS10SetupCN.exe',
+        'official_site': 'https://hyperionics.com/hsdx/downloads.asp',
+    },
 ]
 
 MAX_INCREMENT = 30  # 最多递增检测30个版本

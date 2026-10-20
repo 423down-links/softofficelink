@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T02:22:02.179999+00:00",
+  "updated_at": "2026-10-20T02:34:17.233188+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -1973,6 +1973,24 @@
       "last_modified": "2026-10-19",
       "md5": "",
       "official_site": "https://www.obviousidea.com/windows-software/light-image-resizer/",
+      "update_items": []
+    },
+    {
+      "name": "HyperSnap",
+      "name_cn": "HyperSnap",
+      "alias": "",
+      "icon": "HS",
+      "icon_color": "linear-gradient(135deg, #e91e63, #ad1457)",
+      "category": "截图工具",
+      "version": "10.4.4",
+      "download_url": "https://www.hyperionics.com/downloads/HS10SetupCN.exe",
+      "download_url_with_params": "https://www.hyperionics.com/downloads/HS10SetupCN.exe",
+      "downloads": [],
+      "size": 20356064,
+      "size_mb": 19.4,
+      "last_modified": "2026-10-04",
+      "md5": "009a37505fa4d3ef6cf9f3900e1da182",
+      "official_site": "https://hyperionics.com/hsdx/downloads.asp",
       "update_items": []
     }
   ]
