@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T14:22:27.295914+00:00",
+  "updated_at": "2026-10-20T14:25:42.511679+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -1365,7 +1365,7 @@
       "icon": "Dx",
       "icon_color": "linear-gradient(135deg, #e74c3c, #c0392b)",
       "category": "图像处理",
-      "version": "6.7.0.3",
+      "version": "6.8.0.7",
       "download_url": "https://download-center.dxo.com/PureRaw/v6/Win/DxO_PureRaw_v6.exe",
       "download_url_with_params": "https://download-center.dxo.com/PureRaw/v6/Win/DxO_PureRaw_v6.exe",
       "downloads": [],
@@ -1383,7 +1383,7 @@
       "icon": "DF",
       "icon_color": "linear-gradient(135deg, #8e44ad, #9b59b6)",
       "category": "图像处理",
-      "version": "8.10.1.886",
+      "version": "8.11.1.896",
       "download_url": "https://download-center.dxo.com/FilmPack/v8/Win/DxO_FilmPack8.exe",
       "download_url_with_params": "https://download-center.dxo.com/FilmPack/v8/Win/DxO_FilmPack8.exe",
       "downloads": [],
@@ -1401,7 +1401,7 @@
       "icon": "DV",
       "icon_color": "linear-gradient(135deg, #2980b9, #3498db)",
       "category": "图像处理",
-      "version": "5.17.1.48",
+      "version": "5.18.0.52",
       "download_url": "https://download-center.dxo.com/ViewPoint/v5/Win/DxO_ViewPoint5_Setup.exe",
       "download_url_with_params": "https://download-center.dxo.com/ViewPoint/v5/Win/DxO_ViewPoint5_Setup.exe",
       "downloads": [],
@@ -1419,7 +1419,7 @@
       "icon": "DP",
       "icon_color": "linear-gradient(135deg, #16a085, #1abc9c)",
       "category": "图像处理",
-      "version": "10.1.20732.487",
+      "version": "10.2.0.496",
       "download_url": "https://download-center.dxo.com/PhotoLab/v10/Win/DxO_PhotoLab10_Setup.exe",
       "download_url_with_params": "https://download-center.dxo.com/PhotoLab/v10/Win/DxO_PhotoLab10_Setup.exe",
       "downloads": [],
@@ -1991,6 +1991,24 @@
       "last_modified": "2026-10-19",
       "md5": "",
       "official_site": "https://hyperionics.com/hsdx/downloads.asp",
+      "update_items": []
+    },
+    {
+      "name": "AOMEI Partition Assistant",
+      "name_cn": "AOMEI 分区助手",
+      "alias": "",
+      "icon": "AO",
+      "icon_color": "linear-gradient(135deg, #f39c12, #d35400)",
+      "category": "磁盘工具",
+      "version": "10.12.2",
+      "download_url": "https://www.diskpart.com/ss/download/pa/PAssist_TechDemo.exe",
+      "download_url_with_params": "https://www.diskpart.com/ss/download/pa/PAssist_TechDemo.exe",
+      "downloads": [],
+      "size": 74965224,
+      "size_mb": 71.5,
+      "last_modified": "2026-10-20",
+      "md5": "",
+      "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": []
     }
   ]

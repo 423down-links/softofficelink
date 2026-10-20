@@ -1211,9 +1211,13 @@ PRODUCTS = [
         'icon': 'Dx',
         'icon_color': 'linear-gradient(135deg, #e74c3c, #c0392b)',
         'category': '图像处理',
+        # 版本取 PE 资源的 ProductVersion（官方产品版本，如 6.8.0.7）；
+        # FileVersion 是安装器自身版本（带构建号），直接用会让前端版本号不准。
         'detect_type': 'fixed',
         'pe_version': True,
-        'version': '6.0.0',
+        'pe_version_source': 'product',
+        'version': '6.8.0.7',
+        'skip_md5': True,
         'download_url': 'https://download-center.dxo.com/PureRaw/v6/Win/DxO_PureRaw_v6.exe',
         'official_site': 'https://www.dxo.com/dxo-pureraw/',
     },
@@ -1223,9 +1227,15 @@ PRODUCTS = [
         'icon': 'DF',
         'icon_color': 'linear-gradient(135deg, #8e44ad, #9b59b6)',
         'category': '图像处理',
+        # 同上：ProductVersion 才是产品版本（8.11.1.896），FileVersion 无/带构建号
+        # 注：官方安装包当前仍是 8.11.0.896（滞后一个修订版），配置 version_strict_prefix
+        # 让「同产品线的安装器版本」不覆盖人工核实的软件版本，等官方包同步后自动对齐。
         'detect_type': 'fixed',
         'pe_version': True,
-        'version': '8.0.0',
+        'pe_version_source': 'product',
+        'version_strict_prefix': '8.11',
+        'version': '8.11.1.896',
+        'skip_md5': True,
         'download_url': 'https://download-center.dxo.com/FilmPack/v8/Win/DxO_FilmPack8.exe',
         'official_site': 'https://www.dxo.com/dxo-filmpack/',
     },
@@ -1235,9 +1245,12 @@ PRODUCTS = [
         'icon': 'DV',
         'icon_color': 'linear-gradient(135deg, #2980b9, #3498db)',
         'category': '图像处理',
+        # 同上：ProductVersion 才是产品版本（5.18.0.52）
         'detect_type': 'fixed',
         'pe_version': True,
-        'version': '5.0.0',
+        'pe_version_source': 'product',
+        'version': '5.18.0.52',
+        'skip_md5': True,
         'download_url': 'https://download-center.dxo.com/ViewPoint/v5/Win/DxO_ViewPoint5_Setup.exe',
         'official_site': 'https://www.dxo.com/dxo-viewpoint/',
     },
@@ -1247,9 +1260,13 @@ PRODUCTS = [
         'icon': 'DP',
         'icon_color': 'linear-gradient(135deg, #16a085, #1abc9c)',
         'category': '图像处理',
+        # 同上：ProductVersion=10.2.0.496 是产品版本，
+        # FileVersion=10.2.20738.496 的 20738 是构建号，前端展示要前者
         'detect_type': 'fixed',
         'pe_version': True,
-        'version': '10.0.0',
+        'pe_version_source': 'product',
+        'version': '10.2.0.496',
+        'skip_md5': True,
         'download_url': 'https://download-center.dxo.com/PhotoLab/v10/Win/DxO_PhotoLab10_Setup.exe',
         'official_site': 'https://www.dxo.com/dxo-photolab/',
     },
@@ -1794,18 +1811,46 @@ PRODUCTS = [
         'icon': 'HS',
         'icon_color': 'linear-gradient(135deg, #e91e63, #ad1457)',
         'category': '截图工具',
-        # 下载地址固定 latest（HS10SetupCN.exe），无版本号。changelog.asp 会滞后
-        # （曾停在 10.4.4），安装包 PE 无版本资源读不出 FileVersion，故版本用手动维护
-        # 值 10.4.4.4（人工核实的官网最新版），日期用发布日 2026-10-19
-        # （prefer_config_date，不被 CDN Last-Modified 覆盖）；数字签名 10.17 只是
-        # 签名时间，不作发布日期（铁律3）。
-        'detect_type': 'fixed',
+        # 下载地址固定 latest（HS10SetupCN.exe），无版本号。
+        # 版本：changelog.asp 抓官网版本（10.4.4），官网只给三段，
+        # 末段 build 号只在软件 About 框里 → version_build_suffix 补全（10.4.4.4）。
+        # （安装包是 RAR5 SFX，外壳无版本资源；内层 HprSnap.exe 的 PE 版本是
+        #  10.4.4.0，末段恒 0，拿不到 build 号，故不走 PE 探测。）
+        # 日期用发布日 2026-10-19（prefer_config_date，不被 CDN Last-Modified 覆盖）；
+        # 数字签名 10.17 只是签名时间，不作发布日期（铁律3）。
+        'detect_type': 'scrape',
+        'check_url': 'https://hyperionics.com/hsdx/changelog.asp',
+        'version_regex': r'Version history for HyperSnap (\d+\.\d+\.\d+)',
+        'date_regex': r'<strong>(\d{4}\.\d{2}\.\d{2}) Hypersnap',
+        'prefer_scraped_version': True,
+        'version_build_suffix': 4,
         'version': '10.4.4.4',
         'date': '2026-10-19',
         'prefer_config_date': True,
         'skip_md5': True,
         'download_url': 'https://www.hyperionics.com/downloads/HS10SetupCN.exe',
         'official_site': 'https://hyperionics.com/hsdx/downloads.asp',
+    },
+    {
+        'name': 'AOMEI Partition Assistant',
+        'name_cn': 'AOMEI 分区助手',
+        'icon': 'AO',
+        'icon_color': 'linear-gradient(135deg, #f39c12, #d35400)',
+        'category': '磁盘工具',
+        # 官网下载中心页直接给出最新版号与更新日期：
+        #   <div class="num"> 10.12.2 </div><div class="ms">Version</div>
+        #   <div class="num">Oct. 20, 2026</div><div class="ms"> Updated </div>
+        # 走 scrape：一次请求拿到版本 + 发布日（铁律3 发布页优先）。
+        # 下载地址用 Technician 版（302 跳到 www2.aomeisoftware.com 真实文件）。
+        'detect_type': 'scrape',
+        'check_url': 'https://www.diskpart.com/download.html?theme_id=10040',
+        'version_regex': r'<div class="num">\s*(\d+\.\d+\.\d+)\s*</div>\s*<div class="ms">Version',
+        'date_regex': r'<div class="num">\s*([A-Z][a-z]{2}\.\s*\d{1,2},\s*\d{4})\s*</div>\s*<div class="ms">\s*Updated',
+        'prefer_scraped_version': True,
+        'version': '10.12.2',
+        'skip_md5': True,
+        'download_url': 'https://www.diskpart.com/ss/download/pa/PAssist_TechDemo.exe',
+        'official_site': 'https://www.diskpart.com/download.html?theme_id=10040',
     },
 ]
 
@@ -2017,6 +2062,12 @@ def parse_date(date_str):
         return f"{m.group(3)}-{mon}-{m.group(2).zfill(2)}"
     # 英文月份: September 9, 2026
     m = re.match(r'([A-Za-z]+)\s+(\d{1,2}),?\s*(20\d{2})', date_str)
+    if m:
+        mon = months_full.get(m.group(1).lower(), months.get(m.group(1).lower()[:3], '01'))
+        return f"{m.group(3)}-{mon}-{m.group(2).zfill(2)}"
+    # 英文缩写月份+点号: Oct. 20, 2026 / Sep. 1, 2026
+    # （AOMEI 官网下载中心用这种格式；注意要在 fallback 替换 '.' 之前处理）
+    m = re.match(r'([A-Za-z]{3,})\.\s*(\d{1,2}),?\s*(20\d{2})', date_str)
     if m:
         mon = months_full.get(m.group(1).lower(), months.get(m.group(1).lower()[:3], '01'))
         return f"{m.group(3)}-{mon}-{m.group(2).zfill(2)}"
@@ -2522,6 +2573,8 @@ def detect_fixed(product):
             except Exception as e:
                 print(f"  ⚠️ 文件名版本提取失败: {e}")
     version = product.get('version', '最新版')
+    # PE 版本来源开关：'product' 时优先读 ProductVersion（DxO 专用）
+    prefer_product_version = product.get('pe_version_source', '') == 'product'
     # DLL PE版本探测：从7z SFX安装器中提取DLL读取版本号
     if product.get('dll_pe_version') and not is_webpage:
         try:
@@ -2556,10 +2609,20 @@ def detect_fixed(product):
             pass
         if not head_skip_pe:
             try:
-                pe_ver = get_pe_version(url, referer=product.get('referer'))
+                pe_ver = get_pe_version(url, referer=product.get('referer'),
+                                        prefer_product_version=prefer_product_version)
                 if pe_ver:
                     print(f"  PE版本: {pe_ver}")
                     version = pe_ver
+                    # DxO 场景：软件内版本（8.11.1.896）比安装器版本（8.11.0.896）高一位，
+                    # 官方安装包滞后一个修订版。此时保留人工核实的配置版本，
+                    # 前提是两者主版本段一致（同一条产品线），否则以 PE 为准。
+                    cfg_ver = product.get('version')
+                    strict_prefix = product.get('version_strict_prefix')
+                    if cfg_ver and strict_prefix and pe_ver != cfg_ver:
+                        if pe_ver.startswith(strict_prefix) or cfg_ver.startswith(strict_prefix):
+                            print(f"  ℹ️ PE版本({pe_ver})与配置版本({cfg_ver})同产品线，保留配置版本")
+                            version = cfg_ver
                 else:
                     pe_ver = _pe_version_cached(url)
                     if pe_ver:
@@ -2571,6 +2634,42 @@ def detect_fixed(product):
                 if pe_ver:
                     print(f"  PE版本(缓存兜底): {pe_ver}")
                     version = pe_ver
+    elif product.get('rar_sfx_version') and not is_webpage:
+        # RAR 自解压安装包（SFX）：外壳 PE 无版本资源，真实版本在归档内的主程序里。
+        # 典型：HyperSnap 的 HS10SetupCN.exe（RAR5 SFX，7z 解不了，需 unrar）。
+        # 复用 PE 版本缓存（键=URL），LM/size 不变时直接命中，避免反复下整包。
+        cache_hit_ver = ''
+        try:
+            _c = _pe_cache_load()
+            with _pe_cache_lock:
+                hit = _c.get(url)
+            if hit and detected_size and detected_size == hit.get('size') and (
+                    not hit.get('lm') or detected_date == hit['lm'] or detected_date == hit.get('date')):
+                if hit.get('ver'):
+                    print(f"  RAR SFX版本(HEAD命中缓存): {hit['ver']}")
+                    cache_hit_ver = hit['ver']
+                    version = cache_hit_ver
+        except Exception:
+            pass
+        if not cache_hit_ver:
+            try:
+                sfx_ver = get_rar_sfx_version(
+                    url,
+                    member_names=product.get('rar_sfx_members'),
+                    referer=product.get('referer'))
+                if sfx_ver:
+                    version = sfx_ver
+                    with _pe_cache_lock:
+                        _pe_cache[url] = {'ver': sfx_ver, 'ts': time.time(),
+                                          'size': detected_size, 'lm': detected_date}
+                    _pe_cache_save()
+                else:
+                    cached = _pe_version_cached(url)
+                    if cached:
+                        print(f"  RAR SFX版本(缓存兜底): {cached}")
+                        version = cached
+            except Exception as e:
+                print(f"  RAR SFX版本读取失败: {e}")
     # 官网页面版本交叉校验（可选）：二进制可能被 CDN 长期缓存（如 wftpserver.com 的
     # Cache-Control: max-age=604800，整整 7 天），或被本地 PE 缓存（TTL 6h）挡住，
     # 导致刚发布的新版本号滞后。官网页面即时更新，配置 page_version_url + regex 后，
@@ -3031,13 +3130,17 @@ def _range_download(url, headers, start, end, workers=8, timeout=60, min_chunk=6
         return _single()
 
 
-def get_pe_version(url, referer=None):
+def get_pe_version(url, referer=None, prefer_product_version=False):
     """读取 PE 文件版本，带 URL 级缓存。
 
     热跑加速的关键：缓存键 = URL，命中且未过期时**零网络请求**直接返回。
     这对高延迟服务器（如 winxdvd.com 单次请求 TTFB 就要 20 秒）尤其重要——
     原来每轮都要发 HEAD + 2 次 Range，稳态也要 ~60 秒；现在直接读缓存。
     TTL 到期后重新探测；探测失败时用缓存旧值兜底，避免版本号被"降级"。
+
+    prefer_product_version=True 时优先读 PE 资源里的 ProductVersion
+    （DxO 专用：ProductVersion=10.2.0.496 是产品版本，FileVersion=10.2.20738.496
+    带构建号；其它软件不能开，PotPlayer 的 ProductVersion 是无关的播放器版本）。
     """
     cache_key = url
     cache = _pe_cache_load()
@@ -3047,7 +3150,7 @@ def get_pe_version(url, referer=None):
         print(f"  PE版本(缓存): {hit['ver']}")
         return hit['ver']
 
-    ver, size, lm = _get_pe_version_raw(url, referer)
+    ver, size, lm = _get_pe_version_raw(url, referer, prefer_product_version)
     if ver:
         with _pe_cache_lock:
             _pe_cache[cache_key] = {'ver': ver, 'ts': time.time(), 'size': size, 'lm': lm}
@@ -3061,7 +3164,7 @@ def get_pe_version(url, referer=None):
     return ''
 
 
-def _get_pe_version_raw(url, referer=None):
+def _get_pe_version_raw(url, referer=None, prefer_product_version=False):
     """从PE文件的.rsrc段读取FileVersion（四段版本号），只下载PE头和资源段，不需要下载整个文件。
     返回 (版本号, 文件大小, Last-Modified)，失败返回 ('', 0, '')。
 
@@ -3128,17 +3231,34 @@ def _get_pe_version_raw(url, referer=None):
                 rsrc = download_range(raw_offset, raw_offset + min(raw_size, 2*1024*1024), workers=16)
                 # 5. 解析版本信息（UTF-16LE编码）
                 text = rsrc.decode('utf-16-le', errors='replace')
-                # 找FileVersion后面的版本号（支持四段/三段/两段；UTF-16资源中FileVersion后有\x00分隔）
+                # ⚠️ 版本来源可选：pe_version_source='product' 时优先 ProductVersion。
+                # ProductVersion 才是官方产品版本（DxO: 10.2.0.496），
+                # FileVersion 是文件自身版本（DxO: 10.2.20738.496，20738 是构建号）。
+                # 但**不能全局改**：PotPlayer 的 ProductVersion 是播放器历史版本
+                # (1.7.23118.0)、R-Studio 干脆没有 ProductVersion，
+                # 所以只在产品显式配置 pe_version_source='product' 时才用。
+                if prefer_product_version:
+                    m = re.search(r'ProductVersion[\x00\s]*(\d+\.\d+(?:\.\d+){0,2})', text)
+                    if m:
+                        print(f"  PE ProductVersion: {m.group(1)}")
+                        return m.group(1), size, lm
+                # 默认走 FileVersion（支持四段/三段/两段；UTF-16资源中FileVersion后有\x00分隔）
                 match = re.search(r'FileVersion[\x00\s]*(\d+\.\d+\.\d+\.\d+)', text)
                 if not match:
                     match = re.search(r'FileVersion[\x00\s]*(\d+\.\d+(?:\.\d+)?)', text)
                 if match:
+                    print(f"  PE FileVersion: {match.group(1)}")
                     return match.group(1), size, lm
-                # 兜底：找所有四段版本号，取出现最多的
+                # 兜底2：找所有四段版本号，取出现最多的
                 versions = re.findall(r'\d+\.\d+\.\d+\.\d+', text)
                 if versions:
                     from collections import Counter
                     return Counter(versions).most_common(1)[0][0], size, lm
+                # 兜底3：ProductVersion（FileVersion 都没有时）
+                m = re.search(r'ProductVersion[\x00\s]*(\d+\.\d+(?:\.\d+){0,2})', text)
+                if m:
+                    print(f"  PE ProductVersion(兜底): {m.group(1)}")
+                    return m.group(1), size, lm
                 break
     except Exception as e:
         print(f"  PE版本解析失败: {e}")
@@ -3276,6 +3396,174 @@ def get_nsis_install_version(url, referer=None):
     except Exception as e:
         print(f"  NSIS版本解析失败: {e}")
     return ''
+
+
+def get_rar_sfx_version(url, member_names=None, referer=None, max_size=64 * 1024 * 1024):
+    """从 RAR 自解压安装包（SFX）里解出主程序并读取其 PE 版本号。
+
+    背景：HyperSnap 的安装包 HS10SetupCN.exe 是 RAR5 SFX（Method=m5:22），
+    外壳 PE 没有版本资源（读不出 FileVersion），真实版本在归档内的
+    HprSnap.exe 里。7z 不支持 RAR5 解压，需要 unrar（或 unar）。
+
+    流程：下载整包 → 用 unrar 解出指定成员 → 读该 exe 的 PE 版本。
+    member_names 为候选文件名（按优先级），依次尝试。
+    返回版本号字符串，失败返回 ''。
+    """
+    import os
+    import re
+    import shutil
+    import subprocess
+    import tempfile
+
+    headers = {'User-Agent': UA}
+    if referer:
+        headers['Referer'] = referer
+
+    # 找可用的 RAR 解包器：unrar 原生支持 RAR5；unar(The Unarchiver) 也支持
+    unrar = None
+    for cand in ['unrar', '/usr/bin/unrar', '/usr/local/bin/unrar',
+                 os.path.join(BASE_DIR, 'tools', 'unrar')]:
+        exe = shutil.which(cand) if not os.path.isabs(cand) else (cand if os.path.exists(cand) else None)
+        if exe:
+            unrar = exe
+            break
+    if not unrar:
+        # 备选：unar（lsar 列目录 + unar 解压），CI 里 apt install unar 可用
+        unar = shutil.which('unar')
+        lsar = shutil.which('lsar')
+        if not (unar and lsar):
+            print("  未找到unrar/unar，跳过RAR SFX版本解析")
+            return ''
+    else:
+        unar = lsar = None
+
+    tmp_path = None
+    try:
+        # 慢源（如 hyperionics.com 单连接仅 ~14KB/s）必须并发分片拉，
+        # 实测 24 并发聚合 ~130KB/s，比单连接快 5 倍以上。
+        total = 0
+        try:
+            req = urllib.request.Request(url, method='HEAD', headers=headers)
+            with urllib.request.urlopen(req, timeout=20) as resp:
+                total = int(resp.headers.get('Content-Length', 0) or 0)
+        except Exception:
+            total = 0
+        if total and total <= max_size:
+            data = _range_download(url, headers, 0, total - 1,
+                                   workers=24, timeout=180, min_chunk=32768)
+        else:
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=180) as resp:
+                data = resp.read()
+        if len(data) > max_size:
+            print(f"  RAR SFX包过大({len(data)}字节)，跳过")
+            return ''
+        with tempfile.NamedTemporaryFile(suffix='.exe', delete=False) as f:
+            f.write(data)
+            tmp_path = f.name
+
+        # 列出归档成员，找主程序（优先指定名，其次取最大的 .exe）
+        members = []
+        if unrar:
+            try:
+                lst = subprocess.run([unrar, 'lb', tmp_path], capture_output=True,
+                                     text=True, timeout=60)
+                members = [m.strip() for m in lst.stdout.split('\n') if m.strip()]
+            except Exception as e:
+                print(f"  RAR列出失败: {e}")
+                return ''
+        else:
+            try:
+                lst = subprocess.run([lsar, '-l', tmp_path], capture_output=True,
+                                     text=True, timeout=60)
+                for line in lst.stdout.split('\n'):
+                    parts = line.split()
+                    if parts:
+                        members.append(parts[-1])
+            except Exception as e:
+                print(f"  RAR列出失败(lsar): {e}")
+                return ''
+
+        targets = []
+        for want in (member_names or []):
+            for m in members:
+                if m.lower() == want.lower() or m.lower().endswith('/' + want.lower()):
+                    targets.append(m)
+                    break
+        if not targets:
+            exes = [m for m in members if m.lower().endswith('.exe')
+                    and not m.lower().endswith('setup.exe')]
+            if exes:
+                targets = exes[:1]
+
+        for target in targets:
+            tmpdir = tempfile.mkdtemp()
+            try:
+                if unrar:
+                    subprocess.run([unrar, 'x', '-inul', '-y', tmp_path, target, tmpdir],
+                                   capture_output=True, timeout=120)
+                else:
+                    # unar 只能整包解压，指定成员靠解完再在目录里找
+                    subprocess.run([unar, '-quiet', '-force-overwrite',
+                                    '-output-directory', tmpdir, tmp_path],
+                                   capture_output=True, timeout=180)
+                for root, _dirs, files in os.walk(tmpdir):
+                    for fn in files:
+                        if not fn.lower().endswith('.exe'):
+                            continue
+                        p = os.path.join(root, fn)
+                        ver = _read_pe_file_version(p)
+                        if ver:
+                            print(f"  RAR SFX版本({fn}): {ver}")
+                            return ver
+            finally:
+                shutil.rmtree(tmpdir, ignore_errors=True)
+        return ''
+    except Exception as e:
+        print(f"  RAR SFX版本解析失败: {e}")
+        return ''
+    finally:
+        if tmp_path and os.path.exists(tmp_path):
+            try:
+                os.unlink(tmp_path)
+            except Exception:
+                pass
+
+
+def _read_pe_file_version(path):
+    """读取本地 PE 文件的版本号：ProductVersion 优先，其次 FileVersion。"""
+    import struct
+    try:
+        with open(path, 'rb') as f:
+            data = f.read()
+        if len(data) < 1024 or data[:2] != b'MZ':
+            return ''
+        pe = struct.unpack_from('<I', data, 0x3C)[0]
+        if pe + 24 > len(data) or data[pe:pe+4] != b'PE\x00\x00':
+            return ''
+        num_sections = struct.unpack_from('<H', data, pe + 6)[0]
+        opt_header_size = struct.unpack_from('<H', data, pe + 20)[0]
+        section_offset = pe + 24 + opt_header_size
+        for i in range(num_sections):
+            off = section_offset + i * 40
+            if off + 40 > len(data):
+                break
+            name = data[off:off+8].rstrip(b'\x00').decode('ascii', errors='replace')
+            if name != '.rsrc':
+                continue
+            raw_offset = struct.unpack_from('<I', data, off + 20)[0]
+            raw_size = struct.unpack_from('<I', data, off + 16)[0]
+            rsrc = data[raw_offset:raw_offset + min(raw_size, 2 * 1024 * 1024)]
+            text = rsrc.decode('utf-16-le', errors='replace')
+            m = re.search(r'ProductVersion[\x00\s]*(\d+\.\d+(?:\.\d+){0,2})', text)
+            if m:
+                return m.group(1)
+            m = re.search(r'FileVersion[\x00\s]*(\d+\.\d+(?:\.\d+){0,2})', text)
+            if m:
+                return m.group(1)
+        return ''
+    except Exception:
+        return ''
 
 
 def _fast_download(url, headers, max_size=8 * 1024 * 1024, chunks=16, timeout=90):
@@ -4294,6 +4582,18 @@ def detect_scrape(product):
     # 版本号决策：默认优先使用配置的默认版本号，配置prefer_scraped_version时优先使用抓取版本
     prefer_scraped = product.get('prefer_scraped_version', False)
     use_newer = product.get('use_newer_scraped', False)
+    # 末段 build 后缀：官网只给三段版本、末段 build 号只在软件 About 框里时
+    # （HyperSnap: 官网 10.4.4 + build 4 = 10.4.4.4），
+    # 用配置的后缀补全末段。官网版本升级时自动跟着变，只需偶尔更新后缀。
+    build_suffix = product.get('version_build_suffix')
+    if build_suffix and scraped_version and '.' in scraped_version:
+        segs = scraped_version.split('.')
+        # 只在三段版本时补末段（'10.4.4' → '10.4.4.4'）；
+        # 注意不能用 endswith 判断：'10.4.4' 本身就以 '.4' 结尾，会误判成已补全。
+        if len(segs) == 3:
+            full_ver = f"{scraped_version}.{build_suffix}"
+            print(f"  ℹ️ 补全末段build号: {scraped_version} -> {full_ver}")
+            scraped_version = full_ver
     if prefer_scraped and scraped_version:
         version = scraped_version
         if default_version and default_version != scraped_version:
@@ -4341,8 +4641,15 @@ def detect_scrape(product):
         exists, detected_size, detected_date = check_url_follow(url)
         if detected_size > 0:
             size = detected_size
-        if detected_date:
+        # prefer_config_date: 日期以人工核实的发布日期为准，不被 CDN Last-Modified 覆盖
+        # （HyperSnap 的 Last-Modified 是 10.17 签名/上传日，真实发布日是 10.19）
+        if detected_date and not product.get('prefer_config_date'):
             date = detected_date
+        elif product.get('prefer_config_date') and product.get('date'):
+            date = product['date']
+            print(f"  发布日期(人工核实): {date}")
+        if not date and scraped_date:
+            date = scraped_date
         if not exists and size == 0:
             print(f"  ⚠️ 下载地址不可用，尝试递减版本...")
             # 尝试递减版本号（补丁版可能没有完整离线包）
@@ -4381,7 +4688,13 @@ def detect_scrape(product):
                 print(f"  跳过MD5计算 (skip_md5={product.get('skip_md5', False)}, size={size/1024/1024:.0f}MB)")
 
     # scrape日期优先于HEAD日期（官方发布日期比文件上传时间更准确）
-    if scraped_date:
+    # 但 prefer_config_date 时以人工核实的发布日期为准（页面日期也可能滞后，
+    # 如 HyperSnap：changelog 写 10.04，实际发布日 10.19）
+    if product.get('prefer_config_date') and product.get('date'):
+        if date != product['date']:
+            print(f"  ℹ️ 发布日期(人工核实): {product['date']}")
+        date = product['date']
+    elif scraped_date:
         date = scraped_date
     elif not date and product.get('date'):
         date = product['date']

@@ -1345,6 +1345,96 @@ GET https://api.cloud.189.cn/open/share/getShareInfoByCode.action?shareCode={分
 │       └─ 否 → 手动维护version即可
 └─ 否 → 用increment或scrape模式
 ```
+
+---
+
+## 第28.1节：版本来源精度（ProductVersion / build 后缀 / 安装器滞后）
+
+> 2026-10-20 实战沉淀。前端版本号「不准确」基本都是这三种根因。
+
+### 根因1：PE 读的是 FileVersion，不是 ProductVersion
+
+PE 资源段（VS_VERSIONINFO）里有两个版本字段，含义不同：
+
+| 字段 | 含义 | DxO PhotoLab 实例 |
+|------|------|------------------|
+| `FileVersion` | **文件自身**版本（常混入构建号） | 10.2.**20738**.496 |
+| `ProductVersion` | **产品**版本（官方对外口径） | **10.2.0.496** |
+
+默认读 FileVersion，前端就会显示 `10.2.20738.496` 这种带构建号的怪版本。
+
+```python
+{
+    'name': 'DxO PhotoLab',
+    'detect_type': 'fixed',
+    'pe_version': True,
+    'pe_version_source': 'product',   # ← 改读 ProductVersion
+    'version': '10.2.0.496',
+}
+```
+
+**⚠️ 不能全局改**：实测 PotPlayer 的 ProductVersion 是 `1.7.23118.0`（播放器内核的远古版本，与 PotPlayer 26.x 无关），R-Studio 干脆没有 ProductVersion。所以必须是**按产品显式开启**。
+
+### 根因2：官网只给三段版本，末段 build 号在软件 About 框里
+
+HyperSnap 官网全站只显示 `10.4.4`，第四段 `4` 只在软件 About 框里。安装包内 PE 版本是 `10.4.4.0`（末段恒 0），也拿不到。
+
+解法：官网版本 + 配置的末段后缀组合。
+
+```python
+{
+    'name': 'HyperSnap',
+    'detect_type': 'scrape',
+    'check_url': 'https://hyperionics.com/hsdx/changelog.asp',
+    'version_regex': r'Version history for HyperSnap (\d+\.\d+\.\d+)',
+    'prefer_scraped_version': True,
+    'version_build_suffix': 4,      # 10.4.4 → 10.4.4.4
+    'version': '10.4.4.4',
+}
+```
+
+官网升到 10.4.5 时自动变 10.4.5.4，只需偶尔更新后缀。
+
+### 根因3：官方安装包比软件版本旧一个修订版
+
+DxO FilmPack 软件内是 `8.11.1.896`，但 CDN 上的安装包 PE 是 `8.11.0.896`（官方包同步慢）。此时 PE 值会**盖掉**正确版本。
+
+解法：`version_strict_prefix` —— 同产品线时保留人工核实的配置值，等官方包同步后 PE 与配置相等，自动切换。
+
+```python
+{
+    'name': 'DxO FilmPack',
+    'detect_type': 'fixed',
+    'pe_version': True,
+    'pe_version_source': 'product',
+    'version_strict_prefix': '8.11',   # 同产品线
+    'version': '8.11.1.896',
+}
+```
+
+### 补充：安装包是 RAR/自解压壳，读不出版本
+
+HyperSnap 的 `HS10SetupCN.exe` 是 **RAR5 SFX**（Method=m5:22）：外壳 PE 无版本资源，真实版本在归档内的 `HprSnap.exe` 里。**7z 不支持 RAR5 解压**，需 `unrar`（或 `unar`）。
+
+```python
+{
+    'detect_type': 'fixed',
+    'rar_sfx_version': True,
+    'rar_sfx_members': ['HprSnap.exe'],
+}
+```
+
+CI 已在 detect.yml 安装 `unrar`（失败则退 `unar`）。注意 unrar 是非自由软件，**不入库**，靠 CI 现场装。
+
+### 速查
+
+| 现象 | 配置 | 说明 |
+|------|------|------|
+| 版本带构建号 | `pe_version_source: 'product'` | 改读 ProductVersion |
+| 官网三段、用户要四段 | `version_build_suffix: N` | scrape 模式 |
+| PE 版本比正确值低一版 | `version_strict_prefix: 'x.y'` | 保留人工核实值 |
+| 装包完全读不出版本 | `rar_sfx_version: True` | 需 unrar |
+
 ---
 
 ## 第29节：Google Update API 获取 Chrome 64位包（ap 参数决定架构）

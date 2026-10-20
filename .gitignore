@@ -6,6 +6,8 @@ __pycache__/
 # 工具二进制（本地可选，CI 环境靠 apt 装）
 tools/7zz
 tools/7z.tar.xz
+# unrar 是非自由软件，不能随仓库分发；CI 里用 apt install unrar 装
+tools/unrar
 
 # IDE / Trae 自动产物
 .trae-html-share-packages/

@@ -36,6 +36,7 @@ jobs:
         with:
           python-version: '3.x'
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq p7zip-full
+      - run: sudo apt-get install -y -qq unrar || sudo apt-get install -y -qq unar
       - run: pip install -q py7zr
       - name: Hourly fast+normal+resource detect
         id: detect
@@ -85,6 +86,7 @@ jobs:
         with:
           python-version: '3.x'
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq p7zip-full
+      - run: sudo apt-get install -y -qq unrar || sudo apt-get install -y -qq unar
       - run: pip install -q py7zr
       - name: Full detect (non-resource)
         id: detect
