@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T21:52:46.973134+00:00",
+  "updated_at": "2026-10-20T21:58:55.620742+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -204,8 +204,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "155.0.4283.62",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793137907&P2=404&P3=2&P4=gFSpDVaAR4HS5UOLwedgZ4AvIrEEjJxvXxphd8D44Z%2bFs3CZTH1BhyIEwkZyBJawE5Z3NDbjE4knGWgtpNYDdw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793137907&P2=404&P3=2&P4=gFSpDVaAR4HS5UOLwedgZ4AvIrEEjJxvXxphd8D44Z%2bFs3CZTH1BhyIEwkZyBJawE5Z3NDbjE4knGWgtpNYDdw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793138276&P2=404&P3=2&P4=OK0EAc%2bu3gpacG0dbKkAztUwggJpM2CecYkOXJNxg0TzyNztHMl1BPkayPP5WtP5EDzbyt2Kd83ydJliBj5Rpw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793138276&P2=404&P3=2&P4=OK0EAc%2bu3gpacG0dbKkAztUwggJpM2CecYkOXJNxg0TzyNztHMl1BPkayPP5WtP5EDzbyt2Kd83ydJliBj5Rpw%3d%3d",
       "downloads": [],
       "size": 207695224,
       "size_mb": 198.1,
@@ -1533,7 +1533,7 @@
       "downloads": [],
       "size": 524288000,
       "size_mb": 500.0,
-      "last_modified": "",
+      "last_modified": "2026-09-23",
       "md5": "",
       "official_site": "https://www.foxit.com/pdf-editor/version-history.html",
       "update_items": []
@@ -1657,19 +1657,19 @@
       "icon": "N",
       "icon_color": "linear-gradient(135deg, #4a6fa5, #2b3f63)",
       "category": "资源站",
-      "version": "2026-10-20",
+      "version": "2026-10-21",
       "download_url": "https://nsaneforums.com/nsane.down/",
       "download_url_with_params": "https://nsaneforums.com/nsane.down/",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-10-20",
+      "last_modified": "2026-10-21",
       "md5": "",
       "official_site": "https://nsaneforums.com/",
       "update_items": [
         {
-          "title": "AOMEI Partition Assistant 10.12.2",
-          "url": "https://nsaneforums.com/topic/490451-aomei-partition-assistant-10122/"
+          "title": "Google Chrome 156.0.8078.48",
+          "url": "https://nsaneforums.com/topic/490491-google-chrome-1560807848/"
         }
       ]
     },
