@@ -1943,6 +1943,49 @@ PRODUCTS = [
         'download_url': 'https://oss.hexhub.cn/plugin/HexHub-Client-windows-amd64-portable-5.1.9-202606072158.exe',
         'official_site': 'https://www.hexhub.cn/',
     },
+    {
+        'name': 'Java JDK',
+        'name_cn': 'Java(JDK)',
+        'alias': 'Java Runtime Environment',
+        'icon': 'J',
+        'icon_color': 'linear-gradient(135deg, #f89820, #e76f00)',
+        'category': '运行环境',
+        # Oracle Java 一次要展示多条版本线（27 GA / 25 LTS / 21 LTS / 8 LTS），
+        # 前端是「点标题展开子版本列表」，所以这里不是单版本条目：
+        #   - 主版本走官方 javaReleases API，版本号/LTS 标记/发布日期全从 API 取；
+        #   - 每条版本线的发行说明页与下载锚点是官网固定路径，写在 java_line_cfg 里。
+        # 不能用 scrape 抓 downloads 页：页面里版本号混着平台后缀
+        # （8u511 / jdk-27.0.1），正则切不干净，而且一次只拿得到主推版本。
+        'detect_type': 'java_api',
+        'java_api': 'https://java.oraclecloud.com/javaReleases',
+        'java_lines': ['27', '25', '21', '8'],
+        'java_line_cfg': {
+            '27': {
+                'official_site': 'https://oracle.com/java/technologies/javase/27u-relnotes.html',
+                'download_url': 'https://www.oracle.com/java/technologies/downloads/#jdk27-windows',
+            },
+            '25': {
+                'official_site': 'https://oracle.com/java/technologies/javase/25u-relnotes.html',
+                'download_url': 'https://www.oracle.com/java/technologies/downloads/#jdk25-windows',
+            },
+            '21': {
+                'official_site': 'https://oracle.com/java/technologies/javase/21u-relnotes.html',
+                'download_url': 'https://www.oracle.com/cn/java/technologies/downloads/#java21',
+            },
+            '8': {
+                'official_site': 'https://oracle.com/java/technologies/javase/8u-relnotes.html',
+                'download_url': 'https://www.oracle.com/java/technologies/downloads/#java8',
+            },
+        },
+        'version': '27.0.1',
+        # API 抽风时的日期兜底（正常情况下用 API 返回的 releaseDate）
+        'date': '2026-10-20',
+        'download_url': 'https://www.oracle.com/java/technologies/downloads/',
+        'official_site': 'https://oracle.com/java/technologies/java-se-glance.html',
+        # 下载页不是单一安装包，没有体积可探
+        'allow_no_size': True,
+        'skip_md5': True,
+    },
 ]
 
 MAX_INCREMENT = 30  # 最多递增检测30个版本
@@ -5317,6 +5360,157 @@ def detect_hexhub_api(product):
                 product.get('download_url', ''), 0, '', '')
 
 
+# Java 多子版本清单（供前端展开显示），按产品名存放：
+# {'产品名': [{'version': '27.0.1', 'tag': 'GA', 'official_site': '...', 'download_url': '...'}, ...]}
+_java_versions = {}
+
+
+def _java_version_tag(is_lts):
+    """LTS → 'LTS'，非 LTS → 'GA'（Oracle 官网的两种发布类型标记）"""
+    return 'LTS' if is_lts else 'GA'
+
+
+def _java_display_version(jdk_ver, raw_version):
+    """把 API 的原始版本号转成前端展示用的版本号。
+
+    API 对 JDK 8 返回 '1.8.0_511'（JVM 内部版本号写法），
+    官网/用户习惯看到的是 '8.0 Update 511'，这里做一次归一化。
+    其余版本号原样输出（27.0.1 / 25.0.5 / 21.0.13）。
+    """
+    raw = (raw_version or '').strip()
+    m = re.match(r'^1\.(\d+)\.0_(\d+)$', raw)
+    if m:
+        return f"{m.group(1)}.0 Update {m.group(2)}"
+    return raw
+
+
+def detect_java_api(product):
+    """Oracle 官方 Java Releases API 探测：一次请求拿全各版本线的最新版本号/LTS 标记/发布日期。
+
+    端点：https://java.oraclecloud.com/javaReleases
+    返回 {"items": [...]}，每项含：
+      jdkDetails.jdkVersion        主版本号（27 / 25 / 21 / 8 …）
+      jdkDetails.latestReleaseVersion  该版本线的最新版本（27.0.1 / 1.8.0_511）
+      jdkDetails.isLts             是否长期支持版
+      releaseDate                  发布日期（2026-10-20）
+      releaseNotesUrl              该版本的发行说明页
+
+    为什么走这个 API 而不是抓官网页面：
+    - 官网页面（/java/technologies/downloads/）只列"当前主推"的几个版本，
+      且版本号在 <h2>/<h3> 里混着平台后缀（8u511 / jdk-27.0.1），正则很难稳定切干净；
+    - 这个 API 是官方给 java.com 下载页用的同一份数据，结构化、字段齐全，
+      一次请求就能同时拿到版本号 + LTS 标记 + 发布日期 + 发行说明链接。
+
+    注意 SSL：部分环境握手会被中断（UNEXPECTED_EOF），故用不校验证书的 context 重试。
+    """
+    import json as _json
+    import ssl
+
+    api = product.get('java_api') or 'https://java.oraclecloud.com/javaReleases'
+    # 只保留用户关注的版本线（产品配置里给出），API 里还有 17/11/8-perf 等
+    wanted = [str(x) for x in (product.get('java_lines') or [])]
+
+    headers = {
+        'User-Agent': UA,
+        'Accept': 'application/json, text/plain, */*',
+    }
+
+    payload = None
+    last_err = None
+    for verify in (True, False):
+        try:
+            req = urllib.request.Request(api, headers=headers)
+            if verify:
+                with urllib.request.urlopen(req, timeout=20) as resp:
+                    payload = _json.loads(resp.read().decode('utf-8', errors='ignore'))
+            else:
+                ctx = ssl.create_default_context()
+                ctx.check_hostname = False
+                ctx.verify_mode = ssl.CERT_NONE
+                with urllib.request.urlopen(req, timeout=20, context=ctx) as resp:
+                    payload = _json.loads(resp.read().decode('utf-8', errors='ignore'))
+            break
+        except Exception as e:
+            last_err = e
+    if payload is None:
+        print(f"  ⚠️ Java API错误: {last_err}")
+        # 版本用配置里的固定值兜底（主版本行不随 LTS 补丁跳动）；
+        # 子版本清单由上层沿用上次数据（否则 API 抽风一次，展开列表整块消失）
+        return (product.get('version', ''), product.get('download_url', ''),
+                product.get('download_url', ''), 0, '', '')
+
+    # 按版本线归类：同一版本线会有多条记录（CPU 补丁 + 功能版），
+    # 取 releaseDate 最新、且 releaseType 为 CPU 的那条（正式发布版）
+    by_line = {}
+    for item in (payload.get('items') or []):
+        jd = item.get('jdkDetails') or {}
+        line = str(jd.get('jdkVersion') or '')
+        if line not in wanted:
+            continue
+        if item.get('releaseType') != 'CPU':
+            continue
+        rel_date = (item.get('releaseDate') or '')[:10]
+        cur = by_line.get(line)
+        if cur is None or rel_date > cur['date']:
+            by_line[line] = {
+                'date': rel_date,
+                'version': jd.get('latestReleaseVersion') or item.get('releaseVersion') or '',
+                'lts': bool(jd.get('isLts')),
+                'notes': item.get('releaseNotesUrl') or '',
+            }
+
+    # 站点配置：每条版本线自己的发行说明页（官网固定路径）与下载锚点
+    line_cfg = product.get('java_line_cfg') or {}
+    variants = []
+    for line in wanted:
+        info = by_line.get(line)
+        if not info:
+            continue
+        cfg = line_cfg.get(line) or {}
+        variants.append({
+            'name': f"Java SE Development Kit {_java_display_version(line, info['version'])}",
+            'version': _java_display_version(line, info['version']),
+            'tag': _java_version_tag(info['lts']),
+            'official_site': cfg.get('official_site', ''),
+            'download_url': cfg.get('download_url', ''),
+        })
+
+    if not variants:
+        print("  ⚠️ Java API未取到目标版本线")
+        return (product.get('version', ''), product.get('download_url', ''),
+                product.get('download_url', ''), 0, '', '')
+
+    # 主版本 = 配置里优先级最高的版本线（java_lines 已按 27/25/21/8 降序排列），
+    # 不能按"发布日期最新"选：否则某条 LTS 线先发补丁时，主版本会从 27.0.1
+    # 跳成 25.0.6（数值变小），被防降级机制判成回滚而拦掉。
+    main_line = None
+    for line in wanted:
+        if line in by_line:
+            main_line = line
+            break
+    if main_line is None:
+        print("  ⚠️ Java API未取到目标版本线")
+        return (product.get('version', ''), product.get('download_url', ''),
+                product.get('download_url', ''), 0, '', '')
+
+    # 发布日期取所有版本线里最新的一个（任一条线发补丁都算 Java 有更新）
+    main_date = max((by_line[l]['date'] for l in by_line), default='')
+
+    main_version = by_line[main_line]['version']
+    display_version = _java_display_version(main_line, main_version)
+    # 主下载地址用产品配置的统一下载页（不带锚点）；
+    # 各版本线自己的锚点下载链接放在 version_list 里，由前端展开后逐条展示
+    main_download = product.get('download_url', '')
+
+    _java_versions[product['name']] = variants
+
+    print(f"  Java API版本: 主 {display_version} ({main_date}), 共 {len(variants)} 条版本线")
+    for v in variants:
+        print(f"    └─ {v['version']} ({v['tag']})")
+
+    return display_version, main_download, main_download, 0, main_date, ''
+
+
 def detect_edge_api(product):
     """Microsoft Edge CDP API探测：获取最新stable x64版本和官方离线包直链"""
     import json as _json
@@ -5976,6 +6170,8 @@ def find_latest(product):
         version, full_url, param_url, size, date, md5 = detect_edge_api(product)
     elif detect_type == 'hexhub_api':
         version, full_url, param_url, size, date, md5 = detect_hexhub_api(product)
+    elif detect_type == 'java_api':
+        version, full_url, param_url, size, date, md5 = detect_java_api(product)
     elif detect_type == 'startallback':
         version, full_url, param_url, size, date, md5 = detect_startallback(product)
     elif detect_type == 'bwcx':
@@ -6031,6 +6227,8 @@ def find_latest(product):
         'md5': md5,
         'official_site': product.get('official_site', ''),
         'update_items': _site_items.get(product['name'], []),
+        # 多版本线条目（如 Java）：前端渲染成「点标题展开子版本列表」
+        'version_list': _java_versions.get(product['name'], []),
     }
 
 
@@ -6076,7 +6274,7 @@ def _detect_priority(product):
     if cat == '资源站' or dt in ('nsane', 'downtopc', 'monkrus', 'discourse', 'lanzou', '189pan'):
         return 'resource'
     if dt in ('github_release', 'chrome_api', 'edge_api', 'redirect',
-              'luminar_api', 'yandex', 'bwcx'):
+              'luminar_api', 'yandex', 'bwcx', 'hexhub_api', 'java_api'):
         return 'fast'
     if dt == 'increment':
         return 'slow'
@@ -6180,6 +6378,16 @@ def main():
             _note(name, '资源站无本轮数据', f"沿用 {info.get('last_modified', '')}")
             print(f"  ⚠️ 资源站本轮无有效数据（未抓通或无新内容），沿用上次数据: {info.get('last_modified', '')}")
 
+        # 多版本线条目（如 Java）：本轮没取到子版本清单（API 抽风/解析失败）→ 沿用上次的。
+        # 否则前端展开列表整块消失、日期被清空，等于把线上数据打回原点。
+        if info is not None and name in old_data and not info.get('version_list'):
+            old_vl = old_data[name].get('version_list') or []
+            if old_vl:
+                info['version_list'] = old_vl
+                if not info.get('last_modified'):
+                    info['last_modified'] = old_data[name].get('last_modified', '')
+                print(f"  ⚠️ 本轮无子版本清单，沿用上次: {len(old_vl)} 条")
+
         # 有结果但拿不到体积 → 快速失败，允许重试一次
         # 资源站类（如 monkrus）本身就是站点、没有安装包，配置 allow_no_size 后跳过该判定
         if info is not None and info.get('size_mb', 0) <= 0 and args.retry > 0 and not allow_no_size:
@@ -6268,11 +6476,16 @@ def main():
             # 会一直显示旧文章（如 nsane 已下掉的旧帖仍挂在前端）。
             old_items = old.get('update_items') or []
             new_items = info.get('update_items') or []
+            # 多版本线条目（如 Java）：主版本不变、但某条子版本线更新时，
+            # 也必须算变化 —— 否则 CI 判定"无变化"，前端展开列表会一直停在旧版本。
+            old_vlist = old.get('version_list') or []
+            new_vlist = info.get('version_list') or []
             if (old.get('version') != info.get('version')
                     or old.get('size_mb') != info.get('size_mb')
                     or old.get('last_modified') != info.get('last_modified')
                     or old.get('download_url') != info.get('download_url')
-                    or old_items != new_items):
+                    or old_items != new_items
+                    or old_vlist != new_vlist):
                 change_detail = []
                 if old.get('version') != info.get('version'):
                     change_detail.append(f"版本 {old.get('version')}->{info.get('version')}")
@@ -6282,6 +6495,8 @@ def main():
                     change_detail.append(f"日期 {old.get('last_modified')}->{info.get('last_modified')}")
                 if old_items != new_items:
                     change_detail.append(f"更新清单 {len(old_items)}->{len(new_items)} 篇")
+                if old_vlist != new_vlist:
+                    change_detail.append(f"子版本列表 {len(old_vlist)}->{len(new_vlist)} 条")
                 changed.append(f"{p['name_cn']}: {', '.join(change_detail)}")
                 is_changed = True
         else:

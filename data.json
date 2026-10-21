@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T09:12:20.765539+00:00",
+  "updated_at": "2026-10-21T09:37:05.808417+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -2075,6 +2075,54 @@
       "md5": "",
       "official_site": "https://www.hexhub.cn/",
       "update_items": []
+    },
+    {
+      "name": "Java JDK",
+      "name_cn": "Java(JDK)",
+      "alias": "Java Runtime Environment",
+      "icon": "J",
+      "icon_color": "linear-gradient(135deg, #f89820, #e76f00)",
+      "category": "运行环境",
+      "version": "27.0.1",
+      "download_url": "https://www.oracle.com/java/technologies/downloads/",
+      "download_url_with_params": "https://www.oracle.com/java/technologies/downloads/",
+      "downloads": [],
+      "size": 0,
+      "size_mb": 0,
+      "last_modified": "2026-10-20",
+      "md5": "",
+      "official_site": "https://oracle.com/java/technologies/java-se-glance.html",
+      "update_items": [],
+      "version_list": [
+        {
+          "name": "Java SE Development Kit 27.0.1",
+          "version": "27.0.1",
+          "tag": "GA",
+          "official_site": "https://oracle.com/java/technologies/javase/27u-relnotes.html",
+          "download_url": "https://www.oracle.com/java/technologies/downloads/#jdk27-windows"
+        },
+        {
+          "name": "Java SE Development Kit 25.0.5",
+          "version": "25.0.5",
+          "tag": "LTS",
+          "official_site": "https://oracle.com/java/technologies/javase/25u-relnotes.html",
+          "download_url": "https://www.oracle.com/java/technologies/downloads/#jdk25-windows"
+        },
+        {
+          "name": "Java SE Development Kit 21.0.13",
+          "version": "21.0.13",
+          "tag": "LTS",
+          "official_site": "https://oracle.com/java/technologies/javase/21u-relnotes.html",
+          "download_url": "https://www.oracle.com/cn/java/technologies/downloads/#java21"
+        },
+        {
+          "name": "Java SE Development Kit 8.0 Update 511",
+          "version": "8.0 Update 511",
+          "tag": "LTS",
+          "official_site": "https://oracle.com/java/technologies/javase/8u-relnotes.html",
+          "download_url": "https://www.oracle.com/java/technologies/downloads/#java8"
+        }
+      ]
     }
   ]
 }

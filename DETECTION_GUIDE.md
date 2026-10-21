@@ -1596,6 +1596,7 @@ if not match:
 | Sublime Text | scrape | 页面 Build XXXX | CDN Last-Modified | ${version} 模板页 |
 | GoodSync | scrape + pe_version | PE 资源（完整包+便携包取最新 12.11.11.1） | 官网发布页（无 Last-Modified） | 官网/winget 滞后于安装包；日期见第32.1节 |
 | Wondershare UniConverter | fixed + pe_version | PE 资源（18.0.0.58） | CDN Last-Modified | full14204 即最新直链，带版本号 URL 是同一文件 |
+| Java(JDK) | java_api | 官方 javaReleases API（4 条版本线） | API releaseDate（2026-10-20） | 多版本线条目，见第39节 |
 
 ## 第36节：winget 官方索引作为第二探测源（2026-10-06 新增）
 
@@ -2637,3 +2638,107 @@ if (old.get('version') != info.get('version')
 | 站点健康预检（全量探测前 ping 关键 URL） | 避免对宕机站无效探测 | 多一次请求；宕机时 `deadline` 本就会快速返回 | 暂不需要 |
 | 并行翻页 / 并行多源 | 正常态提速有限 | **易触发反爬** | 不建议用于论坛/门户站 |
 | `_fetch_site_html` 进程内 HTML 缓存 | 同一轮重复 URL 复用 | 资源站同轮多无重复 URL，收益≈0 | 暂不需要 |
+
+## 第39节：多版本线条目 + Oracle 官方 Java API（2026-10-21 新增）
+
+### 背景
+Java 不是"一个最新版本"，而是**多条版本线并行维护**：27（GA）、25（LTS）、21（LTS）、8（LTS）。
+用户要求前端只显示一条 Java(JDK) 条目，点标题后展开各版本线，每条带自己的发行说明引用和下载入口。
+
+前端原本只支持单版本号字段，硬拆成 4 个产品条目会得到一堆重复行 —— 所以要**给数据模型加 `version_list`**。
+
+### 数据源：Oracle 官方 javaReleases API
+
+端点：`https://java.oraclecloud.com/javaReleases`（java.com 下载页用的同一份数据）
+
+```json
+{"items": [{
+  "jdkDetails": {"jdkVersion": "27", "latestReleaseVersion": "27.0.1", "isLts": false},
+  "releaseDate": "2026-10-20T00:00:00.000Z",
+  "releaseType": "CPU",
+  "releaseNotesUrl": "https://www.oracle.com/java/technologies/javase/27-0-1-relnotes.html"
+}]}
+```
+
+一次请求就能同时拿到：版本号 / 是否 LTS / 发布日期 / 发行说明链接。
+
+**为什么不用 scrape 抓官网页面**：
+- downloads 页的版本号混着平台后缀（`8u511`、`jdk-27.0.1`、`1.8.0_511`），正则切不干净；
+- 页面只列"当前主推"的几个版本，一次拿不到全部 4 条版本线。
+
+### 关键实现点
+
+**1. 版本号归一化**
+API 对 JDK 8 返回 JVM 内部写法 `1.8.0_511`，用户习惯看的是 `8.0 Update 511`：
+
+```python
+def _java_display_version(jdk_ver, raw_version):
+    m = re.match(r'^1\.(\d+)\.0_(\d+)$', raw)
+    if m:
+        return f"{m.group(1)}.0 Update {m.group(2)}"
+    return raw
+```
+
+**2. 同一版本线有多条记录，要挑对**
+API 里 JDK 27 既有 `CPU` 补丁记录也有 `FEATURE` 功能版记录（且 27 的 FEATURE 记录 releaseVersion 是 "27"）。
+只取 `releaseType == 'CPU'` 的，再按 `releaseDate` 取最新。
+
+**3. 主版本按配置优先级取，不按日期取**
+主版本 = `java_lines` 里第一个能取到的版本线。
+若按"发布日期最新"选，25 LTS 先发补丁时主版本会从 27.0.1 变成 25.0.6（数值变小），
+被 `main()` 里的防降级机制误判成回滚而拦掉。
+但**日期**要取所有版本线里最新的（任一条线发补丁都算 Java 有更新）。
+
+**4. SSL 容错**
+部分环境 TLS 握手会被中断（`SSLEOFError: UNEXPECTED_EOF`），需用不校验证书的 context 重试一次。
+
+**5. 官网锚点要核对真实 id**
+downloads 页的真实锚点是 `jdk27-windows`/`jdk25-windows`/`java21`/`java8`，
+不是想当然的 `java27-windows`（该 id 不存在，点了会跳到页首）。
+用 `curl` 抓页面 `id="..."` 列表逐个核对。
+
+### 数据模型扩展：version_list
+
+```json
+"version_list": [
+  {"name": "Java SE Development Kit 27.0.1", "version": "27.0.1", "tag": "GA",
+   "official_site": "https://oracle.com/java/technologies/javase/27u-relnotes.html",
+   "download_url": "https://www.oracle.com/java/technologies/downloads/#jdk27-windows"}
+]
+```
+
+探测函数写全局 `_java_versions[产品名]`，`find_latest()` 统一挂到结果上。
+
+### 三条配套规则（缺一不可）
+
+1. **变更检测要带上 `version_list`**
+   只比对主 `version` 的话，某条 LTS 线更新时主版本没变 → CI 判"无变化" → 前端永远停在旧清单。
+   ```python
+   old_vlist = old.get('version_list') or []
+   new_vlist = info.get('version_list') or []
+   if ... or old_vlist != new_vlist:
+   ```
+
+2. **本轮取不到清单要沿用旧的**
+   API 抽风时若返回空清单，前端展开列表整块消失、日期被清空 —— 等于把线上数据打回原点。
+   上层检测"本轮无子版本清单"时，沿用 `old_data` 的清单和日期。
+
+3. **`allow_no_size: True`**
+   下载页不是单一安装包，没有体积可探；不配这个会被"体积为 0 算失败"判定反复重试。
+
+### 前端渲染
+
+版本列渲染成 `<details class="ver-expand">`：
+
+```
+点击标题 → 展开
+├─ Java SE Development Kit 27.0.1  [GA]    ← 链接到该版本下载页（带锚点）
+│  oracle.com/java/technologies/javase/27u-relnotes.html
+├─ Java SE Development Kit 25.0.5  [LTS]
+└─ ...
+```
+
+CSS 要点：
+- `.col-version-multi` 覆盖 `.col-version { white-space: nowrap }`（否则长标题被截断）
+- 移动端 `tbody td` 是 `display:flex`，多版本列要额外 `display:block !important`，
+  否则展开列表被挤成一行

@@ -42,7 +42,8 @@ probe.py 会自动做：GitHub API 挑 x64 安装包资产、HEAD 判 302/fixed�
 | 固定地址直出文件 | `fixed` | `download_url`, `version`(手动)；可选 `pe_version` / `page_version_url`+`page_version_regex`；**日期被 CDN 覆盖时加 `prefer_config_date: True`** |
 | 版本在网页上 | `scrape` | `check_url`, `version_regex`, `date_regex`, `download_url_regex` |
 | 归档/下载列表页，最新版在**末尾** | `scrape` | `version_regex_take: 'last'` + `date_regex_take: 'last'`（配合 `size_regex` 抓体积） |
-| 官方更新检查 API | `chrome_api`/`edge_api`/`luminar_api`/`hexhub_api`/`yandex` | 按软件对应 |
+| 官方更新检查 API | `chrome_api`/`edge_api`/`luminar_api`/`hexhub_api`/`java_api`/`yandex` | 按软件对应 |
+| 一个产品多条版本线（点标题展开子版本） | `java_api` | `java_lines`(版本线列表) + `java_line_cfg`(每线的 relnotes 页 + 下载锚点)；产出 `version_list` 字段 |
 | URL 含版本、普通递增 | 多级进位（默认） | `base_version`, `url_pattern{ver}`；跨度大配 `max_skip`/`max_carry` |
 | URL 含版本、第2段跳变 | `minor_scan` | `minor_scan=True`, `minor_scan_count`, `minor_scan_builds` |
 | build 号稀疏跳跃（Adobe） | `adobe_build` | `version_format='adobe_build'`, `adobe_max_jump`, `adobe_probe_workers`, `detect_timeout` |
@@ -62,6 +63,79 @@ probe.py 会自动做：GitHub API 挑 x64 安装包资产、HEAD 判 302/fixed�
 - [ ] `download_url` 是可达直链（或符合预期形态）
 - [ ] 打印无 `timeout` / `error`（问题清单为空）
 - [ ] 耗时符合优先级：fast <1s、normal 1-3s、slow 10-60s
+
+## 多版本线条目（一个产品多个版本同时展示）
+
+有些软件不是"一个最新版本"，而是**多条版本线并行维护**（Java 的 27 GA / 25 LTS / 21 LTS / 8 LTS）。
+前端原本只支持单版本号，硬拆成多个产品条目会让用户看到一堆重复行。
+
+**做法**：新增 `version_list` 字段，前端渲染成「点标题展开子版本列表」。
+
+### 检测侧
+
+```python
+{
+    'name': 'Java JDK',
+    'name_cn': 'Java(JDK)',
+    'alias': 'Java Runtime Environment',
+    'detect_type': 'java_api',
+    'java_api': 'https://java.oraclecloud.com/javaReleases',
+    'java_lines': ['27', '25', '21', '8'],       # 版本线，按优先级降序
+    'java_line_cfg': {                            # 每条线的固定链接（官网路径不变）
+        '27': {
+            'official_site': 'https://oracle.com/java/technologies/javase/27u-relnotes.html',
+            'download_url': 'https://www.oracle.com/java/technologies/downloads/#jdk27-windows',
+        },
+        # ...
+    },
+    'version': '27.0.1',                          # 主版本（API 挂时的兜底）
+    'date': '2026-10-20',                         # 日期兜底
+    'download_url': 'https://www.oracle.com/java/technologies/downloads/',
+    'official_site': 'https://oracle.com/java/technologies/java-se-glance.html',
+    'allow_no_size': True,                        # 下载页不是单一安装包，无体积
+    'skip_md5': True,
+}
+```
+
+探测函数把清单写进全局 `_java_versions[产品名]`，`find_latest()` 统一挂到结果的 `version_list`：
+
+```python
+_java_versions[product['name']] = [
+    {'name': 'Java SE Development Kit 27.0.1', 'version': '27.0.1', 'tag': 'GA',
+     'official_site': '...', 'download_url': '...'},
+    # ...
+]
+```
+
+### 三条必须遵守的规则
+
+1. **主版本按配置优先级取，不按日期取**
+   主版本 = `java_lines` 里第一个能取到的版本线。若按"发布日期最新"选，某条 LTS 线先发补丁时
+   主版本会从 27.0.1 变成 25.0.6（数值变小），被防降级机制误判成回滚而拦掉。
+   但**日期**要取所有版本线里最新的（任一条线发补丁都算有更新）。
+
+2. **`version_list` 必须纳入变更检测**
+   只比对主 `version` 的话，某条 LTS 线更新时主版本没变 → CI 判"无变化" → 前端永远停在旧清单。
+   `main()` 里要同时比对 `old_vlist != new_vlist`。
+
+3. **本轮取不到清单时要沿用旧的**
+   API 抽风时若返回空清单，前端展开列表会整块消失、日期被清空。
+   上层要检测"本轮无子版本清单"，此时沿用 `old_data` 里的清单和日期。
+
+### 前端侧
+
+`index.html` 里版本列渲染成 `<details>`：
+
+```javascript
+const vlist = Array.isArray(p.version_list) ? p.version_list : [];
+if (vlist.length) {
+  // <details class="ver-expand"> 标题 + 子版本列表
+  // 每条：标题(链接到该版本下载页) + GA/LTS 标记 + relnotes 引用
+}
+```
+
+配套 CSS：`.col-version-multi`（去掉 nowrap）、`.ver-expand`、`.ver-item`、`.ver-tag`、`.ver-ref`。
+移动端要额外覆盖 `display:block`，否则 td 的 flex 布局会把展开列表挤成一行。
 
 ## 同步更新（判据全过 → 一步不停）
 
@@ -139,3 +213,6 @@ gh run list --limit 3                                    # 403/无 workflow 权�
 | GitHub 大小/直链不对 | 多资产（多平台包）混算 | `asset_filter` + `use_asset_url` |
 | 大文件探测超时 | MD5 全量下载 | `skip_md5: True` |
 | 资源站/论坛被限流 | 请求过重 | `detect_priority='resource'` 单独降频 |
+| 一个产品有多条版本线要同时展示 | 前端只支持单版本号，得多条产品重复 | 加 `version_list` 字段（详见「多版本线条目」），前端渲染成点标题展开 |
+| 子版本更新了但 CI 不推送 | 变更检测只比对主 `version` | `version_list` 也纳入比对（`main()` 里 `old_vlist != new_vlist`） |
+| API 抽风把子版本列表清空 | 探测返回空清单 → 整块消失 | 上层检测到「本轮无子版本清单」时沿用 `old_data` 的清单和日期 |
