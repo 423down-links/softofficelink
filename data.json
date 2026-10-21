@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T00:52:07.308706+00:00",
+  "updated_at": "2026-10-21T01:06:23.632331+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -204,8 +204,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "155.0.4283.62",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793148667&P2=404&P3=2&P4=FhuHu%2fgexiCG6rCyPVKOr13Hx9GJiHx%2f9IzERQ193ZLrhWBFQebQrlePjYPphSja0OME1nvJxZAv1jylkPRI9A%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793148667&P2=404&P3=2&P4=FhuHu%2fgexiCG6rCyPVKOr13Hx9GJiHx%2f9IzERQ193ZLrhWBFQebQrlePjYPphSja0OME1nvJxZAv1jylkPRI9A%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793149560&P2=404&P3=2&P4=XQZ%2bvm2PxDPeCEaZFuTBYyEbOkfv0vOOzq9pOlQHO4sl4oc7xQ5b6HEoWqNnOhN5LXKMsUO0U44nrWrybELNwg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793149560&P2=404&P3=2&P4=XQZ%2bvm2PxDPeCEaZFuTBYyEbOkfv0vOOzq9pOlQHO4sl4oc7xQ5b6HEoWqNnOhN5LXKMsUO0U44nrWrybELNwg%3d%3d",
       "downloads": [],
       "size": 207695224,
       "size_mb": 198.1,
@@ -1351,9 +1351,9 @@
       "download_url": "http://t1.daumcdn.net/potplayer/PotPlayer/Version/Latest/PotPlayerSetup64.exe",
       "download_url_with_params": "http://t1.daumcdn.net/potplayer/PotPlayer/Version/Latest/PotPlayerSetup64.exe",
       "downloads": [],
-      "size": 49219008,
-      "size_mb": 46.9,
-      "last_modified": "2026-09-02",
+      "size": 54461744,
+      "size_mb": 51.9,
+      "last_modified": "2026-10-21",
       "md5": "",
       "official_site": "https://potplayer.daum.net/",
       "update_items": []
