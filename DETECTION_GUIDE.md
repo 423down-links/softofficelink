@@ -1373,7 +1373,9 @@ PE 资源段（VS_VERSIONINFO）里有两个版本字段，含义不同：
 }
 ```
 
-**⚠️ 不能全局改**：实测 PotPlayer 的 ProductVersion 是 `1.7.23118.0`（播放器内核的远古版本，与 PotPlayer 26.x 无关），R-Studio 干脆没有 ProductVersion。所以必须是**按产品显式开启**。
+**⚠️ 不能全局改**：R-Studio 干脆没有 ProductVersion。所以必须是**按产品显式开启**。
+
+**同源变体：FileVersion 是日期式版本号**（PotPlayer `26.10.21.0`），ProductVersion 才是官方产品版本（`1.7.23159.0`）。这时还要配 `strip_trailing_zero` 去掉末段补位 `.0`，并且因为口径变更导致数值变小（26.x → 1.7.x）会被防降级拦下，需配 `version_authority: 'pe'` 声明权威源放行。
 
 ### 根因2：官网只给三段版本，末段 build 号在软件 About 框里
 
@@ -1431,6 +1433,7 @@ CI 已在 detect.yml 安装 `unrar`（失败则退 `unar`）。注意 unrar 是�
 | 现象 | 配置 | 说明 |
 |------|------|------|
 | 版本带构建号 | `pe_version_source: 'product'` | 改读 ProductVersion |
+| 版本是日期式（26.10.21.0） | `pe_version_source: 'product'` + `strip_trailing_zero` + `version_authority: 'pe'` | PotPlayer 口径变更后数值变小，需权威源放行 |
 | 官网三段、用户要四段 | `version_build_suffix: N` | scrape 模式 |
 | PE 版本比正确值低一版 | `version_strict_prefix: 'x.y'` | 保留人工核实值 |
 | 装包完全读不出版本 | `rar_sfx_version: True` | 需 unrar |

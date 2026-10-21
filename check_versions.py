@@ -1199,9 +1199,17 @@ PRODUCTS = [
         'icon': 'PP',
         'icon_color': 'linear-gradient(135deg, #00a8ff, #0097e6)',
         'category': '影音播放',
+        # PotPlayer 的 PE 版本有两套：FileVersion 是发布日期式（26.10.21.0），
+        # ProductVersion 才是官方产品版本（1.7.23159.0）。前端要后者。
+        # 末段 .0 是四段补位，官方口径只到三段，用 strip_trailing_zero 去掉。
         'detect_type': 'fixed',
         'pe_version': True,
-        'version': '1.7.23121',
+        'pe_version_source': 'product',
+        'strip_trailing_zero': True,
+        # 口径从 FileVersion(26.10.21.0) 换成 ProductVersion(1.7.23159) 后数值变小，
+        # 声明权威源以免被防降级逻辑当成回退拦下来。
+        'version_authority': 'pe',
+        'version': '1.7.23159',
         'download_url': 'http://t1.daumcdn.net/potplayer/PotPlayer/Version/Latest/PotPlayerSetup64.exe',
         'official_site': 'https://potplayer.daum.net/',
     },
@@ -2628,10 +2636,12 @@ def detect_fixed(product):
         head_skip_pe = False
         cached_pe = ''
         cache_hot = False
+        # 与 get_pe_version 保持一致的缓存键（product 模式单独一份，避免读到 FileVersion）
+        _head_key = url + ('#product' if prefer_product_version else '')
         try:
             _c = _pe_cache_load()
             with _pe_cache_lock:
-                hit = _c.get(url)
+                hit = _c.get(_head_key)
             if hit and detected_size and detected_size == hit.get('size') and (
                     not hit.get('lm') or detected_date == hit['lm'] or detected_date == hit.get('date')):
                 # LM/size 没变 → 二进制没换，缓存版本仍然正确
@@ -2641,6 +2651,7 @@ def detect_fixed(product):
                     print(f"  PE版本(HEAD命中缓存): {cached_pe}")
                     version = cached_pe
                     head_skip_pe = True
+                    _VER_SOURCE[product['name']] = 'pe'
         except Exception:
             pass
         if not head_skip_pe:
@@ -2650,6 +2661,11 @@ def detect_fixed(product):
                 if pe_ver:
                     print(f"  PE版本: {pe_ver}")
                     version = pe_ver
+                    # 标记版本来源（供上层防降级判断）：PE 读出的值来自安装包本体，
+                    # 属权威源。产品显式声明 version_authority='pe' 时，
+                    # 即便数值比旧值小也放行（旧值可能是错误口径，如 PotPlayer 的
+                    # FileVersion 日期式 26.10.21.0 换成 ProductVersion 1.7.23159）。
+                    _VER_SOURCE[product['name']] = 'pe'
                     # DxO 场景：软件内版本（8.11.1.896）比安装器版本（8.11.0.896）高一位，
                     # 官方安装包滞后一个修订版。此时保留人工核实的配置版本，
                     # 前提是两者主版本段一致（同一条产品线），否则以 PE 为准。
@@ -2727,6 +2743,13 @@ def detect_fixed(product):
                     print(f"  官网页面版本: {page_ver} (不高于 {version}，忽略)")
         except Exception as e:
             print(f"  ⚠️ 官网页面版本抓取失败: {e}")
+    # 去掉末段补位的 .0：PE ProductVersion 常写成四段（PotPlayer 1.7.23159.0），
+    # 官方口径只到三段（1.7.23159）。只对配了该开关的产品生效，避免误伤需要四段的。
+    if product.get('strip_trailing_zero') and isinstance(version, str):
+        m = re.fullmatch(r'(\d+(?:\.\d+)*)\.0+', version)
+        if m:
+            print(f"  ℹ️ 去除末段补位0: {version} -> {m.group(1)}")
+            version = m.group(1)
     return version, url, url, size, date, md5
 
 
@@ -3175,10 +3198,12 @@ def get_pe_version(url, referer=None, prefer_product_version=False):
     TTL 到期后重新探测；探测失败时用缓存旧值兜底，避免版本号被"降级"。
 
     prefer_product_version=True 时优先读 PE 资源里的 ProductVersion
-    （DxO 专用：ProductVersion=10.2.0.496 是产品版本，FileVersion=10.2.20738.496
-    带构建号；其它软件不能开，PotPlayer 的 ProductVersion 是无关的播放器版本）。
+    （DxO / PotPlayer 专用：ProductVersion 才是官方产品版本；
+    其它软件不能开，如 R-Studio 干脆没有 ProductVersion）。
     """
-    cache_key = url
+    # 缓存键要区分版本来源：同一 URL 在 product/file 两种模式下读出的值不同，
+    # 共用 'url' 会互相污染（先把 FileVersion 写进缓存，product 模式就命中脏值）。
+    cache_key = url + ('#product' if prefer_product_version else '')
     cache = _pe_cache_load()
     with _pe_cache_lock:
         hit = cache.get(cache_key)

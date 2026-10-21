@@ -119,7 +119,9 @@ gh run list --limit 3                                    # 403/无 workflow 权�
 | Adobe 新版扫不到 | build 号稀疏跳跃、存在性不单调 | `adobe_build` 并发全扫 |
 | 版本被顶回旧值 | PE 是占位 build（微信）或解析不出（YY） | 别配 `pe_version` |
 | 日期是构建/签名时间 | 把 PE 编译时间戳当发布日期 | 用发布页日期 / HTTP `Last-Modified`（见铁律3） |
-| 版本号带构建号（10.2.20738.496） | PE 读了 FileVersion（文件自身版本），不是产品版本 | 配 `pe_version_source: 'product'` 改读 ProductVersion（10.2.0.496）；**不能全局改**——PotPlayer 的 ProductVersion 是无关的播放器版本 1.7.23118.0 |
+| 版本号带构建号（10.2.20738.496） | PE 读了 FileVersion（文件自身版本），不是产品版本 | 配 `pe_version_source: 'product'` 改读 ProductVersion（10.2.0.496）；**不能全局改**——R-Studio 没有 ProductVersion |
+| 版本号是日期式（26.10.21.0） | 同上，PotPlayer 的 FileVersion 是发布日期 | `pe_version_source: 'product'` 读 ProductVersion（1.7.23159）+ `strip_trailing_zero` 去末段补位 `.0` |
+| 换成 ProductVersion 后数值变小被拦截 | 口径变更（26.x → 1.7.x）不是真降级 | 配 `version_authority: 'pe'`，权威源命中即放行 |
 | 官网只有三段版本、用户要四段 | 末段 build 号只在软件 About 框里 | `scrape` + `version_build_suffix`（官网 10.4.4 + 4 → 10.4.4.4） |
 | PE 读出版本比官网低一版 | 官方安装包滞后一个修订版（DxO FilmPack 装包 8.11.0.896 / 软件 8.11.1.896） | `version_strict_prefix` + 人工核实 `version`，同产品线才保留配置值 |
 | 安装包读不出任何版本 | 外壳是 RAR/自解压壳，无版本资源 | `rar_sfx_version=True` 解包读内层 exe（需 unrar，CI 已装）；7z 不支持 RAR5 |
