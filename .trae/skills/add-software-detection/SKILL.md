@@ -132,6 +132,10 @@ gh run list --limit 3                                    # 403/无 workflow 权�
 | 官方包和便携包更新节奏不同 | 只测单一安装包漏新版本 | `pe_version` + `alt_download_urls` 多包取最新 |
 | 完整包与热更新版本号不一致 | 厂商只对老包做增量热更，不重新发完整包（HexHub 热更到 5.4.4，完整包仍 5.1.9） | 取 `hexhub_api` 的 non-hot 版本，与用户实际下到的包一致 |
 | 下载 URL 带构建时间戳 | 每版时间戳都变，写死进 `url_pattern` 必然扫不到新版（`...-5.1.9-202606072158.exe`） | 别配 increment，走官方 API 直接取完整 URL |
+| 抓到正确版本却退回旧值 | CDN 不返回 Content-Length/Last-Modified → size=0 → 判「无体积」整轮作废（WinSnap 抓到 6.3.5 退回 6.3.3） | 优先用页面记录的体积；`check_url` 已加 GET 兜底 |
+| 新版本被配上旧版本的发布日期 | 官网 history 页滞后（PDF-XChange 官网还停在 11.1.0.0/Sep 29，包已上架 11.1.1.0/Oct 20），页面日期无条件覆盖 | 页面版本 ≠ 探测版本时不采用页面日期，改用 CDN Last-Modified |
+| 官网 history 页滞后、产品页却是新的 | 只盯 history 页 | 版本从产品页抓（PDF-XChange Pro 产品页有 "Current version:"），直链用 `url_pattern` 拼 |
+| 页面体积带单位（3 MB） | `size_regex` 只认纯字节数 | 用 `size_regex_mb` 抓「数字+单位」并换算成字节 |
 | GitHub 大小/直链不对 | 多资产（多平台包）混算 | `asset_filter` + `use_asset_url` |
 | 大文件探测超时 | MD5 全量下载 | `skip_md5: True` |
 | 资源站/论坛被限流 | 请求过重 | `detect_priority='resource'` 单独降频 |

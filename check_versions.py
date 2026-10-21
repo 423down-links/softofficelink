@@ -422,16 +422,25 @@ PRODUCTS = [
         'icon': 'W',
         'icon_color': 'linear-gradient(135deg, #667eea, #764ba2)',
         'category': '图像工具',
-        'detect_type': 'increment',
-        'base_version': '6.3.4',
-        'url_pattern': 'https://www.ntwind.com/files/WinSnap_{ver}-setup.exe',
-        'param_format': '',
-        'channel': '',
-        'check_url': 'https://www.ntwind.com/blog',
-        'version_regex': r'WinSnap v(\d+\.\d+\.\d+)',
+        # 官方下载页一次给全：版本号 / 文件名 / 体积 / 更新日期
+        #   Download WinSnap_6.3.5-setup.exe (3 MB)  Updated on 21-Oct-2026
+        # 原来用 increment（从 base_version 逐段递增）有两个致命问题：
+        #   ① ntwind.com 的 Cloudflare 不返回 Content-Length/Last-Modified，
+        #      check_url 拿不到体积 → 判「无体积」→ 整轮结果作废，
+        #      明明页面已经抓到 6.3.5 却退回旧值 6.3.3；
+        #   ② 递增扫描依赖 base_version 手动跟进，跳过一个小版本就永远追不上。
+        # 改 scrape 后版本/日期/体积/直链全部来自同一次请求，不会再错配。
+        'detect_type': 'scrape',
+        'check_url': 'https://www.ntwind.com/software/winsnap.html',
+        'version_regex': r'WinSnap_(\d+\.\d+\.\d+)-setup\.exe',
+        'date_regex': r'WinSnap_\d+\.\d+\.\d+-setup\.exe[^<]*</a>\s*<p>Updated on (\d{2}-[A-Za-z]{3}-\d{4})',
+        'size_regex_mb': r'WinSnap_\d+\.\d+\.\d+-setup\.exe\s*\((\d+(?:\.\d+)?)\s*(KB|MB|GB)\)',
+        'download_url_regex': r'(https://www\.ntwind\.com/download/WinSnap_\d+\.\d+\.\d+-setup\.exe)',
         'prefer_scraped_version': True,
-        'date': '2026-09-28',
-        'official_site': 'https://www.ntwind.com/blog',
+        'version': '6.3.5',
+        'skip_md5': True,
+        'download_url': 'https://www.ntwind.com/files/WinSnap_6.3.5-setup.exe',
+        'official_site': 'https://www.ntwind.com/software/winsnap.html',
     },
     {
         'name': 'AIDA64',
@@ -846,6 +855,26 @@ PRODUCTS = [
         'version_regex': r'(\d+\.\d+\.\d+\.\d+)',
         'date_regex': r'Released\s*<span class="release-date-value"[^>]*>\s*([A-Za-z]+ \d{1,2}(?:st|nd|rd|th)?, \d{4})',
         'official_site': 'https://tracker-software.com/product/pdf-xchange-editor/history',
+    },
+    {
+        'name': 'PDF-XChange Pro',
+        'name_cn': 'PDF-XChange Pro',
+        'icon': 'PP',
+        'icon_color': 'linear-gradient(135deg, #00838f, #006064)',
+        'category': '办公工具',
+        # 企业版（Editor Plus + Tools + Printer Standard 套装）。
+        # 版本从产品页抓：<strong>Current version:</strong> 11.1.1.0
+        # 官网 history 页滞后（还停在 11.1.0.0 / Sep 29），产品页更新更及时。
+        # 直链按版本拼（官网固定 downloads-11.pdf-xchange.com/{ver}/ProV11.x64.msi）。
+        'detect_type': 'scrape',
+        'check_url': 'https://www.pdf-xchange.com/product/pdf-xchange-pro',
+        'version_regex': r'Current version:</strong>\s*(\d+\.\d+\.\d+\.\d+)',
+        'prefer_scraped_version': True,
+        'url_pattern': 'https://downloads-11.pdf-xchange.com/{ver}/ProV11.x64.msi',
+        'version': '11.1.1.0',
+        'skip_md5': True,
+        'download_url': 'https://downloads-11.pdf-xchange.com/11.1.1.0/ProV11.x64.msi',
+        'official_site': 'https://www.pdf-xchange.com/product/pdf-xchange-pro',
     },
     {
         'name': 'AnyDesk',
@@ -1945,6 +1974,13 @@ def check_url(url, referer=None, use_cache=True):
 
     带进程内短 TTL 缓存：同一轮检测里多个产品/多级递增常探测同一 URL，
     缓存能显著减少请求数；只缓存"成功"结果，避免把偶发网络失败固化下来。
+
+    ⚠️ 部分 CDN（Cloudflare 代理的站点，如 ntwind.com）既不返回
+    Content-Length 也不返回 Last-Modified，HEAD 只能拿到 exists=True、
+    size=0。此时若不兜底，调用方会因"无体积"丢弃已探测到的正确版本
+    （WinSnap 抓到 6.3.5 却被退回旧值 6.3.3）。
+    这里补一次 GET 流式探测：只读前 64KB 估算体积并取 Last-Modified，
+    不把整个安装包下完。
     """
     key = (url, referer or '')
     if use_cache:
@@ -1962,6 +1998,26 @@ def check_url(url, referer=None, use_cache=True):
             size = resp.headers.get('Content-Length', '0')
             last_modified = resp.headers.get('Last-Modified', '')
             result = (resp.status == 200, int(size) if size and size.isdigit() else 0, last_modified)
+            if result[0] and (result[1] == 0 or not result[2]):
+                # CDN 没给 Content-Length / Last-Modified → GET 兜底
+                g_size, g_lm = _curl_get_headers(url, referer)
+                if g_size > 0:
+                    result = (result[0], g_size, result[2] or g_lm)
+                elif result[1] == 0 and not result[2]:
+                    # curl 也没拿到（chunked 响应）→ 流式读前 64KB 估算
+                    try:
+                        req2 = urllib.request.Request(url, headers=headers)
+                        with urllib.request.urlopen(req2, timeout=20) as resp2:
+                            total = 0
+                            while total < 65536:
+                                chunk = resp2.read(65536)
+                                if not chunk:
+                                    break
+                                total += len(chunk)
+                            if total:
+                                result = (result[0], total, result[2])
+                    except Exception:
+                        pass
             if use_cache and result[0]:
                 with _http_cache_lock:
                     _http_cache[key] = (time.time(),) + result
@@ -2564,11 +2620,20 @@ def detect_increment(product):
     if latest_date:
         latest_date = parse_date(latest_date)
     # 页面发布日期优先于CDN Last-Modified（如PDF-XChange页面显示Released日期）
+    # ⚠️ 但只有当「页面版本 == 最终探测版本」时才能用页面日期：
+    # 官网 history 页常滞后（PDF-XChange 官网还停在 11.1.0.0 / Sep 29，
+    # 而安装包已上架 11.1.1.0 / Oct 20），若无条件覆盖，
+    # 新版 11.1.1.0 会被配上旧版 11.1.0.0 的发布日期（日期与版本错配）。
+    # 版本对不上时改用 CDN Last-Modified（=安装包上传时间，贴近真实发布日）。
     if scraped_date:
         sd = parse_date(scraped_date)
         if sd:
-            latest_date = sd
-            print(f"  ✓ 采用页面发布日期: {latest_date}")
+            if scraped_ver and display_version and _ver_tuple(scraped_ver) != _ver_tuple(display_version):
+                print(f"  ⚠️ 页面版本({scraped_ver})与探测版本({display_version})不一致，"
+                      f"不采用页面日期({sd})，改用安装包时间")
+            else:
+                latest_date = sd
+                print(f"  ✓ 采用页面发布日期: {latest_date}")
 
     return display_version, full_url, param_url, latest_size, latest_date, md5
 
@@ -4858,6 +4923,7 @@ def detect_scrape(product):
 
         # 抓取文件大小（归档页记录里带体积，官方包未上架时兜底用）
         size_regex = product.get('size_regex')
+        mb_regex = product.get('size_regex_mb')
         if size_regex:
             m = re.search(size_regex, html, re.I)
             if m:
@@ -4868,6 +4934,19 @@ def detect_scrape(product):
                 try:
                     scraped_size = int(m.group(1))
                     print(f"  页面文件大小: {scraped_size} 字节")
+                except (ValueError, IndexError):
+                    pass
+        # 带单位的体积（如 "WinSnap_6.3.5-setup.exe (3 MB)"）：
+        # 单独用 size_regex_mb 抓「数字 + 单位」，换算成字节
+        if mb_regex and not scraped_size:
+            m2 = re.search(mb_regex, html, re.I)
+            if m2:
+                try:
+                    _num = float(m2.group(1))
+                    _unit = (m2.group(2) or 'MB').upper()
+                    _mult = {'KB': 1024, 'MB': 1024 * 1024, 'GB': 1024 ** 3}.get(_unit, 1024 * 1024)
+                    scraped_size = int(_num * _mult)
+                    print(f"  页面文件大小: {_num} {_unit} = {scraped_size} 字节")
                 except (ValueError, IndexError):
                     pass
 
@@ -4973,7 +5052,15 @@ def detect_scrape(product):
         print(f"  下载地址为网页，大小{'使用配置值' if product.get('size') else '不适用'}")
     else:
         exists, detected_size, detected_date = check_url_follow(url)
-        if detected_size > 0:
+        # 页面记录的真实体积优先于探测值：
+        # 有些 CDN（如 ntwind.com 的 Cloudflare）不返回 Content-Length，
+        # check_url_follow 会流式读 64KB 当体积估算（3.7MB 的包估成 0.1MB），
+        # 这种估算值不能写进 data.json，页面写的体积才准。
+        if scraped_size > 0:
+            size = scraped_size
+            if detected_size and detected_size != scraped_size:
+                print(f"  ℹ️ 使用页面记录体积: {scraped_size} 字节 ({scraped_size/1024/1024:.1f}MB)")
+        elif detected_size > 0:
             size = detected_size
         # prefer_config_date: 日期以人工核实的发布日期为准，不被 CDN Last-Modified 覆盖
         # （HyperSnap 的 Last-Modified 是 10.17 签名/上传日，真实发布日是 10.19）

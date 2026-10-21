@@ -1471,6 +1471,8 @@ CI 已在 detect.yml 安装 `unrar`（失败则退 `unar`）。注意 unrar 是�
 | PE 版本比正确值低一版 | `version_strict_prefix: 'x.y'` | 保留人工核实值 |
 | 装包完全读不出版本 | `rar_sfx_version: True` | 需 unrar |
 | 完整包与热更新版本不一致 | `hexhub_api`（取 non-hot 版本） | HexHub 热更 5.4.4，完整包仍 5.1.9；下载站须与实下到的包一致 |
+| 抓到正确版本却退回旧值 | `check_url` 体积兜底 / `size_regex_mb` | CDN 不给 Content-Length → size=0 → 判「无体积」作废（WinSnap） |
+| 新版本配了旧版本日期 | 页面版本 ≠ 探测版本时不采用页面日期 | PDF-XChange 官网 history 滞后，11.1.1.0 被配 Sep 29 |
 
 ---
 
