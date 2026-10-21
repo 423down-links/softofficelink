@@ -1377,6 +1377,36 @@ PE 资源段（VS_VERSIONINFO）里有两个版本字段，含义不同：
 
 **同源变体：FileVersion 是日期式版本号**（PotPlayer `26.10.21.0`），ProductVersion 才是官方产品版本（`1.7.23159.0`）。这时还要配 `strip_trailing_zero` 去掉末段补位 `.0`，并且因为口径变更导致数值变小（26.x → 1.7.x）会被防降级拦下，需配 `version_authority: 'pe'` 声明权威源放行。
 
+### 根因4：NSIS 安装器外壳版本落后于软件实际版本
+
+PotPlayer 的版本有三套口径，**只有内层那份是对的**：
+
+| 位置 | 值 | 说明 |
+|------|-----|------|
+| 外壳 `PotPlayerSetup64.exe` FileVersion | `26.10.21.0` | 构建日期式，前端不能用 |
+| 外壳 `PotPlayerSetup64.exe` ProductVersion | `1.7.23159.0` | NSIS 打包时写死，**落后一版** |
+| 内层 `PotPlayer64.dll` FileVersion | `1.7.23160.0` | ✅ About 框显示 `26021(1.7.23160)`，以此为准 |
+
+配置：
+
+```python
+'nsis_inner_version': True,
+'nsis_inner_members': ['PotPlayer64.dll'],
+'nsis_inner_prefer': 'file',     # 该 DLL 的 ProductVersion 是假的 1.7.0.0
+'strip_trailing_zero': True,      # 1.7.23160.0 -> 1.7.23160
+'version_authority': 'nsis',      # 数值比旧值小，放行不被防降级拦
+```
+
+**两个坑**：
+
+1. **必须用二进制结构读版本**。该 DLL 的字符串表写的是 `1, 7, 23160, 0`（**逗号**分隔），
+   正则 `\d+\.\d+` 必然落空。只有 VS_FIXEDFILEINFO（签名 `0xFEEF04BD`，
+   `dwFileVersionMS/LS`）能读出 `1.7.23160.0`。
+2. **NSIS 是连续 LZMA 流，无法按偏移单独取某个成员**，必须整包下载（54MB）。
+   靠 `size + Last-Modified` 缓存兜底：二进制没换就复用缓存版本，零下载。
+
+CI 需装 `p7zip-full`（`7z` 支持解 NSIS），已在 [detect.yml](file:///workspace/.github/workflows/detect.yml) 配好。
+
 ### 根因2：官网只给三段版本，末段 build 号在软件 About 框里
 
 HyperSnap 官网全站只显示 `10.4.4`，第四段 `4` 只在软件 About 框里。安装包内 PE 版本是 `10.4.4.0`（末段恒 0），也拿不到。
@@ -1434,6 +1464,9 @@ CI 已在 detect.yml 安装 `unrar`（失败则退 `unar`）。注意 unrar 是�
 |------|------|------|
 | 版本带构建号 | `pe_version_source: 'product'` | 改读 ProductVersion |
 | 版本是日期式（26.10.21.0） | `pe_version_source: 'product'` + `strip_trailing_zero` + `version_authority: 'pe'` | PotPlayer 口径变更后数值变小，需权威源放行 |
+| 安装器版本比软件低一版 | `nsis_inner_version: True` + `nsis_inner_members` | NSIS 外壳写死，PotPlayer 外壳 1.7.23159 vs 内层 1.7.23160 |
+| 内层 DLL 的 ProductVersion 是假的 | `nsis_inner_prefer: 'file'` | PotPlayer64.dll 的 ProductVersion 是 1.7.0.0 |
+| PE 版本字符串读不出 | 读 VS_FIXEDFILEINFO 二进制结构 | 字符串表可能是逗号分隔 `1, 7, 23160, 0` |
 | 官网三段、用户要四段 | `version_build_suffix: N` | scrape 模式 |
 | PE 版本比正确值低一版 | `version_strict_prefix: 'x.y'` | 保留人工核实值 |
 | 装包完全读不出版本 | `rar_sfx_version: True` | 需 unrar |

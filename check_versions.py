@@ -1199,17 +1199,21 @@ PRODUCTS = [
         'icon': 'PP',
         'icon_color': 'linear-gradient(135deg, #00a8ff, #0097e6)',
         'category': '影音播放',
-        # PotPlayer 的 PE 版本有两套：FileVersion 是发布日期式（26.10.21.0），
-        # ProductVersion 才是官方产品版本（1.7.23159.0）。前端要后者。
+        # PotPlayer 的版本有三套口径，必须读内层真实值：
+        #   外壳 PE FileVersion    = 26.10.21.0  （构建日期式，前端不能用）
+        #   外壳 PE ProductVersion = 1.7.23159.0 （打包时硬编码，落后一版）
+        #   内层 PotPlayer64.dll   = 1.7.23160.0 （About 框显示 26021(1.7.23160)，以此为准）
+        # 外壳落后是因为 NSIS 打包时版本号写死，软件本体更新后没同步。
+        # 内层 DLL 的 ProductVersion 是无意义的 1.7.0.0，故读它的 FileVersion。
         # 末段 .0 是四段补位，官方口径只到三段，用 strip_trailing_zero 去掉。
         'detect_type': 'fixed',
-        'pe_version': True,
-        'pe_version_source': 'product',
+        'nsis_inner_version': True,
+        'nsis_inner_members': ['PotPlayer64.dll'],
+        'nsis_inner_prefer': 'file',
         'strip_trailing_zero': True,
-        # 口径从 FileVersion(26.10.21.0) 换成 ProductVersion(1.7.23159) 后数值变小，
-        # 声明权威源以免被防降级逻辑当成回退拦下来。
-        'version_authority': 'pe',
-        'version': '1.7.23159',
+        # 口径从 26.x 换成 1.7.x 后数值变小，声明权威源以免被防降级当成回退拦下。
+        'version_authority': 'nsis',
+        'version': '1.7.23160',
         'download_url': 'http://t1.daumcdn.net/potplayer/PotPlayer/Version/Latest/PotPlayerSetup64.exe',
         'official_site': 'https://potplayer.daum.net/',
     },
@@ -2686,6 +2690,47 @@ def detect_fixed(product):
                 if pe_ver:
                     print(f"  PE版本(缓存兜底): {pe_ver}")
                     version = pe_ver
+    elif product.get('nsis_inner_version') and not is_webpage:
+        # NSIS 安装器：外壳 PE 版本是打包时硬编码的，可能落后于实际软件版本。
+        # 典型：PotPlayer 外壳 ProductVersion=1.7.23159.0，实际软件
+        # PotPlayer64.dll 的 FileVersion=1.7.23160.0（About 框显示 26021(1.7.23160)）。
+        # 解包取内层真实版本，用 size/LM 缓存避免每轮重下 50MB+ 整包。
+        cache_hit_ver = ''
+        _nsis_key = url + '#nsis'
+        try:
+            _c = _pe_cache_load()
+            with _pe_cache_lock:
+                hit = _c.get(_nsis_key)
+            if hit and detected_size and detected_size == hit.get('size') and (
+                    not hit.get('lm') or detected_date == hit['lm'] or detected_date == hit.get('date')):
+                if hit.get('ver'):
+                    print(f"  NSIS内层版本(HEAD命中缓存): {hit['ver']}")
+                    cache_hit_ver = hit['ver']
+                    version = cache_hit_ver
+                    _VER_SOURCE[product['name']] = 'nsis'
+        except Exception:
+            pass
+        if not cache_hit_ver:
+            try:
+                inner_ver = get_nsis_inner_version(
+                    url,
+                    member_names=product.get('nsis_inner_members'),
+                    referer=product.get('referer'),
+                    prefer=product.get('nsis_inner_prefer', 'file'))
+                if inner_ver:
+                    version = inner_ver
+                    _VER_SOURCE[product['name']] = 'nsis'
+                    with _pe_cache_lock:
+                        _pe_cache[_nsis_key] = {'ver': inner_ver, 'ts': time.time(),
+                                                'size': detected_size, 'lm': detected_date}
+                    _pe_cache_save()
+                else:
+                    cached = _pe_version_cached(url)
+                    if cached:
+                        print(f"  NSIS内层版本(缓存兜底): {cached}")
+                        version = cached
+            except Exception as e:
+                print(f"  NSIS内层版本读取失败: {e}")
     elif product.get('rar_sfx_version') and not is_webpage:
         # RAR 自解压安装包（SFX）：外壳 PE 无版本资源，真实版本在归档内的主程序里。
         # 典型：HyperSnap 的 HS10SetupCN.exe（RAR5 SFX，7z 解不了，需 unrar）。
@@ -3459,6 +3504,127 @@ def get_nsis_install_version(url, referer=None):
     return ''
 
 
+def get_nsis_inner_version(url, member_names=None, referer=None, max_size=96 * 1024 * 1024,
+                          prefer='file'):
+    """从 NSIS 安装器中解出内层文件并读取其 PE 版本号。
+
+    背景：PotPlayer 的官方安装包 PotPlayerSetup64.exe 是 NSIS 包。
+    外壳 PE 的 ProductVersion（1.7.23159.0）比实际软件版本落后一版，
+    因为外壳的版本是打包时硬编码的；真正的版本在内层 PotPlayer64.dll 上，
+    其 FileVersion = 1.7.23160.0，正是 About 框显示的 26021(1.7.23160)。
+    注意该 DLL 的 ProductVersion 是无意义的 1.7.0.0，所以默认读 FileVersion。
+
+    流程：下载整包 → 7z 解出指定成员 → 读该文件的 PE 版本。
+    member_names 为候选文件名（按优先级），依次尝试。
+    prefer='file' 读 FileVersion，'product' 读 ProductVersion。
+    返回版本号字符串，失败返回 ''。
+    """
+    import os
+    import shutil
+    import subprocess
+    import tempfile
+
+    headers = {'User-Agent': UA}
+    if referer:
+        headers['Referer'] = referer
+
+    # 找 7z（CI 装 p7zip-full，本地通常也有）
+    seven_zip = None
+    for cand in ['7z', '7zz', '7za', '/usr/bin/7z', '/usr/local/bin/7z',
+                 os.path.join(BASE_DIR, 'tools', '7zz'),
+                 os.path.join(BASE_DIR, 'tools', '7z')]:
+        exe = shutil.which(cand) if not os.path.isabs(cand) else (cand if os.path.exists(cand) else None)
+        if exe:
+            seven_zip = exe
+            break
+    if not seven_zip:
+        print("  未找到7z命令，跳过NSIS内层版本解析")
+        return ''
+
+    tmp_path = None
+    try:
+        # NSIS 是连续 LZMA 流，无法按偏移单独取某成员，必须整包下载。
+        # 并发分片拉取，daum CDN 单连接 ~11MB/s，分片更快。
+        total = 0
+        try:
+            req = urllib.request.Request(url, method='HEAD', headers=headers)
+            with urllib.request.urlopen(req, timeout=20) as resp:
+                total = int(resp.headers.get('Content-Length', 0) or 0)
+        except Exception:
+            total = 0
+        if total and total <= max_size:
+            data = _range_download(url, headers, 0, total - 1,
+                                   workers=16, timeout=180, min_chunk=65536)
+        else:
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=180) as resp:
+                data = resp.read()
+        if not data:
+            print("  NSIS安装包下载为空")
+            return ''
+        if len(data) > max_size:
+            print(f"  NSIS安装包过大({len(data)}字节)，跳过")
+            return ''
+
+        with tempfile.NamedTemporaryFile(suffix='.exe', delete=False) as f:
+            f.write(data)
+            tmp_path = f.name
+        print(f"  NSIS安装包: {len(data)} bytes")
+
+        # 列出归档成员（7z 支持 NSIS）
+        lst = subprocess.run([seven_zip, 'l', '-ba', tmp_path],
+                             capture_output=True, text=True, timeout=120)
+        members = []
+        for line in lst.stdout.split('\n'):
+            parts = line.split()
+            if len(parts) >= 2 and ('.' in parts[-1]):
+                members.append(parts[-1])
+
+        # 定位目标成员：优先按配置的名字精确/后缀匹配
+        targets = []
+        for want in (member_names or []):
+            for m in members:
+                if m.lower() == want.lower() or m.lower().endswith('/' + want.lower()):
+                    targets.append(m)
+                    break
+        if not targets:
+            # 兜底：取最大的 .dll（PotPlayer 的主体是 PotPlayer64.dll）
+            dlls = [m for m in members if m.lower().endswith('.dll')
+                    and not m.lower().startswith('$plugin')]
+            if dlls:
+                targets = dlls[:1]
+
+        for target in targets:
+            tmpdir = tempfile.mkdtemp()
+            try:
+                subprocess.run([seven_zip, 'e', '-y', '-o' + tmpdir, tmp_path, target],
+                               capture_output=True, timeout=180)
+                for root, _dirs, files in os.walk(tmpdir):
+                    for fn in files:
+                        p = os.path.join(root, fn)
+                        fv, pv = _read_pe_local_versions(p)
+                        if not fv and not pv:
+                            continue
+                        ver = fv if prefer == 'file' else pv
+                        if not ver:
+                            ver = fv or pv
+                        if ver:
+                            print(f"  NSIS内层版本({fn}, {prefer}): {ver}")
+                            return ver
+            finally:
+                shutil.rmtree(tmpdir, ignore_errors=True)
+        return ''
+    except Exception as e:
+        print(f"  NSIS内层版本解析失败: {e}")
+        return ''
+    finally:
+        if tmp_path and os.path.exists(tmp_path):
+            try:
+                os.unlink(tmp_path)
+            except Exception:
+                pass
+
+
 def get_rar_sfx_version(url, member_names=None, referer=None, max_size=64 * 1024 * 1024):
     """从 RAR 自解压安装包（SFX）里解出主程序并读取其 PE 版本号。
 
@@ -3589,6 +3755,68 @@ def get_rar_sfx_version(url, member_names=None, referer=None, max_size=64 * 1024
                 os.unlink(tmp_path)
             except Exception:
                 pass
+
+
+def _read_pe_local_versions(path):
+    """读取本地 PE 文件的版本号，返回 (file_version, product_version)。
+
+    两个来源都取：
+    1. VS_FIXEDFILEINFO 二进制结构（最可靠，dwFileVersionMS/LS）
+    2. .rsrc 里的字符串表（UTF-16LE）
+
+    为什么必须用二进制结构：PotPlayer 的 PotPlayer64.dll 里，
+    字符串表写的是 "1, 7, 23160, 0"（逗号分隔），正则匹配点号必然落空；
+    而它的 ProductVersion 是无意义的 1.7.0.0，只有 FileVersion 是真版本
+    （1.7.23160.0，即 About 框显示的 26021(1.7.23160)）。
+    """
+    import struct
+    try:
+        with open(path, 'rb') as f:
+            data = f.read()
+        if len(data) < 1024 or data[:2] != b'MZ':
+            return '', ''
+        pe = struct.unpack_from('<I', data, 0x3C)[0]
+        if pe + 24 > len(data) or data[pe:pe+4] != b'PE\x00\x00':
+            return '', ''
+        num_sections = struct.unpack_from('<H', data, pe + 6)[0]
+        opt_header_size = struct.unpack_from('<H', data, pe + 20)[0]
+        section_offset = pe + 24 + opt_header_size
+        for i in range(num_sections):
+            off = section_offset + i * 40
+            if off + 40 > len(data):
+                break
+            name = data[off:off+8].rstrip(b'\x00').decode('ascii', errors='replace')
+            if name != '.rsrc':
+                continue
+            raw_offset = struct.unpack_from('<I', data, off + 20)[0]
+            raw_size = struct.unpack_from('<I', data, off + 16)[0]
+            rsrc = data[raw_offset:raw_offset + min(raw_size, 4 * 1024 * 1024)]
+
+            fv = pv = ''
+            # 方法1：VS_FIXEDFILEINFO 二进制结构（签名 0xFEEF04BD）
+            sig_pos = rsrc.find(struct.pack('<I', 0xFEEF04BD))
+            if sig_pos >= 0:
+                ver_ms = struct.unpack_from('<I', rsrc, sig_pos + 8)[0]
+                ver_ls = struct.unpack_from('<I', rsrc, sig_pos + 12)[0]
+                fv = f'{ver_ms >> 16}.{ver_ms & 0xFFFF}.{ver_ls >> 16}.{ver_ls & 0xFFFF}'
+                prod_ms = struct.unpack_from('<I', rsrc, sig_pos + 16)[0]
+                prod_ls = struct.unpack_from('<I', rsrc, sig_pos + 20)[0]
+                pv = f'{prod_ms >> 16}.{prod_ms & 0xFFFF}.{prod_ls >> 16}.{prod_ls & 0xFFFF}'
+
+            # 方法2：字符串表兜底（点号或逗号分隔都认）
+            text = rsrc.decode('utf-16-le', errors='replace')
+            if not pv:
+                m = re.search(r'ProductVersion[\x00\s]*(\d+[.,]\d+(?:[.,]\d+){0,2})', text)
+                if m:
+                    pv = m.group(1).replace(',', '.')
+            if not fv:
+                m = re.search(r'FileVersion[\x00\s]*(\d+[.,]\d+(?:[.,]\d+){0,2})', text)
+                if m:
+                    fv = m.group(1).replace(',', '.')
+            return fv, pv
+        return '', ''
+    except Exception:
+        return '', ''
 
 
 def _read_pe_file_version(path):
