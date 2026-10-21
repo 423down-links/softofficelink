@@ -6210,7 +6210,7 @@ def find_latest(product):
     if not date:
         date = product.get('date', '')
 
-    return {
+    result = {
         'name': product['name'],
         'name_cn': product['name_cn'],
         'alias': product.get('alias', ''),
@@ -6227,9 +6227,13 @@ def find_latest(product):
         'md5': md5,
         'official_site': product.get('official_site', ''),
         'update_items': _site_items.get(product['name'], []),
-        # 多版本线条目（如 Java）：前端渲染成「点标题展开子版本列表」
-        'version_list': _java_versions.get(product['name'], []),
     }
+    # 多版本线条目（如 Java）：前端渲染成「点标题展开子版本列表」
+    # 只在真有多版本线时才带这个键，避免给全部 113 款单版本产品塞空列表造成 diff 噪声
+    _vlist = _java_versions.get(product['name'], [])
+    if _vlist:
+        result['version_list'] = _vlist
+    return result
 
 
 def detect_with_timeout(product, timeout=30):
@@ -6293,6 +6297,9 @@ def main():
     parser.add_argument('--parallel', type=int, default=DEFAULT_PARALLEL, help='并行检测线程数')
     parser.add_argument('--retry', type=int, default=DEFAULT_RETRY, help='检测失败重试次数')
     parser.add_argument('--no-save', action='store_true', help='不保存到data.json（仅检测）')
+    parser.add_argument('--allow-remove', default='',
+                        help='显式声明本轮允许从线上结果中移除的产品名（逗号分隔）；'
+                             '故意下线某个产品时用它绕过产品数量守卫')
     args = parser.parse_args()
 
     # 读取上次成功数据，用于检测失败时保留
@@ -6424,6 +6431,13 @@ def main():
                 print(f"  ⚠️ 探测版本 {new_v} 低于已有 {old_v}，判定为降级，保留旧值")
                 _note(name, '版本降级已拦截', f"{new_v} -> {old_v}")
                 info['version'] = old_v
+                # 降级说明这一轮探测整体不可信（页面返回了旧包/旧列表），
+                # 只回退 version 会把同轮的坏体积、坏日期、坏直链带进线上。
+                # 这些字段一并沿用旧值，只有 update_items（独立来源）保留本轮结果。
+                for _f in ('size', 'size_mb', 'last_modified', 'md5',
+                           'download_url', 'download_url_with_params'):
+                    if _f in old_data[name]:
+                        info[_f] = old_data[name][_f]
             elif from_authority and old_v and new_v and _ver_tuple(new_v) < _ver_tuple(old_v):
                 print(f"  ℹ️ 权威源({auth})版本 {new_v} 低于旧值 {old_v}，按权威值放行（旧值疑为占位 build）")
 
@@ -6503,6 +6517,36 @@ def main():
             changed.append(f"{p['name_cn']}: 新增 -> {info.get('version')}")
             is_changed = True
         # 检测到版本变化时，保持软件真实发布日期不变（last_modified由探测逻辑获取）
+
+    # ===== 产品数量守卫 =====
+    # 误改 PRODUCTS（漏配一条、name 写错、删掉一个条目）会让本轮结果比线上少，
+    # 写回 data.json 就等于静默截断线上数据。这里在写盘前拦下并明确报出少了谁。
+    allow_remove = {x.strip() for x in args.allow_remove.split(',') if x.strip()}
+    result_names = {r.get('name') for r in results}
+    # 允许用英文名 name 或中文名 name_cn 声明下线
+    lost_all = [n for n in old_data if n not in result_names]
+    lost = [n for n in lost_all
+            if n not in allow_remove and old_data[n].get('name_cn', '') not in allow_remove]
+    if lost:
+        print(f"\n❌ 产品数量守卫：线上有 {len(lost)} 款产品在本次结果中消失")
+        for n in lost:
+            print(f"   - {n}（{old_data[n].get('name_cn', '')}）")
+        print("   可能是误改 PRODUCTS（漏配/name 写错/误删）。请先修好，"
+              "确认要下线某产品则用 --allow-remove \"产品名\" 显式声明。")
+        if args.no_save:
+            print("   本轮为 --no-save 演练，不写盘，仅提示。")
+        else:
+            print("   本轮不写 data.json，线上数据保持原样。")
+            sys.exit(3)
+    allowed_lost = [n for n in lost_all if n not in lost]
+    if allowed_lost:
+        print(f"\nℹ️ 已声明允许移除 {len(allowed_lost)} 款产品: "
+              f"{', '.join(old_data[n].get('name_cn', n) for n in allowed_lost)}")
+    # 新增产品本轮没探到（无历史数据可回退）不算截断，但要提醒
+    missing_new = [p['name'] for p in PRODUCTS
+                   if p['name'] not in result_names and p['name'] not in old_data]
+    if missing_new:
+        print(f"\n⚠️ 新增产品本轮未产出结果（不写入线上）: {', '.join(missing_new)}")
 
     data = {
         'updated_at': datetime.now(timezone.utc).isoformat(),

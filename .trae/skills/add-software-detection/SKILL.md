@@ -180,10 +180,12 @@ gh run list --limit 3                                    # 403/无 workflow 权�
 
 - 仓库：`423down-links/softofficelink`（main 分支）。**私有仓，从未公开过**，别建议转公开/改 Pages 设置。
 - 部署方式：**push 到 main 即自动重建 Cloudflare Pages（线上地址 https://softofficelink.pages.dev/）**，无任何手动步骤；本地预览用 `python3 -m http.server` + OpenPreview。
-- **⚠️ `check_versions.py --only` 不带 `--no-save` 会把 data.json 整个覆盖成单产品结构（实测翻车）**：要回填单产品数据，先 `cp data.json /tmp/备份`，跑完校验产品数=103 才继续；否则用 `--no-save` + 手动改。
+- **⚠️ `check_versions.py --only` 不带 `--no-save` 会把 data.json 整个覆盖成单产品结构（实测翻车）**：要回填单产品数据，先 `cp data.json /tmp/备份`，跑完校验产品数与当前线上条数一致才继续；否则用 `--no-save` + 手动改。
 - **本任务与 SSH 服务器（423down.com）完全无关**：这个页面不在服务器上，禁止为此连 SSH、禁止查服务器目录。
 - data.json 是脚本产物且被 Actions 定时自动提交：**动手前必须 `git fetch origin main`，以远端为基准改**，本地旧快照直接提交会把它人的检测增量顶回旧值（2026-10-15 实际翻车：14 款版本/日期被回滚）。
 - **⚠️ 沙箱恢复可能 checkout 到旧 agent 分支（`trae/agent-*`）而非 main，本地会显示旧数据、看着像「回滚」**（2026-10-20 实际发生：凌晨入库的 4 款软件本地全消失，远端/线上其实完好）。开工第一件事：`git checkout main && git fetch origin main && git reset --hard origin/main`，再核对 data.json 里最近入库条目还在再动手，别拿旧分支快照当真相。
+- **⚠️ `trae/agent-*` 分支是自动生成的临时工作分支，不要 merge、不要留**。2026-10-22 清理过一批（10 个远程 + 1 个本地），全部确认无独有产品/配置后才删。判断方式：逐个比 `git show <branch>:data.json` 的产品数与 `git show <branch>:check_versions.py` 的 PRODUCTS 集合，只有一家独有才值得抢救。
+- **产品数量守卫（2026-10-22 加）**：写盘前会比对数量，线上有产品消失就中止（退出码 3）并点名报出少了谁，`--allow-remove "产品名"` 才能显式放行（英文名或中文名都行）。新增产品导致条数**增加**是正常的，不受拦截。两个脚本都有这层守卫：`check_versions.py`（守 data.json）和 `embed_data.py`（守 index.html）；CI 里退出码 3 会让 Actions 任务直接失败并打出 `::error::`。
 
 ## 常见坑（现象 → 根因 → 解法）
 
@@ -216,3 +218,7 @@ gh run list --limit 3                                    # 403/无 workflow 权�
 | 一个产品有多条版本线要同时展示 | 前端只支持单版本号，得多条产品重复 | 加 `version_list` 字段（详见「多版本线条目」），前端渲染成点标题展开 |
 | 子版本更新了但 CI 不推送 | 变更检测只比对主 `version` | `version_list` 也纳入比对（`main()` 里 `old_vlist != new_vlist`） |
 | API 抽风把子版本列表清空 | 探测返回空清单 → 整块消失 | 上层检测到「本轮无子版本清单」时沿用 `old_data` 的清单和日期 |
+| 全部产品都多出 `version_list: []` | `find_latest` 无条件返回该键 → 113 款单版本产品全被塞空列表，data.json 每次检测几百行 diff 噪声 | 已修：只在真有多版本线时才带该键（`if _vlist:`），单版本产品不带 `version_list` |
+| 线上产品被静默截断（少了几个） | 误改 `PRODUCTS`（漏配/name 写错/误删）→ 写回 data.json 就把少的部分抹掉 | 已加**产品数量守卫**：`check_versions.py` 与 `embed_data.py` 写盘前都比对数量，发现线上有产品消失就**中止写盘 + 点名报出少了谁**（退出码 3），确认要下线则显式 `--allow-remove "产品名"` |
+| 提交后线上产品数变少 | 手动改 data.json 或 embed 前没比对 | 别手改 data.json；`embed_data.py` 已有守卫兜底 |
+| 版本号保住了但体积/日期/下载链接一起变坏 | 防降级拦截只回退 `version` 字段，同轮探测出的坏体积、坏日期、退化成通用页面的直链照样写进线上（实测 Win11 LTSC 直链退成 `releases` 页面、日期倒回 2026-09-14） | 降级时**一并回退** size/size_mb/last_modified/md5/download_url/download_url_with_params；另：GitHub API 必须带 `GITHUB_TOKEN`，否则 60 次/小时限流会让 `github_release` 整片回退成通用链接 |
