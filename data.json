@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T03:07:40.285092+00:00",
+  "updated_at": "2026-10-21T03:17:53.473475+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -2017,6 +2017,24 @@
       "last_modified": "2026-10-20",
       "md5": "",
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
+      "update_items": []
+    },
+    {
+      "name": "BitComet",
+      "name_cn": "BitComet",
+      "alias": "",
+      "icon": "BC",
+      "icon_color": "linear-gradient(135deg, #607d8b, #455a64)",
+      "category": "下载工具",
+      "version": "2.23",
+      "download_url": "https://download.bitcomet.com/achive/BitComet_2.23.zip",
+      "download_url_with_params": "https://download.bitcomet.com/achive/BitComet_2.23.zip",
+      "downloads": [],
+      "size": 47145787,
+      "size_mb": 45.0,
+      "last_modified": "2026-10-20",
+      "md5": "",
+      "official_site": "https://www.bitcomet.com/en/downloads",
       "update_items": []
     }
   ]

@@ -41,6 +41,7 @@ probe.py 会自动做：GitHub API 挑 x64 安装包资产、HEAD 判 302/fixed�
 | 固定地址 302 跳转 | `redirect` | `check_url`, `version_regex`（从 Location 提版本） |
 | 固定地址直出文件 | `fixed` | `download_url`, `version`(手动)；可选 `pe_version` / `page_version_url`+`page_version_regex`；**日期被 CDN 覆盖时加 `prefer_config_date: True`** |
 | 版本在网页上 | `scrape` | `check_url`, `version_regex`, `date_regex`, `download_url_regex` |
+| 归档/下载列表页，最新版在**末尾** | `scrape` | `version_regex_take: 'last'` + `date_regex_take: 'last'`（配合 `size_regex` 抓体积） |
 | 官方更新检查 API | `chrome_api`/`edge_api`/`luminar_api`/`yandex` | 按软件对应 |
 | URL 含版本、普通递增 | 多级进位（默认） | `base_version`, `url_pattern{ver}`；跨度大配 `max_skip`/`max_carry` |
 | URL 含版本、第2段跳变 | `minor_scan` | `minor_scan=True`, `minor_scan_count`, `minor_scan_builds` |
@@ -122,6 +123,7 @@ gh run list --limit 3                                    # 403/无 workflow 权�
 | 官网只有三段版本、用户要四段 | 末段 build 号只在软件 About 框里 | `scrape` + `version_build_suffix`（官网 10.4.4 + 4 → 10.4.4.4） |
 | PE 读出版本比官网低一版 | 官方安装包滞后一个修订版（DxO FilmPack 装包 8.11.0.896 / 软件 8.11.1.896） | `version_strict_prefix` + 人工核实 `version`，同产品线才保留配置值 |
 | 安装包读不出任何版本 | 外壳是 RAR/自解压壳，无版本资源 | `rar_sfx_version=True` 解包读内层 exe（需 unrar，CI 已装）；7z 不支持 RAR5 |
+| 官方包 302 跳到 not_available（Windows 包未上架） | 下载服务器整站 302 到提示页，且提示页也是 200 | `check_url_follow` 已识别 not_available 判为不可用；用 `size_regex` 抓页面记录的体积兜底，官方放包后自动切回真实值 |
 | 官方包和便携包更新节奏不同 | 只测单一安装包漏新版本 | `pe_version` + `alt_download_urls` 多包取最新 |
 | GitHub 大小/直链不对 | 多资产（多平台包）混算 | `asset_filter` + `use_asset_url` |
 | 大文件探测超时 | MD5 全量下载 | `skip_md5: True` |

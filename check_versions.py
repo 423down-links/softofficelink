@@ -1852,6 +1852,36 @@ PRODUCTS = [
         'download_url': 'https://www.diskpart.com/ss/download/pa/PAssist_TechDemo.exe',
         'official_site': 'https://www.diskpart.com/download.html?theme_id=10040',
     },
+    {
+        'name': 'BitComet',
+        'name_cn': 'BitComet',
+        'icon': 'BC',
+        'icon_color': 'linear-gradient(135deg, #607d8b, #455a64)',
+        'category': '下载工具',
+        # 官方归档页 download.bitcomet.com/achive 每条记录含「版本号 + 发布日期 + 大小」，
+        # 最新版本排在最后：
+        #   <a href="BitComet_2.23.zip">BitComet_2.23.zip</a>  20-Oct-2026 06:51  47145787
+        # 用 scrape + version_regex_take='last' 取末尾那条（最新版），
+        # 版本/日期用同一条目锚定的正则，保证两者来自同一行、不会错配。
+        # 下载地址按版本号动态拼（BitComet_{ver}.zip）。
+        'detect_type': 'scrape',
+        'check_url': 'https://download.bitcomet.com/achive',
+        'version_regex': r'<a href="BitComet_([0-9.]+)\.zip">',
+        'version_regex_take': 'last',
+        'date_regex': r'<a href="BitComet_[0-9.]+\.zip">[^<]*</a>\s+(\d{2}-[A-Za-z]{3}-\d{4} \d{2}:\d{2})',
+        'date_regex_take': 'last',
+        # 归档页同一条记录里还有文件大小（BitComet_2.23.zip 47145787 字节）。
+        # 官方包未上架时（302 → /not_available/）探测不到真实大小，
+        # 用归档页记录的大小兜底，前端照常显示体积。
+        'size_regex': r'<a href="BitComet_[0-9.]+\.zip">[^<]*</a>\s+\d{2}-[A-Za-z]{3}-\d{4} \d{2}:\d{2}\s+(\d+)',
+        'size_regex_take': 'last',
+        'prefer_scraped_version': True,
+        'version': '2.23',
+        'url_pattern': 'https://download.bitcomet.com/achive/BitComet_{ver}.zip',
+        'skip_md5': True,
+        'download_url': 'https://download.bitcomet.com/achive/BitComet_2.23.zip',
+        'official_site': 'https://www.bitcomet.com/en/downloads',
+    },
 ]
 
 MAX_INCREMENT = 30  # 最多递增检测30个版本
@@ -1947,6 +1977,12 @@ def check_url_follow(url, referer=None):
     try:
         req = urllib.request.Request(url, method='HEAD', headers=headers)
         with urllib.request.urlopen(req, timeout=15) as resp:
+            # 官方下架标记页（如 BitComet 的 /not_available/）：302 过去仍是 200，
+            # 但拿到的是 1KB 左右的提示页，不是安装包 → 判定为不可用，
+            # 避免把提示页大小当成安装包大小写进 data.json。
+            final_url = (resp.url or '').lower()
+            if 'not_available' in final_url or '/not-found' in final_url:
+                return False, 0, ''
             size = resp.headers.get('Content-Length', '0')
             last_modified = resp.headers.get('Last-Modified', '')
             if resp.status == 200 and (not size or int(size) == 0):
@@ -4482,6 +4518,7 @@ def detect_scrape(product):
     scraped_version = None
     scraped_date = None
     scraped_download_url = None
+    scraped_size = 0
 
     # 从官网抓取版本号、发布日期、下载链接
     try:
@@ -4518,6 +4555,11 @@ def detect_scrape(product):
         regex = product.get('version_regex')
         if regex:
             m = re.search(regex, html, re.I)
+            # 取最后一个匹配（归档列表页：最新版本排在最后，如 BitComet 归档页）
+            if product.get('version_regex_take') == 'last':
+                all_m = list(re.finditer(regex, html, re.I))
+                if all_m:
+                    m = all_m[-1]
             if m:
                 groups = [g for g in m.groups() if g]
                 if len(groups) > 1:
@@ -4534,8 +4576,27 @@ def detect_scrape(product):
         if date_regex:
             m = re.search(date_regex, html, re.I)
             if m:
+                if product.get('date_regex_take') == 'last':
+                    all_d = list(re.finditer(date_regex, html, re.I))
+                    if all_d:
+                        m = all_d[-1]
                 scraped_date = parse_date(m.group(1))
                 print(f"  发布日期: {scraped_date}")
+
+        # 抓取文件大小（归档页记录里带体积，官方包未上架时兜底用）
+        size_regex = product.get('size_regex')
+        if size_regex:
+            m = re.search(size_regex, html, re.I)
+            if m:
+                if product.get('size_regex_take') == 'last':
+                    all_s = list(re.finditer(size_regex, html, re.I))
+                    if all_s:
+                        m = all_s[-1]
+                try:
+                    scraped_size = int(m.group(1))
+                    print(f"  页面文件大小: {scraped_size} 字节")
+                except (ValueError, IndexError):
+                    pass
 
         # 抓取下载链接
         dl_regex = product.get('download_url_regex')
@@ -4650,7 +4711,12 @@ def detect_scrape(product):
             print(f"  发布日期(人工核实): {date}")
         if not date and scraped_date:
             date = scraped_date
-        if not exists and size == 0:
+        # 官方包还没上架（302 → not_available）时，用页面记录的大小兜底，
+        # 并跳过「递减版本」回退（回退只会拿到更旧且同样下架的包）
+        if not exists and scraped_size > 0:
+            size = scraped_size
+            print(f"  ℹ️ 下载暂不可用，用页面记录大小兜底: {size} 字节")
+        elif not exists and size == 0:
             print(f"  ⚠️ 下载地址不可用，尝试递减版本...")
             # 尝试递减版本号（补丁版可能没有完整离线包）
             base_ver = version
