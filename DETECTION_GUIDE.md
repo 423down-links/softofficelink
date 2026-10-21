@@ -1470,6 +1470,7 @@ CI 已在 detect.yml 安装 `unrar`（失败则退 `unar`）。注意 unrar 是�
 | 官网三段、用户要四段 | `version_build_suffix: N` | scrape 模式 |
 | PE 版本比正确值低一版 | `version_strict_prefix: 'x.y'` | 保留人工核实值 |
 | 装包完全读不出版本 | `rar_sfx_version: True` | 需 unrar |
+| 完整包与热更新版本不一致 | `hexhub_api`（取 non-hot 版本） | HexHub 热更 5.4.4，完整包仍 5.1.9；下载站须与实下到的包一致 |
 
 ---
 

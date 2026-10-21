@@ -1894,6 +1894,26 @@ PRODUCTS = [
         'download_url': 'https://download.bitcomet.com/achive/BitComet_2.23.zip',
         'official_site': 'https://www.bitcomet.com/en/downloads',
     },
+    {
+        'name': 'HexHub',
+        'name_cn': 'HexHub',
+        'icon': 'HX',
+        'icon_color': 'linear-gradient(135deg, #557bdf, #3a5bbf)',
+        'category': '开发工具',
+        # 数据库 / Docker / SSH / SFTP 桌面 GUI 工具。
+        # 走官方版本 API，一次请求拿到版本号 + 直链 + 体积 + 发布日期。
+        # 取 windows-amd64-portable（64 位便携版）。
+        # 不能用 increment：下载 URL 带构建时间戳
+        # （...-5.1.9-202606072158.exe），每版时间戳都变，pattern 写死就扫不到新版。
+        # 也不能取 history-exact 的最新记录——那是热更新版（5.4.4），
+        # 官网并没有对应的新完整包，实际下到的仍是 5.1.9。
+        'detect_type': 'hexhub_api',
+        'hexhub_channel': 'windows-amd64-portable',
+        'skip_md5': True,
+        'version': '5.1.9',
+        'download_url': 'https://oss.hexhub.cn/plugin/HexHub-Client-windows-amd64-portable-5.1.9-202606072158.exe',
+        'official_site': 'https://www.hexhub.cn/',
+    },
 ]
 
 MAX_INCREMENT = 30  # 最多递增检测30个版本
@@ -5149,6 +5169,67 @@ def detect_chrome_api(product):
         return product.get('version', ''), product.get('download_url', ''), product.get('download_url', ''), 0, '', ''
 
 
+def detect_hexhub_api(product):
+    """HexHub 官方版本 API 探测：取指定渠道（默认 windows-amd64-portable）的
+    版本号、直链、体积、发布日期，一次请求全拿到。
+
+    端点：https://api.hexhub.cn/client/version/latest-non-hot-detail
+    必须带 Referer/Origin（否则 403）：API 做了来源校验。
+
+    为什么用 latest-non-hot-detail 而不是 history-exact：
+    HexHub 的版本分两类——完整包（hotUpdate=false）和热更新（hotUpdate=true）。
+    history-exact 的最新记录是热更版（如 5.4.4），但官网并不提供对应的新完整包；
+    完整包/便携版最新仍是 5.1.9（2026-06-07）。下载站展示的版本必须与用户
+    实际下到的包一致，所以取 non-hot 的完整包版本。
+
+    注意：不能配 increment——下载 URL 里带构建时间戳
+    （HexHub-Client-windows-amd64-portable-5.1.9-202606072158.exe），
+    每版时间戳都变，写死进 url_pattern 必然扫不到新版。
+    """
+    import json as _json
+
+    api = product.get('hexhub_api') or 'https://api.hexhub.cn/client/version/latest-non-hot-detail'
+    channel = product.get('hexhub_channel', 'windows-amd64-portable')
+    headers = {
+        'User-Agent': UA,
+        'Referer': 'https://www.hexhub.cn/',
+        'Origin': 'https://www.hexhub.cn',
+        'Accept': 'application/json, text/plain, */*',
+    }
+
+    try:
+        req = urllib.request.Request(api, headers=headers)
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            payload = _json.loads(resp.read().decode('utf-8', errors='ignore'))
+
+        if payload.get('code') != 0:
+            raise Exception(f"API返回异常 code={payload.get('code')} msg={payload.get('msg')}")
+
+        ch = (payload.get('data') or {}).get(channel)
+        if not ch:
+            raise Exception(f"未找到渠道 {channel}")
+
+        version = ch.get('versionName') or ''
+        download_url = ch.get('downloadUrl') or ''
+        size = int(ch.get('totalSize') or 0)
+        # created/updated 是毫秒时间戳；created 为该完整包入库时间，
+        # 与官方更新日志里的发布日期一致，比 CDN Last-Modified 更贴近"发布日"。
+        ts = ch.get('created') or ch.get('updated') or 0
+        date = ''
+        if ts:
+            import datetime
+            date = datetime.datetime.fromtimestamp(ts / 1000, datetime.timezone.utc).strftime('%Y-%m-%d')
+
+        print(f"  HexHub API版本: {version} ({channel}), {size/1024/1024:.1f}MB, {date}")
+        if not version or not download_url:
+            raise Exception("API 未返回版本号或下载链接")
+        return version, download_url, download_url, size, date, ''
+    except Exception as e:
+        print(f"  ⚠️ HexHub API错误: {e}")
+        return (product.get('version', ''), product.get('download_url', ''),
+                product.get('download_url', ''), 0, '', '')
+
+
 def detect_edge_api(product):
     """Microsoft Edge CDP API探测：获取最新stable x64版本和官方离线包直链"""
     import json as _json
@@ -5806,6 +5887,8 @@ def find_latest(product):
         version, full_url, param_url, size, date, md5 = detect_chrome_api(product)
     elif detect_type == 'edge_api':
         version, full_url, param_url, size, date, md5 = detect_edge_api(product)
+    elif detect_type == 'hexhub_api':
+        version, full_url, param_url, size, date, md5 = detect_hexhub_api(product)
     elif detect_type == 'startallback':
         version, full_url, param_url, size, date, md5 = detect_startallback(product)
     elif detect_type == 'bwcx':

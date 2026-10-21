@@ -42,7 +42,7 @@ probe.py 会自动做：GitHub API 挑 x64 安装包资产、HEAD 判 302/fixed�
 | 固定地址直出文件 | `fixed` | `download_url`, `version`(手动)；可选 `pe_version` / `page_version_url`+`page_version_regex`；**日期被 CDN 覆盖时加 `prefer_config_date: True`** |
 | 版本在网页上 | `scrape` | `check_url`, `version_regex`, `date_regex`, `download_url_regex` |
 | 归档/下载列表页，最新版在**末尾** | `scrape` | `version_regex_take: 'last'` + `date_regex_take: 'last'`（配合 `size_regex` 抓体积） |
-| 官方更新检查 API | `chrome_api`/`edge_api`/`luminar_api`/`yandex` | 按软件对应 |
+| 官方更新检查 API | `chrome_api`/`edge_api`/`luminar_api`/`hexhub_api`/`yandex` | 按软件对应 |
 | URL 含版本、普通递增 | 多级进位（默认） | `base_version`, `url_pattern{ver}`；跨度大配 `max_skip`/`max_carry` |
 | URL 含版本、第2段跳变 | `minor_scan` | `minor_scan=True`, `minor_scan_count`, `minor_scan_builds` |
 | build 号稀疏跳跃（Adobe） | `adobe_build` | `version_format='adobe_build'`, `adobe_max_jump`, `adobe_probe_workers`, `detect_timeout` |
@@ -130,6 +130,8 @@ gh run list --limit 3                                    # 403/无 workflow 权�
 | 安装包读不出任何版本 | 外壳是 RAR/自解压壳，无版本资源 | `rar_sfx_version=True` 解包读内层 exe（需 unrar，CI 已装）；7z 不支持 RAR5 |
 | 官方包 302 跳到 not_available（Windows 包未上架） | 下载服务器整站 302 到提示页，且提示页也是 200 | `check_url_follow` 已识别 not_available 判为不可用；用 `size_regex` 抓页面记录的体积兜底，官方放包后自动切回真实值 |
 | 官方包和便携包更新节奏不同 | 只测单一安装包漏新版本 | `pe_version` + `alt_download_urls` 多包取最新 |
+| 完整包与热更新版本号不一致 | 厂商只对老包做增量热更，不重新发完整包（HexHub 热更到 5.4.4，完整包仍 5.1.9） | 取 `hexhub_api` 的 non-hot 版本，与用户实际下到的包一致 |
+| 下载 URL 带构建时间戳 | 每版时间戳都变，写死进 `url_pattern` 必然扫不到新版（`...-5.1.9-202606072158.exe`） | 别配 increment，走官方 API 直接取完整 URL |
 | GitHub 大小/直链不对 | 多资产（多平台包）混算 | `asset_filter` + `use_asset_url` |
 | 大文件探测超时 | MD5 全量下载 | `skip_md5: True` |
 | 资源站/论坛被限流 | 请求过重 | `detect_priority='resource'` 单独降频 |

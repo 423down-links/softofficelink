@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T04:28:04.308957+00:00",
+  "updated_at": "2026-10-21T04:40:17.791105+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -2035,6 +2035,24 @@
       "last_modified": "2026-10-20",
       "md5": "",
       "official_site": "https://www.bitcomet.com/en/downloads",
+      "update_items": []
+    },
+    {
+      "name": "HexHub",
+      "name_cn": "HexHub",
+      "alias": "",
+      "icon": "HX",
+      "icon_color": "linear-gradient(135deg, #557bdf, #3a5bbf)",
+      "category": "开发工具",
+      "version": "5.1.9",
+      "download_url": "https://oss.hexhub.cn/plugin/HexHub-Client-windows-amd64-portable-5.1.9-202606072158.exe",
+      "download_url_with_params": "https://oss.hexhub.cn/plugin/HexHub-Client-windows-amd64-portable-5.1.9-202606072158.exe",
+      "downloads": [],
+      "size": 203964008,
+      "size_mb": 194.5,
+      "last_modified": "2026-06-07",
+      "md5": "",
+      "official_site": "https://www.hexhub.cn/",
       "update_items": []
     }
   ]
