@@ -2055,12 +2055,17 @@ _http_cache = {}
 _http_cache_lock = threading.Lock()
 
 
-def check_url(url, referer=None, use_cache=True):
+def check_url(url, referer=None, use_cache=True, get_fallback=True):
     """检测URL是否存在，返回 (exists, size, last_modified)
     302重定向到CDN签名URL时跟随重定向获取大小
 
     带进程内短 TTL 缓存：同一轮检测里多个产品/多级递增常探测同一 URL，
     缓存能显著减少请求数；只缓存"成功"结果，避免把偶发网络失败固化下来。
+
+    get_fallback=False 时只做一次 HEAD，不再补 GET 探测体积。
+    increment 递增扫描动辄十几次请求，每次都可能触发 20s+ 的 GET 兜底，
+    一轮下来必然超时（迅雷就是这样被拖到 96s、长期保留旧数据的）；
+    扫描阶段只需要"存在/不存在"，体积留到确定最新版本后补一次。
 
     ⚠️ 部分 CDN（Cloudflare 代理的站点，如 ntwind.com）既不返回
     Content-Length 也不返回 Last-Modified，HEAD 只能拿到 exists=True、
@@ -2082,10 +2087,15 @@ def check_url(url, referer=None, use_cache=True):
     try:
         req = urllib.request.Request(url, method='HEAD', headers=headers)
         with urllib.request.urlopen(req, timeout=8) as resp:
+            # 部分站点把下架包 302 到 404 提示页且返回 200（迅雷 down.sandai.net/404/404.html），
+            # 不识别就会被当成"包存在"，探测直接卡在这个假版本上。
+            final_url = resp.geturl() or ''
+            if final_url != url and re.search(r'(^|/)404(/|\.html)', final_url):
+                return False, 0, ''
             size = resp.headers.get('Content-Length', '0')
             last_modified = resp.headers.get('Last-Modified', '')
             result = (resp.status == 200, int(size) if size and size.isdigit() else 0, last_modified)
-            if result[0] and (result[1] == 0 or not result[2]):
+            if get_fallback and result[0] and (result[1] == 0 or not result[2]):
                 # CDN 没给 Content-Length / Last-Modified → GET 兜底
                 g_size, g_lm = _curl_get_headers(url, referer)
                 if g_size > 0:
@@ -2331,6 +2341,21 @@ def carry_version(version):
     return '.'.join(parts)
 
 
+def carry_version_n(version, k):
+    """向上进位 k 个段：倒数第二段 +k，最后一段归 0
+    例如 25.1.13.1637 + k=2 -> 25.1.15.0
+    用于一次并发探测多个进位段，替代串行“进位一次、再试、再进位”。
+    """
+    if k <= 1:
+        return carry_version(version)
+    parts = version.split('.')
+    if len(parts) < 2:
+        return increment_version(version)
+    parts[-2] = str(int(parts[-2]) + k)
+    parts[-1] = '0'
+    return '.'.join(parts)
+
+
 def adobe_build_probe(base_ver, exists_fn, max_jump=700, workers=20):
     """Adobe build 号稀疏跳跃定位：并发探测 base 之后的号段，取最大存在版本
 
@@ -2380,6 +2405,11 @@ def _url_ver(version, product):
 # 键=产品名，值 ∈ {'nsis','pe','increment'}。仅 increment 探测模式写入。
 _VER_SOURCE = {}
 
+# 线上已发布的版本号（main 里 data.json 的值），供 increment 探测当起点。
+# 配置里的 base_version 写死在源码里，一旦落后于线上就没法自愈：
+# 探测永远从旧基线往上爬，遇到跨小版本跳版（26.2.9->26.4.0）就永远追不上。
+_LIVE_VERSIONS = {}
+
 
 def detect_increment(product):
     """递增检测模式：多级进位探测
@@ -2388,19 +2418,30 @@ def detect_increment(product):
            两轮并发定位：① 小版本段（含 base）+1..+N 取最大命中；
            ② 命中段内并发扫构建号 0..B 取最大命中。命中后跳过第1~3层，省掉节流 sleep。
     第1层：递增最后一段（build号），遇到不存在的版本跳过（最多5个）
-    第2层：连续5个404后进位到上一段（如25.1.13.1636 -> 25.1.14.0），重置后段为0
-    第3层：最多进位2次，确保能探测到跨小版本（25.1.15、25.2.0）
+    第2层：连续N个404后进位到上一段（如25.1.13.1636 -> 25.1.14.0），重置后段为0
+    第3层：最多进位3次，确保能探测到跨小版本（25.1.15、25.2.0、26.4.0）
     第4层：检测到最新版本后，探测四段小版本号（NSIS/PE）
     第5层：获取安装包大小、更新日期、MD5
     """
-    current = product['base_version']
+    base_version = product['base_version']
+    current = base_version
     latest = current
     latest_size = 0
     latest_date = ''
     referer = product.get('referer')
     MAX_SKIP = product.get('max_skip', 3)
-    MAX_CARRY = product.get('max_carry', 1)
+    # 默认允许连续进位 3 次：跨小版本跳版（26.2.9 -> 26.3.0 -> 26.4.0）需要多次进位，
+    # 只给 1 次时一旦连跳两个段就必然停在旧版，这才是历史上版本停歇的直接原因。
+    MAX_CARRY = product.get('max_carry', 3)
     MD5_SIZE_LIMIT = 100 * 1024 * 1024
+
+    # 起点优先用线上已发布版本：base_version 只是「最低基线」，
+    # 线上版本比它新就以线上版本为起点，避免配置落后导致探测永远追不上。
+    live_ver = _LIVE_VERSIONS.get(product['name'], '')
+    if live_ver and _ver_newer(live_ver, current):
+        current = live_ver
+        latest = live_ver
+        print(f"  以线上版本为起点: {current}（配置基线 {base_version}）")
 
     # 支持多个url_pattern（按优先级尝试，应对build号变化）
     if 'url_patterns' in product:
@@ -2408,7 +2449,8 @@ def detect_increment(product):
     else:
         url_patterns = [product['url_pattern']]
     
-    def get_version_url(version):
+    def get_version_url(version, fast=True):
+        """返回 (url, exists, size, date)。fast=True 只做 HEAD，不补 GET 体积。"""
         ver_full = _url_ver(version, product)
         ver_nodot = version.replace('.', '')
         parts = version.split('.')
@@ -2417,7 +2459,7 @@ def detect_increment(product):
         major_minor_underscore = '_'.join(parts[:2])
         for pattern in url_patterns:
             test_url = pattern.format(ver=ver_full, ver_dot=ver_nodot, major=major, major_minor=major_minor, major_minor_underscore=major_minor_underscore)
-            exists, size, date = check_url(test_url, referer=referer)
+            exists, size, date = check_url(test_url, referer=referer, get_fallback=not fast)
             if exists:
                 return test_url, exists, size, date
         last_url = url_patterns[-1].format(ver=ver_full, ver_dot=ver_nodot, major=major, major_minor=major_minor, major_minor_underscore=major_minor_underscore)
@@ -2467,8 +2509,19 @@ def detect_increment(product):
             latest_date = date
         else:
             print(f"  ⚠️ 警告: 基础版本 {current} 不存在，可能已下架或网络异常")
+            # 线上版本可能来自占位 build / 误抓（数值虚高、包实际不存在），
+            # 这时回退配置基线再试一次，避免整轮围着不存在的版本空转。
+            if current != base_version:
+                print(f"  ↩️ 线上起点无效，回退配置基线: {base_version}")
+                current = base_version
+                latest = base_version
+                url, exists, size, date = get_version_url(current)
+                if exists:
+                    latest_size = size
+                    latest_date = date
+                    print(f"  ✓ 配置基线存在: {current}")
             # 如果scrape到了版本号但CDN HEAD失败，仍使用scrape版本
-            if scraped_ver:
+            if scraped_ver and not exists:
                 latest = scraped_ver
                 latest_size = product.get('default_size_mb', 0) * 1024 * 1024
                 latest_date = ''
@@ -2581,27 +2634,49 @@ def detect_increment(product):
         else:
             skip_count += 1
             if skip_count >= MAX_SKIP:
-                # 连续5个404，尝试进位到上一段
+                # 连续 N 个 404：并发探测上面 1..MAX_CARRY 个段的起始版本
+                # （25.1.14.0 / 25.1.15.0 / 25.1.16.0），取最大命中后继续递增。
+                # 一次并发只花一轮 RTT，比串行「进位一次→再试→再进位」快数倍，
+                # 也能覆盖跨多个小版本的跳版（26.2.9 -> 26.4.0）。
                 if carry_count < MAX_CARRY:
-                    carry_ver = carry_version(current)
-                    print(f"  🔄 连续{MAX_SKIP}个404，进位探测: {current} -> {carry_ver}")
-                    current = carry_ver
-                    skip_count = 0
-                    carry_count += 1
-                    # 检测进位后的版本是否存在
-                    url, exists, size, date = get_version_url(current)
-                    if exists:
-                        latest = current
-                        latest_size = size
-                        latest_date = date
-                        print(f"  ✓ 进位版本存在: {current}")
-                    time.sleep(0.3)
-                    continue
+                    cands = [carry_version_n(current, k) for k in range(1, MAX_CARRY + 1)]
+                    carry_count = MAX_CARRY
+                    print(f"  🔄 连续{MAX_SKIP}个404，并发进位探测: {', '.join(cands)}")
+                    with ThreadPoolExecutor(max_workers=len(cands)) as _ex:
+                        _res = list(_ex.map(get_version_url, cands))
+                    _best = None
+                    for v, (_u, ok, s, d) in zip(cands, _res):
+                        if ok and (_best is None or _ver_newer(v, _best[0])):
+                            _best = (v, s, d)
+                    if _best:
+                        current = _best[0]
+                        latest = _best[0]
+                        latest_size = _best[1]
+                        latest_date = _best[2]
+                        skip_count = 0
+                        print(f"  ✓ 进位命中: {current}")
+                        continue
+                    print(f"  ⏹ 进位段全无命中（已覆盖 {MAX_CARRY} 个段），停止探测")
+                    break
                 else:
                     print(f"  ⏹ 已进位{MAX_CARRY}次，停止探测")
                     break
             current = next_ver
             time.sleep(0.2)
+
+    # 扫描阶段只做 HEAD（避免每次都触发 40s+ 的 GET 兜底把整轮拖超时），
+    # 定版后再对最终包补一次完整探测，把体积/日期填上。
+    if latest_size <= 0 and latest:
+        _lp = latest.split('.')
+        _lu = url_patterns[0].format(
+            ver=_url_ver(latest, product), ver_dot=latest.replace('.', ''),
+            major=_lp[0], major_minor='.'.join(_lp[:2]),
+            major_minor_underscore='_'.join(_lp[:2]))
+        _lok, _ls, _ld = check_url(_lu, referer=referer, use_cache=False)
+        if _lok and _ls > 0:
+            latest_size = _ls
+            latest_date = _ld or latest_date
+            print(f"  补体积: {latest_size/1024/1024:.1f}MB")
 
     # 第2层：多源版本号探测
     # NSIS版本优先（安装包内部真实版本，最精确）
@@ -6363,6 +6438,12 @@ def main():
                 old_data[p['name']] = p
     except Exception:
         pass
+
+    # 线上版本喂给 increment 探测当起点（base_version 只当最低基线，防止配置落后）
+    for _n, _p in old_data.items():
+        _v = str(_p.get('version') or '')
+        if _v:
+            _LIVE_VERSIONS[_n] = _v
 
     # 筛选要检测的软件
     products_to_check = PRODUCTS
