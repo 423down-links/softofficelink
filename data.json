@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T16:21:53.250565+00:00",
+  "updated_at": "2026-10-22T16:36:14.915104+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -1506,6 +1506,24 @@
       "last_modified": "2026-10-22",
       "md5": "",
       "official_site": "https://www.techsmith.com/camtasia-version-history.html",
+      "update_items": []
+    },
+    {
+      "name": "Vegas Pro",
+      "name_cn": "VEGAS Pro",
+      "alias": "",
+      "icon": "Ve",
+      "icon_color": "linear-gradient(135deg, #00b8d4, #0072bc)",
+      "category": "视频编辑",
+      "version": "2027.0.0",
+      "download_url": "https://borisfxdownloads.com/borisfx/store/vegas/Vegas_Pro_2027.0.0.31_x64_RELEASE_261020_132721.exe",
+      "download_url_with_params": "https://borisfxdownloads.com/borisfx/store/vegas/Vegas_Pro_2027.0.0.31_x64_RELEASE_261020_132721.exe",
+      "downloads": [],
+      "size": 760220056,
+      "size_mb": 725.0,
+      "last_modified": "2026-10-21",
+      "md5": "",
+      "official_site": "https://www.borisfx.com/vegas/",
       "update_items": []
     },
     {

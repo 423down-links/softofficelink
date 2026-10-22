@@ -1370,6 +1370,25 @@ PRODUCTS = [
         'official_site': 'https://www.techsmith.com/camtasia-version-history.html',
     },
     {
+        'name': 'Vegas Pro',
+        'name_cn': 'VEGAS Pro',
+        'icon': 'Ve',
+        'icon_color': 'linear-gradient(135deg, #00b8d4, #0072bc)',
+        'category': '视频编辑',
+        # Boris FX 收购后改为 Hub 在线授权，安装包只经 Hub 下发，
+        # 官网/论坛都不暴露直链。但 Hub 客户端启动时拉的官方清单接口
+        # (borisfx.com/api/1/downloads) 一次就给全「版本号 + 直链 + 发布日期」，
+        # 不用猜带构建时间戳的文件名（Vegas_Pro_2027.0.0.31_x64_RELEASE_261020_132721.exe）。
+        'detect_type': 'borisfx_hub',
+        'hub_product_name': 'Vegas Pro',
+        # 只认 2027 版本线：产品同时挂着 2026 旧版，用 product 前缀区分
+        'hub_product_prefix': 'Vegas Pro 2027',
+        'version': '2027.0.0',
+        'download_url': 'https://borisfxdownloads.com/borisfx/store/vegas/Vegas_Pro_2027.0.0.31_x64_RELEASE_261020_132721.exe',
+        'skip_md5': True,
+        'official_site': 'https://www.borisfx.com/vegas/',
+    },
+    {
         'name': 'Geek Uninstaller',
         'name_cn': 'Geek Uninstaller',
         'icon': 'GU',
@@ -6265,6 +6284,103 @@ def detect_discourse(product):
             product.get('date', ''), '')
 
 
+# ===== Boris FX Hub 官方下载清单 API =====
+# Hub 客户端启动时拉取的清单接口，一条请求同时给出「版本号 + 官方直链 + 发布日期」。
+# Vegas Pro / Sound Forge / Acid Pro 的安装包文件名带构建时间戳
+# （Vegas_Pro_2027.0.0.31_x64_RELEASE_261020_132721.exe），递增猜文件名永远追不上，
+# 官网与论坛发布贴都不暴露直链，只有这个接口稳定且权威。
+_BORISFX_HUB_API = 'https://borisfx.com/api/1/downloads'
+_borisfx_hub_cache = {}
+_borisfx_hub_lock = threading.Lock()
+
+
+def fetch_borisfx_hub_items(api_url=None):
+    """拉取并缓存 Hub 下载清单（进程内缓存 1 小时，多个 Boris FX 产品共用一次请求）"""
+    url = api_url or _BORISFX_HUB_API
+    with _borisfx_hub_lock:
+        hit = _borisfx_hub_cache.get(url)
+    if hit and (time.time() - hit[0]) < WINGET_CACHE_TTL:
+        return hit[1]
+    req = urllib.request.Request(url, headers={
+        'User-Agent': 'BorisFXHub/2.0.9',
+        'Accept': 'application/json',
+        'Accept-Encoding': 'gzip',
+    })
+    with urllib.request.urlopen(req, timeout=60) as resp:
+        raw = resp.read()
+    if raw[:2] == b'\x1f\x8b':
+        import gzip
+        raw = gzip.decompress(raw)
+    items = json.loads(raw.decode('utf-8', errors='ignore'))
+    with _borisfx_hub_lock:
+        _borisfx_hub_cache[url] = (time.time(), items)
+    return items
+
+
+def detect_borisfx_hub(product):
+    """Boris FX 系列专用：官方 Hub 清单 API 一次给出版本 + 直链 + 发布日期
+
+    匹配条件：product_name（Vegas Pro / Sound Forge / Acid Pro）+ product 前缀
+    （Vegas Pro 2027 与 Vegas Pro 2026 是两条版本线，用前缀区分）+ Windows 平台。
+    同一产品有多条历史记录时按 display_version 取最新。
+    """
+    api_url = product.get('hub_api_url')
+    want_name = (product.get('hub_product_name') or '').lower()
+    want_prefix = (product.get('hub_product_prefix') or '').lower()
+    platform = (product.get('hub_platform') or 'windows').lower()
+    fallback_url = product.get('download_url', '')
+    fallback_ver = product.get('version', '')
+
+    try:
+        items = fetch_borisfx_hub_items(api_url)
+    except Exception as e:
+        print(f"  ⚠️ Hub 清单获取失败: {e}")
+        return fallback_ver, fallback_url, fallback_url, 0, product.get('date', ''), ''
+
+    best = None
+    for it in items:
+        pname = str(it.get('product_name') or '').lower()
+        prod = str(it.get('product') or '').lower()
+        plat = str(it.get('platform') or '').lower()
+        url = it.get('download_url') or ''
+        if want_name and pname != want_name:
+            continue
+        if want_prefix and not prod.startswith(want_prefix):
+            continue
+        if platform and platform not in plat:
+            continue
+        # 只要真正的离线安装包，不要 Hub 启动器 zip / 附加内容下载器
+        if not url.lower().endswith(('.exe', '.msi')):
+            continue
+        ver = str(it.get('display_version') or it.get('version') or '')
+        if not ver:
+            continue
+        if best is None or _ver_newer(ver, best[0]):
+            best = (ver, url, str(it.get('date') or ''))
+
+    if not best:
+        print(f"  ⚠️ Hub 清单未匹配到 {product.get('hub_product_prefix') or want_name}")
+        return fallback_ver, fallback_url, fallback_url, 0, product.get('date', ''), ''
+
+    version, full_url, api_date = best
+    # 清单里的 date 是产品挂牌日，常早于实际发布（如 Vegas Pro 2027 挂牌 09-22、
+    # 实际 10-21 才上传），按铁律用 HTTP Last-Modified 优先，清单日期只作兜底。
+    date = ''
+    size = 0
+    exists, size, lm = check_url_follow(full_url)
+    if exists:
+        if lm:
+            date = parse_date(lm)
+        if not date and api_date:
+            date = parse_date(api_date)
+    elif api_date:
+        date = parse_date(api_date)
+    if not exists:
+        size = 0
+    print(f"  Hub 版本: {version} | {full_url[:70]}...")
+    return version, full_url, full_url, size, date, ''
+
+
 def find_latest(product):
     """根据检测类型分发"""
     detect_type = product.get('detect_type', 'increment')
@@ -6309,6 +6425,8 @@ def find_latest(product):
         version, full_url, param_url, size, date, md5 = detect_downtopc(product)
     elif detect_type == 'nsane':
         version, full_url, param_url, size, date, md5 = detect_nsane(product)
+    elif detect_type == 'borisfx_hub':
+        version, full_url, param_url, size, date, md5 = detect_borisfx_hub(product)
     else:
         version, full_url, param_url, size, date, md5 = detect_increment(product)
 
@@ -6405,7 +6523,8 @@ def _detect_priority(product):
     if cat == '资源站' or dt in ('nsane', 'downtopc', 'monkrus', 'discourse', 'lanzou', '189pan'):
         return 'resource'
     if dt in ('github_release', 'chrome_api', 'edge_api', 'redirect',
-              'luminar_api', 'yandex', 'bwcx', 'hexhub_api', 'java_api'):
+              'luminar_api', 'yandex', 'bwcx', 'hexhub_api', 'java_api',
+              'borisfx_hub'):
         return 'fast'
     if dt == 'increment':
         return 'slow'
