@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T17:51:43.251380+00:00",
+  "updated_at": "2026-10-22T18:07:07.732005+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "155.0.4283.62",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793296269&P2=404&P3=2&P4=CiGj7zGFSs2%2b%2bUKxk0KQGaz8iY65igofFVmzaIHpgkVGEFOt3aCeJn8XpCCyyrA1wvicrFVpN9zFQVfWeCaLew%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793296269&P2=404&P3=2&P4=CiGj7zGFSs2%2b%2bUKxk0KQGaz8iY65igofFVmzaIHpgkVGEFOt3aCeJn8XpCCyyrA1wvicrFVpN9zFQVfWeCaLew%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793297168&P2=404&P3=2&P4=d%2fUrInVXHFoDSk22DHWN3VY5P2qgLB2K0aBIFKYFcsQt4mnW0gpBy3GKKLEMxPL0z1SXWfuKzbGPJhHEsg5X5A%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793297168&P2=404&P3=2&P4=d%2fUrInVXHFoDSk22DHWN3VY5P2qgLB2K0aBIFKYFcsQt4mnW0gpBy3GKKLEMxPL0z1SXWfuKzbGPJhHEsg5X5A%3d%3d",
       "downloads": [],
       "size": 207695224,
       "size_mb": 198.1,
@@ -1733,27 +1733,19 @@
       "icon": "N",
       "icon_color": "linear-gradient(135deg, #4a6fa5, #2b3f63)",
       "category": "资源站",
-      "version": "2026-10-22",
+      "version": "2026-10-23",
       "download_url": "https://nsaneforums.com/nsane.down/",
       "download_url_with_params": "https://nsaneforums.com/nsane.down/",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-10-22",
+      "last_modified": "2026-10-23",
       "md5": "",
       "official_site": "https://nsaneforums.com/",
       "update_items": [
         {
-          "title": "TechSmith Camtasia 26.2.3.20804",
-          "url": "https://nsaneforums.com/topic/490567-techsmith-camtasia-262320804/"
-        },
-        {
-          "title": "Wise Care 365 Pro 8.0.7.735",
-          "url": "https://nsaneforums.com/topic/490556-wise-care-365-pro-807735/"
-        },
-        {
-          "title": "Emurasoft EmEditor Professional 26.4.0",
-          "url": "https://nsaneforums.com/topic/490554-emurasoft-emeditor-professional-2640/"
+          "title": "Boris FX VEGAS Pro v2027.0.0.31 (x64)",
+          "url": "https://nsaneforums.com/topic/490576-boris-fx-vegas-pro-v20270031-x64/"
         }
       ]
     },
