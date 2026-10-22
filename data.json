@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T06:47:10.725464+00:00",
+  "updated_at": "2026-10-22T07:01:03.054785+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -204,8 +204,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "155.0.4283.62",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793256336&P2=404&P3=2&P4=PQJ5EOZ802ijZYqpx4cAm9vZ72z416PsfwHIv3olw%2bVIKUoHMSvHZKWU1WFP%2bmR7oACpHMIWVTyKPwmJFcStSQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793256336&P2=404&P3=2&P4=PQJ5EOZ802ijZYqpx4cAm9vZ72z416PsfwHIv3olw%2bVIKUoHMSvHZKWU1WFP%2bmR7oACpHMIWVTyKPwmJFcStSQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793257206&P2=404&P3=2&P4=Ve0Et%2brF%2fAPFlS0GXByHocQl0QnZYHAK78Ba%2f5lVH%2f3VluNOx%2fJkaKqS22gNi3vueYqQLewePk0LBebhKHWTzg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793257206&P2=404&P3=2&P4=Ve0Et%2brF%2fAPFlS0GXByHocQl0QnZYHAK78Ba%2f5lVH%2f3VluNOx%2fJkaKqS22gNi3vueYqQLewePk0LBebhKHWTzg%3d%3d",
       "downloads": [],
       "size": 207695224,
       "size_mb": 198.1,
@@ -1658,6 +1658,14 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "Wise Care 365 Pro 8.0.7.735 Multilingual Portable",
+          "url": "https://downtopc.com/343961-wise-care-365-pro-807735-multilingual-portable.html"
+        },
+        {
+          "title": "Wise Care 365 Pro 8.0.7.735 Multilingual",
+          "url": "https://downtopc.com/343959-wise-care-365-pro-807735-multilingual.html"
+        },
+        {
           "title": "Emurasoft EmEditor Professional 26.4.0 (x64) Multilingual",
           "url": "https://downtopc.com/343954-emurasoft-emeditor-professional-2640-x64-multilingual.html"
         }
@@ -1680,6 +1688,10 @@
       "md5": "",
       "official_site": "https://nsaneforums.com/",
       "update_items": [
+        {
+          "title": "Wise Care 365 Pro 8.0.7.735",
+          "url": "https://nsaneforums.com/topic/490556-wise-care-365-pro-807735/"
+        },
         {
           "title": "Emurasoft EmEditor Professional 26.4.0",
           "url": "https://nsaneforums.com/topic/490554-emurasoft-emeditor-professional-2640/"
