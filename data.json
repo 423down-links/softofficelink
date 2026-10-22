@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T15:52:05.979847+00:00",
+  "updated_at": "2026-10-22T16:07:01.239583+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "155.0.4283.62",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793289072&P2=404&P3=2&P4=I3hMIgb8Hm6h9jzms%2bZGU7EuXEbLehlovrUYQ8BkEtW5%2bTML4E39YBH1J5V8zC36SHTssAtni0S6oqkXOMxbtg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793289072&P2=404&P3=2&P4=I3hMIgb8Hm6h9jzms%2bZGU7EuXEbLehlovrUYQ8BkEtW5%2bTML4E39YBH1J5V8zC36SHTssAtni0S6oqkXOMxbtg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793289962&P2=404&P3=2&P4=PPUZuUy0LggC%2bPu3Ff09jYd6hLAgoOD2oce2To0Lp6CdtkuJXcaL9VhaLvhEa7RqqQ%2beFAPxfY3t%2fnwpGgppQw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793289962&P2=404&P3=2&P4=PPUZuUy0LggC%2bPu3Ff09jYd6hLAgoOD2oce2To0Lp6CdtkuJXcaL9VhaLvhEa7RqqQ%2beFAPxfY3t%2fnwpGgppQw%3d%3d",
       "downloads": [],
       "size": 207695224,
       "size_mb": 198.1,
@@ -1656,6 +1656,14 @@
       "md5": "",
       "official_site": "https://downtopc.com/software/",
       "update_items": [
+        {
+          "title": "TechSmith Camtasia 26.2.3.20804 (x64) Multilingual Portable",
+          "url": "https://downtopc.com/343970-techsmith-camtasia-262320804-x64-multilingual-portable.html"
+        },
+        {
+          "title": "TechSmith Camtasia 26.2.3.20804 (x64) Multilingual",
+          "url": "https://downtopc.com/343969-techsmith-camtasia-262320804-x64-multilingual.html"
+        },
         {
           "title": "Wise Care 365 Pro 8.0.7.735 Multilingual Portable",
           "url": "https://downtopc.com/343961-wise-care-365-pro-807735-multilingual-portable.html"
