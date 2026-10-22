@@ -2863,61 +2863,29 @@ https://download.sketchup.com/SketchUp-2027-0-264-170.exe
 
 ### 顺带一提：CI 挂掉 ≠ 代码有问题
 
-本轮排查发现 GitHub Actions 从 2026-10-21 起全部失败，
-原因是**账号账单被冻结**（`recent account payments have failed`），
-不是脚本报错。站点数据因此停在 10-06。
-这提醒我们：线上版本停滞有可能是**检测流水线没跑**，而不是探测逻辑坏了 ——
-排查前先看 CI 跑没跑、跑成功没有。
+站点数据停更时，先确认**检测流水线跑没跑、跑成功没有**（`gh run list`），
+再去怀疑探测逻辑。两者症状一样，但修法完全不同。
 
 ---
 
-## 第44节：Actions 账单门禁 → 服务器 cron 接管定时检测（2026-10-22）
+## 第44节：定时检测跑在 GitHub Actions（2026-10-22 更正）
 
-### 背景：GitHub Actions 整个卡死
-
-账号被 GitHub 的**账单门禁**锁死：
-
-- 账号级 $0 预算硬停，任何预算写操作（增删改）都返回 `400 Payment method is missing`
-- 支付方式缺失 → 所有 workflow 无法启动，没有旁路可走
-- 账单地址被 GitHub 人工审核冻结（提示 48 小时内给结论）
-- 自托管 runner 也绕不过去：这是**账号级**门禁，不是配额问题
-
-顺带发现：CentOS 7 自托管 runner 本身也装不上（官方 runner v2.329.0 要 `GLIBCXX_3.4.21`，
-系统最高 `GLIBCXX_3.4.19`）。
-
-### 方案：检测搬到 423down 服务器 cron
-
-行为与原 `.github/workflows/detect.yml` 完全对齐：
+仓库已于 2026-10-21 设为**公开**，公开仓 Actions 分钟数不限，`detect.yml` 是唯一调度源：
 
 ```
-# /etc/cron.d/softofficelink
-0 * * * *   root /opt/softofficelink/deploy/detect_cron.sh hourly   # 快检 + 资源站
-15,45 * * * root /opt/softofficelink/deploy/detect_cron.sh full     # 全量非资源站
+*/15 * * * *   hourly：fast + normal + resource
+5,35 * * * *   full：fast + normal + slow
 ```
 
-脚本流程（`deploy/detect_cron.sh`，仓库内同路径，push main 后服务器自动同步）：
-
-```
-git fetch origin '+refs/heads/main:refs/remotes/origin/main'   # 显式 refspec（见下）
-git reset --hard origin/main
-check_versions.py --priority fast,normal,resource|fast,normal,slow --parallel 8
-embed_data.py
-git add -A && git commit && git push origin HEAD:main     # push 失败自动 fetch+rebase 重试
-```
-
-要点：
-
-1. **push main 依然触发 Cloudflare Pages 自动部署**，发布链路跟 Actions 无关，不受影响。
-2. `flock` 防重入，对齐原 CI 的 `concurrency: group main-push`。
-3. **服务器 git 是 1.8.3.1**：`git fetch origin main` 只写 `FETCH_HEAD`、**不更新 `origin/main`**
-   （Git 2.13 才改的），必须用显式 refspec，否则每轮都跑旧代码、push 还会被拒。
-4. 日志在 `/var/log/softofficelink/`（`cron.log` + 按模式的每日日志）。
+- Cloudflare Worker `soft-detect-cron` 只做兜底补触发（15 分钟内已有运行则跳过）。
+- 不走服务器 cron，也没有 `/opt/softofficelink`、`deploy/detect_cron.sh` 这套东西。
+- push main 触发 Cloudflare Pages 自动部署，发布链路与 Actions 独立。
 
 ### 顺带修掉的 bug：版本号被清空成空字符串
 
 **现象**：线上 AnyDesk 版本号变成空白。
 
-**根因**：`detect_fixed` 里 PE 探测失败（CDN 限流 429 / 服务器 python 3.7 的 CA 证书旧
+**根因**：`detect_fixed` 里 PE 探测失败（CDN 限流 429 / 运行环境 CA 证书旧
 导致 `CERTIFICATE_VERIFY_FAILED`）且缓存里没有旧值时，旧代码执行 `version = pe_ver`
 把版本号覆盖成 `''`；而防降级只拦「数值变小」，空串不在拦截范围 → 直接写进线上。
 

@@ -137,31 +137,21 @@ if (vlist.length) {
 配套 CSS：`.col-version-multi`（去掉 nowrap）、`.ver-expand`、`.ver-item`、`.ver-tag`、`.ver-ref`。
 移动端要额外覆盖 `display:block`，否则 td 的 flex 布局会把展开列表挤成一行。
 
-## 定时检测跑在哪（2026-10-22 起，重要）
+## 定时检测跑在哪
 
-**GitHub Actions 已经跑不动了**：账号被账单门禁卡死（$0 预算硬停 + 支付方式缺失，
-GitHub 返回 `400 Payment method is missing`），账单地址又被 GitHub 人工审核冻结中（48h），
-**没有可用旁路**。所以 `gh workflow run detect.yml` 这条路作废，别再试。
-
-检测已迁到 **423down 服务器 cron**，行为与原 detect.yml 对齐：
+**GitHub Actions**：仓库已公开（2026-10-21），公开仓 Actions 分钟数不限，`detect.yml` 是唯一调度源。
 
 | 项 | 值 |
 |---|---|
-| 脚本 | `/opt/softofficelink/deploy/detect_cron.sh`（= 仓库里的 `deploy/detect_cron.sh`，推 main 后自动同步） |
-| 调度 | `/etc/cron.d/softofficelink`：`0 * * * * hourly`（快检+资源站）、`15,45 * * * * full`（全量非资源站） |
-| 仓库 | `/opt/softofficelink`（main 分支） |
-| 日志 | `/var/log/softofficelink/cron.log`、`detect-{hourly,full}-YYYYMMDD.log` |
-| 流程 | fetch → reset --hard origin/main → check_versions.py → embed_data.py → commit+push main → CF Pages 自动部署 |
+| 调度 | `*/15` hourly（fast+normal+resource）、`5,35` full（fast+normal+slow） |
+| 兜底 | Cloudflare Worker `soft-detect-cron` 补触发（15 分钟内已有运行则跳过） |
+| 流程 | checkout → check_versions.py → embed_data.py → commit+push main → CF Pages 自动部署 |
 
 要点：
 
-- **推 main 依然触发 Cloudflare Pages 自动部署**（部署链路与 Actions 无关）。
-- 现在改 `check_versions.py` 只要**推 main**，服务器下一轮 cron 自己拉新代码；不用手动跑检测。
-- 服务器上的 git 是 **1.8.3.1**：`git fetch origin main` 只写 FETCH_HEAD、**不更新 `origin/main`**，
-  脚本里必须用显式 refspec `git fetch origin '+refs/heads/main:refs/remotes/origin/main'`，
-  否则 reset 回旧代码、push 被拒。
-- push 被拒时脚本会自动 fetch + rebase 重试一次；别强推。
-- 看服务器跑没跑：`ssh 423down 'tail -30 /var/log/softofficelink/cron.log'`。
+- 改 `check_versions.py` 只要**推 main**，下一轮 Actions 自动用新代码。
+- 想立刻跑一轮：`gh workflow run detect.yml --ref main -f mode=hourly`（含 slow 用 `mode=full`）。
+- **不走服务器 cron**，也没有 `/opt/softofficelink`、`deploy/detect_cron.sh`。
 
 ## 同步更新（判据全过 → 一步不停）
 
@@ -189,18 +179,11 @@ git -c user.name="$(git config user.name || echo 423down)" \
 git push origin HEAD:main                                # 推送即触发前端重建
 ```
 
-### C. 触发当轮检测（Actions 死了，走服务器 cron）
+### C. 触发当轮检测
 
 ```bash
-# GitHub Actions 被账单门禁卡死，这两条已作废，别再跑：
-# gh workflow run detect.yml --ref main -f mode=hourly
-# gh run list --limit 3
-
-# 现在：改完推 main，服务器 cron 下一轮自动跑。
-# 想立刻跑一轮（服务器上直接跑脚本）：
-ssh 423down '/opt/softofficelink/deploy/detect_cron.sh hourly'    # 快检+资源站
-ssh 423down '/opt/softofficelink/deploy/detect_cron.sh full'      # 全量非资源站
-ssh 423down 'tail -30 /var/log/softofficelink/cron.log'           # 看结果
+gh workflow run detect.yml --ref main -f mode=hourly     # 含 slow 的用 mode=full
+gh run list --limit 3                                    # 看最近几轮跑没跑、成功没
 ```
 
 要点：
@@ -211,10 +194,10 @@ ssh 423down 'tail -30 /var/log/softofficelink/cron.log'           # 看结果
 
 ## 仓库与部署事实（死记，别猜别探）
 
-- 仓库：`423down-links/softofficelink`（main 分支）。**私有仓，从未公开过**，别建议转公开/改 Pages 设置。
+- 仓库：`423down-links/softofficelink`（main 分支，2026-10-21 起**公开**，Actions 分钟数不限）。
 - 部署方式：**push 到 main 即自动重建 Cloudflare Pages（线上地址 https://softofficelink.pages.dev/）**，无任何手动步骤；本地预览用 `python3 -m http.server` + OpenPreview。
 - **⚠️ `check_versions.py --only` 不带 `--no-save` 会把 data.json 整个覆盖成单产品结构（实测翻车）**：要回填单产品数据，先 `cp data.json /tmp/备份`，跑完校验产品数与当前线上条数一致才继续；否则用 `--no-save` + 手动改。
-- **页面本体不在服务器上**（发布仍是 Cloudflare Pages），但**检测脚本跑在 423down 服务器的 cron 上**（见「定时检测跑在哪」）。别去翻服务器站点目录；涉及检测/版本的事找 cron 和仓库。
+- **页面与检测都在 GitHub 侧**：页面由 Cloudflare Pages 发布，检测由 Actions 跑。**不碰 423down 服务器**，禁止为此连 SSH、查服务器目录。
 - data.json 是脚本产物且被 Actions 定时自动提交：**动手前必须 `git fetch origin main`，以远端为基准改**，本地旧快照直接提交会把它人的检测增量顶回旧值（2026-10-15 实际翻车：14 款版本/日期被回滚）。
 - **⚠️ 沙箱恢复可能 checkout 到旧 agent 分支（`trae/agent-*`）而非 main，本地会显示旧数据、看着像「回滚」**（2026-10-20 实际发生：凌晨入库的 4 款软件本地全消失，远端/线上其实完好）。开工第一件事：`git checkout main && git fetch origin main && git reset --hard origin/main`，再核对 data.json 里最近入库条目还在再动手，别拿旧分支快照当真相。
 - **⚠️ `trae/agent-*` 分支是自动生成的临时工作分支，不要 merge、不要留**。2026-10-22 清理过一批（10 个远程 + 1 个本地），全部确认无独有产品/配置后才删。判断方式：逐个比 `git show <branch>:data.json` 的产品数与 `git show <branch>:check_versions.py` 的 PRODUCTS 集合，只有一家独有才值得抢救。
@@ -262,5 +245,5 @@ ssh 423down 'tail -30 /var/log/softofficelink/cron.log'           # 看结果
 | 版本明明探测对了却被丢弃（报"无体积"） | 探测请求没带 `Referer` → 对方返回拦截页（exists=True 但 size=0）→ 上层判「无体积」整轮作废（实测 NVIDIA 抓到 621.01 却退回 617.42） | `check_url_follow(url, referer=product.get('referer'))`（`detect_scrape` 曾漏传，`detect_fixed`/`detect_increment` 一直有传）；referer **只用于探测**，别写进给用户的 download_url |
 | 抓到的是同页的另一个安装包变体 | 同页并列多个包（SketchUp 的 `SketchUp-*.exe` / `SketchUpFull-*.exe` / `.dmg`），正则只写了 `SketchUp` 没锚死完整文件名 | 直链正则锚死完整文件名并以 `\.exe` 结尾；`re.search` 取第一个匹配，注意包在页面上的先后顺序 |
 | 版本号里混进了 build 号 | 文件名 `SketchUp-2027-0-264-170.exe` 末段是 build 号，不属于产品版本号 | 多捕获组用 `.` 拼接时把 build 段写成非捕获（`\d+`），只保留年/大/小版本三段；年份用 `20(\d\d)` 只取后两位 |
-| 线上版本停滞但代码看着没问题 | 定时检测流水线本身没跑（GitHub Actions 账号账单被冻结 → 所有 job "was not started"） | 排查前先 `gh run list` 看 CI 最近一次成功是什么时候，别一上来就怀疑探测逻辑 |
+| 线上版本停滞但代码看着没问题 | 定时检测流水线本身没跑（Actions 被禁用/调度丢点） | 排查前先 `gh run list` 看 CI 最近一次成功是什么时候，别一上来就怀疑探测逻辑 |
 
