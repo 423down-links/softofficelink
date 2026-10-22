@@ -884,8 +884,13 @@ PRODUCTS = [
         'category': '远程工具',
         'detect_type': 'fixed',
         'pe_version': True,
-        'version': '9.8.0',
+        'version': '9.8.2',
         'download_url': 'https://download.anydesk.com/AnyDesk.exe',
+        # download.anydesk.com 对部分机房 IP 限流（PE 分片请求 429），
+        # 版本号改从官网下载页的 JSON 里抓（windows 客户端包 win_exe 的 version 字段），
+        # PE 探测失败时由它兜底。
+        'page_version_url': 'https://anydesk.com/zh/downloads/windows',
+        'page_version_regex': r'"id":"win_exe","version":"([\d.]+)"',
         'official_site': 'https://anydesk.com/zh/downloads/windows',
     },
     {
@@ -2842,13 +2847,18 @@ def detect_fixed(product):
                     pe_ver = _pe_version_cached(url)
                     if pe_ver:
                         print(f"  PE版本(缓存): {pe_ver}")
-                    version = pe_ver
+                        version = pe_ver
+                    else:
+                        # 探测和缓存都没结果 → 保留配置版本，绝不能把版本号写成空
+                        print(f"  ⚠️ PE版本无结果，保留配置版本: {version}")
             except Exception as e:
                 print(f"  PE版本读取失败: {e}")
                 pe_ver = _pe_version_cached(url)
                 if pe_ver:
                     print(f"  PE版本(缓存兜底): {pe_ver}")
                     version = pe_ver
+                else:
+                    print(f"  ⚠️ PE版本兜底失败，保留配置版本: {version}")
     elif product.get('nsis_inner_version') and not is_webpage:
         # NSIS 安装器：外壳 PE 版本是打包时硬编码的，可能落后于实际软件版本。
         # 典型：PotPlayer 外壳 ProductVersion=1.7.23159.0，实际软件
@@ -6459,6 +6469,12 @@ def main():
         if info and name in old_data and (info.get('size_mb', 0) > 0 or allow_no_size):
             old_v = old_data[name].get('version', '')
             new_v = info.get('version', '')
+            # 空版本兜底：本轮探测没拿到版本号（PE 限流 / 官网页面抽风），
+            # 绝不能把线上已有的版本号覆盖成空字符串，只保留旧值。
+            if old_v and not new_v:
+                print(f"  ⚠️ 本轮版本号为空，沿用旧值: {old_v}")
+                info['version'] = old_v
+                new_v = old_v
             auth = product.get('version_authority')
             from_authority = bool(auth) and _VER_SOURCE.get(name) == auth
             if old_v and new_v and not from_authority and _ver_tuple(new_v) < _ver_tuple(old_v):
