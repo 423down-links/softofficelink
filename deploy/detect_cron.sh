@@ -60,7 +60,11 @@ case "$MODE" in
 esac
 
 rc=0
-$PY check_versions.py --priority "$PRIORITY" --parallel 8 2>&1 | tee -a "$LOG"
+# 2026-10-22 并行度 8→4：外层线程池 + 内层 _parallel_md5（8 分片 × 4MB）
+# 叠加后单轮峰值 RSS 近 1GB，2026-10-22 12:53 打爆整机内存触发全局 OOM，
+# 内核连带杀掉 php-fpm 工作进程。降到 4 后峰值约减半，检测耗时约翻倍
+#（full 70s → 约 140s），对版本检测时效无影响。
+$PY check_versions.py --priority "$PRIORITY" --parallel 4 2>&1 | tee -a "$LOG"
 rc=${PIPESTATUS[0]}
 
 if [ "$rc" = "3" ]; then
