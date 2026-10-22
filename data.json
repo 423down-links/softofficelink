@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T19:52:40.884184+00:00",
+  "updated_at": "2026-10-22T20:06:19.074713+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793303527&P2=404&P3=2&P4=LZYL8NUjtizCF3auBgLv7ig9hFXze9WAcEY6lUdYByDZqI%2bWBMCAXD%2fvNoqN9mJe6eWBXcA5dcvEIlj0rTtOOw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793303527&P2=404&P3=2&P4=LZYL8NUjtizCF3auBgLv7ig9hFXze9WAcEY6lUdYByDZqI%2bWBMCAXD%2fvNoqN9mJe6eWBXcA5dcvEIlj0rTtOOw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793304350&P2=404&P3=2&P4=AMfSXpMi5%2fLd%2bL2JRcvDW%2fG3ym79UJvSb%2fU7jMNugpkl9dDLfJf5e7YpaHcFVwAas9OcBhDnN8aA1FT5Xlj7Pg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793304350&P2=404&P3=2&P4=AMfSXpMi5%2fLd%2bL2JRcvDW%2fG3ym79UJvSb%2fU7jMNugpkl9dDLfJf5e7YpaHcFVwAas9OcBhDnN8aA1FT5Xlj7Pg%3d%3d",
       "downloads": [],
       "size": 208330576,
       "size_mb": 198.7,
@@ -1649,13 +1649,13 @@
       "icon": "GS",
       "icon_color": "linear-gradient(135deg, #2196f3, #0d47a1)",
       "category": "同步工具",
-      "version": "12.11.11.1",
+      "version": "12.11.12",
       "download_url": "https://services.goodsync.com/download/GoodSync-vsub-Setup.exe",
       "download_url_with_params": "https://services.goodsync.com/download/GoodSync-vsub-Setup.exe",
       "downloads": [],
       "size": 83409376,
       "size_mb": 79.5,
-      "last_modified": "2026-10-17",
+      "last_modified": "2026-10-22",
       "md5": "",
       "official_site": "https://www.goodsync.com/",
       "update_items": []
@@ -1700,6 +1700,14 @@
       "md5": "",
       "official_site": "https://downtopc.com/software/",
       "update_items": [
+        {
+          "title": "GoodSync 12.11.12.2 (x64) Multilingual Portable",
+          "url": "https://downtopc.com/343995-goodsync-1211122-x64-multilingual-portable.html"
+        },
+        {
+          "title": "GoodSync 12.11.12.2 (x64) Multilingual",
+          "url": "https://downtopc.com/343994-goodsync-1211122-x64-multilingual.html"
+        },
         {
           "title": "Boris FX VEGAS Pro 2027.0.0.31 (x64) Multilingual",
           "url": "https://downtopc.com/343978-boris-fx-vegas-pro-20270031-x64-multilingual.html"
@@ -2084,7 +2092,7 @@
       "download_url": "https://www.diskpart.com/ss/download/pa/PAssist_TechDemo.exe",
       "download_url_with_params": "https://www.diskpart.com/ss/download/pa/PAssist_TechDemo.exe",
       "downloads": [],
-      "size": 74965224,
+      "size": 74994704,
       "size_mb": 71.5,
       "last_modified": "2026-10-19",
       "md5": "",
@@ -2182,12 +2190,12 @@
       "icon": "SU",
       "icon_color": "linear-gradient(135deg, #00a3a3, #007a7a)",
       "category": "图像工具",
-      "version": "27.0.264",
-      "download_url": "https://download.sketchup.com/SketchUp-2027-0-264-170.exe",
-      "download_url_with_params": "https://download.sketchup.com/SketchUp-2027-0-264-170.exe",
+      "version": "27.0.267",
+      "download_url": "https://download.sketchup.com/SketchUp-2027-0-267-174.exe",
+      "download_url_with_params": "https://download.sketchup.com/SketchUp-2027-0-267-174.exe",
       "downloads": [],
-      "size": 1374826968,
-      "size_mb": 1311.1,
+      "size": 1374842640,
+      "size_mb": 1311.2,
       "last_modified": "2026-10-21",
       "md5": "",
       "official_site": "https://help.sketchup.com/en/downloading-sketchup",
