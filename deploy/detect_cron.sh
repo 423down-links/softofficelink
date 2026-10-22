@@ -46,7 +46,10 @@ fi
 log "===== 开始 $MODE 检测 ====="
 
 # 拉取最新代码
-git fetch origin main --quiet 2>>"$LOG" || log "⚠️ git fetch 失败，用本地版本继续"
+# ⚠️ 服务器 git 是 1.8.3.1，1.8 的 `git fetch origin main` 只写 FETCH_HEAD，
+#    不会更新 refs/remotes/origin/main → reset 会回到旧代码。
+#    必须用显式 refspec 强制更新远端跟踪分支。
+git fetch origin '+refs/heads/main:refs/remotes/origin/main' --quiet 2>>"$LOG" || log "⚠️ git fetch 失败，用本地版本继续"
 git reset --hard origin/main --quiet 2>>"$LOG" || log "⚠️ git reset 失败"
 
 # 按模式选择检测优先级
@@ -92,6 +95,25 @@ fi
 git config user.email "bot@softofficelink.pages.dev"
 git config user.name "softofficelink-bot"
 
+# 推送 main：失败时先拉远端再 rebase 重试一次（防并发提交被拒）
+push_main() {
+  if git push origin HEAD:main 2>>"$LOG"; then
+    return 0
+  fi
+  log "⚠️ push 失败，拉取远端后 rebase 重试"
+  git fetch origin '+refs/heads/main:refs/remotes/origin/main' --quiet 2>>"$LOG"
+  if ! git rebase origin/main >>"$LOG" 2>&1; then
+    log "❌ rebase 冲突，本轮放弃推送（远端已有提交不会丢）"
+    return 1
+  fi
+  if git push origin HEAD:main 2>>"$LOG"; then
+    log "✅ rebase 后推送成功"
+    return 0
+  fi
+  log "❌ push 失败"
+  return 1
+}
+
 if [ "$changed" = "true" ]; then
   git add -A
   if git diff --staged --quiet; then
@@ -99,10 +121,9 @@ if [ "$changed" = "true" ]; then
   else
     msg=$(grep '🔄 版本变化' "$LOG" | tail -1 | sed 's/🔄 版本变化: //' | cut -c1-200)
     git commit -q -m "detect(${MODE}): ${msg:-版本更新}"
-    if git push origin HEAD:main 2>>"$LOG"; then
+    if push_main; then
       log "✅ 已推送 main，Cloudflare Pages 将自动部署"
     else
-      log "❌ push 失败"
       exit 1
     fi
   fi
@@ -113,7 +134,7 @@ else
     log "无变化，跳过"
   else
     git commit -q -m "chore: refresh probe caches"
-    git push origin HEAD:main 2>>"$LOG" && log "✅ 缓存已推送"
+    push_main && log "✅ 缓存已推送"
   fi
 fi
 
