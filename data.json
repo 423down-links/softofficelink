@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T19:21:26.892514+00:00",
+  "updated_at": "2026-10-22T19:27:26.801488+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.42",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.42.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.42.exe?v=1792696849306&n=ldinst_9.5.42_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.42.exe?v=1792697200159&n=ldinst_9.5.42_ld_407594_ld.exe",
       "downloads": [],
       "size": 602924520,
       "size_mb": 575.0,
@@ -28,7 +28,7 @@
       "category": "模拟器",
       "version": "14.0.32",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.32.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.32.exe?v=1792696849163&n=ldinst_14.0.32_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.32.exe?v=1792697200309&n=ldinst_14.0.32_ld_412570_ld.exe",
       "downloads": [],
       "size": 744712672,
       "size_mb": 710.2,
@@ -206,13 +206,13 @@
       "icon": "E",
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
-      "version": "155.0.4283.62",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793301647&P2=404&P3=2&P4=M5jtRD%2fbc%2bxsQyrRqPJCzGrnjMdhaJXdC5WUIuSNyvmYDq9v8JSaDzWPUwHgyoOOqCi3zOEdPufVOm1x6AsODQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793301647&P2=404&P3=2&P4=M5jtRD%2fbc%2bxsQyrRqPJCzGrnjMdhaJXdC5WUIuSNyvmYDq9v8JSaDzWPUwHgyoOOqCi3zOEdPufVOm1x6AsODQ%3d%3d",
+      "version": "156.0.4314.42",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793301997&P2=404&P3=2&P4=d9JL%2bqk2ES7XSKIjmaE6LEVvoiOD6WVKapX35HwRSXvidmRJVGd4gBpXifpw1CVy8Z8xML%2bO5yMmVpJmfQQMQw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793301997&P2=404&P3=2&P4=d9JL%2bqk2ES7XSKIjmaE6LEVvoiOD6WVKapX35HwRSXvidmRJVGd4gBpXifpw1CVy8Z8xML%2bO5yMmVpJmfQQMQw%3d%3d",
       "downloads": [],
-      "size": 207695224,
-      "size_mb": 198.1,
-      "last_modified": "2026-10-16",
+      "size": 208330576,
+      "size_mb": 198.7,
+      "last_modified": "2026-10-23",
       "md5": "",
       "official_site": "https://github.com/Bush2021/edge_installer",
       "update_items": []
@@ -1179,7 +1179,7 @@
       "downloads": [],
       "size": 57556400,
       "size_mb": 54.9,
-      "last_modified": "2026-09-09",
+      "last_modified": "2026-09-21",
       "md5": "",
       "official_site": "https://www.stardock.com/products/start11/history",
       "update_items": []
