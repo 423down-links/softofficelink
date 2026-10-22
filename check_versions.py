@@ -1386,6 +1386,32 @@ PRODUCTS = [
         'version': '2027.0.0',
         'download_url': 'https://borisfxdownloads.com/borisfx/store/vegas/Vegas_Pro_2027.0.0.31_x64_RELEASE_261020_132721.exe',
         'skip_md5': True,
+        'hub_addons': [
+            {
+                'hub_product_name': 'AI Media Service',
+                'hub_min_version': '2027.0',
+                'name_cn': 'AI Media Service ',
+                'desc': 'AI后台服务：语音转字幕、文字转语音，没有它AI字幕功能用不了',
+            },
+            {
+                'hub_product_name': 'Vegas Pro Deep Learning Models',
+                'hub_min_version': '2027.0',
+                'name_cn': 'Deep Learning Model AllinOne',
+                'desc': 'AI深度学习模型包：AI放大分辨率、智能遮罩等功能的底层数据',
+            },
+            {
+                'hub_product_name': 'ML Plugin Execution Providers',
+                'hub_min_version': '2027.0',
+                'name_cn': 'ML Plugin Execution Providers',
+                'desc': '机器学习插件执行器：驱动AI模型在时间线上跑推理',
+            },
+            {
+                'hub_product_name': 'Boris FX Direct Installer',
+                'hub_min_version': '2.0.0',
+                'name_cn': 'Boris FX Direct',
+                'desc': 'Boris FX 插件/资源中心：管理下载特效插件，也能检查 Vegas 更新',
+            },
+        ],
         'official_site': 'https://www.borisfx.com/vegas/',
     },
     {
@@ -6294,6 +6320,60 @@ _borisfx_hub_cache = {}
 _borisfx_hub_lock = threading.Lock()
 
 
+# Boris FX 主包配套附加组件清单（写进 version_list，点标题展开）
+_borisfx_addons = {}
+
+
+def _collect_borisfx_addons(items, product, platform):
+    """从 Hub 清单里抓主包配套的附加组件，写进 _borisfx_addons[产品名]
+
+    hub_addons 每项配置：
+      hub_product_name  清单里的 product_name（精确匹配）
+      hub_min_version   版本号至少要 ≥ 它才算这条版本线（2027 组件版本是 2027.0，
+                        2026 组件是 2026.1，用它把两代组件分开）
+      name_cn / desc     前端展开列表里显示的名字与一句话说明
+    """
+    specs = product.get('hub_addons')
+    if not specs:
+        return
+    out = []
+    for spec in specs:
+        want = str(spec.get('hub_product_name') or '').lower()
+        min_ver = str(spec.get('hub_min_version') or '')
+        best = None
+        for it in items:
+            pname = str(it.get('product_name') or '').lower()
+            if pname != want.lower():
+                continue
+            if platform and platform not in str(it.get('platform') or '').lower():
+                continue
+            url = it.get('download_url') or ''
+            if not url.lower().endswith(('.exe', '.msi', '.zip')):
+                continue
+            ver = str(it.get('display_version') or it.get('version') or '')
+            if min_ver and ver and not _ver_newer(ver, min_ver) and ver != min_ver:
+                continue
+            if not ver:
+                continue
+            if best is None or _ver_newer(ver, best[0]):
+                best = (ver, url)
+        if not best:
+            print(f"  ⚠️ 附加组件未匹配: {spec.get('name_cn') or want}")
+            continue
+        ver, url = best
+        entry = {
+            'name': spec.get('name_cn') or want,
+            'version': ver,
+            'download_url': url,
+        }
+        if spec.get('desc'):
+            entry['desc'] = spec['desc']
+        out.append(entry)
+        print(f"  附加组件: {entry['name']} {ver}")
+    if out:
+        _borisfx_addons[product['name']] = out
+
+
 def fetch_borisfx_hub_items(api_url=None):
     """拉取并缓存 Hub 下载清单（进程内缓存 1 小时，多个 Boris FX 产品共用一次请求）"""
     url = api_url or _BORISFX_HUB_API
@@ -6357,6 +6437,9 @@ def detect_borisfx_hub(product):
             continue
         if best is None or _ver_newer(ver, best[0]):
             best = (ver, url, str(it.get('date') or ''))
+
+    # 配套附加组件：与主包同版本线（2027），随主包一起出新版
+    _collect_borisfx_addons(items, product, platform)
 
     if not best:
         print(f"  ⚠️ Hub 清单未匹配到 {product.get('hub_product_prefix') or want_name}")
@@ -6475,7 +6558,7 @@ def find_latest(product):
     }
     # 多版本线条目（如 Java）：前端渲染成「点标题展开子版本列表」
     # 只在真有多版本线时才带这个键，避免给全部 113 款单版本产品塞空列表造成 diff 噪声
-    _vlist = _java_versions.get(product['name'], [])
+    _vlist = _java_versions.get(product['name'], []) or _borisfx_addons.get(product['name'], [])
     if _vlist:
         result['version_list'] = _vlist
     return result

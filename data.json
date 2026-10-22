@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T16:52:22.619773+00:00",
+  "updated_at": "2026-10-22T16:56:00.843858+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -1524,7 +1524,33 @@
       "last_modified": "2026-10-21",
       "md5": "",
       "official_site": "https://www.borisfx.com/vegas/",
-      "update_items": []
+      "update_items": [],
+      "version_list": [
+        {
+          "name": "AI Media Service ",
+          "version": "2027.0",
+          "download_url": "https://borisfxdownloads.com/borisfx/download_files/beta/Ai_Media_Service_2027.0.0.6_x64_260920_12-03.exe",
+          "desc": "AI后台服务：语音转字幕、文字转语音，没有它AI字幕功能用不了"
+        },
+        {
+          "name": "Deep Learning Model AllinOne",
+          "version": "2027.0",
+          "download_url": "https://borisfxdownloads.com/borisfx/download_files/beta/DeepLearningModel_AllinOne_Installer_2027.0_20260921.exe",
+          "desc": "AI深度学习模型包：AI放大分辨率、智能遮罩等功能的底层数据"
+        },
+        {
+          "name": "ML Plugin Execution Providers",
+          "version": "2027.0",
+          "download_url": "https://borisfxdownloads.com/borisfx/download_files/beta/VEGAS_AI_MLPlugin_EP_2027.0_20260921_x64.exe",
+          "desc": "机器学习插件执行器：驱动AI模型在时间线上跑推理"
+        },
+        {
+          "name": "Boris FX Direct",
+          "version": "2.0.26",
+          "download_url": "https://borisfxdownloads.com/borisfx/store/borisfxdirect/BorisFXDirect-2.0.26-win.zip",
+          "desc": "Boris FX 插件/资源中心：管理下载特效插件，也能检查 Vegas 更新"
+        }
+      ]
     },
     {
       "name": "Geek Uninstaller",
