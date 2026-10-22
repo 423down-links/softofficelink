@@ -1,15 +1,14 @@
 name: Detect & Push
 
-# 双层调度（降频版：私有仓 Actions 免费额度只有 2000 分钟/月）：
-#   - 每 2 小时跑 快检+资源站（fast+normal+resource）
-#   - 每 6 小时跑 全量非资源站（fast+normal+slow）
-# 预计用量 ~1200 分钟/月，稳定落在免费额度内；要恢复高频需先确认账号额度。
+# 双层调度（公开仓 Actions 分钟数不限）：
+#   - 每 15 分钟跑 快检+资源站（fast+normal+resource）
+#   - 每 30 分钟跑 全量非资源站（fast+normal+slow），错开 5 分钟避免和快检撞车
 # 检测到版本/大小/日期变化时立即 embed + commit + push 到 main；
 # main 的推送会直接触发站点（Pages）重新构建部署，即「改完即上线」。
 on:
   schedule:
-    - cron: '0 */2 * * *'    # 每 2 小时：快检 + 资源站
-    - cron: '15 */6 * * *'   # 每 6 小时：全量（不含资源站）
+    - cron: '*/15 * * * *'   # 每 15 分钟：快检 + 资源站
+    - cron: '5,35 * * * *'   # 每 30 分钟：全量（不含资源站）
   workflow_dispatch:
     inputs:
       mode:
@@ -26,7 +25,7 @@ concurrency:
 
 jobs:
   detect-hourly:
-    if: github.event.schedule == '0 */2 * * *' || (github.event_name == 'workflow_dispatch' && inputs.mode == 'hourly')
+    if: github.event.schedule == '*/15 * * * *' || (github.event_name == 'workflow_dispatch' && inputs.mode == 'hourly')
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -104,7 +103,7 @@ jobs:
           git push origin HEAD:main
 
   detect-full:
-    if: github.event.schedule == '15 */6 * * *' || (github.event_name == 'workflow_dispatch' && inputs.mode == 'full')
+    if: github.event.schedule == '5,35 * * * *' || (github.event_name == 'workflow_dispatch' && inputs.mode == 'full')
     runs-on: ubuntu-latest
     permissions:
       contents: write
