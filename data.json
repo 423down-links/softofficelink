@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T16:47:31.049363+00:00",
+  "updated_at": "2026-10-22T04:25:28.194496+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -1476,13 +1476,13 @@
       "icon": "NV",
       "icon_color": "linear-gradient(135deg, #76b900, #5a9e00)",
       "category": "驱动程序",
-      "version": "617.42",
-      "download_url": "https://us.download.nvidia.com/Windows/617.42/617.42-desktop-win10-win11-64bit-international-dch-whql.exe",
-      "download_url_with_params": "https://us.download.nvidia.com/Windows/617.42/617.42-desktop-win10-win11-64bit-international-dch-whql.exe",
+      "version": "621.01",
+      "download_url": "https://us.download.nvidia.com/Windows/621.01/621.01-desktop-win10-win11-64bit-international-dch-whql.exe",
+      "download_url_with_params": "https://us.download.nvidia.com/Windows/621.01/621.01-desktop-win10-win11-64bit-international-dch-whql.exe",
       "downloads": [],
-      "size": 990853168,
-      "size_mb": 945.0,
-      "last_modified": "2026-10-06",
+      "size": 1037190000,
+      "size_mb": 989.1,
+      "last_modified": "2026-10-21",
       "md5": "",
       "official_site": "https://www.nvidia.com/en-us/geforce/forums/game-ready-drivers/13/",
       "update_items": []
@@ -1713,13 +1713,13 @@
       "icon": "7Z",
       "icon_color": "linear-gradient(135deg, #2f6fed, #1a4fb4)",
       "category": "系统工具",
-      "version": "26.04",
-      "download_url": "https://www.7-zip.org/a/7z2604-x64.exe",
-      "download_url_with_params": "https://www.7-zip.org/a/7z2604-x64.exe",
+      "version": "26.05",
+      "download_url": "https://www.7-zip.org/a/7z2605-x64.exe",
+      "download_url_with_params": "https://www.7-zip.org/a/7z2605-x64.exe",
       "downloads": [],
-      "size": 1664082,
+      "size": 1663506,
       "size_mb": 1.6,
-      "last_modified": "2026-10-06",
+      "last_modified": "2026-10-21",
       "md5": "",
       "official_site": "https://www.7-zip.org/",
       "update_items": []
@@ -2131,6 +2131,24 @@
           "download_url": "https://www.oracle.com/java/technologies/downloads/#java8"
         }
       ]
+    },
+    {
+      "name": "SketchUp Pro 2027",
+      "name_cn": "SketchUp Pro 2027",
+      "alias": "SketchUp",
+      "icon": "SU",
+      "icon_color": "linear-gradient(135deg, #00a3a3, #007a7a)",
+      "category": "图像工具",
+      "version": "27.0.264",
+      "download_url": "https://download.sketchup.com/SketchUp-2027-0-264-170.exe",
+      "download_url_with_params": "https://download.sketchup.com/SketchUp-2027-0-264-170.exe",
+      "downloads": [],
+      "size": 1374826968,
+      "size_mb": 1311.1,
+      "last_modified": "2026-10-21",
+      "md5": "",
+      "official_site": "https://help.sketchup.com/en/downloading-sketchup",
+      "update_items": []
     }
   ]
 }

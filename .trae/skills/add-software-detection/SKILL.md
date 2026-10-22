@@ -222,3 +222,9 @@ gh run list --limit 3                                    # 403/无 workflow 权�
 | 线上产品被静默截断（少了几个） | 误改 `PRODUCTS`（漏配/name 写错/误删）→ 写回 data.json 就把少的部分抹掉 | 已加**产品数量守卫**：`check_versions.py` 与 `embed_data.py` 写盘前都比对数量，发现线上有产品消失就**中止写盘 + 点名报出少了谁**（退出码 3），确认要下线则显式 `--allow-remove "产品名"` |
 | 提交后线上产品数变少 | 手动改 data.json 或 embed 前没比对 | 别手改 data.json；`embed_data.py` 已有守卫兜底 |
 | 版本号保住了但体积/日期/下载链接一起变坏 | 防降级拦截只回退 `version` 字段，同轮探测出的坏体积、坏日期、退化成通用页面的直链照样写进线上（实测 Win11 LTSC 直链退成 `releases` 页面、日期倒回 2026-09-14） | 降级时**一并回退** size/size_mb/last_modified/md5/download_url/download_url_with_params；另：GitHub API 必须带 `GITHUB_TOKEN`，否则 60 次/小时限流会让 `github_release` 整片回退成通用链接 |
+| 版本死活不动、脚本无报错 | 多行文本（history.txt / release notes）用 `^` 锚定但正则没开 `(?m)` → `re.search` 只匹配整个字符串开头，**永远匹配不到**且不报错（实测 7-Zip 卡在 26.04，官网已发 26.05） | 正则内联 `(?m)`：`r'(?m)^(\d+\.\d+)\s+(\d{4}-\d{2}-\d{2})'`；任何 `^`/`$` 锚定前先确认被匹配文本是不是多行结构 |
+| 版本明明探测对了却被丢弃（报"无体积"） | 探测请求没带 `Referer` → 对方返回拦截页（exists=True 但 size=0）→ 上层判「无体积」整轮作废（实测 NVIDIA 抓到 621.01 却退回 617.42） | `check_url_follow(url, referer=product.get('referer'))`（`detect_scrape` 曾漏传，`detect_fixed`/`detect_increment` 一直有传）；referer **只用于探测**，别写进给用户的 download_url |
+| 抓到的是同页的另一个安装包变体 | 同页并列多个包（SketchUp 的 `SketchUp-*.exe` / `SketchUpFull-*.exe` / `.dmg`），正则只写了 `SketchUp` 没锚死完整文件名 | 直链正则锚死完整文件名并以 `\.exe` 结尾；`re.search` 取第一个匹配，注意包在页面上的先后顺序 |
+| 版本号里混进了 build 号 | 文件名 `SketchUp-2027-0-264-170.exe` 末段是 build 号，不属于产品版本号 | 多捕获组用 `.` 拼接时把 build 段写成非捕获（`\d+`），只保留年/大/小版本三段；年份用 `20(\d\d)` 只取后两位 |
+| 线上版本停滞但代码看着没问题 | 定时检测流水线本身没跑（GitHub Actions 账号账单被冻结 → 所有 job "was not started"） | 排查前先 `gh run list` 看 CI 最近一次成功是什么时候，别一上来就怀疑探测逻辑 |
+

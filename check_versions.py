@@ -1516,19 +1516,21 @@ PRODUCTS = [
         'icon': '7Z',
         'icon_color': 'linear-gradient(135deg, #2f6fed, #1a4fb4)',
         'category': '系统工具',
-        # 探测方式1：官网 history.txt scrape（权威，形如 "26.04          2026-10-05"）
+        # 探测方式1：官网 history.txt scrape（权威，形如 "26.05          2026-10-21"）
         # 探测方式2：increment 探测 7z{ver}-x64.exe（文件名无点，用 dots_to_none）
+        # ⚠️ history.txt 的版本行在文件中部（前面是标题和分隔线），
+        #    正则必须带 (?m) 多行开关，否则 ^ 只匹配整个文件开头 → 永远抓不到版本 → 版本停更。
         'detect_type': 'increment',
-        'base_version': '26.04',
+        'base_version': '26.05',
         'check_url': 'https://www.7-zip.org/history.txt',
-        'version_regex': r'^(\d+\.\d+)\s+(\d{4}-\d{2}-\d{2})',
-        'date_regex': r'^\d+\.\d+\s+(\d{4}-\d{2}-\d{2})',
+        'version_regex': r'(?m)^(\d+\.\d+)\s+(\d{4}-\d{2}-\d{2})',
+        'date_regex': r'(?m)^\d+\.\d+\s+(\d{4}-\d{2}-\d{2})',
         'url_pattern': 'https://www.7-zip.org/a/7z{ver}-x64.exe',
         'url_ver_format': 'dots_to_none',
         'prefer_scraped_version': True,
         'use_newer_scraped': True,
-        'version': '26.04',
-        'download_url': 'https://www.7-zip.org/a/7z2604-x64.exe',
+        'version': '26.05',
+        'download_url': 'https://www.7-zip.org/a/7z2605-x64.exe',
         'skip_md5': True,
         'official_site': 'https://www.7-zip.org/',
     },
@@ -1984,6 +1986,35 @@ PRODUCTS = [
         'official_site': 'https://oracle.com/java/technologies/java-se-glance.html',
         # 下载页不是单一安装包，没有体积可探
         'allow_no_size': True,
+        'skip_md5': True,
+    },
+    {
+        'name': 'SketchUp Pro 2027',
+        'name_cn': 'SketchUp Pro 2027',
+        'alias': 'SketchUp',
+        'icon': 'SU',
+        'icon_color': 'linear-gradient(135deg, #00a3a3, #007a7a)',
+        'category': '图像工具',
+        # 官方下载页（help.sketchup.com/en/downloading-sketchup）一次性给出
+        # 「当前版本安装包直链 + 页面更新日期」，且 Windows 安装包文件名里带完整版本号：
+        #   https://download.sketchup.com/SketchUp-2027-0-264-170.exe
+        # 文件名结构 = SketchUp-{年}-{大版本}-{小版本}-{build}.exe
+        #   2027-0-264-170 → 展示版本 27.0.264（年份去掉 "20" 前缀 + 后两段），
+        #   末段 build 号（170）不属于产品版本号，不进展示。
+        # 用 scrape 而不是 fixed：直链文件名带版本号，每次更新直链都变，写死必然失效。
+        'detect_type': 'scrape',
+        'check_url': 'https://help.sketchup.com/en/downloading-sketchup',
+        'version_regex': r'SketchUp-20(\d\d)-(\d+)-(\d+)-\d+\.exe',
+        'date_regex': r'Last updated:\s*([A-Za-z]{3}\s+\d{1,2},\s*20\d{2})',
+        'download_url_regex': r'(https://download\.sketchup\.com/SketchUp-20\d\d-\d+-\d+-\d+\.exe)',
+        'prefer_scraped_version': True,
+        'version': '27.0.264',
+        'download_url': 'https://download.sketchup.com/SketchUp-2027-0-264-170.exe',
+        'official_site': 'https://help.sketchup.com/en/downloading-sketchup',
+        # 日期取页面上的 "Last updated"（官方发布页日期），比安装包 CDN 的
+        # Last-Modified（构建上传日 10-13）更准；这里不用 prefer_config_date 写死，
+        # 否则下一版发布后日期会卡在旧值。
+        # 安装包 1.3GB，远超 100MB，不做 MD5
         'skip_md5': True,
     },
 ]
@@ -5094,7 +5125,10 @@ def detect_scrape(product):
             size = 0
         print(f"  下载地址为网页，大小{'使用配置值' if product.get('size') else '不适用'}")
     else:
-        exists, detected_size, detected_date = check_url_follow(url)
+        # ⚠️ 必须传 referer：NVIDIA 下载服务器（us.download.nvidia.com → .cn 镜像）
+        #    没有 Referer 头时对 HEAD 返回 403 → 拿不到体积 → 整轮判「无体积」→ 保留旧版本。
+        exists, detected_size, detected_date = check_url_follow(
+            url, referer=product.get('referer'))
         # 页面记录的真实体积优先于探测值：
         # 有些 CDN（如 ntwind.com 的 Cloudflare）不返回 Content-Length，
         # check_url_follow 会流式读 64KB 当体积估算（3.7MB 的包估成 0.1MB），
