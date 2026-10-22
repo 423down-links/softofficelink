@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T14:57:11.090972+00:00",
+  "updated_at": "2026-10-22T15:06:58.851122+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "155.0.4283.62",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793285808&P2=404&P3=2&P4=edNX9LJO%2fJyzvmG9U5jsm%2f1C3vUn2SaT09E8awj8DOgXxhJl9v3CoW3GhGo4hFEReso%2fqgMHhYyqJ0XjKWgtdw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793285808&P2=404&P3=2&P4=edNX9LJO%2fJyzvmG9U5jsm%2f1C3vUn2SaT09E8awj8DOgXxhJl9v3CoW3GhGo4hFEReso%2fqgMHhYyqJ0XjKWgtdw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793286398&P2=404&P3=2&P4=iKsdCNgXq3kmA57aYofiBQRJOB9KTZCC%2fNr8LS0K3szeTUQPapPksRGwIlHSVIXgo1XkFJ8SUQ7oM8ZVUgv85Q%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793286398&P2=404&P3=2&P4=iKsdCNgXq3kmA57aYofiBQRJOB9KTZCC%2fNr8LS0K3szeTUQPapPksRGwIlHSVIXgo1XkFJ8SUQ7oM8ZVUgv85Q%3d%3d",
       "downloads": [],
       "size": 207695224,
       "size_mb": 198.1,
@@ -603,7 +603,7 @@
       "downloads": [],
       "size": 28914504,
       "size_mb": 27.6,
-      "last_modified": "2026-09-25",
+      "last_modified": "2026-09-24",
       "md5": "",
       "official_site": "https://www.scootersoftware.com/download/v5changelog",
       "update_items": []
