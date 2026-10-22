@@ -2868,3 +2868,90 @@ https://download.sketchup.com/SketchUp-2027-0-264-170.exe
 不是脚本报错。站点数据因此停在 10-06。
 这提醒我们：线上版本停滞有可能是**检测流水线没跑**，而不是探测逻辑坏了 ——
 排查前先看 CI 跑没跑、跑成功没有。
+
+---
+
+## 第44节：Actions 账单门禁 → 服务器 cron 接管定时检测（2026-10-22）
+
+### 背景：GitHub Actions 整个卡死
+
+账号被 GitHub 的**账单门禁**锁死：
+
+- 账号级 $0 预算硬停，任何预算写操作（增删改）都返回 `400 Payment method is missing`
+- 支付方式缺失 → 所有 workflow 无法启动，没有旁路可走
+- 账单地址被 GitHub 人工审核冻结（提示 48 小时内给结论）
+- 自托管 runner 也绕不过去：这是**账号级**门禁，不是配额问题
+
+顺带发现：CentOS 7 自托管 runner 本身也装不上（官方 runner v2.329.0 要 `GLIBCXX_3.4.21`，
+系统最高 `GLIBCXX_3.4.19`）。
+
+### 方案：检测搬到 423down 服务器 cron
+
+行为与原 `.github/workflows/detect.yml` 完全对齐：
+
+```
+# /etc/cron.d/softofficelink
+0 * * * *   root /opt/softofficelink/deploy/detect_cron.sh hourly   # 快检 + 资源站
+15,45 * * * root /opt/softofficelink/deploy/detect_cron.sh full     # 全量非资源站
+```
+
+脚本流程（`deploy/detect_cron.sh`，仓库内同路径，push main 后服务器自动同步）：
+
+```
+git fetch origin '+refs/heads/main:refs/remotes/origin/main'   # 显式 refspec（见下）
+git reset --hard origin/main
+check_versions.py --priority fast,normal,resource|fast,normal,slow --parallel 8
+embed_data.py
+git add -A && git commit && git push origin HEAD:main     # push 失败自动 fetch+rebase 重试
+```
+
+要点：
+
+1. **push main 依然触发 Cloudflare Pages 自动部署**，发布链路跟 Actions 无关，不受影响。
+2. `flock` 防重入，对齐原 CI 的 `concurrency: group main-push`。
+3. **服务器 git 是 1.8.3.1**：`git fetch origin main` 只写 `FETCH_HEAD`、**不更新 `origin/main`**
+   （Git 2.13 才改的），必须用显式 refspec，否则每轮都跑旧代码、push 还会被拒。
+4. 日志在 `/var/log/softofficelink/`（`cron.log` + 按模式的每日日志）。
+
+### 顺带修掉的 bug：版本号被清空成空字符串
+
+**现象**：线上 AnyDesk 版本号变成空白。
+
+**根因**：`detect_fixed` 里 PE 探测失败（CDN 限流 429 / 服务器 python 3.7 的 CA 证书旧
+导致 `CERTIFICATE_VERIFY_FAILED`）且缓存里没有旧值时，旧代码执行 `version = pe_ver`
+把版本号覆盖成 `''`；而防降级只拦「数值变小」，空串不在拦截范围 → 直接写进线上。
+
+**三层修法**：
+
+```python
+# 1) detect_fixed：PE 无结果时保留配置版本，绝不覆盖成空
+else:
+    pe_ver = _pe_version_cached(url)
+    if pe_ver:
+        version = pe_ver
+    else:
+        print(f"  ⚠️ PE版本无结果，保留配置版本: {version}")
+
+# 2) main()：本轮版本号为空 → 沿用旧值（兜所有 detect_type）
+if old_v and not new_v:
+    print(f"  ⚠️ 本轮版本号为空，沿用旧值: {old_v}")
+    info['version'] = old_v
+
+# 3) AnyDesk 双保险：官网 JSON 抓版本（Windows 客户端包 win_exe）
+'page_version_url': 'https://anydesk.com/zh/downloads/windows',
+'page_version_regex': r'"id":"win_exe","version":"([\d.]+)"',
+```
+
+官网页面里的原始数据形如：
+
+```json
+"windows":{"packages":[{"size":8553912,"name":"Windows","id":"win_exe",
+"version":"9.8.2","url":"https://download.anydesk.com.cn/AnyDesk.exe"}], ...}
+```
+
+回归验证（PE 探测失败的两种场景，版本号都保持 9.8.2 不被清空）：
+
+```
+场景1（PE 失败 + 缓存空）  → version = '9.8.2'
+场景2（PE 失败 + 官网也挂）→ version = '9.8.2'
+```

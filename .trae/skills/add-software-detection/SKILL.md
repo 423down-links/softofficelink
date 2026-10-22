@@ -137,6 +137,32 @@ if (vlist.length) {
 配套 CSS：`.col-version-multi`（去掉 nowrap）、`.ver-expand`、`.ver-item`、`.ver-tag`、`.ver-ref`。
 移动端要额外覆盖 `display:block`，否则 td 的 flex 布局会把展开列表挤成一行。
 
+## 定时检测跑在哪（2026-10-22 起，重要）
+
+**GitHub Actions 已经跑不动了**：账号被账单门禁卡死（$0 预算硬停 + 支付方式缺失，
+GitHub 返回 `400 Payment method is missing`），账单地址又被 GitHub 人工审核冻结中（48h），
+**没有可用旁路**。所以 `gh workflow run detect.yml` 这条路作废，别再试。
+
+检测已迁到 **423down 服务器 cron**，行为与原 detect.yml 对齐：
+
+| 项 | 值 |
+|---|---|
+| 脚本 | `/opt/softofficelink/deploy/detect_cron.sh`（= 仓库里的 `deploy/detect_cron.sh`，推 main 后自动同步） |
+| 调度 | `/etc/cron.d/softofficelink`：`0 * * * * hourly`（快检+资源站）、`15,45 * * * * full`（全量非资源站） |
+| 仓库 | `/opt/softofficelink`（main 分支） |
+| 日志 | `/var/log/softofficelink/cron.log`、`detect-{hourly,full}-YYYYMMDD.log` |
+| 流程 | fetch → reset --hard origin/main → check_versions.py → embed_data.py → commit+push main → CF Pages 自动部署 |
+
+要点：
+
+- **推 main 依然触发 Cloudflare Pages 自动部署**（部署链路与 Actions 无关）。
+- 现在改 `check_versions.py` 只要**推 main**，服务器下一轮 cron 自己拉新代码；不用手动跑检测。
+- 服务器上的 git 是 **1.8.3.1**：`git fetch origin main` 只写 FETCH_HEAD、**不更新 `origin/main`**，
+  脚本里必须用显式 refspec `git fetch origin '+refs/heads/main:refs/remotes/origin/main'`，
+  否则 reset 回旧代码、push 被拒。
+- push 被拒时脚本会自动 fetch + rebase 重试一次；别强推。
+- 看服务器跑没跑：`ssh 423down 'tail -30 /var/log/softofficelink/cron.log'`。
+
 ## 同步更新（判据全过 → 一步不停）
 
 ### A. 本地渲染，让前端当轮生效
@@ -163,15 +189,22 @@ git -c user.name="$(git config user.name || echo 423down)" \
 git push origin HEAD:main                                # 推送即触发前端重建
 ```
 
-### C. 触发当轮检测（拿不到权限就跳过，别卡住）
+### C. 触发当轮检测（Actions 死了，走服务器 cron）
 
 ```bash
-gh workflow run detect.yml --ref main -f mode=hourly     # 含 slow 的用 mode=full
-gh run list --limit 3                                    # 403/无 workflow 权限 → 跳过，等整点定时轮
+# GitHub Actions 被账单门禁卡死，这两条已作废，别再跑：
+# gh workflow run detect.yml --ref main -f mode=hourly
+# gh run list --limit 3
+
+# 现在：改完推 main，服务器 cron 下一轮自动跑。
+# 想立刻跑一轮（服务器上直接跑脚本）：
+ssh 423down '/opt/softofficelink/deploy/detect_cron.sh hourly'    # 快检+资源站
+ssh 423down '/opt/softofficelink/deploy/detect_cron.sh full'      # 全量非资源站
+ssh 423down 'tail -30 /var/log/softofficelink/cron.log'           # 看结果
 ```
 
 要点：
-- 优先级对应模式：`fast`/`normal`/`resource` → `mode=hourly`；含 `slow` → `mode=full`。
+- 优先级对应模式：`fast`/`normal`/`resource` → `hourly`；含 `slow` → `full`。
 - 不手改 `data.json`，它是脚本产物；但**可以**本地跑脚本生成后一起提交（前端立即生效）。
 - push 被拒就重跑 `git fetch && git rebase`，**不要强推**。
 - 远端历史被重写过时，别硬 rebase 老分支：`git reset origin/main` 对齐后再重放本次改动。
@@ -181,7 +214,7 @@ gh run list --limit 3                                    # 403/无 workflow 权�
 - 仓库：`423down-links/softofficelink`（main 分支）。**私有仓，从未公开过**，别建议转公开/改 Pages 设置。
 - 部署方式：**push 到 main 即自动重建 Cloudflare Pages（线上地址 https://softofficelink.pages.dev/）**，无任何手动步骤；本地预览用 `python3 -m http.server` + OpenPreview。
 - **⚠️ `check_versions.py --only` 不带 `--no-save` 会把 data.json 整个覆盖成单产品结构（实测翻车）**：要回填单产品数据，先 `cp data.json /tmp/备份`，跑完校验产品数与当前线上条数一致才继续；否则用 `--no-save` + 手动改。
-- **本任务与 SSH 服务器（423down.com）完全无关**：这个页面不在服务器上，禁止为此连 SSH、禁止查服务器目录。
+- **页面本体不在服务器上**（发布仍是 Cloudflare Pages），但**检测脚本跑在 423down 服务器的 cron 上**（见「定时检测跑在哪」）。别去翻服务器站点目录；涉及检测/版本的事找 cron 和仓库。
 - data.json 是脚本产物且被 Actions 定时自动提交：**动手前必须 `git fetch origin main`，以远端为基准改**，本地旧快照直接提交会把它人的检测增量顶回旧值（2026-10-15 实际翻车：14 款版本/日期被回滚）。
 - **⚠️ 沙箱恢复可能 checkout 到旧 agent 分支（`trae/agent-*`）而非 main，本地会显示旧数据、看着像「回滚」**（2026-10-20 实际发生：凌晨入库的 4 款软件本地全消失，远端/线上其实完好）。开工第一件事：`git checkout main && git fetch origin main && git reset --hard origin/main`，再核对 data.json 里最近入库条目还在再动手，别拿旧分支快照当真相。
 - **⚠️ `trae/agent-*` 分支是自动生成的临时工作分支，不要 merge、不要留**。2026-10-22 清理过一批（10 个远程 + 1 个本地），全部确认无独有产品/配置后才删。判断方式：逐个比 `git show <branch>:data.json` 的产品数与 `git show <branch>:check_versions.py` 的 PRODUCTS 集合，只有一家独有才值得抢救。
@@ -222,6 +255,9 @@ gh run list --limit 3                                    # 403/无 workflow 权�
 | 线上产品被静默截断（少了几个） | 误改 `PRODUCTS`（漏配/name 写错/误删）→ 写回 data.json 就把少的部分抹掉 | 已加**产品数量守卫**：`check_versions.py` 与 `embed_data.py` 写盘前都比对数量，发现线上有产品消失就**中止写盘 + 点名报出少了谁**（退出码 3），确认要下线则显式 `--allow-remove "产品名"` |
 | 提交后线上产品数变少 | 手动改 data.json 或 embed 前没比对 | 别手改 data.json；`embed_data.py` 已有守卫兜底 |
 | 版本号保住了但体积/日期/下载链接一起变坏 | 防降级拦截只回退 `version` 字段，同轮探测出的坏体积、坏日期、退化成通用页面的直链照样写进线上（实测 Win11 LTSC 直链退成 `releases` 页面、日期倒回 2026-09-14） | 降级时**一并回退** size/size_mb/last_modified/md5/download_url/download_url_with_params；另：GitHub API 必须带 `GITHUB_TOKEN`，否则 60 次/小时限流会让 `github_release` 整片回退成通用链接 |
+| **版本号被清空成空字符串**（线上 AnyDesk 显示空白） | `fixed` 模式的 PE 探测失败（CDN 限流 429 / 服务器 SSL 证书旧），缓存里也没有旧值时，旧代码把 `version` 直接覆盖成 `''`；防降级只拦「变小」，空串不在拦截范围 | 已修：`detect_fixed` 里 PE 无结果时**保留配置版本**（不覆盖成空），`main()` 里再兜一层「本轮版本号为空 → 沿用旧值」；AnyDesk 另加 `page_version_url` + `page_version_regex`（抓官网 JSON 里 `win_exe` 的 version）双保险 |
+| 服务器 cron 一直跑旧代码 / push 被拒 | 服务器 git 是 1.8.3.1，`git fetch origin main` 不更新 `origin/main`（2.13 前只写 FETCH_HEAD） | 用显式 refspec：`git fetch origin '+refs/heads/main:refs/remotes/origin/main'`；脚本里 push 失败自动 fetch+rebase 重试 |
+| 服务器上 PE 解析报 `CERTIFICATE_VERIFY_FAILED` | 面板 pyenv 的 python3.7 CA 证书太旧 | 探测失败不再写空版本（保留配置版本）；要根治需更新该 python 的 cacert |
 | 版本死活不动、脚本无报错 | 多行文本（history.txt / release notes）用 `^` 锚定但正则没开 `(?m)` → `re.search` 只匹配整个字符串开头，**永远匹配不到**且不报错（实测 7-Zip 卡在 26.04，官网已发 26.05） | 正则内联 `(?m)`：`r'(?m)^(\d+\.\d+)\s+(\d{4}-\d{2}-\d{2})'`；任何 `^`/`$` 锚定前先确认被匹配文本是不是多行结构 |
 | 版本明明探测对了却被丢弃（报"无体积"） | 探测请求没带 `Referer` → 对方返回拦截页（exists=True 但 size=0）→ 上层判「无体积」整轮作废（实测 NVIDIA 抓到 621.01 却退回 617.42） | `check_url_follow(url, referer=product.get('referer'))`（`detect_scrape` 曾漏传，`detect_fixed`/`detect_increment` 一直有传）；referer **只用于探测**，别写进给用户的 download_url |
 | 抓到的是同页的另一个安装包变体 | 同页并列多个包（SketchUp 的 `SketchUp-*.exe` / `SketchUpFull-*.exe` / `.dmg`），正则只写了 `SketchUp` 没锚死完整文件名 | 直链正则锚死完整文件名并以 `\.exe` 结尾；`re.search` 取第一个匹配，注意包在页面上的先后顺序 |
