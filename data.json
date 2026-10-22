@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T13:51:34.264657+00:00",
+  "updated_at": "2026-10-22T14:06:35.180368+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "155.0.4283.62",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793281860&P2=404&P3=2&P4=novn4yApveeNL3%2f4U5grUi5%2by8PMlXlRx9gawVLz76V2hgHb%2fkiuQTWZP5f4WkivBna12KeC4clNUiTZCiqPRQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793281860&P2=404&P3=2&P4=novn4yApveeNL3%2f4U5grUi5%2by8PMlXlRx9gawVLz76V2hgHb%2fkiuQTWZP5f4WkivBna12KeC4clNUiTZCiqPRQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793282773&P2=404&P3=2&P4=mJoQTMVs2uDD1siQiw1cHoNiplI9RFKZUBn4HkauHZyl2%2fjqsMpsbpxacyZ%2b%2fiU9wYGkyapXyBl3gFKtX5G6yQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/477745a0-e1f0-47ec-9b76-9668e3aab3fc?P1=1793282773&P2=404&P3=2&P4=mJoQTMVs2uDD1siQiw1cHoNiplI9RFKZUBn4HkauHZyl2%2fjqsMpsbpxacyZ%2b%2fiU9wYGkyapXyBl3gFKtX5G6yQ%3d%3d",
       "downloads": [],
       "size": 207695224,
       "size_mb": 198.1,
@@ -1687,6 +1687,10 @@
       "md5": "",
       "official_site": "https://nsaneforums.com/",
       "update_items": [
+        {
+          "title": "TechSmith Camtasia 26.2.3.20804",
+          "url": "https://nsaneforums.com/topic/490567-techsmith-camtasia-262320804/"
+        },
         {
           "title": "Wise Care 365 Pro 8.0.7.735",
           "url": "https://nsaneforums.com/topic/490556-wise-care-365-pro-807735/"
