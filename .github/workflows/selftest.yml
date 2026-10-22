@@ -1,0 +1,10 @@
+name: SelfHosted Gate Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  gate-test:
+    runs-on: [self-hosted, linux, x64]
+    steps:
+      - run: echo "SELFTEST_OK runner=$(hostname) user=$(whoami) date=$(date -u +%FT%TZ)"
