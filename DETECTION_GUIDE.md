@@ -2742,3 +2742,216 @@ CSS 要点：
 - `.col-version-multi` 覆盖 `.col-version { white-space: nowrap }`（否则长标题被截断）
 - 移动端 `tbody td` 是 `display:flex`，多版本列要额外 `display:block !important`，
   否则展开列表被挤成一行
+
+---
+
+## 第43节：版本停更的三个根因（2026-10-22，7-Zip + NVIDIA + SketchUp 新增）
+
+本轮修的两款「线上版本停滞」都不是官网没更新，而是**探测侧自己把自己卡住了**。
+新增产品 SketchUp Pro 2027 时也踩到同类坑，一并记在这里。
+
+### 根因 1：多行文本用 `^` 锚定却没开 `(?m)` —— 7-Zip 永远停在 26.04
+
+7-Zip 的权威版本源是官网 `https://www.7-zip.org/history.txt`：
+
+```
+HISTORY of the 7-Zip
+--------------------
+
+26.05          2026-10-21      ← 版本行在这里
+-------------------------
+```
+
+原配置写的是：
+
+```python
+'version_regex': r'^(\d+\.\d+)\s+(\d{4}-\d{2}-\d{2})',
+```
+
+`re.search()` 默认**没有 MULTILINE 开关**，`^` 只匹配整个字符串的开头。
+而字符串开头是 `HISTORY of the 7-Zip`，不是版本行 → **永远匹配不到**。
+
+表现极具迷惑性：脚本不报错、不打警告，只是安静地退回 `increment` 逐段试探，
+最后停在旧版本 26.04，看上去像"官网没发新版"。
+
+**修法**：正则内联 `(?m)`，不依赖调用方传 flag：
+
+```python
+'version_regex': r'(?m)^(\d+\.\d+)\s+(\d{4}-\d{2}-\d{2})',
+'date_regex':   r'(?m)^\d+\.\d+\s+(\d{4}-\d{2}-\d{2})',
+```
+
+**通用判据**：任何 `^`/`$` 锚定的正则，先确认被匹配的文本是不是多行结构
+（history.txt、changelog、release notes、配置列表…）。
+是的话就必须 `(?m)`，否则正则静默失效 —— 这类 bug 没有任何报错信息。
+
+### 根因 2：探测用的请求没带 Referer —— NVIDIA 体积恒为 0
+
+NVIDIA 驱动走 `gfwsl.geforce.com` 的 AjaxDriverService，版本号/日期/直链都能正常抓到，
+但拿不到**文件体积**：
+
+```
+us.download.nvidia.com/Windows/621.01/...exe
+  → 301 → us.download.nvidia.cn/Windows/621.01/...exe   （地域镜像）
+       → 无 Referer：403（550 字节的拦截页）
+       → Referer: https://www.nvidia.com/ ：200，content-length 1037190000
+```
+
+体积为 0 会触发上层「无体积 → 整轮作废 → 保留旧数据」的判定，
+于是**版本号明明探测对了（621.01），却因为体积为 0 被丢弃，退回 617.42**。
+
+根子在 `detect_scrape()`：`check_url_follow(url)` 没把产品配置的 `referer` 透传下去。
+`detect_fixed()` / `detect_increment()` 一直都传了，只有 scrape 漏了。
+
+**修法**（通用修复，不是给 NVIDIA 打补丁）：
+
+```python
+exists, detected_size, detected_date = check_url_follow(
+    url, referer=product.get('referer'))
+```
+
+**注意边界**：`referer` 只用于**探测请求**，不能写进给用户的 `download_url`。
+`.com` 直链对海外用户是正常可用的（只有探测端被地域镜像拦），
+把直链换成 `.cn` 反而会让用户拿到一个更脆的地址。
+
+**通用判据**：体积/日期拿不到时，先怀疑**请求头**（Referer / User-Agent / Cookie），
+而不是先怀疑"文件不存在"。
+`exists=True` 但 `size=0` 这个组合，几乎都是"对方返回了拦截页而不是文件"。
+
+### 根因 3：版本号藏在文件名里时，别把 build 号算进版本号 —— SketchUp
+
+SketchUp 官方下载页 `https://help.sketchup.com/en/downloading-sketchup` 一次给全三样东西：
+当前版本直链、页面更新日期、以及 Windows 安装包文件名（文件名里带完整版本号）：
+
+```
+https://download.sketchup.com/SketchUp-2027-0-264-170.exe
+                        └─2027─┘└0┘└264┘└170┘
+                         年份   大  小   build
+```
+
+展示版本应为 **27.0.264**（官方 release notes 页写的也是 `SketchUp Desktop 2027.0.264`），
+末段 build 号（170）不是产品版本号的一部分。
+
+`detect_scrape` 的多捕获组默认用 `.` 拼接 → 正好得到 `27.0.264`：
+
+```python
+'version_regex': r'SketchUp-20(\d\d)-(\d+)-(\d+)-\d+\.exe',   # 27 / 0 / 264
+'download_url_regex': r'(https://download\.sketchup\.com/SketchUp-20\d\d-\d+-\d+-\d+\.exe)',
+```
+
+年份用 `20(\d\d)` 只捕获后两位，`2027` → `27`；末段用 `\d+` 非捕获不参与拼接。
+
+**两个必须注意的坑**：
+
+1. **同页还有 `SketchUpFull-*.exe`（完整离线包）和 `.dmg`（macOS）**。
+   直链正则必须锚死 `SketchUp-`（不能只写 `SketchUp`）并以 `\.exe` 结尾，
+   否则会抓到 Full 包或 dmg。实测 `re.search` 取第一个匹配，Full 包在后面，安全。
+2. **不能用 `fixed` 写死直链**：文件名带版本号，每次更新直链都变，写死必然失效。
+
+**日期**取页面上的 `Last updated`（2026-10-21，即官方发布日），
+比安装包 CDN 的 `Last-Modified`（2026-10-13，只是构建上传日）更准。
+这里**不要**配 `prefer_config_date` + 写死 `date` —— 那样下一版发布后日期会卡在旧值；
+让 `date_regex` 每轮重新抓页面上的日期即可。
+
+### 三条通用判据
+
+| 症状 | 先查什么 |
+|------|---------|
+| 版本号死活不动、脚本无报错 | 正则的 `^`/`$` 是否需要 `(?m)` |
+| 版本探测到了却被丢弃（"无体积"） | 探测请求的 Referer/UA 头 |
+| 同一页面有多个安装包变体 | 正则是否锚死了完整文件名 |
+
+### 顺带一提：CI 挂掉 ≠ 代码有问题
+
+本轮排查发现 GitHub Actions 从 2026-10-21 起全部失败，
+原因是**账号账单被冻结**（`recent account payments have failed`），
+不是脚本报错。站点数据因此停在 10-06。
+这提醒我们：线上版本停滞有可能是**检测流水线没跑**，而不是探测逻辑坏了 ——
+排查前先看 CI 跑没跑、跑成功没有。
+
+---
+
+## 第44节：Actions 账单门禁 → 服务器 cron 接管定时检测（2026-10-22）
+
+### 背景：GitHub Actions 整个卡死
+
+账号被 GitHub 的**账单门禁**锁死：
+
+- 账号级 $0 预算硬停，任何预算写操作（增删改）都返回 `400 Payment method is missing`
+- 支付方式缺失 → 所有 workflow 无法启动，没有旁路可走
+- 账单地址被 GitHub 人工审核冻结（提示 48 小时内给结论）
+- 自托管 runner 也绕不过去：这是**账号级**门禁，不是配额问题
+
+顺带发现：CentOS 7 自托管 runner 本身也装不上（官方 runner v2.329.0 要 `GLIBCXX_3.4.21`，
+系统最高 `GLIBCXX_3.4.19`）。
+
+### 方案：检测搬到 423down 服务器 cron
+
+行为与原 `.github/workflows/detect.yml` 完全对齐：
+
+```
+# /etc/cron.d/softofficelink
+0 * * * *   root /opt/softofficelink/deploy/detect_cron.sh hourly   # 快检 + 资源站
+15,45 * * * root /opt/softofficelink/deploy/detect_cron.sh full     # 全量非资源站
+```
+
+脚本流程（`deploy/detect_cron.sh`，仓库内同路径，push main 后服务器自动同步）：
+
+```
+git fetch origin '+refs/heads/main:refs/remotes/origin/main'   # 显式 refspec（见下）
+git reset --hard origin/main
+check_versions.py --priority fast,normal,resource|fast,normal,slow --parallel 8
+embed_data.py
+git add -A && git commit && git push origin HEAD:main     # push 失败自动 fetch+rebase 重试
+```
+
+要点：
+
+1. **push main 依然触发 Cloudflare Pages 自动部署**，发布链路跟 Actions 无关，不受影响。
+2. `flock` 防重入，对齐原 CI 的 `concurrency: group main-push`。
+3. **服务器 git 是 1.8.3.1**：`git fetch origin main` 只写 `FETCH_HEAD`、**不更新 `origin/main`**
+   （Git 2.13 才改的），必须用显式 refspec，否则每轮都跑旧代码、push 还会被拒。
+4. 日志在 `/var/log/softofficelink/`（`cron.log` + 按模式的每日日志）。
+
+### 顺带修掉的 bug：版本号被清空成空字符串
+
+**现象**：线上 AnyDesk 版本号变成空白。
+
+**根因**：`detect_fixed` 里 PE 探测失败（CDN 限流 429 / 服务器 python 3.7 的 CA 证书旧
+导致 `CERTIFICATE_VERIFY_FAILED`）且缓存里没有旧值时，旧代码执行 `version = pe_ver`
+把版本号覆盖成 `''`；而防降级只拦「数值变小」，空串不在拦截范围 → 直接写进线上。
+
+**三层修法**：
+
+```python
+# 1) detect_fixed：PE 无结果时保留配置版本，绝不覆盖成空
+else:
+    pe_ver = _pe_version_cached(url)
+    if pe_ver:
+        version = pe_ver
+    else:
+        print(f"  ⚠️ PE版本无结果，保留配置版本: {version}")
+
+# 2) main()：本轮版本号为空 → 沿用旧值（兜所有 detect_type）
+if old_v and not new_v:
+    print(f"  ⚠️ 本轮版本号为空，沿用旧值: {old_v}")
+    info['version'] = old_v
+
+# 3) AnyDesk 双保险：官网 JSON 抓版本（Windows 客户端包 win_exe）
+'page_version_url': 'https://anydesk.com/zh/downloads/windows',
+'page_version_regex': r'"id":"win_exe","version":"([\d.]+)"',
+```
+
+官网页面里的原始数据形如：
+
+```json
+"windows":{"packages":[{"size":8553912,"name":"Windows","id":"win_exe",
+"version":"9.8.2","url":"https://download.anydesk.com.cn/AnyDesk.exe"}], ...}
+```
+
+回归验证（PE 探测失败的两种场景，版本号都保持 9.8.2 不被清空）：
+
+```
+场景1（PE 失败 + 缓存空）  → version = '9.8.2'
+场景2（PE 失败 + 官网也挂）→ version = '9.8.2'
+```
