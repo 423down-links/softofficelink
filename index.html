@@ -872,8 +872,9 @@ function renderTable(products) {
     // 会把 www.yamicsoft.com/cn/x.php 拼成 www.yamicsoft.comcn/x.php）
     const siteLink = p.official_site ? '<a href="' + p.official_site + '" class="site-link" target="_blank">' + p.official_site.replace(/^https?:\/\//, '').replace(/\/$/, '') + '</a>' : '';
     const sizeStr = p.size_mb ? p.size_mb + ' MB' : '-';
-    // 待复制内容：第一行「软件名 + 版本号 + 更新日期」，第二行下载地址
-    const copyPayload = p.name_cn + '  v' + p.version + '    ' + dateStr + '\n' + dlUrl;
+    // 待复制内容：只复制「软件名 + 版本号 + 更新日期」一行，不含下载地址
+    // （2026-10-23：下载地址已单独展示在下载列，复制按钮不再把它带进剪贴板）
+    const copyPayload = p.name_cn + '  v' + p.version + '    ' + dateStr;
 
     // 资源站（如 monkrus）：无版本号、无体积，把当天更新的文章链接填进这两列的空白区
     const items = Array.isArray(p.update_items) ? p.update_items : [];
