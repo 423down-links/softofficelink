@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T13:52:48.041102+00:00",
+  "updated_at": "2026-10-23T14:06:47.746285+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793368276&P2=404&P3=2&P4=YH31FeJ2Me1WwoY8aHXwll3MQDVbS0kpm07Xu7vJhKXmTyOI81jFjs6MxHBpIUHBDXied5AsNNLDC%2f3eH%2fe1Cg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793368276&P2=404&P3=2&P4=YH31FeJ2Me1WwoY8aHXwll3MQDVbS0kpm07Xu7vJhKXmTyOI81jFjs6MxHBpIUHBDXied5AsNNLDC%2f3eH%2fe1Cg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793369132&P2=404&P3=2&P4=EutDN4WIPYL%2b6BLjsO6RaEQHTW%2b8o7RXLFrheeCU0ssoLZ5cWM8zRrlBsauAgA15fblbp1CgmGWa8Yb7x2dwfA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793369132&P2=404&P3=2&P4=EutDN4WIPYL%2b6BLjsO6RaEQHTW%2b8o7RXLFrheeCU0ssoLZ5cWM8zRrlBsauAgA15fblbp1CgmGWa8Yb7x2dwfA%3d%3d",
       "downloads": [],
       "size": 208330576,
       "size_mb": 198.7,
@@ -1701,6 +1701,10 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "Bootstrap Studio 9.0.1 (x64)",
+          "url": "https://downtopc.com/344031-bootstrap-studio-901-x64.html"
+        },
+        {
           "title": "ReviverSoft PC Reviver 4.1.0.12 Multilingual Portable",
           "url": "https://downtopc.com/344030-reviversoft-pc-reviver-41012-multilingual-portable.html"
         },
@@ -1832,6 +1836,10 @@
       "official_site": "https://nsaneforums.com/",
       "update_items": [
         {
+          "title": "ReviverSoft PC Reviver v4.1.0.12",
+          "url": "https://nsaneforums.com/topic/490615-reviversoft-pc-reviver-v41012/"
+        },
+        {
           "title": "RekSFV 1.9.8",
           "url": "https://nsaneforums.com/topic/490607-reksfv-198/"
         },
@@ -1870,6 +1878,10 @@
         {
           "title": "Native Instruments Kontakt v8.14 (x64)",
           "url": "https://nsaneforums.com/topic/490585-native-instruments-kontakt-v814-x64/"
+        },
+        {
+          "title": "Zed 1.25.3",
+          "url": "https://nsaneforums.com/topic/490614-zed-1253/"
         },
         {
           "title": "Free Download Manager 6.35.2.7075",
