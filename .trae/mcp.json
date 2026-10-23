@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "ssh-423down": {
+      "command": "bash",
+      "args": ["/workspace/.trae/skills/ssh-site-maintain/mcp/bin/launch-ssh-423down.sh"]
+    },
+    "ssh-423down-async": {
+      "command": "bash",
+      "args": ["/workspace/.trae/skills/ssh-site-maintain/mcp/bin/launch-ssh-async-423down.sh"]
+    },
+    "ssh-native": {
+      "command": "node",
+      "args": ["/workspace/.trae/skills/ssh-site-maintain/mcp/node_modules/@aiondadotcom/mcp-ssh/bin/mcp-ssh.js"]
+    },
+    "fail2ban-423down": {
+      "command": "bash",
+      "args": ["/workspace/.trae/skills/ssh-site-maintain/mcp/bin/launch-f2b.sh"]
+    }
+  }
+}
