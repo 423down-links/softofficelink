@@ -5929,11 +5929,24 @@ def _build_match_keys():
     return keys
 
 
-def _title_hits_product(title, keys):
-    """文章标题是否包含某个软件名（按词边界整词包含）"""
+def _title_hits_library(title, keys):
+    """文章标题是否指向「软件库里已经有的软件」（用于把已入库的过滤掉）。
+
+    两层判定：
+      1) 整词包含：库名整词出现在标题里。' vegas pro ' in ' vegas pro 25.0 ' → 命中。
+      2) 词元子集：库名拆成词后**全部**出现在标题词元里（仅多词库名启用）。
+         兜住「库名是标题的一部分」这种写法：库名 'nvidia driver'，
+         标题 'Nvidia GeForce Game Ready Driver 621.01' 整词包含判不中，
+         但 nvidia+driver 两个词都在 → 判定为已入库。
+         单词库名不走这条，避免 'idm'、'rar' 之类短词大面积误伤。
+    """
     norm = ' ' + _match_key(title) + ' '
+    tokens = set(norm.split())
     for k in keys:
         if f' {k} ' in norm:
+            return True, k
+        parts = k.split()
+        if len(parts) >= 2 and all(p in tokens for p in parts):
             return True, k
     return False, ''
 
@@ -5975,13 +5988,13 @@ def _fetch_site_html(url, timeout=15, retries=2, pause=1.0, deadline=None):
 
 
 def detect_downtopc(product):
-    """downtopc 资源站检测：取站点「最新更新日期当天」的全部文章，
-    标题命中已添加软件名的才输出（没命中的跳过）。
+    """downtopc 资源站检测：取站点「最新更新日期当天」的**全部**文章，
+    只把「软件库里还没收录」的软件输出（库中已存在的过滤掉）。
     配置:
       check_url:     RSS 地址（用于确定最新更新日期），默认 .../software/rss.xml
       download_url:  固定站点地址
       detect_timeout / allow_no_size: 资源站通用
-    命中文章写入 _site_items[product['name']]，前端按 monkrus 样式渲染。
+    输出文章写入 _site_items[product['name']]，前端按 monkrus 样式渲染。
     """
     rss_url = product.get('check_url', 'https://downtopc.com/software/rss.xml')
     site_url = product.get('download_url', 'https://downtopc.com/software/')
@@ -6024,27 +6037,34 @@ def detect_downtopc(product):
             print("  ⚠️ downtopc 站点无响应，本轮跳过")
             return '', site_url, site_url, 0, '', ''
 
-        # 3) 标题匹配已添加软件名，命中才输出
-        matched = []
+        # 3) 当天全部文章都输出，但「软件库已收录」的过滤掉
+        kept = []
+        filtered = []
         seen = set()
         for title, url in articles:
             if url in seen:
                 continue
             seen.add(url)
-            ok, key = _title_hits_product(title, keys)
-            if ok:
-                matched.append({'title': title, 'url': url})
-                print(f"    ✓ [{key}] {title[:70]}")
+            hit, key = _title_hits_library(title, keys)
+            if hit:
+                filtered.append((title, key))
+                print(f"    ✗ 已入库 [{key}] {title[:70]}")
+            else:
+                kept.append({'title': title, 'url': url})
+                print(f"    ✓ {title[:70]}")
 
         if not date_str:
             date_str = latest.strftime('%Y-%m-%d')
-        # 抓通了但一篇都没命中「已添加软件」→ 不算更新（同 nsane）
-        if not matched:
-            print(f"  downtopc {date_str}: 当天无命中文章（共 {len(articles)} 篇），本轮不更新")
+        # 当天一篇文章都没有（连着几天都没更）→ 不算更新，沿用旧数据
+        if not articles:
+            print("  downtopc: 当天无文章，本轮不更新（沿用上次数据）")
             return '', site_url, site_url, 0, '', ''
 
-        _site_items[product['name']] = matched
-        print(f"  downtopc 更新: {date_str} 共 {len(articles)} 篇，命中 {len(matched)} 篇")
+        # 当天文章全是库中已有的软件 → 清单置空但日期照常更新
+        # （不能沿用旧清单，否则前端会一直挂着昨天那批"已入库"的软件）
+        _site_items[product['name']] = kept
+        print(f"  downtopc 更新: {date_str} 当天 {len(articles)} 篇，"
+              f"过滤已入库 {len(filtered)} 篇，输出 {len(kept)} 篇")
         return date_str, site_url, site_url, 0, date_str, ''
 
     except Exception as e:
@@ -6148,38 +6168,40 @@ def _nsane_frontpage_items(page_url, deadline=None):
 
 
 def detect_nsane(product):
-    """nsane 论坛资源站检测：抓指定板块「今天发布的」软件更新帖，
-    标题命中已添加软件名才输出（没命中的跳过）。
+    """nsane 论坛资源站检测：抓指定板块「今天发布的」**全部**帖子，
+    只输出「软件库里还没收录」的软件（库中已存在的过滤掉）。
     数据源均匿名可读（主题正文需登录，但不需要正文）：
       nsane_forums:   论坛板块列表页 URL 列表（按「发帖时间==今天」判定今日新帖）
       nsane_frontpage: nsane.down 前台 FrontPage Latest Update 小部件 URL
-    命中项写入 _site_items[product['name']]，前端按 downtopc/monkrus 样式渲染。
+    输出项写入 _site_items[product['name']]，前端按 downtopc/monkrus 样式渲染。
 
     ⚠️ 「今日更新」按**发帖时间**判定，不用最后回复时间：老帖被回复会被顶起
     （最后回复=今天）但软件并未更新，会造成"推了个 8/17 的老帖"这类误报。
     板块惯例是一个软件更新开一个新帖；前台 widget 的 Latest Update 也是同一个口径。
 
-    健壮性：每个源独立抓取、失败/超时只跳过该源；命中项「边抓边匹配」即时累积，
+    健壮性：每个源独立抓取、失败/超时只跳过该源；输出项「边抓边过滤」即时累积，
     即使后面某个源抽风，前面已抓到的结果也不会丢。
     """
     today = _nsane_today()
     site_url = product.get('download_url', 'https://nsaneforums.com/nsane.down/')
     deadline = time.time() + SITE_DETECT_BUDGET
     keys = _build_match_keys()
-    matched, seen = [], set()
+    kept, seen = [], set()
     fetched_ok = False   # 是否至少有一个源抓通
 
     def _collect(pairs):
-        """已确认「今日更新」的 (标题, 链接) 列表，匹配命中就地追加
+        """已确认「今日更新」的 (标题, 链接) 列表：库中已有的过滤掉，其余就地追加
         （便于抽风时提交部分结果）"""
         for title, url in pairs:
             if url in seen:
                 continue
             seen.add(url)
-            ok, key = _title_hits_product(title, keys)
-            if ok:
-                matched.append({'title': title, 'url': url})
-                print(f"    ✓ [{key}] {title[:70]}")
+            hit, key = _title_hits_library(title, keys)
+            if hit:
+                print(f"    ✗ 已入库 [{key}] {title[:70]}")
+            else:
+                kept.append({'title': title, 'url': url})
+                print(f"    ✓ {title[:70]}")
 
     try:
         for slug, url in product.get('nsane_forums', []):
@@ -6218,20 +6240,23 @@ def detect_nsane(product):
             print("  ⚠️ nsane 站点无响应，本轮跳过")
             return '', site_url, site_url, 0, '', ''
 
-        # 抓通了，但今天没有命中「已添加软件」的新帖 → 不算更新。
-        # 返回空版本交给 detect_one 沿用旧数据，避免「无任何文章也把前端日期刷成今天」。
-        if not matched:
-            print(f"  nsane {today}: 今日无命中文章，本轮不更新（沿用上次数据）")
+        # 今天一个新帖都没有 → 不算更新，沿用旧数据
+        # （避免「没有任何文章也把前端日期刷成今天」）
+        if not seen:
+            print(f"  nsane {today}: 今日无新帖，本轮不更新（沿用上次数据）")
             return '', site_url, site_url, 0, '', ''
 
-        _site_items[product['name']] = matched
-        print(f"  nsane 更新: {today} 候选 {len(seen)} 帖，命中 {len(matched)} 篇")
+        # 今天有帖子 → 库中已有的已过滤掉，其余全部输出；
+        # 若全被过滤光（清单为空）也照常更新日期，
+        # 免得前端一直挂着昨天那批"已入库"的软件。
+        _site_items[product['name']] = kept
+        print(f"  nsane 更新: {today} 候选 {len(seen)} 帖，输出 {len(kept)} 篇")
         return today, site_url, site_url, 0, today, ''
 
     except Exception as e:
         print(f"  ⚠️ nsane 错误: {e}")
-        if matched:  # 抽风/异常时也别把已命中的部分结果丢掉
-            _site_items[product['name']] = matched
+        if kept:  # 抽风/异常时也别把已抓到的部分结果丢掉
+            _site_items[product['name']] = kept
         return '', site_url, site_url, 0, '', ''
 
 

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T03:36:05.315566+00:00",
+  "updated_at": "2026-10-23T04:08:05.314915+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -1701,36 +1701,152 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
-          "title": "GoodSync 12.11.12.2 (x64) Multilingual Portable",
-          "url": "https://downtopc.com/343995-goodsync-1211122-x64-multilingual-portable.html"
+          "title": "Native Instruments Kontakt 8.14.0 (x64) Portable",
+          "url": "https://downtopc.com/343996-native-instruments-kontakt-8140-x64-portable.html"
         },
         {
-          "title": "GoodSync 12.11.12.2 (x64) Multilingual",
-          "url": "https://downtopc.com/343994-goodsync-1211122-x64-multilingual.html"
+          "title": "DropDMG 3.7.2 macOS",
+          "url": "https://downtopc.com/343993-dropdmg-372-macos.html"
         },
         {
-          "title": "Boris FX VEGAS Pro 2027.0.0.31 (x64) Multilingual",
-          "url": "https://downtopc.com/343978-boris-fx-vegas-pro-20270031-x64-multilingual.html"
+          "title": "PCDJ DEX Pro 4.1.0 macOS",
+          "url": "https://downtopc.com/343992-pcdj-dex-pro-410-macos.html"
         },
         {
-          "title": "TechSmith Camtasia 26.2.3.20804 (x64) Multilingual Portable",
-          "url": "https://downtopc.com/343970-techsmith-camtasia-262320804-x64-multilingual-portable.html"
+          "title": "PCDJ DEX 4.1 (x64)",
+          "url": "https://downtopc.com/343991-pcdj-dex-41-x64.html"
         },
         {
-          "title": "TechSmith Camtasia 26.2.3.20804 (x64) Multilingual",
-          "url": "https://downtopc.com/343969-techsmith-camtasia-262320804-x64-multilingual.html"
+          "title": "Cascadeur 2026.2.3 (x64)",
+          "url": "https://downtopc.com/343990-cascadeur-202623-x64.html"
         },
         {
-          "title": "Wise Care 365 Pro 8.0.7.735 Multilingual Portable",
-          "url": "https://downtopc.com/343961-wise-care-365-pro-807735-multilingual-portable.html"
+          "title": "Ahnenblatt 5.1.0.1 (x64) Multilingual Portable",
+          "url": "https://downtopc.com/343989-ahnenblatt-5101-x64-multilingual-portable.html"
         },
         {
-          "title": "Wise Care 365 Pro 8.0.7.735 Multilingual",
-          "url": "https://downtopc.com/343959-wise-care-365-pro-807735-multilingual.html"
+          "title": "Native Instruments Kontakt 8.14.0 (x64)",
+          "url": "https://downtopc.com/343988-native-instruments-kontakt-8140-x64.html"
         },
         {
-          "title": "Emurasoft EmEditor Professional 26.4.0 (x64) Multilingual",
-          "url": "https://downtopc.com/343954-emurasoft-emeditor-professional-2640-x64-multilingual.html"
+          "title": "Abelssoft WellAhead 2027 v1.0",
+          "url": "https://downtopc.com/343987-abelssoft-wellahead-2027-v10.html"
+        },
+        {
+          "title": "YouTubeGet 7.3.2.0",
+          "url": "https://downtopc.com/343986-youtubeget-7320.html"
+        },
+        {
+          "title": "Ahnenblatt 5.1.0.1 (x64) Multilingual",
+          "url": "https://downtopc.com/343985-ahnenblatt-5101-x64-multilingual.html"
+        },
+        {
+          "title": "Folder Guard 26.10 Multilingual",
+          "url": "https://downtopc.com/343984-folder-guard-2610-multilingual.html"
+        },
+        {
+          "title": "tiny11 Core 26H2 Build 26300.9711 Multilingual Preactivated",
+          "url": "https://downtopc.com/343983-tiny11-core-26h2-build-263009711-multilingual-preactivated.html"
+        },
+        {
+          "title": "Dropzone Pro 5.1.7 macOS",
+          "url": "https://downtopc.com/343982-dropzone-pro-517-macos.html"
+        },
+        {
+          "title": "Wirecast Pro 16.5.5 macOS",
+          "url": "https://downtopc.com/343981-wirecast-pro-1655-macos.html"
+        },
+        {
+          "title": "2D Frame Analysis 7.3.5",
+          "url": "https://downtopc.com/343980-2d-frame-analysis-735.html"
+        },
+        {
+          "title": "priPrinter Professional 7.1.1.2631 Beta Multilingual",
+          "url": "https://downtopc.com/343979-priprinter-professional-7112631-beta-multilingual.html"
+        },
+        {
+          "title": "BorisFX ACID Pro 2026.0.0.25",
+          "url": "https://downtopc.com/343977-borisfx-acid-pro-20260025.html"
+        },
+        {
+          "title": "Coolutils Total Doc Converter 5.1.0.438/215 Multilingual",
+          "url": "https://downtopc.com/343976-coolutils-total-doc-converter-510438215-multilingual.html"
+        },
+        {
+          "title": "CoolUtils Total Movie Converter 4.1.0.95 Multilingual",
+          "url": "https://downtopc.com/343975-coolutils-total-movie-converter-41095-multilingual.html"
+        },
+        {
+          "title": "AccessAgility WiFi Scanner 2026.2.35109.0 Multilingual",
+          "url": "https://downtopc.com/343974-accessagility-wifi-scanner-20262351090-multilingual.html"
+        },
+        {
+          "title": "ChrisPC VideoTube Downloader Pro 15.26.1022 Multilingual",
+          "url": "https://downtopc.com/343973-chrispc-videotube-downloader-pro-15261022-multilingual.html"
+        },
+        {
+          "title": "Boris FX Continuum Plug-ins 2027 v20.0.0 (x64)",
+          "url": "https://downtopc.com/343972-boris-fx-continuum-plug-ins-2027-v2000-x64.html"
+        },
+        {
+          "title": "Ableton Live Suite 12.4.7 (x64) Multilingual",
+          "url": "https://downtopc.com/343971-ableton-live-suite-1247-x64-multilingual.html"
+        },
+        {
+          "title": "Lucion FileCenter Suite 12.5.44",
+          "url": "https://downtopc.com/343968-lucion-filecenter-suite-12544.html"
+        },
+        {
+          "title": "2BrightSparks SyncBackPro 12.1.34 Multilingual Portable",
+          "url": "https://downtopc.com/343967-2brightsparks-syncbackpro-12134-multilingual-portable.html"
+        },
+        {
+          "title": "2BrightSparks SyncBackPro 12.1.34 Multilingual",
+          "url": "https://downtopc.com/343966-2brightsparks-syncbackpro-12134-multilingual.html"
+        },
+        {
+          "title": "Windows 10 22H2 build 19045.7807 Aio 16in1 Multilingual Preactivated October 2026",
+          "url": "https://downtopc.com/343965-windows-10-22h2-build-190457807-aio-16in1-multilingual-preactivated-october-2026.html"
+        },
+        {
+          "title": "Allavsoft Video Downloader Converter 3.29.6.9784 Multilingual Portable",
+          "url": "https://downtopc.com/343964-allavsoft-video-downloader-converter-32969784-multilingual-portable.html"
+        },
+        {
+          "title": "Windows 11 26H2 (No TPM Required) & Windows 10 22H2 AIO 32in1 Multilingual Preactivated October 2026",
+          "url": "https://downtopc.com/343963-windows-11-26h2-no-tpm-required-windows-10-22h2-aio-32in1-multilingual-preactivated-october-2026.html"
+        },
+        {
+          "title": "EaseUS PDF Editor Pro 6.5.1.2 Build 10/20/2026 Multilingual Portable",
+          "url": "https://downtopc.com/343962-easeus-pdf-editor-pro-6512-build-10202026-multilingual-portable.html"
+        },
+        {
+          "title": "EaseUS PDF Editor Pro 6.5.1.2 Build 10/20/2026 Multilingual",
+          "url": "https://downtopc.com/343960-easeus-pdf-editor-pro-6512-build-10202026-multilingual.html"
+        },
+        {
+          "title": "CoolUtils Total Image Converter 8.5.0.359 Multilingual",
+          "url": "https://downtopc.com/343958-coolutils-total-image-converter-850359-multilingual.html"
+        },
+        {
+          "title": "Final Draft 13.5.0 Build 123",
+          "url": "https://downtopc.com/343957-final-draft-1350-build-123.html"
+        },
+        {
+          "title": "Wirecast 16.5.5 Multilingual",
+          "url": "https://downtopc.com/343956-wirecast-1655-multilingual.html"
+        },
+        {
+          "title": "Diffchecker 7.3 Multilingual",
+          "url": "https://downtopc.com/343955-diffchecker-73-multilingual.html"
+        },
+        {
+          "title": "Allavsoft Video Downloader Converter 3.29.6.9784 Multilingual",
+          "url": "https://downtopc.com/343953-allavsoft-video-downloader-converter-32969784-multilingual.html"
+        },
+        {
+          "title": "Gilisoft Copy Protect 8.8.0",
+          "url": "https://downtopc.com/343952-gilisoft-copy-protect-880.html"
         }
       ]
     },
@@ -1752,20 +1868,56 @@
       "official_site": "https://nsaneforums.com/",
       "update_items": [
         {
-          "title": "Boris FX VEGAS Pro v2027.0.0.31 (x64)",
-          "url": "https://nsaneforums.com/topic/490576-boris-fx-vegas-pro-v20270031-x64/"
+          "title": "Syncovery Premium v12.9.6.99",
+          "url": "https://nsaneforums.com/topic/490595-syncovery-premium-v129699/"
         },
         {
-          "title": "Internet Download Manager 6.43 Build 16",
-          "url": "https://nsaneforums.com/topic/490591-internet-download-manager-643-build-16/"
+          "title": "LibreWolf v158.0.1",
+          "url": "https://nsaneforums.com/topic/490588-librewolf-v15801/"
         },
         {
-          "title": "GoodSync Pro 12.11.12.2",
-          "url": "https://nsaneforums.com/topic/490583-goodsync-pro-1211122/"
+          "title": "HDDLive: Linux live for data recovery",
+          "url": "https://nsaneforums.com/topic/490587-hddlive-linux-live-for-data-recovery/"
         },
         {
-          "title": "Microsoft Edge 156.0.4314.42",
-          "url": "https://nsaneforums.com/topic/490581-microsoft-edge-1560431442/"
+          "title": "Mullvad Browser v15.0.26",
+          "url": "https://nsaneforums.com/topic/490586-mullvad-browser-v15026/"
+        },
+        {
+          "title": "Native Instruments Kontakt v8.14 (x64)",
+          "url": "https://nsaneforums.com/topic/490585-native-instruments-kontakt-v814-x64/"
+        },
+        {
+          "title": "Unicodia - encyclopedia of characters 3.2.8",
+          "url": "https://nsaneforums.com/topic/490580-unicodia-encyclopedia-of-characters-328/"
+        },
+        {
+          "title": "YouTubeGet v7.3.2",
+          "url": "https://nsaneforums.com/topic/490579-youtubeget-v732/"
+        },
+        {
+          "title": "BorisFX ACID Pro v2026.0.0.25",
+          "url": "https://nsaneforums.com/topic/490577-borisfx-acid-pro-v20260025/"
+        },
+        {
+          "title": "USB Device Tree Viewer 4.8.0.0",
+          "url": "https://nsaneforums.com/topic/490574-usb-device-tree-viewer-4800/"
+        },
+        {
+          "title": "KMPlayer 4.2.3.38",
+          "url": "https://nsaneforums.com/topic/490597-kmplayer-42338/"
+        },
+        {
+          "title": "Google Antigravity 2.26.0",
+          "url": "https://nsaneforums.com/topic/490594-google-antigravity-2260/"
+        },
+        {
+          "title": "Bitwarden 2026.10.1",
+          "url": "https://nsaneforums.com/topic/490590-bitwarden-2026101/"
+        },
+        {
+          "title": "VirtualDJ 2026 Build 9729",
+          "url": "https://nsaneforums.com/topic/490575-virtualdj-2026-build-9729/"
         }
       ]
     },
