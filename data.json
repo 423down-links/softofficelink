@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T05:21:13.738802+00:00",
+  "updated_at": "2026-10-23T05:50:21.627766+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793337640&P2=404&P3=2&P4=lz%2fiTVWx%2bv19g0zM4%2fKu4qIdSU4PmFsXE%2bXicvWmHG35W4Cx7QaSymj1pY0Hu5gamiQlgeVosKnYsVVymu0LvQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793337640&P2=404&P3=2&P4=lz%2fiTVWx%2bv19g0zM4%2fKu4qIdSU4PmFsXE%2bXicvWmHG35W4Cx7QaSymj1pY0Hu5gamiQlgeVosKnYsVVymu0LvQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793339363&P2=404&P3=2&P4=MjHhbP%2bqljuWAKAtAae9ytuofZy7ZOUuePoSCFIRMJe8MWkDbvUice1z%2bIhl1VhUg6Ug3Ci%2b49zoIpkhyRlAVA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793339363&P2=404&P3=2&P4=MjHhbP%2bqljuWAKAtAae9ytuofZy7ZOUuePoSCFIRMJe8MWkDbvUice1z%2bIhl1VhUg6Ug3Ci%2b49zoIpkhyRlAVA%3d%3d",
       "downloads": [],
       "size": 208330576,
       "size_mb": 198.7,
@@ -1690,147 +1690,23 @@
       "icon": "D",
       "icon_color": "linear-gradient(135deg, #2e7d32, #1b5e20)",
       "category": "资源站",
-      "version": "2026-10-22",
+      "version": "2026-10-23",
       "download_url": "https://downtopc.com/software/",
       "download_url_with_params": "https://downtopc.com/software/",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-10-22",
+      "last_modified": "2026-10-23",
       "md5": "",
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
-          "title": "Native Instruments Kontakt 8.14.0 (x64) Portable",
-          "url": "https://downtopc.com/343996-native-instruments-kontakt-8140-x64-portable.html"
+          "title": "Syncovery Premium 12.9.6.99 Multilingual",
+          "url": "https://downtopc.com/344001-syncovery-premium-129699-multilingual.html"
         },
         {
-          "title": "PCDJ DEX 4.1 (x64)",
-          "url": "https://downtopc.com/343991-pcdj-dex-41-x64.html"
-        },
-        {
-          "title": "Cascadeur 2026.2.3 (x64)",
-          "url": "https://downtopc.com/343990-cascadeur-202623-x64.html"
-        },
-        {
-          "title": "Ahnenblatt 5.1.0.1 (x64) Multilingual Portable",
-          "url": "https://downtopc.com/343989-ahnenblatt-5101-x64-multilingual-portable.html"
-        },
-        {
-          "title": "Native Instruments Kontakt 8.14.0 (x64)",
-          "url": "https://downtopc.com/343988-native-instruments-kontakt-8140-x64.html"
-        },
-        {
-          "title": "Abelssoft WellAhead 2027 v1.0",
-          "url": "https://downtopc.com/343987-abelssoft-wellahead-2027-v10.html"
-        },
-        {
-          "title": "YouTubeGet 7.3.2.0",
-          "url": "https://downtopc.com/343986-youtubeget-7320.html"
-        },
-        {
-          "title": "Ahnenblatt 5.1.0.1 (x64) Multilingual",
-          "url": "https://downtopc.com/343985-ahnenblatt-5101-x64-multilingual.html"
-        },
-        {
-          "title": "Folder Guard 26.10 Multilingual",
-          "url": "https://downtopc.com/343984-folder-guard-2610-multilingual.html"
-        },
-        {
-          "title": "tiny11 Core 26H2 Build 26300.9711 Multilingual Preactivated",
-          "url": "https://downtopc.com/343983-tiny11-core-26h2-build-263009711-multilingual-preactivated.html"
-        },
-        {
-          "title": "2D Frame Analysis 7.3.5",
-          "url": "https://downtopc.com/343980-2d-frame-analysis-735.html"
-        },
-        {
-          "title": "priPrinter Professional 7.1.1.2631 Beta Multilingual",
-          "url": "https://downtopc.com/343979-priprinter-professional-7112631-beta-multilingual.html"
-        },
-        {
-          "title": "BorisFX ACID Pro 2026.0.0.25",
-          "url": "https://downtopc.com/343977-borisfx-acid-pro-20260025.html"
-        },
-        {
-          "title": "Coolutils Total Doc Converter 5.1.0.438/215 Multilingual",
-          "url": "https://downtopc.com/343976-coolutils-total-doc-converter-510438215-multilingual.html"
-        },
-        {
-          "title": "CoolUtils Total Movie Converter 4.1.0.95 Multilingual",
-          "url": "https://downtopc.com/343975-coolutils-total-movie-converter-41095-multilingual.html"
-        },
-        {
-          "title": "AccessAgility WiFi Scanner 2026.2.35109.0 Multilingual",
-          "url": "https://downtopc.com/343974-accessagility-wifi-scanner-20262351090-multilingual.html"
-        },
-        {
-          "title": "ChrisPC VideoTube Downloader Pro 15.26.1022 Multilingual",
-          "url": "https://downtopc.com/343973-chrispc-videotube-downloader-pro-15261022-multilingual.html"
-        },
-        {
-          "title": "Boris FX Continuum Plug-ins 2027 v20.0.0 (x64)",
-          "url": "https://downtopc.com/343972-boris-fx-continuum-plug-ins-2027-v2000-x64.html"
-        },
-        {
-          "title": "Ableton Live Suite 12.4.7 (x64) Multilingual",
-          "url": "https://downtopc.com/343971-ableton-live-suite-1247-x64-multilingual.html"
-        },
-        {
-          "title": "Lucion FileCenter Suite 12.5.44",
-          "url": "https://downtopc.com/343968-lucion-filecenter-suite-12544.html"
-        },
-        {
-          "title": "2BrightSparks SyncBackPro 12.1.34 Multilingual Portable",
-          "url": "https://downtopc.com/343967-2brightsparks-syncbackpro-12134-multilingual-portable.html"
-        },
-        {
-          "title": "2BrightSparks SyncBackPro 12.1.34 Multilingual",
-          "url": "https://downtopc.com/343966-2brightsparks-syncbackpro-12134-multilingual.html"
-        },
-        {
-          "title": "Windows 10 22H2 build 19045.7807 Aio 16in1 Multilingual Preactivated October 2026",
-          "url": "https://downtopc.com/343965-windows-10-22h2-build-190457807-aio-16in1-multilingual-preactivated-october-2026.html"
-        },
-        {
-          "title": "Allavsoft Video Downloader Converter 3.29.6.9784 Multilingual Portable",
-          "url": "https://downtopc.com/343964-allavsoft-video-downloader-converter-32969784-multilingual-portable.html"
-        },
-        {
-          "title": "Windows 11 26H2 (No TPM Required) & Windows 10 22H2 AIO 32in1 Multilingual Preactivated October 2026",
-          "url": "https://downtopc.com/343963-windows-11-26h2-no-tpm-required-windows-10-22h2-aio-32in1-multilingual-preactivated-october-2026.html"
-        },
-        {
-          "title": "EaseUS PDF Editor Pro 6.5.1.2 Build 10/20/2026 Multilingual Portable",
-          "url": "https://downtopc.com/343962-easeus-pdf-editor-pro-6512-build-10202026-multilingual-portable.html"
-        },
-        {
-          "title": "EaseUS PDF Editor Pro 6.5.1.2 Build 10/20/2026 Multilingual",
-          "url": "https://downtopc.com/343960-easeus-pdf-editor-pro-6512-build-10202026-multilingual.html"
-        },
-        {
-          "title": "CoolUtils Total Image Converter 8.5.0.359 Multilingual",
-          "url": "https://downtopc.com/343958-coolutils-total-image-converter-850359-multilingual.html"
-        },
-        {
-          "title": "Final Draft 13.5.0 Build 123",
-          "url": "https://downtopc.com/343957-final-draft-1350-build-123.html"
-        },
-        {
-          "title": "Wirecast 16.5.5 Multilingual",
-          "url": "https://downtopc.com/343956-wirecast-1655-multilingual.html"
-        },
-        {
-          "title": "Diffchecker 7.3 Multilingual",
-          "url": "https://downtopc.com/343955-diffchecker-73-multilingual.html"
-        },
-        {
-          "title": "Allavsoft Video Downloader Converter 3.29.6.9784 Multilingual",
-          "url": "https://downtopc.com/343953-allavsoft-video-downloader-converter-32969784-multilingual.html"
-        },
-        {
-          "title": "Gilisoft Copy Protect 8.8.0",
-          "url": "https://downtopc.com/343952-gilisoft-copy-protect-880.html"
+          "title": "MusConv Lifetime 4.10.484 Multilingual",
+          "url": "https://downtopc.com/344000-musconv-lifetime-410484-multilingual.html"
         }
       ]
     },
