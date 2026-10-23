@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T12:51:56.650825+00:00",
+  "updated_at": "2026-10-23T13:06:53.993763+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793364641&P2=404&P3=2&P4=VR6smMm3Rc5Lu0lVW8PEtrSKjRZ52296aGM4M4GdwOXuJ%2b3q%2f%2b3lUxXpL37LQ7kr%2bXxTn%2bvU0oSGva%2f630EKjA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793364641&P2=404&P3=2&P4=VR6smMm3Rc5Lu0lVW8PEtrSKjRZ52296aGM4M4GdwOXuJ%2b3q%2f%2b3lUxXpL37LQ7kr%2bXxTn%2bvU0oSGva%2f630EKjA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793365541&P2=404&P3=2&P4=mfMZxQ9OU0cBaELs%2bwrtu8fq%2fNWE8KPHBSMUyssKNwApquWL5wNO8%2bB4wUMWJMLDkRxPFLDc%2fmrMWzztUUQnfg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793365541&P2=404&P3=2&P4=mfMZxQ9OU0cBaELs%2bwrtu8fq%2fNWE8KPHBSMUyssKNwApquWL5wNO8%2bB4wUMWJMLDkRxPFLDc%2fmrMWzztUUQnfg%3d%3d",
       "downloads": [],
       "size": 208330576,
       "size_mb": 198.7,
@@ -1123,8 +1123,8 @@
       "download_url": "https://www.winxdvd.com/download/winxvideo-ai.exe",
       "download_url_with_params": "https://www.winxdvd.com/download/winxvideo-ai.exe",
       "downloads": [],
-      "size": 307118576,
-      "size_mb": 292.9,
+      "size": 307232768,
+      "size_mb": 293.0,
       "last_modified": "2026-09-20",
       "md5": "",
       "official_site": "https://www.winxdvd.com/winxvideo-ai/",
@@ -1701,6 +1701,34 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "ReviverSoft PC Reviver 4.1.0.12 Multilingual Portable",
+          "url": "https://downtopc.com/344030-reviversoft-pc-reviver-41012-multilingual-portable.html"
+        },
+        {
+          "title": "ReviverSoft PC Reviver 4.1.0.12 Multilingual",
+          "url": "https://downtopc.com/344029-reviversoft-pc-reviver-41012-multilingual.html"
+        },
+        {
+          "title": "Icecream Slideshow Maker Pro 5.21 Multilingual Portable",
+          "url": "https://downtopc.com/344028-icecream-slideshow-maker-pro-521-multilingual-portable.html"
+        },
+        {
+          "title": "Icecream Video Converter Pro 1.50 Multilingual Portable",
+          "url": "https://downtopc.com/344027-icecream-video-converter-pro-150-multilingual-portable.html"
+        },
+        {
+          "title": "Icecream Photo Editor Pro 1.55 Multilingual Portable",
+          "url": "https://downtopc.com/344026-icecream-photo-editor-pro-155-multilingual-portable.html"
+        },
+        {
+          "title": "Icecream Video Editor Pro 3.27 Multilingual Portable",
+          "url": "https://downtopc.com/344025-icecream-video-editor-pro-327-multilingual-portable.html"
+        },
+        {
+          "title": "Icecream PDF Editor Pro 3.34 Multilingual Portable",
+          "url": "https://downtopc.com/344024-icecream-pdf-editor-pro-334-multilingual-portable.html"
+        },
+        {
           "title": "Icecream Ebook Reader Pro 6.57 Multilingual Portable",
           "url": "https://downtopc.com/344023-icecream-ebook-reader-pro-657-multilingual-portable.html"
         },
@@ -1842,6 +1870,18 @@
         {
           "title": "Native Instruments Kontakt v8.14 (x64)",
           "url": "https://nsaneforums.com/topic/490585-native-instruments-kontakt-v814-x64/"
+        },
+        {
+          "title": "Free Download Manager 6.35.2.7075",
+          "url": "https://nsaneforums.com/topic/490613-free-download-manager-63527075/"
+        },
+        {
+          "title": "Passware Kit 2026.4.0",
+          "url": "https://nsaneforums.com/topic/490612-passware-kit-202640/"
+        },
+        {
+          "title": "Vivaldi 8.2.4133.94",
+          "url": "https://nsaneforums.com/topic/490611-vivaldi-82413394/"
         },
         {
           "title": "Calibre 9.17.0",
