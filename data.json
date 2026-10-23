@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T23:51:23.086088+00:00",
+  "updated_at": "2026-10-23T00:06:07.124208+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793317843&P2=404&P3=2&P4=LgWlwZ30lM1FOJ4DhcsNrc7LV047Q6h0PAt%2f0LQX3c87zffzt6x6AMd7iVs%2fld5jrc5ruMvXxYZFDWZnmPViWw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793317843&P2=404&P3=2&P4=LgWlwZ30lM1FOJ4DhcsNrc7LV047Q6h0PAt%2f0LQX3c87zffzt6x6AMd7iVs%2fld5jrc5ruMvXxYZFDWZnmPViWw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793318747&P2=404&P3=2&P4=g8O0HQ1bGuryr5URnsM%2f03yAXhJfCKZY2lIqHdjC65AZHj2GHIB7M0s8R5V5Bl7QGfWZOgucdy3q8MLzo64%2fyQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793318747&P2=404&P3=2&P4=g8O0HQ1bGuryr5URnsM%2f03yAXhJfCKZY2lIqHdjC65AZHj2GHIB7M0s8R5V5Bl7QGfWZOgucdy3q8MLzo64%2fyQ%3d%3d",
       "downloads": [],
       "size": 208330576,
       "size_mb": 198.7,
@@ -1756,6 +1756,10 @@
           "url": "https://nsaneforums.com/topic/490576-boris-fx-vegas-pro-v20270031-x64/"
         },
         {
+          "title": "Internet Download Manager 6.43 Build 16",
+          "url": "https://nsaneforums.com/topic/490591-internet-download-manager-643-build-16/"
+        },
+        {
           "title": "GoodSync Pro 12.11.12.2",
           "url": "https://nsaneforums.com/topic/490583-goodsync-pro-1211122/"
         },
@@ -2100,7 +2104,7 @@
       "download_url": "https://www.diskpart.com/ss/download/pa/PAssist_TechDemo.exe",
       "download_url_with_params": "https://www.diskpart.com/ss/download/pa/PAssist_TechDemo.exe",
       "downloads": [],
-      "size": 74994704,
+      "size": 74965224,
       "size_mb": 71.5,
       "last_modified": "2026-10-19",
       "md5": "",
