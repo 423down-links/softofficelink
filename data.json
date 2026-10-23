@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T05:50:21.627766+00:00",
+  "updated_at": "2026-10-23T06:05:59.621223+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793339363&P2=404&P3=2&P4=MjHhbP%2bqljuWAKAtAae9ytuofZy7ZOUuePoSCFIRMJe8MWkDbvUice1z%2bIhl1VhUg6Ug3Ci%2b49zoIpkhyRlAVA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793339363&P2=404&P3=2&P4=MjHhbP%2bqljuWAKAtAae9ytuofZy7ZOUuePoSCFIRMJe8MWkDbvUice1z%2bIhl1VhUg6Ug3Ci%2b49zoIpkhyRlAVA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793340339&P2=404&P3=2&P4=SfJGIKURSEVpDWkcWzEDHFUk%2fizytAQ511R8rCzfaFlRTXNKRVTc6yDSgMHg%2baIpSCgvwQmhH%2b%2fQQgrWHEL7gw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793340339&P2=404&P3=2&P4=SfJGIKURSEVpDWkcWzEDHFUk%2fizytAQ511R8rCzfaFlRTXNKRVTc6yDSgMHg%2baIpSCgvwQmhH%2b%2fQQgrWHEL7gw%3d%3d",
       "downloads": [],
       "size": 208330576,
       "size_mb": 198.7,
@@ -1701,6 +1701,14 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "Calibre 9.17.0 (x64) Multilingual Portable",
+          "url": "https://downtopc.com/344003-calibre-9170-x64-multilingual-portable.html"
+        },
+        {
+          "title": "ExtraMAME 26.10 (x64) Multilingual",
+          "url": "https://downtopc.com/344002-extramame-2610-x64-multilingual.html"
+        },
+        {
           "title": "Syncovery Premium 12.9.6.99 Multilingual",
           "url": "https://downtopc.com/344001-syncovery-premium-129699-multilingual.html"
         },
@@ -2120,7 +2128,7 @@
       "download_url": "https://www.diskpart.com/ss/download/pa/PAssist_TechDemo.exe",
       "download_url_with_params": "https://www.diskpart.com/ss/download/pa/PAssist_TechDemo.exe",
       "downloads": [],
-      "size": 74965224,
+      "size": 74994704,
       "size_mb": 71.5,
       "last_modified": "2026-10-19",
       "md5": "",
