@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T09:51:32.783854+00:00",
+  "updated_at": "2026-10-23T10:05:59.382347+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -44,13 +44,13 @@
       "icon": "迅",
       "icon_color": "linear-gradient(135deg, #1e88e5, #00acc1)",
       "category": "下载工具",
-      "version": "25.1.13.1637",
-      "download_url": "https://down.sandai.net/thunder_pc/ThunderSetup25.1.13.1637xl.exe",
-      "download_url_with_params": "https://down.sandai.net/thunder_pc/ThunderSetup25.1.13.1637xl.exe",
+      "version": "25.1.40.1703",
+      "download_url": "https://down.sandai.net/thunder_pc/ThunderSetup25.1.40.1703xl.exe",
+      "download_url_with_params": "https://down.sandai.net/thunder_pc/ThunderSetup25.1.40.1703xl.exe",
       "downloads": [],
-      "size": 212186272,
-      "size_mb": 202.4,
-      "last_modified": "2026-09-16",
+      "size": 207297184,
+      "size_mb": 197.7,
+      "last_modified": "2026-10-22",
       "md5": "",
       "official_site": "https://www.xunlei.com/",
       "update_items": []
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793353837&P2=404&P3=2&P4=cktuoe8ixWRk%2bzBNOaah%2bf%2bH8pLOPEluTk5hcWL1L8v%2brm33CoDVSbgeptfpxHY1%2fO2PJuOL03ThnrITVkAYmA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793353837&P2=404&P3=2&P4=cktuoe8ixWRk%2bzBNOaah%2bf%2bH8pLOPEluTk5hcWL1L8v%2brm33CoDVSbgeptfpxHY1%2fO2PJuOL03ThnrITVkAYmA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793354738&P2=404&P3=2&P4=eoM1ofvrbvFTqaax%2b39bRC8ojMneutFEuYOw6SphwcK6CfJkl1YDOr4y1MZZPzGU%2fnWvXl1g1zp8KmxYTIJP3g%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793354738&P2=404&P3=2&P4=eoM1ofvrbvFTqaax%2b39bRC8ojMneutFEuYOw6SphwcK6CfJkl1YDOr4y1MZZPzGU%2fnWvXl1g1zp8KmxYTIJP3g%3d%3d",
       "downloads": [],
       "size": 208330576,
       "size_mb": 198.7,
@@ -1701,6 +1701,18 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "Icecream Video Converter Pro 1.50 Multilingual",
+          "url": "https://downtopc.com/344014-icecream-video-converter-pro-150-multilingual.html"
+        },
+        {
+          "title": "Icecream PDF Editor Pro 3.34 Multilingual",
+          "url": "https://downtopc.com/344013-icecream-pdf-editor-pro-334-multilingual.html"
+        },
+        {
+          "title": "Icecream Video Editor Pro 3.27 Multilingual",
+          "url": "https://downtopc.com/344012-icecream-video-editor-pro-327-multilingual.html"
+        },
+        {
           "title": "CareUEyes Pro 2.7 Multilingual Portable",
           "url": "https://downtopc.com/344009-careueyes-pro-27-multilingual-portable.html"
         },
@@ -1755,6 +1767,10 @@
       "md5": "",
       "official_site": "https://nsaneforums.com/",
       "update_items": [
+        {
+          "title": "CareUEyes Pro v2.7",
+          "url": "https://nsaneforums.com/topic/490606-careueyes-pro-v27/"
+        },
         {
           "title": "Unicodia - encyclopedia of characters 3.2.8",
           "url": "https://nsaneforums.com/topic/490580-unicodia-encyclopedia-of-characters-328/"
