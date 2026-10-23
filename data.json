@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T13:06:53.993763+00:00",
+  "updated_at": "2026-10-23T13:13:11.166048+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -1191,13 +1191,13 @@
       "icon": "WC",
       "icon_color": "linear-gradient(135deg, #3498db, #2c3e50)",
       "category": "影音播放",
-      "version": "4.2",
-      "download_url": "https://www.ntwind.com/files/WinCam_4.2-setup.exe",
-      "download_url_with_params": "https://www.ntwind.com/files/WinCam_4.2-setup.exe",
+      "version": "4.3",
+      "download_url": "https://www.ntwind.com/download/WinCam_4.3-setup.exe",
+      "download_url_with_params": "https://www.ntwind.com/download/WinCam_4.3-setup.exe",
       "downloads": [],
-      "size": 65536,
-      "size_mb": 0.1,
-      "last_modified": "2026-09-16",
+      "size": 4194304,
+      "size_mb": 4.0,
+      "last_modified": "2026-10-23",
       "md5": "",
       "official_site": "https://www.ntwind.com/software/wincam.html",
       "update_items": []

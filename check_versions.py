@@ -1103,11 +1103,22 @@ PRODUCTS = [
         'icon': 'WC',
         'icon_color': 'linear-gradient(135deg, #3498db, #2c3e50)',
         'category': '影音播放',
-        'detect_type': 'fixed',
-        'version': '4.2',
-        'size': 15 * 1024 * 1024,
-        'date': '2026-09-16',
-        'download_url': 'https://www.ntwind.com/files/WinCam_4.2-setup.exe',
+        # 原来是 fixed + 写死 WinCam_4.2-setup.exe，官方发了 4.3 也永远不动。
+        # WinCam 和 WinSnap 同一家（ntwind.com），下载页一次给全：
+        #   Download WinCam_4.3-setup.exe (4 MB)  Updated on 23-Oct-2026
+        # 直接用 scrape 抓版本/体积/日期/直链，再加增量兜底。
+        'detect_type': 'scrape',
+        'check_url': 'https://www.ntwind.com/software/wincam.html',
+        'version_regex': r'WinCam_(\d+\.\d+)-setup\.exe',
+        'date_regex': r'WinCam_\d+\.\d+-setup\.exe[^<]*</a>\s*<p>Updated on (\d{2}-[A-Za-z]{3}-\d{4})',
+        'size_regex_mb': r'WinCam_\d+\.\d+-setup\.exe\s*\((\d+(?:\.\d+)?)\s*(KB|MB|GB)\)',
+        'download_url_regex': r'(https://www\.ntwind\.com/download/WinCam_\d+\.\d+-setup\.exe)',
+        'prefer_scraped_version': True,
+        'version': '4.3',
+        'size': 4 * 1024 * 1024,
+        'date': '2026-10-23',
+        'skip_md5': True,             # 与同厂 WinSnap 一致，ntwind CDN 下载慢
+        'download_url': 'https://www.ntwind.com/download/WinCam_4.3-setup.exe',
         'official_site': 'https://www.ntwind.com/software/wincam.html',
     },
     {
