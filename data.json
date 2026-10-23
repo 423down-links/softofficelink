@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T08:51:44.924781+00:00",
+  "updated_at": "2026-10-23T09:06:31.926367+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793350249&P2=404&P3=2&P4=Mc4qwpAz64WdZPc2mp%2fYdcdZMTwYw3%2f0leDkov4k59KaTRZtBkJEXEWsRlhk5m0oYmMhc5vRexI3LCQwsGJy8w%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793350249&P2=404&P3=2&P4=Mc4qwpAz64WdZPc2mp%2fYdcdZMTwYw3%2f0leDkov4k59KaTRZtBkJEXEWsRlhk5m0oYmMhc5vRexI3LCQwsGJy8w%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793351132&P2=404&P3=2&P4=OjKaDVDx3vtEhDTXfFUYKykIbe1BStAzYCnvLuBH4aPh4YAEP1NCEaZeU2Zbbl1XYATvVaMbVbmKssauPhCAxA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793351132&P2=404&P3=2&P4=OjKaDVDx3vtEhDTXfFUYKykIbe1BStAzYCnvLuBH4aPh4YAEP1NCEaZeU2Zbbl1XYATvVaMbVbmKssauPhCAxA%3d%3d",
       "downloads": [],
       "size": 208330576,
       "size_mb": 198.7,
@@ -1701,6 +1701,14 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "CareUEyes Pro 2.7 Multilingual Portable",
+          "url": "https://downtopc.com/344009-careueyes-pro-27-multilingual-portable.html"
+        },
+        {
+          "title": "CareUEyes Pro 2.7 Multilingual",
+          "url": "https://downtopc.com/344008-careueyes-pro-27-multilingual.html"
+        },
+        {
           "title": "MediaHuman YouTube Downloader 3.9.24 (2010) Multilingual (x64) Portable",
           "url": "https://downtopc.com/344007-mediahuman-youtube-downloader-3924-2010-multilingual-x64-portable.html"
         },
@@ -1748,6 +1756,18 @@
       "official_site": "https://nsaneforums.com/",
       "update_items": [
         {
+          "title": "Unicodia - encyclopedia of characters 3.2.8",
+          "url": "https://nsaneforums.com/topic/490580-unicodia-encyclopedia-of-characters-328/"
+        },
+        {
+          "title": "MusConv Lifetime v4.10.484",
+          "url": "https://nsaneforums.com/topic/490603-musconv-lifetime-v410484/"
+        },
+        {
+          "title": "USB Device Tree Viewer 4.8.0.0",
+          "url": "https://nsaneforums.com/topic/490574-usb-device-tree-viewer-4800/"
+        },
+        {
           "title": "Syncovery Premium v12.9.6.99",
           "url": "https://nsaneforums.com/topic/490595-syncovery-premium-v129699/"
         },
@@ -1768,20 +1788,8 @@
           "url": "https://nsaneforums.com/topic/490585-native-instruments-kontakt-v814-x64/"
         },
         {
-          "title": "Unicodia - encyclopedia of characters 3.2.8",
-          "url": "https://nsaneforums.com/topic/490580-unicodia-encyclopedia-of-characters-328/"
-        },
-        {
           "title": "YouTubeGet v7.3.2",
           "url": "https://nsaneforums.com/topic/490579-youtubeget-v732/"
-        },
-        {
-          "title": "BorisFX ACID Pro v2026.0.0.25",
-          "url": "https://nsaneforums.com/topic/490577-borisfx-acid-pro-v20260025/"
-        },
-        {
-          "title": "USB Device Tree Viewer 4.8.0.0",
-          "url": "https://nsaneforums.com/topic/490574-usb-device-tree-viewer-4800/"
         },
         {
           "title": "Calibre 9.17.0",
