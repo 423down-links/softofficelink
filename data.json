@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T03:21:26.726901+00:00",
+  "updated_at": "2026-10-23T03:36:05.315566+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -1884,13 +1884,13 @@
       "icon": "GKD",
       "icon_color": "linear-gradient(135deg, #10b981, #059669)",
       "category": "安卓应用",
-      "version": "1.12.1",
-      "download_url": "https://github.com/gkd-kit/gkd/releases/download/v1.12.1/gkd-v1.12.1.apk",
-      "download_url_with_params": "https://github.com/gkd-kit/gkd/releases/download/v1.12.1/gkd-v1.12.1.apk",
+      "version": "1.13.0-beta-2",
+      "download_url": "https://github.com/gkd-kit/gkd/releases/download/v1.13.0-beta-2/gkd-v1.13.0-beta-2.apk",
+      "download_url_with_params": "https://github.com/gkd-kit/gkd/releases/download/v1.13.0-beta-2/gkd-v1.13.0-beta-2.apk",
       "downloads": [],
-      "size": 3287479,
-      "size_mb": 3.1,
-      "last_modified": "2026-05-20",
+      "size": 4125865,
+      "size_mb": 3.9,
+      "last_modified": "2026-10-15",
       "md5": "",
       "official_site": "https://github.com/gkd-kit/gkd/releases",
       "update_items": []

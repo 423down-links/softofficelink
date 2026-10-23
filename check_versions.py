@@ -1696,16 +1696,19 @@ PRODUCTS = [
         'icon': 'GKD',
         'icon_color': 'linear-gradient(135deg, #10b981, #059669)',
         'category': '安卓应用',
-        # 探测方式：GitHub Releases API 取最新正式版 tag（vX.Y.Z，跳过 beta），
-        # 直取 release 里 APK（gkd-x.y.z.apk）的直链，大小只算这个包
+        # 探测方式：GitHub Releases API 取最新 tag。官方发版节奏是 beta 先行（如 v1.13.0-beta-2），
+        # 用户要的就是 beta 版，故 include_prerelease=True；version_regex 连 beta 后缀一起提，
+        # 免得 1.13.0-beta-2 被截成 1.13.0 与正式版混淆。
+        # 直取 release 里 APK（gkd-vX.Y.Z.apk）的直链，大小只算这个包（.outputs.zip/.win-x86_64.zip 不含 'apk'，被过滤掉）
         'detect_type': 'github_release',
         'repo': 'gkd-kit/gkd',
-        'version_regex': r'v?(\d+\.\d+\.\d+)',
+        'version_regex': r'v?(\d+\.\d+\.\d+(?:[-.]beta[-.]?\d+)?)',
+        'include_prerelease': True,
         'use_asset_url': True,
         'asset_filter': 'apk',
-        'version': '1.12.1',
+        'version': '1.13.0-beta-2',
         'size': 3287479,
-        'date': '2026-05-20',
+        'date': '2026-10-15',
         'download_url': 'https://github.com/gkd-kit/gkd/releases',
         'official_site': 'https://github.com/gkd-kit/gkd/releases',
     },
