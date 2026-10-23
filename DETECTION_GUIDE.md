@@ -13,8 +13,9 @@
 | GitHub Releases API | 开源/GitHub托管软件 | ⭐⭐⭐⭐⭐ | 高 | 1 | Edge/Chrome安装器 |
 | redirect | 固定地址302跳转 | ⭐⭐⭐⭐⭐ | 高 | 1 | XMind |
 | fixed+变化检测 | 固定地址始终最新版 | ⭐⭐⭐⭐⭐ | 中 | 1 | IObit、网易云 |
-| increment+进位 | URL含版本号，可跨版本 | ⭐⭐⭐⭐ | 高 | 5-20 | 雷电、迅雷、微信 |
+| increment+进位 | URL含版本号，可跨版本 | ⭐⭐⭐⭐ | 高 | 5-20 | 雷电、微信 |
 | increment+列车扫描 | 版本按第2段跳变，CDN只留最新包 | ⭐⭐⭐⭐⭐ | 高 | 2轮并发 | YY |
+| thunder_cdn | 版本两段同时跳号，官方源滞后 | ⭐⭐⭐⭐ | 高 | ~500 | 迅雷 |
 | scrape | 从网页抓取版本信息 | ⭐⭐⭐ | 中 | 1-2 | Edge、Chrome、Xshell |
 | lanzou | 蓝奏云网盘API探测 | ⭐⭐⭐⭐ | 高 | 2 | 闪豆下载器 |
 | PE版本 | 从exe.rsrc段读FileVersion | ⭐⭐⭐⭐ | 高 | 2-3 | 360浏览器、AnyDesk |
@@ -253,6 +254,41 @@ GET https://api.github.com/repos/{owner}/{repo}/releases/latest
 }
 ```
 实测 20 并发扫描 700 个号约 23~32 秒，可接受。
+
+### 6.2 thunder_cdn（迅雷专用：两段同时跳号）
+**问题**：迅雷 PC 客户端版本号形如 `25.1.40.1703`，**第 3 段和第 4 段都在跳号**：
+```
+第3段: 10 → 12 → 13 → 20 → 21 → 22 → 40      （跨 27，无规律）
+第4段: 1610~1615 → 1620~1627 → 1630~1637 → 1640~1646 → 1650 → 1660 → 1702~1703
+```
+逐段递增（increment）只能动第 4 段，进位只能动第 3 段 → **两套机制都够不着新版**。
+实测 2026-10：官网 API（`client-version-quality.xunlei.com/ci/v1/public/versionManage/versions/latest`）、
+官网下载页、winget 索引、腾讯软件中心**全部停在 25.1.13.1637**，只有 CDN 已上架 25.1.40.1703。
+
+**解决**：`detect_type: 'thunder_cdn'`，两阶段并发扫描（请求数 ~500 而非笛卡尔积 5000+）：
+1. **阶段1**：按「第 3 段 +k ⇒ build ≈ 基线build + 10k」的规律，每个第 3 段用几个探针
+   判断该段有没有包（迅雷的 build 段是全局递增的发布序号，与第 3 段同向增长）；
+2. **阶段2**：只在命中的第 3 段内扫第 4 段，取版本号最大的命中。
+
+```python
+{
+    'detect_type': 'thunder_cdn',
+    'base_version': '25.1.13.1631',
+    'url_pattern': 'https://down.sandai.net/thunder_pc/ThunderSetup{ver}xl.exe',
+    'thunder_minor_span': 40,     # 第3段扫描窗口
+    'thunder_build_span': 130,    # 第4段扫描窗口
+    'thunder_probe_builds': 12,   # 每段的探针数
+    'thunder_workers': 8,
+}
+```
+
+**要点**：
+- 扫描起点自动取**线上已发布版本**（`_LIVE_VERSIONS`），比 `base_version` 新时从线上版本起扫，
+  避免每次都从很老的基线重扫；
+- 探测用 HEAD（`check_url(get_fallback=False)`），不触发 200MB 包的 GET 兜底；
+- ⚠️ `down.sandai.net` 有 advanced rate limit，**几千个并发 HEAD 会直接封 IP**（返回
+  403 `deny by advanced rate limit`，冷却约 10 分钟）→ 并发数别调高、别做完整笛卡尔积；
+- 404 提示页只有 449 字节且返回 200，靠「体积 < 10000」排除。
 
 ### 7. increment + PE版本探测
 **原理**：increment 检测到大版本后，用 Range 只下载 PE 头 + `.rsrc` 段读 FileVersion（约 200KB）。
