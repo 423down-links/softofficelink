@@ -15,7 +15,7 @@
 | fixed+变化检测 | 固定地址始终最新版 | ⭐⭐⭐⭐⭐ | 中 | 1 | IObit、网易云 |
 | increment+进位 | URL含版本号，可跨版本 | ⭐⭐⭐⭐ | 高 | 5-20 | 雷电、微信 |
 | increment+列车扫描 | 版本按第2段跳变，CDN只留最新包 | ⭐⭐⭐⭐⭐ | 高 | 2轮并发 | YY |
-| thunder_cdn | 版本两段同时跳号，官方源滞后 | ⭐⭐⭐⭐ | 高 | ~500 | 迅雷 |
+| thunder_cdn | 版本两段同时跳号，官方源滞后 | ⭐⭐⭐⭐⭐ | 高 | ~20 | 迅雷 |
 | scrape | 从网页抓取版本信息 | ⭐⭐⭐ | 中 | 1-2 | Edge、Chrome、Xshell |
 | lanzou | 蓝奏云网盘API探测 | ⭐⭐⭐⭐ | 高 | 2 | 闪豆下载器 |
 | PE版本 | 从exe.rsrc段读FileVersion | ⭐⭐⭐⭐ | 高 | 2-3 | 360浏览器、AnyDesk |
@@ -265,29 +265,39 @@ GET https://api.github.com/repos/{owner}/{repo}/releases/latest
 实测 2026-10：官网 API（`client-version-quality.xunlei.com/ci/v1/public/versionManage/versions/latest`）、
 官网下载页、winget 索引、腾讯软件中心**全部停在 25.1.13.1637**，只有 CDN 已上架 25.1.40.1703。
 
-**解决**：`detect_type: 'thunder_cdn'`，两阶段并发扫描（请求数 ~500 而非笛卡尔积 5000+）：
-1. **阶段1**：按「第 3 段 +k ⇒ build ≈ 基线build + 10k」的规律，每个第 3 段用几个探针
-   判断该段有没有包（迅雷的 build 段是全局递增的发布序号，与第 3 段同向增长）；
-2. **阶段2**：只在命中的第 3 段内扫第 4 段，取版本号最大的命中。
+**解决**：`detect_type: 'thunder_cdn'`，常规一轮只要 **1 次论坛页 GET + 十几个 HEAD**：
+1. **论坛提示定起点**：迅雷官方论坛的离线包汇总帖（`bbs.xunlei.com/circles/20/posts/63926`）
+   由用户维护，新版上线当天就有人贴 CDN 直链，比官方 API 早约一天。正则取帖内最高版本号，
+   例如 25.1.40.1702；
+2. **CDN 正向探测**：以提示号/线上号里较大者作锚点，同 minor 往后扫 25 个 build，
+   命中最大者即最新版（1702 → 1703 一次命中）；
+3. **兜底深度扫描**：论坛拿不到时，两阶段扫 build 十位段——先用 build 0/2 探针
+   判断哪些段有包（空段只花 82 个请求），再对存在的最高段做 minor/build 全扫；
+   900 请求预算，一次即可从 1637 追到 1703，又不会打几千请求被封 IP。
+   线上包 3 天内更新过则跳过深扫（论坛长期不可用时避免每轮空烧请求）。
 
 ```python
 {
     'detect_type': 'thunder_cdn',
     'base_version': '25.1.13.1631',
     'url_pattern': 'https://down.sandai.net/thunder_pc/ThunderSetup{ver}xl.exe',
-    'thunder_minor_span': 40,     # 第3段扫描窗口
-    'thunder_build_span': 130,    # 第4段扫描窗口
-    'thunder_probe_builds': 12,   # 每段的探针数
+    'thunder_hint_url': 'https://bbs.xunlei.com/circles/20/posts/63926',
+    'thunder_forward_span': 25,   # 锚点之后探测多少个 build
+    'thunder_minor_span': 40,     # 深度扫描：第3段窗口
+    'thunder_seg_span': 8,        # 深度扫描：build 十位段窗口
+    'thunder_deep_budget': 900,   # 深度扫描请求预算
     'thunder_workers': 8,
+    'detect_timeout': 100,
 }
 ```
 
 **要点**：
-- 扫描起点自动取**线上已发布版本**（`_LIVE_VERSIONS`），比 `base_version` 新时从线上版本起扫，
-  避免每次都从很老的基线重扫；
+- 扫描锚点自动取 **max(线上版本, base_version, 论坛提示)**，配置落后也能自愈；
+- 论坛只是「提示」，最终版本一律以 CDN HEAD 存在性为准（提示号不存在也不会写进 data.json）；
 - 探测用 HEAD（`check_url(get_fallback=False)`），不触发 200MB 包的 GET 兜底；
 - ⚠️ `down.sandai.net` 有 advanced rate limit，**几千个并发 HEAD 会直接封 IP**（返回
-  403 `deny by advanced rate limit`，冷却约 10 分钟）→ 并发数别调高、别做完整笛卡尔积；
+  403 `deny by advanced rate limit`，冷却约 10 分钟）→ 并发数别调高、深度扫描靠预算兜底；
+- 深度扫描每块都补一个「控制探针」（线上已知存在的包），它 404 就判定为限流假阴性并立即停手；
 - 404 提示页只有 449 字节且返回 200，靠「体积 < 10000」排除。
 
 ### 7. increment + PE版本探测
