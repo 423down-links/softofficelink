@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T04:09:36.778924+00:00",
+  "updated_at": "2026-10-23T04:16:50.863618+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -1705,14 +1705,6 @@
           "url": "https://downtopc.com/343996-native-instruments-kontakt-8140-x64-portable.html"
         },
         {
-          "title": "DropDMG 3.7.2 macOS",
-          "url": "https://downtopc.com/343993-dropdmg-372-macos.html"
-        },
-        {
-          "title": "PCDJ DEX Pro 4.1.0 macOS",
-          "url": "https://downtopc.com/343992-pcdj-dex-pro-410-macos.html"
-        },
-        {
           "title": "PCDJ DEX 4.1 (x64)",
           "url": "https://downtopc.com/343991-pcdj-dex-41-x64.html"
         },
@@ -1747,14 +1739,6 @@
         {
           "title": "tiny11 Core 26H2 Build 26300.9711 Multilingual Preactivated",
           "url": "https://downtopc.com/343983-tiny11-core-26h2-build-263009711-multilingual-preactivated.html"
-        },
-        {
-          "title": "Dropzone Pro 5.1.7 macOS",
-          "url": "https://downtopc.com/343982-dropzone-pro-517-macos.html"
-        },
-        {
-          "title": "Wirecast Pro 16.5.5 macOS",
-          "url": "https://downtopc.com/343981-wirecast-pro-1655-macos.html"
         },
         {
           "title": "2D Frame Analysis 7.3.5",
@@ -1902,6 +1886,10 @@
         {
           "title": "USB Device Tree Viewer 4.8.0.0",
           "url": "https://nsaneforums.com/topic/490574-usb-device-tree-viewer-4800/"
+        },
+        {
+          "title": "Calibre 9.17.0",
+          "url": "https://nsaneforums.com/topic/490598-calibre-9170/"
         },
         {
           "title": "KMPlayer 4.2.3.38",

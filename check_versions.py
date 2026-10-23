@@ -1535,12 +1535,14 @@ PRODUCTS = [
         'icon': 'D',
         'icon_color': 'linear-gradient(135deg, #2e7d32, #1b5e20)',
         'category': '资源站',
-        # 资源站：抓「最新更新日期当天」的文章，标题命中已添加软件名的才输出（没命中跳过）。
+        # 资源站：抓「最新更新日期当天」的全部文章，软件库里已有的过滤掉，只输出没收录的。
         # RSS 只用于确定最新日期，文章清单靠日期归档页分页抓全（RSS 默认只有 10 条）。
         'detect_type': 'downtopc',
         'check_url': 'https://downtopc.com/software/rss.xml',
         'version': '2026-10-08',
         'download_url': 'https://downtopc.com/software/',
+        # 标题含 macOS 的文章不输出（本站只收 Windows 软件）
+        'skip_title_regex': r'mac\s*os',
         'skip_md5': True,
         'allow_no_size': True,
         'official_site': 'https://downtopc.com/software/',
@@ -5993,6 +5995,7 @@ def detect_downtopc(product):
     配置:
       check_url:     RSS 地址（用于确定最新更新日期），默认 .../software/rss.xml
       download_url:  固定站点地址
+      skip_title_regex: 标题命中该正则的文章不输出（如 macOS 版的软件）
       detect_timeout / allow_no_size: 资源站通用
     输出文章写入 _site_items[product['name']]，前端按 monkrus 样式渲染。
     """
@@ -6001,6 +6004,8 @@ def detect_downtopc(product):
     max_pages = product.get('max_pages', 6)
     deadline = time.time() + SITE_DETECT_BUDGET
     keys = _build_match_keys()
+    _skip_pat = product.get('skip_title_regex', '')
+    skip_re = re.compile(_skip_pat, re.I) if _skip_pat else None
 
     try:
         # 1) 用 RSS 的全部 pubDate 取最新日期（RSS 只给 10 条，但按时间倒序）
@@ -6037,14 +6042,19 @@ def detect_downtopc(product):
             print("  ⚠️ downtopc 站点无响应，本轮跳过")
             return '', site_url, site_url, 0, '', ''
 
-        # 3) 当天全部文章都输出，但「软件库已收录」的过滤掉
+        # 3) 当天全部文章都输出，但「软件库已收录」和「非 Windows（macOS）」的过滤掉
         kept = []
         filtered = []
+        skipped = []
         seen = set()
         for title, url in articles:
             if url in seen:
                 continue
             seen.add(url)
+            if skip_re and skip_re.search(title):
+                skipped.append(title)
+                print(f"    ✗ 非Windows {title[:70]}")
+                continue
             hit, key = _title_hits_library(title, keys)
             if hit:
                 filtered.append((title, key))
@@ -6064,7 +6074,8 @@ def detect_downtopc(product):
         # （不能沿用旧清单，否则前端会一直挂着昨天那批"已入库"的软件）
         _site_items[product['name']] = kept
         print(f"  downtopc 更新: {date_str} 当天 {len(articles)} 篇，"
-              f"过滤已入库 {len(filtered)} 篇，输出 {len(kept)} 篇")
+              f"过滤已入库 {len(filtered)} 篇、非Windows {len(skipped)} 篇，"
+              f"输出 {len(kept)} 篇")
         return date_str, site_url, site_url, 0, date_str, ''
 
     except Exception as e:
