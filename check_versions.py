@@ -77,12 +77,18 @@ PRODUCTS = [
         'icon': '迅',
         'icon_color': 'linear-gradient(135deg, #1e88e5, #00acc1)',
         'category': '下载工具',
-        'detect_type': 'increment',
+        # 迅雷 PC 版本号 25.1.X.Y 的第 3 段（13→20→21→22→40）和第 4 段
+        # （1637→1642→1650→1660→1702）都会跳号，逐段递增永远追不上。
+        # 官网 API（client-version-quality）/ 官网下载页 / winget 索引都曾
+        # 停在 25.1.13.1637，只有 CDN 已上架新版，故改用 thunder_cdn 模式
+        # 直接并发扫 CDN 版本号。
+        'detect_type': 'thunder_cdn',
         'base_version': '25.1.13.1631',
-        'url_patterns': [
-            'https://down.sandai.net/thunder_pc/ThunderSetup{ver}xl.exe',
-            'https://down.sandai.net/thunder_pc/ThunderSetup{ver}up.exe',
-        ],
+        'url_pattern': 'https://down.sandai.net/thunder_pc/ThunderSetup{ver}xl.exe',
+        'thunder_minor_span': 40,     # 第 3 段扫描窗口（13 → 53，覆盖 40）
+        'thunder_build_span': 130,    # 第 4 段扫描窗口（1631 → 1761，覆盖 1703）
+        'thunder_workers': 16,
+        'skip_md5': True,             # 安装包 200MB+，不做 MD5
         'param_format': '',
         'channel': '',
         'official_site': 'https://www.xunlei.com/',
@@ -2848,6 +2854,156 @@ def detect_increment(product):
                 print(f"  ✓ 采用页面发布日期: {latest_date}")
 
     return display_version, full_url, param_url, latest_size, latest_date, md5
+
+
+def _thunder_cdn_exists(url, referer=None):
+    """探测迅雷 CDN 上的安装包是否存在，返回 (exists, size, last_modified)。
+
+    迅雷 CDN（down.sandai.net）把下架的包 302 到 /404/404.html，
+    该页返回 200 + 449 字节，直接用状态码判断会把 404 页当成安装包。
+    这里靠「最终 URL 含 404」和「体积明显小于安装包」两个条件排除。
+    """
+    exists, size, lm = check_url(url, referer=referer, get_fallback=False)
+    if not exists:
+        return False, 0, ''
+    # 404 提示页只有 449 字节，真安装包 190MB+，按体积下限排除
+    if 0 < size < 10000:
+        return False, 0, ''
+    return True, size, lm
+
+
+def detect_thunder_cdn(product):
+    """迅雷专用检测模式：并发扫描 CDN 上的版本号。
+
+    迅雷 PC 客户端版本号形如 25.1.40.1703（4 段），但它的第 3 段
+    （25.1.**13** → 25.1.**20** → 25.1.**21** → 25.1.**22** → 25.1.**40**）
+    和第 4 段（**1637** → **1642** → **1650** → **1660** → **1702**）
+    都会跳号，不存在「逐段 +1」规律，所以通用的 increment 模式永远追不上
+    （官方 API client-version-quality / 官网下载页 / winget 索引当时也全部
+    停在 25.1.13.1637，只有 CDN 已经上架了 25.1.40.1703）。
+
+    CDN 上真实存在的版本实测（2026-10 全量扫描得出）：
+        25.1.10.1610~1615 / 25.1.12.1620~1627 / 25.1.13.1630~1637
+        25.1.20.1640~1646 / 25.1.21.1650 / 25.1.22.1660
+        25.1.40.1702 / 25.1.40.1703
+    即「第 3 段」和「第 4 段」都在跳，且两者并不严格对应
+    （25.1.40 配的是 1702/1703，不是 1640）。
+
+    扫描策略：**第 4 段的十位段（build//10）与第 3 段一一对应**——
+    1610~1619 属于第 3 段 10，1620~1629 属于 12，1630~1639 属于 13，
+    1640~1649 属于 20，1650~1659 属于 21，1660~1669 属于 22，
+    1700~1709 属于 40。两者同向递增但不能互相推算具体值，
+    所以只能「按 build 十位段降序 × 该段内 minor 降序」地耦合扫描：
+    先定 build 段（段数少），再在该段内横扫 minor/build 组合，
+    命中即得该段里的最新版，段与段之间取最大者。
+
+    这样请求数是「build 段数 × 每段探测数」的量级（几百），
+    而不是完整笛卡尔积（几千），避免把 CDN 打到限流
+    （down.sandai.net 有 advanced rate limit，几千个并发 HEAD 会直接封 IP）。
+
+    探测用 HEAD（check_url 内部 get_fallback=False），避免 200MB 包的
+    GET 兜底把整轮拖到超时。
+    """
+    base = product.get('base_version', '')
+    url_pattern = product.get('url_pattern',
+                              'https://down.sandai.net/thunder_pc/ThunderSetup{ver}xl.exe')
+    referer = product.get('referer')
+    # build 段（build//10）扫描范围：从基线段向上扫多少段
+    seg_span = product.get('thunder_seg_span', 16)
+    # 第 3 段扫描范围
+    minor_span = product.get('thunder_minor_span', 40)
+    workers = product.get('thunder_workers', 8)
+
+    base_parts = base.split('.')
+    if len(base_parts) < 4:
+        print(f"  ⚠️ 迅雷版本号需 4 段（25.1.40.1703），当前 base={base}")
+        return base, url_pattern.format(ver=base), url_pattern.format(ver=base), 0, '', ''
+
+    pre = '.'.join(base_parts[:2])          # 25.1
+    minor0 = int(base_parts[2])             # 13
+    build0 = int(base_parts[3])             # 1631
+
+    # 起点用线上已发布的版本（比 base 新），避免每次都从很老的 base 重扫
+    live = _LIVE_VERSIONS.get(product['name'], '')
+    if live and len(live.split('.')) == 4 and live.startswith(pre + '.'):
+        _lp = live.split('.')
+        if int(_lp[2]) > minor0 or (int(_lp[2]) == minor0 and int(_lp[3]) > build0):
+            print(f"  以线上版本为扫描起点: {live}")
+            minor0 = int(_lp[2])
+            build0 = int(_lp[3])
+
+    def _probe(ver):
+        url = url_pattern.format(ver=ver)
+        ok, size, lm = _thunder_cdn_exists(url, referer=referer)
+        return ver, url, ok, size, lm
+
+    # build 段：从高到低扫（build 越大版本越新）
+    seg0 = build0 // 10
+    segs = list(range(seg0 + seg_span, seg0 - 1, -1))
+    # 第 3 段候选：基线段起向上（版本号只增不减）
+    minors = list(range(minor0, minor0 + minor_span + 1))
+
+    best = None          # (version_tuple, ver, url, size, lm)
+    print(f"  扫描 CDN 版本号（{len(segs)} 个 build 段 × {len(minors)} 个第3段候选，{workers} 并发）...")
+
+    for seg in segs:
+        # 段内的 build 候选：seg*10 .. seg*10+9（降序，段内新版在前）
+        seg_builds = list(range(seg * 10 + 9, seg * 10 - 1, -1))
+        # 段内「第3段 × build」组合：第3段降序、build 降序。
+        # 实测「第3段」与「第4段的十位段」一一对应且同序递增
+        # （1610段→10、1620段→12、1630段→13、1640段→20、1650段→21、
+        #   1660段→22、1700段→40），所以段内第一个命中的组合就是该段最新版，
+        # 命中即可结束整轮扫描。
+        combos = []
+        for m in reversed(minors):
+            for b in seg_builds:
+                combos.append(f'{pre}.{m}.{b}')
+
+        with ThreadPoolExecutor(max_workers=workers) as ex:
+            for ver, url, ok, size, lm in ex.map(_probe, combos):
+                if not ok:
+                    continue
+                vt = _ver_tuple(ver)
+                if best is None or vt > best[0]:
+                    best = (vt, ver, url, size, lm)
+                    print(f"  ✓ 命中: {ver} ({size/1024/1024:.1f}MB)")
+                # 段内 minor 降序 + build 降序 → 首个命中即该段最新版
+                break
+        # 本段已命中时，更低段的 build 更小，不可能更大 → 提前结束
+        if best:
+            break
+
+    if not best:
+        print(f"  ⚠️ 未扫到可用版本（base={base}）")
+        return base, url_pattern.format(ver=base), url_pattern.format(ver=base), 0, '', ''
+
+    _, latest, full_url, size, lm = best
+    print(f"  ✓ CDN 最新版: {latest} ({size/1024/1024:.1f}MB)")
+
+    # 体积/日期没拿到时补一次完整探测
+    if not size or not lm:
+        ok, s2, l2 = check_url_follow(full_url, referer=referer)
+        if ok:
+            size = size or s2
+            lm = lm or l2
+
+    date = parse_date(lm) if lm else ''
+
+    # MD5：安装包 200MB+，超过 100MB 上限，跳过
+    md5 = ''
+    if size and size < MD5_SIZE_LIMIT and not product.get('skip_md5', False):
+        print(f"  计算MD5 ({size/1024/1024:.1f}MB)...")
+        md5 = get_file_md5(full_url, referer=referer)
+        if md5:
+            print(f"  MD5: {md5}")
+
+    param_url = full_url
+    if product.get('param_format'):
+        param_url = full_url + product['param_format'].format(
+            ts=int(time.time() * 1000), ver=latest, channel=product.get('channel', ''))
+
+    _VER_SOURCE[product['name']] = 'cdn'
+    return latest, full_url, param_url, size, date, md5
 
 
 def detect_redirect(product):
@@ -6549,6 +6705,8 @@ def find_latest(product):
         version, full_url, param_url, size, date, md5 = detect_nsane(product)
     elif detect_type == 'borisfx_hub':
         version, full_url, param_url, size, date, md5 = detect_borisfx_hub(product)
+    elif detect_type == 'thunder_cdn':
+        version, full_url, param_url, size, date, md5 = detect_thunder_cdn(product)
     else:
         version, full_url, param_url, size, date, md5 = detect_increment(product)
 
