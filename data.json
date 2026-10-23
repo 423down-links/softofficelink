@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T17:51:33.463133+00:00",
+  "updated_at": "2026-10-23T18:06:37.407769+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793382639&P2=404&P3=2&P4=OExneEg4aYGXnMklOmAhtewDQ5M2aotNt8IWbIPV1ERptfDfVp3qTP5PJc9GAdbq%2fDLboSM3S39t62yzKz6tlQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793382639&P2=404&P3=2&P4=OExneEg4aYGXnMklOmAhtewDQ5M2aotNt8IWbIPV1ERptfDfVp3qTP5PJc9GAdbq%2fDLboSM3S39t62yzKz6tlQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793383538&P2=404&P3=2&P4=NQnUayzi4rS4kjEKyl1VktLbsaLIal3LlQRNjRiPflTJdt1N9UvqesDOGR9G8iWVKm0cGiM%2fU1U1ng9la8mfqg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793383538&P2=404&P3=2&P4=NQnUayzi4rS4kjEKyl1VktLbsaLIal3LlQRNjRiPflTJdt1N9UvqesDOGR9G8iWVKm0cGiM%2fU1U1ng9la8mfqg%3d%3d",
       "downloads": [],
       "size": 208330576,
       "size_mb": 198.7,
@@ -1701,6 +1701,22 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "XRecode 3 v1.192 (x64) Multilingual",
+          "url": "https://downtopc.com/344039-xrecode-3-v1192-x64-multilingual.html"
+        },
+        {
+          "title": "Abelssoft X-Loader 2026 v6.3 Multilingual",
+          "url": "https://downtopc.com/344038-abelssoft-x-loader-2026-v63-multilingual.html"
+        },
+        {
+          "title": "Oryx Digital PerfectTablePlan Professional 7.3.1",
+          "url": "https://downtopc.com/344036-oryx-digital-perfecttableplan-professional-731.html"
+        },
+        {
+          "title": "Nitro PDF Pro 26.2.5.1 (x64) Enterprise Multilingual Portable",
+          "url": "https://downtopc.com/344035-nitro-pdf-pro-26251-x64-enterprise-multilingual-portable.html"
+        },
+        {
           "title": "Nitro PDF Pro 26.2.5.1 (x64) Enterprise Multilingual",
           "url": "https://downtopc.com/344034-nitro-pdf-pro-26251-x64-enterprise-multilingual.html"
         },
@@ -1747,6 +1763,82 @@
         {
           "title": "Icecream Screen Recorder Pro 7.49 (x64) Multilingual Portable",
           "url": "https://downtopc.com/344022-icecream-screen-recorder-pro-749-x64-multilingual-portable.html"
+        },
+        {
+          "title": "Icecream PDF Candy Desktop Pro 3.21 Multilingual Portable",
+          "url": "https://downtopc.com/344021-icecream-pdf-candy-desktop-pro-321-multilingual-portable.html"
+        },
+        {
+          "title": "MOTU Digital Performer 12.0.1",
+          "url": "https://downtopc.com/344020-motu-digital-performer-1201.html"
+        },
+        {
+          "title": "Icecream Screen Recorder Pro 7.49 (x64) Multilingual",
+          "url": "https://downtopc.com/344019-icecream-screen-recorder-pro-749-x64-multilingual.html"
+        },
+        {
+          "title": "Icecream Ebook Reader Pro 6.57 Multilingual",
+          "url": "https://downtopc.com/344018-icecream-ebook-reader-pro-657-multilingual.html"
+        },
+        {
+          "title": "Icecream PDF Candy Desktop Pro 3.21 Multilingual",
+          "url": "https://downtopc.com/344017-icecream-pdf-candy-desktop-pro-321-multilingual.html"
+        },
+        {
+          "title": "Icecream Photo Editor Pro 1.55 Multilingual",
+          "url": "https://downtopc.com/344016-icecream-photo-editor-pro-155-multilingual.html"
+        },
+        {
+          "title": "Icecream Slideshow Maker Pro 5.21 Multilingual",
+          "url": "https://downtopc.com/344015-icecream-slideshow-maker-pro-521-multilingual.html"
+        },
+        {
+          "title": "Icecream Video Converter Pro 1.50 Multilingual",
+          "url": "https://downtopc.com/344014-icecream-video-converter-pro-150-multilingual.html"
+        },
+        {
+          "title": "Icecream PDF Editor Pro 3.34 Multilingual",
+          "url": "https://downtopc.com/344013-icecream-pdf-editor-pro-334-multilingual.html"
+        },
+        {
+          "title": "Icecream Video Editor Pro 3.27 Multilingual",
+          "url": "https://downtopc.com/344012-icecream-video-editor-pro-327-multilingual.html"
+        },
+        {
+          "title": "CareUEyes Pro 2.7 Multilingual Portable",
+          "url": "https://downtopc.com/344009-careueyes-pro-27-multilingual-portable.html"
+        },
+        {
+          "title": "CareUEyes Pro 2.7 Multilingual",
+          "url": "https://downtopc.com/344008-careueyes-pro-27-multilingual.html"
+        },
+        {
+          "title": "MediaHuman YouTube Downloader 3.9.24 (2010) Multilingual (x64) Portable",
+          "url": "https://downtopc.com/344007-mediahuman-youtube-downloader-3924-2010-multilingual-x64-portable.html"
+        },
+        {
+          "title": "MediaHuman YouTube Downloader 3.9.24 (2010) Multilingual (x64)",
+          "url": "https://downtopc.com/344006-mediahuman-youtube-downloader-3924-2010-multilingual-x64.html"
+        },
+        {
+          "title": "TickTick Premium 8.2.4 Multilingual",
+          "url": "https://downtopc.com/344005-ticktick-premium-824-multilingual.html"
+        },
+        {
+          "title": "Calibre 9.17.0 (x64) Multilingual Portable",
+          "url": "https://downtopc.com/344003-calibre-9170-x64-multilingual-portable.html"
+        },
+        {
+          "title": "ExtraMAME 26.10 (x64) Multilingual",
+          "url": "https://downtopc.com/344002-extramame-2610-x64-multilingual.html"
+        },
+        {
+          "title": "Syncovery Premium 12.9.6.99 Multilingual",
+          "url": "https://downtopc.com/344001-syncovery-premium-129699-multilingual.html"
+        },
+        {
+          "title": "MusConv Lifetime 4.10.484 Multilingual",
+          "url": "https://downtopc.com/344000-musconv-lifetime-410484-multilingual.html"
         }
       ]
     },
@@ -1757,91 +1849,23 @@
       "icon": "N",
       "icon_color": "linear-gradient(135deg, #4a6fa5, #2b3f63)",
       "category": "资源站",
-      "version": "2026-10-23",
+      "version": "2026-10-24",
       "download_url": "https://nsaneforums.com/nsane.down/",
       "download_url_with_params": "https://nsaneforums.com/nsane.down/",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-10-23",
+      "last_modified": "2026-10-24",
       "md5": "",
       "official_site": "https://nsaneforums.com/",
       "update_items": [
         {
-          "title": "Abelssoft X-Loader 2026.6.3 FULL",
-          "url": "https://nsaneforums.com/topic/490617-abelssoft-x-loader-202663-full/"
+          "title": "XRecode 3 v1.192",
+          "url": "https://nsaneforums.com/topic/490625-xrecode-3-v1192/"
         },
         {
-          "title": "Bootstrap Studio v9.0.1 (x64)",
-          "url": "https://nsaneforums.com/topic/490616-bootstrap-studio-v901-x64/"
-        },
-        {
-          "title": "ReviverSoft PC Reviver v4.1.0.12",
-          "url": "https://nsaneforums.com/topic/490615-reviversoft-pc-reviver-v41012/"
-        },
-        {
-          "title": "RekSFV 1.9.8",
-          "url": "https://nsaneforums.com/topic/490607-reksfv-198/"
-        },
-        {
-          "title": "CareUEyes Pro v2.7",
-          "url": "https://nsaneforums.com/topic/490606-careueyes-pro-v27/"
-        },
-        {
-          "title": "Unicodia - encyclopedia of characters 3.2.8",
-          "url": "https://nsaneforums.com/topic/490580-unicodia-encyclopedia-of-characters-328/"
-        },
-        {
-          "title": "MusConv Lifetime v4.10.484",
-          "url": "https://nsaneforums.com/topic/490603-musconv-lifetime-v410484/"
-        },
-        {
-          "title": "USB Device Tree Viewer 4.8.0.0",
-          "url": "https://nsaneforums.com/topic/490574-usb-device-tree-viewer-4800/"
-        },
-        {
-          "title": "Syncovery Premium v12.9.6.99",
-          "url": "https://nsaneforums.com/topic/490595-syncovery-premium-v129699/"
-        },
-        {
-          "title": "LibreWolf v158.0.1",
-          "url": "https://nsaneforums.com/topic/490588-librewolf-v15801/"
-        },
-        {
-          "title": "Zed 1.25.3",
-          "url": "https://nsaneforums.com/topic/490614-zed-1253/"
-        },
-        {
-          "title": "Free Download Manager 6.35.2.7075",
-          "url": "https://nsaneforums.com/topic/490613-free-download-manager-63527075/"
-        },
-        {
-          "title": "Passware Kit 2026.4.0",
-          "url": "https://nsaneforums.com/topic/490612-passware-kit-202640/"
-        },
-        {
-          "title": "Vivaldi 8.2.4133.94",
-          "url": "https://nsaneforums.com/topic/490611-vivaldi-82413394/"
-        },
-        {
-          "title": "Calibre 9.17.0",
-          "url": "https://nsaneforums.com/topic/490598-calibre-9170/"
-        },
-        {
-          "title": "KMPlayer 4.2.3.38",
-          "url": "https://nsaneforums.com/topic/490597-kmplayer-42338/"
-        },
-        {
-          "title": "Google Antigravity 2.26.0",
-          "url": "https://nsaneforums.com/topic/490594-google-antigravity-2260/"
-        },
-        {
-          "title": "Bitwarden 2026.10.1",
-          "url": "https://nsaneforums.com/topic/490590-bitwarden-2026101/"
-        },
-        {
-          "title": "VirtualDJ 2026 Build 9729",
-          "url": "https://nsaneforums.com/topic/490575-virtualdj-2026-build-9729/"
+          "title": "Nitro PDF Pro v26.2.5.1 Enterprise x64",
+          "url": "https://nsaneforums.com/topic/490619-nitro-pdf-pro-v26251-enterprise-x64/"
         }
       ]
     },
@@ -1982,7 +2006,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-10-11",
       "md5": "",
