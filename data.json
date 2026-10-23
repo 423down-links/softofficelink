@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T15:47:37.679329+00:00",
+  "updated_at": "2026-10-23T16:06:58.256569+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793375178&P2=404&P3=2&P4=PrndvhqgRVJPBXd5BuRrrqQsyCKD0jll1UcE4K6CX5FJoac5AnRHryKigfpfKBpPXYUxa6zBXgQAaIAaxTFEjQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793375178&P2=404&P3=2&P4=PrndvhqgRVJPBXd5BuRrrqQsyCKD0jll1UcE4K6CX5FJoac5AnRHryKigfpfKBpPXYUxa6zBXgQAaIAaxTFEjQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793376337&P2=404&P3=2&P4=XM9tfWSJillAR8nVrcwf871Or4HZ7%2f7ojEKOwVGRP%2fWrF%2fL1bZsJpMXvFeAxQMNHzcUEfY7hd%2f8KuuBnV2Hqxg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793376337&P2=404&P3=2&P4=XM9tfWSJillAR8nVrcwf871Or4HZ7%2f7ojEKOwVGRP%2fWrF%2fL1bZsJpMXvFeAxQMNHzcUEfY7hd%2f8KuuBnV2Hqxg%3d%3d",
       "downloads": [],
       "size": 208330576,
       "size_mb": 198.7,
@@ -1701,6 +1701,10 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "Nitro PDF Pro 26.2.5.1 (x64) Enterprise Multilingual",
+          "url": "https://downtopc.com/344034-nitro-pdf-pro-26251-x64-enterprise-multilingual.html"
+        },
+        {
           "title": "Bootstrap Studio 9.0.1 (x64) Portable",
           "url": "https://downtopc.com/344032-bootstrap-studio-901-x64-portable.html"
         },
@@ -1743,82 +1747,6 @@
         {
           "title": "Icecream Screen Recorder Pro 7.49 (x64) Multilingual Portable",
           "url": "https://downtopc.com/344022-icecream-screen-recorder-pro-749-x64-multilingual-portable.html"
-        },
-        {
-          "title": "Icecream PDF Candy Desktop Pro 3.21 Multilingual Portable",
-          "url": "https://downtopc.com/344021-icecream-pdf-candy-desktop-pro-321-multilingual-portable.html"
-        },
-        {
-          "title": "MOTU Digital Performer 12.0.1",
-          "url": "https://downtopc.com/344020-motu-digital-performer-1201.html"
-        },
-        {
-          "title": "Icecream Screen Recorder Pro 7.49 (x64) Multilingual",
-          "url": "https://downtopc.com/344019-icecream-screen-recorder-pro-749-x64-multilingual.html"
-        },
-        {
-          "title": "Icecream Ebook Reader Pro 6.57 Multilingual",
-          "url": "https://downtopc.com/344018-icecream-ebook-reader-pro-657-multilingual.html"
-        },
-        {
-          "title": "Icecream PDF Candy Desktop Pro 3.21 Multilingual",
-          "url": "https://downtopc.com/344017-icecream-pdf-candy-desktop-pro-321-multilingual.html"
-        },
-        {
-          "title": "Icecream Photo Editor Pro 1.55 Multilingual",
-          "url": "https://downtopc.com/344016-icecream-photo-editor-pro-155-multilingual.html"
-        },
-        {
-          "title": "Icecream Slideshow Maker Pro 5.21 Multilingual",
-          "url": "https://downtopc.com/344015-icecream-slideshow-maker-pro-521-multilingual.html"
-        },
-        {
-          "title": "Icecream Video Converter Pro 1.50 Multilingual",
-          "url": "https://downtopc.com/344014-icecream-video-converter-pro-150-multilingual.html"
-        },
-        {
-          "title": "Icecream PDF Editor Pro 3.34 Multilingual",
-          "url": "https://downtopc.com/344013-icecream-pdf-editor-pro-334-multilingual.html"
-        },
-        {
-          "title": "Icecream Video Editor Pro 3.27 Multilingual",
-          "url": "https://downtopc.com/344012-icecream-video-editor-pro-327-multilingual.html"
-        },
-        {
-          "title": "CareUEyes Pro 2.7 Multilingual Portable",
-          "url": "https://downtopc.com/344009-careueyes-pro-27-multilingual-portable.html"
-        },
-        {
-          "title": "CareUEyes Pro 2.7 Multilingual",
-          "url": "https://downtopc.com/344008-careueyes-pro-27-multilingual.html"
-        },
-        {
-          "title": "MediaHuman YouTube Downloader 3.9.24 (2010) Multilingual (x64) Portable",
-          "url": "https://downtopc.com/344007-mediahuman-youtube-downloader-3924-2010-multilingual-x64-portable.html"
-        },
-        {
-          "title": "MediaHuman YouTube Downloader 3.9.24 (2010) Multilingual (x64)",
-          "url": "https://downtopc.com/344006-mediahuman-youtube-downloader-3924-2010-multilingual-x64.html"
-        },
-        {
-          "title": "TickTick Premium 8.2.4 Multilingual",
-          "url": "https://downtopc.com/344005-ticktick-premium-824-multilingual.html"
-        },
-        {
-          "title": "Calibre 9.17.0 (x64) Multilingual Portable",
-          "url": "https://downtopc.com/344003-calibre-9170-x64-multilingual-portable.html"
-        },
-        {
-          "title": "ExtraMAME 26.10 (x64) Multilingual",
-          "url": "https://downtopc.com/344002-extramame-2610-x64-multilingual.html"
-        },
-        {
-          "title": "Syncovery Premium 12.9.6.99 Multilingual",
-          "url": "https://downtopc.com/344001-syncovery-premium-129699-multilingual.html"
-        },
-        {
-          "title": "MusConv Lifetime 4.10.484 Multilingual",
-          "url": "https://downtopc.com/344000-musconv-lifetime-410484-multilingual.html"
         }
       ]
     },
@@ -2054,7 +1982,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-10-11",
       "md5": "",
