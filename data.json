@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T10:51:14.427223+00:00",
+  "updated_at": "2026-10-23T11:05:55.108557+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793357437&P2=404&P3=2&P4=LE9%2bIMpjc24%2bY9c%2f99x%2bOquGzn7MyDKd3jbmYQGUr4rE77cf6XSuzk8mNU65QxgHrWdAkUWUjFakrZL34WBOdQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793357437&P2=404&P3=2&P4=LE9%2bIMpjc24%2bY9c%2f99x%2bOquGzn7MyDKd3jbmYQGUr4rE77cf6XSuzk8mNU65QxgHrWdAkUWUjFakrZL34WBOdQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793358332&P2=404&P3=2&P4=gkVZUQNUDklfbEsDmIsKadBv8pQ5k6vAElfNswZWjuO8fOgfISzHwta7D%2fakzj6M7vjgaTktrAN3qlwsF32%2b6g%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793358332&P2=404&P3=2&P4=gkVZUQNUDklfbEsDmIsKadBv8pQ5k6vAElfNswZWjuO8fOgfISzHwta7D%2fakzj6M7vjgaTktrAN3qlwsF32%2b6g%3d%3d",
       "downloads": [],
       "size": 208330576,
       "size_mb": 198.7,
@@ -1701,6 +1701,38 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "Icecream Screen Recorder Pro 7.49 (x64) Multilingual Portable",
+          "url": "https://downtopc.com/344022-icecream-screen-recorder-pro-749-x64-multilingual-portable.html"
+        },
+        {
+          "title": "Icecream PDF Candy Desktop Pro 3.21 Multilingual Portable",
+          "url": "https://downtopc.com/344021-icecream-pdf-candy-desktop-pro-321-multilingual-portable.html"
+        },
+        {
+          "title": "MOTU Digital Performer 12.0.1",
+          "url": "https://downtopc.com/344020-motu-digital-performer-1201.html"
+        },
+        {
+          "title": "Icecream Screen Recorder Pro 7.49 (x64) Multilingual",
+          "url": "https://downtopc.com/344019-icecream-screen-recorder-pro-749-x64-multilingual.html"
+        },
+        {
+          "title": "Icecream Ebook Reader Pro 6.57 Multilingual",
+          "url": "https://downtopc.com/344018-icecream-ebook-reader-pro-657-multilingual.html"
+        },
+        {
+          "title": "Icecream PDF Candy Desktop Pro 3.21 Multilingual",
+          "url": "https://downtopc.com/344017-icecream-pdf-candy-desktop-pro-321-multilingual.html"
+        },
+        {
+          "title": "Icecream Photo Editor Pro 1.55 Multilingual",
+          "url": "https://downtopc.com/344016-icecream-photo-editor-pro-155-multilingual.html"
+        },
+        {
+          "title": "Icecream Slideshow Maker Pro 5.21 Multilingual",
+          "url": "https://downtopc.com/344015-icecream-slideshow-maker-pro-521-multilingual.html"
+        },
+        {
           "title": "Icecream Video Converter Pro 1.50 Multilingual",
           "url": "https://downtopc.com/344014-icecream-video-converter-pro-150-multilingual.html"
         },
@@ -1768,6 +1800,10 @@
       "official_site": "https://nsaneforums.com/",
       "update_items": [
         {
+          "title": "RekSFV 1.9.8",
+          "url": "https://nsaneforums.com/topic/490607-reksfv-198/"
+        },
+        {
           "title": "CareUEyes Pro v2.7",
           "url": "https://nsaneforums.com/topic/490606-careueyes-pro-v27/"
         },
@@ -1802,10 +1838,6 @@
         {
           "title": "Native Instruments Kontakt v8.14 (x64)",
           "url": "https://nsaneforums.com/topic/490585-native-instruments-kontakt-v814-x64/"
-        },
-        {
-          "title": "YouTubeGet v7.3.2",
-          "url": "https://nsaneforums.com/topic/490579-youtubeget-v732/"
         },
         {
           "title": "Calibre 9.17.0",
@@ -1966,7 +1998,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-10-11",
       "md5": "",
