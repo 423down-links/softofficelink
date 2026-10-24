@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T19:51:32.477543+00:00",
+  "updated_at": "2026-10-24T20:05:58.700706+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793476239&P2=404&P3=2&P4=RZy%2fQrhQbNVxzXor1nfBBz3kYW0cV2m80jIuh2ZXLiO8swnfLh3IksRitfAzMoVFP3b7D2UcHStQBOWzIxUKJQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793476239&P2=404&P3=2&P4=RZy%2fQrhQbNVxzXor1nfBBz3kYW0cV2m80jIuh2ZXLiO8swnfLh3IksRitfAzMoVFP3b7D2UcHStQBOWzIxUKJQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793477136&P2=404&P3=2&P4=gtAfCxUJXgBFdkR8zbHnGBp%2bDyLUWH6l16tzs5mU4x5%2b8IssJwcu8RFLLWNo2fTH06u4QQEiC6XLkrKwZiFAZw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793477136&P2=404&P3=2&P4=gtAfCxUJXgBFdkR8zbHnGBp%2bDyLUWH6l16tzs5mU4x5%2b8IssJwcu8RFLLWNo2fTH06u4QQEiC6XLkrKwZiFAZw%3d%3d",
       "downloads": [],
       "size": 208330576,
       "size_mb": 198.7,
@@ -1701,6 +1701,74 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "Windows 10 Pro 22H2 build 19045.7807 With Office 2024 Pro Plus Multilingual Preactivated October 2026",
+          "url": "https://downtopc.com/344085-windows-10-pro-22h2-build-190457807-with-office-2024-pro-plus-multilingual-preactivated-october-2026.html"
+        },
+        {
+          "title": "Cockos REAPER 7.83 ( x64) Portable",
+          "url": "https://downtopc.com/344084-cockos-reaper-783-x64-portable.html"
+        },
+        {
+          "title": "AI Old Photo Restorer 1.0.3 Portable",
+          "url": "https://downtopc.com/344082-ai-old-photo-restorer-103-portable.html"
+        },
+        {
+          "title": "AI Old Photo Restorer 1.0.3",
+          "url": "https://downtopc.com/344081-ai-old-photo-restorer-103.html"
+        },
+        {
+          "title": "AI ImageStudio 1.0.6 Portable",
+          "url": "https://downtopc.com/344080-ai-imagestudio-106-portable.html"
+        },
+        {
+          "title": "AI ImageStudio 1.0.6",
+          "url": "https://downtopc.com/344079-ai-imagestudio-106.html"
+        },
+        {
+          "title": "Cockos REAPER 7.83",
+          "url": "https://downtopc.com/344078-cockos-reaper-783.html"
+        },
+        {
+          "title": "Serato DJ Pro Suite 5.0.0 Multilingual",
+          "url": "https://downtopc.com/344076-serato-dj-pro-suite-500-multilingual.html"
+        },
+        {
+          "title": "PerfectIt Pro 6.8.7",
+          "url": "https://downtopc.com/344074-perfectit-pro-687.html"
+        },
+        {
+          "title": "Squirrels AirParrot 3.1.11",
+          "url": "https://downtopc.com/344073-squirrels-airparrot-3111.html"
+        },
+        {
+          "title": "Squirrels Reflector 4.1.3",
+          "url": "https://downtopc.com/344072-squirrels-reflector-413.html"
+        },
+        {
+          "title": "ASCOMP Easy Slideshow Professional 2.201 Multilingual Portable",
+          "url": "https://downtopc.com/344071-ascomp-easy-slideshow-professional-2201-multilingual-portable.html"
+        },
+        {
+          "title": "ASCOMP Easy Slideshow Professional 2.201 Multilingual",
+          "url": "https://downtopc.com/344070-ascomp-easy-slideshow-professional-2201-multilingual.html"
+        },
+        {
+          "title": "Nevercenter Pixelmash 2027.0 (x64) Portable",
+          "url": "https://downtopc.com/344068-nevercenter-pixelmash-20270-x64-portable.html"
+        },
+        {
+          "title": "Nevercenter Pixelmash 2027.0 (x64)",
+          "url": "https://downtopc.com/344067-nevercenter-pixelmash-20270-x64.html"
+        },
+        {
+          "title": "Maplesoft Maple 2026.1.2 Multilingual",
+          "url": "https://downtopc.com/344066-maplesoft-maple-202612-multilingual.html"
+        },
+        {
+          "title": "VectorStyler 1.3.031",
+          "url": "https://downtopc.com/344065-vectorstyler-13031.html"
+        },
+        {
           "title": "Spotify ADS Remover 1.3.7.2752 Multilingual Portable",
           "url": "https://downtopc.com/344064-spotify-ads-remover-1372752-multilingual-portable.html"
         },
@@ -1781,79 +1849,19 @@
       "icon": "N",
       "icon_color": "linear-gradient(135deg, #4a6fa5, #2b3f63)",
       "category": "资源站",
-      "version": "2026-10-24",
+      "version": "2026-10-25",
       "download_url": "https://nsaneforums.com/nsane.down/",
       "download_url_with_params": "https://nsaneforums.com/nsane.down/",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-10-24",
+      "last_modified": "2026-10-25",
       "md5": "",
       "official_site": "https://nsaneforums.com/",
       "update_items": [
         {
-          "title": "Fort Firewall 3.20.8",
-          "url": "https://nsaneforums.com/topic/490647-fort-firewall-3208/"
-        },
-        {
-          "title": "PCDJ DEX 4.1",
-          "url": "https://nsaneforums.com/topic/490646-pcdj-dex-41/"
-        },
-        {
-          "title": "Pazu StreamGet All-In-One Video Downloader v3.2.7",
-          "url": "https://nsaneforums.com/topic/490645-pazu-streamget-all-in-one-video-downloader-v327/"
-        },
-        {
-          "title": "YUMI Py 1.1.10",
-          "url": "https://nsaneforums.com/topic/490642-yumi-py-1110/"
-        },
-        {
-          "title": "HitmanPro.Alert v3.22.1.2073",
-          "url": "https://nsaneforums.com/topic/490630-hitmanproalert-v32212073/"
-        },
-        {
-          "title": "Q-Dir v12.82",
-          "url": "https://nsaneforums.com/topic/490643-q-dir-v1282/"
-        },
-        {
-          "title": "PilotEdit Pro v21.6",
-          "url": "https://nsaneforums.com/topic/490640-pilotedit-pro-v216/"
-        },
-        {
-          "title": "Tails v7.15.1",
-          "url": "https://nsaneforums.com/topic/490639-tails-v7151/"
-        },
-        {
-          "title": "Rain Cleaner Pro v2.16",
-          "url": "https://nsaneforums.com/topic/490638-rain-cleaner-pro-v216/"
-        },
-        {
-          "title": "Syncovery Premium v12.9.7.100",
-          "url": "https://nsaneforums.com/topic/490636-syncovery-premium-v1297100/"
-        },
-        {
-          "title": "OBS Studio 33.0.0",
-          "url": "https://nsaneforums.com/topic/490634-obs-studio-3300/"
-        },
-        {
-          "title": "XRecode 3 v1.192",
-          "url": "https://nsaneforums.com/topic/490625-xrecode-3-v1192/"
-        },
-        {
-          "title": "Windows PowerShell v7.6.8",
-          "url": "https://nsaneforums.com/topic/490628-windows-powershell-v768/"
-        },
-        {
-          "title": "Folder Guard v26.10.1",
-          "url": "https://nsaneforums.com/topic/490627-folder-guard-v26101/"
-        },
-        {
-          "title": "Nitro PDF Pro v26.2.5.1 Enterprise x64",
-          "url": "https://nsaneforums.com/topic/490619-nitro-pdf-pro-v26251-enterprise-x64/"
-        },
-        {
-          "title": "Mp3tag 3.37 Beta 4",
-          "url": "https://nsaneforums.com/topic/490620-mp3tag-337-beta-4/"
+          "title": "Brave Browser 1.98.60 + Portable",
+          "url": "https://nsaneforums.com/topic/490656-brave-browser-19860-portable/"
         }
       ]
     },
