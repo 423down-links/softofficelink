@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T07:51:25.405188+00:00",
+  "updated_at": "2026-10-24T08:06:13.353528+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793433045&P2=404&P3=2&P4=Z0DXjMt5GpqRUSNh9KQhn7td6oKbYNKq5BxnmiHteSq8ZRmlTvIti7wFrlY%2bqpLEtKIqbT3t6EdYpPyAI8Kxig%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793433045&P2=404&P3=2&P4=Z0DXjMt5GpqRUSNh9KQhn7td6oKbYNKq5BxnmiHteSq8ZRmlTvIti7wFrlY%2bqpLEtKIqbT3t6EdYpPyAI8Kxig%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793433928&P2=404&P3=2&P4=OOBKas7nr6KUEhrnII1uaoY%2bDaeUb%2bnOWbzXXg0IiYKtZjEaz3M4P%2fY2B7Ragjsl4EgDf5tBkPiJFUu03f2Z0Q%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793433928&P2=404&P3=2&P4=OOBKas7nr6KUEhrnII1uaoY%2bDaeUb%2bnOWbzXXg0IiYKtZjEaz3M4P%2fY2B7Ragjsl4EgDf5tBkPiJFUu03f2Z0Q%3d%3d",
       "downloads": [],
       "size": 208330576,
       "size_mb": 198.7,
@@ -1701,6 +1701,30 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "Spotify ADS Remover 1.3.7.2752 Multilingual Portable",
+          "url": "https://downtopc.com/344064-spotify-ads-remover-1372752-multilingual-portable.html"
+        },
+        {
+          "title": "Kaspersky Rescue Disk 24.0.7.0 (23.10.2026)",
+          "url": "https://downtopc.com/344063-kaspersky-rescue-disk-24070-23102026.html"
+        },
+        {
+          "title": "iPixSoft Flash Gallery Factory 3.8.1 Multilingual Portable",
+          "url": "https://downtopc.com/344062-ipixsoft-flash-gallery-factory-381-multilingual-portable.html"
+        },
+        {
+          "title": "Any Video Downloader Pro 10.4.30 (x64)",
+          "url": "https://downtopc.com/344061-any-video-downloader-pro-10430-x64.html"
+        },
+        {
+          "title": "Rain Cleaner Pro 2.16.0 Multilingual Portable",
+          "url": "https://downtopc.com/344060-rain-cleaner-pro-2160-multilingual-portable.html"
+        },
+        {
+          "title": "Rain Cleaner Pro 2.16.0 Multilingual",
+          "url": "https://downtopc.com/344059-rain-cleaner-pro-2160-multilingual.html"
+        },
+        {
           "title": "Tangible Software Solutions 10.2026 (x64)",
           "url": "https://downtopc.com/344058-tangible-software-solutions-102026-x64.html"
         },
@@ -1768,16 +1792,28 @@
       "official_site": "https://nsaneforums.com/",
       "update_items": [
         {
+          "title": "HitmanPro.Alert v3.22.1.2073",
+          "url": "https://nsaneforums.com/topic/490630-hitmanproalert-v32212073/"
+        },
+        {
+          "title": "PilotEdit Pro v21.6",
+          "url": "https://nsaneforums.com/topic/490640-pilotedit-pro-v216/"
+        },
+        {
+          "title": "Tails v7.15.1",
+          "url": "https://nsaneforums.com/topic/490639-tails-v7151/"
+        },
+        {
+          "title": "Rain Cleaner Pro v2.16",
+          "url": "https://nsaneforums.com/topic/490638-rain-cleaner-pro-v216/"
+        },
+        {
           "title": "Syncovery Premium v12.9.7.100",
           "url": "https://nsaneforums.com/topic/490636-syncovery-premium-v1297100/"
         },
         {
           "title": "OBS Studio 33.0.0",
           "url": "https://nsaneforums.com/topic/490634-obs-studio-3300/"
-        },
-        {
-          "title": "HitmanPro.Alert v3.22.1.2073",
-          "url": "https://nsaneforums.com/topic/490630-hitmanproalert-v32212073/"
         },
         {
           "title": "XRecode 3 v1.192",
