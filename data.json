@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T22:45:41.324545+00:00",
+  "updated_at": "2026-10-24T23:06:00.598232+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793486697&P2=404&P3=2&P4=YZ7alvD1d02WYwpTmXLKOSrlBlx%2bZqWOB9ZcXB%2fuDQrL9aJB6mxOVhA6oV9Gyl5aXK1uYW6%2bUUQ5OUbLFrWbsA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793486697&P2=404&P3=2&P4=YZ7alvD1d02WYwpTmXLKOSrlBlx%2bZqWOB9ZcXB%2fuDQrL9aJB6mxOVhA6oV9Gyl5aXK1uYW6%2bUUQ5OUbLFrWbsA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793487938&P2=404&P3=2&P4=gnPMFJBbiu5CzBEdPsELN5phX8s2IKRgUGK4EUIRx%2fpf%2fvQ49X9rQvWuGEOfccf9gd7gT8wP7Xvx1twraYTsBQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793487938&P2=404&P3=2&P4=gnPMFJBbiu5CzBEdPsELN5phX8s2IKRgUGK4EUIRx%2fpf%2fvQ49X9rQvWuGEOfccf9gd7gT8wP7Xvx1twraYTsBQ%3d%3d",
       "downloads": [],
       "size": 208330576,
       "size_mb": 198.7,
@@ -2278,34 +2278,41 @@
       "icon": "J",
       "icon_color": "linear-gradient(135deg, #f89820, #e76f00)",
       "category": "运行环境",
-      "version": "27.0.1.0.2",
+      "version": "27.0.1.0.3",
       "download_url": "https://www.oracle.com/java/technologies/downloads/",
       "download_url_with_params": "https://www.oracle.com/java/technologies/downloads/",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-10-21",
+      "last_modified": "2026-10-24",
       "md5": "",
       "official_site": "https://oracle.com/java/technologies/java-se-glance.html",
       "update_items": [],
       "version_list": [
         {
-          "name": "Java SE Development Kit 25.0.4.1",
-          "version": "25.0.4.1",
+          "name": "Java SE Development Kit 27.0.1.0.3",
+          "version": "27.0.1.0.3",
+          "tag": "GA",
+          "official_site": "https://oracle.com/java/technologies/javase/27u-relnotes.html",
+          "download_url": "https://www.oracle.com/java/technologies/downloads/#jdk27-windows"
+        },
+        {
+          "name": "Java SE Development Kit 25.0.5.0.3",
+          "version": "25.0.5.0.3",
           "tag": "LTS",
           "official_site": "https://oracle.com/java/technologies/javase/25u-relnotes.html",
           "download_url": "https://www.oracle.com/java/technologies/downloads/#jdk25-windows"
         },
         {
-          "name": "Java SE Development Kit 21.0.12.1",
-          "version": "21.0.12.1",
+          "name": "Java SE Development Kit 21.0.13.0.3",
+          "version": "21.0.13.0.3",
           "tag": "LTS",
           "official_site": "https://oracle.com/java/technologies/javase/21u-relnotes.html",
           "download_url": "https://www.oracle.com/cn/java/technologies/downloads/#java21"
         },
         {
-          "name": "Java SE Development Kit 8.0 Update 503",
-          "version": "8.0 Update 503",
+          "name": "Java SE Development Kit 8.0 Update 511",
+          "version": "8.0 Update 511",
           "tag": "LTS",
           "official_site": "https://oracle.com/java/technologies/javase/8u-relnotes.html",
           "download_url": "https://www.oracle.com/java/technologies/downloads/#java8"
