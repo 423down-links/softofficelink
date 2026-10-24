@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T02:51:16.745648+00:00",
+  "updated_at": "2026-10-24T03:05:56.806125+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793415041&P2=404&P3=2&P4=SemwJT0uPWU6SVosa0Uvq5wvNOwgjT3V80pUH7f4UphYHRxmSzfPO061I0Ews39cu2wHu4TdDDZ0Z3LhA7Us%2fg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793415041&P2=404&P3=2&P4=SemwJT0uPWU6SVosa0Uvq5wvNOwgjT3V80pUH7f4UphYHRxmSzfPO061I0Ews39cu2wHu4TdDDZ0Z3LhA7Us%2fg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793415935&P2=404&P3=2&P4=LNfdhrdg%2b7la6c0TS2XdtboOdsssEBBru1tI7L4zklzPZNKuzC5XFTHYHHA0m32zf9tiIVIHU3RA3G8IJO3OaA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793415935&P2=404&P3=2&P4=LNfdhrdg%2b7la6c0TS2XdtboOdsssEBBru1tI7L4zklzPZNKuzC5XFTHYHHA0m32zf9tiIVIHU3RA3G8IJO3OaA%3d%3d",
       "downloads": [],
       "size": 208330576,
       "size_mb": 198.7,
@@ -1876,6 +1876,14 @@
       "official_site": "https://nsaneforums.com/",
       "update_items": [
         {
+          "title": "Syncovery Premium v12.9.7.100",
+          "url": "https://nsaneforums.com/topic/490636-syncovery-premium-v1297100/"
+        },
+        {
+          "title": "OBS Studio 33.0.0",
+          "url": "https://nsaneforums.com/topic/490634-obs-studio-3300/"
+        },
+        {
           "title": "HitmanPro.Alert v3.22.1.2073",
           "url": "https://nsaneforums.com/topic/490630-hitmanproalert-v32212073/"
         },
@@ -1894,6 +1902,10 @@
         {
           "title": "Nitro PDF Pro v26.2.5.1 Enterprise x64",
           "url": "https://nsaneforums.com/topic/490619-nitro-pdf-pro-v26251-enterprise-x64/"
+        },
+        {
+          "title": "Mp3tag 3.37 Beta 4",
+          "url": "https://nsaneforums.com/topic/490620-mp3tag-337-beta-4/"
         }
       ]
     },
