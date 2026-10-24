@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T05:51:29.713115+00:00",
+  "updated_at": "2026-10-24T06:06:04.237444+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793425851&P2=404&P3=2&P4=je6vjsLvqv37pXp3szojgSkpKa48VaeoAWlzPD6dEMpNEgkU9CWWSDLe%2fwCuphxhHsNy%2bgnUeFKU8PqMmIOxqA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793425851&P2=404&P3=2&P4=je6vjsLvqv37pXp3szojgSkpKa48VaeoAWlzPD6dEMpNEgkU9CWWSDLe%2fwCuphxhHsNy%2bgnUeFKU8PqMmIOxqA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793426737&P2=404&P3=2&P4=f4NdFg7DIbUqVDzcfpUmT0JCeDohFOYVUmFRiciTIYC4eNRfUBn6zmsvgsufDKXh5B6qUUEKfN%2f0jTLJ334phg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793426737&P2=404&P3=2&P4=f4NdFg7DIbUqVDzcfpUmT0JCeDohFOYVUmFRiciTIYC4eNRfUBn6zmsvgsufDKXh5B6qUUEKfN%2f0jTLJ334phg%3d%3d",
       "downloads": [],
       "size": 208330576,
       "size_mb": 198.7,
@@ -1690,171 +1690,39 @@
       "icon": "D",
       "icon_color": "linear-gradient(135deg, #2e7d32, #1b5e20)",
       "category": "资源站",
-      "version": "2026-10-23",
+      "version": "2026-10-24",
       "download_url": "https://downtopc.com/software/",
       "download_url_with_params": "https://downtopc.com/software/",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-10-23",
+      "last_modified": "2026-10-24",
       "md5": "",
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
-          "title": "Cloanto C64 Forever 11.3.2 Plus Edition",
-          "url": "https://downtopc.com/344045-cloanto-c64-forever-1132-plus-edition.html"
+          "title": "iPixSoft Flash ScreenSaver Maker 5.0.1 Multilingual",
+          "url": "https://downtopc.com/344052-ipixsoft-flash-screensaver-maker-501-multilingual.html"
         },
         {
-          "title": "Abelssoft X-Loader 2026 v6.3 Multilingual Portable",
-          "url": "https://downtopc.com/344043-abelssoft-x-loader-2026-v63-multilingual-portable.html"
+          "title": "ThunderSoft Slideshow Factory 6.7.1 Multilingual",
+          "url": "https://downtopc.com/344051-thundersoft-slideshow-factory-671-multilingual.html"
         },
         {
-          "title": "XRecode 3 v1.192 (x64) Multilingual Portable",
-          "url": "https://downtopc.com/344042-xrecode-3-v1192-x64-multilingual-portable.html"
+          "title": "ThunderSoft Photo Gallery Creator 4.7.1 Multilingual",
+          "url": "https://downtopc.com/344050-thundersoft-photo-gallery-creator-471-multilingual.html"
         },
         {
-          "title": "HitmanPro.Alert 3.22.1 Build 2073 Multilingual",
-          "url": "https://downtopc.com/344041-hitmanproalert-3221-build-2073-multilingual.html"
+          "title": "iPixSoft Flash Gallery Factory 3.8.1 Multilingual",
+          "url": "https://downtopc.com/344049-ipixsoft-flash-gallery-factory-381-multilingual.html"
         },
         {
-          "title": "XRecode 3 v1.192 (x64) Multilingual",
-          "url": "https://downtopc.com/344039-xrecode-3-v1192-x64-multilingual.html"
+          "title": "iPixSoft Flash Slideshow Creator 7.0.1 Multilingual",
+          "url": "https://downtopc.com/344048-ipixsoft-flash-slideshow-creator-701-multilingual.html"
         },
         {
-          "title": "Abelssoft X-Loader 2026 v6.3 Multilingual",
-          "url": "https://downtopc.com/344038-abelssoft-x-loader-2026-v63-multilingual.html"
-        },
-        {
-          "title": "Oryx Digital PerfectTablePlan Professional 7.3.1",
-          "url": "https://downtopc.com/344036-oryx-digital-perfecttableplan-professional-731.html"
-        },
-        {
-          "title": "Nitro PDF Pro 26.2.5.1 (x64) Enterprise Multilingual Portable",
-          "url": "https://downtopc.com/344035-nitro-pdf-pro-26251-x64-enterprise-multilingual-portable.html"
-        },
-        {
-          "title": "Nitro PDF Pro 26.2.5.1 (x64) Enterprise Multilingual",
-          "url": "https://downtopc.com/344034-nitro-pdf-pro-26251-x64-enterprise-multilingual.html"
-        },
-        {
-          "title": "Bootstrap Studio 9.0.1 (x64) Portable",
-          "url": "https://downtopc.com/344032-bootstrap-studio-901-x64-portable.html"
-        },
-        {
-          "title": "Bootstrap Studio 9.0.1 (x64)",
-          "url": "https://downtopc.com/344031-bootstrap-studio-901-x64.html"
-        },
-        {
-          "title": "ReviverSoft PC Reviver 4.1.0.12 Multilingual Portable",
-          "url": "https://downtopc.com/344030-reviversoft-pc-reviver-41012-multilingual-portable.html"
-        },
-        {
-          "title": "ReviverSoft PC Reviver 4.1.0.12 Multilingual",
-          "url": "https://downtopc.com/344029-reviversoft-pc-reviver-41012-multilingual.html"
-        },
-        {
-          "title": "Icecream Slideshow Maker Pro 5.21 Multilingual Portable",
-          "url": "https://downtopc.com/344028-icecream-slideshow-maker-pro-521-multilingual-portable.html"
-        },
-        {
-          "title": "Icecream Video Converter Pro 1.50 Multilingual Portable",
-          "url": "https://downtopc.com/344027-icecream-video-converter-pro-150-multilingual-portable.html"
-        },
-        {
-          "title": "Icecream Photo Editor Pro 1.55 Multilingual Portable",
-          "url": "https://downtopc.com/344026-icecream-photo-editor-pro-155-multilingual-portable.html"
-        },
-        {
-          "title": "Icecream Video Editor Pro 3.27 Multilingual Portable",
-          "url": "https://downtopc.com/344025-icecream-video-editor-pro-327-multilingual-portable.html"
-        },
-        {
-          "title": "Icecream PDF Editor Pro 3.34 Multilingual Portable",
-          "url": "https://downtopc.com/344024-icecream-pdf-editor-pro-334-multilingual-portable.html"
-        },
-        {
-          "title": "Icecream Ebook Reader Pro 6.57 Multilingual Portable",
-          "url": "https://downtopc.com/344023-icecream-ebook-reader-pro-657-multilingual-portable.html"
-        },
-        {
-          "title": "Icecream Screen Recorder Pro 7.49 (x64) Multilingual Portable",
-          "url": "https://downtopc.com/344022-icecream-screen-recorder-pro-749-x64-multilingual-portable.html"
-        },
-        {
-          "title": "Icecream PDF Candy Desktop Pro 3.21 Multilingual Portable",
-          "url": "https://downtopc.com/344021-icecream-pdf-candy-desktop-pro-321-multilingual-portable.html"
-        },
-        {
-          "title": "MOTU Digital Performer 12.0.1",
-          "url": "https://downtopc.com/344020-motu-digital-performer-1201.html"
-        },
-        {
-          "title": "Icecream Screen Recorder Pro 7.49 (x64) Multilingual",
-          "url": "https://downtopc.com/344019-icecream-screen-recorder-pro-749-x64-multilingual.html"
-        },
-        {
-          "title": "Icecream Ebook Reader Pro 6.57 Multilingual",
-          "url": "https://downtopc.com/344018-icecream-ebook-reader-pro-657-multilingual.html"
-        },
-        {
-          "title": "Icecream PDF Candy Desktop Pro 3.21 Multilingual",
-          "url": "https://downtopc.com/344017-icecream-pdf-candy-desktop-pro-321-multilingual.html"
-        },
-        {
-          "title": "Icecream Photo Editor Pro 1.55 Multilingual",
-          "url": "https://downtopc.com/344016-icecream-photo-editor-pro-155-multilingual.html"
-        },
-        {
-          "title": "Icecream Slideshow Maker Pro 5.21 Multilingual",
-          "url": "https://downtopc.com/344015-icecream-slideshow-maker-pro-521-multilingual.html"
-        },
-        {
-          "title": "Icecream Video Converter Pro 1.50 Multilingual",
-          "url": "https://downtopc.com/344014-icecream-video-converter-pro-150-multilingual.html"
-        },
-        {
-          "title": "Icecream PDF Editor Pro 3.34 Multilingual",
-          "url": "https://downtopc.com/344013-icecream-pdf-editor-pro-334-multilingual.html"
-        },
-        {
-          "title": "Icecream Video Editor Pro 3.27 Multilingual",
-          "url": "https://downtopc.com/344012-icecream-video-editor-pro-327-multilingual.html"
-        },
-        {
-          "title": "CareUEyes Pro 2.7 Multilingual Portable",
-          "url": "https://downtopc.com/344009-careueyes-pro-27-multilingual-portable.html"
-        },
-        {
-          "title": "CareUEyes Pro 2.7 Multilingual",
-          "url": "https://downtopc.com/344008-careueyes-pro-27-multilingual.html"
-        },
-        {
-          "title": "MediaHuman YouTube Downloader 3.9.24 (2010) Multilingual (x64) Portable",
-          "url": "https://downtopc.com/344007-mediahuman-youtube-downloader-3924-2010-multilingual-x64-portable.html"
-        },
-        {
-          "title": "MediaHuman YouTube Downloader 3.9.24 (2010) Multilingual (x64)",
-          "url": "https://downtopc.com/344006-mediahuman-youtube-downloader-3924-2010-multilingual-x64.html"
-        },
-        {
-          "title": "TickTick Premium 8.2.4 Multilingual",
-          "url": "https://downtopc.com/344005-ticktick-premium-824-multilingual.html"
-        },
-        {
-          "title": "Calibre 9.17.0 (x64) Multilingual Portable",
-          "url": "https://downtopc.com/344003-calibre-9170-x64-multilingual-portable.html"
-        },
-        {
-          "title": "ExtraMAME 26.10 (x64) Multilingual",
-          "url": "https://downtopc.com/344002-extramame-2610-x64-multilingual.html"
-        },
-        {
-          "title": "Syncovery Premium 12.9.6.99 Multilingual",
-          "url": "https://downtopc.com/344001-syncovery-premium-129699-multilingual.html"
-        },
-        {
-          "title": "MusConv Lifetime 4.10.484 Multilingual",
-          "url": "https://downtopc.com/344000-musconv-lifetime-410484-multilingual.html"
+          "title": "iPixSoft Video Slideshow Maker Deluxe 6.0.1 Multilingual",
+          "url": "https://downtopc.com/344047-ipixsoft-video-slideshow-maker-deluxe-601-multilingual.html"
         }
       ]
     },
