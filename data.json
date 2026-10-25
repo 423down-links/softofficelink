@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T19:51:26.515141+00:00",
+  "updated_at": "2026-10-25T20:05:56.780883+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793562639&P2=404&P3=2&P4=Zihv3ySySOrahwEW8R4d0ei2WW%2f4WnMagLViQamqLcrxuR0IGV1mlJMSDl9%2fa4vpEO3EDhSh861CSR1L8NdjTA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793562639&P2=404&P3=2&P4=Zihv3ySySOrahwEW8R4d0ei2WW%2f4WnMagLViQamqLcrxuR0IGV1mlJMSDl9%2fa4vpEO3EDhSh861CSR1L8NdjTA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793563534&P2=404&P3=2&P4=VtMGqj4gWFv0S7jyHPrq0nexl4Fq4CREvhoa1lYJ2VWcvVBFCoTZ0ABi%2b0z62weqMrzVhmjbjPX%2bgdAO4oaIdQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793563534&P2=404&P3=2&P4=VtMGqj4gWFv0S7jyHPrq0nexl4Fq4CREvhoa1lYJ2VWcvVBFCoTZ0ABi%2b0z62weqMrzVhmjbjPX%2bgdAO4oaIdQ%3d%3d",
       "downloads": [],
       "size": 208330576,
       "size_mb": 198.7,
@@ -1820,6 +1820,10 @@
       "official_site": "https://nsaneforums.com/",
       "update_items": [
         {
+          "title": "Mobatek MobaXterm Professional 26.6.5560",
+          "url": "https://nsaneforums.com/topic/490699-mobatek-mobaxterm-professional-2665560/"
+        },
+        {
           "title": "Ascomp KeyCtrl Pro v2.203",
           "url": "https://nsaneforums.com/topic/490702-ascomp-keyctrl-pro-v2203/"
         },
@@ -1828,12 +1832,12 @@
           "url": "https://nsaneforums.com/topic/490701-ascomp-f-rename-pro-v3002/"
         },
         {
-          "title": "Mobatek MobaXterm Professional 26.6.5560",
-          "url": "https://nsaneforums.com/topic/490699-mobatek-mobaxterm-professional-2665560/"
-        },
-        {
           "title": "Argus Cleaner 3.3.0",
           "url": "https://nsaneforums.com/topic/490696-argus-cleaner-330/"
+        },
+        {
+          "title": "Executor 2.4.5",
+          "url": "https://nsaneforums.com/topic/490704-executor-245/"
         }
       ]
     },
@@ -1974,7 +1978,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-10-11",
       "md5": "",
