@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T16:51:05.833189+00:00",
+  "updated_at": "2026-10-25T17:05:57.501030+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793551839&P2=404&P3=2&P4=A3RZM7e0uQ5DCWVvYjPMIxpCbH1kAOcsn7qk7%2fWyCJoHojZxDfUjfbQX2F%2fMuQG0V%2fLAveK6VfIDeCRjVe40xg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793551839&P2=404&P3=2&P4=A3RZM7e0uQ5DCWVvYjPMIxpCbH1kAOcsn7qk7%2fWyCJoHojZxDfUjfbQX2F%2fMuQG0V%2fLAveK6VfIDeCRjVe40xg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793552736&P2=404&P3=2&P4=aWIqj9FO6Xhe24ffCUz%2fsqZImp6woF%2bMERQn%2fviU%2bQwpkdeKhcqsDKPbYA0PcrkwbXVDzB5zV6iFfzsfUJFGcA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793552736&P2=404&P3=2&P4=aWIqj9FO6Xhe24ffCUz%2fsqZImp6woF%2bMERQn%2fviU%2bQwpkdeKhcqsDKPbYA0PcrkwbXVDzB5zV6iFfzsfUJFGcA%3d%3d",
       "downloads": [],
       "size": 208330576,
       "size_mb": 198.7,
@@ -1701,6 +1701,10 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "MobaXterm 26.6",
+          "url": "https://downtopc.com/344116-mobaxterm-266.html"
+        },
+        {
           "title": "reaConverter Pro 8.0.256 Multilingual",
           "url": "https://downtopc.com/344115-reaconverter-pro-80256-multilingual.html"
         },
@@ -1793,59 +1797,19 @@
       "icon": "N",
       "icon_color": "linear-gradient(135deg, #4a6fa5, #2b3f63)",
       "category": "资源站",
-      "version": "2026-10-25",
+      "version": "2026-10-26",
       "download_url": "https://nsaneforums.com/nsane.down/",
       "download_url_with_params": "https://nsaneforums.com/nsane.down/",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-10-25",
+      "last_modified": "2026-10-26",
       "md5": "",
       "official_site": "https://nsaneforums.com/",
       "update_items": [
         {
-          "title": "WiFi Explorer Pro v1.4",
-          "url": "https://nsaneforums.com/topic/490666-wifi-explorer-pro-v14/"
-        },
-        {
-          "title": "Movavi Video Editor v27.1 (x64)",
-          "url": "https://nsaneforums.com/topic/490672-movavi-video-editor-v271-x64/"
-        },
-        {
-          "title": "PDF Annotator v10.0.0.1016 (x64)",
-          "url": "https://nsaneforums.com/topic/490670-pdf-annotator-v10001016-x64/"
-        },
-        {
-          "title": "Hydra Download Manager v1.2.0",
-          "url": "https://nsaneforums.com/topic/490667-hydra-download-manager-v120/"
-        },
-        {
-          "title": "Text Editor Pro 37.4.0",
-          "url": "https://nsaneforums.com/topic/490662-text-editor-pro-3740/"
-        },
-        {
-          "title": "WinRepairSuite v2.7",
-          "url": "https://nsaneforums.com/topic/490660-winrepairsuite-v27/"
-        },
-        {
-          "title": "Net Eagle v3.1",
-          "url": "https://nsaneforums.com/topic/490658-net-eagle-v31/"
-        },
-        {
-          "title": "Cockos REAPER v7.83",
-          "url": "https://nsaneforums.com/topic/490657-cockos-reaper-v783/"
-        },
-        {
-          "title": "Brave Browser 1.98.60 + Portable",
-          "url": "https://nsaneforums.com/topic/490656-brave-browser-19860-portable/"
-        },
-        {
-          "title": "VeraCrypt 1.26.30",
-          "url": "https://nsaneforums.com/topic/490695-veracrypt-12630/"
-        },
-        {
-          "title": "Maxthon 7.5.3.3400",
-          "url": "https://nsaneforums.com/topic/490674-maxthon-7533400/"
+          "title": "Argus Cleaner 3.3.0",
+          "url": "https://nsaneforums.com/topic/490696-argus-cleaner-330/"
         }
       ]
     },
@@ -1986,7 +1950,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-10-11",
       "md5": "",
