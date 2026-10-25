@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T12:51:13.508125+00:00",
+  "updated_at": "2026-10-25T13:06:34.150224+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793537440&P2=404&P3=2&P4=mg94QOEfgb6zaLQUJhjlk3XUddo7hLziLk5yt%2fYp3O0YTG3SJ%2bvp%2fKHddSwcvzF5bT8ppyyp0C0pQmnQwC0wOg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793537440&P2=404&P3=2&P4=mg94QOEfgb6zaLQUJhjlk3XUddo7hLziLk5yt%2fYp3O0YTG3SJ%2bvp%2fKHddSwcvzF5bT8ppyyp0C0pQmnQwC0wOg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793538335&P2=404&P3=2&P4=esQY%2f04x3zZ5dcU3296g%2by%2b19bXuZ%2fNRzA9DnaanJOVuMLUreqRPnZPokFBYNA9unYLgapBRsE6ZB0uCmYyjbg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793538335&P2=404&P3=2&P4=esQY%2f04x3zZ5dcU3296g%2by%2b19bXuZ%2fNRzA9DnaanJOVuMLUreqRPnZPokFBYNA9unYLgapBRsE6ZB0uCmYyjbg%3d%3d",
       "downloads": [],
       "size": 208330576,
       "size_mb": 198.7,
@@ -1701,6 +1701,22 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "KeyCtrl Professional 2.203 Multilingual Portable",
+          "url": "https://downtopc.com/344114-keyctrl-professional-2203-multilingual-portable.html"
+        },
+        {
+          "title": "KeyCtrl Professional 2.203 Multilingual",
+          "url": "https://downtopc.com/344113-keyctrl-professional-2203-multilingual.html"
+        },
+        {
+          "title": "PDF-compress Professional 2.001 Multilingual Portable",
+          "url": "https://downtopc.com/344112-pdf-compress-professional-2001-multilingual-portable.html"
+        },
+        {
+          "title": "PDF-compress Professional 2.001 Multilingual",
+          "url": "https://downtopc.com/344111-pdf-compress-professional-2001-multilingual.html"
+        },
+        {
           "title": "Carifred Ultra Virus Killer Pro 11.10.29",
           "url": "https://downtopc.com/344110-carifred-ultra-virus-killer-pro-111029.html"
         },
@@ -1818,6 +1834,10 @@
         {
           "title": "Brave Browser 1.98.60 + Portable",
           "url": "https://nsaneforums.com/topic/490656-brave-browser-19860-portable/"
+        },
+        {
+          "title": "Maxthon 7.5.3.3400",
+          "url": "https://nsaneforums.com/topic/490674-maxthon-7533400/"
         }
       ]
     },
@@ -1958,7 +1978,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-10-11",
       "md5": "",
