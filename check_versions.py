@@ -635,17 +635,22 @@ PRODUCTS = [
         'category': '视频编辑',
         'detect_type': 'cyberlink',
         'cyberlink_product_id': 4,
-        # 官方版本源排查结论（2026-10-15 复测）：试用下载器 info.ini 的
-        # DisplayBuildNumber=25.0.0904.0（VDE260910-01）即试用通道当前基线，官方
-        # 新构建 25.0.1007.0（Ultimate 零售版，SR_No=VDE261008-02，2026-10-08）
-        # 尚未铺到匿名公开通道。用官方 thank-you API 轮询做根源探测（官方换包即
-        # 自动对齐），配合 base_version/version_display 防降级：探测值不比试用基线
-        # 新 → 显示 version_display；官方铺开 1007 后自动对齐。
-        'version': '25.0.1007.0',
+        # 版本来源说明（2026-10-25 复测，根治「版本长期停在 0904/1007」）：
+        #  - 官方 thank-you API → 试用下载器直链 → info.ini 的 DisplayBuildNumber，
+        #    这是「官方试用通道当前基线」，实测长期停在 25.0.0904.0（VDE260910-01）；
+        #    零售新构建（如 Ultimate 2027 的 25.0.1019.0）只走买断/零售通道，
+        #    匿名官方接口取不到，support 补丁中心也只有 2025 及更早的产品线；
+        #  - 零售最新版改由 nsane「Software Updates」板块标题解析（cyberlink_retail_nsane）：
+        #    板块惯例是「一个软件更新开一个新帖」，标题即精确版本号，列表页匿名可读；
+        #    官方试用通道铺开新版本后自动取更大的值对齐；
+        #  - 不再写死 version_display：写死等于把版本钉在人工核实过的那个数上，
+        #    官方换包后不会自动跟进，这正是长期停在旧版的原因。
+        'cyberlink_retail_nsane': True,
+        'cyberlink_retail_keywords': ['powerdirector'],
+        'version': '25.0.0904.0',
         'base_version': '25.0.0904.0',
-        'version_display': '25.0.1007.0',
         'size': 691 * 1024 * 1024,
-        'date': '2026-10-08',
+        'date': '2026-09-14',
         'skip_md5': True,
         'download_url': 'https://build.cyberlink.com/Retail/PowerDirector/CGQC8ZH75VM6/PowerDirector_DirectorSuite365.exe',
         'official_site': 'https://www.cyberlink.com/products/powerdirector-video-editing-software/features_en_US.html',
@@ -656,21 +661,24 @@ PRODUCTS = [
         'icon': 'PhD',
         'icon_color': 'linear-gradient(135deg, #8e44ad, #3498db)',
         'category': '图像处理',
-        # 官方版本源排查结论（2026-10-15 复测）：
+        # 官方版本源排查结论（2026-10-25 复测）：
         #  - 试用下载器（thank-you API → user-add.do → downloader）info.ini 的
         #    DisplayBuildNumber=17.6.1826.0 是安装框架版本，≠ 产品版本 18.x（两次复测一致）；
         #  - build.cyberlink.com 零售直链 Y2QIW32JB74CH 的 S3 对象最后修改仍为 2026-09-08，
-        #    实际还是 0908 包；官方新构建 18.0.1011.0 只走订阅 updater 通道分发；
-        #  - support 补丁中心 prodId=211 只列 2018 年旧补丁；liveupdate /b/b/r 只剩广告接口。
-        # 结论：匿名公开接口均无当前构建 → 用官方 thank-you API 轮询做根源探测（官方换包即自动
-        # 对齐），配合 base_version/version_display 防降级，展示已核实的 18.0.1011.0。
+        #    实际还是 0908 包；官方新构建只走订阅 updater 通道分发；
+        #  - support 补丁中心 prodId=211 只列旧补丁；liveupdate /b/b/r 只剩广告接口。
+        # 结论：匿名官方接口拿不到当前构建 → 用 nsane 板块标题取零售最新版，
+        # 官方通道铺开后自动取更大的值对齐（不再写死 version_display）。
         'detect_type': 'cyberlink',
         'cyberlink_product_id': 211,
+        'cyberlink_retail_nsane': True,
+        'cyberlink_retail_keywords': ['photodirector'],
+        # 试用通道的 DisplayBuildNumber 是安装框架版本（17.6.x），不能当产品版本号
+        'cyberlink_trial_version_trusted': False,
         'base_version': '18.0.1011.0',
-        'version_display': '18.0.1011.0',
         'version': '18.0.1011.0',
         'size': 670 * 1024 * 1024,
-        'date': '2026-10-14',
+        'date': '2026-09-08',
         'skip_md5': True,
         'download_url': 'https://build.cyberlink.com/Retail/PhotoDirector/Y2QIW32JB74CH/PhotoDirector_DirectorSuite365.exe',
         'official_site': 'https://www.cyberlink.com/products/photodirector/features_en_US.html',
@@ -3527,14 +3535,76 @@ def _cyberlink_retail_redeem(key, lang='ENU'):
     return out
 
 
+# CyberLink 零售版（Ultimate/Ultra 买断版）版本源：官方匿名通道只铺「试用」基线，
+# 零售新构建（如 25.0.1019.0）只走买断/零售通道，官方 thank-you API 恒返回试用基线
+# （实测 PowerDirector 试用通道长期停在 25.0.0904.0），靠 version_display 硬编码必然滞后。
+#
+# 兜底源用 nsane 论坛「Software Updates」板块标题：该板块惯例是「一个软件更新开一个新帖」，
+# 标题即精确版本号（如 "CyberLink PowerDirector Ultimate 2027 v25.0.1019"），
+# 列表页匿名可读（正文需登录）。取标题里最大版本号作为零售最新版本。
+CYBERLINK_RETAIL_NSANE_FORUM = 'https://nsaneforums.com/forum/48-software-updates/'
+
+
+def _cyberlink_retail_from_nsane(product):
+    """从 nsane 论坛板块列表页标题解析零售版最新版本号。
+
+    返回 (version, date, url)；无结果返回 ('', '', '')。
+    只取「匹配本产品」的帖子标题，避免把别的软件的版本号误当成本产品版本。
+    """
+    # 标题里要匹配的产品关键词（缺省用产品名）
+    keywords = product.get('cyberlink_retail_keywords') or [product.get('name', '')]
+    keywords = [str(k).strip().lower() for k in keywords if str(k).strip()]
+    if not keywords:
+        return '', '', ''
+
+    html_text = _fetch_site_html(CYBERLINK_RETAIL_NSANE_FORUM)
+    if not html_text:
+        return '', '', ''
+
+    best_ver = ''
+    best_date = ''
+    best_url = ''
+    # 板块列表页每行：<a href='https://nsaneforums.com/topic/xxx-title' title='标题'>
+    for m in re.finditer(
+            r"<a href='(https://nsaneforums\.com/topic/[^']+)'[^>]*title='([^']*)'", html_text):
+        url = m.group(1)
+        title = html.unescape(m.group(2)).strip()
+        low = title.lower()
+        if not any(k in low for k in keywords):
+            continue
+        # 标题里的 4 段版本号，如 "v25.0.1019" / "25.0.1019.0"
+        vm = re.search(r'(\d+)\.(\d+)\.(\d{4})(?:\.(\d+))?', title)
+        if not vm:
+            continue
+        major, minor, build, patch = vm.group(1), vm.group(2), vm.group(3), vm.group(4)
+        ver = f'{major}.{minor}.{build}.{patch or "0"}'
+        if not best_ver or _ver_newer(ver, best_ver):
+            best_ver = ver
+            best_url = url
+            # 该行所属 <li> 块里第一个 <time> 是发帖时间（板块惯例：一个更新一个新帖）
+            blk_start = html_text.rfind("data-rowID=", 0, m.start())
+            blk_end = html_text.find("data-rowID=", m.start())
+            blk = html_text[blk_start:blk_end if blk_end > 0 else m.start() + 4000]
+            tm = re.search(r"<time datetime='([^']+)'", blk)
+            if tm:
+                d = parse_date(tm.group(1))
+                if d:
+                    best_date = d
+    if best_ver:
+        print(f"  零售版(nsane): {best_ver}" + (f" @ {best_date}" if best_date else ""))
+    return best_ver, best_date, best_url
+
+
 def detect_cyberlink(product):
     """CyberLink 官方版本自动探测（无需硬编码 VID 令牌）。
 
     流程全走官方接口：
       1. /api/download/thank-you-page?ProductId=N  取 buildLink
       2. 跟随 buildLink(user-add.do) 的 302 拿到 build.cyberlink.com 官方下载器直链
-      3. 解出下载器内 info.ini 的 DisplayBuildNumber（= 当前官方产品版本）
-      4. 若配置了 CYBERLINK_RETAIL_KEY，再走零售兑换接口拿买断版（Ultimate/Ultra）直链
+      3. 解出下载器内 info.ini 的 DisplayBuildNumber（= 当前官方试用通道基线版本）
+      4. 零售版版本源（nsane 板块标题）：官方试用通道长期滞后于零售新构建，
+         用它补齐零售最新版，避免靠 version_display 硬编码导致版本永远停在旧版
+      5. 若配置了 CYBERLINK_RETAIL_KEY，再走零售兑换接口拿买断版（Ultimate/Ultra）直链
 
     这样令牌/版本随官方更新自动刷新；下载链接仍用配置的官方离线包。
     """
@@ -3543,6 +3613,7 @@ def detect_cyberlink(product):
     size = product.get('size', 0)
     date = product.get('date', '')
     md5 = product.get('md5', '')
+    trial_version = ''
     pid = product.get('cyberlink_product_id')
     if pid:
         try:
@@ -3564,10 +3635,30 @@ def detect_cyberlink(product):
                 print(f"  官方下载器: {downloader_url[:90]}...")
                 detected = _cyberlink_canon_ver(_cyberlink_extract_build(downloader_url))
                 if detected:
-                    version = detected
-                    print(f"  官方版本: {version}")
+                    trial_version = detected
+                    # PhotoDirector 的 DisplayBuildNumber 是安装框架版本（17.6.x），≠ 产品版本；
+                    # 这种产品不能拿试用值当版本号（配 cyberlink_trial_version_trusted=False）。
+                    if product.get('cyberlink_trial_version_trusted', True):
+                        version = detected
+                        print(f"  官方试用通道版本: {version}")
+                    else:
+                        print(f"  官方试用通道版本(框架版，不作产品版本): {detected}")
         except Exception as e:
             print(f"  ⚠️ CyberLink 官方接口探测失败: {e}")
+
+    # 零售版（Ultimate/Ultra 买断版）最新版本：官方匿名通道只有试用基线，
+    # 零售新构建走不到 → 用 nsane 板块标题补齐，官方通道铺开新版本后自动对齐。
+    if product.get('cyberlink_retail_nsane'):
+        try:
+            retail_ver, retail_date, _retail_url = _cyberlink_retail_from_nsane(product)
+            if retail_ver:
+                if not version or _ver_newer(retail_ver, version):
+                    version = retail_ver
+                    print(f"  ↩️ 采用零售版版本: {version}")
+                if retail_date and (not date or retail_date > date):
+                    date = retail_date
+        except Exception as e:
+            print(f"  ⚠️ 零售版版本源探测失败: {e}")
 
     # 买断版零售通道（产品密钥兑换）：配置了 CYBERLINK_RETAIL_KEY 才启用。
     # 兑换到的直链即「Ultimate / Ultra 买断版」离线包；无密钥时不影响其它探测。
@@ -3601,8 +3692,12 @@ def detect_cyberlink(product):
         exists, dsize, ddate = check_url_follow(download_url)
         if exists and dsize > 0:
             size = dsize
+            # 日期口径：包的 S3 Last-Modified 是「这个直链实际指向的文件的时间」，
+            # 优先用它（配置里的 date 只是人工填的兜底值，不能盖过实测值）；
+            # 零售版发布日晚于包时间时（官方换包滞后）才用发布日，
+            # 否则新版本会被写回旧包的时间。
             if ddate:
-                date = ddate
+                date = max(ddate, date) if date else ddate
     except Exception:
         pass
 

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T11:51:44.389888+00:00",
+  "updated_at": "2026-10-25T12:02:13.897458+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -687,13 +687,13 @@
       "icon": "PD",
       "icon_color": "linear-gradient(135deg, #2c3e50, #f39c12)",
       "category": "视频编辑",
-      "version": "25.0.1007.0",
+      "version": "25.0.1019.0",
       "download_url": "https://build.cyberlink.com/Retail/PowerDirector/CGQC8ZH75VM6/PowerDirector_DirectorSuite365.exe",
       "download_url_with_params": "https://build.cyberlink.com/Retail/PowerDirector/CGQC8ZH75VM6/PowerDirector_DirectorSuite365.exe",
       "downloads": [],
       "size": 724699336,
       "size_mb": 691.1,
-      "last_modified": "2026-09-14",
+      "last_modified": "2026-10-25",
       "md5": "",
       "official_site": "https://www.cyberlink.com/products/powerdirector-video-editing-software/features_en_US.html",
       "update_items": []

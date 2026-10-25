@@ -555,14 +555,54 @@ def calc_md5_streaming(url, max_size=500*1024*1024, timeout=300):
 ### 注意事项
 - 该下载器的 `DisplayBuildNumber` 对 PowerDirector 等于产品版本，可信
 - PhotoDirector 的下载器 `info.ini` 是其自身框架版本（如 17.6.1826.0），≠ 产品版本（18.x），
-  因此 PhotoDirector 暂仍用 `fixed` 模式，不要直接套用本流程
+  配 `cyberlink_trial_version_trusted=False` 后不用试用值当产品版本号
 - 官方「最新版」不等于下载站的破解版；官方离线包更新有滞后（见下）
-- **防降级保护（2026-10-09 起）**：试用通道滞后于最新构建时（PD 试用仅铺到 `25.0.0904.0`，
-  最新 Ultimate 构建 `25.0.1007.0` 走零售/资源站渠道），配置 `base_version`=试用通道当前版、
-  `version_display`=最新构建；探测值不超过基线就显示 `version_display`，官方铺开后自动对齐
 - 版本号一律过 `_cyberlink_canon_ver()` 归一成 4 段式：`25.0.0.0904.0`（5 段 PE 式）与
   `25.0.0904.0`（4 段 info.ini 式）按段比较不相等，混用会把防降级保护击穿；
   build 段补齐前导零（`904` → `0904`），与官方 DisplayBuildNumber 写法一致
+
+### 14.1 根治「版本永远停在 0904」：零售版版本源（2026-10-25）
+
+**现象**：PowerDirector 在站点上长期显示旧版（先是 `25.0.1007.0`，实为人工核实的值），
+而实际最新版已是 `25.0.1019.0`（CyberLink PowerDirector Ultimate 2027）。
+
+**根因（两条官方通道都取不到零售新构建）**：
+1. **官方 trial 通道恒定滞后**：`/api/download/thank-you-page?ProductId=4` → 试用下载器
+   → info.ini 的 `DisplayBuildNumber=25.0.0904.0`（VDE260910-01），实测长期不变；
+   零售新构建（`25.0.1007.0` / `25.0.1019.0`）只走买断/零售通道，匿名通道取不到。
+2. **旧办法是写死 `version_display`**（=人工核实的最新零售版号），等于把版本钉死在一个
+   常量上——官方再发新版它也不会动，只能人工改一次。这就是「停在旧版很久」的真正原因，
+   不是探测失败，是**架构上就没有能自动发现零售新版的源**。
+
+**已排查且无效的官方渠道**（2026-10-25 逐个实测）：
+| 渠道 | 结果 |
+|------|------|
+| `support.cyberlink.com/patch-download`（官方补丁中心） | PowerDirector 产品线只到 **2025**（prodVerId=2051）及其更早，无 2026/2027 线；2027 零售版没有补丁页 |
+| `support.cyberlink.com` 的 Next.js 数据 | 内嵌 `productId→prodVerId` 映射（同上，只有 2025 及更早） |
+| `www.cyberlink.com/api/download/box`（零售兑换） | 需有效产品密钥 + 人机验证，无密钥拿不到直链 |
+| `ProductId=270`（PowerDirector Ultimate Suite） | thank-you API 正常、302 指向 `update.cyberlink.com/Retail/PowerDirectorUltimateSuite/DL/{token}/`，但该 S3 对象匿名可下性为 **403 AccessDenied**（token 每次下发但对象不对外） |
+| `www.cyberlink.com/api/download/thank-you-page` 全量 ProductId 扫描（1~700） | 只有 `ProductId=4`（PowerDirector trial）与 `211`（PhotoDirector）可用，其余跳 `trials/index` |
+| 官方下载器二进制（解包 NSIS） | 只含 `info.ini`/`Product.ini`/`Custom.ini`（`vtype=trial`），无版本查询接口、无零售直链 |
+| 零售离线包（691MB）内 `info.ini` | 用 HTTP Range + py7zr 只拉 0.07MB 列出 9947 个条目：**纯资源包，无 info.ini**（与旧文档记录一致） |
+| `dna.cyberlink.com/dna/getconfig.jsp` | 只是遥测频率配置（`{"First_Interval":5,...}`），无版本信息 |
+
+**最终方案（已落地）**：新增 `cyberlink_retail_nsane` 零售版版本源。
+- 源：**nsane 论坛「Software Updates」板块列表页**（`/forum/48-software-updates/`）。
+  该板块惯例是「一个软件更新开一个新帖」，**标题即精确版本号**
+  （如 `CyberLink PowerDirector Ultimate 2027 v25.0.1019`），列表页匿名可读（正文需登录）。
+- 解析：`_cyberlink_retail_from_nsane()` 用 `cyberlink_retail_keywords` 限定产品
+  （避免把别的软件的版本号误当本产品），取标题里最大版本号 + 该行发帖时间。
+- **双向对齐**：官方 trial 通道与零售源**取较新者**。官方试用通道铺开新版本后自动切到官方值；
+  nsane 源给出更旧的号时不会被误用。
+- **不再写 `version_display`**：版本号完全由检测得出，官方/资源站一更新就跟上。
+- 日期取「零售版发布日」与「包 S3 Last-Modified」中**较晚者**：官方换包滞后时，
+  直接用 Last-Modified 会把新版本的日期写回旧包的时间。
+
+**实测**：`--only PowerDirector` → `25.0.0904.0`（trial）+ `25.0.1019.0`（零售）→ 输出
+`25.0.1019.0 @ 2026-10-25`，自动完成 `25.0.1007.0 → 25.0.1019.0` 的升级。
+
+**降级保护**：nsane 源不可用时检测值退回 `25.0.0904.0`，会被 `main()` 的防降级拦截
+（`_ver_tuple` 比较）保留线上旧版本，不会把版本号写小或写空。
 
 ---
 
