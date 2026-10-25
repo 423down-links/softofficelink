@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T18:51:28.067555+00:00",
+  "updated_at": "2026-10-25T19:06:39.975728+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793559037&P2=404&P3=2&P4=MTr8xXHOYlquRFfe4gPeAPTTPPuQEejwNxnZ%2fbIHXUW1Lbol6tNeUUBSJe26TPz0B1SLIWV9yt8xb4H5qQerIg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793559037&P2=404&P3=2&P4=MTr8xXHOYlquRFfe4gPeAPTTPPuQEejwNxnZ%2fbIHXUW1Lbol6tNeUUBSJe26TPz0B1SLIWV9yt8xb4H5qQerIg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793559940&P2=404&P3=2&P4=S1JLLAOWSErggPA%2fgI5YVY0NYDYR4kqmXqGDezva3lGt11zGgaI0NzdtwCdHQGqxaGMs0R4ZMO9U6kFulMVSCQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793559940&P2=404&P3=2&P4=S1JLLAOWSErggPA%2fgI5YVY0NYDYR4kqmXqGDezva3lGt11zGgaI0NzdtwCdHQGqxaGMs0R4ZMO9U6kFulMVSCQ%3d%3d",
       "downloads": [],
       "size": 208330576,
       "size_mb": 198.7,
@@ -1613,13 +1613,13 @@
       "icon": "BW",
       "icon_color": "linear-gradient(135deg, #9c27b0, #6a1b9a)",
       "category": "操作系统",
-      "version": "v2026.09.16",
-      "download_url": "",
-      "download_url_with_params": "",
+      "version": "v2026.10.18",
+      "download_url": "https://www.wycad.com/4740.html",
+      "download_url_with_params": "https://www.wycad.com/4740.html",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-09-27",
+      "last_modified": "2026-10-23",
       "md5": "",
       "official_site": "https://www.wycad.com/windows",
       "update_items": []
@@ -1700,6 +1700,14 @@
       "md5": "",
       "official_site": "https://downtopc.com/software/",
       "update_items": [
+        {
+          "title": "RealVoice Text to Speech 5.5.1 Portable",
+          "url": "https://downtopc.com/344119-realvoice-text-to-speech-551-portable.html"
+        },
+        {
+          "title": "ChemDraw Professional Suite 26.1.0.6327",
+          "url": "https://downtopc.com/344118-chemdraw-professional-suite-26106327.html"
+        },
         {
           "title": "RealVoice Text to Speech 5.5.1",
           "url": "https://downtopc.com/344117-realvoice-text-to-speech-551.html"
@@ -1811,6 +1819,14 @@
       "md5": "",
       "official_site": "https://nsaneforums.com/",
       "update_items": [
+        {
+          "title": "Ascomp KeyCtrl Pro v2.203",
+          "url": "https://nsaneforums.com/topic/490702-ascomp-keyctrl-pro-v2203/"
+        },
+        {
+          "title": "Ascomp F-Rename Pro v3.0.0.2",
+          "url": "https://nsaneforums.com/topic/490701-ascomp-f-rename-pro-v3002/"
+        },
         {
           "title": "Mobatek MobaXterm Professional 26.6.5560",
           "url": "https://nsaneforums.com/topic/490699-mobatek-mobaxterm-professional-2665560/"
