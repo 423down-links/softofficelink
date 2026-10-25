@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T05:51:30.028119+00:00",
+  "updated_at": "2026-10-25T06:06:02.056851+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793512246&P2=404&P3=2&P4=eE%2fVGyzm%2bKYjmw2f5IY2o3JxRXUsCfRN6%2fw3B7BObPDxSrcenc%2fKo0qH38B%2fieGNKdlc0xX8IgyAs6kd7xvWvg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793512246&P2=404&P3=2&P4=eE%2fVGyzm%2bKYjmw2f5IY2o3JxRXUsCfRN6%2fw3B7BObPDxSrcenc%2fKo0qH38B%2fieGNKdlc0xX8IgyAs6kd7xvWvg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793513135&P2=404&P3=2&P4=EqEbfOifvYHNcoIBajIVgQcI%2f3PBiy2YcyIHk7fpXAfyhacOu0kbajWXYPybdIGUZc1JFIvW0CyphGikp%2f%2bcew%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793513135&P2=404&P3=2&P4=EqEbfOifvYHNcoIBajIVgQcI%2f3PBiy2YcyIHk7fpXAfyhacOu0kbajWXYPybdIGUZc1JFIvW0CyphGikp%2f%2bcew%3d%3d",
       "downloads": [],
       "size": 208330576,
       "size_mb": 198.7,
@@ -1690,171 +1690,27 @@
       "icon": "D",
       "icon_color": "linear-gradient(135deg, #2e7d32, #1b5e20)",
       "category": "资源站",
-      "version": "2026-10-24",
+      "version": "2026-10-25",
       "download_url": "https://downtopc.com/software/",
       "download_url_with_params": "https://downtopc.com/software/",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-10-24",
+      "last_modified": "2026-10-25",
       "md5": "",
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
-          "title": "Net Eagle 3.1.0 Portable",
-          "url": "https://downtopc.com/344092-net-eagle-310-portable.html"
+          "title": "StoryVox Pro 1.0.19",
+          "url": "https://downtopc.com/344096-storyvox-pro-1019.html"
         },
         {
-          "title": "WinRepairSuite 2.7.0 Portable",
-          "url": "https://downtopc.com/344091-winrepairsuite-270-portable.html"
+          "title": "WiFi Explorer Pro 1.4.0.0",
+          "url": "https://downtopc.com/344095-wifi-explorer-pro-1400.html"
         },
         {
-          "title": "Net Eagle 3.1.0",
-          "url": "https://downtopc.com/344090-net-eagle-310.html"
-        },
-        {
-          "title": "WinRepairSuite 2.7.0",
-          "url": "https://downtopc.com/344089-winrepairsuite-270.html"
-        },
-        {
-          "title": "Windows 10 Pro 22H2 build 19045.7807 With Office 2024 Pro Plus Multilingual Preactivated October 2026",
-          "url": "https://downtopc.com/344085-windows-10-pro-22h2-build-190457807-with-office-2024-pro-plus-multilingual-preactivated-october-2026.html"
-        },
-        {
-          "title": "Cockos REAPER 7.83 ( x64) Portable",
-          "url": "https://downtopc.com/344084-cockos-reaper-783-x64-portable.html"
-        },
-        {
-          "title": "AI Old Photo Restorer 1.0.3 Portable",
-          "url": "https://downtopc.com/344082-ai-old-photo-restorer-103-portable.html"
-        },
-        {
-          "title": "AI Old Photo Restorer 1.0.3",
-          "url": "https://downtopc.com/344081-ai-old-photo-restorer-103.html"
-        },
-        {
-          "title": "AI ImageStudio 1.0.6 Portable",
-          "url": "https://downtopc.com/344080-ai-imagestudio-106-portable.html"
-        },
-        {
-          "title": "AI ImageStudio 1.0.6",
-          "url": "https://downtopc.com/344079-ai-imagestudio-106.html"
-        },
-        {
-          "title": "Cockos REAPER 7.83",
-          "url": "https://downtopc.com/344078-cockos-reaper-783.html"
-        },
-        {
-          "title": "Serato DJ Pro Suite 5.0.0 Multilingual",
-          "url": "https://downtopc.com/344076-serato-dj-pro-suite-500-multilingual.html"
-        },
-        {
-          "title": "PerfectIt Pro 6.8.7",
-          "url": "https://downtopc.com/344074-perfectit-pro-687.html"
-        },
-        {
-          "title": "Squirrels AirParrot 3.1.11",
-          "url": "https://downtopc.com/344073-squirrels-airparrot-3111.html"
-        },
-        {
-          "title": "Squirrels Reflector 4.1.3",
-          "url": "https://downtopc.com/344072-squirrels-reflector-413.html"
-        },
-        {
-          "title": "ASCOMP Easy Slideshow Professional 2.201 Multilingual Portable",
-          "url": "https://downtopc.com/344071-ascomp-easy-slideshow-professional-2201-multilingual-portable.html"
-        },
-        {
-          "title": "ASCOMP Easy Slideshow Professional 2.201 Multilingual",
-          "url": "https://downtopc.com/344070-ascomp-easy-slideshow-professional-2201-multilingual.html"
-        },
-        {
-          "title": "Nevercenter Pixelmash 2027.0 (x64) Portable",
-          "url": "https://downtopc.com/344068-nevercenter-pixelmash-20270-x64-portable.html"
-        },
-        {
-          "title": "Nevercenter Pixelmash 2027.0 (x64)",
-          "url": "https://downtopc.com/344067-nevercenter-pixelmash-20270-x64.html"
-        },
-        {
-          "title": "Maplesoft Maple 2026.1.2 Multilingual",
-          "url": "https://downtopc.com/344066-maplesoft-maple-202612-multilingual.html"
-        },
-        {
-          "title": "VectorStyler 1.3.031",
-          "url": "https://downtopc.com/344065-vectorstyler-13031.html"
-        },
-        {
-          "title": "Spotify ADS Remover 1.3.7.2752 Multilingual Portable",
-          "url": "https://downtopc.com/344064-spotify-ads-remover-1372752-multilingual-portable.html"
-        },
-        {
-          "title": "Kaspersky Rescue Disk 24.0.7.0 (23.10.2026)",
-          "url": "https://downtopc.com/344063-kaspersky-rescue-disk-24070-23102026.html"
-        },
-        {
-          "title": "iPixSoft Flash Gallery Factory 3.8.1 Multilingual Portable",
-          "url": "https://downtopc.com/344062-ipixsoft-flash-gallery-factory-381-multilingual-portable.html"
-        },
-        {
-          "title": "Any Video Downloader Pro 10.4.30 (x64)",
-          "url": "https://downtopc.com/344061-any-video-downloader-pro-10430-x64.html"
-        },
-        {
-          "title": "Rain Cleaner Pro 2.16.0 Multilingual Portable",
-          "url": "https://downtopc.com/344060-rain-cleaner-pro-2160-multilingual-portable.html"
-        },
-        {
-          "title": "Rain Cleaner Pro 2.16.0 Multilingual",
-          "url": "https://downtopc.com/344059-rain-cleaner-pro-2160-multilingual.html"
-        },
-        {
-          "title": "Tangible Software Solutions 10.2026 (x64)",
-          "url": "https://downtopc.com/344058-tangible-software-solutions-102026-x64.html"
-        },
-        {
-          "title": "Muziza YouTube Downloader Converter 9.5.27 (x64)",
-          "url": "https://downtopc.com/344057-muziza-youtube-downloader-converter-9527-x64.html"
-        },
-        {
-          "title": "ThunderSoft GIF Converter 5.7.2",
-          "url": "https://downtopc.com/344056-thundersoft-gif-converter-572.html"
-        },
-        {
-          "title": "Tails 7.15.1 (x64) Multilingual",
-          "url": "https://downtopc.com/344055-tails-7151-x64-multilingual.html"
-        },
-        {
-          "title": "PilotEdit Pro 21.6.0 Multilingual",
-          "url": "https://downtopc.com/344054-pilotedit-pro-2160-multilingual.html"
-        },
-        {
-          "title": "OBS Studio 33.0.0 (x64) Multilingual Portable",
-          "url": "https://downtopc.com/344053-obs-studio-3300-x64-multilingual-portable.html"
-        },
-        {
-          "title": "iPixSoft Flash ScreenSaver Maker 5.0.1 Multilingual",
-          "url": "https://downtopc.com/344052-ipixsoft-flash-screensaver-maker-501-multilingual.html"
-        },
-        {
-          "title": "ThunderSoft Slideshow Factory 6.7.1 Multilingual",
-          "url": "https://downtopc.com/344051-thundersoft-slideshow-factory-671-multilingual.html"
-        },
-        {
-          "title": "ThunderSoft Photo Gallery Creator 4.7.1 Multilingual",
-          "url": "https://downtopc.com/344050-thundersoft-photo-gallery-creator-471-multilingual.html"
-        },
-        {
-          "title": "iPixSoft Flash Gallery Factory 3.8.1 Multilingual",
-          "url": "https://downtopc.com/344049-ipixsoft-flash-gallery-factory-381-multilingual.html"
-        },
-        {
-          "title": "iPixSoft Flash Slideshow Creator 7.0.1 Multilingual",
-          "url": "https://downtopc.com/344048-ipixsoft-flash-slideshow-creator-701-multilingual.html"
-        },
-        {
-          "title": "iPixSoft Video Slideshow Maker Deluxe 6.0.1 Multilingual",
-          "url": "https://downtopc.com/344047-ipixsoft-video-slideshow-maker-deluxe-601-multilingual.html"
+          "title": "Asoftis PDF Editor 1.3.8 (x64) Multilingual",
+          "url": "https://downtopc.com/344094-asoftis-pdf-editor-138-x64-multilingual.html"
         }
       ]
     },
