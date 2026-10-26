@@ -3009,3 +3009,83 @@ if old_v and not new_v:
 场景1（PE 失败 + 缓存空）  → version = '9.8.2'
 场景2（PE 失败 + 官网也挂）→ version = '9.8.2'
 ```
+
+## 第45节：缓存只看 TTL 导致「有新版却查不到」（2026-10-26，AnyDesk 9.8.2 → 9.8.3）
+
+### 根因
+
+两个原因叠在一起，线上才一直停在 9.8.2：
+
+1. **PE 版本缓存只认时间、不认文件**。缓存键是 URL，TTL 6 小时。`AnyDesk.exe`
+   是**原地覆盖包**：官方换了新文件，但 URL 不变、包体大小也不变（8553912 字节），
+   只有 `Last-Modified` 从 10-15 变成 10-26。缓存命中就直接返回 9.8.2，
+   实测最长要等 6 小时才可能刷新，期间线上一直是旧版本号。
+2. **官网页面兜底在 CI 里失效**。CI 跑在境外机房 IP，`anydesk.com` 对 urllib
+   返回 403；而 `curl` 的 TLS 指纹更接近浏览器，能正常拿到 9.8.3。
+
+### 修法
+
+```python
+# 1) 缓存命中前先验指纹：size 或 Last-Modified 任一变化 → 立刻作废缓存重探
+def _pe_cache_fingerprint_stale(hit, url, referer=None, head_fingerprint=None):
+    if head_fingerprint:
+        cur_size, cur_lm = head_fingerprint   # 复用调用方已 HEAD 过的结果
+    else:
+        ... HEAD 拿 Content-Length / Last-Modified
+    if old_size and cur_size != old_size: return True
+    if old_lm and cur_lm and _pe_lm_key(cur_lm) != _pe_lm_key(old_lm): return True
+    return False
+
+# 2) 官网版本 urllib 失败时用 curl 重试
+page_ver = _page_version_via_curl(page_url, page_regex)
+
+# 3) 日期比较前归一化（缓存里可能是原始 HTTP 日期，也可能是 YYYY-MM-DD）
+def _pe_lm_key(lm): ...  # "Mon, 26 Oct 2026 11:37:28 GMT" → "2026-10-26"
+```
+
+### 判据（可复用）
+
+- 只要下载地址长期不变（`download.xxx.com/App.exe` 这类），就必须**按内容指纹判缓存**，
+  不能只按 TTL；否则「官方已换包但体积没变」的更新永远滞后。
+- 探测函数遇到 403/567 时，先在本地用 `curl` 复测一次，再判断是不是站点真挂了：
+  CI 境外 IP 被 WAF 拦是常态，不要因此把官网兜底整条砍掉。
+
+### 实测
+
+```
+PE缓存失效(文件已更新): 9.8.2 → 重新探测
+PE版本: 9.8.3
+官网页面版本(curl兜底): 9.8.3
+✅ 9.8.3, 8.2 MB
+```
+
+线上 `data.json` 已验证生效。
+
+## 第46节：新增「官网给版本 + 官方入口给实时直链」模式（2026-10-26，鲁大师）
+
+### 为什么不能用固定直链
+
+鲁大师的 CDN 直链带时效签名：`...?sign=<时间戳>-<hash>-...`。写死在配置里必然过期；
+而且每次请求官方入口 `https://www.ludashi.com/pc/download/getDownloadUrl?type=2`，
+302 下发的签名都不同。所以用户侧下载链接要用**官方入口**（永不过期），不是 CDN 直链。
+
+### 三个数据怎么各取一份
+
+```python
+# 1. 官网首页一处同时给出日期与版本：「2026-10-22更新 版本：6.1026.4845.1020」
+r'(\d{4}-\d{2}-\d{2})\s*更新[^0-9]{0,20}(\d+(?:\.\d+)+)'
+
+# 2. 官方入口 302 → Location 拿当前实时直链（只用于探元数据，不写进 data.json）
+_capture_redirect_opener.open(entry)
+
+# 3. CDN（TencentEdgeOne）对 urllib 返 567 拦截页、对 curl 放行 → curl 探体积/日期
+curl_size, curl_date = _curl_get_headers(real_url, home)
+date = parse_date(curl_date)   # 必须转 YYYY-MM-DD，不能把原始 HTTP 日期写进 data.json
+```
+
+### 注意点
+
+- `_curl_get_headers` 返回的 `Last-Modified` 是 HTTP 原始串（`Tue, 20 Oct 2026 10:31:44 GMT`），
+  写进出前必须 `parse_date()` 转成 `YYYY-MM-DD`。
+- 270MB 安装包不做 MD5（`skip_md5: True`）。
+- 入库后 117 个产品，单产品探测 0.3 秒。
