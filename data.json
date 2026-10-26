@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T05:51:36.859612+00:00",
+  "updated_at": "2026-10-26T06:06:31.665239+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793598642&P2=404&P3=2&P4=GoGfvPky2neaqS8SDKoR8Zyd6ndQuDJIZc4ImipRg9KeU%2fN2xH%2bOkWlrcvQ0a6Nt7lGt11EpkuxauB%2fMDpecww%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793598642&P2=404&P3=2&P4=GoGfvPky2neaqS8SDKoR8Zyd6ndQuDJIZc4ImipRg9KeU%2fN2xH%2bOkWlrcvQ0a6Nt7lGt11EpkuxauB%2fMDpecww%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793599532&P2=404&P3=2&P4=KG%2fr3pzrXFCuAgMQzjOgvHPJVysSWx5bRRHx0L9IXoUzD5h4msE%2fY00DcTRbYbTb%2bowEqghDxUy797SdAJLapw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793599532&P2=404&P3=2&P4=KG%2fr3pzrXFCuAgMQzjOgvHPJVysSWx5bRRHx0L9IXoUzD5h4msE%2fY00DcTRbYbTb%2bowEqghDxUy797SdAJLapw%3d%3d",
       "downloads": [],
       "size": 208330576,
       "size_mb": 198.7,
@@ -1690,117 +1690,16 @@
       "icon": "D",
       "icon_color": "linear-gradient(135deg, #2e7d32, #1b5e20)",
       "category": "资源站",
-      "version": "2026-10-25",
+      "version": "2026-10-26",
       "download_url": "https://downtopc.com/software/",
       "download_url_with_params": "https://downtopc.com/software/",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-10-25",
+      "last_modified": "2026-10-26",
       "md5": "",
       "official_site": "https://downtopc.com/software/",
-      "update_items": [
-        {
-          "title": "RealVoice Text to Speech 5.5.1 Portable",
-          "url": "https://downtopc.com/344119-realvoice-text-to-speech-551-portable.html"
-        },
-        {
-          "title": "ChemDraw Professional Suite 26.1.0.6327",
-          "url": "https://downtopc.com/344118-chemdraw-professional-suite-26106327.html"
-        },
-        {
-          "title": "RealVoice Text to Speech 5.5.1",
-          "url": "https://downtopc.com/344117-realvoice-text-to-speech-551.html"
-        },
-        {
-          "title": "MobaXterm 26.6",
-          "url": "https://downtopc.com/344116-mobaxterm-266.html"
-        },
-        {
-          "title": "reaConverter Pro 8.0.256 Multilingual",
-          "url": "https://downtopc.com/344115-reaconverter-pro-80256-multilingual.html"
-        },
-        {
-          "title": "KeyCtrl Professional 2.203 Multilingual Portable",
-          "url": "https://downtopc.com/344114-keyctrl-professional-2203-multilingual-portable.html"
-        },
-        {
-          "title": "KeyCtrl Professional 2.203 Multilingual",
-          "url": "https://downtopc.com/344113-keyctrl-professional-2203-multilingual.html"
-        },
-        {
-          "title": "PDF-compress Professional 2.001 Multilingual Portable",
-          "url": "https://downtopc.com/344112-pdf-compress-professional-2001-multilingual-portable.html"
-        },
-        {
-          "title": "PDF-compress Professional 2.001 Multilingual",
-          "url": "https://downtopc.com/344111-pdf-compress-professional-2001-multilingual.html"
-        },
-        {
-          "title": "Carifred Ultra Virus Killer Pro 11.10.29",
-          "url": "https://downtopc.com/344110-carifred-ultra-virus-killer-pro-111029.html"
-        },
-        {
-          "title": "F-Rename Professional 3.002 Multilingual Portable",
-          "url": "https://downtopc.com/344109-f-rename-professional-3002-multilingual-portable.html"
-        },
-        {
-          "title": "F-Rename Professional 3.002 Multilingual",
-          "url": "https://downtopc.com/344108-f-rename-professional-3002-multilingual.html"
-        },
-        {
-          "title": "WiFi Explorer Pro 1.4.0.0 Portable",
-          "url": "https://downtopc.com/344107-wifi-explorer-pro-1400-portable.html"
-        },
-        {
-          "title": "Movavi Video Editor 27.1.0 (x64) Multilingual Portable",
-          "url": "https://downtopc.com/344106-movavi-video-editor-2710-x64-multilingual-portable.html"
-        },
-        {
-          "title": "Movavi Video Editor 27.1.0 (x64) Multilingual",
-          "url": "https://downtopc.com/344105-movavi-video-editor-2710-x64-multilingual.html"
-        },
-        {
-          "title": "PDF Annotator 10.0.0.1016 (x64) Multilingual Portable",
-          "url": "https://downtopc.com/344104-pdf-annotator-10001016-x64-multilingual-portable.html"
-        },
-        {
-          "title": "PDF Annotator 10.0.0.1016 (x64) Multilingual",
-          "url": "https://downtopc.com/344103-pdf-annotator-10001016-x64-multilingual.html"
-        },
-        {
-          "title": "Allavsoft Video Downloader Converter 3.29.7.9791 Multilingual Portable",
-          "url": "https://downtopc.com/344102-allavsoft-video-downloader-converter-32979791-multilingual-portable.html"
-        },
-        {
-          "title": "Allavsoft Video Downloader Converter 3.29.7.9791 Multilingual",
-          "url": "https://downtopc.com/344101-allavsoft-video-downloader-converter-32979791-multilingual.html"
-        },
-        {
-          "title": "StoryVox Pro 1.0.19 Portable",
-          "url": "https://downtopc.com/344100-storyvox-pro-1019-portable.html"
-        },
-        {
-          "title": "ThunderSoft GIF to Video Converter 5.7.2",
-          "url": "https://downtopc.com/344099-thundersoft-gif-to-video-converter-572.html"
-        },
-        {
-          "title": "Windows 10 22H2 build 19045.7807 AIO 16in1 With Office 2024 Pro Plus Multilingual Preactivated October 2026",
-          "url": "https://downtopc.com/344098-windows-10-22h2-build-190457807-aio-16in1-with-office-2024-pro-plus-multilingual-preactivated-october-2026.html"
-        },
-        {
-          "title": "StoryVox Pro 1.0.19",
-          "url": "https://downtopc.com/344096-storyvox-pro-1019.html"
-        },
-        {
-          "title": "WiFi Explorer Pro 1.4.0.0",
-          "url": "https://downtopc.com/344095-wifi-explorer-pro-1400.html"
-        },
-        {
-          "title": "Asoftis PDF Editor 1.3.8 (x64) Multilingual",
-          "url": "https://downtopc.com/344094-asoftis-pdf-editor-138-x64-multilingual.html"
-        }
-      ]
+      "update_items": []
     },
     {
       "name": "nsane论坛",
@@ -1819,6 +1718,10 @@
       "md5": "",
       "official_site": "https://nsaneforums.com/",
       "update_items": [
+        {
+          "title": "RegCool 3.1.0.7",
+          "url": "https://nsaneforums.com/topic/490713-regcool-3107/"
+        },
         {
           "title": "Microsoft .NET Desktop Runtime 8.0.33 Build 36622",
           "url": "https://nsaneforums.com/topic/490709-microsoft-net-desktop-runtime-8033-build-36622/"
@@ -1998,7 +1901,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-10-11",
       "md5": "",
