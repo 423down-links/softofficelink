@@ -2110,6 +2110,35 @@ PRODUCTS = [
         # 安装包 1.3GB，远超 100MB，不做 MD5
         'skip_md5': True,
     },
+    {
+        'name': '鲁大师电脑版',
+        'name_cn': '鲁大师电脑版',
+        'alias': '鲁大师',
+        'icon': 'LD',
+        'icon_color': 'linear-gradient(135deg, #f5a623, #e85d04)',
+        'category': '系统工具',
+        # 鲁大师官方（2026-10-26 实测）：
+        #  - 官网首页一处同时给出「2026-10-22更新 版本：6.1026.4845.1020」，
+        #    版本号与发布日期一次抓齐，是最权威的版本来源；
+        #  - 下载直链带时效签名（?sign=<时间戳>-<hash>-...），写死必然过期，
+        #    且每次请求官网入口 https://www.ludashi.com/pc/download/getDownloadUrl?type=2
+        #    302 下发的签名都不同 → 用官网入口当下载链接，签名永不过期；
+        #  - CDN（TencentEdgeOne）对 urllib 返回 567 拦截页、对 curl 放行
+        #    （TLS 指纹不同）→ 体积/日期用 curl 探。
+        # 用自定义 ludashi 模式：首页取版本+日期 → 官方入口取实时直链 → curl 探体积。
+        'detect_type': 'ludashi',
+        'home_url': 'https://www.ludashi.com/',
+        'download_entry': 'https://www.ludashi.com/pc/download/getDownloadUrl?type=2',
+        'version_date_regex': r'(\d{4}-\d{2}-\d{2})\s*更新[^0-9]{0,20}(\d+(?:\.\d+)+)',
+        'version': '6.1026.4845.1020',
+        'date': '2026-10-22',
+        'size': 283336336,
+        'size_mb': 270.3,
+        'download_url': 'https://www.ludashi.com/pc/download/getDownloadUrl?type=2',
+        'official_site': 'https://www.ludashi.com/',
+        # 安装包 270MB，不做 MD5
+        'skip_md5': True,
+    },
 ]
 
 MAX_INCREMENT = 30  # 最多递增检测30个版本
@@ -3179,6 +3208,105 @@ def detect_redirect(product):
     return version, location, location, size, date, ''
 
 
+def detect_ludashi(product):
+    """鲁大师检测模式：官网首页取版本号与发布日期，官方入口取实时直链。
+
+    鲁大师的下载直链带时效签名（?sign=<时间戳>-<hash>-...），写死必然过期，
+    且 CDN（TencentEdgeOne）对 urllib 返回 567 拦截页、对 curl 可放行。
+    因此分三步：
+      1. 抓官网首页 → 「2026-10-22更新 版本：6.1026.4845.1020」拿版本号+发布日期
+      2. 访问官方下载入口 → 302 Location 拿到带新签名的实时直链
+      3. 用 curl（TLS 指纹过 WAF）探直链的体积与最后修改时间
+    """
+    version = product.get('version', '')
+    date = product.get('date', '')
+    size = product.get('size', 0)
+    download_url = product.get('download_url', '')
+
+    # 1. 官网首页：版本号 + 发布日期
+    home = product.get('home_url', 'https://www.ludashi.com/')
+    try:
+        req = urllib.request.Request(home, headers={'User-Agent': UA, 'Accept-Encoding': 'identity'})
+        with urllib.request.urlopen(req, timeout=25) as resp:
+            html = resp.read().decode('utf-8', errors='ignore')
+        m = re.search(product.get('version_date_regex',
+                                  r'(\d{4}-\d{2}-\d{2})\s*更新[^0-9]{0,20}(\d+(?:\.\d+)+)'), html)
+        if m:
+            version = m.group(2)
+            date = m.group(1)
+            print(f"  官网版本: {version} (发布 {date})")
+        else:
+            print("  ⚠️ 官网首页未解析到版本号")
+    except Exception as e:
+        print(f"  ⚠️ 官网首页抓取失败: {e}")
+
+    # 2. 官方下载入口 → 302 Location（带新签名的实时直链）
+    entry = product.get('download_entry', '')
+    real_url = ''
+    if entry:
+        try:
+            req = urllib.request.Request(entry, headers={
+                'User-Agent': UA,
+                'Accept': '*/*',
+                'Accept-Language': 'zh-CN,zh;q=0.9',
+                'Accept-Encoding': 'identity',
+                'Referer': home,
+            })
+            try:
+                with _capture_redirect_opener.open(req, timeout=25) as resp:
+                    real_url = resp.url
+            except urllib.error.HTTPError as e:
+                if e.code in (301, 302, 303, 307, 308):
+                    real_url = e.headers.get('Location', '')
+            if real_url:
+                print(f"  官方直链: {real_url[:80]}...")
+            else:
+                print("  ⚠️ 未解析到官方直链")
+        except Exception as e:
+            print(f"  ⚠️ 官方入口解析失败: {e}")
+
+    # 3. 探体积/日期：CDN 拦 urllib 的 HEAD，但放行 curl（TLS 指纹不同）
+    if real_url:
+        curl_size, curl_date = _curl_get_headers(real_url, home)
+        if curl_size > 0:
+            size = curl_size
+            print(f"  安装包体积: {curl_size} 字节 ({curl_size / 1024 / 1024:.1f}MB)")
+        else:
+            print("  ⚠️ 未能探测到体积，沿用配置值")
+        if curl_date:
+            # _curl_get_headers 返回的是原始 HTTP 日期（"Tue, 20 Oct 2026 10:31:44 GMT"），
+            # 需转成 YYYY-MM-DD 才能写进 data.json（parse_date 认得该格式）
+            curl_day = parse_date(curl_date)
+            if curl_day and (not date or curl_day > date):
+                date = curl_day
+        # 用户侧下载用官网入口（签名永不过期），不是带时效签名的 CDN 直链
+        download_url = entry or real_url
+    else:
+        download_url = entry or download_url
+
+    return version, download_url, download_url, size, date, ''
+
+
+def _page_version_via_curl(url, regex, timeout=30):
+    """用 curl 抓页面并按正则提取版本号（urllib 被 WAF 拦时的兜底）。
+
+    背景：部分官网对 urllib 的请求返回 403（CI 跑在境外机房 IP，更容易被拦），
+    而 curl 的 TLS 指纹更接近浏览器，能通过 WAF。实测 AnyDesk 官网
+    urllib 403 时 curl 能拿到最新版本号。失败返回 ''。
+    """
+    import subprocess
+    try:
+        cmd = ['curl', '-sL', '--max-time', str(timeout), '-A', UA, url]
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout + 10)
+        html = result.stdout
+        if not html:
+            return ''
+        m = re.search(regex, html, re.I)
+        return m.group(1) if (m and m.group(1)) else ''
+    except Exception:
+        return ''
+
+
 def detect_fixed(product):
     """固定地址模式：版本号手动维护，只检测文件可用性
     支持配置 size/date/md5 作为默认值（大文件避免重复检测）
@@ -3267,7 +3395,8 @@ def detect_fixed(product):
         if not head_skip_pe:
             try:
                 pe_ver = get_pe_version(url, referer=product.get('referer'),
-                                        prefer_product_version=prefer_product_version)
+                                        prefer_product_version=prefer_product_version,
+                                        head_fingerprint=(detected_size, detected_date))
                 if pe_ver:
                     print(f"  PE版本: {pe_ver}")
                     version = pe_ver
@@ -3385,6 +3514,7 @@ def detect_fixed(product):
     page_url = product.get('page_version_url')
     page_regex = product.get('page_version_regex')
     if page_url and page_regex:
+        page_ver = ''
         try:
             req = urllib.request.Request(page_url, headers={'User-Agent': UA})
             with urllib.request.urlopen(req, timeout=20) as resp:
@@ -3392,13 +3522,21 @@ def detect_fixed(product):
             m = re.search(page_regex, html, re.I)
             if m and m.group(1):
                 page_ver = m.group(1)
-                if _ver_newer(page_ver, version):
-                    print(f"  官网页面版本: {page_ver} (高于 {version}，采用)")
-                    version = page_ver
-                else:
-                    print(f"  官网页面版本: {page_ver} (不高于 {version}，忽略)")
         except Exception as e:
             print(f"  ⚠️ 官网页面版本抓取失败: {e}")
+        # urllib 失败（CI 境外 IP 常被官网 WAF 403）→ 用 curl 重试：
+        # curl 的 TLS 指纹与浏览器接近，更容易通过 WAF。实测 AnyDesk 官网
+        # urllib 403 时 curl 能拿到 9.8.3。
+        if not page_ver:
+            page_ver = _page_version_via_curl(page_url, page_regex)
+            if page_ver:
+                print(f"  官网页面版本(curl兜底): {page_ver}")
+        if page_ver:
+            if _ver_newer(page_ver, version):
+                print(f"  官网页面版本: {page_ver} (高于 {version}，采用)")
+                version = page_ver
+            else:
+                print(f"  官网页面版本: {page_ver} (不高于 {version}，忽略)")
     # 去掉末段补位的 .0：PE ProductVersion 常写成四段（PotPlayer 1.7.23159.0），
     # 官方口径只到三段（1.7.23159）。只对配了该开关的产品生效，避免误伤需要四段的。
     if product.get('strip_trailing_zero') and isinstance(version, str):
@@ -3539,57 +3677,77 @@ def _cyberlink_retail_redeem(key, lang='ENU'):
 # 零售新构建（如 25.0.1019.0）只走买断/零售通道，官方 thank-you API 恒返回试用基线
 # （实测 PowerDirector 试用通道长期停在 25.0.0904.0），靠 version_display 硬编码必然滞后。
 #
-# 兜底源用 nsane 论坛「Software Updates」板块标题：该板块惯例是「一个软件更新开一个新帖」，
-# 标题即精确版本号（如 "CyberLink PowerDirector Ultimate 2027 v25.0.1019"），
-# 列表页匿名可读（正文需登录）。取标题里最大版本号作为零售最新版本。
+# 兜底源用 nsane 论坛「Software Updates」板块：该板块惯例是「一个软件更新开一个新帖」，
+# 标题/slug 即精确版本号（如 "cyberlink-powerdirector-ultimate-2027-v2501019"），
+# 列表页匿名可读（正文需登录）。
+#
+# ⚠️ 必须翻多页：板块列表页每页只有 25 帖，热门板块一天就刷掉几十帖，
+# 只看第 1 页会漏掉本产品的更新帖（实测 PowerDirector 帖被挤到第 2 页）。
 CYBERLINK_RETAIL_NSANE_FORUM = 'https://nsaneforums.com/forum/48-software-updates/'
+CYBERLINK_RETAIL_NSANE_PAGES = 4
 
 
 def _cyberlink_retail_from_nsane(product):
-    """从 nsane 论坛板块列表页标题解析零售版最新版本号。
+    """从 nsane 论坛板块列表页解析零售版最新版本号。
 
     返回 (version, date, url)；无结果返回 ('', '', '')。
-    只取「匹配本产品」的帖子标题，避免把别的软件的版本号误当成本产品版本。
+    只取「匹配本产品」的帖子，避免把别的软件的版本号误当成本产品版本。
+
+    匹配用 **URL slug**（cyberlink-powerdirector-ultimate-2027-v2501019）而不是
+    title 属性：部分行的 title 属性被截断/带尾空格，slug 反而稳定。
     """
-    # 标题里要匹配的产品关键词（缺省用产品名）
+    # slug / 标题里要匹配的产品关键词（缺省用产品名）
     keywords = product.get('cyberlink_retail_keywords') or [product.get('name', '')]
     keywords = [str(k).strip().lower() for k in keywords if str(k).strip()]
     if not keywords:
         return '', '', ''
 
-    html_text = _fetch_site_html(CYBERLINK_RETAIL_NSANE_FORUM)
-    if not html_text:
-        return '', '', ''
-
     best_ver = ''
     best_date = ''
     best_url = ''
-    # 板块列表页每行：<a href='https://nsaneforums.com/topic/xxx-title' title='标题'>
-    for m in re.finditer(
-            r"<a href='(https://nsaneforums\.com/topic/[^']+)'[^>]*title='([^']*)'", html_text):
-        url = m.group(1)
-        title = html.unescape(m.group(2)).strip()
-        low = title.lower()
-        if not any(k in low for k in keywords):
+    for page in range(1, CYBERLINK_RETAIL_NSANE_PAGES + 1):
+        url = (CYBERLINK_RETAIL_NSANE_FORUM if page == 1
+               else f'{CYBERLINK_RETAIL_NSANE_FORUM}?page={page}')
+        html_text = _fetch_site_html(url)
+        if not html_text:
             continue
-        # 标题里的 4 段版本号，如 "v25.0.1019" / "25.0.1019.0"
-        vm = re.search(r'(\d+)\.(\d+)\.(\d{4})(?:\.(\d+))?', title)
-        if not vm:
-            continue
-        major, minor, build, patch = vm.group(1), vm.group(2), vm.group(3), vm.group(4)
-        ver = f'{major}.{minor}.{build}.{patch or "0"}'
-        if not best_ver or _ver_newer(ver, best_ver):
-            best_ver = ver
-            best_url = url
-            # 该行所属 <li> 块里第一个 <time> 是发帖时间（板块惯例：一个更新一个新帖）
-            blk_start = html_text.rfind("data-rowID=", 0, m.start())
-            blk_end = html_text.find("data-rowID=", m.start())
-            blk = html_text[blk_start:blk_end if blk_end > 0 else m.start() + 4000]
-            tm = re.search(r"<time datetime='([^']+)'", blk)
-            if tm:
-                d = parse_date(tm.group(1))
-                if d:
-                    best_date = d
+        found_on_page = False
+        # 每行：<a href='https://nsaneforums.com/topic/{id}-{slug}' title='标题'>
+        for m in re.finditer(
+                r"<a href='(https://nsaneforums\.com/topic/[^']+)'[^>]*title='([^']*)'", html_text):
+            link = m.group(1)
+            title = html.unescape(m.group(2)).strip()
+            hay = (link + ' ' + title).lower()
+            if not any(k in hay for k in keywords):
+                continue
+            # 版本号：slug 或标题里的 4 段版本，如 v2501019 / 25.0.1019
+            ver = ''
+            vm = re.search(r'(\d+)\.(\d+)\.(\d{4})(?:\.(\d+))?', hay)
+            if vm:
+                ver = f'{vm.group(1)}.{vm.group(2)}.{vm.group(3)}.{vm.group(4) or "0"}'
+            else:
+                # slug 形式：v2501019 → 25.0.1019.0（取后 4 位 build + 段前缀）
+                sm = re.search(r'-v(\d{2})(\d{2})(\d{2})(\d{2})(?:-|$)', link.lower())
+                if sm:
+                    ver = f'{sm.group(1)}.{sm.group(2)}.{sm.group(3)}{sm.group(4)}.0'
+            if not ver:
+                continue
+            found_on_page = True
+            if not best_ver or _ver_newer(ver, best_ver):
+                best_ver = ver
+                best_url = link
+                # 该行所属 <li> 块里第一个 <time> 是发帖时间（板块惯例：一个更新一个新帖）
+                blk_start = html_text.rfind("data-rowID=", 0, m.start())
+                blk_end = html_text.find("data-rowID=", m.start())
+                blk = html_text[blk_start:blk_end if blk_end > 0 else m.start() + 4000]
+                tm = re.search(r"<time datetime='([^']+)'", blk)
+                if tm:
+                    d = parse_date(tm.group(1))
+                    if d:
+                        best_date = d
+        # 已找到本产品的最新帖，且本页无更新版本 → 后续页只会更旧，可停
+        if found_on_page and best_ver:
+            break
     if best_ver:
         print(f"  零售版(nsane): {best_ver}" + (f" @ {best_date}" if best_date else ""))
     return best_ver, best_date, best_url
@@ -3932,13 +4090,22 @@ def _range_download(url, headers, start, end, workers=8, timeout=60, min_chunk=6
         return _single()
 
 
-def get_pe_version(url, referer=None, prefer_product_version=False):
+def get_pe_version(url, referer=None, prefer_product_version=False, head_fingerprint=None):
     """读取 PE 文件版本，带 URL 级缓存。
 
     热跑加速的关键：缓存键 = URL，命中且未过期时**零网络请求**直接返回。
     这对高延迟服务器（如 winxdvd.com 单次请求 TTFB 就要 20 秒）尤其重要——
     原来每轮都要发 HEAD + 2 次 Range，稳态也要 ~60 秒；现在直接读缓存。
     TTL 到期后重新探测；探测失败时用缓存旧值兜底，避免版本号被"降级"。
+
+    ⚠️ 原地覆盖的包（同一 URL，官方直接换文件）：
+       只按 TTL 判缓存会导致新版本最长 PE_CACHE_TTL（6 小时）才被发现——
+       实测 AnyDesk.exe（download.anydesk.com/AnyDesk.exe）官方换包后
+       FileVersion 从 9.8.2 变 9.8.3，但缓存仍返回 9.8.2，线上版本长期不准。
+       故命中缓存前用 HEAD 校验指纹（size + Last-Modified）：
+         - 指纹变了 → 缓存作废，重新读 PE（能立刻发现新版本）
+         - 指纹没变 → 缓存有效，省掉 Range 下载
+       head_fingerprint 由调用方传入已拿到的 (size, last_modified)，避免重复 HEAD。
 
     prefer_product_version=True 时优先读 PE 资源里的 ProductVersion
     （DxO / PotPlayer 专用：ProductVersion 才是官方产品版本；
@@ -3951,8 +4118,12 @@ def get_pe_version(url, referer=None, prefer_product_version=False):
     with _pe_cache_lock:
         hit = cache.get(cache_key)
     if hit and (time.time() - hit.get('ts', 0)) < PE_CACHE_TTL:
-        print(f"  PE版本(缓存): {hit['ver']}")
-        return hit['ver']
+        # TTL 内的快速路径：先校验指纹，原地覆盖的包能立刻被发现新版本
+        if _pe_cache_fingerprint_stale(hit, url, referer, head_fingerprint):
+            print(f"  PE缓存失效(文件已更新): {hit['ver']} → 重新探测")
+        else:
+            print(f"  PE版本(缓存): {hit['ver']}")
+            return hit['ver']
 
     ver, size, lm = _get_pe_version_raw(url, referer, prefer_product_version)
     if ver:
@@ -3966,6 +4137,59 @@ def get_pe_version(url, referer=None, prefer_product_version=False):
         print(f"  PE版本(缓存兜底): {hit['ver']}")
         return hit['ver']
     return ''
+
+
+def _pe_cache_fingerprint_stale(hit, url, referer=None, head_fingerprint=None):
+    """判断 PE 缓存是否已失效（文件被原地覆盖换了内容）。
+
+    比对当前文件的 size + Last-Modified 与缓存里记录的指纹：
+    任一不同即视为「文件已换」，缓存作废。
+    head_fingerprint: 调用方已拿到的 (size, last_modified)，传入可省掉一次 HEAD。
+    """
+    try:
+        if head_fingerprint:
+            cur_size, cur_lm = head_fingerprint
+        else:
+            headers = {'User-Agent': UA}
+            if referer:
+                headers['Referer'] = referer
+            req = urllib.request.Request(url, method='HEAD', headers=headers)
+            with urllib.request.urlopen(req, timeout=15) as resp:
+                cur_size = int(resp.headers.get('Content-Length', 0) or 0)
+                cur_lm = resp.headers.get('Last-Modified', '') or ''
+        if not cur_size:
+            # 拿不到指纹（HEAD 被拦/无 Content-Length）→ 保守认为缓存仍有效
+            return False
+        old_size = hit.get('size') or 0
+        old_lm = hit.get('lm') or ''
+        # size 变了 → 一定换过
+        if old_size and cur_size != old_size:
+            return True
+        # size 相同但 Last-Modified 变了 → 同样换过（原地覆盖常见：包体大小不变）
+        if old_lm and cur_lm and _pe_lm_key(cur_lm) != _pe_lm_key(old_lm):
+            return True
+        return False
+    except Exception:
+        return False
+
+
+def _pe_lm_key(lm):
+    """把 Last-Modified 归一化用于比较。
+
+    缓存里存的可能是原始 HTTP 日期（"Mon, 26 Oct 2026 11:37:28 GMT"），
+    也可能是已转成 YYYY-MM-DD 的形式（check_url_follow 返回的），
+    两者比较前统一成同一种写法，否则格式不同会误判成「文件已换」。
+    """
+    s = str(lm or '').strip()
+    m = re.match(r'^[A-Z][a-z]{2}, (\d{1,2}) ([A-Z][a-z]{2}) (\d{4})', s)
+    if m:
+        months = {'Jan': '01', 'Feb': '02', 'Mar': '03', 'Apr': '04', 'May': '05',
+                  'Jun': '06', 'Jul': '07', 'Aug': '08', 'Sep': '09', 'Oct': '10',
+                  'Nov': '11', 'Dec': '12'}
+        mon = months.get(m.group(2))
+        if mon:
+            return f'{m.group(3)}-{mon}-{int(m.group(1)):02d}'
+    return s
 
 
 def _get_pe_version_raw(url, referer=None, prefer_product_version=False):
@@ -6905,6 +7129,8 @@ def find_latest(product):
 
     if detect_type == 'redirect':
         version, full_url, param_url, size, date, md5 = detect_redirect(product)
+    elif detect_type == 'ludashi':
+        version, full_url, param_url, size, date, md5 = detect_ludashi(product)
     elif detect_type == 'fixed':
         version, full_url, param_url, size, date, md5 = detect_fixed(product)
     elif detect_type == 'cyberlink':

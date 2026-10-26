@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T13:05:56.725337+00:00",
+  "updated_at": "2026-10-26T13:19:07.281874+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -975,7 +975,7 @@
       "icon": "AD",
       "icon_color": "linear-gradient(135deg, #ef5350, #d32f2f)",
       "category": "远程工具",
-      "version": "9.8.2",
+      "version": "9.8.3",
       "download_url": "https://download.anydesk.com/AnyDesk.exe",
       "download_url_with_params": "https://download.anydesk.com/AnyDesk.exe",
       "downloads": [],
@@ -2251,6 +2251,24 @@
       "last_modified": "2026-10-21",
       "md5": "",
       "official_site": "https://help.sketchup.com/en/downloading-sketchup",
+      "update_items": []
+    },
+    {
+      "name": "鲁大师电脑版",
+      "name_cn": "鲁大师电脑版",
+      "alias": "鲁大师",
+      "icon": "LD",
+      "icon_color": "linear-gradient(135deg, #f5a623, #e85d04)",
+      "category": "系统工具",
+      "version": "6.1026.4845.1020",
+      "download_url": "https://www.ludashi.com/pc/download/getDownloadUrl?type=2",
+      "download_url_with_params": "https://www.ludashi.com/pc/download/getDownloadUrl?type=2",
+      "downloads": [],
+      "size": 283336336,
+      "size_mb": 270.2,
+      "last_modified": "2026-10-22",
+      "md5": "",
+      "official_site": "https://www.ludashi.com/",
       "update_items": []
     }
   ]
