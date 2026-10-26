@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T16:51:27.493013+00:00",
+  "updated_at": "2026-10-26T17:06:02.781860+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793638240&P2=404&P3=2&P4=EcENjwQOjlYxbgS5eznA6%2bkzezpvwyMqj%2fvPhZ9BhgQN5nYPbDgDIZYWY%2fr9k9VP%2brZpx2YXX8sZtrJPQrF9nA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793638240&P2=404&P3=2&P4=EcENjwQOjlYxbgS5eznA6%2bkzezpvwyMqj%2fvPhZ9BhgQN5nYPbDgDIZYWY%2fr9k9VP%2brZpx2YXX8sZtrJPQrF9nA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793639137&P2=404&P3=2&P4=D1KktTJtvZwCZm%2bJ7Ite3HxQAdJ%2blHyYccTG%2f0MdIj8Ds0mAaoukrEf%2biRMclF45mMQe5LWGU6xPqPHG3b%2bqUQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793639137&P2=404&P3=2&P4=D1KktTJtvZwCZm%2bJ7Ite3HxQAdJ%2blHyYccTG%2f0MdIj8Ds0mAaoukrEf%2biRMclF45mMQe5LWGU6xPqPHG3b%2bqUQ%3d%3d",
       "downloads": [],
       "size": 208330576,
       "size_mb": 198.7,
@@ -1701,6 +1701,34 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "ABC Base Connect 1.0.8 Multilingual Portable",
+          "url": "https://downtopc.com/344143-abc-base-connect-108-multilingual-portable.html"
+        },
+        {
+          "title": "ExtraSubst Home 26.10.1 Multilingual",
+          "url": "https://downtopc.com/344141-extrasubst-home-26101-multilingual.html"
+        },
+        {
+          "title": "ExtraDisks Home 26.10.1 Multilingual",
+          "url": "https://downtopc.com/344140-extradisks-home-26101-multilingual.html"
+        },
+        {
+          "title": "Passmark OSForensics 11.1.1017 Multilingual",
+          "url": "https://downtopc.com/344138-passmark-osforensics-1111017-multilingual.html"
+        },
+        {
+          "title": "Fast Video Cutter Joiner 7.2.6 Multilingual Portable",
+          "url": "https://downtopc.com/344137-fast-video-cutter-joiner-726-multilingual-portable.html"
+        },
+        {
+          "title": "Movavi Video Editor 27.2.0 (x64) Multilingual Portable",
+          "url": "https://downtopc.com/344136-movavi-video-editor-2720-x64-multilingual-portable.html"
+        },
+        {
+          "title": "Fast Video Cutter Joiner 7.2.6 Multilingual",
+          "url": "https://downtopc.com/344135-fast-video-cutter-joiner-726-multilingual.html"
+        },
+        {
           "title": "ABC Base Connect 1.0.8 Multilingual",
           "url": "https://downtopc.com/344134-abc-base-connect-108-multilingual.html"
         },
@@ -1749,75 +1777,23 @@
       "icon": "N",
       "icon_color": "linear-gradient(135deg, #4a6fa5, #2b3f63)",
       "category": "资源站",
-      "version": "2026-10-26",
+      "version": "2026-10-27",
       "download_url": "https://nsaneforums.com/nsane.down/",
       "download_url_with_params": "https://nsaneforums.com/nsane.down/",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-10-26",
+      "last_modified": "2026-10-27",
       "md5": "",
       "official_site": "https://nsaneforums.com/",
       "update_items": [
         {
-          "title": "TMOG Task Manager OG Pro 1.1.0",
-          "url": "https://nsaneforums.com/topic/490722-tmog-task-manager-og-pro-110/"
+          "title": "ExtraDisks Home v26.10.1",
+          "url": "https://nsaneforums.com/topic/490731-extradisks-home-v26101/"
         },
         {
-          "title": "Movavi Video Editor v27.2 (x64)",
-          "url": "https://nsaneforums.com/topic/490726-movavi-video-editor-v272-x64/"
-        },
-        {
-          "title": "RegCool 3.1.0.7",
-          "url": "https://nsaneforums.com/topic/490713-regcool-3107/"
-        },
-        {
-          "title": "Fast Video Cutter Joiner 7.2.6",
-          "url": "https://nsaneforums.com/topic/490724-fast-video-cutter-joiner-726/"
-        },
-        {
-          "title": "MassTube 2027 v22.1.7.229 Ultra",
-          "url": "https://nsaneforums.com/topic/490718-masstube-2027-v2217229-ultra/"
-        },
-        {
-          "title": "Steinberg SpectraLayers Pro v13.0.30 x64",
-          "url": "https://nsaneforums.com/topic/490721-steinberg-spectralayers-pro-v13030-x64/"
-        },
-        {
-          "title": "Broadgun pdfMachine v20.68",
-          "url": "https://nsaneforums.com/topic/490716-broadgun-pdfmachine-v2068/"
-        },
-        {
-          "title": "Microsoft .NET Desktop Runtime 8.0.33 Build 36622",
-          "url": "https://nsaneforums.com/topic/490709-microsoft-net-desktop-runtime-8033-build-36622/"
-        },
-        {
-          "title": "Microsoft .NET Desktop Runtime 9.0.22 Build 36622",
-          "url": "https://nsaneforums.com/topic/490708-microsoft-net-desktop-runtime-9022-build-36622/"
-        },
-        {
-          "title": "Microsoft .NET Desktop Runtime 10.0.14 Build 50000",
-          "url": "https://nsaneforums.com/topic/490707-microsoft-net-desktop-runtime-10014-build-50000/"
-        },
-        {
-          "title": "Mobatek MobaXterm Professional 26.6.5560",
-          "url": "https://nsaneforums.com/topic/490699-mobatek-mobaxterm-professional-2665560/"
-        },
-        {
-          "title": "GREYC's Magic for Image Computing (G'MIC) 4.06",
-          "url": "https://nsaneforums.com/topic/490705-greycs-magic-for-image-computing-gmic-406/"
-        },
-        {
-          "title": "Ascomp KeyCtrl Pro v2.203",
-          "url": "https://nsaneforums.com/topic/490702-ascomp-keyctrl-pro-v2203/"
-        },
-        {
-          "title": "FrostWire 7.1.2 Build 334",
-          "url": "https://nsaneforums.com/topic/490712-frostwire-712-build-334/"
-        },
-        {
-          "title": "Executor 2.4.5",
-          "url": "https://nsaneforums.com/topic/490704-executor-245/"
+          "title": "Passmark OSForensics 11.1.1017 Multilingual",
+          "url": "https://nsaneforums.com/topic/490730-passmark-osforensics-1111017-multilingual/"
         }
       ]
     },
