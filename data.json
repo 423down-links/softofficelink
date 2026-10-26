@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T12:52:26.551830+00:00",
+  "updated_at": "2026-10-26T13:05:56.725337+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793623867&P2=404&P3=2&P4=ch6bQQIoEwS28%2bBfQRqiLlm%2b2U49jn12u%2faqj1Qdovd8eBgrzh42w%2buPt%2b4sHxm7AFsMf2w6BIeznSoZu70VjQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793623867&P2=404&P3=2&P4=ch6bQQIoEwS28%2bBfQRqiLlm%2b2U49jn12u%2faqj1Qdovd8eBgrzh42w%2buPt%2b4sHxm7AFsMf2w6BIeznSoZu70VjQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793624733&P2=404&P3=2&P4=ReyBZ8KFz5mE8JkN%2fxiVbpPDvcHkY9Y4SxVc%2bWyK7qxOlF3YOq2I6h5I%2fTxTux9GaVBcHDayfoqPhd8rr12VYw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793624733&P2=404&P3=2&P4=ReyBZ8KFz5mE8JkN%2fxiVbpPDvcHkY9Y4SxVc%2bWyK7qxOlF3YOq2I6h5I%2fTxTux9GaVBcHDayfoqPhd8rr12VYw%3d%3d",
       "downloads": [],
       "size": 208330576,
       "size_mb": 198.7,
@@ -1123,8 +1123,8 @@
       "download_url": "https://www.winxdvd.com/download/winxvideo-ai.exe",
       "download_url_with_params": "https://www.winxdvd.com/download/winxvideo-ai.exe",
       "downloads": [],
-      "size": 307232768,
-      "size_mb": 293.0,
+      "size": 307118576,
+      "size_mb": 292.9,
       "last_modified": "2026-09-20",
       "md5": "",
       "official_site": "https://www.winxdvd.com/winxvideo-ai/",
@@ -1613,13 +1613,13 @@
       "icon": "BW",
       "icon_color": "linear-gradient(135deg, #9c27b0, #6a1b9a)",
       "category": "操作系统",
-      "version": "v2026.10.18",
-      "download_url": "https://www.wycad.com/4740.html",
-      "download_url_with_params": "https://www.wycad.com/4740.html",
+      "version": "v2026.09.16",
+      "download_url": "",
+      "download_url_with_params": "",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-10-23",
+      "last_modified": "2026-09-27",
       "md5": "",
       "official_site": "https://www.wycad.com/windows",
       "update_items": []
@@ -1740,16 +1740,20 @@
       "official_site": "https://nsaneforums.com/",
       "update_items": [
         {
+          "title": "TMOG Task Manager OG Pro 1.1.0",
+          "url": "https://nsaneforums.com/topic/490722-tmog-task-manager-og-pro-110/"
+        },
+        {
+          "title": "Movavi Video Editor v27.2 (x64)",
+          "url": "https://nsaneforums.com/topic/490726-movavi-video-editor-v272-x64/"
+        },
+        {
           "title": "RegCool 3.1.0.7",
           "url": "https://nsaneforums.com/topic/490713-regcool-3107/"
         },
         {
           "title": "Fast Video Cutter Joiner 7.2.6",
           "url": "https://nsaneforums.com/topic/490724-fast-video-cutter-joiner-726/"
-        },
-        {
-          "title": "TMOG Task Manager OG Pro 1.1.0",
-          "url": "https://nsaneforums.com/topic/490722-tmog-task-manager-og-pro-110/"
         },
         {
           "title": "MassTube 2027 v22.1.7.229 Ultra",
