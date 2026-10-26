@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T13:51:16.769449+00:00",
+  "updated_at": "2026-10-26T14:06:01.685158+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793627441&P2=404&P3=2&P4=cWQF3c%2ffTAvmKotXw0smVJ%2bScbiredxByZIPcpDJL51W5Nu%2bq29Day02V36VuHTKYWsnlwq9iz3o1bLJTP6gYA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793627441&P2=404&P3=2&P4=cWQF3c%2ffTAvmKotXw0smVJ%2bScbiredxByZIPcpDJL51W5Nu%2bq29Day02V36VuHTKYWsnlwq9iz3o1bLJTP6gYA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793628335&P2=404&P3=2&P4=McFeuu82kVxVrX3UG0LVr6w%2f3ozqP4JEHBZmKqlLbyZuhDBz7R7JHJR3EqtMDonpwI1wPmk0spKe5b1gy5DG4Q%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793628335&P2=404&P3=2&P4=McFeuu82kVxVrX3UG0LVr6w%2f3ozqP4JEHBZmKqlLbyZuhDBz7R7JHJR3EqtMDonpwI1wPmk0spKe5b1gy5DG4Q%3d%3d",
       "downloads": [],
       "size": 208330576,
       "size_mb": 198.7,
@@ -1792,14 +1792,6 @@
           "url": "https://nsaneforums.com/topic/490702-ascomp-keyctrl-pro-v2203/"
         },
         {
-          "title": "Ascomp F-Rename Pro v3.0.0.2",
-          "url": "https://nsaneforums.com/topic/490701-ascomp-f-rename-pro-v3002/"
-        },
-        {
-          "title": "Argus Cleaner 3.3.0",
-          "url": "https://nsaneforums.com/topic/490696-argus-cleaner-330/"
-        },
-        {
           "title": "FrostWire 7.1.2 Build 334",
           "url": "https://nsaneforums.com/topic/490712-frostwire-712-build-334/"
         },
@@ -1946,7 +1938,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-10-11",
       "md5": "",
