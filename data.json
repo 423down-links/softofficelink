@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T07:44:49.255668+00:00",
+  "updated_at": "2026-10-26T08:05:54.397532+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793605434&P2=404&P3=2&P4=VZYY8LwGMDeurlVVeAs8Yj0e%2bcJnh%2bJVOisG7eeJnRgsMajhxmxTrhEUEk4T22O%2bYEZLbKmM55DCBbD7GEHHCA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793605434&P2=404&P3=2&P4=VZYY8LwGMDeurlVVeAs8Yj0e%2bcJnh%2bJVOisG7eeJnRgsMajhxmxTrhEUEk4T22O%2bYEZLbKmM55DCBbD7GEHHCA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793606735&P2=404&P3=2&P4=b8IaVgPj9ortf375QKcJ3s5RCd56I7IAxTKfoRTpT5hTeXsIVjZtTdScn9WnKBUcDow%2bYLhcMDmRb%2bL00gRptw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793606735&P2=404&P3=2&P4=b8IaVgPj9ortf375QKcJ3s5RCd56I7IAxTKfoRTpT5hTeXsIVjZtTdScn9WnKBUcDow%2bYLhcMDmRb%2bL00gRptw%3d%3d",
       "downloads": [],
       "size": 208330576,
       "size_mb": 198.7,
@@ -1701,6 +1701,18 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "MassTube 2027 v22.1.7.229 Ultra Multilingual Portable",
+          "url": "https://downtopc.com/344126-masstube-2027-v2217229-ultra-multilingual-portable.html"
+        },
+        {
+          "title": "MassTube 2027 v22.1.7.229 Ultra Multilingual",
+          "url": "https://downtopc.com/344125-masstube-2027-v2217229-ultra-multilingual.html"
+        },
+        {
+          "title": "Adobe Creative Master Collection 2026 v26.10.2026 (x64) Multilingual",
+          "url": "https://downtopc.com/344124-adobe-creative-master-collection-2026-v26102026-x64-multilingual.html"
+        },
+        {
           "title": "Broadgun pdfMachine 20.68",
           "url": "https://downtopc.com/344123-broadgun-pdfmachine-2068.html"
         }
@@ -1723,6 +1735,10 @@
       "md5": "",
       "official_site": "https://nsaneforums.com/",
       "update_items": [
+        {
+          "title": "MassTube 2027 v22.1.7.229 Ultra",
+          "url": "https://nsaneforums.com/topic/490718-masstube-2027-v2217229-ultra/"
+        },
         {
           "title": "Broadgun pdfMachine v20.68",
           "url": "https://nsaneforums.com/topic/490716-broadgun-pdfmachine-v2068/"
@@ -1910,7 +1926,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-10-11",
       "md5": "",
