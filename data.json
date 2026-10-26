@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T19:21:44.339785+00:00",
+  "updated_at": "2026-10-26T19:31:49.248295+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.50",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793647249&P2=404&P3=2&P4=nGYWt1Rgtiess5%2f3PWIr%2f%2bdj3dNzE2seSJQm4fnuwSub%2fKgZfbvAayGnV7jZLoXM0d%2bS43SSytQm0smUF2%2btQg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793647249&P2=404&P3=2&P4=nGYWt1Rgtiess5%2f3PWIr%2f%2bdj3dNzE2seSJQm4fnuwSub%2fKgZfbvAayGnV7jZLoXM0d%2bS43SSytQm0smUF2%2btQg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793647850&P2=404&P3=2&P4=lBm63BlGTvq0doBrKDyKGDO%2fTzfSY2%2b6%2fQF5uBzALPJPrT0sBEY6ILUI%2fS%2buOQFcfoWBO0wjeYQXBQzujjP%2flg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793647850&P2=404&P3=2&P4=lBm63BlGTvq0doBrKDyKGDO%2fTzfSY2%2b6%2fQF5uBzALPJPrT0sBEY6ILUI%2fS%2buOQFcfoWBO0wjeYQXBQzujjP%2flg%3d%3d",
       "downloads": [],
       "size": 208371536,
       "size_mb": 198.7,
@@ -1701,6 +1701,26 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "Hallmark Card Studio Deluxe 2027 v27.0.0.10 Portable",
+          "url": "https://downtopc.com/344149-hallmark-card-studio-deluxe-2027-v270010-portable.html"
+        },
+        {
+          "title": "MusConv Lifetime 4.10.485 Multilingual",
+          "url": "https://downtopc.com/344147-musconv-lifetime-410485-multilingual.html"
+        },
+        {
+          "title": "Photo Organizer AI Premium 8.1.7 Portable",
+          "url": "https://downtopc.com/344146-photo-organizer-ai-premium-817-portable.html"
+        },
+        {
+          "title": "Hallmark Card Studio Deluxe 2027 v27.0.0.10",
+          "url": "https://downtopc.com/344145-hallmark-card-studio-deluxe-2027-v270010.html"
+        },
+        {
+          "title": "Photo Organizer AI Premium 8.1.7",
+          "url": "https://downtopc.com/344144-photo-organizer-ai-premium-817.html"
+        },
+        {
           "title": "ABC Base Connect 1.0.8 Multilingual Portable",
           "url": "https://downtopc.com/344143-abc-base-connect-108-multilingual-portable.html"
         },
@@ -1938,7 +1958,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-10-11",
       "md5": "",
