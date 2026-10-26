@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T09:51:33.403152+00:00",
+  "updated_at": "2026-10-26T10:06:04.622807+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793613036&P2=404&P3=2&P4=O%2fZALsDa98GKw6iYdR2DP7Y2du8vLBHDlm%2b0fX%2fViv%2bbERXSBZ5HVem1gckts643LdEB3RuHOAyOBXaz5EDQ9g%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793613036&P2=404&P3=2&P4=O%2fZALsDa98GKw6iYdR2DP7Y2du8vLBHDlm%2b0fX%2fViv%2bbERXSBZ5HVem1gckts643LdEB3RuHOAyOBXaz5EDQ9g%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793613942&P2=404&P3=2&P4=jptcnHBrrAVpjSNAN3mfdBv3KYvJOwQMcKA7Rqgs7NRkTMY9A09VFD6F5z92SZ82vP2PlFzltjR15MvORmP%2bTQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/94de2e23-bb48-4455-be4e-c03858dc93d8?P1=1793613942&P2=404&P3=2&P4=jptcnHBrrAVpjSNAN3mfdBv3KYvJOwQMcKA7Rqgs7NRkTMY9A09VFD6F5z92SZ82vP2PlFzltjR15MvORmP%2bTQ%3d%3d",
       "downloads": [],
       "size": 208330576,
       "size_mb": 198.7,
@@ -1739,6 +1739,10 @@
       "md5": "",
       "official_site": "https://nsaneforums.com/",
       "update_items": [
+        {
+          "title": "Fast Video Cutter Joiner 7.2.6",
+          "url": "https://nsaneforums.com/topic/490724-fast-video-cutter-joiner-726/"
+        },
         {
           "title": "TMOG Task Manager OG Pro 1.1.0",
           "url": "https://nsaneforums.com/topic/490722-tmog-task-manager-og-pro-110/"
