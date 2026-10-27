@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T21:51:38.340781+00:00",
+  "updated_at": "2026-10-27T22:06:06.376950+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.50",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793742649&P2=404&P3=2&P4=i%2fMqzWctIhxbDsotZSlbm2ewVihPLcOm1igb0ORgTP0sVPpx%2fGm%2f1F%2fDNpdAYZnsMPvVvfVkHaaf7mrvfyw0zQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793742649&P2=404&P3=2&P4=i%2fMqzWctIhxbDsotZSlbm2ewVihPLcOm1igb0ORgTP0sVPpx%2fGm%2f1F%2fDNpdAYZnsMPvVvfVkHaaf7mrvfyw0zQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793743545&P2=404&P3=2&P4=SaWAcG6ShP31nRib7VG2oVv9uYn3Mfo%2fmWocTtvwbj77Ip81kCyatg%2fF0qb8pCvmKYuE7yK6xk7L%2ficgoDUFiA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793743545&P2=404&P3=2&P4=SaWAcG6ShP31nRib7VG2oVv9uYn3Mfo%2fmWocTtvwbj77Ip81kCyatg%2fF0qb8pCvmKYuE7yK6xk7L%2ficgoDUFiA%3d%3d",
       "downloads": [],
       "size": 208371536,
       "size_mb": 198.7,
@@ -1701,6 +1701,18 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "NTFS Permissions Reporter 5.9.713 (x64) Enterprise",
+          "url": "https://downtopc.com/344214-ntfs-permissions-reporter-59713-x64-enterprise.html"
+        },
+        {
+          "title": "Ahnenblatt 5.2.0.1 Multilingual",
+          "url": "https://downtopc.com/344213-ahnenblatt-5201-multilingual.html"
+        },
+        {
+          "title": "JRiver Media Center 36.0.51 (x64) Multilingual",
+          "url": "https://downtopc.com/344212-jriver-media-center-36051-x64-multilingual.html"
+        },
+        {
           "title": "Antidote 12 v4.1",
           "url": "https://downtopc.com/344211-antidote-12-v41.html"
         },
@@ -1928,6 +1940,18 @@
           "url": "https://nsaneforums.com/topic/490774-regcool-3108/"
         },
         {
+          "title": "Dropbox 277.4.4974",
+          "url": "https://nsaneforums.com/topic/490783-dropbox-27744974/"
+        },
+        {
+          "title": "DVDFab 13.0.7.0",
+          "url": "https://nsaneforums.com/topic/490782-dvdfab-13070/"
+        },
+        {
+          "title": "KMPlayer 2026.10.27.9 (x64)",
+          "url": "https://nsaneforums.com/topic/490779-kmplayer-202610279-x64/"
+        },
+        {
           "title": "Evernote 11.40.2",
           "url": "https://nsaneforums.com/topic/490771-evernote-11402/"
         },
@@ -2074,7 +2098,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-10-11",
       "md5": "",
