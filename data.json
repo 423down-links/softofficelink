@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T18:51:42.030239+00:00",
+  "updated_at": "2026-10-27T19:06:28.491174+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.50",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793731850&P2=404&P3=2&P4=j7WYVuLtRXa5xhscwryeSCBjpFfFIR5qFIm6brz57N3nt5%2fzVSWAkCtc8rq1OCsd1%2boMHDfN%2fYnu1I%2bpngHfZQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793731850&P2=404&P3=2&P4=j7WYVuLtRXa5xhscwryeSCBjpFfFIR5qFIm6brz57N3nt5%2fzVSWAkCtc8rq1OCsd1%2boMHDfN%2fYnu1I%2bpngHfZQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793732754&P2=404&P3=2&P4=ffDD76i70WYGCsdL6zpefg%2bH8GeBP21f5lGbkM%2byJMdpCUo6ajLwKkWUzTl9qmC0iZsYOlnwlmvD%2f9w%2b%2fcJFqg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793732754&P2=404&P3=2&P4=ffDD76i70WYGCsdL6zpefg%2bH8GeBP21f5lGbkM%2byJMdpCUo6ajLwKkWUzTl9qmC0iZsYOlnwlmvD%2f9w%2b%2fcJFqg%3d%3d",
       "downloads": [],
       "size": 208371536,
       "size_mb": 198.7,
@@ -1700,6 +1700,14 @@
       "md5": "",
       "official_site": "https://downtopc.com/software/",
       "update_items": [
+        {
+          "title": "Rons WebLynx Pro 2026.10.27.1413",
+          "url": "https://downtopc.com/344210-rons-weblynx-pro-202610271413.html"
+        },
+        {
+          "title": "VovSoft Merge Audio Files 1.4",
+          "url": "https://downtopc.com/344206-vovsoft-merge-audio-files-14.html"
+        },
         {
           "title": "The Graphics Creator 8 v1.4.21 Portable",
           "url": "https://downtopc.com/344202-the-graphics-creator-8-v1421-portable.html"
