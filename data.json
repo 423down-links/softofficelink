@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T05:51:10.130661+00:00",
+  "updated_at": "2026-10-27T06:07:00.562084+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.50",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793685041&P2=404&P3=2&P4=E9Andq8dYvcFnC0sSy9ddOS7tXEKXygqKf72zAIhkaf037FZdAv7S%2bpaFCnA3bMwk30tcu8tceJHHdtZ9bqJ4A%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793685041&P2=404&P3=2&P4=E9Andq8dYvcFnC0sSy9ddOS7tXEKXygqKf72zAIhkaf037FZdAv7S%2bpaFCnA3bMwk30tcu8tceJHHdtZ9bqJ4A%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793685937&P2=404&P3=2&P4=eh9tJ7DTpOjykzxB6j2%2bx73IsCfXvm8vOtNgC6HzUich%2b71A8t4oN7mAV56YUhv6MmCkVF%2b%2fsq6%2bLBRC3SEQmw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793685937&P2=404&P3=2&P4=eh9tJ7DTpOjykzxB6j2%2bx73IsCfXvm8vOtNgC6HzUich%2b71A8t4oN7mAV56YUhv6MmCkVF%2b%2fsq6%2bLBRC3SEQmw%3d%3d",
       "downloads": [],
       "size": 208371536,
       "size_mb": 198.7,
@@ -1690,103 +1690,31 @@
       "icon": "D",
       "icon_color": "linear-gradient(135deg, #2e7d32, #1b5e20)",
       "category": "资源站",
-      "version": "2026-10-26",
+      "version": "2026-10-27",
       "download_url": "https://downtopc.com/software/",
       "download_url_with_params": "https://downtopc.com/software/",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-10-26",
+      "last_modified": "2026-10-27",
       "md5": "",
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
-          "title": "Hallmark Card Studio Deluxe 2027 v27.0.0.10 Portable",
-          "url": "https://downtopc.com/344149-hallmark-card-studio-deluxe-2027-v270010-portable.html"
+          "title": "Iconset 3.0.0",
+          "url": "https://downtopc.com/344153-iconset-300.html"
         },
         {
-          "title": "MusConv Lifetime 4.10.485 Multilingual",
-          "url": "https://downtopc.com/344147-musconv-lifetime-410485-multilingual.html"
+          "title": "Driver Easy Professional 7.2.3.6590 Multilingual",
+          "url": "https://downtopc.com/344152-driver-easy-professional-7236590-multilingual.html"
         },
         {
-          "title": "Photo Organizer AI Premium 8.1.7 Portable",
-          "url": "https://downtopc.com/344146-photo-organizer-ai-premium-817-portable.html"
+          "title": "TMOG Task Manager OG Pro 1.1 Multilingual",
+          "url": "https://downtopc.com/344151-tmog-task-manager-og-pro-11-multilingual.html"
         },
         {
-          "title": "Hallmark Card Studio Deluxe 2027 v27.0.0.10",
-          "url": "https://downtopc.com/344145-hallmark-card-studio-deluxe-2027-v270010.html"
-        },
-        {
-          "title": "Photo Organizer AI Premium 8.1.7",
-          "url": "https://downtopc.com/344144-photo-organizer-ai-premium-817.html"
-        },
-        {
-          "title": "ABC Base Connect 1.0.8 Multilingual Portable",
-          "url": "https://downtopc.com/344143-abc-base-connect-108-multilingual-portable.html"
-        },
-        {
-          "title": "ExtraSubst Home 26.10.1 Multilingual",
-          "url": "https://downtopc.com/344141-extrasubst-home-26101-multilingual.html"
-        },
-        {
-          "title": "ExtraDisks Home 26.10.1 Multilingual",
-          "url": "https://downtopc.com/344140-extradisks-home-26101-multilingual.html"
-        },
-        {
-          "title": "Passmark OSForensics 11.1.1017 Multilingual",
-          "url": "https://downtopc.com/344138-passmark-osforensics-1111017-multilingual.html"
-        },
-        {
-          "title": "Fast Video Cutter Joiner 7.2.6 Multilingual Portable",
-          "url": "https://downtopc.com/344137-fast-video-cutter-joiner-726-multilingual-portable.html"
-        },
-        {
-          "title": "Movavi Video Editor 27.2.0 (x64) Multilingual Portable",
-          "url": "https://downtopc.com/344136-movavi-video-editor-2720-x64-multilingual-portable.html"
-        },
-        {
-          "title": "Fast Video Cutter Joiner 7.2.6 Multilingual",
-          "url": "https://downtopc.com/344135-fast-video-cutter-joiner-726-multilingual.html"
-        },
-        {
-          "title": "ABC Base Connect 1.0.8 Multilingual",
-          "url": "https://downtopc.com/344134-abc-base-connect-108-multilingual.html"
-        },
-        {
-          "title": "All Video Downloader Pro 10.5.25 (x64)",
-          "url": "https://downtopc.com/344133-all-video-downloader-pro-10525-x64.html"
-        },
-        {
-          "title": "Movavi Video Editor 27.2.0 (x64) Multilingual",
-          "url": "https://downtopc.com/344132-movavi-video-editor-2720-x64-multilingual.html"
-        },
-        {
-          "title": "Zoom Player MAX 23.0 RC1",
-          "url": "https://downtopc.com/344130-zoom-player-max-230-rc1.html"
-        },
-        {
-          "title": "DiskBoss 17.2.16",
-          "url": "https://downtopc.com/344129-diskboss-17216.html"
-        },
-        {
-          "title": "Steinberg SpectraLayers Pro 13.0.30 (x64) Multilingual",
-          "url": "https://downtopc.com/344127-steinberg-spectralayers-pro-13030-x64-multilingual.html"
-        },
-        {
-          "title": "MassTube 2027 v22.1.7.229 Ultra Multilingual Portable",
-          "url": "https://downtopc.com/344126-masstube-2027-v2217229-ultra-multilingual-portable.html"
-        },
-        {
-          "title": "MassTube 2027 v22.1.7.229 Ultra Multilingual",
-          "url": "https://downtopc.com/344125-masstube-2027-v2217229-ultra-multilingual.html"
-        },
-        {
-          "title": "Adobe Creative Master Collection 2026 v26.10.2026 (x64) Multilingual",
-          "url": "https://downtopc.com/344124-adobe-creative-master-collection-2026-v26102026-x64-multilingual.html"
-        },
-        {
-          "title": "Broadgun pdfMachine 20.68",
-          "url": "https://downtopc.com/344123-broadgun-pdfmachine-2068.html"
+          "title": "SoftPerfect NetWorx 26.10 Multilingual",
+          "url": "https://downtopc.com/344150-softperfect-networx-2610-multilingual.html"
         }
       ]
     },
@@ -1970,7 +1898,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-10-11",
       "md5": "",
