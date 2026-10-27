@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T06:48:43.062540+00:00",
+  "updated_at": "2026-10-27T07:05:54.288315+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.50",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793686842&P2=404&P3=2&P4=nGYQ3Loi0TaRTuEVSN4LMNwGi%2fJda5udHwTRK1lH952Ya0qLUdZGNHhmy4zYMpTcb4Hx7swNqtVsJ45aOPlGDA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793686842&P2=404&P3=2&P4=nGYQ3Loi0TaRTuEVSN4LMNwGi%2fJda5udHwTRK1lH952Ya0qLUdZGNHhmy4zYMpTcb4Hx7swNqtVsJ45aOPlGDA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793689534&P2=404&P3=2&P4=O0a3DvIIXb6FglvTLXzgO5JyvGl%2b9gOmqrfm51lW5bP6dTYuaxHoZi36m1zbDoi7%2fFqXIU6%2fSJMJU1570Bv%2fRw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793689534&P2=404&P3=2&P4=O0a3DvIIXb6FglvTLXzgO5JyvGl%2b9gOmqrfm51lW5bP6dTYuaxHoZi36m1zbDoi7%2fFqXIU6%2fSJMJU1570Bv%2fRw%3d%3d",
       "downloads": [],
       "size": 208371536,
       "size_mb": 198.7,
@@ -1701,6 +1701,26 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "SoftPerfect NetWorx 26.10 Multilingual Portable",
+          "url": "https://downtopc.com/344158-softperfect-networx-2610-multilingual-portable.html"
+        },
+        {
+          "title": "Driver Easy Professional 7.2.3.6590 Multilingual Portable",
+          "url": "https://downtopc.com/344157-driver-easy-professional-7236590-multilingual-portable.html"
+        },
+        {
+          "title": "Blackmagic Design Fusion Studio 21.1.2 (x64) Multilingual",
+          "url": "https://downtopc.com/344156-blackmagic-design-fusion-studio-2112-x64-multilingual.html"
+        },
+        {
+          "title": "Blackmagic Design DaVinci Resolve Studio 21.1.2 (x64) Multilingual",
+          "url": "https://downtopc.com/344155-blackmagic-design-davinci-resolve-studio-2112-x64-multilingual.html"
+        },
+        {
+          "title": "Output Messenger Server 3.0.10",
+          "url": "https://downtopc.com/344154-output-messenger-server-3010.html"
+        },
+        {
           "title": "Iconset 3.0.0",
           "url": "https://downtopc.com/344153-iconset-300.html"
         },
@@ -1735,6 +1755,10 @@
       "md5": "",
       "official_site": "https://nsaneforums.com/",
       "update_items": [
+        {
+          "title": "Driver Easy Professional 7.2.3.6590 Multilingual Repack & Portable",
+          "url": "https://nsaneforums.com/topic/490743-driver-easy-professional-7236590-multilingual-repack-portable/"
+        },
         {
           "title": "Windows PowerShell v7.6.9",
           "url": "https://nsaneforums.com/topic/490738-windows-powershell-v769/"
