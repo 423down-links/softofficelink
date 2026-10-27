@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T22:51:38.732443+00:00",
+  "updated_at": "2026-10-27T23:06:18.284158+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.50",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793746243&P2=404&P3=2&P4=B3naD4c%2f02xQhtBQWfYWivcr1aHT4zc1KgKwkteU8sqmtMilP8otzUvAhm0Gz26DAhmco0COe1AMHIqWOfju4A%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793746243&P2=404&P3=2&P4=B3naD4c%2f02xQhtBQWfYWivcr1aHT4zc1KgKwkteU8sqmtMilP8otzUvAhm0Gz26DAhmco0COe1AMHIqWOfju4A%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793747153&P2=404&P3=2&P4=k54x6EuoWA3gIaC6BeKMZw5MGJ72l8iybsVQ4LU455FcqDJdZga3pY1PSFKP4ZWnnDwy0P2dMPfmJOF576y5ig%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793747153&P2=404&P3=2&P4=k54x6EuoWA3gIaC6BeKMZw5MGJ72l8iybsVQ4LU455FcqDJdZga3pY1PSFKP4ZWnnDwy0P2dMPfmJOF576y5ig%3d%3d",
       "downloads": [],
       "size": 208371536,
       "size_mb": 198.7,
@@ -1701,6 +1701,14 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "NTFS Permissions Reporter 5.9.713 (x64) Enterprise Portable",
+          "url": "https://downtopc.com/344216-ntfs-permissions-reporter-59713-x64-enterprise-portable.html"
+        },
+        {
+          "title": "Ahnenblatt 5.2.0.1 (x64) Multilingual Portable",
+          "url": "https://downtopc.com/344215-ahnenblatt-5201-x64-multilingual-portable.html"
+        },
+        {
           "title": "NTFS Permissions Reporter 5.9.713 (x64) Enterprise",
           "url": "https://downtopc.com/344214-ntfs-permissions-reporter-59713-x64-enterprise.html"
         },
@@ -1940,6 +1948,10 @@
           "url": "https://nsaneforums.com/topic/490774-regcool-3108/"
         },
         {
+          "title": "SmartFTP Client 10.0 Build 3334.0",
+          "url": "https://nsaneforums.com/topic/490784-smartftp-client-100-build-33340/"
+        },
+        {
           "title": "Dropbox 277.4.4974",
           "url": "https://nsaneforums.com/topic/490783-dropbox-27744974/"
         },
@@ -1950,6 +1962,10 @@
         {
           "title": "KMPlayer 2026.10.27.9 (x64)",
           "url": "https://nsaneforums.com/topic/490779-kmplayer-202610279-x64/"
+        },
+        {
+          "title": "Mozilla Thunderbird 159.0",
+          "url": "https://nsaneforums.com/topic/490778-mozilla-thunderbird-1590/"
         },
         {
           "title": "Evernote 11.40.2",
