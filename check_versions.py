@@ -680,7 +680,18 @@ PRODUCTS = [
         'size': 670 * 1024 * 1024,
         'date': '2026-09-08',
         'skip_md5': True,
-        'download_url': 'https://build.cyberlink.com/Retail/PhotoDirector/Y2QIW32JB74CH/PhotoDirector_DirectorSuite365.exe',
+        # 2026-10-27 复测：18.0.1021 是 PhotoDirector Ultra 2027（买断版），
+        # 官方匿名通道拿不到它的离线包直链——
+        #  - 官方 FAQ 明确「perpetual products 必须输产品密钥，在 /box 页 Redeem 才给下载链接」，
+        #    兑换接口 POST https://www.cyberlink.com/api/download/box {"key":"..."}，
+        #    实测空密钥/假密钥均返回 {"status":"FAIL"}；
+        #  - 旧的 Retail 直链（Y2QIW32JB74CH）是随包下发的「一次性 token」，
+        #    S3 对象就停在 2026-09-08（加 Accept-Encoding:gzip 回源确认过，不是 CDN 缓存），
+        #    且该路径有文件名白名单，换名/换 token 一律 403；
+        #  - 补丁中心 prodId=211/prodVerId=2121 返回「no patch files available」。
+        # 结论：直链不可得 → 下载改指向「官方现用下载入口」（官方下载页按钮同款，
+        # 302 到 build.cyberlink.com 当前下载器，永远跟官方最新构建，不会像 token 直链那样漂成旧包）。
+        'download_url': 'https://www.cyberlink.com/prog/trial/user-add.do?source=direct&ProductId=211&ostype=Windows',
         'official_site': 'https://www.cyberlink.com/products/photodirector/features_en_US.html',
     },
     {
