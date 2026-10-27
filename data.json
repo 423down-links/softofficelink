@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T12:51:14.222093+00:00",
+  "updated_at": "2026-10-27T13:06:02.815575+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.50",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793710239&P2=404&P3=2&P4=mn5UUld%2bR5BJdqKfcJsHDml%2f1ifh%2fSSnX63%2bm4ItGaFTJ7MDbKwybIjT8VoTUYwIkFzJIWPwbGcw1geU6BshVw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793710239&P2=404&P3=2&P4=mn5UUld%2bR5BJdqKfcJsHDml%2f1ifh%2fSSnX63%2bm4ItGaFTJ7MDbKwybIjT8VoTUYwIkFzJIWPwbGcw1geU6BshVw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793711137&P2=404&P3=2&P4=JjO0t%2fazb5pZ%2f8puV9NRlxa%2fhFflZsQr714Brd%2fGcJWAdBxb2Lbsc%2fqG%2fns%2bWkWMVmwJUEF0XM0iigtpMqTjRw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793711137&P2=404&P3=2&P4=JjO0t%2fazb5pZ%2f8puV9NRlxa%2fhFflZsQr714Brd%2fGcJWAdBxb2Lbsc%2fqG%2fns%2bWkWMVmwJUEF0XM0iigtpMqTjRw%3d%3d",
       "downloads": [],
       "size": 208371536,
       "size_mb": 198.7,
@@ -580,12 +580,12 @@
       "icon_color": "linear-gradient(135deg, #e67e22, #f39c12)",
       "category": "文件对比",
       "version": "2.16.58.2",
-      "download_url": "https://github.com/WinMerge/winmerge/releases/tag/v2.16.58.2",
-      "download_url_with_params": "https://github.com/WinMerge/winmerge/releases/tag/v2.16.58.2",
+      "download_url": "https://github.com/WinMerge/winmerge/releases/tag/v2.16.60",
+      "download_url_with_params": "https://github.com/WinMerge/winmerge/releases/tag/v2.16.60",
       "downloads": [],
-      "size": 226494875,
-      "size_mb": 216.0,
-      "last_modified": "2026-08-27",
+      "size": 253974280,
+      "size_mb": 242.2,
+      "last_modified": "2026-10-27",
       "md5": "",
       "official_site": "https://github.com/WinMerge/winmerge/releases",
       "update_items": []
@@ -1701,6 +1701,22 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "JWIZARD Cleaner 1.12.0.0 Multilingual",
+          "url": "https://downtopc.com/344188-jwizard-cleaner-11200-multilingual.html"
+        },
+        {
+          "title": "Pazu All-In-One Music Converter 3.2.2 Multilingual Portable",
+          "url": "https://downtopc.com/344187-pazu-all-in-one-music-converter-322-multilingual-portable.html"
+        },
+        {
+          "title": "AquaSoft Stages 17.2.08 (x64) Multilingual Portable",
+          "url": "https://downtopc.com/344186-aquasoft-stages-17208-x64-multilingual-portable.html"
+        },
+        {
+          "title": "AquaSoft Photo Vision 17.2.08 (x64) Multilingual",
+          "url": "https://downtopc.com/344185-aquasoft-photo-vision-17208-x64-multilingual.html"
+        },
+        {
           "title": "AquaSoft Video Vision 17.2.08 (x64) Multilingual",
           "url": "https://downtopc.com/344184-aquasoft-video-vision-17208-x64-multilingual.html"
         },
@@ -1888,6 +1904,22 @@
           "url": "https://nsaneforums.com/topic/490730-passmark-osforensics-1111017-multilingual/"
         },
         {
+          "title": "WinRAR 7.30 Beta 2",
+          "url": "https://nsaneforums.com/topic/490761-winrar-730-beta-2/"
+        },
+        {
+          "title": "ESET 20.0.7.0",
+          "url": "https://nsaneforums.com/topic/490759-eset-20070/"
+        },
+        {
+          "title": "Advanced Renamer 4.28",
+          "url": "https://nsaneforums.com/topic/490758-advanced-renamer-428/"
+        },
+        {
+          "title": "Opera 139.0.6053.15",
+          "url": "https://nsaneforums.com/topic/490757-opera-1390605315/"
+        },
+        {
           "title": "Mozilla Firefox 159.0",
           "url": "https://nsaneforums.com/topic/490742-mozilla-firefox-1590/"
         }
@@ -2030,7 +2062,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-10-11",
       "md5": "",
