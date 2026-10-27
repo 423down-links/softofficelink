@@ -3012,7 +3012,7 @@ if old_v and not new_v:
 
 ---
 
-## 第45节：从 CyberLink 下载器逆出完整离线包接口（PhotoDirector，2026-10-27）
+## 第45节：从 CyberLink 下载器逆出完整离线包接口（PowerDirector / PhotoDirector，2026-10-27）
 
 ### 症状
 
@@ -3070,14 +3070,22 @@ Range 0-1023 返回 `206` + `PE32 executable (GUI)` → **是完整安装器，�
 
 ### 版本号怎么从文件名解
 
+官方完整包有**两种命名**，`_cyberlink_full_ver_from_name()` 都要认：
+
 ```
+# ① 套件位式：第 3 段是套件位（恒 10），第 4 段才是构建号
 PhotoDirector_18.0.10.1011.2120_bdded9f25_92_Essential_PTD260827-01.exe
                └┬┘└┬┘└─┬─┘└─┬┘
-              18  0  10  1011   ← 第 3 段是套件位（恒 10），第 4 段才是构建号
+              18  0  10  1011        → 18.0.1011.0
+
+# ② 构建号在前式：产品_构建号_major.minor.suite_...
+PowerDirector_1019_25.0.10_365_Essential_VDE261019-01.exe
+              └─┬┘└┬┘└┬┘└┬┘
+              1019 25  0  10         → 25.0.1019.0
 ```
 
-对外口径 = `major.minor.build.0` → `18.0.1011.0`，与 nsane 的 `v18.0.1021`
-只差构建号（1021 走订阅 updater，匿名拿不到包）。
+对外口径 = `major.minor.build.0`，与 nsane 的 `v18.0.1021` 只差构建号
+（1021 走订阅 updater，匿名拿不到包）。
 
 ### Token 权限矩阵（同目录下只有特定文件能匿名下）
 
@@ -3093,19 +3101,52 @@ PhD retail token Y2QIW32JB74CH: Downloader.exe 403 / 完整包 206 ✓（0908 �
 ### 落地
 
 `check_versions.py` 新增 `_cyberlink_full_installer_link(product)` +
-`_cyberlink_full_ver_from_name(fname)`，产品配置打开：
+`_cyberlink_full_ver_from_name(fname)`，两款产品都打开：
 
 ```python
+# PowerDirector
+'cyberlink_full_installer': True,
+'cyberlink_full_installer_name': 'PowerDirector',
+'cyberlink_full_installer_version': '25.0',
+'cyberlink_full_installer_sr': ['VDE260910-01'],
+'cyberlink_full_installer_lang': 'Enu',
+'version_authority': 'official_installer',
+
+# PhotoDirector
 'cyberlink_full_installer': True,
 'cyberlink_full_installer_name': 'PhotoDirector',
 'cyberlink_full_installer_version': '17.0',
 'cyberlink_full_installer_sr': ['PTD260827-01', 'PTD260514-01'],
 'cyberlink_full_installer_lang': 'Enu',
 'version_authority': 'official_installer',   # 口径切换 1021→1011 时放行防降级
+'cyberlink_trial_version_trusted': False,    # DisplayBuildNumber 是框架版（17.6.x），非产品版本
 ```
 
-命中后版本号取自包文件名、md5 取接口返回值、日期取 S3 Last-Modified，
-并跳过 nsane 标题（避免版本号又跳到匿名拿不到包的 1021）。
+命中后版本号取自包文件名、md5 取接口返回值、日期取 S3 Last-Modified。
+
+**三条配套约束**（缺一条线上就会错）：
+
+1. **彻底移除 nsane 论坛版本源**：论坛只是转载，标题版本是订阅 updater 先推的构建，
+   匿名拿不到对应完整包 → 会出现「版本号比包新」的错配。已删除 `cyberlink_retail_nsane`
+   / `cyberlink_retail_keywords` 配置、`_cyberlink_retail_from_nsane()` 函数、
+   `CYBERLINK_RETAIL_NSANE_*` 常量，以及 `detect_cyberlink()` 里的调用段。
+2. **完整包命中后，试用通道不得覆盖版本**：试用通道恒返回旧基线（PD `25.0.0904.0`、
+   PhD `17.6.1826.0`），必须判 `if not full_ok and cyberlink_trial_version_trusted:`
+   才允许赋值，否则权威包版本会被试用基线顶掉。
+3. **两仓逻辑一致**：`softofficelink` 与 `cyberlink-links` 的这两款产品都走同一套
+   `full_installer` 通道（含两种命名解析），保证前端输出的版本 / 时间 / 完整包地址同源。
+
+**当前线上结果（2026-10-27）**：
+
+| 产品 | 版本 | 日期 | 大小 | 完整包 |
+|------|------|------|------|--------|
+| PowerDirector 365 | 25.0.1019.0 | 2026-10-20 | 689.0 MB | `PowerDirector_1019_25.0.10_365_Essential_VDE261019-01.exe` |
+| PhotoDirector 365 | 18.0.1011.0 | 2026-10-12 | 665.6 MB | `PhotoDirector_18.0.10.1011.2120_bdded9f25_92_Essential_PTD260827-01.exe` |
+
+> 关于 PD「1025」：实测 `get-link-v2.jsp` 对 PD 恒返回 1019 包（`VERSIONTYPE` 试了
+> trial/patch/upgrade/retail/subscription/full/update，`SR` 试了 VDE261020~261027 全部
+> `{"error":"000"}`）。1025 只走订阅 updater 通道，**匿名官方接口当前拿不到对应完整包**，
+> 官方匿名通道最新完整包就是 1019。硬猜 1025 包路径全部 403。
 
 ### 附：SKUtil.dll 的 ini 加密（解 Define.ini / Royalty.ini 用）
 
