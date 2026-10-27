@@ -636,24 +636,25 @@ PRODUCTS = [
         'category': '视频编辑',
         'detect_type': 'cyberlink',
         'cyberlink_product_id': 4,
-        # 版本来源说明（2026-10-25 复测，根治「版本长期停在 0904/1007」）：
-        #  - 官方 thank-you API → 试用下载器直链 → info.ini 的 DisplayBuildNumber，
-        #    这是「官方试用通道当前基线」，实测长期停在 25.0.0904.0（VDE260910-01）；
-        #    零售新构建（如 Ultimate 2027 的 25.0.1019.0）只走买断/零售通道，
-        #    匿名官方接口取不到，support 补丁中心也只有 2025 及更早的产品线；
-        #  - 零售最新版改由 nsane「Software Updates」板块标题解析（cyberlink_retail_nsane）：
-        #    板块惯例是「一个软件更新开一个新帖」，标题即精确版本号，列表页匿名可读；
-        #    官方试用通道铺开新版本后自动取更大的值对齐；
-        #  - 不再写死 version_display：写死等于把版本钉在人工核实过的那个数上，
-        #    官方换包后不会自动跟进，这正是长期停在旧版的原因。
-        'cyberlink_retail_nsane': True,
-        'cyberlink_retail_keywords': ['powerdirector'],
-        'version': '25.0.0904.0',
-        'base_version': '25.0.0904.0',
-        'size': 691 * 1024 * 1024,
-        'date': '2026-09-14',
+        # 版本来源（2026-10-27 改）：走官方完整离线包通道（见 _cyberlink_full_installer_link）——
+        # 调下载器运行时真正调用的 get-link-v2.jsp，直接返回**完整安装包**直链 + 官方 md5，
+        # 版本号从包文件名解出，版本与下载包同源。
+        # 旧做法（已弃）：download_url 写死零售目录的 DirectorSuite365.exe（0904 的包），
+        # 版本号另从 nsane 论坛标题取 —— 论坛只是转载，标题版本是订阅 updater 先推的
+        # 构建，匿名拿不到对应完整包，会出现「版本号比包新」的错配。
+        'cyberlink_full_installer': True,
+        'cyberlink_full_installer_name': 'PowerDirector',
+        'cyberlink_full_installer_version': '25.0',
+        # SR 取自下载器 info.ini 的 SR_No（实测参数不影响结果，服务端按 PRODUCTNAME 取最新构建）
+        'cyberlink_full_installer_sr': ['VDE260910-01'],
+        'cyberlink_full_installer_lang': 'Enu',
+        'version_authority': 'official_installer',
+        'version': '25.0.1019.0',
+        'base_version': '25.0.1019.0',
+        'size': 722417392,
+        'date': '2026-10-20',
         'skip_md5': True,
-        'download_url': 'https://build.cyberlink.com/Retail/PowerDirector/CGQC8ZH75VM6/PowerDirector_DirectorSuite365.exe',
+        'download_url': 'https://build.cyberlink.com/Retail/PowerDirector/I8KJVKIFAO5/PowerDirector_1019_25.0.10_365_Essential_VDE261019-01.exe',
         'official_site': 'https://www.cyberlink.com/products/powerdirector-video-editing-software/features_en_US.html',
     },
     {
@@ -680,8 +681,6 @@ PRODUCTS = [
         # 版本口径换成「官方完整包文件名」，与线上旧值（1021，来自 nsane 标题）不可比，
         # 声明权威源让防降级放行这次 1021 → 1011 的口径切换
         'version_authority': 'official_installer',
-        'cyberlink_retail_nsane': True,
-        'cyberlink_retail_keywords': ['photodirector'],
         # 试用通道的 DisplayBuildNumber 是安装框架版本（17.6.x），不能当产品版本号
         'cyberlink_trial_version_trusted': False,
         'base_version': '18.0.1011.0',
@@ -3682,85 +3681,6 @@ def _cyberlink_retail_redeem(key, lang='ENU'):
     return out
 
 
-# CyberLink 零售版（Ultimate/Ultra 买断版）版本源：官方匿名通道只铺「试用」基线，
-# 零售新构建（如 25.0.1019.0）只走买断/零售通道，官方 thank-you API 恒返回试用基线
-# （实测 PowerDirector 试用通道长期停在 25.0.0904.0），靠 version_display 硬编码必然滞后。
-#
-# 兜底源用 nsane 论坛「Software Updates」板块：该板块惯例是「一个软件更新开一个新帖」，
-# 标题/slug 即精确版本号（如 "cyberlink-powerdirector-ultimate-2027-v2501019"），
-# 列表页匿名可读（正文需登录）。
-#
-# ⚠️ 必须翻多页：板块列表页每页只有 25 帖，热门板块一天就刷掉几十帖，
-# 只看第 1 页会漏掉本产品的更新帖（实测 PowerDirector 帖被挤到第 2 页）。
-CYBERLINK_RETAIL_NSANE_FORUM = 'https://nsaneforums.com/forum/48-software-updates/'
-CYBERLINK_RETAIL_NSANE_PAGES = 4
-
-
-def _cyberlink_retail_from_nsane(product):
-    """从 nsane 论坛板块列表页解析零售版最新版本号。
-
-    返回 (version, date, url)；无结果返回 ('', '', '')。
-    只取「匹配本产品」的帖子，避免把别的软件的版本号误当成本产品版本。
-
-    匹配用 **URL slug**（cyberlink-powerdirector-ultimate-2027-v2501019）而不是
-    title 属性：部分行的 title 属性被截断/带尾空格，slug 反而稳定。
-    """
-    # slug / 标题里要匹配的产品关键词（缺省用产品名）
-    keywords = product.get('cyberlink_retail_keywords') or [product.get('name', '')]
-    keywords = [str(k).strip().lower() for k in keywords if str(k).strip()]
-    if not keywords:
-        return '', '', ''
-
-    best_ver = ''
-    best_date = ''
-    best_url = ''
-    for page in range(1, CYBERLINK_RETAIL_NSANE_PAGES + 1):
-        url = (CYBERLINK_RETAIL_NSANE_FORUM if page == 1
-               else f'{CYBERLINK_RETAIL_NSANE_FORUM}?page={page}')
-        html_text = _fetch_site_html(url)
-        if not html_text:
-            continue
-        found_on_page = False
-        # 每行：<a href='https://nsaneforums.com/topic/{id}-{slug}' title='标题'>
-        for m in re.finditer(
-                r"<a href='(https://nsaneforums\.com/topic/[^']+)'[^>]*title='([^']*)'", html_text):
-            link = m.group(1)
-            title = html.unescape(m.group(2)).strip()
-            hay = (link + ' ' + title).lower()
-            if not any(k in hay for k in keywords):
-                continue
-            # 版本号：slug 或标题里的 4 段版本，如 v2501019 / 25.0.1019
-            ver = ''
-            vm = re.search(r'(\d+)\.(\d+)\.(\d{4})(?:\.(\d+))?', hay)
-            if vm:
-                ver = f'{vm.group(1)}.{vm.group(2)}.{vm.group(3)}.{vm.group(4) or "0"}'
-            else:
-                # slug 形式：v2501019 → 25.0.1019.0（取后 4 位 build + 段前缀）
-                sm = re.search(r'-v(\d{2})(\d{2})(\d{2})(\d{2})(?:-|$)', link.lower())
-                if sm:
-                    ver = f'{sm.group(1)}.{sm.group(2)}.{sm.group(3)}{sm.group(4)}.0'
-            if not ver:
-                continue
-            found_on_page = True
-            if not best_ver or _ver_newer(ver, best_ver):
-                best_ver = ver
-                best_url = link
-                # 该行所属 <li> 块里第一个 <time> 是发帖时间（板块惯例：一个更新一个新帖）
-                blk_start = html_text.rfind("data-rowID=", 0, m.start())
-                blk_end = html_text.find("data-rowID=", m.start())
-                blk = html_text[blk_start:blk_end if blk_end > 0 else m.start() + 4000]
-                tm = re.search(r"<time datetime='([^']+)'", blk)
-                if tm:
-                    d = parse_date(tm.group(1))
-                    if d:
-                        best_date = d
-        # 已找到本产品的最新帖，且本页无更新版本 → 后续页只会更旧，可停
-        if found_on_page and best_ver:
-            break
-    if best_ver:
-        print(f"  零售版(nsane): {best_ver}" + (f" @ {best_date}" if best_date else ""))
-    return best_ver, best_date, best_url
-
 
 # CyberLink 完整离线安装包接口：下载器（CyberLink_PhotoDirector_Downloader.exe）运行时
 # 实际调用的就是它。来源＝解包下载器的 NSIS 脚本头（签名 EF BE AD DE + NullsoftInst
@@ -3783,19 +3703,26 @@ CYBERLINK_GETLINK_HOSTS = [
 def _cyberlink_full_ver_from_name(fname):
     """从官方完整包文件名解产品版本。
 
-    文件名形如 PhotoDirector_18.0.10.1011.2120_bdded9f25_92_Essential_PTD260827-01.exe：
-    第 3 段是套件位（恒为 10），第 4 段才是构建号，第 5 段是打包流水号。
-    对外口径是 major.minor.build（18.0.1011），补 .0 成 4 段与其它 CyberLink 条目一致。
+    官方完整包有两种命名，都要支持：
+      - PhotoDirector_18.0.10.1011.2120_bdded9f25_92_Essential_PTD260827-01.exe
+        连续 5 段数字：第 3 段是套件位（恒为 10），第 4 段才是构建号 → 18.0.1011.0；
+      - PowerDirector_1019_25.0.10_365_Essential_VDE261019-01.exe
+        构建号在前、后接 major.minor.suite → 25.0.1019.0。
+    对外口径是 major.minor.build，补 .0 成 4 段与其它 CyberLink 条目一致。
     解析不出返回空字符串。
     """
     m = re.search(r'(\d+)\.(\d+)\.(\d+)\.(\d+)\.(\d+)[_.]', fname) or \
         re.search(r'(\d+)\.(\d+)\.(\d+)\.(\d+)\.(\d+)', fname)
-    if not m:
-        return ''
-    p = [int(x) for x in m.groups()]
-    if p[2] < 100 <= p[3]:
-        return f'{p[0]}.{p[1]}.{p[3]}.0'
-    return _cyberlink_canon_ver('.'.join(m.groups()))
+    if m:
+        p = [int(x) for x in m.groups()]
+        if p[2] < 100 <= p[3]:
+            return f'{p[0]}.{p[1]}.{p[3]}.0'
+        return _cyberlink_canon_ver('.'.join(m.groups()))
+    # 构建号在前：产品_1019_25.0.10_365_...
+    m2 = re.search(r'_(\d{3,5})_(\d+)\.(\d+)\.(\d+)[_.]', fname)
+    if m2:
+        return f'{m2.group(2)}.{m2.group(3)}.{int(m2.group(1))}.0'
+    return ''
 
 
 def _cyberlink_full_installer_link(product):
@@ -3847,13 +3774,15 @@ def detect_cyberlink(product):
     """CyberLink 官方版本自动探测（无需硬编码 VID 令牌）。
 
     流程全走官方接口：
-      1. /api/download/thank-you-page?ProductId=N  取 buildLink
-      2. 跟随 buildLink(user-add.do) 的 302 拿到 build.cyberlink.com 官方下载器直链
-      3. 解出下载器内 info.ini 的 DisplayBuildNumber（= 当前官方试用通道基线版本）
-      4. 零售版版本源（nsane 板块标题）：官方试用通道长期滞后于零售新构建，
-         用它补齐零售最新版，避免靠 version_display 硬编码导致版本永远停在旧版
+      1. 完整离线包通道（首选）：官方 get-link-v2.jsp 直接返回完整安装器直链 + md5，
+         文件名带真实构建号 → 版本号与下载包同源
+      2. /api/download/thank-you-page?ProductId=N  取 buildLink
+      3. 跟随 buildLink(user-add.do) 的 302 拿到 build.cyberlink.com 官方下载器直链
+      4. 解出下载器内 info.ini 的 DisplayBuildNumber（= 当前官方试用通道基线版本）
       5. 若配置了 CYBERLINK_RETAIL_KEY，再走零售兑换接口拿买断版（Ultimate/Ultra）直链
 
+    版本源只用官方，不从 nsane 等论坛取（论坛只是转载，标题版本是订阅 updater 先推的
+    构建，匿名拿不到对应完整包，写进去就成「版本号比包新」的错配）。
     这样令牌/版本随官方更新自动刷新；下载链接仍用配置的官方离线包。
     """
     version = product.get('version', '')
@@ -3902,29 +3831,20 @@ def detect_cyberlink(product):
                 detected = _cyberlink_canon_ver(_cyberlink_extract_build(downloader_url))
                 if detected:
                     trial_version = detected
-                    # PhotoDirector 的 DisplayBuildNumber 是安装框架版本（17.6.x），≠ 产品版本；
-                    # 这种产品不能拿试用值当版本号（配 cyberlink_trial_version_trusted=False）。
-                    if product.get('cyberlink_trial_version_trusted', True):
+                    # 完整包通道已命中时，试用通道的版本不能覆盖它（完整包才是权威源，
+                    # 版本与下载包同源）；另外 PhotoDirector 的 DisplayBuildNumber 是安装
+                    # 框架版本（17.6.x），≠ 产品版本，配 cyberlink_trial_version_trusted=False。
+                    if (not full_ok
+                            and product.get('cyberlink_trial_version_trusted', True)):
                         version = detected
                         print(f"  官方试用通道版本: {version}")
                     else:
-                        print(f"  官方试用通道版本(框架版，不作产品版本): {detected}")
+                        print(f"  官方试用通道版本(不作产品版本): {detected}")
         except Exception as e:
             print(f"  ⚠️ CyberLink 官方接口探测失败: {e}")
 
-    # 零售版（Ultimate/Ultra 买断版）最新版本：官方匿名通道只有试用基线，
-    # 零售新构建走不到 → 用 nsane 板块标题补齐，官方通道铺开新版本后自动对齐。
-    if product.get('cyberlink_retail_nsane') and not full_ok:
-        try:
-            retail_ver, retail_date, _retail_url = _cyberlink_retail_from_nsane(product)
-            if retail_ver:
-                if not version or _ver_newer(retail_ver, version):
-                    version = retail_ver
-                    print(f"  ↩️ 采用零售版版本: {version}")
-                if retail_date and (not date or retail_date > date):
-                    date = retail_date
-        except Exception as e:
-            print(f"  ⚠️ 零售版版本源探测失败: {e}")
+    # 版本源只用官方：不再从 nsane 等论坛标题取版本 —— 论坛只是转载，标题里的版本是
+    # 订阅 updater 先推的构建，匿名拿不到对应完整包，写进线上就成「版本号比包新」的错配。
 
     # 买断版零售通道（产品密钥兑换）：配置了 CYBERLINK_RETAIL_KEY 才启用。
     # 兑换到的直链即「Ultimate / Ultra 买断版」离线包；无密钥时不影响其它探测。
