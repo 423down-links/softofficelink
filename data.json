@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T03:51:33.390066+00:00",
+  "updated_at": "2026-10-27T04:06:35.035532+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.50",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793677838&P2=404&P3=2&P4=RcMg5IReRzN95egOGSweoy7a8c%2f4qCs6d3TL8RIhVlpPSG8hyCV8HbUGl0NzOhYxAUPttZwyc328VEBfNqXrzg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793677838&P2=404&P3=2&P4=RcMg5IReRzN95egOGSweoy7a8c%2f4qCs6d3TL8RIhVlpPSG8hyCV8HbUGl0NzOhYxAUPttZwyc328VEBfNqXrzg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793678736&P2=404&P3=2&P4=afdtmEu2Xf%2bxeQCF1gVGc3TvwuBkNHWyN6qj09qGJOmQJrWSXbzrDOQKiQQiuQxfEiDqZjlyGgKhPs%2fFfHT8rA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793678736&P2=404&P3=2&P4=afdtmEu2Xf%2bxeQCF1gVGc3TvwuBkNHWyN6qj09qGJOmQJrWSXbzrDOQKiQQiuQxfEiDqZjlyGgKhPs%2fFfHT8rA%3d%3d",
       "downloads": [],
       "size": 208371536,
       "size_mb": 198.7,
@@ -2024,9 +2024,9 @@
       "download_url": "https://bandisoft.app/bandizip/BANDIZIP-SETUP-STD-X64.EXE",
       "download_url_with_params": "https://bandisoft.app/bandizip/BANDIZIP-SETUP-STD-X64.EXE",
       "downloads": [],
-      "size": 7356400,
-      "size_mb": 7.0,
-      "last_modified": "2026-10-13",
+      "size": 7413240,
+      "size_mb": 7.1,
+      "last_modified": "2026-10-27",
       "md5": "",
       "official_site": "https://www.bandisoft.com/bandizip/history/",
       "update_items": []
