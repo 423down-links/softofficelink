@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T16:51:34.738155+00:00",
+  "updated_at": "2026-10-27T17:06:30.978713+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.50",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793724640&P2=404&P3=2&P4=hDx%2fRDpMHREqYvh5V7XbFfYf3YiihxYvPrTj332SPBY%2f%2bHP%2bZXJz2FilAm4Nv6wLB3H3dvhXIoTpM64e0PdGXA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793724640&P2=404&P3=2&P4=hDx%2fRDpMHREqYvh5V7XbFfYf3YiihxYvPrTj332SPBY%2f%2bHP%2bZXJz2FilAm4Nv6wLB3H3dvhXIoTpM64e0PdGXA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793725542&P2=404&P3=2&P4=elf5%2fufdwu%2bocM4%2fPN7J7IdM%2b%2fco5216m77UsX%2fHpjfhkzBd5x0Tx2nAv41jWCA34xsitNzydA23Q69uo1XyKA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793725542&P2=404&P3=2&P4=elf5%2fufdwu%2bocM4%2fPN7J7IdM%2b%2fco5216m77UsX%2fHpjfhkzBd5x0Tx2nAv41jWCA34xsitNzydA23Q69uo1XyKA%3d%3d",
       "downloads": [],
       "size": 208371536,
       "size_mb": 198.7,
@@ -471,13 +471,13 @@
       "icon": "W",
       "icon_color": "linear-gradient(135deg, #667eea, #764ba2)",
       "category": "图像工具",
-      "version": "6.3.5",
-      "download_url": "https://www.ntwind.com/download/WinSnap_6.3.5-setup.exe",
-      "download_url_with_params": "https://www.ntwind.com/download/WinSnap_6.3.5-setup.exe",
+      "version": "6.3.6",
+      "download_url": "https://www.ntwind.com/download/WinSnap_6.3.6-setup.exe",
+      "download_url_with_params": "https://www.ntwind.com/download/WinSnap_6.3.6-setup.exe",
       "downloads": [],
       "size": 3145728,
       "size_mb": 3.0,
-      "last_modified": "2026-10-21",
+      "last_modified": "2026-10-27",
       "md5": "",
       "official_site": "https://www.ntwind.com/software/winsnap.html",
       "update_items": []
@@ -1701,6 +1701,22 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "The Graphics Creator 8 v1.4.21 Portable",
+          "url": "https://downtopc.com/344202-the-graphics-creator-8-v1421-portable.html"
+        },
+        {
+          "title": "JDownloader 2.0.1 (27.10.2026) Multilingual Portable",
+          "url": "https://downtopc.com/344201-jdownloader-201-27102026-multilingual-portable.html"
+        },
+        {
+          "title": "Cisdem PDF Compressor 3.5.0 Multilingual Portable",
+          "url": "https://downtopc.com/344200-cisdem-pdf-compressor-350-multilingual-portable.html"
+        },
+        {
+          "title": "Cisdem PDF Password Remover 2.5.0 Multilingual Portable",
+          "url": "https://downtopc.com/344199-cisdem-pdf-password-remover-250-multilingual-portable.html"
+        },
+        {
           "title": "LightBurn 2.2.00 Final (x64) Multilingual Portable",
           "url": "https://downtopc.com/344198-lightburn-2200-final-x64-multilingual-portable.html"
         },
@@ -1885,75 +1901,19 @@
       "icon": "N",
       "icon_color": "linear-gradient(135deg, #4a6fa5, #2b3f63)",
       "category": "资源站",
-      "version": "2026-10-27",
+      "version": "2026-10-28",
       "download_url": "https://nsaneforums.com/nsane.down/",
       "download_url_with_params": "https://nsaneforums.com/nsane.down/",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-10-27",
+      "last_modified": "2026-10-28",
       "md5": "",
       "official_site": "https://nsaneforums.com/",
       "update_items": [
         {
-          "title": "JWIZARD Cleaner v1.12",
-          "url": "https://nsaneforums.com/topic/490766-jwizard-cleaner-v112/"
-        },
-        {
-          "title": "WSCC - Windows System Control Center v10.0.4.7 Commercial",
-          "url": "https://nsaneforums.com/topic/490765-wscc-windows-system-control-center-v10047-commercial/"
-        },
-        {
-          "title": "AppDock v1.0.0",
-          "url": "https://nsaneforums.com/topic/490745-appdock-v100/"
-        },
-        {
-          "title": "Driver Easy Professional 7.2.3.6590 Multilingual Repack & Portable",
-          "url": "https://nsaneforums.com/topic/490743-driver-easy-professional-7236590-multilingual-repack-portable/"
-        },
-        {
-          "title": "Windows PowerShell v7.6.9",
-          "url": "https://nsaneforums.com/topic/490738-windows-powershell-v769/"
-        },
-        {
-          "title": "Hallmark Card Studio Deluxe 2027 v27.0.0.10",
-          "url": "https://nsaneforums.com/topic/490737-hallmark-card-studio-deluxe-2027-v270010/"
-        },
-        {
-          "title": "ExtraSubst Home v26.10.1",
-          "url": "https://nsaneforums.com/topic/490734-extrasubst-home-v26101/"
-        },
-        {
-          "title": "ExtraDisks Home v26.10.1",
-          "url": "https://nsaneforums.com/topic/490731-extradisks-home-v26101/"
-        },
-        {
-          "title": "Passmark OSForensics 11.1.1017 Multilingual",
-          "url": "https://nsaneforums.com/topic/490730-passmark-osforensics-1111017-multilingual/"
-        },
-        {
-          "title": "Waterfox 6.7.7",
-          "url": "https://nsaneforums.com/topic/490762-waterfox-677/"
-        },
-        {
-          "title": "WinRAR 7.30 Beta 2",
-          "url": "https://nsaneforums.com/topic/490761-winrar-730-beta-2/"
-        },
-        {
-          "title": "ESET 20.0.7.0",
-          "url": "https://nsaneforums.com/topic/490759-eset-20070/"
-        },
-        {
-          "title": "Advanced Renamer 4.28",
-          "url": "https://nsaneforums.com/topic/490758-advanced-renamer-428/"
-        },
-        {
-          "title": "Opera 139.0.6053.15",
-          "url": "https://nsaneforums.com/topic/490757-opera-1390605315/"
-        },
-        {
-          "title": "Mozilla Firefox 159.0",
-          "url": "https://nsaneforums.com/topic/490742-mozilla-firefox-1590/"
+          "title": "UnHackMe 18.85.2026.1027",
+          "url": "https://nsaneforums.com/topic/490768-unhackme-188520261027/"
         }
       ]
     },
@@ -2094,7 +2054,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-10-11",
       "md5": "",
