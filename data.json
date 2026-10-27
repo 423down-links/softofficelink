@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T05:06:32.206305+00:00",
+  "updated_at": "2026-10-27T05:08:23.552711+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -705,14 +705,14 @@
       "icon": "PhD",
       "icon_color": "linear-gradient(135deg, #8e44ad, #3498db)",
       "category": "图像处理",
-      "version": "18.0.1021.0",
-      "download_url": "https://www.cyberlink.com/prog/trial/user-add.do?source=direct&ProductId=211&ostype=Windows",
-      "download_url_with_params": "https://www.cyberlink.com/prog/trial/user-add.do?source=direct&ProductId=211&ostype=Windows",
+      "version": "18.0.1011.0",
+      "download_url": "https://build.cyberlink.com/Retail/PhotoDirector/5F73OXUQ5M4N8J/PhotoDirector_18.0.10.1011.2120_bdded9f25_92_Essential_PTD260827-01.exe",
+      "download_url_with_params": "https://build.cyberlink.com/Retail/PhotoDirector/5F73OXUQ5M4N8J/PhotoDirector_18.0.10.1011.2120_bdded9f25_92_Essential_PTD260827-01.exe",
       "downloads": [],
-      "size": 8231904,
-      "size_mb": 7.9,
-      "last_modified": "2026-10-26",
-      "md5": "",
+      "size": 697933848,
+      "size_mb": 665.6,
+      "last_modified": "2026-10-12",
+      "md5": "3e73107715cc97d0b3281c451431ca25",
       "official_site": "https://www.cyberlink.com/products/photodirector/features_en_US.html",
       "update_items": []
     },

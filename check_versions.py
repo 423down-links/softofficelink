@@ -19,6 +19,7 @@ import threading
 import time
 import urllib.request
 import urllib.error
+import urllib.parse
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone, timedelta
 
@@ -661,37 +662,34 @@ PRODUCTS = [
         'icon': 'PhD',
         'icon_color': 'linear-gradient(135deg, #8e44ad, #3498db)',
         'category': '图像处理',
-        # 官方版本源排查结论（2026-10-25 复测）：
-        #  - 试用下载器（thank-you API → user-add.do → downloader）info.ini 的
-        #    DisplayBuildNumber=17.6.1826.0 是安装框架版本，≠ 产品版本 18.x（两次复测一致）；
-        #  - build.cyberlink.com 零售直链 Y2QIW32JB74CH 的 S3 对象最后修改仍为 2026-09-08，
-        #    实际还是 0908 包；官方新构建只走订阅 updater 通道分发；
-        #  - support 补丁中心 prodId=211 只列旧补丁；liveupdate /b/b/r 只剩广告接口。
-        # 结论：匿名官方接口拿不到当前构建 → 用 nsane 板块标题取零售最新版，
-        # 官方通道铺开后自动取更大的值对齐（不再写死 version_display）。
+        # 官方版本源排查结论（2026-10-27 更新）：
+        #  - 解包试用下载器的 NSIS 脚本头，发现它运行时调用官方接口
+        #    /prog/util/downloader/get-link-v2.jsp，匿名即可返回完整安装器直链 + md5；
+        #  - 直链文件名带真实构建号（PhotoDirector_18.0.10.1011.2120_...），
+        #    旧包 PhotoDirector_DirectorSuite365.exe 是 0908 的，版本号与包不同源；
+        #  - nsane 的 v18.0.1021 只走订阅 updater 通道，匿名拿不到对应离线包。
+        # 结论：改用完整包通道，版本号取自包文件名 → 版本与下载包同源。
         'detect_type': 'cyberlink',
         'cyberlink_product_id': 211,
+        'cyberlink_full_installer': True,
+        'cyberlink_full_installer_name': 'PhotoDirector',
+        'cyberlink_full_installer_version': '17.0',
+        # SR 前缀决定产品（PTD=PhotoDirector），两个都是下载器 info.ini 里的真实 SR
+        'cyberlink_full_installer_sr': ['PTD260827-01', 'PTD260514-01'],
+        'cyberlink_full_installer_lang': 'Enu',
+        # 版本口径换成「官方完整包文件名」，与线上旧值（1021，来自 nsane 标题）不可比，
+        # 声明权威源让防降级放行这次 1021 → 1011 的口径切换
+        'version_authority': 'official_installer',
         'cyberlink_retail_nsane': True,
         'cyberlink_retail_keywords': ['photodirector'],
         # 试用通道的 DisplayBuildNumber 是安装框架版本（17.6.x），不能当产品版本号
         'cyberlink_trial_version_trusted': False,
         'base_version': '18.0.1011.0',
         'version': '18.0.1011.0',
-        'size': 670 * 1024 * 1024,
-        'date': '2026-09-08',
+        'size': 697933848,
+        'date': '2026-10-12',
         'skip_md5': True,
-        # 2026-10-27 复测：18.0.1021 是 PhotoDirector Ultra 2027（买断版），
-        # 官方匿名通道拿不到它的离线包直链——
-        #  - 官方 FAQ 明确「perpetual products 必须输产品密钥，在 /box 页 Redeem 才给下载链接」，
-        #    兑换接口 POST https://www.cyberlink.com/api/download/box {"key":"..."}，
-        #    实测空密钥/假密钥均返回 {"status":"FAIL"}；
-        #  - 旧的 Retail 直链（Y2QIW32JB74CH）是随包下发的「一次性 token」，
-        #    S3 对象就停在 2026-09-08（加 Accept-Encoding:gzip 回源确认过，不是 CDN 缓存），
-        #    且该路径有文件名白名单，换名/换 token 一律 403；
-        #  - 补丁中心 prodId=211/prodVerId=2121 返回「no patch files available」。
-        # 结论：直链不可得 → 下载改指向「官方现用下载入口」（官方下载页按钮同款，
-        # 302 到 build.cyberlink.com 当前下载器，永远跟官方最新构建，不会像 token 直链那样漂成旧包）。
-        'download_url': 'https://www.cyberlink.com/prog/trial/user-add.do?source=direct&ProductId=211&ostype=Windows',
+        'download_url': 'https://build.cyberlink.com/Retail/PhotoDirector/5F73OXUQ5M4N8J/PhotoDirector_18.0.10.1011.2120_bdded9f25_92_Essential_PTD260827-01.exe',
         'official_site': 'https://www.cyberlink.com/products/photodirector/features_en_US.html',
     },
     {
@@ -3764,6 +3762,87 @@ def _cyberlink_retail_from_nsane(product):
     return best_ver, best_date, best_url
 
 
+# CyberLink 完整离线安装包接口：下载器（CyberLink_PhotoDirector_Downloader.exe）运行时
+# 实际调用的就是它。来源＝解包下载器的 NSIS 脚本头（签名 EF BE AD DE + NullsoftInst
+# 之后是 raw deflate），脚本里写着：
+#   SKUtil::SK_CallURL(w "https://downloader.cyberlink.com/prog/util/downloader/
+#     get-link-v2.jsp?PRODUCTNAME=<name>&PRODUCTVERSION=<ver>&VERSIONTYPE=<vtype>
+#     &SR=<SR_No>&VID=4.2.1.14316&LANGUAGE=<lang>&ostype=Windows", ...)
+# 返回 {"link":"https://build.cyberlink.com/...", "md5":"..."}，link 是真正的完整安装器
+# （PE32，带 Data1~3.7z），不是几十 MB 的下载器。
+# 坑位：
+#   - downloader.cyberlink.com 在部分网络被 DNS 污染，www.cyberlink.com 同路径也可用；
+#   - 参数缺一个就返回 {"error":"000"}，必须凑齐且 SR 前缀要匹配产品（PTD=PhotoDirector）；
+#   - www 域名下该接口对 PRODUCTNAME 不敏感，可能吐别的产品，故用文件名校验产品名。
+CYBERLINK_GETLINK_HOSTS = [
+    'https://downloader.cyberlink.com',
+    'https://www.cyberlink.com',
+]
+
+
+def _cyberlink_full_ver_from_name(fname):
+    """从官方完整包文件名解产品版本。
+
+    文件名形如 PhotoDirector_18.0.10.1011.2120_bdded9f25_92_Essential_PTD260827-01.exe：
+    第 3 段是套件位（恒为 10），第 4 段才是构建号，第 5 段是打包流水号。
+    对外口径是 major.minor.build（18.0.1011），补 .0 成 4 段与其它 CyberLink 条目一致。
+    解析不出返回空字符串。
+    """
+    m = re.search(r'(\d+)\.(\d+)\.(\d+)\.(\d+)\.(\d+)[_.]', fname) or \
+        re.search(r'(\d+)\.(\d+)\.(\d+)\.(\d+)\.(\d+)', fname)
+    if not m:
+        return ''
+    p = [int(x) for x in m.groups()]
+    if p[2] < 100 <= p[3]:
+        return f'{p[0]}.{p[1]}.{p[3]}.0'
+    return _cyberlink_canon_ver('.'.join(m.groups()))
+
+
+def _cyberlink_full_installer_link(product):
+    """走官方 get-link-v2.jsp 拿「完整离线安装包」直链。
+
+    返回 (url, md5, 版本号)；失败返回 ('', '', '')。
+    """
+    name = product.get('cyberlink_full_installer_name') or product.get('name', '')
+    pver = str(product.get('cyberlink_full_installer_version') or '')
+    vtype = product.get('cyberlink_full_installer_vtype') or 'trial'
+    lang = product.get('cyberlink_full_installer_lang') or 'Enu'
+    srs = product.get('cyberlink_full_installer_sr') or []
+    if isinstance(srs, str):
+        srs = [srs]
+    srs = [s for s in srs if s] or ['PTD260514-01']
+    want = name.lower()
+
+    for sr in srs:
+        qs = ('?PRODUCTNAME={n}&PRODUCTVERSION={v}&VERSIONTYPE={t}&SR={sr}'
+              '&VID=4.2.1.14316&LANGUAGE={lang}&ostype=Windows').format(
+                  n=urllib.parse.quote(name), v=urllib.parse.quote(pver),
+                  t=urllib.parse.quote(vtype), sr=urllib.parse.quote(sr),
+                  lang=urllib.parse.quote(lang))
+        for host in CYBERLINK_GETLINK_HOSTS:
+            try:
+                req = urllib.request.Request(
+                    host + '/prog/util/downloader/get-link-v2.jsp' + qs,
+                    headers={'User-Agent': UA, 'Referer': 'https://www.cyberlink.com/'})
+                with urllib.request.urlopen(req, timeout=25) as resp:
+                    obj = json.loads(resp.read().decode('utf-8', 'ignore'))
+            except Exception as e:
+                print(f"  ⚠️ 完整包接口不可用({urllib.parse.urlparse(host).netloc}): {e}")
+                continue
+            link = str(obj.get('link') or '').strip()
+            if not link:
+                print(f"  ⚠️ 完整包接口无直链(SR={sr}): {obj.get('error', obj)}")
+                continue
+            fname = urllib.parse.unquote(link.rsplit('/', 1)[-1])
+            if want and want not in fname.lower():
+                print(f"  ⚠️ 完整包接口返回了别的产品({fname[:70]})，跳过")
+                continue
+            ver = _cyberlink_full_ver_from_name(fname)
+            print(f"  完整离线包: {fname[:90]}")
+            return link, str(obj.get('md5') or '').strip(), ver
+    return '', '', ''
+
+
 def detect_cyberlink(product):
     """CyberLink 官方版本自动探测（无需硬编码 VID 令牌）。
 
@@ -3783,6 +3862,24 @@ def detect_cyberlink(product):
     date = product.get('date', '')
     md5 = product.get('md5', '')
     trial_version = ''
+
+    # 完整离线安装包通道：官方 get-link-v2.jsp 直接给完整安装器直链 + md5，
+    # 文件名带真实构建号 → 版本号与下载包同源（不再出现「显示 1021、包的签名却是 0908」）。
+    # 一旦命中就以它为准，跳过 nsane 零售标题（那是订阅 updater 的版本，匿名拿不到包）。
+    full_ok = False
+    if product.get('cyberlink_full_installer'):
+        url_full, md5_full, ver_full = _cyberlink_full_installer_link(product)
+        if url_full:
+            download_url = url_full
+            if md5_full:
+                md5 = md5_full
+            if ver_full:
+                version = ver_full
+                full_ok = True
+                _VER_SOURCE[product['name']] = product.get(
+                    'version_authority', 'official_installer')
+                print(f"  官方完整包版本: {version}")
+
     pid = product.get('cyberlink_product_id')
     if pid:
         try:
@@ -3817,7 +3914,7 @@ def detect_cyberlink(product):
 
     # 零售版（Ultimate/Ultra 买断版）最新版本：官方匿名通道只有试用基线，
     # 零售新构建走不到 → 用 nsane 板块标题补齐，官方通道铺开新版本后自动对齐。
-    if product.get('cyberlink_retail_nsane'):
+    if product.get('cyberlink_retail_nsane') and not full_ok:
         try:
             retail_ver, retail_date, _retail_url = _cyberlink_retail_from_nsane(product)
             if retail_ver:
@@ -3866,7 +3963,11 @@ def detect_cyberlink(product):
             # 零售版发布日晚于包时间时（官方换包滞后）才用发布日，
             # 否则新版本会被写回旧包的时间。
             if ddate:
-                date = max(ddate, date) if date else ddate
+                if full_ok:
+                    # 完整包通道：版本就来自这个包，日期直接取包时间，不与旧配置值比大小
+                    date = ddate
+                else:
+                    date = max(ddate, date) if date else ddate
     except Exception:
         pass
 

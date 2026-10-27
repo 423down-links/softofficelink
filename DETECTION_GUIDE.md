@@ -3010,82 +3010,104 @@ if old_v and not new_v:
 场景2（PE 失败 + 官网也挂）→ version = '9.8.2'
 ```
 
-## 第45节：缓存只看 TTL 导致「有新版却查不到」（2026-10-26，AnyDesk 9.8.2 → 9.8.3）
+---
 
-### 根因
+## 第45节：从 CyberLink 下载器逆出完整离线包接口（PhotoDirector，2026-10-27）
 
-两个原因叠在一起，线上才一直停在 9.8.2：
+### 症状
 
-1. **PE 版本缓存只认时间、不认文件**。缓存键是 URL，TTL 6 小时。`AnyDesk.exe`
-   是**原地覆盖包**：官方换了新文件，但 URL 不变、包体大小也不变（8553912 字节），
-   只有 `Last-Modified` 从 10-15 变成 10-26。缓存命中就直接返回 9.8.2，
-   实测最长要等 6 小时才可能刷新，期间线上一直是旧版本号。
-2. **官网页面兜底在 CI 里失效**。CI 跑在境外机房 IP，`anydesk.com` 对 urllib
-   返回 403；而 `curl` 的 TLS 指纹更接近浏览器，能正常拿到 9.8.3。
+线上 PhotoDirector 显示 `18.0.1021.0 / 2026-10-26`，点下载得到的却是 **0908 签名**的旧包：
 
-### 修法
+```
+https://build.cyberlink.com/Retail/PhotoDirector/Y2QIW32JB74CH/PhotoDirector_DirectorSuite365.exe
+last-modified: Tue, 08 Sep 2026 04:59:31 GMT   ← 包是旧的
+age: 4178214                                     ← CloudFront 缓存 48 天
+```
+
+版本号来自 nsane 标题（订阅 updater 的最新构建），下载链接却还是官方零售老包 →
+**版本号与安装包不同源**。
+
+### 关键突破：下载器自己就是答案
+
+试用下载器 `CyberLink_PhotoDirector_Downloader.exe`（约 8MB NSIS）运行时并不硬编码
+包地址，而是调接口取名。把它的 NSIS 脚本头解出来就能看到：
 
 ```python
-# 1) 缓存命中前先验指纹：size 或 Last-Modified 任一变化 → 立刻作废缓存重探
-def _pe_cache_fingerprint_stale(hit, url, referer=None, head_fingerprint=None):
-    if head_fingerprint:
-        cur_size, cur_lm = head_fingerprint   # 复用调用方已 HEAD 过的结果
-    else:
-        ... HEAD 拿 Content-Length / Last-Modified
-    if old_size and cur_size != old_size: return True
-    if old_lm and cur_lm and _pe_lm_key(cur_lm) != _pe_lm_key(old_lm): return True
-    return False
-
-# 2) 官网版本 urllib 失败时用 curl 重试
-page_ver = _page_version_via_curl(page_url, page_regex)
-
-# 3) 日期比较前归一化（缓存里可能是原始 HTTP 日期，也可能是 YYYY-MM-DD）
-def _pe_lm_key(lm): ...  # "Mon, 26 Oct 2026 11:37:28 GMT" → "2026-10-26"
+# 1) 定位 NSIS 头：签名 EF BE AD DE + "NullsoftInst"，后面 12 字节 firstheader
+i = data.find(b'NullsoftInst')
+start = i + len(b'NullsoftInst') + 12       # flags/scomptype/scompsize
+# 2) raw deflate（无 zlib 头），不是 gzip
+out = zlib.decompressobj(-15).decompress(data[start:], 8_000_000)
+# 3) 脚本里的调用（UTF-16LE 字符串）
+# SKUtil::SK_CallURL(w "https://downloader.cyberlink.com/prog/util/downloader/
+#   get-link-v2.jsp?PRODUCTNAME=PhotoDirector&PRODUCTVERSION=17.0&VERSIONTYPE=<vtype>
+#   &SR=<SR_No>&VID=4.2.1.14316&LANGUAGE=<lang>&ostype=Windows", w "<out>", i 1)
 ```
 
-### 判据（可复用）
-
-- 只要下载地址长期不变（`download.xxx.com/App.exe` 这类），就必须**按内容指纹判缓存**，
-  不能只按 TTL；否则「官方已换包但体积没变」的更新永远滞后。
-- 探测函数遇到 403/567 时，先在本地用 `curl` 复测一次，再判断是不是站点真挂了：
-  CI 境外 IP 被 WAF 拦是常态，不要因此把官网兜底整条砍掉。
-
-### 实测
+### 接口实测（匿名可用，无需登录）
 
 ```
-PE缓存失效(文件已更新): 9.8.2 → 重新探测
-PE版本: 9.8.3
-官网页面版本(curl兜底): 9.8.3
-✅ 9.8.3, 8.2 MB
+https://www.cyberlink.com/prog/util/downloader/get-link-v2.jsp
+  ?PRODUCTNAME=PhotoDirector&PRODUCTVERSION=17.0&VERSIONTYPE=trial
+  &SR=PTD260514-01&VID=4.2.1.14316&LANGUAGE=Enu&ostype=Windows
+
+→ {"link":"https://build.cyberlink.com/Retail/PhotoDirector/5F73OXUQ5M4N8J/
+    PhotoDirector_18.0.10.1011.2120_bdded9f25_92_Essential_PTD260827-01.exe",
+   "md5":"3e73107715cc97d0b3281c451431ca25"}
 ```
 
-线上 `data.json` 已验证生效。
+新直链实测 `content-length: 697933848`、`last-modified: 2026-10-12`、
+Range 0-1023 返回 `206` + `PE32 executable (GUI)` → **是完整安装器，不是下载器**。
 
-## 第46节：新增「官网给版本 + 官方入口给实时直链」模式（2026-10-26，鲁大师）
+### 四个坑
 
-### 为什么不能用固定直链
+| 坑 | 现象 | 处理 |
+|----|------|------|
+| `downloader.cyberlink.com` DNS 被污染 | 解析到 `2a03:2880:f127:...`（Facebook IPv6），TLS `SSL_ERROR_SYSCALL` | 换 `www.cyberlink.com` 同路径，接口一样在 |
+| 参数缺一个 | `{"error":"000"}` | 七个参数必须凑齐（PRODUCTNAME/PRODUCTVERSION/VERSIONTYPE/SR/VID/LANGUAGE/ostype） |
+| `PRODUCTNAME` 不被校验 | 传 `FooBar` 也回 PhotoDirector | 用**返回文件名**校验产品名，不含产品名就丢弃 |
+| `SR` 前缀决定产品 | `SR=PDR...` / `PDVD...` → `{"error":"000"}` | SR 必须是该产品下载器 `info.ini` 里的真实 `SR_No`（PhotoDirector 是 `PTD...`） |
 
-鲁大师的 CDN 直链带时效签名：`...?sign=<时间戳>-<hash>-...`。写死在配置里必然过期；
-而且每次请求官方入口 `https://www.ludashi.com/pc/download/getDownloadUrl?type=2`，
-302 下发的签名都不同。所以用户侧下载链接要用**官方入口**（永不过期），不是 CDN 直链。
+### 版本号怎么从文件名解
 
-### 三个数据怎么各取一份
+```
+PhotoDirector_18.0.10.1011.2120_bdded9f25_92_Essential_PTD260827-01.exe
+               └┬┘└┬┘└─┬─┘└─┬┘
+              18  0  10  1011   ← 第 3 段是套件位（恒 10），第 4 段才是构建号
+```
+
+对外口径 = `major.minor.build.0` → `18.0.1011.0`，与 nsane 的 `v18.0.1021`
+只差构建号（1021 走订阅 updater，匿名拿不到包）。
+
+### Token 权限矩阵（同目录下只有特定文件能匿名下）
+
+```
+PD  trial token  I8KJVKIFAO5:  Downloader.exe 206 ✓ / 完整包 403
+PD  retail token CGQC8ZH75VM6: Downloader.exe 403 / 完整包 206 ✓（内容仍是 0908 旧包）
+PhD trial token  5F73OXUQ5M4N8J: Downloader.exe 206 ✓ / 完整包 403
+PhD retail token Y2QIW32JB74CH: Downloader.exe 403 / 完整包 206 ✓（0908 旧包）
+```
+
+即「token 决定这个目录里哪个文件名可下」，硬拼路径没用，必须问接口。
+
+### 落地
+
+`check_versions.py` 新增 `_cyberlink_full_installer_link(product)` +
+`_cyberlink_full_ver_from_name(fname)`，产品配置打开：
 
 ```python
-# 1. 官网首页一处同时给出日期与版本：「2026-10-22更新 版本：6.1026.4845.1020」
-r'(\d{4}-\d{2}-\d{2})\s*更新[^0-9]{0,20}(\d+(?:\.\d+)+)'
-
-# 2. 官方入口 302 → Location 拿当前实时直链（只用于探元数据，不写进 data.json）
-_capture_redirect_opener.open(entry)
-
-# 3. CDN（TencentEdgeOne）对 urllib 返 567 拦截页、对 curl 放行 → curl 探体积/日期
-curl_size, curl_date = _curl_get_headers(real_url, home)
-date = parse_date(curl_date)   # 必须转 YYYY-MM-DD，不能把原始 HTTP 日期写进 data.json
+'cyberlink_full_installer': True,
+'cyberlink_full_installer_name': 'PhotoDirector',
+'cyberlink_full_installer_version': '17.0',
+'cyberlink_full_installer_sr': ['PTD260827-01', 'PTD260514-01'],
+'cyberlink_full_installer_lang': 'Enu',
+'version_authority': 'official_installer',   # 口径切换 1021→1011 时放行防降级
 ```
 
-### 注意点
+命中后版本号取自包文件名、md5 取接口返回值、日期取 S3 Last-Modified，
+并跳过 nsane 标题（避免版本号又跳到匿名拿不到包的 1021）。
 
-- `_curl_get_headers` 返回的 `Last-Modified` 是 HTTP 原始串（`Tue, 20 Oct 2026 10:31:44 GMT`），
-  写进出前必须 `parse_date()` 转成 `YYYY-MM-DD`。
-- 270MB 安装包不做 MD5（`skip_md5: True`）。
-- 入库后 117 个产品，单产品探测 0.3 秒。
+### 附：SKUtil.dll 的 ini 加密（解 Define.ini / Royalty.ini 用）
+
+`SK_FileEncode` 是**链式 XOR**：第 1 字节 XOR `0x88`，之后每字节与前一个**明文字节**
+XOR。用来解下载器里的 `Define.ini` / `Setup/Royalty.ini`（含 `vtype`、`CDKEY`、`ProdGUID`）。
