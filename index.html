@@ -869,7 +869,7 @@ function renderTable(products) {
   html += '<th class="col-software">软件</th>';
   html += '<th class="col-version">最新版本</th>';
   html += '<th class="col-size">大小</th>';
-  html += '<th class="col-date">发布日期</th>';
+  html += '<th class="col-date">发布时间</th>';
   html += '<th class="col-check">检测时间</th>';
   html += '<th class="col-download">下载</th>';
   html += '</tr></thead><tbody>';
@@ -945,7 +945,7 @@ function renderTable(products) {
       : '<td class="col-version' + (hasVariants ? ' col-version-multi' : '') + '" data-label="版本">' + versionHtml + '</td>';
     html += sizeHtml;
     const dateClass = isToday(p.last_modified) ? 'col-date date date-today' : 'col-date date';
-    html += '<td class="' + dateClass + '" data-label="日期">' + dateStr + '</td>';
+    html += '<td class="' + dateClass + '" data-label="发布时间">' + dateStr + '</td>';
     html += '<td class="col-check" data-label="检测时间">' + formatDetected(p.detected_at) + '</td>';
     // 多平台二级下载（如 VC++ 运行库 x64/x86/arm64）：渲染平台按钮，
     // 左键直接下载，右键/长按弹菜单复制完整地址；普通软件走原直链+复制钮。

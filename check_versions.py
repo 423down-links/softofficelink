@@ -7795,10 +7795,14 @@ def main():
                 print(f"  ✅ {info['version']}, 当天更新 {cnt} 款软件")
             else:
                 print(f"  ✅ {info['version']}, {info['size_mb']} MB")
-        # 检测时间（精确到分钟，北京时间）：本轮真正探到才刷新；
-        # fallback 沿用的旧数据保留上次成功检测的时间，发布时间 last_modified 不动
+        # 检测时间（精确到分钟，北京时间）：只在该产品的版本/发布日期
+        # 发生变化（= 真的检出新版本）时刷新，其余轮次保留上次的值，
+        # 所以每个软件的时间各不相同；发布时间 last_modified 不动
         if info is not None:
-            if fresh:
+            old = old_data.get(name) or {}
+            changed = (str(info.get('version', '')) != str(old.get('version', ''))
+                       or str(info.get('last_modified', '')) != str(old.get('last_modified', '')))
+            if fresh and changed:
                 info['detected_at'] = RUN_TS
             elif not info.get('detected_at'):
                 info['detected_at'] = RUN_TS
