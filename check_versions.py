@@ -232,9 +232,28 @@ PRODUCTS = [
         'icon_color': 'linear-gradient(135deg, #0078d4, #00bcf2)',
         'category': '浏览器',
         'detect_type': 'edge_api',
-        'version': '154.0.4258.37',
+        'version': '156.0.4314.50',
         'download_url': 'https://www.microsoft.com/en-us/edge/business/download',
         'official_site': 'https://github.com/Bush2021/edge_installer',
+    },
+    {
+        'name': 'WebView2',
+        'name_cn': 'Microsoft Edge WebView2 Runtime',
+        'icon': 'WV2',
+        'icon_color': 'linear-gradient(135deg, #0078d4, #50e6ff)',
+        'category': '系统组件',
+        # 固定版本运行时（Fixed Version Runtime）x64 cab 直链。
+        # 官方下载页把各版本链接写在内嵌 JSON 里、斜杠是 \u002F 转义，
+        # 页面同时列多个历史版本 → 必须还原转义后按版本号取最大，不能取第一个。
+        # 日期与 Edge 稳定版一致（WebView2 跟随 Edge 发布），走官方 API 的
+        # Stable PublishedTime 转北京时间。
+        'detect_type': 'webview2',
+        'check_url': 'https://developer.microsoft.com/zh-cn/microsoft-edge/webview2/',
+        'version': '156.0.4314.50',
+        'date': '2026-10-27',
+        'skip_md5': True,
+        'download_url': 'https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/bd9305d7-a7d7-44fe-b8bf-aefad5d6cdb5/Microsoft.WebView2.FixedVersionRuntime.156.0.4314.50.x64.cab',
+        'official_site': 'https://developer.microsoft.com/zh-cn/microsoft-edge/webview2/',
     },
     {
         'name': 'Google Chrome',
@@ -6359,6 +6378,89 @@ def detect_java_api(product):
     return display_version, main_download, main_download, 0, main_date, ''
 
 
+def _edge_stable_release():
+    """Edge 稳定版官方发布信息：返回 (版本号, 发布日期北京时间)。
+
+    数据源 edgeupdates.microsoft.com 官方 API 的 Stable 频道；PublishedTime
+    是 UTC，转 +8 才是国内口径的发布日期（2026-10-26T18:29Z → 2026-10-27）。
+    取不到返回 ('', '')。
+    """
+    try:
+        req = urllib.request.Request(
+            'https://edgeupdates.microsoft.com/api/products?view=enterprise',
+            headers={'User-Agent': UA})
+        with urllib.request.urlopen(req, timeout=25) as resp:
+            data = json.loads(resp.read().decode('utf-8', 'ignore'))
+        for prod in data or []:
+            if prod.get('Product') != 'Stable':
+                continue
+            rels = prod.get('Releases') or []
+            if not rels:
+                continue
+            rel = rels[0]
+            ver = str(rel.get('ProductVersion') or '')
+            pub = str(rel.get('PublishedTime') or '')
+            date = ''
+            if pub:
+                dt = datetime.strptime(pub.replace('Z', '')[:19], '%Y-%m-%dT%H:%M:%S')
+                date = (dt.replace(tzinfo=timezone.utc)
+                        + timedelta(hours=8)).strftime('%Y-%m-%d')
+            return ver, date
+    except Exception as e:
+        print(f"  ⚠️ Edge 发布信息接口失败: {e}")
+    return '', ''
+
+
+def detect_webview2(product):
+    """Microsoft Edge WebView2 固定版本运行时（x64 cab）。
+
+    官方下载页把各版本 cab 链接写在内嵌 JSON 里，斜杠是 \\u002F 转义；
+    还原后按版本号取**最大**的一条（页面同时列出多个历史版本，不能取第一个）。
+    发布日期与 Edge 稳定版一致（WebView2 跟随 Edge 发布），走官方 API。
+    """
+    _fb = (product.get('version', ''), product.get('download_url', ''),
+           product.get('download_url', ''), 0, product.get('date', ''), '')
+    try:
+        req = urllib.request.Request(product['check_url'], headers={'User-Agent': UA})
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            html = resp.read().decode('utf-8', 'ignore')
+    except Exception as e:
+        print(f"  ⚠️ WebView2 下载页访问失败: {e}")
+        return _fb
+
+    html = html.replace('\\u002F', '/').replace('\\/', '/')
+    urls = re.findall(
+        r'(https://msedge\.sf\.dl\.delivery\.mp\.microsoft\.com/filestreamingservice/files/'
+        r'[0-9a-f-]+/Microsoft\.WebView2\.FixedVersionRuntime\.\d+\.\d+\.\d+\.\d+\.x64\.cab)',
+        html)
+    if not urls:
+        print("  ⚠️ WebView2 页面未解析到 x64 cab 直链")
+        return _fb
+
+    best_url, best_ver = '', ''
+    for u in set(urls):
+        m = re.search(r'FixedVersionRuntime\.(\d+\.\d+\.\d+\.\d+)\.x64\.cab', u)
+        if not m:
+            continue
+        v = m.group(1)
+        if not best_ver or _ver_tuple(v) > _ver_tuple(best_ver):
+            best_url, best_ver = u, v
+    if not best_ver:
+        return _fb
+
+    _rel_ver, rel_date = _edge_stable_release()
+    date = rel_date or product.get('date', '')
+    size = 0
+    try:
+        exists, dsize, _d = check_url_follow(best_url)
+        if exists and dsize > 0:
+            size = dsize
+    except Exception:
+        pass
+    print(f"  WebView2 x64 cab: {best_ver}, {size/1024/1024:.0f}MB, {date}")
+    return best_ver, best_url, best_url, size, date, ''
+
+
 def detect_edge_api(product):
     """Microsoft Edge CDP API探测：获取最新stable x64版本和官方离线包直链"""
     import json as _json
@@ -6396,9 +6498,15 @@ def detect_edge_api(product):
         # http->https
         download_url = download_url.replace("http://msedge.b", "https://msedge.sb")
 
-        # 获取日期
+        # 日期口径：安装包 Last-Modified 是「文件上传时间」，UTC 下常比官方发布日
+        # 早一天（2026-10-26T18:29Z 实际是北京时间 10-27）；改取 edgeupdates 官方
+        # API 的 Stable PublishedTime 转 +8，与「稳定版官方发布时间」口径一致。
         date = ""
-        if download_url:
+        _rel_ver, _rel_date = _edge_stable_release()
+        if _rel_date:
+            date = _rel_date
+            print(f"  官方发布时间: {date} (Stable {_rel_ver})")
+        elif download_url:
             _, lm = _curl_get_headers(download_url)
             if lm:
                 date = parse_date(lm)
@@ -7206,6 +7314,8 @@ def find_latest(product):
         version, full_url, param_url, size, date, md5 = detect_chrome_api(product)
     elif detect_type == 'edge_api':
         version, full_url, param_url, size, date, md5 = detect_edge_api(product)
+    elif detect_type == 'webview2':
+        version, full_url, param_url, size, date, md5 = detect_webview2(product)
     elif detect_type == 'hexhub_api':
         version, full_url, param_url, size, date, md5 = detect_hexhub_api(product)
     elif detect_type == 'java_api':

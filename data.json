@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T08:06:07.671696+00:00",
+  "updated_at": "2026-10-28T08:10:04.620781+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,14 +207,32 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.50",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793779531&P2=404&P3=2&P4=LuIBh0eOpvl7P7DaFkLkw4iZaOjj4x4%2bGDHZ43Wtj2LYCuUTzRC2oBobkc5bOgUFItmLm8tM25zcKAwdZfE7Mg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793779531&P2=404&P3=2&P4=LuIBh0eOpvl7P7DaFkLkw4iZaOjj4x4%2bGDHZ43Wtj2LYCuUTzRC2oBobkc5bOgUFItmLm8tM25zcKAwdZfE7Mg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793779790&P2=404&P3=2&P4=g0ns5oMAIV%2fS51RkKkTAOwsjk3UgdMQnqvjzpGarlTkaTIHtA0ALN44BCXmW2KQxWkNi1Z2s2HozZo1TTyt8sQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793779790&P2=404&P3=2&P4=g0ns5oMAIV%2fS51RkKkTAOwsjk3UgdMQnqvjzpGarlTkaTIHtA0ALN44BCXmW2KQxWkNi1Z2s2HozZo1TTyt8sQ%3d%3d",
       "downloads": [],
       "size": 208371536,
       "size_mb": 198.7,
-      "last_modified": "2026-10-26",
+      "last_modified": "2026-10-27",
       "md5": "",
       "official_site": "https://github.com/Bush2021/edge_installer",
+      "update_items": []
+    },
+    {
+      "name": "WebView2",
+      "name_cn": "Microsoft Edge WebView2 Runtime",
+      "alias": "",
+      "icon": "WV2",
+      "icon_color": "linear-gradient(135deg, #0078d4, #50e6ff)",
+      "category": "系统组件",
+      "version": "156.0.4314.50",
+      "download_url": "https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/bd9305d7-a7d7-44fe-b8bf-aefad5d6cdb5/Microsoft.WebView2.FixedVersionRuntime.156.0.4314.50.x64.cab",
+      "download_url_with_params": "https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/bd9305d7-a7d7-44fe-b8bf-aefad5d6cdb5/Microsoft.WebView2.FixedVersionRuntime.156.0.4314.50.x64.cab",
+      "downloads": [],
+      "size": 310130282,
+      "size_mb": 295.8,
+      "last_modified": "2026-10-27",
+      "md5": "",
+      "official_site": "https://developer.microsoft.com/zh-cn/microsoft-edge/webview2/",
       "update_items": []
     },
     {
