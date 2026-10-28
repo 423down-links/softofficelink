@@ -6514,6 +6514,10 @@ def detect_nvidia(product):
         return fallback
     if not whql_url:
         whql_url = product['url_pattern'].format(ver=whql_ver)
+    # 官方接口给的是 us.download.nvidia.com，国内访问会被 301 甩到 .cn 镜像；
+    # 直接写 .cn 镜像地址，省一跳且和用户核实过的地址一致
+    whql_url = re.sub(r'//([a-z]+)\.download\.nvidia\.com',
+                      r'//\1.download.nvidia.cn', whql_url)
     print(f"  WHQL 版本: {whql_ver} ({whql_date})")
 
     hot = _nv_hotfix_scan(product, whql_ver)
