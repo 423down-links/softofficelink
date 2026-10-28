@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T06:51:36.957431+00:00",
+  "updated_at": "2026-10-28T07:07:09.453660+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.50",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793775056&P2=404&P3=2&P4=jaTu%2fPXWvKcfXwAWR%2fDAvYQmBC4iP72U78pPxYvr3PNJOIPqGEMOH%2bIalZ5z6f0s38XWPUW3jAw3PN1aZacs0g%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793775056&P2=404&P3=2&P4=jaTu%2fPXWvKcfXwAWR%2fDAvYQmBC4iP72U78pPxYvr3PNJOIPqGEMOH%2bIalZ5z6f0s38XWPUW3jAw3PN1aZacs0g%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793775946&P2=404&P3=2&P4=Y%2bmrnX1uxaKjhrGOkC%2bbjre%2ftL3UFUvScxrUGbMFGqBSqdHsR0lJn2rBbgzBcfYWTVkBEgRtueQKmtL5AgYZMg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793775946&P2=404&P3=2&P4=Y%2bmrnX1uxaKjhrGOkC%2bbjre%2ftL3UFUvScxrUGbMFGqBSqdHsR0lJn2rBbgzBcfYWTVkBEgRtueQKmtL5AgYZMg%3d%3d",
       "downloads": [],
       "size": 208371536,
       "size_mb": 198.7,
@@ -1701,6 +1701,22 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "Ashampoo Photo Collage 1.0.1 (x64) Multilingual Portable",
+          "url": "https://downtopc.com/344223-ashampoo-photo-collage-101-x64-multilingual-portable.html"
+        },
+        {
+          "title": "Rhinoceros 8.36.26296.17001 (x64)",
+          "url": "https://downtopc.com/344222-rhinoceros-8362629617001-x64.html"
+        },
+        {
+          "title": "Muziza YouTube Downloader Converter 9.5.28 (x64)",
+          "url": "https://downtopc.com/344221-muziza-youtube-downloader-converter-9528-x64.html"
+        },
+        {
+          "title": "Broadgun pdfMachine 20.69",
+          "url": "https://downtopc.com/344220-broadgun-pdfmachine-2069.html"
+        },
+        {
           "title": "Native Instruments Maschine 3.7.2",
           "url": "https://downtopc.com/344219-native-instruments-maschine-372.html"
         },
@@ -1910,7 +1926,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-10-11",
       "md5": "",
