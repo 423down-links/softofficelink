@@ -6477,17 +6477,18 @@ def _nv_hotfix_scan(product, whql_ver):
     return max(found, key=lambda r: _ver_tuple(r[0]))
 
 
-def _nv_proxy_url(url, host='cn.download.nvidia.cn'):
-    """把 NVIDIA CDN 直链包装成本站中转直链（/dl/{host}{path}）。
+def _nv_confirm_url(url):
+    """把 NVIDIA CDN 直链转成官方确认页入口。
 
-    NVIDIA CDN 有防盗链：只放行 Referer 为 nvidia 域的请求，站外直接打开一律 403。
-    站点用 Cloudflare Pages Functions（functions/dl/[[path]].js）在边缘加官方
-    Referer 回源并透传，访客拿到的就是「点开即下载」的直链。
+    CDN 有防盗链（Zen/4.3）：站外直接打开一律 403，只有 Referer 是 nvidia 域才放行；
+    官网确认页（www.nvidia.cn）点「下载」时自带 nvidia Referer，是站外唯一可用的
+    官方下载入口。lang=cn 生成的按钮指向 cn.download.nvidia.com，热补丁只在该镜像有。
     """
     idx = url.find('/Windows/')
     if idx < 0:
         return url
-    return f"https://soft.423down.cn/dl/{host}{url[idx:]}"
+    return ('https://www.nvidia.cn/content/DriverDownloads/'
+            f'confirmation.php?url={url[idx:]}&lang=cn&type=geforce')
 
 
 def detect_nvidia(product):
@@ -6537,19 +6538,19 @@ def detect_nvidia(product):
     if hot:
         ver, url, size, date = hot
         # 热补丁与 WHQL 包不在同一目录，直链必须换成 {ver}hf 目录下那个；
-        # CDN 防盗链交给本站中转（/dl/...）解决，不用再绕官方确认页。
-        proxy_url = _nv_proxy_url(url)
+        # 站外直接下载会被 CDN 防盗链拦 403，所以给官方确认页入口。
+        confirm_url = _nv_confirm_url(url)
         print(f"  ✅ Hotfix 完整离线包: v{ver}, {size/1024/1024:.1f}MB, {date}")
-        print(f"  下载直链(本站中转): {proxy_url[:90]}...")
-        return ver, proxy_url, proxy_url, size, date, ''
+        print(f"  下载入口(官方确认页): {confirm_url[:90]}...")
+        return ver, confirm_url, confirm_url, size, date, ''
 
     exists, size, lm = check_url_follow(whql_url, referer=product.get('referer'))
     date = parse_date(lm) or whql_date
     if not exists:
         print(f"  ⚠️ WHQL 安装包不可用: {whql_url[:70]}...")
         size = 0
-    proxy_url = _nv_proxy_url(whql_url)
-    return whql_ver, proxy_url, proxy_url, size, date, ''
+    # 正式版（WHQL）直接给 us 直链；热补丁才走官方确认页（见上面的 hot 分支）
+    return whql_ver, whql_url, whql_url, size, date, ''
 
 
 def detect_webview2(product):

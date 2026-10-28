@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T10:10:01.209857+00:00",
+  "updated_at": "2026-10-28T10:17:43.574628+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -1498,8 +1498,8 @@
       "icon_color": "linear-gradient(135deg, #76b900, #5a9e00)",
       "category": "驱动程序",
       "version": "621.12",
-      "download_url": "https://soft.423down.cn/dl/cn.download.nvidia.cn/Windows/621.12hf/621.12-desktop-notebook-win10-win11-64bit-international-dch.hf.exe",
-      "download_url_with_params": "https://soft.423down.cn/dl/cn.download.nvidia.cn/Windows/621.12hf/621.12-desktop-notebook-win10-win11-64bit-international-dch.hf.exe",
+      "download_url": "https://www.nvidia.cn/content/DriverDownloads/confirmation.php?url=/Windows/621.12hf/621.12-desktop-notebook-win10-win11-64bit-international-dch.hf.exe&lang=cn&type=geforce",
+      "download_url_with_params": "https://www.nvidia.cn/content/DriverDownloads/confirmation.php?url=/Windows/621.12hf/621.12-desktop-notebook-win10-win11-64bit-international-dch.hf.exe&lang=cn&type=geforce",
       "downloads": [],
       "size": 1037182904,
       "size_mb": 989.1,
