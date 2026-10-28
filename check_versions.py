@@ -6519,8 +6519,17 @@ def detect_nvidia(product):
     hot = _nv_hotfix_scan(product, whql_ver)
     if hot:
         ver, url, size, date = hot
+        # NVIDIA 官方 CDN（Zen/4.3）有防盗链：站外直接打开一律 403，只有从
+        # nvidia.com / nvidia.cn 页面点过去才放行；而官方确认页按 lang=cn 生成
+        # 的按钮指向 cn.download.nvidia.com（热补丁只在该镜像下存在，
+        # us.download 上是 404）。所以热补丁用中文确认页做下载入口。
+        path = url.split('download.nvidia.com', 1)[-1]
+        path = path[path.find('/Windows/'):]
+        confirm_url = ('https://www.nvidia.cn/content/DriverDownloads/'
+                       f'confirmation.php?url={path}&lang=cn&type=geforce')
         print(f"  ✅ Hotfix 完整离线包: v{ver}, {size/1024/1024:.1f}MB, {date}")
-        return ver, url, url, size, date, ''
+        print(f"  下载入口(官方确认页): {confirm_url[:90]}...")
+        return ver, confirm_url, confirm_url, size, date, ''
 
     exists, size, lm = check_url_follow(whql_url, referer=product.get('referer'))
     date = parse_date(lm) or whql_date
