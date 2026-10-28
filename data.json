@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T00:59:19.171743+00:00",
+  "updated_at": "2026-10-28T01:06:10.663221+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.50",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793753437&P2=404&P3=2&P4=QexN%2bjJkLTZ%2bCbNB6tZGUJGDE%2boWritw%2fe7uOBNTPU7ySgThM%2fgw6oZTr47gPkEQa25LFytJlCQL%2fH7lMvsutQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793753437&P2=404&P3=2&P4=QexN%2bjJkLTZ%2bCbNB6tZGUJGDE%2boWritw%2fe7uOBNTPU7ySgThM%2fgw6oZTr47gPkEQa25LFytJlCQL%2fH7lMvsutQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793754346&P2=404&P3=2&P4=ZWlvDQJ3vL96DfaGcdhUZeNpJVsGtEpY4eegcWSeP7gWBohyHtDH4Jbpq9g332KQK4ZHII%2f%2bAg7EgBZY0HdPDg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793754346&P2=404&P3=2&P4=ZWlvDQJ3vL96DfaGcdhUZeNpJVsGtEpY4eegcWSeP7gWBohyHtDH4Jbpq9g332KQK4ZHII%2f%2bAg7EgBZY0HdPDg%3d%3d",
       "downloads": [],
       "size": 208371536,
       "size_mb": 198.7,
@@ -1123,8 +1123,8 @@
       "download_url": "https://www.winxdvd.com/download/winxvideo-ai.exe",
       "download_url_with_params": "https://www.winxdvd.com/download/winxvideo-ai.exe",
       "downloads": [],
-      "size": 307232768,
-      "size_mb": 293.0,
+      "size": 307118576,
+      "size_mb": 292.9,
       "last_modified": "2026-09-20",
       "md5": "",
       "official_site": "https://www.winxdvd.com/winxvideo-ai/",
@@ -1795,10 +1795,6 @@
         {
           "title": "Zoner Studio 19.2606.2.719 (x64) Portable",
           "url": "https://downtopc.com/344182-zoner-studio-1926062719-x64-portable.html"
-        },
-        {
-          "title": "WinRAR 7.30 Beta 2 (x64)",
-          "url": "https://downtopc.com/344181-winrar-730-beta-2-x64.html"
         },
         {
           "title": "Jixipix Hallows Eve 1.20",
