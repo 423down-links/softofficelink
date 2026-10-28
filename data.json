@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T09:58:34.989278+00:00",
+  "updated_at": "2026-10-28T10:06:16.979279+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.50",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793785853&P2=404&P3=2&P4=WEeMVWnPkncESeRcTIkfTfR3xpcMbG91ES3VFIsz05tceewvHqX6f1JeVAdkQfx41HCwYTkl2DqjmpxN78f4Vw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793785853&P2=404&P3=2&P4=WEeMVWnPkncESeRcTIkfTfR3xpcMbG91ES3VFIsz05tceewvHqX6f1JeVAdkQfx41HCwYTkl2DqjmpxN78f4Vw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793786752&P2=404&P3=2&P4=EIoW%2bdWYkKdQbg4APKrm3H8IQkCVkSUqg2BZoOmOEnqzQweuwF%2bVe3KO1%2bK8%2bB7ND%2bx4N2%2bmiirlJEjHSOgmbw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793786752&P2=404&P3=2&P4=EIoW%2bdWYkKdQbg4APKrm3H8IQkCVkSUqg2BZoOmOEnqzQweuwF%2bVe3KO1%2bK8%2bB7ND%2bx4N2%2bmiirlJEjHSOgmbw%3d%3d",
       "downloads": [],
       "size": 208371536,
       "size_mb": 198.7,
@@ -1197,7 +1197,7 @@
       "downloads": [],
       "size": 57556400,
       "size_mb": 54.9,
-      "last_modified": "2026-09-09",
+      "last_modified": "2026-09-21",
       "md5": "",
       "official_site": "https://www.stardock.com/products/start11/history",
       "update_items": []
@@ -1780,6 +1780,10 @@
         {
           "title": "eM Client Pro v11.0.1389",
           "url": "https://nsaneforums.com/topic/490797-em-client-pro-v1101389/"
+        },
+        {
+          "title": "EaseUS Partition Master v20.11.0 Build 202610280333",
+          "url": "https://nsaneforums.com/topic/490802-easeus-partition-master-v20110-build-202610280333/"
         },
         {
           "title": "RegCool 3.1.0.8",
