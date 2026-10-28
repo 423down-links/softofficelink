@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T00:52:10.880058+00:00",
+  "updated_at": "2026-10-28T00:59:19.171743+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -2298,13 +2298,13 @@
       "icon": "HS",
       "icon_color": "linear-gradient(135deg, #e91e63, #ad1457)",
       "category": "截图工具",
-      "version": "10.5.0.4",
+      "version": "10.5.0",
       "download_url": "https://www.hyperionics.com/downloads/HS10SetupCN.exe",
       "download_url_with_params": "https://www.hyperionics.com/downloads/HS10SetupCN.exe",
       "downloads": [],
       "size": 20379960,
       "size_mb": 19.4,
-      "last_modified": "2026-10-19",
+      "last_modified": "2026-10-26",
       "md5": "",
       "official_site": "https://hyperionics.com/hsdx/downloads.asp",
       "update_items": []

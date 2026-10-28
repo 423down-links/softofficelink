@@ -1955,21 +1955,20 @@ PRODUCTS = [
         'icon_color': 'linear-gradient(135deg, #e91e63, #ad1457)',
         'category': '截图工具',
         # 下载地址固定 latest（HS10SetupCN.exe），无版本号。
-        # 版本：changelog.asp 抓官网版本（10.4.4），官网只给三段，
-        # 末段 build 号只在软件 About 框里 → version_build_suffix 补全（10.4.4.4）。
-        # （安装包是 RAR5 SFX，外壳无版本资源；内层 HprSnap.exe 的 PE 版本是
-        #  10.4.4.0，末段恒 0，拿不到 build 号，故不走 PE 探测。）
-        # 日期用发布日 2026-10-19（prefer_config_date，不被 CDN Last-Modified 覆盖）；
-        # 数字签名 10.17 只是签名时间，不作发布日期（铁律3）。
+        # 版本：changelog.asp 抓官网版本（现为 10.5.0）。官网只给三段，与软件
+        # About 一致，**不再补第四段**——旧配置硬编码 version_build_suffix=4，
+        # 把 10.5.0 拼成 10.5.0.4（build 号并非 4），版本号是错的。
+        # 日期：changelog 的条目日期（2026.10.26）才是发布日期；安装包
+        # Last-Modified=10-27 只是上传日，用 prefer_scraped_date 让发布页优先。
         'detect_type': 'scrape',
         'check_url': 'https://hyperionics.com/hsdx/changelog.asp',
         'version_regex': r'Version history for HyperSnap (\d+\.\d+\.\d+)',
         'date_regex': r'<strong>(\d{4}\.\d{2}\.\d{2}) Hypersnap',
         'prefer_scraped_version': True,
-        'version_build_suffix': 4,
-        'version': '10.4.4.4',
-        'date': '2026-10-19',
-        'prefer_config_date': True,
+        'version_authority': 'page',
+        'prefer_scraped_date': True,
+        'version': '10.5.0',
+        'date': '2026-10-26',
         'skip_md5': True,
         'download_url': 'https://www.hyperionics.com/downloads/HS10SetupCN.exe',
         'official_site': 'https://hyperionics.com/hsdx/downloads.asp',
@@ -5890,6 +5889,9 @@ def detect_scrape(product):
             scraped_version = full_ver
     if prefer_scraped and scraped_version:
         version = scraped_version
+        # 标记来源：产品声明 version_authority='page' 时，官网页面抓取值即权威源，
+        # 口径变更（如 10.5.0.4 → 10.5.0）不会被防降级误拦。
+        _VER_SOURCE[product['name']] = 'page'
         if default_version and default_version != scraped_version:
             print(f"  ℹ️ 使用官网抓取版本: {scraped_version} (配置版本: {default_version})")
     elif use_newer and scraped_version and default_version and scraped_version > default_version:
@@ -5948,7 +5950,12 @@ def detect_scrape(product):
             size = detected_size
         # prefer_config_date: 日期以人工核实的发布日期为准，不被 CDN Last-Modified 覆盖
         # （HyperSnap 的 Last-Modified 是 10.17 签名/上传日，真实发布日是 10.19）
-        if detected_date and not product.get('prefer_config_date'):
+        # prefer_scraped_date: 发布页日期优先于 CDN Last-Modified（铁律3：
+        # 页面写的是发布日期，Last-Modified 只是上传时间，HyperSnap 差一天）。
+        if product.get('prefer_scraped_date') and scraped_date:
+            date = scraped_date
+            print(f"  发布日期(发布页): {date}")
+        elif detected_date and not product.get('prefer_config_date'):
             date = detected_date
         elif product.get('prefer_config_date') and product.get('date'):
             date = product['date']
