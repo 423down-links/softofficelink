@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T16:22:16.398667+00:00",
+  "updated_at": "2026-10-28T16:24:08.410483+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,14 +10,15 @@
       "category": "模拟器",
       "version": "9.5.42",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.42.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.42.exe?v=1793204481450&n=ldinst_9.5.42_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.42.exe?v=1793204500502&n=ldinst_9.5.42_ld_407594_ld.exe",
       "downloads": [],
       "size": 602924520,
       "size_mb": 575.0,
       "last_modified": "2026-10-21",
       "md5": "",
       "official_site": "https://www.ldmnq.com/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "LDPlayer 14",
@@ -28,14 +29,15 @@
       "category": "模拟器",
       "version": "14.0.32",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.32.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.32.exe?v=1793204482575&n=ldinst_14.0.32_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.32.exe?v=1793204500612&n=ldinst_14.0.32_ld_412570_ld.exe",
       "downloads": [],
       "size": 744712672,
       "size_mb": 710.2,
       "last_modified": "2026-10-21",
       "md5": "",
       "official_site": "https://www.ldmnq.com/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Thunder",
@@ -53,7 +55,8 @@
       "last_modified": "2026-10-27",
       "md5": "",
       "official_site": "https://www.xunlei.com/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:13"
     },
     {
       "name": "WeChat",
@@ -71,7 +74,8 @@
       "last_modified": "2026-10-27",
       "md5": "",
       "official_site": "https://pc.weixin.qq.com/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Sogou Pinyin",
@@ -89,7 +93,8 @@
       "last_modified": "2026-09-30",
       "md5": "",
       "official_site": "https://pinyin.sogou.com/windows/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "YY",
@@ -107,7 +112,8 @@
       "last_modified": "2026-10-10",
       "md5": "",
       "official_site": "https://www.yy.com/web/pcyy_download/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "QQMusic",
@@ -125,7 +131,8 @@
       "last_modified": "2026-09-02",
       "md5": "",
       "official_site": "https://y.qq.com/download/download.html",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Xshell",
@@ -143,7 +150,8 @@
       "last_modified": "2026-09-03",
       "md5": "",
       "official_site": "https://www.xshell.com/zh/xshell-update-history/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "XMind",
@@ -161,7 +169,8 @@
       "last_modified": "2026-10-28",
       "md5": "",
       "official_site": "https://xmind.cn/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "WinHex",
@@ -179,7 +188,8 @@
       "last_modified": "2026-09-14",
       "md5": "3eb4d3bf2c00b8a15d568c20b0fad114",
       "official_site": "https://www.x-ways.net/winhex/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "XYplorer",
@@ -197,7 +207,8 @@
       "last_modified": "2026-10-13",
       "md5": "",
       "official_site": "https://www.xyplorer.com/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Microsoft Edge",
@@ -207,15 +218,16 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.50",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793809280&P2=404&P3=2&P4=Ru47OD93J0R5A%2fUG4qfzcM9en78QL70Joo6X2BV4WlBa7UgQCGr4nc8Q77JkhDeb1SxoQ0TFfvP2f9uaZ7ZdTg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793809280&P2=404&P3=2&P4=Ru47OD93J0R5A%2fUG4qfzcM9en78QL70Joo6X2BV4WlBa7UgQCGr4nc8Q77JkhDeb1SxoQ0TFfvP2f9uaZ7ZdTg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793809302&P2=404&P3=2&P4=C2i5O3kZC1y3joZmV6MD9Xv8%2b7AvXZ9qgj4R9NiTkR%2f9qmjVYWTEyO3zvZKkAHQeZmsX%2btN54fT91469pr30eA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793809302&P2=404&P3=2&P4=C2i5O3kZC1y3joZmV6MD9Xv8%2b7AvXZ9qgj4R9NiTkR%2f9qmjVYWTEyO3zvZKkAHQeZmsX%2btN54fT91469pr30eA%3d%3d",
       "downloads": [],
       "size": 208371536,
       "size_mb": 198.7,
       "last_modified": "2026-10-27",
       "md5": "",
       "official_site": "https://github.com/Bush2021/edge_installer",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "WebView2",
@@ -233,7 +245,8 @@
       "last_modified": "2026-10-27",
       "md5": "",
       "official_site": "https://developer.microsoft.com/zh-cn/microsoft-edge/webview2/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Google Chrome",
@@ -251,7 +264,8 @@
       "last_modified": "2026-10-27",
       "md5": "",
       "official_site": "https://github.com/Bush2021/chrome_installer",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "NetEase Cloud Music",
@@ -269,7 +283,8 @@
       "last_modified": "2026-09-08",
       "md5": "",
       "official_site": "https://music.163.com/#/download",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "360 Safe Browser 16",
@@ -287,7 +302,8 @@
       "last_modified": "2026-09-05",
       "md5": "",
       "official_site": "https://browser.360.cn/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "360 Safe Browser 17",
@@ -305,7 +321,8 @@
       "last_modified": "2026-10-16",
       "md5": "",
       "official_site": "https://bbs.360.cn/thread-16184433-1-1.html",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "360 Extreme Browser",
@@ -323,7 +340,8 @@
       "last_modified": "2026-10-23",
       "md5": "",
       "official_site": "https://chromex.360.cn/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Topaz Photo",
@@ -341,7 +359,8 @@
       "last_modified": "2026-10-23",
       "md5": "",
       "official_site": "https://community.topazlabs.com/c/topaz-photo/topaz-photo-releases/117",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:13"
     },
     {
       "name": "Topaz Gigapixel",
@@ -359,7 +378,8 @@
       "last_modified": "2026-10-13",
       "md5": "",
       "official_site": "https://community.topazlabs.com/c/topaz-gigapixel/topaz-gigapixel-releases/128",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:13"
     },
     {
       "name": "Topaz Video",
@@ -377,7 +397,8 @@
       "last_modified": "2026-09-19",
       "md5": "",
       "official_site": "https://community.topazlabs.com/c/topaz-video/topaz-video-releases/122",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:13"
     },
     {
       "name": "Adobe Flash Player",
@@ -395,7 +416,8 @@
       "last_modified": "2026-09-08",
       "md5": "",
       "official_site": "https://flash-player-links.pages.dev/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Microsoft Visual C++ Redistributable",
@@ -426,7 +448,8 @@
       "last_modified": "2026-10-15",
       "md5": "",
       "official_site": "https://learn.microsoft.com/zh-cn/cpp/windows/latest-supported-vc-redist?view=msvc-170",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "VC Runtimes 整合版",
@@ -444,7 +467,8 @@
       "last_modified": "2026-10-14",
       "md5": "",
       "official_site": "https://gitlab.com/stdout12/vcredist/-/releases/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:13"
     },
     {
       "name": "InnoExtractor",
@@ -462,7 +486,8 @@
       "last_modified": "2026-10-15",
       "md5": "",
       "official_site": "https://www.havysoft.cl/descargar.html",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "IObit Uninstaller",
@@ -480,7 +505,8 @@
       "last_modified": "2026-09-14",
       "md5": "",
       "official_site": "https://www.iobit.com/en/advanceduninstaller.php",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "WinSnap",
@@ -498,7 +524,8 @@
       "last_modified": "2026-10-27",
       "md5": "",
       "official_site": "https://www.ntwind.com/software/winsnap.html",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "AIDA64",
@@ -516,7 +543,8 @@
       "last_modified": "2026-09-15",
       "md5": "",
       "official_site": "https://www.aida64.com/downloads",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Win11 LTSC",
@@ -534,7 +562,8 @@
       "last_modified": "2026-10-27",
       "md5": "",
       "official_site": "https://github.com/adavak/win_iso_build/releases",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Win10 LTSC",
@@ -552,7 +581,8 @@
       "last_modified": "2026-10-27",
       "md5": "",
       "official_site": "https://github.com/adavak/win_iso_build/releases",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Notepad4",
@@ -570,7 +600,8 @@
       "last_modified": "2026-10-18",
       "md5": "",
       "official_site": "https://github.com/zufuliu/notepad4/releases",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:13"
     },
     {
       "name": "Chrome++",
@@ -588,7 +619,8 @@
       "last_modified": "2026-10-27",
       "md5": "",
       "official_site": "https://github.com/Bush2021/chrome_plus/releases",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "WinMerge",
@@ -606,7 +638,8 @@
       "last_modified": "2026-10-27",
       "md5": "",
       "official_site": "https://github.com/WinMerge/winmerge/releases",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:13"
     },
     {
       "name": "Beyond Compare",
@@ -624,7 +657,8 @@
       "last_modified": "2026-10-27",
       "md5": "",
       "official_site": "https://www.scootersoftware.com/download/v5changelog",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "MathType",
@@ -642,7 +676,8 @@
       "last_modified": "2026-09-23",
       "md5": "14e111e5ea4daf549993375a728b0e74",
       "official_site": "https://store.wiris.com/en/products/mathtype/download/windows",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "HEU KMS",
@@ -660,7 +695,8 @@
       "last_modified": "2026-07-06",
       "md5": "",
       "official_site": "https://github.com/zbezj/HEU_KMS_Activator/releases",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:13"
     },
     {
       "name": "qBittorrent EE",
@@ -678,7 +714,8 @@
       "last_modified": "2026-10-04",
       "md5": "",
       "official_site": "https://github.com/c0re100/qBittorrent-Enhanced-Edition/releases",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:13"
     },
     {
       "name": "Open-Shell",
@@ -696,7 +733,8 @@
       "last_modified": "2026-10-13",
       "md5": "",
       "official_site": "https://github.com/Open-Shell/Open-Shell-Menu/releases",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "PowerDirector",
@@ -714,7 +752,8 @@
       "last_modified": "2026-10-20",
       "md5": "a05038b60fd85f591ba82c5a88c4aa16",
       "official_site": "https://www.cyberlink.com/products/powerdirector-video-editing-software/features_en_US.html",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "PhotoDirector",
@@ -732,7 +771,8 @@
       "last_modified": "2026-10-12",
       "md5": "3e73107715cc97d0b3281c451431ca25",
       "official_site": "https://www.cyberlink.com/products/photodirector/features_en_US.html",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "WePE Enhanced",
@@ -750,7 +790,8 @@
       "last_modified": "2026-09-06",
       "md5": "",
       "official_site": "https://bbs.wuyou.net/forum.php?mod=viewthread&tid=448767",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "WPS Office",
@@ -768,7 +809,8 @@
       "last_modified": "2026-07-06",
       "md5": "",
       "official_site": "https://ep.wps.cn/download",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Shandou Downloader",
@@ -786,7 +828,8 @@
       "last_modified": "2026-09-15",
       "md5": "",
       "official_site": "https://www.lanzoui.com/b015c0ksh",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "WinNTSetup",
@@ -804,7 +847,8 @@
       "last_modified": "2026-08-01",
       "md5": "",
       "official_site": "https://www.mediafire.com/folder/53um6k2nmhvd5/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Foobar2000",
@@ -822,7 +866,8 @@
       "last_modified": "2026-08-24",
       "md5": "",
       "official_site": "https://www.cnblogs.com/asionwu",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "IObit Driver Booster",
@@ -840,7 +885,8 @@
       "last_modified": "2026-09-24",
       "md5": "",
       "official_site": "https://www.iobit.com/driver-booster.php",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Advanced SystemCare Ultimate",
@@ -858,7 +904,8 @@
       "last_modified": "2026-09-28",
       "md5": "",
       "official_site": "https://www.iobit.com/en/advancedsystemcareultimate.php",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Advanced SystemCare Pro",
@@ -876,7 +923,8 @@
       "last_modified": "2026-10-16",
       "md5": "",
       "official_site": "https://www.iobit.com/en/advancedsystemcarepro.php",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Vuescan",
@@ -894,7 +942,8 @@
       "last_modified": "2026-09-26",
       "md5": "5d159c31068f5eb2a44d211f5fd55e36",
       "official_site": "https://www.hamrick.com/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "W10Privacy",
@@ -912,7 +961,8 @@
       "last_modified": "2026-09-27",
       "md5": "9dc921eaf90972231f9792a8e5f74d82",
       "official_site": "https://www.w10privacy.de/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "GoldWave",
@@ -930,7 +980,8 @@
       "last_modified": "2026-09-29",
       "md5": "",
       "official_site": "https://goldwave.ca/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "EmEditor",
@@ -948,7 +999,8 @@
       "last_modified": "2026-10-22",
       "md5": "",
       "official_site": "https://zh-cn.emeditor.com/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "PDF-XChange Editor",
@@ -966,7 +1018,8 @@
       "last_modified": "2026-10-21",
       "md5": "",
       "official_site": "https://tracker-software.com/product/pdf-xchange-editor/history",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "PDF-XChange Pro",
@@ -984,7 +1037,8 @@
       "last_modified": "2026-10-21",
       "md5": "",
       "official_site": "https://www.pdf-xchange.com/product/pdf-xchange-pro",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "AnyDesk",
@@ -1002,7 +1056,8 @@
       "last_modified": "2026-10-26",
       "md5": "",
       "official_site": "https://anydesk.com/zh/downloads/windows",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Adobe Camera Raw",
@@ -1020,7 +1075,8 @@
       "last_modified": "2026-09-28",
       "md5": "",
       "official_site": "https://helpx.adobe.com/cn/camera-raw/using/whats-new.html",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Wing FTP Server",
@@ -1038,7 +1094,8 @@
       "last_modified": "2026-10-28",
       "md5": "",
       "official_site": "https://www.wftpserver.com/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Wise Care 365",
@@ -1056,7 +1113,8 @@
       "last_modified": "2026-10-22",
       "md5": "",
       "official_site": "https://www.wisecleaner.com/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Bandicam",
@@ -1074,7 +1132,8 @@
       "last_modified": "2026-10-15",
       "md5": "0a471b1f1aa849e0d06e66555b1504f3",
       "official_site": "https://bandicam.cn/downloads/version_history",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "PowerISO",
@@ -1092,7 +1151,8 @@
       "last_modified": "2026-09-20",
       "md5": "",
       "official_site": "https://www.poweriso.com/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Ventoy",
@@ -1110,7 +1170,8 @@
       "last_modified": "2026-10-09",
       "md5": "",
       "official_site": "https://www.ventoy.net/en/doc_news.html",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "PicPick Professional",
@@ -1128,7 +1189,8 @@
       "last_modified": "2026-10-26",
       "md5": "",
       "official_site": "https://picpick.app/en/changelog/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Winxvideo AI",
@@ -1141,12 +1203,13 @@
       "download_url": "https://www.winxdvd.com/download/winxvideo-ai.exe",
       "download_url_with_params": "https://www.winxdvd.com/download/winxvideo-ai.exe",
       "downloads": [],
-      "size": 307118576,
-      "size_mb": 292.9,
+      "size": 307232768,
+      "size_mb": 293.0,
       "last_modified": "2026-09-20",
       "md5": "",
       "official_site": "https://www.winxdvd.com/winxvideo-ai/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Glary Utilities Pro",
@@ -1164,7 +1227,8 @@
       "last_modified": "2026-10-19",
       "md5": "",
       "official_site": "https://www.glarysoft.com/glary-utilities-pro/download",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Sublime Text",
@@ -1182,7 +1246,8 @@
       "last_modified": "2026-09-25",
       "md5": "",
       "official_site": "https://www.sublimetext.com/download",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Start11",
@@ -1195,12 +1260,13 @@
       "download_url": "https://stardock.cachefly.net/software/Start11/v2/Start11v2_Setup.exe",
       "download_url_with_params": "https://stardock.cachefly.net/software/Start11/v2/Start11v2_Setup.exe",
       "downloads": [],
-      "size": 57556400,
-      "size_mb": 54.9,
+      "size": 57671680,
+      "size_mb": 55.0,
       "last_modified": "2026-09-21",
       "md5": "",
       "official_site": "https://www.stardock.com/products/start11/history",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "WinCam",
@@ -1218,7 +1284,8 @@
       "last_modified": "2026-10-23",
       "md5": "",
       "official_site": "https://www.ntwind.com/software/wincam.html",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Wondershare PDFelement",
@@ -1236,7 +1303,8 @@
       "last_modified": "2026-10-09",
       "md5": "",
       "official_site": "https://pdf.wondershare.com/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Adobe Acrobat Pro DC",
@@ -1254,7 +1322,8 @@
       "last_modified": "2026-10-14",
       "md5": "",
       "official_site": "https://www.adobe.com/devnet-docs/acrobatetk/tools/ReleaseNotesDC/index.html",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "HTTP Debugger",
@@ -1272,7 +1341,8 @@
       "last_modified": "2026-09-17",
       "md5": "",
       "official_site": "https://www.httpdebugger.com/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "CCleaner",
@@ -1290,7 +1360,8 @@
       "last_modified": "2026-10-21",
       "md5": "",
       "official_site": "https://www.ccleaner.com/zh-cn",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "4K Video Downloader Plus",
@@ -1308,7 +1379,8 @@
       "last_modified": "2026-09-30",
       "md5": "",
       "official_site": "https://www.4kdownload.com/downloads/34",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Luminar Neo",
@@ -1326,7 +1398,8 @@
       "last_modified": "2026-10-28",
       "md5": "",
       "official_site": "https://skylum.com/hans/whats-new/luminar-neo",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "ACDSee Photo Studio Ultimate",
@@ -1344,7 +1417,8 @@
       "last_modified": "2026-09-16",
       "md5": "",
       "official_site": "https://www.acdsee.com/en/support/photo-studio-ultimate/changelog/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "xb21cn 精简系统",
@@ -1362,7 +1436,8 @@
       "last_modified": "2026-09-12",
       "md5": "",
       "official_site": "https://cloud.189.cn/web/share?code=ama22maquuYj&pwd=ci8t",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "7997 Portable",
@@ -1380,7 +1455,8 @@
       "last_modified": "2026-10-27",
       "md5": "",
       "official_site": "https://disk.yandex.ru/d/D8xbOSd7XAUbug",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "PotPlayer",
@@ -1398,7 +1474,8 @@
       "last_modified": "2026-10-26",
       "md5": "",
       "official_site": "https://potplayer.daum.net/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "DxO PureRaw",
@@ -1416,7 +1493,8 @@
       "last_modified": "2026-10-20",
       "md5": "",
       "official_site": "https://www.dxo.com/dxo-pureraw/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "DxO FilmPack",
@@ -1434,7 +1512,8 @@
       "last_modified": "2026-10-20",
       "md5": "",
       "official_site": "https://www.dxo.com/dxo-filmpack/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "DxO ViewPoint",
@@ -1452,7 +1531,8 @@
       "last_modified": "2026-10-20",
       "md5": "",
       "official_site": "https://www.dxo.com/dxo-viewpoint/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "DxO PhotoLab",
@@ -1470,7 +1550,8 @@
       "last_modified": "2026-10-20",
       "md5": "",
       "official_site": "https://www.dxo.com/dxo-photolab/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "StartAllBack",
@@ -1488,7 +1569,8 @@
       "last_modified": "2026-10-12",
       "md5": "",
       "official_site": "https://www.startisback.com/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "NVIDIA Driver",
@@ -1506,7 +1588,8 @@
       "last_modified": "2026-10-27",
       "md5": "",
       "official_site": "https://www.nvidia.com/en-us/geforce/forums/game-ready-drivers/13/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Camtasia",
@@ -1515,7 +1598,7 @@
       "icon": "Ca",
       "icon_color": "linear-gradient(135deg, #ff6d00, #ff9100)",
       "category": "视频编辑",
-      "version": "26.2.4",
+      "version": "26.2.4.20997",
       "download_url": "https://download.techsmith.com/camtasiastudio/releases/2624/camtasia.exe",
       "download_url_with_params": "https://download.techsmith.com/camtasiastudio/releases/2624/camtasia.exe",
       "downloads": [],
@@ -1524,7 +1607,8 @@
       "last_modified": "2026-10-28",
       "md5": "",
       "official_site": "https://www.techsmith.com/camtasia-version-history.html",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Vegas Pro",
@@ -1568,7 +1652,8 @@
           "download_url": "https://borisfxdownloads.com/borisfx/store/borisfxdirect/BorisFXDirect-2.0.26-win.zip",
           "desc": "Boris FX 插件/资源中心：管理下载特效插件，也能检查 Vegas 更新"
         }
-      ]
+      ],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Geek Uninstaller",
@@ -1586,7 +1671,8 @@
       "last_modified": "2026-10-14",
       "md5": "",
       "official_site": "https://geekuninstaller.com/download",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Foxit PDF Editor",
@@ -1604,7 +1690,8 @@
       "last_modified": "2026-09-23",
       "md5": "",
       "official_site": "https://www.foxit.com/pdf-editor/version-history.html",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Foxit PDF Editor LTSC",
@@ -1622,7 +1709,8 @@
       "last_modified": "2026-09-23",
       "md5": "",
       "official_site": "https://www.foxit.com/pdf-editor/version-history.html",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "BuWangChuXin Windows",
@@ -1640,7 +1728,8 @@
       "last_modified": "2026-09-27",
       "md5": "",
       "official_site": "https://www.wycad.com/windows",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Internet Download Manager",
@@ -1658,7 +1747,8 @@
       "last_modified": "2026-10-23",
       "md5": "",
       "official_site": "https://www.internetdownloadmanager.com/news.html",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "GoodSync",
@@ -1676,7 +1766,8 @@
       "last_modified": "2026-10-22",
       "md5": "",
       "official_site": "https://www.goodsync.com/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "monkrus软件",
@@ -1699,7 +1790,8 @@
           "title": "Adobe Substance 3D Painter v12.2.0 Multilingual",
           "url": "https://w18.monkrus.ws/2026/10/adobe-substance-3d-painter-v1220.html"
         }
-      ]
+      ],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "downtopc软件",
@@ -1758,7 +1850,8 @@
           "title": "Diffchecker 7.3.1 Multilingual",
           "url": "https://downtopc.com/344218-diffchecker-731-multilingual.html"
         }
-      ]
+      ],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "nsane论坛",
@@ -1865,7 +1958,8 @@
           "title": "UnHackMe 18.85.2026.1027",
           "url": "https://nsaneforums.com/topic/490768-unhackme-188520261027/"
         }
-      ]
+      ],
+      "detected_at": "2026-10-29 00:13"
     },
     {
       "name": "7-Zip",
@@ -1883,7 +1977,8 @@
       "last_modified": "2026-10-21",
       "md5": "",
       "official_site": "https://www.7-zip.org/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "pdfFactory Pro",
@@ -1901,7 +1996,8 @@
       "last_modified": "2026-10-06",
       "md5": "1e1accf5751070b518259953ff022d22",
       "official_site": "https://fineprint.com/pdffactory",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "FinePrint",
@@ -1919,7 +2015,8 @@
       "last_modified": "2026-10-06",
       "md5": "e0d9d07e51d58086bf600b0eae45990c",
       "official_site": "https://fineprint.com/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Yamicsoft Windows Manager",
@@ -1937,7 +2034,8 @@
       "last_modified": "2026-10-26",
       "md5": "",
       "official_site": "https://www.yamicsoft.com/cn/whats-new.php",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Advanced Installer",
@@ -1955,7 +2053,8 @@
       "last_modified": "2026-10-12",
       "md5": "",
       "official_site": "https://www.advancedinstaller.com/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Operit",
@@ -1973,7 +2072,8 @@
       "last_modified": "2026-09-18",
       "md5": "",
       "official_site": "https://github.com/AAswordman/Operit/releases",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "GKD",
@@ -1983,15 +2083,16 @@
       "icon_color": "linear-gradient(135deg, #10b981, #059669)",
       "category": "安卓应用",
       "version": "1.13.0-beta-2",
-      "download_url": "https://github.com/gkd-kit/gkd/releases/download/v1.13.0-beta-2/gkd-v1.13.0-beta-2.apk",
-      "download_url_with_params": "https://github.com/gkd-kit/gkd/releases/download/v1.13.0-beta-2/gkd-v1.13.0-beta-2.apk",
+      "download_url": "https://github.com/gkd-kit/gkd/releases",
+      "download_url_with_params": "https://github.com/gkd-kit/gkd/releases",
       "downloads": [],
-      "size": 4125865,
-      "size_mb": 3.9,
+      "size": 3287479,
+      "size_mb": 3.1,
       "last_modified": "2026-10-15",
       "md5": "",
       "official_site": "https://github.com/gkd-kit/gkd/releases",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "CrystalDiskInfo",
@@ -2004,12 +2105,13 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-10-11",
       "md5": "",
       "official_site": "https://crystalmark.info/en/software/crystaldiskinfo/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "FXSound",
@@ -2027,7 +2129,8 @@
       "last_modified": "2026-09-17",
       "md5": "",
       "official_site": "https://www.fxsound.com/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Wondershare UniConverter",
@@ -2045,7 +2148,8 @@
       "last_modified": "2026-10-15",
       "md5": "",
       "official_site": "https://www.wondershare.com/uniconverter/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Bandizip",
@@ -2063,7 +2167,8 @@
       "last_modified": "2026-10-27",
       "md5": "",
       "official_site": "https://www.bandisoft.com/bandizip/history/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "MPC-BE",
@@ -2081,7 +2186,8 @@
       "last_modified": "2026-10-13",
       "md5": "",
       "official_site": "https://github.com/Aleksoid1978/MPC-BE/releases",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:13"
     },
     {
       "name": "EdrawMax",
@@ -2099,7 +2205,8 @@
       "last_modified": "2026-10-13",
       "md5": "",
       "official_site": "https://www.edrawsoft.com/download-edrawmax.html",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "R-Studio",
@@ -2117,7 +2224,8 @@
       "last_modified": "2026-10-19",
       "md5": "",
       "official_site": "https://www.r-studio.com/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "MKVToolNix",
@@ -2135,7 +2243,8 @@
       "last_modified": "2026-10-18",
       "md5": "",
       "official_site": "https://mkvtoolnix.download/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "PlayerFab",
@@ -2153,7 +2262,8 @@
       "last_modified": "2026-10-17",
       "md5": "",
       "official_site": "https://playerfab.dvdfab.cn/media-player-new.htm?v=7",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Light Image Resizer",
@@ -2171,7 +2281,8 @@
       "last_modified": "2026-10-28",
       "md5": "",
       "official_site": "https://www.obviousidea.com/windows-software/light-image-resizer/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "HyperSnap",
@@ -2189,7 +2300,8 @@
       "last_modified": "2026-10-26",
       "md5": "",
       "official_site": "https://hyperionics.com/hsdx/downloads.asp",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "AOMEI Partition Assistant",
@@ -2207,7 +2319,8 @@
       "last_modified": "2026-10-19",
       "md5": "",
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:13"
     },
     {
       "name": "BitComet",
@@ -2225,7 +2338,8 @@
       "last_modified": "2026-10-20",
       "md5": "",
       "official_site": "https://www.bitcomet.com/en/downloads",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:13"
     },
     {
       "name": "HexHub",
@@ -2243,7 +2357,8 @@
       "last_modified": "2026-06-07",
       "md5": "",
       "official_site": "https://www.hexhub.cn/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "Java JDK",
@@ -2291,7 +2406,8 @@
           "official_site": "https://oracle.com/java/technologies/javase/8u-relnotes.html",
           "download_url": "https://www.oracle.com/java/technologies/downloads/#java8"
         }
-      ]
+      ],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "SketchUp Pro 2027",
@@ -2309,7 +2425,8 @@
       "last_modified": "2026-10-21",
       "md5": "",
       "official_site": "https://help.sketchup.com/en/downloading-sketchup",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "鲁大师电脑版",
@@ -2327,7 +2444,8 @@
       "last_modified": "2026-10-22",
       "md5": "",
       "official_site": "https://www.ludashi.com/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     },
     {
       "name": "WinRAR",
@@ -2345,7 +2463,27 @@
       "last_modified": "2026-07-22",
       "md5": "",
       "official_site": "https://www.win-rar.com/",
-      "update_items": []
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
+    },
+    {
+      "name": "SweetScape 010 Editor",
+      "name_cn": "010 Editor",
+      "alias": "010编辑器 十六进制编辑器",
+      "icon": "010",
+      "icon_color": "linear-gradient(135deg, #00b894, #00a8ff)",
+      "category": "开发工具",
+      "version": "17.0",
+      "download_url": "https://download.sweetscape.com/010EditorWin64Portable17.0.zip",
+      "download_url_with_params": "https://download.sweetscape.com/010EditorWin64Portable17.0.zip",
+      "downloads": [],
+      "size": 35669616,
+      "size_mb": 34.0,
+      "last_modified": "2026-10-28",
+      "md5": "",
+      "official_site": "https://sweetscape.com/download/",
+      "update_items": [],
+      "detected_at": "2026-10-29 00:21"
     }
   ]
 }

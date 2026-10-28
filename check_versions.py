@@ -1426,6 +1426,10 @@ PRODUCTS = [
         'base_version': '26.2.2',
         'url_pattern': 'https://download.techsmith.com/camtasiastudio/releases/{ver_dot}/camtasia.exe',
         'url_ver_format': 'dots_to_none',
+        # 目录只按前三段（2624），但安装包 PE 版本是四段 26.2.4.20997，
+        # 展示要完整四段：url_ver_segments 保证探测起点不被四段版本带偏
+        'url_ver_segments': 3,
+        'pe_version': True,
         'official_site': 'https://www.techsmith.com/camtasia-version-history.html',
     },
     {
@@ -2187,6 +2191,25 @@ PRODUCTS = [
         'date': '2026-07-22',
         'official_site': 'https://www.win-rar.com/',
     },
+    {
+        'name': 'SweetScape 010 Editor',
+        'name_cn': '010 Editor',
+        'alias': '010编辑器 十六进制编辑器',
+        'icon': '010',
+        'icon_color': 'linear-gradient(135deg, #00b894, #00a8ff)',
+        'category': '开发工具',
+        # 官方便携版直链文件名带完整版本（010EditorWin64Portable17.0.zip），
+        # 发布页 https://sweetscape.com/download/ 也写 "Version: 17.0"；
+        # 新版本换目录/文件名 → increment 探测即可自动跟进，发布时间取包体 Last-Modified
+        'detect_type': 'increment',
+        'base_version': '17.0',
+        'url_pattern': 'https://download.sweetscape.com/010EditorWin64Portable{ver}.zip',
+        'max_skip': 2,
+        'max_carry': 2,
+        # 34MB 的 zip，算 MD5 要整包下载，网络慢时会拖到检测超时 → 跳过
+        'skip_md5': True,
+        'official_site': 'https://sweetscape.com/download/',
+    },
 ]
 
 MAX_INCREMENT = 30  # 最多递增检测30个版本
@@ -2597,6 +2620,12 @@ def detect_increment(product):
     # 起点优先用线上已发布版本：base_version 只是「最低基线」，
     # 线上版本比它新就以线上版本为起点，避免配置落后导致探测永远追不上。
     live_ver = _LIVE_VERSIONS.get(product['name'], '')
+    # 展示版本可能是四段（PE 读出的 build 号，如 Camtasia 26.2.4.20997），
+    # 但安装包地址只按前三段拼（…/2624/camtasia.exe）；探测起点必须先截断，
+    # 否则会拼出 262420997 这种不存在的目录，整轮探测全 404。
+    _seg = product.get('url_ver_segments')
+    if live_ver and _seg:
+        live_ver = '.'.join(live_ver.split('.')[:int(_seg)])
     if live_ver and _ver_newer(live_ver, current):
         current = live_ver
         latest = live_ver
@@ -7644,6 +7673,9 @@ def main():
 
     # 检测统计（多线程共享，用锁保护自增避免竞态丢计数）
     stats = {'success': 0, 'retry': 0, 'timeout': 0, 'failed': 0, 'fallback': 0}
+    # 本轮检测时间（北京时间，精确到分钟）：写进每个产品的 detected_at，
+    # 前端「检测时间」列显示；发布时间 last_modified 保持不动
+    RUN_TS = datetime.now(timezone(timedelta(hours=8))).strftime('%Y-%m-%d %H:%M')
     stats_lock = threading.Lock()
     # 问题清单：多线程 print 会交错，事后统一按软件名归类输出，便于定位
     problems = []
@@ -7665,6 +7697,7 @@ def main():
         只有「快速失败」（拿到了结果但体积为 0）才重试。
         """
         name = product['name']
+        fresh = True   # 本轮是否真的探测成功；fallback 沿用的旧数据不刷新检测时间
         print(f"检测 {product['name_cn']} ({name}) [{product.get('detect_type', 'increment')}]...")
         t0 = time.time()
         timeout = product.get('detect_timeout', DEFAULT_DETECT_TIMEOUT)
@@ -7687,6 +7720,7 @@ def main():
         # → 沿用旧数据，既不清空清单，也不把前端日期刷成今天（无文章不该显示"有更新"）。
         if allow_no_size and info is not None and not info.get('version') and name in old_data:
             info = old_data[name].copy()
+            fresh = False
             _bump('fallback')
             _note(name, '资源站无本轮数据', f"沿用 {info.get('last_modified', '')}")
             print(f"  ⚠️ 资源站本轮无有效数据（未抓通或无新内容），沿用上次数据: {info.get('last_modified', '')}")
@@ -7716,6 +7750,7 @@ def main():
         if not no_size_ok and (info is None or (info.get('size_mb', 0) == 0 and name in old_data and old_data[name].get('size_mb', 0) > 0)):
             if name in old_data:
                 info = old_data[name].copy()
+                fresh = False
                 _bump('fallback')
                 if status == 'ok':
                     _note(name, '无体积', f"沿用 v{info['version']}")
@@ -7760,6 +7795,13 @@ def main():
                 print(f"  ✅ {info['version']}, 当天更新 {cnt} 款软件")
             else:
                 print(f"  ✅ {info['version']}, {info['size_mb']} MB")
+        # 检测时间（精确到分钟，北京时间）：本轮真正探到才刷新；
+        # fallback 沿用的旧数据保留上次成功检测的时间，发布时间 last_modified 不动
+        if info is not None:
+            if fresh:
+                info['detected_at'] = RUN_TS
+            elif not info.get('detected_at'):
+                info['detected_at'] = RUN_TS
         return info
 
     # 并行检测
@@ -7792,6 +7834,7 @@ def main():
             _bump('fallback')
         else:
             continue
+        info.setdefault('detected_at', RUN_TS)
         results.append(info)
         # 检测是否有变化（新增产品也视为变化）
         is_changed = False
