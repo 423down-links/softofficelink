@@ -6477,6 +6477,19 @@ def _nv_hotfix_scan(product, whql_ver):
     return max(found, key=lambda r: _ver_tuple(r[0]))
 
 
+def _nv_proxy_url(url, host='cn.download.nvidia.cn'):
+    """把 NVIDIA CDN 直链包装成本站中转直链（/dl/{host}{path}）。
+
+    NVIDIA CDN 有防盗链：只放行 Referer 为 nvidia 域的请求，站外直接打开一律 403。
+    站点用 Cloudflare Pages Functions（functions/dl/[[path]].js）在边缘加官方
+    Referer 回源并透传，访客拿到的就是「点开即下载」的直链。
+    """
+    idx = url.find('/Windows/')
+    if idx < 0:
+        return url
+    return f"https://soft.423down.cn/dl/{host}{url[idx:]}"
+
+
 def detect_nvidia(product):
     """NVIDIA 显卡驱动：官方驱动接口取 WHQL 版本，再补探 Hotfix 热补丁。
 
@@ -6523,24 +6536,20 @@ def detect_nvidia(product):
     hot = _nv_hotfix_scan(product, whql_ver)
     if hot:
         ver, url, size, date = hot
-        # NVIDIA 官方 CDN（Zen/4.3）有防盗链：站外直接打开一律 403，只有从
-        # nvidia.com / nvidia.cn 页面点过去才放行；而官方确认页按 lang=cn 生成
-        # 的按钮指向 cn.download.nvidia.com（热补丁只在该镜像下存在，
-        # us.download 上是 404）。所以热补丁用中文确认页做下载入口。
-        path = url.split('download.nvidia.com', 1)[-1]
-        path = path[path.find('/Windows/'):]
-        confirm_url = ('https://www.nvidia.cn/content/DriverDownloads/'
-                       f'confirmation.php?url={path}&lang=cn&type=geforce')
+        # 热补丁与 WHQL 包不在同一目录，直链必须换成 {ver}hf 目录下那个；
+        # CDN 防盗链交给本站中转（/dl/...）解决，不用再绕官方确认页。
+        proxy_url = _nv_proxy_url(url)
         print(f"  ✅ Hotfix 完整离线包: v{ver}, {size/1024/1024:.1f}MB, {date}")
-        print(f"  下载入口(官方确认页): {confirm_url[:90]}...")
-        return ver, confirm_url, confirm_url, size, date, ''
+        print(f"  下载直链(本站中转): {proxy_url[:90]}...")
+        return ver, proxy_url, proxy_url, size, date, ''
 
     exists, size, lm = check_url_follow(whql_url, referer=product.get('referer'))
     date = parse_date(lm) or whql_date
     if not exists:
         print(f"  ⚠️ WHQL 安装包不可用: {whql_url[:70]}...")
         size = 0
-    return whql_ver, whql_url, whql_url, size, date, ''
+    proxy_url = _nv_proxy_url(whql_url)
+    return whql_ver, proxy_url, proxy_url, size, date, ''
 
 
 def detect_webview2(product):
