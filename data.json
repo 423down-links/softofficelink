@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T15:51:53.388070+00:00",
+  "updated_at": "2026-10-28T15:57:41.627666+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.50",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793807458&P2=404&P3=2&P4=RIifOEsgOt9sY3u9hIwQCNg3cF1rXqlk%2bQSAZrPTiEpq1iWl7LmHAgx6iJjDPAxqfSSY0EqSqV6vsCcOA5LRtA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793807458&P2=404&P3=2&P4=RIifOEsgOt9sY3u9hIwQCNg3cF1rXqlk%2bQSAZrPTiEpq1iWl7LmHAgx6iJjDPAxqfSSY0EqSqV6vsCcOA5LRtA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793807803&P2=404&P3=2&P4=GdFCYnIH2sAw%2fRDVn%2bojOQrbaMJ%2fP2uh5O4UP8%2btLkRQIDVRZbwkcNe5KAOG8x2e7%2f6jl3iwqU0mQn%2f9btAaYQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793807803&P2=404&P3=2&P4=GdFCYnIH2sAw%2fRDVn%2bojOQrbaMJ%2fP2uh5O4UP8%2btLkRQIDVRZbwkcNe5KAOG8x2e7%2f6jl3iwqU0mQn%2f9btAaYQ%3d%3d",
       "downloads": [],
       "size": 208371536,
       "size_mb": 198.7,
@@ -1778,6 +1778,10 @@
       "official_site": "https://nsaneforums.com/",
       "update_items": [
         {
+          "title": "UPX (Ultimate Packer for eXecutables) 5.3.0",
+          "url": "https://nsaneforums.com/topic/490829-upx-ultimate-packer-for-executables-530/"
+        },
+        {
           "title": "SweetScape 010 Editor 17.0",
           "url": "https://nsaneforums.com/topic/490826-sweetscape-010-editor-170/"
         },
@@ -1812,6 +1816,18 @@
         {
           "title": "Atlantis Word Processor 5.0.6",
           "url": "https://nsaneforums.com/topic/490785-atlantis-word-processor-506/"
+        },
+        {
+          "title": "Zed 1.26.2",
+          "url": "https://nsaneforums.com/topic/490830-zed-1262/"
+        },
+        {
+          "title": "Ant Download Manager 2.18.0 Build 97665",
+          "url": "https://nsaneforums.com/topic/490828-ant-download-manager-2180-build-97665/"
+        },
+        {
+          "title": "Google Drive 133.0.2",
+          "url": "https://nsaneforums.com/topic/490827-google-drive-13302/"
         },
         {
           "title": "Prey 1.13.42",
