@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T07:51:33.784086+00:00",
+  "updated_at": "2026-10-28T08:06:07.671696+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.50",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793778637&P2=404&P3=2&P4=Tvr5ej7k0%2bH1rHmx%2fJsa3sZgvhENtHSKVORlFQLKOBcPEOEjboBCPc2Mi6qcPYzjFfWEJQ%2bzGc28IRUUgriADg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793778637&P2=404&P3=2&P4=Tvr5ej7k0%2bH1rHmx%2fJsa3sZgvhENtHSKVORlFQLKOBcPEOEjboBCPc2Mi6qcPYzjFfWEJQ%2bzGc28IRUUgriADg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793779531&P2=404&P3=2&P4=LuIBh0eOpvl7P7DaFkLkw4iZaOjj4x4%2bGDHZ43Wtj2LYCuUTzRC2oBobkc5bOgUFItmLm8tM25zcKAwdZfE7Mg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793779531&P2=404&P3=2&P4=LuIBh0eOpvl7P7DaFkLkw4iZaOjj4x4%2bGDHZ43Wtj2LYCuUTzRC2oBobkc5bOgUFItmLm8tM25zcKAwdZfE7Mg%3d%3d",
       "downloads": [],
       "size": 208371536,
       "size_mb": 198.7,
@@ -1701,6 +1701,10 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "Any Video Downloader Pro 10.5.0 (x64)",
+          "url": "https://downtopc.com/344224-any-video-downloader-pro-1050-x64.html"
+        },
+        {
           "title": "Ashampoo Photo Collage 1.0.1 (x64) Multilingual Portable",
           "url": "https://downtopc.com/344223-ashampoo-photo-collage-101-x64-multilingual-portable.html"
         },
@@ -1743,6 +1747,22 @@
       "md5": "",
       "official_site": "https://nsaneforums.com/",
       "update_items": [
+        {
+          "title": "eM Client Pro v11.0.1389",
+          "url": "https://nsaneforums.com/topic/490797-em-client-pro-v1101389/"
+        },
+        {
+          "title": "JRiver Media Center v36.0.51 x64",
+          "url": "https://nsaneforums.com/topic/490794-jriver-media-center-v36051-x64/"
+        },
+        {
+          "title": "NTFS Permissions Reporter 5.9.713 (x64) Enterprise",
+          "url": "https://nsaneforums.com/topic/490793-ntfs-permissions-reporter-59713-x64-enterprise/"
+        },
+        {
+          "title": "Diffchecker v7.3.1",
+          "url": "https://nsaneforums.com/topic/490791-diffchecker-v731/"
+        },
         {
           "title": "LibreWolf 159.0-1",
           "url": "https://nsaneforums.com/topic/490786-librewolf-1590-1/"
