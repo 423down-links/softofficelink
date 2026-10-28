@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T02:51:34.775642+00:00",
+  "updated_at": "2026-10-28T03:06:05.285945+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.50",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793760640&P2=404&P3=2&P4=UBhz6IC%2fw4lxDFw3LrXNe5m7GLopx81Oj4X3GlhsNGFIEcWZ8N86cncbkz9uq6ZG%2b61WPmaLPzap5voUn3NjCA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793760640&P2=404&P3=2&P4=UBhz6IC%2fw4lxDFw3LrXNe5m7GLopx81Oj4X3GlhsNGFIEcWZ8N86cncbkz9uq6ZG%2b61WPmaLPzap5voUn3NjCA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793761538&P2=404&P3=2&P4=aWOvUBWoXsa92TqzkzqB9iREpNoo7Due4Z6uNI00Dab6HuxGrX%2fPKovwspp1wtmL0jfF1uKJTxihDLJyoYVqSQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793761538&P2=404&P3=2&P4=aWOvUBWoXsa92TqzkzqB9iREpNoo7Due4Z6uNI00Dab6HuxGrX%2fPKovwspp1wtmL0jfF1uKJTxihDLJyoYVqSQ%3d%3d",
       "downloads": [],
       "size": 208371536,
       "size_mb": 198.7,
@@ -1944,8 +1944,8 @@
           "url": "https://nsaneforums.com/topic/490786-librewolf-1590-1/"
         },
         {
-          "title": "Atlantis Word Processor  5.0.6",
-          "url": "https://nsaneforums.com/topic/490785-atlantis-word-processor%C2%A0-506/"
+          "title": "Atlantis Word Processor 5.0.6",
+          "url": "https://nsaneforums.com/topic/490785-atlantis-word-processor-506/"
         },
         {
           "title": "RegCool 3.1.0.8",
@@ -2118,7 +2118,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-10-11",
       "md5": "",
