@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T00:06:01.787983+00:00",
+  "updated_at": "2026-10-28T00:12:03.975197+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -2445,6 +2445,24 @@
       "last_modified": "2026-10-22",
       "md5": "",
       "official_site": "https://www.ludashi.com/",
+      "update_items": []
+    },
+    {
+      "name": "WinRAR",
+      "name_cn": "WinRAR 商业版",
+      "alias": "",
+      "icon": "RAR",
+      "icon_color": "linear-gradient(135deg, #8e44ad, #e74c3c)",
+      "category": "压缩解压",
+      "version": "7.23",
+      "download_url": "https://www.win-rar.com/fileadmin/winrar-versions/winrar/winrar-x64-723sc.exe",
+      "download_url_with_params": "https://www.win-rar.com/fileadmin/winrar-versions/winrar/winrar-x64-723sc.exe",
+      "downloads": [],
+      "size": 4049936,
+      "size_mb": 3.9,
+      "last_modified": "2026-07-22",
+      "md5": "",
+      "official_site": "https://www.win-rar.com/",
       "update_items": []
     }
   ]
