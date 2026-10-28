@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T05:51:45.139640+00:00",
+  "updated_at": "2026-10-28T06:06:21.756847+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.50",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793771445&P2=404&P3=2&P4=mWS9rc56mfuaWTE16cJOmBqCzY2riAEvaJH296nUEkO5rQRNurp7nKcSV6oTHBI4ljOWv1VGvmgt3ubOE2vmmQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793771445&P2=404&P3=2&P4=mWS9rc56mfuaWTE16cJOmBqCzY2riAEvaJH296nUEkO5rQRNurp7nKcSV6oTHBI4ljOWv1VGvmgt3ubOE2vmmQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793772349&P2=404&P3=2&P4=lPK%2fkjQv9%2fQY154S7cqlEsDo6Fyj8%2bjfJ14FCbdR4ziETN2RIfbl%2ffU9dZ5ajfVNwigalGdvdQB416B0kFtzpw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793772349&P2=404&P3=2&P4=lPK%2fkjQv9%2fQY154S7cqlEsDo6Fyj8%2bjfJ14FCbdR4ziETN2RIfbl%2ffU9dZ5ajfVNwigalGdvdQB416B0kFtzpw%3d%3d",
       "downloads": [],
       "size": 208371536,
       "size_mb": 198.7,
@@ -1690,235 +1690,23 @@
       "icon": "D",
       "icon_color": "linear-gradient(135deg, #2e7d32, #1b5e20)",
       "category": "资源站",
-      "version": "2026-10-27",
+      "version": "2026-10-28",
       "download_url": "https://downtopc.com/software/",
       "download_url_with_params": "https://downtopc.com/software/",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-10-27",
+      "last_modified": "2026-10-28",
       "md5": "",
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
-          "title": "NTFS Permissions Reporter 5.9.713 (x64) Enterprise Portable",
-          "url": "https://downtopc.com/344216-ntfs-permissions-reporter-59713-x64-enterprise-portable.html"
+          "title": "Native Instruments Maschine 3.7.2",
+          "url": "https://downtopc.com/344219-native-instruments-maschine-372.html"
         },
         {
-          "title": "Ahnenblatt 5.2.0.1 (x64) Multilingual Portable",
-          "url": "https://downtopc.com/344215-ahnenblatt-5201-x64-multilingual-portable.html"
-        },
-        {
-          "title": "NTFS Permissions Reporter 5.9.713 (x64) Enterprise",
-          "url": "https://downtopc.com/344214-ntfs-permissions-reporter-59713-x64-enterprise.html"
-        },
-        {
-          "title": "Ahnenblatt 5.2.0.1 Multilingual",
-          "url": "https://downtopc.com/344213-ahnenblatt-5201-multilingual.html"
-        },
-        {
-          "title": "JRiver Media Center 36.0.51 (x64) Multilingual",
-          "url": "https://downtopc.com/344212-jriver-media-center-36051-x64-multilingual.html"
-        },
-        {
-          "title": "Antidote 12 v4.1",
-          "url": "https://downtopc.com/344211-antidote-12-v41.html"
-        },
-        {
-          "title": "Rons WebLynx Pro 2026.10.27.1413",
-          "url": "https://downtopc.com/344210-rons-weblynx-pro-202610271413.html"
-        },
-        {
-          "title": "VovSoft Merge Audio Files 1.4",
-          "url": "https://downtopc.com/344206-vovsoft-merge-audio-files-14.html"
-        },
-        {
-          "title": "The Graphics Creator 8 v1.4.21 Portable",
-          "url": "https://downtopc.com/344202-the-graphics-creator-8-v1421-portable.html"
-        },
-        {
-          "title": "JDownloader 2.0.1 (27.10.2026) Multilingual Portable",
-          "url": "https://downtopc.com/344201-jdownloader-201-27102026-multilingual-portable.html"
-        },
-        {
-          "title": "Cisdem PDF Compressor 3.5.0 Multilingual Portable",
-          "url": "https://downtopc.com/344200-cisdem-pdf-compressor-350-multilingual-portable.html"
-        },
-        {
-          "title": "Cisdem PDF Password Remover 2.5.0 Multilingual Portable",
-          "url": "https://downtopc.com/344199-cisdem-pdf-password-remover-250-multilingual-portable.html"
-        },
-        {
-          "title": "LightBurn 2.2.00 Final (x64) Multilingual Portable",
-          "url": "https://downtopc.com/344198-lightburn-2200-final-x64-multilingual-portable.html"
-        },
-        {
-          "title": "The Graphics Creator 8 v1.4.21",
-          "url": "https://downtopc.com/344197-the-graphics-creator-8-v1421.html"
-        },
-        {
-          "title": "JWIZARD Cleaner 1.12.0.0 Multilingual Portable",
-          "url": "https://downtopc.com/344193-jwizard-cleaner-11200-multilingual-portable.html"
-        },
-        {
-          "title": "Veeam Agent for Windows 13.1.2.812",
-          "url": "https://downtopc.com/344191-veeam-agent-for-windows-1312812.html"
-        },
-        {
-          "title": "Remo Repair PSD 1.0.0.31",
-          "url": "https://downtopc.com/344190-remo-repair-psd-10031.html"
-        },
-        {
-          "title": "JWIZARD Cleaner 1.12.0.0 Multilingual",
-          "url": "https://downtopc.com/344188-jwizard-cleaner-11200-multilingual.html"
-        },
-        {
-          "title": "Pazu All-In-One Music Converter 3.2.2 Multilingual Portable",
-          "url": "https://downtopc.com/344187-pazu-all-in-one-music-converter-322-multilingual-portable.html"
-        },
-        {
-          "title": "AquaSoft Stages 17.2.08 (x64) Multilingual Portable",
-          "url": "https://downtopc.com/344186-aquasoft-stages-17208-x64-multilingual-portable.html"
-        },
-        {
-          "title": "AquaSoft Photo Vision 17.2.08 (x64) Multilingual",
-          "url": "https://downtopc.com/344185-aquasoft-photo-vision-17208-x64-multilingual.html"
-        },
-        {
-          "title": "AquaSoft Video Vision 17.2.08 (x64) Multilingual",
-          "url": "https://downtopc.com/344184-aquasoft-video-vision-17208-x64-multilingual.html"
-        },
-        {
-          "title": "AquaSoft Stages 17.2.08 (x64) Multilingual",
-          "url": "https://downtopc.com/344183-aquasoft-stages-17208-x64-multilingual.html"
-        },
-        {
-          "title": "Zoner Studio 19.2606.2.719 (x64) Portable",
-          "url": "https://downtopc.com/344182-zoner-studio-1926062719-x64-portable.html"
-        },
-        {
-          "title": "Jixipix Hallows Eve 1.20",
-          "url": "https://downtopc.com/344180-jixipix-hallows-eve-120.html"
-        },
-        {
-          "title": "JixiPix Hand Tint Pro 1.0.29",
-          "url": "https://downtopc.com/344179-jixipix-hand-tint-pro-1029.html"
-        },
-        {
-          "title": "JixiPix Pastello 6.0.106",
-          "url": "https://downtopc.com/344178-jixipix-pastello-60106.html"
-        },
-        {
-          "title": "iSumsoft USBCode 3.1.0.2",
-          "url": "https://downtopc.com/344177-isumsoft-usbcode-3102.html"
-        },
-        {
-          "title": "Ashampoo Photo Collage 1.0.1 (x64) Multilingual",
-          "url": "https://downtopc.com/344176-ashampoo-photo-collage-101-x64-multilingual.html"
-        },
-        {
-          "title": "WSCC - Windows System Control Center 10.0.4.7 Commercial",
-          "url": "https://downtopc.com/344175-wscc-windows-system-control-center-10047-commercial.html"
-        },
-        {
-          "title": "Zoner Studio 19.2606.2.719 (x64)",
-          "url": "https://downtopc.com/344174-zoner-studio-1926062719-x64.html"
-        },
-        {
-          "title": "JixiPix Photo Formation 1.0.29",
-          "url": "https://downtopc.com/344173-jixipix-photo-formation-1029.html"
-        },
-        {
-          "title": "JixiPix Rip Studio 1.1.27",
-          "url": "https://downtopc.com/344172-jixipix-rip-studio-1127.html"
-        },
-        {
-          "title": "JixiPix PuzziPix Pro 1.0.27",
-          "url": "https://downtopc.com/344171-jixipix-puzzipix-pro-1027.html"
-        },
-        {
-          "title": "Jixipix Watercolor Studio 1.4.24",
-          "url": "https://downtopc.com/344170-jixipix-watercolor-studio-1424.html"
-        },
-        {
-          "title": "JixiPix Chromatic Edges 1.0.38",
-          "url": "https://downtopc.com/344169-jixipix-chromatic-edges-1038.html"
-        },
-        {
-          "title": "Chief Architect Premier X18 v28.2.1.14 (x64)",
-          "url": "https://downtopc.com/344168-chief-architect-premier-x18-v282114-x64.html"
-        },
-        {
-          "title": "CoolUtils PDF Combine 8.1.0.82/20 Multilingual",
-          "url": "https://downtopc.com/344167-coolutils-pdf-combine-8108220-multilingual.html"
-        },
-        {
-          "title": "CoolUtils PDF Combine Pro 4.2.0.210/172 Multilingual",
-          "url": "https://downtopc.com/344166-coolutils-pdf-combine-pro-420210172-multilingual.html"
-        },
-        {
-          "title": "CoolUtils Total Audio Converter 6.1.0.324 Multilingual",
-          "url": "https://downtopc.com/344165-coolutils-total-audio-converter-610324-multilingual.html"
-        },
-        {
-          "title": "AnyTrans for iOS 8.9.15.20261027 (x64) Multilingual",
-          "url": "https://downtopc.com/344164-anytrans-for-ios-891520261027-x64-multilingual.html"
-        },
-        {
-          "title": "Cisdem PDF Compressor 3.5.0 Multilingual",
-          "url": "https://downtopc.com/344163-cisdem-pdf-compressor-350-multilingual.html"
-        },
-        {
-          "title": "Cisdem PDF Password Remover 2.5.0 Multilingual",
-          "url": "https://downtopc.com/344162-cisdem-pdf-password-remover-250-multilingual.html"
-        },
-        {
-          "title": "Pazu All-In-One Music Converter 3.2.2 Multilingual",
-          "url": "https://downtopc.com/344161-pazu-all-in-one-music-converter-322-multilingual.html"
-        },
-        {
-          "title": "Advanced Renamer 4.28 (x64) Commercial Multilingual Portable",
-          "url": "https://downtopc.com/344160-advanced-renamer-428-x64-commercial-multilingual-portable.html"
-        },
-        {
-          "title": "Advanced Renamer 4.28 (x64) Commercial Multilingual",
-          "url": "https://downtopc.com/344159-advanced-renamer-428-x64-commercial-multilingual.html"
-        },
-        {
-          "title": "SoftPerfect NetWorx 26.10 Multilingual Portable",
-          "url": "https://downtopc.com/344158-softperfect-networx-2610-multilingual-portable.html"
-        },
-        {
-          "title": "Driver Easy Professional 7.2.3.6590 Multilingual Portable",
-          "url": "https://downtopc.com/344157-driver-easy-professional-7236590-multilingual-portable.html"
-        },
-        {
-          "title": "Blackmagic Design Fusion Studio 21.1.2 (x64) Multilingual",
-          "url": "https://downtopc.com/344156-blackmagic-design-fusion-studio-2112-x64-multilingual.html"
-        },
-        {
-          "title": "Blackmagic Design DaVinci Resolve Studio 21.1.2 (x64) Multilingual",
-          "url": "https://downtopc.com/344155-blackmagic-design-davinci-resolve-studio-2112-x64-multilingual.html"
-        },
-        {
-          "title": "Output Messenger Server 3.0.10",
-          "url": "https://downtopc.com/344154-output-messenger-server-3010.html"
-        },
-        {
-          "title": "Iconset 3.0.0",
-          "url": "https://downtopc.com/344153-iconset-300.html"
-        },
-        {
-          "title": "Driver Easy Professional 7.2.3.6590 Multilingual",
-          "url": "https://downtopc.com/344152-driver-easy-professional-7236590-multilingual.html"
-        },
-        {
-          "title": "TMOG Task Manager OG Pro 1.1 Multilingual",
-          "url": "https://downtopc.com/344151-tmog-task-manager-og-pro-11-multilingual.html"
-        },
-        {
-          "title": "SoftPerfect NetWorx 26.10 Multilingual",
-          "url": "https://downtopc.com/344150-softperfect-networx-2610-multilingual.html"
+          "title": "Diffchecker 7.3.1 Multilingual",
+          "url": "https://downtopc.com/344218-diffchecker-731-multilingual.html"
         }
       ]
     },
