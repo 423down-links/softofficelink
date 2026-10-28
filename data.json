@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T09:21:34.114985+00:00",
+  "updated_at": "2026-10-28T09:29:33.755020+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -1497,13 +1497,13 @@
       "icon": "NV",
       "icon_color": "linear-gradient(135deg, #76b900, #5a9e00)",
       "category": "驱动程序",
-      "version": "621.01",
-      "download_url": "https://us.download.nvidia.com/Windows/621.01/621.01-desktop-win10-win11-64bit-international-dch-whql.exe",
-      "download_url_with_params": "https://us.download.nvidia.com/Windows/621.01/621.01-desktop-win10-win11-64bit-international-dch-whql.exe",
+      "version": "621.12",
+      "download_url": "https://international.download.nvidia.com/Windows/621.12hf/621.12-desktop-notebook-win10-win11-64bit-international-dch.hf.exe",
+      "download_url_with_params": "https://international.download.nvidia.com/Windows/621.12hf/621.12-desktop-notebook-win10-win11-64bit-international-dch.hf.exe",
       "downloads": [],
-      "size": 1037190000,
+      "size": 1037182904,
       "size_mb": 989.1,
-      "last_modified": "2026-10-21",
+      "last_modified": "2026-10-27",
       "md5": "",
       "official_site": "https://www.nvidia.com/en-us/geforce/forums/game-ready-drivers/13/",
       "update_items": []

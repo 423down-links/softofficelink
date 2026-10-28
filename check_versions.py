@@ -1401,8 +1401,11 @@ PRODUCTS = [
         'icon': 'NV',
         'icon_color': 'linear-gradient(135deg, #76b900, #5a9e00)',
         'category': '驱动程序',
-        'detect_type': 'scrape',
+        'detect_type': 'nvidia',
         'check_url': 'https://gfwsl.geforce.com/services_toolkit/services/com/nvidia/services/AjaxDriverService.php?func=DriverManualLookup&psid=110&pfid=910&osID=135&languageCode=1033&isWHQL=1&beta=0&dltype=-1&dch=1&upCRD=0&sort1=0&numberOfResults=1',
+        # Hotfix 不在官方驱动接口里，但完整离线包固定放在 {ver}hf 目录；
+        # 以 WHQL 版本为锚点向后探测多少个次版本号（621.01 -> 621.12hf 用了 11）
+        'nvidia_hotfix_span': 30,
         'version_regex': r'"Version"\s*:\s*"([\d.]+)"',
         'date_regex': r'"ReleaseDateTime"\s*:\s*"[A-Za-z]{3}\s+([A-Za-z]{3}\s+\d{1,2},?\s+20\d{2})"',
         'download_url_regex': r'"DownloadURL"\s*:\s*"(https://[^"]+\.exe)"',
@@ -6411,6 +6414,122 @@ def _edge_stable_release():
     return '', ''
 
 
+def _nv_head(url, referer):
+    """探测 NVIDIA CDN 上的文件，返回 (exists, size, last_modified)。
+
+    下载站会 301 跳到 .cn 镜像，镜像对不带 Range 的裸 HEAD/GET 直接 403，
+    带 Range 才返回 206；总大小从 Content-Range（bytes 0-1/1037182904）里取。
+    必须带 Referer，否则同样可能被拦。
+    """
+    headers = {'User-Agent': UA, 'Range': 'bytes=0-1'}
+    if referer:
+        headers['Referer'] = referer
+    try:
+        req = urllib.request.Request(url, method='HEAD', headers=headers)
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            size = 0
+            m = re.search(r'/(\d+)\s*$', resp.headers.get('Content-Range', '') or '')
+            if m:
+                size = int(m.group(1))
+            if not size:
+                cl = resp.headers.get('Content-Length', '')
+                if cl.isdigit():
+                    size = int(cl)
+            return True, size, resp.headers.get('Last-Modified', '') or ''
+    except urllib.error.HTTPError:
+        return False, 0, ''
+    except Exception:
+        return False, 0, ''
+
+
+def _nv_hotfix_scan(product, whql_ver):
+    """以 WHQL 版本号为锚点探测 NVIDIA Hotfix 完整离线包，返回 (版本, 直链, 体积, 日期) 或 None。
+
+    官方驱动查询接口只收录 WHQL/Beta，Hotfix 从不上架，但官方 CDN 的
+    目录/文件名规律固定：
+      https://international.download.nvidia.com/Windows/{ver}hf/{ver}-desktop-notebook-win10-win11-64bit-international-dch.hf.exe
+    所以按 {主版本}.{次版本+1..+span} 逐个 HEAD，命中即认定存在 Hotfix，取最高版本。
+    """
+    parts = str(whql_ver).split('.')
+    if len(parts) < 2 or not (parts[0].isdigit() and parts[1].isdigit()):
+        return None
+    major, base_minor = parts[0], int(parts[1])
+    span = int(product.get('nvidia_hotfix_span', 30))
+    referer = product.get('referer') or 'https://www.nvidia.com/'
+    cands = [f"{major}.{base_minor + i:02d}" for i in range(1, span + 1)]
+
+    def probe(ver):
+        url = ('https://international.download.nvidia.com/Windows/'
+               f'{ver}hf/{ver}-desktop-notebook-win10-win11-64bit-international-dch.hf.exe')
+        ok, size, lm = _nv_head(url, referer)
+        if not ok:
+            return None
+        return ver, url, size, parse_date(lm)
+
+    found = []
+    try:
+        with ThreadPoolExecutor(max_workers=8) as ex:
+            found = [r for r in ex.map(probe, cands) if r]
+    except Exception as e:
+        print(f"  ⚠️ Hotfix 探测异常: {e}")
+    if not found:
+        return None
+    return max(found, key=lambda r: _ver_tuple(r[0]))
+
+
+def detect_nvidia(product):
+    """NVIDIA 显卡驱动：官方驱动接口取 WHQL 版本，再补探 Hotfix 热补丁。
+
+    Hotfix 同样是完整离线安装包，但官方接口不收录，只能从 CDN 的 {ver}hf
+    目录反查；命中时版本号、直链、体积、日期全部换成 Hotfix 的，
+    没命中则沿用 WHQL 版本（后续有更新的 WHQL 发布时自然回到 WHQL）。
+    """
+    fallback = (product.get('version', ''), product.get('download_url', ''),
+                product.get('download_url', ''), product.get('size', 0),
+                product.get('date', ''), '')
+
+    body = ''
+    try:
+        req = urllib.request.Request(
+            product['check_url'],
+            headers={'User-Agent': UA,
+                     'Referer': product.get('referer') or 'https://www.nvidia.com/'})
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            body = resp.read().decode('utf-8', 'ignore')
+    except Exception as e:
+        print(f"  ⚠️ NVIDIA 驱动接口失败: {e}")
+
+    whql_ver, whql_url, whql_date = '', '', ''
+    m = re.search(product['version_regex'], body)
+    if m:
+        whql_ver = m.group(1)
+    m = re.search(product['download_url_regex'], body)
+    if m:
+        whql_url = m.group(1)
+    m = re.search(product['date_regex'], body)
+    if m:
+        whql_date = parse_date(m.group(1))
+    if not whql_ver:
+        print("  ⚠️ NVIDIA 接口未解析到 WHQL 版本")
+        return fallback
+    if not whql_url:
+        whql_url = product['url_pattern'].format(ver=whql_ver)
+    print(f"  WHQL 版本: {whql_ver} ({whql_date})")
+
+    hot = _nv_hotfix_scan(product, whql_ver)
+    if hot:
+        ver, url, size, date = hot
+        print(f"  ✅ Hotfix 完整离线包: v{ver}, {size/1024/1024:.1f}MB, {date}")
+        return ver, url, url, size, date, ''
+
+    exists, size, lm = check_url_follow(whql_url, referer=product.get('referer'))
+    date = parse_date(lm) or whql_date
+    if not exists:
+        print(f"  ⚠️ WHQL 安装包不可用: {whql_url[:70]}...")
+        size = 0
+    return whql_ver, whql_url, whql_url, size, date, ''
+
+
 def detect_webview2(product):
     """Microsoft Edge WebView2 固定版本运行时（x64 cab）。
 
@@ -7316,6 +7435,8 @@ def find_latest(product):
         version, full_url, param_url, size, date, md5 = detect_edge_api(product)
     elif detect_type == 'webview2':
         version, full_url, param_url, size, date, md5 = detect_webview2(product)
+    elif detect_type == 'nvidia':
+        version, full_url, param_url, size, date, md5 = detect_nvidia(product)
     elif detect_type == 'hexhub_api':
         version, full_url, param_url, size, date, md5 = detect_hexhub_api(product)
     elif detect_type == 'java_api':
