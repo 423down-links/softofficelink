@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T08:51:53.376427+00:00",
+  "updated_at": "2026-10-28T09:00:44.861540+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -207,8 +207,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.50",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793782256&P2=404&P3=2&P4=aBdSIWdangjkJSqTX%2fWCp3pbwRzx6JvghUlFP5Z%2bdxzAKb3%2bh8O7sGx9EewTgl3cmAe7uCUe0GwpzqTkt9%2buow%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793782256&P2=404&P3=2&P4=aBdSIWdangjkJSqTX%2fWCp3pbwRzx6JvghUlFP5Z%2bdxzAKb3%2bh8O7sGx9EewTgl3cmAe7uCUe0GwpzqTkt9%2buow%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793782813&P2=404&P3=2&P4=fDkiOgStgBVudzE8LNThU6Gzgh7NjU88evC3%2fSNfnq5%2bR2N3zIbFQn2Sb%2fKcSIp%2fxuEbNQBgDWIT4hLKzbqfsw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793782813&P2=404&P3=2&P4=fDkiOgStgBVudzE8LNThU6Gzgh7NjU88evC3%2fSNfnq5%2bR2N3zIbFQn2Sb%2fKcSIp%2fxuEbNQBgDWIT4hLKzbqfsw%3d%3d",
       "downloads": [],
       "size": 208371536,
       "size_mb": 198.7,
@@ -1719,6 +1719,18 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "Blackmagic Design DaVinci Resolve Studio 21.1.2.10 (x64) Multilingual Portable",
+          "url": "https://downtopc.com/344227-blackmagic-design-davinci-resolve-studio-211210-x64-multilingual-portable.html"
+        },
+        {
+          "title": "eM Client Pro 11.0.1389 Multilingual Portable",
+          "url": "https://downtopc.com/344226-em-client-pro-1101389-multilingual-portable.html"
+        },
+        {
+          "title": "eM Client Pro 11.0.1389 Multilingual",
+          "url": "https://downtopc.com/344225-em-client-pro-1101389-multilingual.html"
+        },
+        {
           "title": "Any Video Downloader Pro 10.5.0 (x64)",
           "url": "https://downtopc.com/344224-any-video-downloader-pro-1050-x64.html"
         },
@@ -1770,6 +1782,10 @@
           "url": "https://nsaneforums.com/topic/490797-em-client-pro-v1101389/"
         },
         {
+          "title": "RegCool 3.1.0.8",
+          "url": "https://nsaneforums.com/topic/490774-regcool-3108/"
+        },
+        {
           "title": "JRiver Media Center v36.0.51 x64",
           "url": "https://nsaneforums.com/topic/490794-jriver-media-center-v36051-x64/"
         },
@@ -1788,10 +1804,6 @@
         {
           "title": "Atlantis Word Processor 5.0.6",
           "url": "https://nsaneforums.com/topic/490785-atlantis-word-processor-506/"
-        },
-        {
-          "title": "RegCool 3.1.0.8",
-          "url": "https://nsaneforums.com/topic/490774-regcool-3108/"
         },
         {
           "title": "Google Antigravity 2.28.0",
