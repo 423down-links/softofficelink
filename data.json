@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T18:51:39.264132+00:00",
+  "updated_at": "2026-10-29T19:06:16.235129+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.50",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793904647&P2=404&P3=2&P4=SwKVNtI8OUvisdtRBSQdNUBIqx2r6lUqMUBFl%2fpa8%2f0DPWSBO%2fxvVzWGlA3og8iwpFiwfpuoz04hSGvyLUg1dw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793904647&P2=404&P3=2&P4=SwKVNtI8OUvisdtRBSQdNUBIqx2r6lUqMUBFl%2fpa8%2f0DPWSBO%2fxvVzWGlA3og8iwpFiwfpuoz04hSGvyLUg1dw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793905549&P2=404&P3=2&P4=XIhMM%2bvCRBcyuBSXJPUlW%2fo%2bnnhoFBQko%2btquTQWGpx9CO0sDAlsIW1G4%2b7Y0DF9nkYv8fdTj4X5BimqUjJ22Q%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793905549&P2=404&P3=2&P4=XIhMM%2bvCRBcyuBSXJPUlW%2fo%2bnnhoFBQko%2btquTQWGpx9CO0sDAlsIW1G4%2b7Y0DF9nkYv8fdTj4X5BimqUjJ22Q%3d%3d",
       "downloads": [],
       "size": 208371536,
       "size_mb": 198.7,
@@ -515,7 +515,7 @@
       "official_site": "https://gitlab.com/stdout12/vcredist/-/releases/",
       "update_items": [],
       "detected_at": "2026-10-15 19:30",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -1995,6 +1995,58 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "BackUp Maker Professional 8.411 Multilingual",
+          "url": "https://downtopc.com/344317-backup-maker-professional-8411-multilingual.html"
+        },
+        {
+          "title": "Cleaning Suite Professional 5.000 Multilingual Portable",
+          "url": "https://downtopc.com/344315-cleaning-suite-professional-5000-multilingual-portable.html"
+        },
+        {
+          "title": "Cleaning Suite Professional 5.000 Multilingual",
+          "url": "https://downtopc.com/344314-cleaning-suite-professional-5000-multilingual.html"
+        },
+        {
+          "title": "mIRC 7.86 Portable",
+          "url": "https://downtopc.com/344313-mirc-786-portable.html"
+        },
+        {
+          "title": "mIRC 7.86",
+          "url": "https://downtopc.com/344312-mirc-786.html"
+        },
+        {
+          "title": "Total Commander 11.58.1 Final Multilingual Portable",
+          "url": "https://downtopc.com/344311-total-commander-11581-final-multilingual-portable.html"
+        },
+        {
+          "title": "Total Commander 11.58.1 Final Multilingual",
+          "url": "https://downtopc.com/344310-total-commander-11581-final-multilingual.html"
+        },
+        {
+          "title": "CareUEyes Pro 2.7.1 Multilingual Portable",
+          "url": "https://downtopc.com/344309-careueyes-pro-271-multilingual-portable.html"
+        },
+        {
+          "title": "CareUEyes Pro 2.7.1 Multilingual",
+          "url": "https://downtopc.com/344308-careueyes-pro-271-multilingual.html"
+        },
+        {
+          "title": "IDM UltraFinder 26.0.0.9 (x64)",
+          "url": "https://downtopc.com/344307-idm-ultrafinder-26009-x64.html"
+        },
+        {
+          "title": "IDM UltraEdit 33.1.0.27 (x64)",
+          "url": "https://downtopc.com/344306-idm-ultraedit-331027-x64.html"
+        },
+        {
+          "title": "IDM UEStudio 26.1.0.27 (x64) Multilingual",
+          "url": "https://downtopc.com/344305-idm-uestudio-261027-x64-multilingual.html"
+        },
+        {
+          "title": "Rhinoceros 9.0.26300.09401 (x64)",
+          "url": "https://downtopc.com/344304-rhinoceros-902630009401-x64.html"
+        },
+        {
           "title": "All Video Downloader Pro 10.5.26 (x64)",
           "url": "https://downtopc.com/344303-all-video-downloader-pro-10526-x64.html"
         },
@@ -2083,7 +2135,7 @@
           "url": "https://downtopc.com/344280-microsoft-office-professional-plus-2021-2024-vl-v2610-build-2052720112-multilingual.html"
         }
       ],
-      "detected_at": "2026-10-30 02:05",
+      "detected_at": "2026-10-30 03:05",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2094,114 +2146,26 @@
       "icon": "N",
       "icon_color": "linear-gradient(135deg, #4a6fa5, #2b3f63)",
       "category": "资源站",
-      "version": "2026-10-29",
+      "version": "2026-10-30",
       "download_url": "https://nsaneforums.com/nsane.down/",
       "download_url_with_params": "https://nsaneforums.com/nsane.down/",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-10-29",
+      "last_modified": "2026-10-30",
       "md5": "",
       "official_site": "https://nsaneforums.com/",
       "update_items": [
         {
-          "title": "Duplicate File Detective 8.1.62 (x64) Enterprise",
-          "url": "https://nsaneforums.com/topic/490858-duplicate-file-detective-8162-x64-enterprise/"
+          "title": "CareUEyes Pro v2.7.1",
+          "url": "https://nsaneforums.com/topic/490891-careueyes-pro-v271/"
         },
         {
-          "title": "Chris-PC RAM Booster v7.26.1029",
-          "url": "https://nsaneforums.com/topic/490871-chris-pc-ram-booster-v7261029/"
-        },
-        {
-          "title": "ToolsToo Pro for PowerPoint v12.1.2",
-          "url": "https://nsaneforums.com/topic/490867-toolstoo-pro-for-powerpoint-v1212/"
-        },
-        {
-          "title": "TMOG Task Manager OG Pro 1.1.1",
-          "url": "https://nsaneforums.com/topic/490848-tmog-task-manager-og-pro-111/"
-        },
-        {
-          "title": "Ascomp F-Rename Pro v3.0.0.3",
-          "url": "https://nsaneforums.com/topic/490857-ascomp-f-rename-pro-v3003/"
-        },
-        {
-          "title": "Native Instruments Kontakt v8.14.1 (x64)",
-          "url": "https://nsaneforums.com/topic/490854-native-instruments-kontakt-v8141-x64/"
-        },
-        {
-          "title": "Microsoft PowerToys v0.102.3001",
-          "url": "https://nsaneforums.com/topic/490845-microsoft-powertoys-v01023001/"
-        },
-        {
-          "title": "LosslessCut v3.70.2 (x64)",
-          "url": "https://nsaneforums.com/topic/490843-losslesscut-v3702-x64/"
-        },
-        {
-          "title": "Lucen Timeline Expert v15.5",
-          "url": "https://nsaneforums.com/topic/490842-lucen-timeline-expert-v155/"
-        },
-        {
-          "title": "Net Monitor For Employees Pro v6.7.9",
-          "url": "https://nsaneforums.com/topic/490841-net-monitor-for-employees-pro-v679/"
-        },
-        {
-          "title": "Bitwarden 2026.10.2",
-          "url": "https://nsaneforums.com/topic/490878-bitwarden-2026102/"
-        },
-        {
-          "title": "Tor Browser 16.0",
-          "url": "https://nsaneforums.com/topic/490877-tor-browser-160/"
-        },
-        {
-          "title": "IDM UltraEdit 33.1.0.27",
-          "url": "https://nsaneforums.com/topic/490875-idm-ultraedit-331027/"
-        },
-        {
-          "title": "IDM UEStudio 26.1.0.27",
-          "url": "https://nsaneforums.com/topic/490874-idm-uestudio-261027/"
-        },
-        {
-          "title": "LibreOffice 26.8.2",
-          "url": "https://nsaneforums.com/topic/490873-libreoffice-2682/"
-        },
-        {
-          "title": "mIRC 7.86",
-          "url": "https://nsaneforums.com/topic/490870-mirc-786/"
-        },
-        {
-          "title": "Opera 139.0.6053.22",
-          "url": "https://nsaneforums.com/topic/490869-opera-1390605322/"
-        },
-        {
-          "title": "AxCrypt 3.1.33.0",
-          "url": "https://nsaneforums.com/topic/490866-axcrypt-31330/"
-        },
-        {
-          "title": "UltraSearch 4.9.5.1303",
-          "url": "https://nsaneforums.com/topic/490865-ultrasearch-4951303/"
-        },
-        {
-          "title": "Total Commander 11.58.1",
-          "url": "https://nsaneforums.com/topic/490864-total-commander-11581/"
-        },
-        {
-          "title": "Evernote 11.40.3",
-          "url": "https://nsaneforums.com/topic/490861-evernote-11403/"
-        },
-        {
-          "title": "Google Antigravity 2.28.1",
-          "url": "https://nsaneforums.com/topic/490855-google-antigravity-2281/"
-        },
-        {
-          "title": "Windows Firewall Control 6.38.0.0",
-          "url": "https://nsaneforums.com/topic/490850-windows-firewall-control-63800/"
-        },
-        {
-          "title": "Inno Setup 7.1.1",
-          "url": "https://nsaneforums.com/topic/490849-inno-setup-711/"
+          "title": "IDM UltraFinder v2026.0 (x64)",
+          "url": "https://nsaneforums.com/topic/490893-idm-ultrafinder-v20260-x64/"
         }
       ],
-      "detected_at": "2026-10-29 23:06",
+      "detected_at": "2026-10-30 03:05",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
