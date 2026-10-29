@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T22:51:27.948181+00:00",
+  "updated_at": "2026-10-29T23:06:03.248013+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.50",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793919046&P2=404&P3=2&P4=JMu2p5ysI7DM4yz3wZgaKwh9jAYZRXn4%2bnExIInVZqDbXWjWpByk1ky1vlLGG5W2F53oDEvj7up9p1KMuX4sqg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793919046&P2=404&P3=2&P4=JMu2p5ysI7DM4yz3wZgaKwh9jAYZRXn4%2bnExIInVZqDbXWjWpByk1ky1vlLGG5W2F53oDEvj7up9p1KMuX4sqg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793919941&P2=404&P3=2&P4=FOJmfrmswXLUwEDqC%2ffSCoEHzt%2bG145xhs%2bEPIuktHoinGVnq%2fPmStZ7rsUBKoEYXZ6KpO82ul8UtnKQCEgZdg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793919941&P2=404&P3=2&P4=FOJmfrmswXLUwEDqC%2ffSCoEHzt%2bG145xhs%2bEPIuktHoinGVnq%2fPmStZ7rsUBKoEYXZ6KpO82ul8UtnKQCEgZdg%3d%3d",
       "downloads": [],
       "size": 208371536,
       "size_mb": 198.7,
@@ -1984,202 +1984,22 @@
       "icon": "D",
       "icon_color": "linear-gradient(135deg, #2e7d32, #1b5e20)",
       "category": "资源站",
-      "version": "2026-10-29",
+      "version": "2026-10-30",
       "download_url": "https://downtopc.com/software/",
       "download_url_with_params": "https://downtopc.com/software/",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-10-29",
+      "last_modified": "2026-10-30",
       "md5": "",
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
-          "title": "Capture One Pro / Enterprise 16.9.0.3894 (x64) Multilingual",
-          "url": "https://downtopc.com/344328-capture-one-pro-enterprise-16903894-x64-multilingual.html"
-        },
-        {
-          "title": "Room Arranger 11.3.0.811 (x64) Multilingual Portable",
-          "url": "https://downtopc.com/344327-room-arranger-1130811-x64-multilingual-portable.html"
-        },
-        {
-          "title": "Room Arranger 11.3.0.811 (x64) Multilingual",
-          "url": "https://downtopc.com/344326-room-arranger-1130811-x64-multilingual.html"
-        },
-        {
-          "title": "KLS Backup Professional 2027 v15.0.0.3 Multilingual Portable",
-          "url": "https://downtopc.com/344325-kls-backup-professional-2027-v15003-multilingual-portable.html"
-        },
-        {
-          "title": "KLS Backup Professional 2027 v15.0.0.3 Multilingual",
-          "url": "https://downtopc.com/344324-kls-backup-professional-2027-v15003-multilingual.html"
-        },
-        {
-          "title": "AI Text To Image Generator Pro 1.2.15 Portable",
-          "url": "https://downtopc.com/344323-ai-text-to-image-generator-pro-1215-portable.html"
-        },
-        {
-          "title": "AI Text To Image Generator Pro 1.2.15",
-          "url": "https://downtopc.com/344322-ai-text-to-image-generator-pro-1215.html"
-        },
-        {
-          "title": "UltraSearch Professional 4.9.5.1303 Multilingual Portable",
-          "url": "https://downtopc.com/344321-ultrasearch-professional-4951303-multilingual-portable.html"
-        },
-        {
-          "title": "Synchredible Professional 9.120 Multilingual Portable",
-          "url": "https://downtopc.com/344320-synchredible-professional-9120-multilingual-portable.html"
-        },
-        {
-          "title": "Synchredible Professional 9.120 Multilingual",
-          "url": "https://downtopc.com/344319-synchredible-professional-9120-multilingual.html"
-        },
-        {
-          "title": "BackUp Maker Professional 8.411 Multilingual Portable",
-          "url": "https://downtopc.com/344318-backup-maker-professional-8411-multilingual-portable.html"
-        },
-        {
-          "title": "BackUp Maker Professional 8.411 Multilingual",
-          "url": "https://downtopc.com/344317-backup-maker-professional-8411-multilingual.html"
-        },
-        {
-          "title": "Cleaning Suite Professional 5.000 Multilingual Portable",
-          "url": "https://downtopc.com/344315-cleaning-suite-professional-5000-multilingual-portable.html"
-        },
-        {
-          "title": "Cleaning Suite Professional 5.000 Multilingual",
-          "url": "https://downtopc.com/344314-cleaning-suite-professional-5000-multilingual.html"
-        },
-        {
-          "title": "mIRC 7.86 Portable",
-          "url": "https://downtopc.com/344313-mirc-786-portable.html"
-        },
-        {
-          "title": "mIRC 7.86",
-          "url": "https://downtopc.com/344312-mirc-786.html"
-        },
-        {
-          "title": "Total Commander 11.58.1 Final Multilingual Portable",
-          "url": "https://downtopc.com/344311-total-commander-11581-final-multilingual-portable.html"
-        },
-        {
-          "title": "Total Commander 11.58.1 Final Multilingual",
-          "url": "https://downtopc.com/344310-total-commander-11581-final-multilingual.html"
-        },
-        {
-          "title": "CareUEyes Pro 2.7.1 Multilingual Portable",
-          "url": "https://downtopc.com/344309-careueyes-pro-271-multilingual-portable.html"
-        },
-        {
-          "title": "CareUEyes Pro 2.7.1 Multilingual",
-          "url": "https://downtopc.com/344308-careueyes-pro-271-multilingual.html"
-        },
-        {
-          "title": "IDM UltraFinder 26.0.0.9 (x64)",
-          "url": "https://downtopc.com/344307-idm-ultrafinder-26009-x64.html"
-        },
-        {
-          "title": "IDM UltraEdit 33.1.0.27 (x64)",
-          "url": "https://downtopc.com/344306-idm-ultraedit-331027-x64.html"
-        },
-        {
-          "title": "IDM UEStudio 26.1.0.27 (x64) Multilingual",
-          "url": "https://downtopc.com/344305-idm-uestudio-261027-x64-multilingual.html"
-        },
-        {
-          "title": "Rhinoceros 9.0.26300.09401 (x64)",
-          "url": "https://downtopc.com/344304-rhinoceros-902630009401-x64.html"
-        },
-        {
-          "title": "All Video Downloader Pro 10.5.26 (x64)",
-          "url": "https://downtopc.com/344303-all-video-downloader-pro-10526-x64.html"
-        },
-        {
-          "title": "Agisoft Metashape Professional 2.3.3 Build 23433 (x64) Multilingual",
-          "url": "https://downtopc.com/344301-agisoft-metashape-professional-233-build-23433-x64-multilingual.html"
-        },
-        {
-          "title": "Coolutils Total Doc Converter 5.1.0.439/216 Multilingual",
-          "url": "https://downtopc.com/344300-coolutils-total-doc-converter-510439216-multilingual.html"
-        },
-        {
-          "title": "CoolUtils Total Image Converter 8.5.0.360 Multilingual",
-          "url": "https://downtopc.com/344299-coolutils-total-image-converter-850360-multilingual.html"
-        },
-        {
-          "title": "CoolUtils Total Movie Converter 4.1.0.96 Multilingual",
-          "url": "https://downtopc.com/344298-coolutils-total-movie-converter-41096-multilingual.html"
-        },
-        {
-          "title": "UltraSearch Professional 4.9.5.1303 Multilingual",
-          "url": "https://downtopc.com/344297-ultrasearch-professional-4951303-multilingual.html"
-        },
-        {
-          "title": "PC Internals Pro 2.106 Multilingual",
-          "url": "https://downtopc.com/344295-pc-internals-pro-2106-multilingual.html"
-        },
-        {
-          "title": "Ashampoo Photo Collage 1.0.2 (x64) Multilingual Portable",
-          "url": "https://downtopc.com/344294-ashampoo-photo-collage-102-x64-multilingual-portable.html"
-        },
-        {
-          "title": "Ashampoo Photo Collage 1.0.2 (x64) Multilingual",
-          "url": "https://downtopc.com/344293-ashampoo-photo-collage-102-x64-multilingual.html"
-        },
-        {
-          "title": "TMOG Task Manager OG Pro 1.1.1 Multilingual",
-          "url": "https://downtopc.com/344292-tmog-task-manager-og-pro-111-multilingual.html"
-        },
-        {
-          "title": "Chris-PC RAM Booster 7.26.1029",
-          "url": "https://downtopc.com/344291-chris-pc-ram-booster-7261029.html"
-        },
-        {
-          "title": "Duplicate File Detective 8.1.62 (x64) Enterprise Portable",
-          "url": "https://downtopc.com/344290-duplicate-file-detective-8162-x64-enterprise-portable.html"
-        },
-        {
-          "title": "MediaMonkey Gold 2024.2.2.3223 Multilingual Portable",
-          "url": "https://downtopc.com/344289-mediamonkey-gold-2024223223-multilingual-portable.html"
-        },
-        {
-          "title": "ToolsToo Pro for PowerPoint 12.1.2",
-          "url": "https://downtopc.com/344288-toolstoo-pro-for-powerpoint-1212.html"
-        },
-        {
-          "title": "MediaMonkey Gold 2024.2.2.3223 Multilingual",
-          "url": "https://downtopc.com/344287-mediamonkey-gold-2024223223-multilingual.html"
-        },
-        {
-          "title": "AccessAgility WiFi Scanner 2026.2.35121 Multilingual",
-          "url": "https://downtopc.com/344286-accessagility-wifi-scanner-2026235121-multilingual.html"
-        },
-        {
-          "title": "Evaer for Teams 1.26.10.29 Multilingual Portable",
-          "url": "https://downtopc.com/344285-evaer-for-teams-1261029-multilingual-portable.html"
-        },
-        {
-          "title": "Pazu StreamGet 3.2.8 Multilingual Portable",
-          "url": "https://downtopc.com/344284-pazu-streamget-328-multilingual-portable.html"
-        },
-        {
-          "title": "Duplicate File Detective 8.1.62 (x64) Enterprise",
-          "url": "https://downtopc.com/344283-duplicate-file-detective-8162-x64-enterprise.html"
-        },
-        {
-          "title": "Evaer for Teams 1.26.10.29 Multilingual",
-          "url": "https://downtopc.com/344282-evaer-for-teams-1261029-multilingual.html"
-        },
-        {
-          "title": "Pazu StreamGet 3.2.8 Multilingual",
-          "url": "https://downtopc.com/344281-pazu-streamget-328-multilingual.html"
-        },
-        {
-          "title": "Microsoft Office Professional Plus 2021-2024 VL v2610 Build 20527.20112 Multilingual",
-          "url": "https://downtopc.com/344280-microsoft-office-professional-plus-2021-2024-vl-v2610-build-2052720112-multilingual.html"
+          "title": "Capture One Pro / Enterprise 16.9.0.3894 (x64) Multilingual Portable",
+          "url": "https://downtopc.com/344329-capture-one-pro-enterprise-16903894-x64-multilingual-portable.html"
         }
       ],
-      "detected_at": "2026-10-30 04:05",
+      "detected_at": "2026-10-30 07:05",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2200,6 +2020,10 @@
       "md5": "",
       "official_site": "https://nsaneforums.com/",
       "update_items": [
+        {
+          "title": "OBS Studio 33.0.1",
+          "url": "https://nsaneforums.com/topic/490903-obs-studio-3301/"
+        },
         {
           "title": "UniGetUI v2026.3.3",
           "url": "https://nsaneforums.com/topic/490902-unigetui-v202633/"
@@ -2237,7 +2061,7 @@
           "url": "https://nsaneforums.com/topic/490893-idm-ultrafinder-v20260-x64/"
         }
       ],
-      "detected_at": "2026-10-30 06:05",
+      "detected_at": "2026-10-30 07:05",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
