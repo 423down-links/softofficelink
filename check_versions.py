@@ -7795,16 +7795,22 @@ def main():
                 print(f"  ✅ {info['version']}, 当天更新 {cnt} 款软件")
             else:
                 print(f"  ✅ {info['version']}, {info['size_mb']} MB")
-        # 检测时间（精确到分钟，北京时间）：只在该产品的版本/发布日期
-        # 发生变化（= 真的检出新版本）时刷新，其余轮次保留上次的值，
-        # 所以每个软件的时间各不相同；发布时间 last_modified 不动
+        # 检测时间（精确到分钟，北京时间）：只在该产品真的检出更新
+        # （版本 / 发布日期 / 当天清单 / 子版本线有变化）时才刷新；
+        # 其余轮次一律沿用旧值 —— 新探测出的 info 本身不带 detected_at，
+        # 必须显式把 old 里的时间抄回来，否则每轮都会被重刷成当次运行时间。
+        # 这样每个软件停在各自上次检出更新的时间点，不跟着工作流整体跳。
         if info is not None:
             old = old_data.get(name) or {}
             changed = (str(info.get('version', '')) != str(old.get('version', ''))
-                       or str(info.get('last_modified', '')) != str(old.get('last_modified', '')))
+                       or str(info.get('last_modified', '')) != str(old.get('last_modified', ''))
+                       or (info.get('update_items') or []) != (old.get('update_items') or [])
+                       or (info.get('version_list') or []) != (old.get('version_list') or []))
             if fresh and changed:
                 info['detected_at'] = RUN_TS
-            elif not info.get('detected_at'):
+            elif old.get('detected_at'):
+                info['detected_at'] = old['detected_at']
+            if not info.get('detected_at'):
                 info['detected_at'] = RUN_TS
         return info
 
