@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T08:51:37.929739+00:00",
+  "updated_at": "2026-10-29T09:06:33.438144+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -218,8 +218,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.50",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793868662&P2=404&P3=2&P4=RNxKSLj%2feD195X5EyfYLsz3UnpFKx2LezaaZp3d6x8r48VkyEVUrVsdA%2bZ63U3cMDmaSTAAO9zImgC%2bol7MdXg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793868662&P2=404&P3=2&P4=RNxKSLj%2feD195X5EyfYLsz3UnpFKx2LezaaZp3d6x8r48VkyEVUrVsdA%2bZ63U3cMDmaSTAAO9zImgC%2bol7MdXg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793869550&P2=404&P3=2&P4=iUoYWp0jDfNk42o1IILPGCmxWBUIALUQxrCJdEQd0oupLUrk9sFFW20pltfgUF%2b0tDYjGWBE3rF0BchPwX6KSA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793869550&P2=404&P3=2&P4=iUoYWp0jDfNk42o1IILPGCmxWBUIALUQxrCJdEQd0oupLUrk9sFFW20pltfgUF%2b0tDYjGWBE3rF0BchPwX6KSA%3d%3d",
       "downloads": [],
       "size": 208371536,
       "size_mb": 198.7,
@@ -1811,6 +1811,10 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "Ashampoo Photo Collage 1.0.2 (x64) Multilingual Portable",
+          "url": "https://downtopc.com/344294-ashampoo-photo-collage-102-x64-multilingual-portable.html"
+        },
+        {
           "title": "Ashampoo Photo Collage 1.0.2 (x64) Multilingual",
           "url": "https://downtopc.com/344293-ashampoo-photo-collage-102-x64-multilingual.html"
         },
@@ -1867,7 +1871,7 @@
           "url": "https://downtopc.com/344280-microsoft-office-professional-plus-2021-2024-vl-v2610-build-2052720112-multilingual.html"
         }
       ],
-      "detected_at": "2026-10-29 16:05"
+      "detected_at": "2026-10-29 17:05"
     },
     {
       "name": "nsane论坛",
@@ -1887,6 +1891,10 @@
       "official_site": "https://nsaneforums.com/",
       "update_items": [
         {
+          "title": "TMOG Task Manager OG 1.1.1",
+          "url": "https://nsaneforums.com/topic/490848-tmog-task-manager-og-111/"
+        },
+        {
           "title": "Duplicate File Detective 8.1.62 (x64) Enterprise",
           "url": "https://nsaneforums.com/topic/490858-duplicate-file-detective-8162-x64-enterprise/"
         },
@@ -1897,10 +1905,6 @@
         {
           "title": "Native Instruments Kontakt v8.14.1 (x64)",
           "url": "https://nsaneforums.com/topic/490854-native-instruments-kontakt-v8141-x64/"
-        },
-        {
-          "title": "TMOG Task Manager OG 1.1.1",
-          "url": "https://nsaneforums.com/topic/490848-tmog-task-manager-og-111/"
         },
         {
           "title": "Microsoft PowerToys v0.102.3001",
@@ -1939,7 +1943,7 @@
           "url": "https://nsaneforums.com/topic/490849-inno-setup-711/"
         }
       ],
-      "detected_at": "2026-10-29 16:05"
+      "detected_at": "2026-10-29 17:05"
     },
     {
       "name": "7-Zip",
