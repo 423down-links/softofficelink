@@ -42,6 +42,13 @@ SITE_DETECT_BUDGET = 45
 DEFAULT_PARALLEL = 8
 # 单个产品的重试次数（1=不重试）
 DEFAULT_RETRY = 1
+# ===== fallback 退避 =====
+# 连续探测失败（超时/异常后沿用旧数据）达到 FB_STREAK_SKIP 轮，就暂停探测该产品
+# FB_BASE_SKIP 秒（覆盖一整轮 full），期内全部轮次直接沿用旧数据；恢复后失败轮数清零。
+# 只治"每轮都超时还每轮硬试"的浪费，不会漏版本：官网真发新版时，暂停期最长不过 1 小时。
+FB_STREAK_SKIP = 2
+FB_BASE_SKIP = 1800
+FB_MAX_SKIP = 3600
 
 # 产品配置
 PRODUCTS = [
@@ -151,6 +158,7 @@ PRODUCTS = [
         'minor_scan': True,        # ① 小版本段 +1..+6；② 命中段内构建号 0..4
         'minor_scan_count': 6,
         'minor_scan_builds': 4,
+        'detect_timeout': 45,       # 全扫每轮都冲到 60s 看门狗，收紧到 45s
         'param_format': '',
         'channel': '',
         'official_site': 'https://www.yy.com/web/pcyy_download/',
@@ -192,6 +200,7 @@ PRODUCTS = [
         'detect_type': 'redirect',
         'check_url': 'https://xmind.cn/zen/download/win64/',
         'version_regex': r'Xmind-for-Windows-x64bit-(\d+\.\d+\.\d+)-',
+        'detect_timeout': 30,   # xmind.cn 偶发抖动拖到 60s 看门狗，收紧限时
         'official_site': 'https://xmind.cn/',
     },
     {
@@ -1487,7 +1496,7 @@ PRODUCTS = [
         'date_regex': r'\[(\d+\s+\w+\s+20\d{2})\]',
         'download_url': 'https://geekuninstaller.com/geek.zip',
         'skip_md5': True,
-        'detect_timeout': 120,
+        'detect_timeout': 45,
         'official_site': 'https://geekuninstaller.com/download',
     },
     {
@@ -7666,6 +7675,7 @@ def main():
     problems = []
     problems_lock = threading.Lock()
     timings = []   # (耗时秒, 产品名)，用于输出"最慢产品"便于持续优化
+    _FB_FLAGS = {} # name -> 本轮是否探测失败沿用旧数据（fallback 退避账本，detect_one 写入）
 
     def _bump(key, n=1):
         with stats_lock:
@@ -7797,11 +7807,25 @@ def main():
                 info['detected_at'] = old['detected_at']
             if not info.get('detected_at'):
                 info['detected_at'] = RUN_TS
+        # fallback 退避账本：本轮「探测失败沿用旧数据」且非资源站（资源站无新帖是常态）
+        # 才计一次失败；供 main 汇总连续失败轮数、决定是否暂停探测。
+        _FB_FLAGS[name] = (not fresh) and not allow_no_size
         return info
 
     # 并行检测
     from concurrent.futures import as_completed
     results_dict = {}
+
+    # fallback 退避：连续失败超阈的产品在缓冲期内跳过探测，直接沿用旧数据，
+    # 避开"每轮超时每轮硬试"的浪费（官网恢复/发新版最迟缓冲期后就能跟上）。
+    if not args.only:
+        _now = time.time()
+        skip_names = [p['name'] for p in products_to_check
+                      if old_data.get(p['name'], {}).get('fb_skip_until', 0) > _now]
+        if skip_names:
+            print(f"⏭️ 退避缓冲期跳过 {len(skip_names)} 款: {', '.join(skip_names)}")
+            products_to_check = [p for p in products_to_check if p['name'] not in skip_names]
+
     print(f"🚀 开始全量检测: {len(products_to_check)} 个软件, 并行 {args.parallel} 线程\n")
     t_start = time.time()
     with ThreadPoolExecutor(max_workers=args.parallel) as executor:
@@ -7830,6 +7854,22 @@ def main():
         else:
             continue
         info.setdefault('detected_at', RUN_TS)
+        # fallback 退避账本续算：本轮真探测过才更新 streak（跳过/异常兜底的保持原账本），
+        # 连续失败到阈值就设缓冲期；恢复成功清零。资源站类 _FB_FLAGS 恒为 False，不参与。
+        _old = old_data.get(p['name']) or {}
+        if p['name'] in _FB_FLAGS:
+            if _FB_FLAGS[p['name']]:
+                streak = int(_old.get('fb_streak') or 0) + 1
+                info['fb_streak'] = streak
+                if streak >= FB_STREAK_SKIP:
+                    info['fb_skip_until'] = int(time.time()) + min(
+                        FB_BASE_SKIP + (streak - FB_STREAK_SKIP) * 900, FB_MAX_SKIP)
+                    print(f"  ⏭️ {p['name_cn']} 连续失败 {streak} 轮，进入退避缓冲期")
+                else:
+                    info['fb_skip_until'] = _old.get('fb_skip_until', 0)
+            else:
+                info['fb_streak'] = 0
+                info['fb_skip_until'] = 0
         results.append(info)
         # 检测是否有变化（新增产品也视为变化）
         is_changed = False
