@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T19:06:16.235129+00:00",
+  "updated_at": "2026-10-29T19:18:20.374650+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.50",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793905549&P2=404&P3=2&P4=XIhMM%2bvCRBcyuBSXJPUlW%2fo%2bnnhoFBQko%2btquTQWGpx9CO0sDAlsIW1G4%2b7Y0DF9nkYv8fdTj4X5BimqUjJ22Q%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793905549&P2=404&P3=2&P4=XIhMM%2bvCRBcyuBSXJPUlW%2fo%2bnnhoFBQko%2btquTQWGpx9CO0sDAlsIW1G4%2b7Y0DF9nkYv8fdTj4X5BimqUjJ22Q%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793906279&P2=404&P3=2&P4=DmSnT3VOtcoat3q1hHpWFgynqs21hBPsoT3nU%2bGnec6OAWrAy548gzAslnEA9Yh7iFAkqggrRXJv%2f5zRZoxHpA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793906279&P2=404&P3=2&P4=DmSnT3VOtcoat3q1hHpWFgynqs21hBPsoT3nU%2bGnec6OAWrAy548gzAslnEA9Yh7iFAkqggrRXJv%2f5zRZoxHpA%3d%3d",
       "downloads": [],
       "size": 208371536,
       "size_mb": 198.7,
@@ -1995,6 +1995,22 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "UltraSearch Professional 4.9.5.1303 Multilingual Portable",
+          "url": "https://downtopc.com/344321-ultrasearch-professional-4951303-multilingual-portable.html"
+        },
+        {
+          "title": "Synchredible Professional 9.120 Multilingual Portable",
+          "url": "https://downtopc.com/344320-synchredible-professional-9120-multilingual-portable.html"
+        },
+        {
+          "title": "Synchredible Professional 9.120 Multilingual",
+          "url": "https://downtopc.com/344319-synchredible-professional-9120-multilingual.html"
+        },
+        {
+          "title": "BackUp Maker Professional 8.411 Multilingual Portable",
+          "url": "https://downtopc.com/344318-backup-maker-professional-8411-multilingual-portable.html"
+        },
+        {
           "title": "BackUp Maker Professional 8.411 Multilingual",
           "url": "https://downtopc.com/344317-backup-maker-professional-8411-multilingual.html"
         },
@@ -2135,7 +2151,7 @@
           "url": "https://downtopc.com/344280-microsoft-office-professional-plus-2021-2024-vl-v2610-build-2052720112-multilingual.html"
         }
       ],
-      "detected_at": "2026-10-30 03:05",
+      "detected_at": "2026-10-30 03:17",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2157,15 +2173,23 @@
       "official_site": "https://nsaneforums.com/",
       "update_items": [
         {
+          "title": "ASCOMP BackUp Maker Pro v8.411",
+          "url": "https://nsaneforums.com/topic/490896-ascomp-backup-maker-pro-v8411/"
+        },
+        {
           "title": "CareUEyes Pro v2.7.1",
           "url": "https://nsaneforums.com/topic/490891-careueyes-pro-v271/"
+        },
+        {
+          "title": "Ascomp Cleaning Suite Pro v5.0",
+          "url": "https://nsaneforums.com/topic/490895-ascomp-cleaning-suite-pro-v50/"
         },
         {
           "title": "IDM UltraFinder v2026.0 (x64)",
           "url": "https://nsaneforums.com/topic/490893-idm-ultrafinder-v20260-x64/"
         }
       ],
-      "detected_at": "2026-10-30 03:05",
+      "detected_at": "2026-10-30 03:17",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
