@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T13:21:47.258543+00:00",
+  "updated_at": "2026-10-29T13:47:37.064246+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -218,8 +218,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.50",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793884854&P2=404&P3=2&P4=mgUHAwnI8TdTFYdTlL7pJE8HROz2W%2fStcDfZ8sGRimqD3pxKaAcDN5knU09bIZfaQKrYHABDyYUa1o85e7A%2bWg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793884854&P2=404&P3=2&P4=mgUHAwnI8TdTFYdTlL7pJE8HROz2W%2fStcDfZ8sGRimqD3pxKaAcDN5knU09bIZfaQKrYHABDyYUa1o85e7A%2bWg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793886314&P2=404&P3=2&P4=Y7KWiXGsTA7CHuAbj3R0WmLf7dAT41i0eRJeaOfiRyoEpzqHv4QbmBE6wtXS60%2f4Fm5ptiSaKlr1Mgr6W3Wlhg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793886314&P2=404&P3=2&P4=Y7KWiXGsTA7CHuAbj3R0WmLf7dAT41i0eRJeaOfiRyoEpzqHv4QbmBE6wtXS60%2f4Fm5ptiSaKlr1Mgr6W3Wlhg%3d%3d",
       "downloads": [],
       "size": 208371536,
       "size_mb": 198.7,
@@ -1931,6 +1931,10 @@
           "url": "https://nsaneforums.com/topic/490841-net-monitor-for-employees-pro-v679/"
         },
         {
+          "title": "LibreOffice 26.8.2",
+          "url": "https://nsaneforums.com/topic/490873-libreoffice-2682/"
+        },
+        {
           "title": "mIRC 7.86",
           "url": "https://nsaneforums.com/topic/490870-mirc-786/"
         },
@@ -1967,7 +1971,7 @@
           "url": "https://nsaneforums.com/topic/490849-inno-setup-711/"
         }
       ],
-      "detected_at": "2026-10-29 21:05"
+      "detected_at": "2026-10-29 21:45"
     },
     {
       "name": "7-Zip",
@@ -2113,7 +2117,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-10-11",
       "md5": "",
