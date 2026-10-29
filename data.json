@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T21:45:50.863601+00:00",
+  "updated_at": "2026-10-29T22:06:13.752950+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.50",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793915103&P2=404&P3=2&P4=fCP60H0ZBfqzqEErObIrqJQbo%2fgHaw7AY1JlphMtosZeJXmp%2fXvXtFefljAJ5vtD3Tg86hARBA2UsRoxePg9fg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793915103&P2=404&P3=2&P4=fCP60H0ZBfqzqEErObIrqJQbo%2fgHaw7AY1JlphMtosZeJXmp%2fXvXtFefljAJ5vtD3Tg86hARBA2UsRoxePg9fg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793916350&P2=404&P3=2&P4=ZhJMMNv%2b%2fRMXoc2Y%2fozw3w9c7O2bIvWotdXi1XooQLQZq72zuHag3ViVIkh5d9C%2b64dv3v73Xd1qPLsqUbtNyQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793916350&P2=404&P3=2&P4=ZhJMMNv%2b%2fRMXoc2Y%2fozw3w9c7O2bIvWotdXi1XooQLQZq72zuHag3ViVIkh5d9C%2b64dv3v73Xd1qPLsqUbtNyQ%3d%3d",
       "downloads": [],
       "size": 208371536,
       "size_mb": 198.7,
@@ -2201,6 +2201,10 @@
       "official_site": "https://nsaneforums.com/",
       "update_items": [
         {
+          "title": "UniGetUI v2026.3.3",
+          "url": "https://nsaneforums.com/topic/490902-unigetui-v202633/"
+        },
+        {
           "title": "Capture One Pro / Enterprise v16.9 (build 3894) x64",
           "url": "https://nsaneforums.com/topic/490901-capture-one-pro-enterprise-v169-build-3894-x64/"
         },
@@ -2233,7 +2237,7 @@
           "url": "https://nsaneforums.com/topic/490893-idm-ultrafinder-v20260-x64/"
         }
       ],
-      "detected_at": "2026-10-30 05:05",
+      "detected_at": "2026-10-30 06:05",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
