@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T23:21:31.153989+00:00",
+  "updated_at": "2026-10-29T23:30:44.142536+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-10-28 16:21",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -240,16 +240,16 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.50",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793920841&P2=404&P3=2&P4=WpVW0zNKi%2bMJ%2bZSMGFPI6JN49sBo1XUjV5z2Jk4koJwTFIzU2lboyDN%2f96f8MTagFtabjncSJIQhGA8OzebIXw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793920841&P2=404&P3=2&P4=WpVW0zNKi%2bMJ%2bZSMGFPI6JN49sBo1XUjV5z2Jk4koJwTFIzU2lboyDN%2f96f8MTagFtabjncSJIQhGA8OzebIXw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793921404&P2=404&P3=2&P4=AckIqgRf8UaZUuLEM1HzGgJUjz44xS9QGuozuZZZTttrGVx8pBolfeHV0kUYdB8NapuYecTKUi7OzznxDjfWrQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793921404&P2=404&P3=2&P4=AckIqgRf8UaZUuLEM1HzGgJUjz44xS9QGuozuZZZTttrGVx8pBolfeHV0kUYdB8NapuYecTKUi7OzznxDjfWrQ%3d%3d",
       "downloads": [],
       "size": 208371536,
       "size_mb": 198.7,
-      "last_modified": "2026-10-30",
+      "last_modified": "2026-10-27",
       "md5": "",
       "official_site": "https://github.com/Bush2021/edge_installer",
       "update_items": [],
-      "detected_at": "2026-10-30 07:20",
+      "detected_at": "2026-10-30 07:30",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -264,13 +264,13 @@
       "download_url": "https://go.microsoft.com/fwlink/?linkid=2124701",
       "download_url_with_params": "https://go.microsoft.com/fwlink/?linkid=2124701",
       "downloads": [],
-      "size": 214884560,
-      "size_mb": 204.9,
-      "last_modified": "2026-10-27",
+      "size": 214999248,
+      "size_mb": 205.0,
+      "last_modified": "2026-10-30",
       "md5": "",
       "official_site": "https://developer.microsoft.com/zh-cn/microsoft-edge/webview2/",
       "update_items": [],
-      "detected_at": "2026-10-28 16:10",
+      "detected_at": "2026-10-30 07:30",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
