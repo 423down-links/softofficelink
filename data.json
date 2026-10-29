@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T16:52:22.219220+00:00",
+  "updated_at": "2026-10-29T17:06:14.538574+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-10-27 11:51",
-      "fb_streak": 1,
-      "fb_skip_until": 0
+      "fb_streak": 2,
+      "fb_skip_until": 1793295374
     },
     {
       "name": "WeChat",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.50",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793897454&P2=404&P3=2&P4=iUomLqy%2fI7fq%2fz5wrklCWQc%2bVf4zjM5f2SrKb3ZnDl2BKXRdr6Jq82kpNs0nqkv24g7Pov2nxpT%2fjdq98dnAXA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793897454&P2=404&P3=2&P4=iUomLqy%2fI7fq%2fz5wrklCWQc%2bVf4zjM5f2SrKb3ZnDl2BKXRdr6Jq82kpNs0nqkv24g7Pov2nxpT%2fjdq98dnAXA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793898344&P2=404&P3=2&P4=ktNfEPQS9iQRmZSkGWQH72Ac%2bDN1yfkQN69Y42gOC0OcLwS%2fMqcuACII6CZ13vrtDa4jzdodbql%2ftu7uUq8aog%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793898344&P2=404&P3=2&P4=ktNfEPQS9iQRmZSkGWQH72Ac%2bDN1yfkQN69Y42gOC0OcLwS%2fMqcuACII6CZ13vrtDa4jzdodbql%2ftu7uUq8aog%3d%3d",
       "downloads": [],
       "size": 208371536,
       "size_mb": 198.7,
@@ -396,7 +396,9 @@
       "md5": "",
       "official_site": "https://community.topazlabs.com/c/topaz-photo/topaz-photo-releases/117",
       "update_items": [],
-      "detected_at": "2026-10-23 08:50"
+      "detected_at": "2026-10-23 08:50",
+      "fb_streak": 0,
+      "fb_skip_until": 0
     },
     {
       "name": "Topaz Gigapixel",
@@ -415,7 +417,9 @@
       "md5": "",
       "official_site": "https://community.topazlabs.com/c/topaz-gigapixel/topaz-gigapixel-releases/128",
       "update_items": [],
-      "detected_at": "2026-10-13 05:06"
+      "detected_at": "2026-10-13 05:06",
+      "fb_streak": 0,
+      "fb_skip_until": 0
     },
     {
       "name": "Topaz Video",
@@ -434,7 +438,9 @@
       "md5": "",
       "official_site": "https://community.topazlabs.com/c/topaz-video/topaz-video-releases/122",
       "update_items": [],
-      "detected_at": "2026-10-09 09:56"
+      "detected_at": "2026-10-09 09:56",
+      "fb_streak": 0,
+      "fb_skip_until": 0
     },
     {
       "name": "Adobe Flash Player",
@@ -907,7 +913,9 @@
       "md5": "",
       "official_site": "https://www.lanzoui.com/b015c0ksh",
       "update_items": [],
-      "detected_at": "2026-10-14 08:06"
+      "detected_at": "2026-10-14 08:06",
+      "fb_streak": 0,
+      "fb_skip_until": 0
     },
     {
       "name": "WinNTSetup",
@@ -1577,7 +1585,9 @@
       "md5": "",
       "official_site": "https://cloud.189.cn/web/share?code=ama22maquuYj&pwd=ci8t",
       "update_items": [],
-      "detected_at": "2026-10-09 09:56"
+      "detected_at": "2026-10-09 09:56",
+      "fb_streak": 0,
+      "fb_skip_until": 0
     },
     {
       "name": "7997 Portable",
@@ -1963,7 +1973,9 @@
           "url": "https://w18.monkrus.ws/2026/10/adobe-substance-3d-painter-v1220.html"
         }
       ],
-      "detected_at": "2026-10-22 19:07"
+      "detected_at": "2026-10-22 19:07",
+      "fb_streak": 0,
+      "fb_skip_until": 0
     },
     {
       "name": "downtopc软件",
@@ -2043,7 +2055,9 @@
           "url": "https://downtopc.com/344280-microsoft-office-professional-plus-2021-2024-vl-v2610-build-2052720112-multilingual.html"
         }
       ],
-      "detected_at": "2026-10-29 17:05"
+      "detected_at": "2026-10-29 17:05",
+      "fb_streak": 0,
+      "fb_skip_until": 0
     },
     {
       "name": "nsane论坛",
@@ -2159,7 +2173,9 @@
           "url": "https://nsaneforums.com/topic/490849-inno-setup-711/"
         }
       ],
-      "detected_at": "2026-10-29 23:06"
+      "detected_at": "2026-10-29 23:06",
+      "fb_streak": 0,
+      "fb_skip_until": 0
     },
     {
       "name": "7-Zip",
@@ -2319,7 +2335,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-10-11",
       "md5": "",
@@ -2557,8 +2573,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 1,
-      "fb_skip_until": 0
+      "fb_streak": 2,
+      "fb_skip_until": 1793295374
     },
     {
       "name": "BitComet",
