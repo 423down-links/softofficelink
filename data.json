@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T07:51:40.760134+00:00",
+  "updated_at": "2026-10-29T08:06:32.128207+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -218,8 +218,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.50",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793865046&P2=404&P3=2&P4=c0ijBIEbNn2mVuBpBFp4vhZuJ%2bBrcd2carL5OouDi%2fac9jQ25jcUDa5nDvp9M7hOdjo6eAjnYCvfnCM1fgasQA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793865046&P2=404&P3=2&P4=c0ijBIEbNn2mVuBpBFp4vhZuJ%2bBrcd2carL5OouDi%2fac9jQ25jcUDa5nDvp9M7hOdjo6eAjnYCvfnCM1fgasQA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793865948&P2=404&P3=2&P4=EGv6EkQT3AhKcbb0krWyuajbjl%2bOA0Bol%2fznr5CF7YgSnWVZEQITwonilnYbB%2fcDOtJ8wWrGdo1U4wPfTAa5PQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793865948&P2=404&P3=2&P4=EGv6EkQT3AhKcbb0krWyuajbjl%2bOA0Bol%2fznr5CF7YgSnWVZEQITwonilnYbB%2fcDOtJ8wWrGdo1U4wPfTAa5PQ%3d%3d",
       "downloads": [],
       "size": 208371536,
       "size_mb": 198.7,
@@ -1446,17 +1446,17 @@
       "icon": "79",
       "icon_color": "linear-gradient(135deg, #e74c3c, #c0392b)",
       "category": "便携软件",
-      "version": "2026.10.29",
+      "version": "2026.09.19",
       "download_url": "https://disk.yandex.ru/d/D8xbOSd7XAUbug",
       "download_url_with_params": "https://disk.yandex.ru/d/D8xbOSd7XAUbug",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-10-29",
+      "last_modified": "",
       "md5": "",
       "official_site": "https://disk.yandex.ru/d/D8xbOSd7XAUbug",
       "update_items": [],
-      "detected_at": "2026-10-29 10:49"
+      "detected_at": "2026-10-29 16:05"
     },
     {
       "name": "PotPlayer",
@@ -1811,6 +1811,26 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "Ashampoo Photo Collage 1.0.2 (x64) Multilingual",
+          "url": "https://downtopc.com/344293-ashampoo-photo-collage-102-x64-multilingual.html"
+        },
+        {
+          "title": "TMOG Task Manager OG Pro 1.1.1 Multilingual",
+          "url": "https://downtopc.com/344292-tmog-task-manager-og-pro-111-multilingual.html"
+        },
+        {
+          "title": "Chris-PC RAM Booster 7.26.1029",
+          "url": "https://downtopc.com/344291-chris-pc-ram-booster-7261029.html"
+        },
+        {
+          "title": "Duplicate File Detective 8.1.62 (x64) Enterprise Portable",
+          "url": "https://downtopc.com/344290-duplicate-file-detective-8162-x64-enterprise-portable.html"
+        },
+        {
+          "title": "MediaMonkey Gold 2024.2.2.3223 Multilingual Portable",
+          "url": "https://downtopc.com/344289-mediamonkey-gold-2024223223-multilingual-portable.html"
+        },
+        {
           "title": "ToolsToo Pro for PowerPoint 12.1.2",
           "url": "https://downtopc.com/344288-toolstoo-pro-for-powerpoint-1212.html"
         },
@@ -1847,7 +1867,7 @@
           "url": "https://downtopc.com/344280-microsoft-office-professional-plus-2021-2024-vl-v2610-build-2052720112-multilingual.html"
         }
       ],
-      "detected_at": "2026-10-29 15:05"
+      "detected_at": "2026-10-29 16:05"
     },
     {
       "name": "nsane论坛",
@@ -1907,14 +1927,6 @@
           "url": "https://nsaneforums.com/topic/490838-asoftis-pc-cleaner-v141/"
         },
         {
-          "title": "TweakHub v1.6",
-          "url": "https://nsaneforums.com/topic/490837-tweakhub-v16/"
-        },
-        {
-          "title": "Clean Space Professional 2026 v726",
-          "url": "https://nsaneforums.com/topic/490836-clean-space-professional-2026-v726/"
-        },
-        {
           "title": "Google Antigravity 2.28.1",
           "url": "https://nsaneforums.com/topic/490855-google-antigravity-2281/"
         },
@@ -1927,7 +1939,7 @@
           "url": "https://nsaneforums.com/topic/490849-inno-setup-711/"
         }
       ],
-      "detected_at": "2026-10-29 15:05"
+      "detected_at": "2026-10-29 16:05"
     },
     {
       "name": "7-Zip",
@@ -2073,7 +2085,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-10-11",
       "md5": "",
