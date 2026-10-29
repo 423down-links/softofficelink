@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T19:51:45.333771+00:00",
+  "updated_at": "2026-10-29T20:06:30.311659+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-10-27 11:51",
-      "fb_streak": 4,
-      "fb_skip_until": 1793303499
+      "fb_streak": 5,
+      "fb_skip_until": 1793307990
     },
     {
       "name": "WeChat",
@@ -187,8 +187,8 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-10-28 16:21",
-      "fb_streak": 1,
-      "fb_skip_until": 0
+      "fb_streak": 2,
+      "fb_skip_until": 1793306190
     },
     {
       "name": "WinHex",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.50",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793908252&P2=404&P3=2&P4=HIWWMK4IoIptxAlT1nJ84IzibT6T8FDD9aOnF2%2bzpdEqyC1YI7Kb35u9FmdfpzxmDmC186TsuCa9XmBlb4EGzw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793908252&P2=404&P3=2&P4=HIWWMK4IoIptxAlT1nJ84IzibT6T8FDD9aOnF2%2bzpdEqyC1YI7Kb35u9FmdfpzxmDmC186TsuCa9XmBlb4EGzw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793909156&P2=404&P3=2&P4=AxYYOT2QrsyBae8t%2bnKxXoojudeRHos2C040DiYCyXa5367Ybm2wUY1jQvv9yrwnpFu%2f7QoKndW%2fCB0jjMIYUg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/6f737895-4e0d-4f16-93c9-1d8ac41c1101?P1=1793909156&P2=404&P3=2&P4=AxYYOT2QrsyBae8t%2bnKxXoojudeRHos2C040DiYCyXa5367Ybm2wUY1jQvv9yrwnpFu%2f7QoKndW%2fCB0jjMIYUg%3d%3d",
       "downloads": [],
       "size": 208371536,
       "size_mb": 198.7,
@@ -1995,6 +1995,34 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "Capture One Pro / Enterprise 16.9.0.3894 (x64) Multilingual",
+          "url": "https://downtopc.com/344328-capture-one-pro-enterprise-16903894-x64-multilingual.html"
+        },
+        {
+          "title": "Room Arranger 11.3.0.811 (x64) Multilingual Portable",
+          "url": "https://downtopc.com/344327-room-arranger-1130811-x64-multilingual-portable.html"
+        },
+        {
+          "title": "Room Arranger 11.3.0.811 (x64) Multilingual",
+          "url": "https://downtopc.com/344326-room-arranger-1130811-x64-multilingual.html"
+        },
+        {
+          "title": "KLS Backup Professional 2027 v15.0.0.3 Multilingual Portable",
+          "url": "https://downtopc.com/344325-kls-backup-professional-2027-v15003-multilingual-portable.html"
+        },
+        {
+          "title": "KLS Backup Professional 2027 v15.0.0.3 Multilingual",
+          "url": "https://downtopc.com/344324-kls-backup-professional-2027-v15003-multilingual.html"
+        },
+        {
+          "title": "AI Text To Image Generator Pro 1.2.15 Portable",
+          "url": "https://downtopc.com/344323-ai-text-to-image-generator-pro-1215-portable.html"
+        },
+        {
+          "title": "AI Text To Image Generator Pro 1.2.15",
+          "url": "https://downtopc.com/344322-ai-text-to-image-generator-pro-1215.html"
+        },
+        {
           "title": "UltraSearch Professional 4.9.5.1303 Multilingual Portable",
           "url": "https://downtopc.com/344321-ultrasearch-professional-4951303-multilingual-portable.html"
         },
@@ -2151,7 +2179,7 @@
           "url": "https://downtopc.com/344280-microsoft-office-professional-plus-2021-2024-vl-v2610-build-2052720112-multilingual.html"
         }
       ],
-      "detected_at": "2026-10-30 03:17",
+      "detected_at": "2026-10-30 04:05",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2173,7 +2201,19 @@
       "official_site": "https://nsaneforums.com/",
       "update_items": [
         {
-          "title": "ASCOMP BackUp Maker Pro v8.411",
+          "title": "Room Arranger v11.3.0.811 (x64)",
+          "url": "https://nsaneforums.com/topic/490900-room-arranger-v1130811-x64/"
+        },
+        {
+          "title": "KLS Backup Pro 2027 v15.0.0.3",
+          "url": "https://nsaneforums.com/topic/490899-kls-backup-pro-2027-v15003/"
+        },
+        {
+          "title": "Ascomp Synchredible Pro v9.120",
+          "url": "https://nsaneforums.com/topic/490897-ascomp-synchredible-pro-v9120/"
+        },
+        {
+          "title": "Ascomp BackUp Maker Pro v8.411",
           "url": "https://nsaneforums.com/topic/490896-ascomp-backup-maker-pro-v8411/"
         },
         {
@@ -2189,7 +2229,7 @@
           "url": "https://nsaneforums.com/topic/490893-idm-ultrafinder-v20260-x64/"
         }
       ],
-      "detected_at": "2026-10-30 03:17",
+      "detected_at": "2026-10-30 04:05",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2589,8 +2629,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 4,
-      "fb_skip_until": 1793303499
+      "fb_streak": 5,
+      "fb_skip_until": 1793307990
     },
     {
       "name": "BitComet",
