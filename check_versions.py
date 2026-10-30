@@ -1644,10 +1644,13 @@ PRODUCTS = [
         'category': '开发工具',
         # 优先用中文版离线包（ue_chinese_64.exe）：文件名不带版本号，
         # 通过读 PE FileVersion 取真实版本。中文包当前已与英文同步到 33.1.0.27。
-        # 版本/时间以该中文安装包本体为准。
+        # 发布日期以官方发布日 2026-10-30 为准（安装包数字签名/Last-Modified
+        # 早一天是 10-29，不能覆盖官方发布日）。
         'detect_type': 'fixed',
         'pe_version': True,
         'version': '33.1.0.27',
+        'date': '2026-10-30',
+        'prefer_config_date': True,
         'download_url': 'https://downloads.ultraedit.com/main/ue/win/ue_chinese_64.exe',
         'skip_md5': True,
         'official_site': 'https://www.ultraedit.com/products/ultraedit/latest-changes.html',
