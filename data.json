@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T16:06:32.747612+00:00",
+  "updated_at": "2026-10-30T16:18:03.536474+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-10-28 16:21",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.56",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793981146&P2=404&P3=2&P4=EQBob5eWT8pfv6oAA0Z4YqMOM5S1hN2AJA97sn17sdMrtsKS5pUqWjzp%2bBap1xJYBHzwTWQ40iGFgHmapyO0Hg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793981146&P2=404&P3=2&P4=EQBob5eWT8pfv6oAA0Z4YqMOM5S1hN2AJA97sn17sdMrtsKS5pUqWjzp%2bBap1xJYBHzwTWQ40iGFgHmapyO0Hg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793981846&P2=404&P3=2&P4=VwRRohfURddzQKmKn6fPfV8RKNm0Qe%2f4cO0hgQcyeG2gKKPIm%2fXw0k7xydtcC7Z%2fWutlks%2fQSAo59zwFBDEwjg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793981846&P2=404&P3=2&P4=VwRRohfURddzQKmKn6fPfV8RKNm0Qe%2f4cO0hgQcyeG2gKKPIm%2fXw0k7xydtcC7Z%2fWutlks%2fQSAo59zwFBDEwjg%3d%3d",
       "downloads": [],
       "size": 208486224,
       "size_mb": 198.8,
@@ -1996,6 +1996,26 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "Hasleo Backup Suite Technician 6.0.2 Multilingual WinPE",
+          "url": "https://downtopc.com/344343-hasleo-backup-suite-technician-602-multilingual-winpe.html"
+        },
+        {
+          "title": "Hasleo Backup Suite 6.0.2 Multilingual",
+          "url": "https://downtopc.com/344342-hasleo-backup-suite-602-multilingual.html"
+        },
+        {
+          "title": "Coolutils PDF Splitter 5.2.0.112/44 Multilingual",
+          "url": "https://downtopc.com/344341-coolutils-pdf-splitter-52011244-multilingual.html"
+        },
+        {
+          "title": "Coolutils PDF Splitter Pro 6.1.0.98/68 Multilingual",
+          "url": "https://downtopc.com/344340-coolutils-pdf-splitter-pro-6109868-multilingual.html"
+        },
+        {
+          "title": "GiliSoft AI Toolkit 11.0",
+          "url": "https://downtopc.com/344339-gilisoft-ai-toolkit-110.html"
+        },
+        {
           "title": "reaConverter Pro 8.0.257 Multilingual",
           "url": "https://downtopc.com/344338-reaconverter-pro-80257-multilingual.html"
         },
@@ -2024,7 +2044,7 @@
           "url": "https://downtopc.com/344329-capture-one-pro-enterprise-16903894-x64-multilingual-portable.html"
         }
       ],
-      "detected_at": "2026-10-31 00:05",
+      "detected_at": "2026-10-31 00:17",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
