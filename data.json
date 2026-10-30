@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T21:21:17.650699+00:00",
+  "updated_at": "2026-10-30T21:34:13.765485+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -1617,18 +1617,17 @@
       "icon": "PP",
       "icon_color": "linear-gradient(135deg, #00a8ff, #0097e6)",
       "category": "影音播放",
-      "version": "1.7.23165",
+      "version": "1.7.23171",
       "download_url": "http://t1.daumcdn.net/potplayer/PotPlayer/Version/Latest/PotPlayerSetup64.exe",
       "download_url_with_params": "http://t1.daumcdn.net/potplayer/PotPlayer/Version/Latest/PotPlayerSetup64.exe",
       "downloads": [],
-      "size": 51259448,
+      "size": 51251128,
       "size_mb": 48.9,
-      "last_modified": "2026-10-21",
+      "last_modified": "2026-10-30",
       "md5": "",
       "official_site": "https://potplayer.daum.net/",
       "update_items": [],
-      "pot_code": "261021",
-      "detected_at": "2026-10-30 10:28",
+      "detected_at": "2026-10-31 05:34",
       "fb_streak": 0,
       "fb_skip_until": 0
     },

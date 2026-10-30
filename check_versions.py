@@ -1305,22 +1305,21 @@ PRODUCTS = [
         'icon': 'PP',
         'icon_color': 'linear-gradient(135deg, #00a8ff, #0097e6)',
         'category': '影音播放',
-        # ⚠️ 官方 CDN 的 Latest 包会被开发者中途替换成 beta 版 DLL：
-        #   外壳 PE FileVersion 仍是 26.10.21.0（正式版打包日），内层
-        #   PotPlayer64.dll 却换成了 1.7.23168（beta），而官方更新历史页
-        #   （UpdateEng.html）最新条目仍只有 [261021]（= 1.7.23165 正式版）。
-        #   直接读包内层版本会把 beta 当正式版（23168 > 23165）。
-        # 所以以官方更新历史页最新条目 [261021] 为正式版权威：
-        #   历史页没出现新条目 → 保持上次确认的正式版，忽略 CDN 包变动；
-        #   出现新条目 → 才采纳包内 DLL 版本。pot_code 锚点持久化在 data.json。
-        'detect_type': 'potplayer',
-        'potplayer_history_url': 'https://t1.daumcdn.net/potplayer/PotPlayer/v4/Update2/UpdateEng.html',
-        'version_authority': 'nsis',
+        # 以官方正式版安装包为准：
+        #   版本号 = 包内 PotPlayer64.dll 的 FileVersion（1.7.23168）
+        #   发布时间 = 安装包签名 / Last-Modified（2026-10-30）
+        # 外壳 PE FileVersion（26.10.21.0）是打包日期式，前端不能用，
+        # 只取内层 DLL；末段 .0 是补位，strip_trailing_zero 去掉。
+        'detect_type': 'fixed',
+        'nsis_inner_version': True,
+        'nsis_inner_members': ['PotPlayer64.dll'],
+        'nsis_inner_prefer': 'file',
         'strip_trailing_zero': True,
-        'version': '1.7.23165',
-        'date': '2026-10-21',
+        # 口径从 26.x 换成 1.7.x 后数值变小，声明权威源以免被防降级当成回退拦下。
+        'version_authority': 'nsis',
+        'version': '1.7.23168',
+        'date': '2026-10-30',
         'size': 51259448,
-        'pot_code': '261021',
         'download_url': 'http://t1.daumcdn.net/potplayer/PotPlayer/Version/Latest/PotPlayerSetup64.exe',
         'official_site': 'https://potplayer.daum.net/',
     },
@@ -7619,8 +7618,10 @@ def find_latest(product):
         version, full_url, param_url, size, date, md5 = detect_webview2(product)
     elif detect_type == 'nvidia':
         version, full_url, param_url, size, date, md5 = detect_nvidia(product)
-    elif detect_type == 'potplayer':
-        version, full_url, param_url, size, date, md5 = detect_potplayer(product)
+    # PotPlayer 已改回 fixed + 内层 DLL 读取（以正式版安装包签名/版本为准），
+    # 不再用官方更新历史页锚点，下面分支保留但不启用。
+    # elif detect_type == 'potplayer':
+    #     version, full_url, param_url, size, date, md5 = detect_potplayer(product)
     elif detect_type == 'hexhub_api':
         version, full_url, param_url, size, date, md5 = detect_hexhub_api(product)
     elif detect_type == 'java_api':
@@ -7690,11 +7691,9 @@ def find_latest(product):
     _vlist = _java_versions.get(product['name'], []) or _borisfx_addons.get(product['name'], [])
     if _vlist:
         result['version_list'] = _vlist
-    # PotPlayer 正式版锚点：把本轮从官方更新历史取到的条目代码（[261021]）
-    # 落到 data.json，下轮用它判断官方是否发了新正式版，避免把 CDN 上
-    # 被开发者偷换的 beta 包（内层 DLL 版本更高）当成正式版
-    if product.get('detect_type') == 'potplayer' and _POT_CODE:
-        result['pot_code'] = _POT_CODE
+    # PotPlayer 已改回 fixed + 内层 DLL 读取，不再持久化更新历史锚点。
+    # if product.get('detect_type') == 'potplayer' and _POT_CODE:
+    #     result['pot_code'] = _POT_CODE
     return result
 
 
