@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T12:52:30.299640+00:00",
+  "updated_at": "2026-10-30T13:06:11.380117+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-10-28 16:21",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.56",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793969454&P2=404&P3=2&P4=jwri2rf%2b4oosPSI0YcboiGjwNTH7EaVAqNe%2bp%2bj7r7zgdsxSX53aSPh4%2frhzbqQq6tKi8iHBDtN2Qac0coL3vA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793969454&P2=404&P3=2&P4=jwri2rf%2b4oosPSI0YcboiGjwNTH7EaVAqNe%2bp%2bj7r7zgdsxSX53aSPh4%2frhzbqQq6tKi8iHBDtN2Qac0coL3vA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793970345&P2=404&P3=2&P4=lktuTUVXSPVL3oio5eTAIbVKPDYF1WmmXBCEMT4oW0sYdtV4VngtjuluoilfgcL9WW5OiFPzYxwerozhv95AyA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793970345&P2=404&P3=2&P4=lktuTUVXSPVL3oio5eTAIbVKPDYF1WmmXBCEMT4oW0sYdtV4VngtjuluoilfgcL9WW5OiFPzYxwerozhv95AyA%3d%3d",
       "downloads": [],
       "size": 208486224,
       "size_mb": 198.8,
@@ -2038,6 +2038,10 @@
       "official_site": "https://nsaneforums.com/",
       "update_items": [
         {
+          "title": "Nitro PDF Pro 26.2.6 (x64) Enterprise Multilingual",
+          "url": "https://nsaneforums.com/topic/490923-nitro-pdf-pro-2626-x64-enterprise-multilingual/"
+        },
+        {
           "title": "Mullvad 16.0",
           "url": "https://nsaneforums.com/topic/490921-mullvad-160/"
         },
@@ -2082,11 +2086,15 @@
           "url": "https://nsaneforums.com/topic/490899-kls-backup-pro-2027-v15003/"
         },
         {
+          "title": "TeamViewer 15.83.5.0",
+          "url": "https://nsaneforums.com/topic/490922-teamviewer-158350/"
+        },
+        {
           "title": "Google Antigravity 2.28.2",
           "url": "https://nsaneforums.com/topic/490906-google-antigravity-2282/"
         }
       ],
-      "detected_at": "2026-10-30 20:05",
+      "detected_at": "2026-10-30 21:05",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2621,7 +2629,7 @@
       "official_site": "https://www.ludashi.com/",
       "update_items": [],
       "detected_at": "2026-10-26 21:19",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
