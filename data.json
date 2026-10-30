@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T11:06:12.690965+00:00",
+  "updated_at": "2026-10-30T11:21:22.929327+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.43",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe?v=1793357453832&n=ldinst_9.5.43_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe?v=1793359248389&n=ldinst_9.5.43_ld_407594_ld.exe",
       "downloads": [],
       "size": 602964448,
       "size_mb": 575.0,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.0.33",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.33.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.33.exe?v=1793357455404&n=ldinst_14.0.33_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.33.exe?v=1793359247252&n=ldinst_14.0.33_ld_412570_ld.exe",
       "downloads": [],
       "size": 744723432,
       "size_mb": 710.2,
@@ -124,8 +124,8 @@
       "official_site": "https://www.yy.com/web/pcyy_download/",
       "update_items": [],
       "detected_at": "2026-10-11 15:27",
-      "fb_streak": 1,
-      "fb_skip_until": 0
+      "fb_streak": 2,
+      "fb_skip_until": 1793361082
     },
     {
       "name": "QQMusic",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-10-28 16:21",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.56",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793963143&P2=404&P3=2&P4=JU9IRQG%2b70n2G5nlDpX1HyvTQYM%2b%2b1Bqxw7E2Ap%2bX%2ffnF2WFjJrzhLXOqKBAXj8WNf8IN0D2Iud8eAqtkp5jzw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793963143&P2=404&P3=2&P4=JU9IRQG%2b70n2G5nlDpX1HyvTQYM%2b%2b1Bqxw7E2Ap%2bX%2ffnF2WFjJrzhLXOqKBAXj8WNf8IN0D2Iud8eAqtkp5jzw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793964042&P2=404&P3=2&P4=SKv7t5lcGAXudd8LF6PZ%2bvgVuV1auH1Tyu2CCyfJlLydaJ0hzmQNWMh0F1qAXUhEuTTjpKXE0svTw%2fLwVH2fCg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793964042&P2=404&P3=2&P4=SKv7t5lcGAXudd8LF6PZ%2bvgVuV1auH1Tyu2CCyfJlLydaJ0hzmQNWMh0F1qAXUhEuTTjpKXE0svTw%2fLwVH2fCg%3d%3d",
       "downloads": [],
       "size": 208486224,
       "size_mb": 198.8,
@@ -1460,7 +1460,7 @@
       "official_site": "https://www.adobe.com/devnet-docs/acrobatetk/tools/ReleaseNotesDC/index.html",
       "update_items": [],
       "detected_at": "2026-10-14 16:22",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
