@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T15:51:40.743104+00:00",
+  "updated_at": "2026-10-30T16:06:32.747612+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-10-27 11:51",
-      "fb_streak": 19,
-      "fb_skip_until": 1793375495
+      "fb_streak": 20,
+      "fb_skip_until": 1793379992
     },
     {
       "name": "WeChat",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.56",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793980251&P2=404&P3=2&P4=m2IIyjkHLy31vovrUNq2tvGFXESMqdXaK0QQN8NXyYiWA1QYy6aHsL%2bzH3ovVVLkhX8ZUfeS29DW3B1f0TgXxA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793980251&P2=404&P3=2&P4=m2IIyjkHLy31vovrUNq2tvGFXESMqdXaK0QQN8NXyYiWA1QYy6aHsL%2bzH3ovVVLkhX8ZUfeS29DW3B1f0TgXxA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793981146&P2=404&P3=2&P4=EQBob5eWT8pfv6oAA0Z4YqMOM5S1hN2AJA97sn17sdMrtsKS5pUqWjzp%2bBap1xJYBHzwTWQ40iGFgHmapyO0Hg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793981146&P2=404&P3=2&P4=EQBob5eWT8pfv6oAA0Z4YqMOM5S1hN2AJA97sn17sdMrtsKS5pUqWjzp%2bBap1xJYBHzwTWQ40iGFgHmapyO0Hg%3d%3d",
       "downloads": [],
       "size": 208486224,
       "size_mb": 198.8,
@@ -1996,6 +1996,14 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "reaConverter Pro 8.0.257 Multilingual",
+          "url": "https://downtopc.com/344338-reaconverter-pro-80257-multilingual.html"
+        },
+        {
+          "title": "Abelssoft YouTube Song Downloader 2026 v26.19 Multilingual",
+          "url": "https://downtopc.com/344337-abelssoft-youtube-song-downloader-2026-v2619-multilingual.html"
+        },
+        {
           "title": "R-Wipe & Clean 20.0.2583 Portable",
           "url": "https://downtopc.com/344336-r-wipe-clean-2002583-portable.html"
         },
@@ -2016,7 +2024,7 @@
           "url": "https://downtopc.com/344329-capture-one-pro-enterprise-16903894-x64-multilingual-portable.html"
         }
       ],
-      "detected_at": "2026-10-30 15:05",
+      "detected_at": "2026-10-31 00:05",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2498,8 +2506,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 19,
-      "fb_skip_until": 1793375495
+      "fb_streak": 20,
+      "fb_skip_until": 1793379992
     },
     {
       "name": "BitComet",
