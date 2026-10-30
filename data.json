@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T07:51:38.770041+00:00",
+  "updated_at": "2026-10-30T08:06:10.956922+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-10-27 11:51",
-      "fb_streak": 13,
-      "fb_skip_until": 1793346707
+      "fb_streak": 14,
+      "fb_skip_until": 1793351170
     },
     {
       "name": "WeChat",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.56",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793951451&P2=404&P3=2&P4=lZrWZP0t9hTyszf8acOTGsRufajY5EO5S%2ftLKWty3qGi%2fLyJWDEc4qFcY5LzPKyxVUmxrTRKWhvllX4SzKLyRA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793951451&P2=404&P3=2&P4=lZrWZP0t9hTyszf8acOTGsRufajY5EO5S%2ftLKWty3qGi%2fLyJWDEc4qFcY5LzPKyxVUmxrTRKWhvllX4SzKLyRA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793952343&P2=404&P3=2&P4=bRxvKGZM254F80%2b%2fJBUWCAzXoQcPa5nW2wOy1pJxsm%2bqdmFzzrl7%2fMjd7MqolXcPZi2r913%2fTl038TA2bANhpg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793952343&P2=404&P3=2&P4=bRxvKGZM254F80%2b%2fJBUWCAzXoQcPa5nW2wOy1pJxsm%2bqdmFzzrl7%2fMjd7MqolXcPZi2r913%2fTl038TA2bANhpg%3d%3d",
       "downloads": [],
       "size": 208486224,
       "size_mb": 198.8,
@@ -2038,6 +2038,10 @@
       "official_site": "https://nsaneforums.com/",
       "update_items": [
         {
+          "title": "R-Wipe & Clean v20.0.2583",
+          "url": "https://nsaneforums.com/topic/490914-r-wipe-clean-v2002583/"
+        },
+        {
           "title": "Helium Browser v0.20.2.1",
           "url": "https://nsaneforums.com/topic/490913-helium-browser-v02021/"
         },
@@ -2078,15 +2082,11 @@
           "url": "https://nsaneforums.com/topic/490895-ascomp-cleaning-suite-pro-v50/"
         },
         {
-          "title": "IDM UltraFinder v2026.0 (x64)",
-          "url": "https://nsaneforums.com/topic/490893-idm-ultrafinder-v20260-x64/"
-        },
-        {
           "title": "Google Antigravity 2.28.2",
           "url": "https://nsaneforums.com/topic/490906-google-antigravity-2282/"
         }
       ],
-      "detected_at": "2026-10-30 15:05",
+      "detected_at": "2026-10-30 16:05",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2486,8 +2486,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 13,
-      "fb_skip_until": 1793346707
+      "fb_streak": 14,
+      "fb_skip_until": 1793351170
     },
     {
       "name": "BitComet",
