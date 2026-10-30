@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T13:51:25.017837+00:00",
+  "updated_at": "2026-10-30T14:06:07.668071+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.56",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793973051&P2=404&P3=2&P4=Cl5VirZnp5jd6%2bz4onpVtqZMWqZKbUQfQ33Opfr4XOOZZdy11jNhHPtsIRf9B0Ib2ABf7kDwrygacPX5lM%2fxIQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793973051&P2=404&P3=2&P4=Cl5VirZnp5jd6%2bz4onpVtqZMWqZKbUQfQ33Opfr4XOOZZdy11jNhHPtsIRf9B0Ib2ABf7kDwrygacPX5lM%2fxIQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793973946&P2=404&P3=2&P4=ZKkVUOJAfxPYBKLDdZnfL6wrZZUrtxsgdu6KThemT7KCLZiCPnqg8RbxW6iBgVhwdIqxMSvk%2bLrm4YKkWafxhA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793973946&P2=404&P3=2&P4=ZKkVUOJAfxPYBKLDdZnfL6wrZZUrtxsgdu6KThemT7KCLZiCPnqg8RbxW6iBgVhwdIqxMSvk%2bLrm4YKkWafxhA%3d%3d",
       "downloads": [],
       "size": 208486224,
       "size_mb": 198.8,
@@ -2086,6 +2086,10 @@
           "url": "https://nsaneforums.com/topic/490899-kls-backup-pro-2027-v15003/"
         },
         {
+          "title": "Rufus 4.16.2434 Beta",
+          "url": "https://nsaneforums.com/topic/490925-rufus-4162434-beta/"
+        },
+        {
           "title": "TeamViewer 15.83.5.0",
           "url": "https://nsaneforums.com/topic/490922-teamviewer-158350/"
         },
@@ -2094,7 +2098,7 @@
           "url": "https://nsaneforums.com/topic/490906-google-antigravity-2282/"
         }
       ],
-      "detected_at": "2026-10-30 21:05",
+      "detected_at": "2026-10-30 22:05",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
