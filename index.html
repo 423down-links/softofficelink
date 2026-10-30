@@ -969,18 +969,18 @@ function renderTable(products) {
 }
 
 function sortProducts(arr) {
-  // 排序优先级：① 今日更新在前 ② 今日组内按检测时间（准确到分钟）新→旧
-  // ③ 非今日按 last_modified 降序。detected_at 统一是 "YYYY-MM-DD HH:MM"
+  // 排序优先级：① 今日更新在前 ② 组内按检测时间（准确到分钟）新→旧
+  // ③ 检测时间相同时按 last_modified 降序。detected_at 统一是 "YYYY-MM-DD HH:MM"
   // 字符串，字典序即时间序，可直接比较。
   return [...arr].sort((a, b) => {
     const aToday = isToday(a.last_modified) ? 1 : 0;
     const bToday = isToday(b.last_modified) ? 1 : 0;
     if (aToday !== bToday) return bToday - aToday;
-    if (aToday) {
-      const ta = a.detected_at || '';
-      const tb = b.detected_at || '';
-      if (ta !== tb) return ta < tb ? 1 : -1;
-    }
+    // 同一组内统一按检测时间（精确到分钟）新→旧排列：
+    // detected_at 只在真检出更新时刷新，等同"哪款更晚被检出更新"。
+    const ta = a.detected_at || '';
+    const tb = b.detected_at || '';
+    if (ta !== tb) return ta < tb ? 1 : -1;
     const da = a.last_modified ? new Date(a.last_modified).getTime() : 0;
     const db = b.last_modified ? new Date(b.last_modified).getTime() : 0;
     return db - da;
