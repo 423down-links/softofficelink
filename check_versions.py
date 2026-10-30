@@ -1305,21 +1305,22 @@ PRODUCTS = [
         'icon': 'PP',
         'icon_color': 'linear-gradient(135deg, #00a8ff, #0097e6)',
         'category': '影音播放',
-        # PotPlayer 的版本有三套口径，必须读内层真实值：
-        #   外壳 PE FileVersion    = 26.10.21.0  （构建日期式，前端不能用）
-        #   外壳 PE ProductVersion = 1.7.23159.0 （打包时硬编码，落后一版）
-        #   内层 PotPlayer64.dll   = 1.7.23160.0 （About 框显示 26021(1.7.23160)，以此为准）
-        # 外壳落后是因为 NSIS 打包时版本号写死，软件本体更新后没同步。
-        # 内层 DLL 的 ProductVersion 是无意义的 1.7.0.0，故读它的 FileVersion。
-        # 末段 .0 是四段补位，官方口径只到三段，用 strip_trailing_zero 去掉。
-        'detect_type': 'fixed',
-        'nsis_inner_version': True,
-        'nsis_inner_members': ['PotPlayer64.dll'],
-        'nsis_inner_prefer': 'file',
-        'strip_trailing_zero': True,
-        # 口径从 26.x 换成 1.7.x 后数值变小，声明权威源以免被防降级当成回退拦下。
+        # ⚠️ 官方 CDN 的 Latest 包会被开发者中途替换成 beta 版 DLL：
+        #   外壳 PE FileVersion 仍是 26.10.21.0（正式版打包日），内层
+        #   PotPlayer64.dll 却换成了 1.7.23168（beta），而官方更新历史页
+        #   （UpdateEng.html）最新条目仍只有 [261021]（= 1.7.23165 正式版）。
+        #   直接读包内层版本会把 beta 当正式版（23168 > 23165）。
+        # 所以以官方更新历史页最新条目 [261021] 为正式版权威：
+        #   历史页没出现新条目 → 保持上次确认的正式版，忽略 CDN 包变动；
+        #   出现新条目 → 才采纳包内 DLL 版本。pot_code 锚点持久化在 data.json。
+        'detect_type': 'potplayer',
+        'potplayer_history_url': 'https://t1.daumcdn.net/potplayer/PotPlayer/v4/Update2/UpdateEng.html',
         'version_authority': 'nsis',
-        'version': '1.7.23160',
+        'strip_trailing_zero': True,
+        'version': '1.7.23165',
+        'date': '2026-10-21',
+        'size': 51259448,
+        'pot_code': '261021',
         'download_url': 'http://t1.daumcdn.net/potplayer/PotPlayer/Version/Latest/PotPlayerSetup64.exe',
         'official_site': 'https://potplayer.daum.net/',
     },
@@ -2592,6 +2593,10 @@ def _url_ver(version, product):
 # 记录每款软件「本轮版本号来自哪个源」，供防降级拦截判断是否该放行。
 # 键=产品名，值 ∈ {'nsis','pe','increment'}。仅 increment 探测模式写入。
 _VER_SOURCE = {}
+
+# PotPlayer 本轮从官方更新历史页取到的正式版条目代码（如 261021），
+# 由 detect_potplayer 写入并随产品数据持久化，作为「正式版是否更新」的锚点。
+_POT_CODE = ''
 
 # 线上已发布的版本号（main 里 data.json 的值），供 increment 探测当起点。
 # 配置里的 base_version 写死在源码里，一旦落后于线上就没法自愈：
@@ -6590,6 +6595,90 @@ def detect_nvidia(product):
     return whql_ver, whql_url, whql_url, size, date, ''
 
 
+def detect_potplayer(product):
+    """PotPlayer：只认官方更新历史里的正式版，忽略 CDN 被偷换的 beta 包。
+
+    判定逻辑：
+      1) 抓官方更新历史页 UpdateEng.html，取最新条目代码（如 [261021]）；
+      2) 与 data.json 里持久化的 pot_code 锚点比较：
+         - 代码没前进 → 正式版未变，CDN 上的包即使内层 DLL 被换成更高
+           beta（如 23168），也一律保持上次确认的正式版（如 23165）；
+         - 代码前进 → 官方发了新正式版，才读 Latest 包内层 DLL 的真实版号；
+      3) 下载地址始终是官方 Latest 直链（官方只保留当前这一个包）。
+    """
+    global _POT_CODE
+    name = product['name']
+    url = product.get('download_url', '')
+    old_ver = product.get('version', '')
+    old_date = product.get('date', '')
+    old_size = product.get('size', 0)
+    old_code = product.get('pot_code', '')
+
+    # 锚点与上次正式版以 data.json 为准（配置里的只是首次迁移的初始值）：
+    # 旧数据没有 pot_code 说明还是 beta 污染的旧值，不能沿用，用配置的正式版兜底。
+    try:
+        with open(DATA_JSON, 'r', encoding='utf-8') as f:
+            for p in json.load(f).get('products', []):
+                if p.get('name') == name:
+                    if p.get('pot_code'):
+                        old_code = p['pot_code']
+                        old_ver = p.get('version') or old_ver
+                        old_date = p.get('last_modified') or old_date
+                        old_size = p.get('size') or old_size
+                    break
+    except Exception:
+        pass
+
+    # 1) 官方更新历史（正式版权威）
+    code = ''
+    try:
+        req = urllib.request.Request(
+            product['potplayer_history_url'], headers={'User-Agent': UA})
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            hist = resp.read().decode('utf-8', 'ignore')
+        m = re.search(r'\[(2\d{5})\]', hist)
+        if m:
+            code = m.group(1)
+    except Exception as e:
+        print(f"  ⚠️ PotPlayer 更新历史页访问失败: {e}")
+    if not code:
+        print("  ⚠️ PotPlayer 更新历史页未解析到版本条目，沿用旧值")
+        return old_ver, url, url, old_size, old_date, ''
+
+    _POT_CODE = code
+    _VER_SOURCE[name] = product.get('version_authority', 'nsis')
+
+    # 2) 正式版没换：CDN 包内层即使被换成 beta 也忽略
+    if old_code and code <= old_code:
+        print(f"  官方正式版仍为 [{code}]（CDN 包变动视为 beta），保持 {old_ver}")
+        return old_ver, url, url, old_size, old_date, ''
+
+    # 3) 官方发了新正式版 → 读 Latest 包的真实版本
+    size, lm = 0, ''
+    try:
+        req = urllib.request.Request(url, method='HEAD', headers={'User-Agent': UA})
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            cl = resp.headers.get('Content-Length', '')
+            if cl.isdigit():
+                size = int(cl)
+            lm = resp.headers.get('Last-Modified', '') or ''
+    except Exception as e:
+        print(f"  ⚠️ PotPlayer 安装包探测失败: {e}")
+    ver = ''
+    try:
+        ver = get_nsis_inner_version(url, member_names=['PotPlayer64.dll']) or ''
+    except Exception as e:
+        print(f"  ⚠️ PotPlayer 内层版本解析失败: {e}")
+    if ver.endswith('.0'):
+        ver = ver[:-2]
+    if not ver:
+        print("  ⚠️ PotPlayer 未解析到内层版本，沿用旧值")
+        return old_ver, url, url, old_size, old_date, ''
+    date = parse_date(lm) or old_date
+    print(f"  官方更新历史 [{code}] → 正式版 {ver} ({date})")
+    return ver, url, url, size or old_size, date, ''
+
+
 def detect_webview2(product):
     """Edge WebView2 固定版运行时（Fixed Version Runtime）x64 cab 完整离线包。
 
@@ -7502,6 +7591,8 @@ def find_latest(product):
         version, full_url, param_url, size, date, md5 = detect_webview2(product)
     elif detect_type == 'nvidia':
         version, full_url, param_url, size, date, md5 = detect_nvidia(product)
+    elif detect_type == 'potplayer':
+        version, full_url, param_url, size, date, md5 = detect_potplayer(product)
     elif detect_type == 'hexhub_api':
         version, full_url, param_url, size, date, md5 = detect_hexhub_api(product)
     elif detect_type == 'java_api':
@@ -7571,6 +7662,11 @@ def find_latest(product):
     _vlist = _java_versions.get(product['name'], []) or _borisfx_addons.get(product['name'], [])
     if _vlist:
         result['version_list'] = _vlist
+    # PotPlayer 正式版锚点：把本轮从官方更新历史取到的条目代码（[261021]）
+    # 落到 data.json，下轮用它判断官方是否发了新正式版，避免把 CDN 上
+    # 被开发者偷换的 beta 包（内层 DLL 版本更高）当成正式版
+    if product.get('detect_type') == 'potplayer' and _POT_CODE:
+        result['pot_code'] = _POT_CODE
     return result
 
 
