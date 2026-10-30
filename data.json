@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T10:51:50.956013+00:00",
+  "updated_at": "2026-10-30T11:06:12.690965+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-10-28 16:21",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.56",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793962251&P2=404&P3=2&P4=mRIEAFQ8FPQ5mFXQLxY5FoXubBPuE3%2fxJ3bgqdR9g1ZI%2bsvMbPL6AsP5vkVSff8Sk38OpJgQyjMoUBFe%2fJddvQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793962251&P2=404&P3=2&P4=mRIEAFQ8FPQ5mFXQLxY5FoXubBPuE3%2fxJ3bgqdR9g1ZI%2bsvMbPL6AsP5vkVSff8Sk38OpJgQyjMoUBFe%2fJddvQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793963143&P2=404&P3=2&P4=JU9IRQG%2b70n2G5nlDpX1HyvTQYM%2b%2b1Bqxw7E2Ap%2bX%2ffnF2WFjJrzhLXOqKBAXj8WNf8IN0D2Iud8eAqtkp5jzw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793963143&P2=404&P3=2&P4=JU9IRQG%2b70n2G5nlDpX1HyvTQYM%2b%2b1Bqxw7E2Ap%2bX%2ffnF2WFjJrzhLXOqKBAXj8WNf8IN0D2Iud8eAqtkp5jzw%3d%3d",
       "downloads": [],
       "size": 208486224,
       "size_mb": 198.8,
@@ -2038,6 +2038,10 @@
       "official_site": "https://nsaneforums.com/",
       "update_items": [
         {
+          "title": "Hasleo Backup Suite 6.0.2 Multilingual & WinPE English & German",
+          "url": "https://nsaneforums.com/topic/490918-hasleo-backup-suite-602-multilingual-winpe-english-german/"
+        },
+        {
           "title": "Macrorit Partition Expert 8.9.6",
           "url": "https://nsaneforums.com/topic/490917-macrorit-partition-expert-896/"
         },
@@ -2078,15 +2082,11 @@
           "url": "https://nsaneforums.com/topic/490897-ascomp-synchredible-pro-v9120/"
         },
         {
-          "title": "Ascomp BackUp Maker Pro v8.411",
-          "url": "https://nsaneforums.com/topic/490896-ascomp-backup-maker-pro-v8411/"
-        },
-        {
           "title": "Google Antigravity 2.28.2",
           "url": "https://nsaneforums.com/topic/490906-google-antigravity-2282/"
         }
       ],
-      "detected_at": "2026-10-30 18:05",
+      "detected_at": "2026-10-30 19:05",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2248,7 +2248,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-10-11",
       "md5": "",
