@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T16:18:03.536474+00:00",
+  "updated_at": "2026-10-30T16:25:48.970845+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -1423,7 +1423,7 @@
     },
     {
       "name": "Wondershare PDFelement",
-      "name_cn": "Wondershare PDFelement",
+      "name_cn": "万兴PDF专家",
       "alias": "",
       "icon": "PDF",
       "icon_color": "linear-gradient(135deg, #e74c3c, #c0392b)",
@@ -1979,154 +1979,44 @@
       "fb_skip_until": 0
     },
     {
-      "name": "downtopc软件",
-      "name_cn": "downtopc软件",
+      "name": "IDM UltraEdit",
+      "name_cn": "UltraEdit",
       "alias": "",
-      "icon": "D",
-      "icon_color": "linear-gradient(135deg, #2e7d32, #1b5e20)",
-      "category": "资源站",
-      "version": "2026-10-30",
-      "download_url": "https://downtopc.com/software/",
-      "download_url_with_params": "https://downtopc.com/software/",
+      "icon": "UE",
+      "icon_color": "linear-gradient(135deg, #1e88e5, #0d47a1)",
+      "category": "开发工具",
+      "version": "33.1.0.27",
+      "download_url": "https://downloads.ultraedit.com/main/ue/win/ue_chinese_64.exe",
+      "download_url_with_params": "https://downloads.ultraedit.com/main/ue/win/ue_chinese_64.exe",
       "downloads": [],
-      "size": 0,
-      "size_mb": 0,
-      "last_modified": "2026-10-30",
+      "size": 106277112,
+      "size_mb": 101.4,
+      "last_modified": "2026-10-29",
       "md5": "",
-      "official_site": "https://downtopc.com/software/",
-      "update_items": [
-        {
-          "title": "Hasleo Backup Suite Technician 6.0.2 Multilingual WinPE",
-          "url": "https://downtopc.com/344343-hasleo-backup-suite-technician-602-multilingual-winpe.html"
-        },
-        {
-          "title": "Hasleo Backup Suite 6.0.2 Multilingual",
-          "url": "https://downtopc.com/344342-hasleo-backup-suite-602-multilingual.html"
-        },
-        {
-          "title": "Coolutils PDF Splitter 5.2.0.112/44 Multilingual",
-          "url": "https://downtopc.com/344341-coolutils-pdf-splitter-52011244-multilingual.html"
-        },
-        {
-          "title": "Coolutils PDF Splitter Pro 6.1.0.98/68 Multilingual",
-          "url": "https://downtopc.com/344340-coolutils-pdf-splitter-pro-6109868-multilingual.html"
-        },
-        {
-          "title": "GiliSoft AI Toolkit 11.0",
-          "url": "https://downtopc.com/344339-gilisoft-ai-toolkit-110.html"
-        },
-        {
-          "title": "reaConverter Pro 8.0.257 Multilingual",
-          "url": "https://downtopc.com/344338-reaconverter-pro-80257-multilingual.html"
-        },
-        {
-          "title": "Abelssoft YouTube Song Downloader 2026 v26.19 Multilingual",
-          "url": "https://downtopc.com/344337-abelssoft-youtube-song-downloader-2026-v2619-multilingual.html"
-        },
-        {
-          "title": "R-Wipe & Clean 20.0.2583 Portable",
-          "url": "https://downtopc.com/344336-r-wipe-clean-2002583-portable.html"
-        },
-        {
-          "title": "R-Wipe & Clean 20.0.2583",
-          "url": "https://downtopc.com/344335-r-wipe-clean-2002583.html"
-        },
-        {
-          "title": "OBS Studio 33.0.1 (x64) Multilingual Portable",
-          "url": "https://downtopc.com/344334-obs-studio-3301-x64-multilingual-portable.html"
-        },
-        {
-          "title": "ChrisPC VideoTube Downloader Pro 15.26.1030 Multilingual",
-          "url": "https://downtopc.com/344333-chrispc-videotube-downloader-pro-15261030-multilingual.html"
-        },
-        {
-          "title": "Capture One Pro / Enterprise 16.9.0.3894 (x64) Multilingual Portable",
-          "url": "https://downtopc.com/344329-capture-one-pro-enterprise-16903894-x64-multilingual-portable.html"
-        }
-      ],
-      "detected_at": "2026-10-31 00:17",
+      "official_site": "https://www.ultraedit.com/products/ultraedit/latest-changes.html",
+      "update_items": [],
+      "detected_at": "2026-10-31 00:25",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
-      "name": "nsane论坛",
-      "name_cn": "nsane论坛",
+      "name": "IDM UEStudio",
+      "name_cn": "UEStudio",
       "alias": "",
-      "icon": "N",
-      "icon_color": "linear-gradient(135deg, #4a6fa5, #2b3f63)",
-      "category": "资源站",
-      "version": "2026-10-30",
-      "download_url": "https://nsaneforums.com/nsane.down/",
-      "download_url_with_params": "https://nsaneforums.com/nsane.down/",
+      "icon": "UES",
+      "icon_color": "linear-gradient(135deg, #7b2ff7, #4a148c)",
+      "category": "开发工具",
+      "version": "25.2.0.24",
+      "download_url": "https://downloads.ultraedit.com/main/ues/win/ues_chinese_64.exe",
+      "download_url_with_params": "https://downloads.ultraedit.com/main/ues/win/ues_chinese_64.exe",
       "downloads": [],
-      "size": 0,
-      "size_mb": 0,
-      "last_modified": "2026-10-30",
+      "size": 526299016,
+      "size_mb": 501.9,
+      "last_modified": "2026-04-10",
       "md5": "",
-      "official_site": "https://nsaneforums.com/",
-      "update_items": [
-        {
-          "title": "YUMI exFAT' 1.0.4.3",
-          "url": "https://nsaneforums.com/topic/490928-yumi-exfat-1043/"
-        },
-        {
-          "title": "Nitro PDF Pro 26.2.6 (x64) Enterprise Multilingual",
-          "url": "https://nsaneforums.com/topic/490923-nitro-pdf-pro-2626-x64-enterprise-multilingual/"
-        },
-        {
-          "title": "Mullvad 16.0",
-          "url": "https://nsaneforums.com/topic/490921-mullvad-160/"
-        },
-        {
-          "title": "Hasleo Backup Suite 6.0.2 Multilingual & WinPE English & German",
-          "url": "https://nsaneforums.com/topic/490918-hasleo-backup-suite-602-multilingual-winpe-english-german/"
-        },
-        {
-          "title": "Macrorit Partition Expert 8.9.6",
-          "url": "https://nsaneforums.com/topic/490917-macrorit-partition-expert-896/"
-        },
-        {
-          "title": "R-Wipe & Clean v20.0.2583",
-          "url": "https://nsaneforums.com/topic/490914-r-wipe-clean-v2002583/"
-        },
-        {
-          "title": "Helium Browser v0.20.2.1",
-          "url": "https://nsaneforums.com/topic/490913-helium-browser-v02021/"
-        },
-        {
-          "title": "CareUEyes Pro v2.7.1",
-          "url": "https://nsaneforums.com/topic/490891-careueyes-pro-v271/"
-        },
-        {
-          "title": "OBS Studio 33.0.1",
-          "url": "https://nsaneforums.com/topic/490903-obs-studio-3301/"
-        },
-        {
-          "title": "UniGetUI v2026.3.3",
-          "url": "https://nsaneforums.com/topic/490902-unigetui-v202633/"
-        },
-        {
-          "title": "Capture One Pro / Enterprise v16.9 (build 3894) x64",
-          "url": "https://nsaneforums.com/topic/490901-capture-one-pro-enterprise-v169-build-3894-x64/"
-        },
-        {
-          "title": "Room Arranger v11.3.0.811 (x64)",
-          "url": "https://nsaneforums.com/topic/490900-room-arranger-v1130811-x64/"
-        },
-        {
-          "title": "Rufus 4.16.2434 Beta",
-          "url": "https://nsaneforums.com/topic/490925-rufus-4162434-beta/"
-        },
-        {
-          "title": "TeamViewer 15.83.5.0",
-          "url": "https://nsaneforums.com/topic/490922-teamviewer-158350/"
-        },
-        {
-          "title": "Google Antigravity 2.28.2",
-          "url": "https://nsaneforums.com/topic/490906-google-antigravity-2282/"
-        }
-      ],
-      "detected_at": "2026-10-30 23:05",
+      "official_site": "https://www.ultraedit.com/products/uestudio/latest-changes.html",
+      "update_items": [],
+      "detected_at": "2026-10-31 00:25",
       "fb_streak": 0,
       "fb_skip_until": 0
     },

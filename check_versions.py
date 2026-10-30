@@ -1165,7 +1165,7 @@ PRODUCTS = [
     },
     {
         'name': 'Wondershare PDFelement',
-        'name_cn': 'Wondershare PDFelement',
+        'name_cn': '万兴PDF专家',
         'icon': 'PDF',
         'icon_color': 'linear-gradient(135deg, #e74c3c, #c0392b)',
         'category': '办公软件',
@@ -1601,46 +1601,71 @@ PRODUCTS = [
         'allow_no_size': True,
         'official_site': 'https://w18.monkrus.ws/',
     },
+    # ===== 已停用：downtopc 软件 / nsane 论坛（仅注释，不再检测与输出） =====
+    # {
+    #     'name': 'downtopc软件',
+    #     'name_cn': 'downtopc软件',
+    #     'icon': 'D',
+    #     'icon_color': 'linear-gradient(135deg, #2e7d32, #1b5e20)',
+    #     'category': '资源站',
+    #     'detect_type': 'downtopc',
+    #     'check_url': 'https://downtopc.com/software/rss.xml',
+    #     'version': '2026-10-08',
+    #     'download_url': 'https://downtopc.com/software/',
+    #     'skip_title_regex': r'mac\s*os',
+    #     'skip_md5': True,
+    #     'allow_no_size': True,
+    #     'official_site': 'https://downtopc.com/software/',
+    # },
+    # {
+    #     'name': 'nsane论坛',
+    #     'name_cn': 'nsane论坛',
+    #     'icon': 'N',
+    #     'icon_color': 'linear-gradient(135deg, #4a6fa5, #2b3f63)',
+    #     'category': '资源站',
+    #     'detect_type': 'nsane',
+    #     'check_url': 'https://nsaneforums.com/forum/48-software-updates/',
+    #     'nsane_forums': [
+    #         ('software-updates', 'https://nsaneforums.com/forum/48-software-updates/'),
+    #         ('news-updates', 'https://nsaneforums.com/forum/17-news-updates/'),
+    #     ],
+    #     'nsane_frontpage': 'https://nsaneforums.com/nsane.down/',
+    #     'version': '2026-10-08',
+    #     'download_url': 'https://nsaneforums.com/nsane.down/',
+    #     'skip_md5': True,
+    #     'allow_no_size': True,
+    #     'official_site': 'https://nsaneforums.com/',
+    # },
     {
-        'name': 'downtopc软件',
-        'name_cn': 'downtopc软件',
-        'icon': 'D',
-        'icon_color': 'linear-gradient(135deg, #2e7d32, #1b5e20)',
-        'category': '资源站',
-        # 资源站：抓「最新更新日期当天」的全部文章，软件库里已有的过滤掉，只输出没收录的。
-        # RSS 只用于确定最新日期，文章清单靠日期归档页分页抓全（RSS 默认只有 10 条）。
-        'detect_type': 'downtopc',
-        'check_url': 'https://downtopc.com/software/rss.xml',
-        'version': '2026-10-08',
-        'download_url': 'https://downtopc.com/software/',
-        # 标题含 macOS 的文章不输出（本站只收 Windows 软件）
-        'skip_title_regex': r'mac\s*os',
+        'name': 'IDM UltraEdit',
+        'name_cn': 'UltraEdit',
+        'icon': 'UE',
+        'icon_color': 'linear-gradient(135deg, #1e88e5, #0d47a1)',
+        'category': '开发工具',
+        # 优先用中文版离线包（ue_chinese_64.exe）：文件名不带版本号，
+        # 通过读 PE FileVersion 取真实版本。中文包当前已与英文同步到 33.1.0.27。
+        # 版本/时间以该中文安装包本体为准。
+        'detect_type': 'fixed',
+        'pe_version': True,
+        'version': '33.1.0.27',
+        'download_url': 'https://downloads.ultraedit.com/main/ue/win/ue_chinese_64.exe',
         'skip_md5': True,
-        'allow_no_size': True,
-        'official_site': 'https://downtopc.com/software/',
+        'official_site': 'https://www.ultraedit.com/products/ultraedit/latest-changes.html',
     },
     {
-        'name': 'nsane论坛',
-        'name_cn': 'nsane论坛',
-        'icon': 'N',
-        'icon_color': 'linear-gradient(135deg, #4a6fa5, #2b3f63)',
-        'category': '资源站',
-        # 资源站：抓指定板块「今天」有新帖/有新回复的主题，标题命中已添加软件名才输出（没命中跳过）。
-        # 主题正文需登录，但板块列表页与前台 widget 匿名可读，只要标题和时间即可。
-        'detect_type': 'nsane',
-        'check_url': 'https://nsaneforums.com/forum/48-software-updates/',
-        # 论坛板块列表页：(标识, URL)。列表行含发帖时间与最后回复时间，按「最后回复==今天」判定今日更新
-        'nsane_forums': [
-            ('software-updates', 'https://nsaneforums.com/forum/48-software-updates/'),
-            ('news-updates', 'https://nsaneforums.com/forum/17-news-updates/'),
-        ],
-        # nsane.down 前台「FrontPage Latest Update」小部件
-        'nsane_frontpage': 'https://nsaneforums.com/nsane.down/',
-        'version': '2026-10-08',
-        'download_url': 'https://nsaneforums.com/nsane.down/',
+        'name': 'IDM UEStudio',
+        'name_cn': 'UEStudio',
+        'icon': 'UES',
+        'icon_color': 'linear-gradient(135deg, #7b2ff7, #4a148c)',
+        'category': '开发工具',
+        # 优先中文版 ues_chinese_64.exe：官方中文包滞后，实测仍是 25.2.0.24
+        # （英文版已是 26.1.0.27）。版本/时间以中文安装包本体为准。
+        'detect_type': 'fixed',
+        'pe_version': True,
+        'version': '25.2.0.24',
+        'download_url': 'https://downloads.ultraedit.com/main/ues/win/ues_chinese_64.exe',
         'skip_md5': True,
-        'allow_no_size': True,
-        'official_site': 'https://nsaneforums.com/',
+        'official_site': 'https://www.ultraedit.com/products/uestudio/latest-changes.html',
     },
     {
         'name': '7-Zip',
@@ -7603,10 +7628,10 @@ def find_latest(product):
         version, full_url, param_url, size, date, md5 = detect_bwcx(product)
     elif detect_type == 'monkrus':
         version, full_url, param_url, size, date, md5 = detect_monkrus(product)
-    elif detect_type == 'downtopc':
-        version, full_url, param_url, size, date, md5 = detect_downtopc(product)
-    elif detect_type == 'nsane':
-        version, full_url, param_url, size, date, md5 = detect_nsane(product)
+    # elif detect_type == 'downtopc':
+    #     version, full_url, param_url, size, date, md5 = detect_downtopc(product)
+    # elif detect_type == 'nsane':
+    #     version, full_url, param_url, size, date, md5 = detect_nsane(product)
     elif detect_type == 'borisfx_hub':
         version, full_url, param_url, size, date, md5 = detect_borisfx_hub(product)
     elif detect_type == 'thunder_cdn':
