@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T06:51:47.063692+00:00",
+  "updated_at": "2026-10-30T07:06:13.309283+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-10-28 16:21",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.56",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793947852&P2=404&P3=2&P4=NIIfvW%2fITDMMUR7XB30xw2ewlMNU8dlXm7XuN2bFbXeHLZ%2b7GMHP%2bA7AlC6679CvN7Wgrqutqx8rRfMyWO9n2A%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793947852&P2=404&P3=2&P4=NIIfvW%2fITDMMUR7XB30xw2ewlMNU8dlXm7XuN2bFbXeHLZ%2b7GMHP%2bA7AlC6679CvN7Wgrqutqx8rRfMyWO9n2A%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793948743&P2=404&P3=2&P4=hBndzvYMDB849MA1a8GXzFhRjS25CA8EQlmEsjRHgZYgjYnGGwn2al%2fjmljO6L0RP0Kj1Hn3VLRfCAevukdoeg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793948743&P2=404&P3=2&P4=hBndzvYMDB849MA1a8GXzFhRjS25CA8EQlmEsjRHgZYgjYnGGwn2al%2fjmljO6L0RP0Kj1Hn3VLRfCAevukdoeg%3d%3d",
       "downloads": [],
       "size": 208486224,
       "size_mb": 198.8,
@@ -1996,11 +1996,27 @@
       "official_site": "https://downtopc.com/software/",
       "update_items": [
         {
+          "title": "R-Wipe & Clean 20.0.2583 Portable",
+          "url": "https://downtopc.com/344336-r-wipe-clean-2002583-portable.html"
+        },
+        {
+          "title": "R-Wipe & Clean 20.0.2583",
+          "url": "https://downtopc.com/344335-r-wipe-clean-2002583.html"
+        },
+        {
+          "title": "OBS Studio 33.0.1 (x64) Multilingual Portable",
+          "url": "https://downtopc.com/344334-obs-studio-3301-x64-multilingual-portable.html"
+        },
+        {
+          "title": "ChrisPC VideoTube Downloader Pro 15.26.1030 Multilingual",
+          "url": "https://downtopc.com/344333-chrispc-videotube-downloader-pro-15261030-multilingual.html"
+        },
+        {
           "title": "Capture One Pro / Enterprise 16.9.0.3894 (x64) Multilingual Portable",
           "url": "https://downtopc.com/344329-capture-one-pro-enterprise-16903894-x64-multilingual-portable.html"
         }
       ],
-      "detected_at": "2026-10-30 07:05",
+      "detected_at": "2026-10-30 15:05",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2021,6 +2037,10 @@
       "md5": "",
       "official_site": "https://nsaneforums.com/",
       "update_items": [
+        {
+          "title": "Helium Browser v0.20.2.1",
+          "url": "https://nsaneforums.com/topic/490913-helium-browser-v02021/"
+        },
         {
           "title": "CareUEyes Pro v2.7.1",
           "url": "https://nsaneforums.com/topic/490891-careueyes-pro-v271/"
@@ -2066,7 +2086,7 @@
           "url": "https://nsaneforums.com/topic/490906-google-antigravity-2282/"
         }
       ],
-      "detected_at": "2026-10-30 10:05",
+      "detected_at": "2026-10-30 15:05",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2228,7 +2248,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-10-11",
       "md5": "",
