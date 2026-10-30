@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T17:06:31.734146+00:00",
+  "updated_at": "2026-10-30T17:21:34.638299+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.43",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe?v=1793379069475&n=ldinst_9.5.43_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe?v=1793380854660&n=ldinst_9.5.43_ld_407594_ld.exe",
       "downloads": [],
       "size": 602964448,
       "size_mb": 575.0,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.0.33",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.33.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.33.exe?v=1793379067275&n=ldinst_14.0.33_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.33.exe?v=1793380854443&n=ldinst_14.0.33_ld_412570_ld.exe",
       "downloads": [],
       "size": 744723432,
       "size_mb": 710.2,
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-10-27 11:51",
-      "fb_streak": 20,
-      "fb_skip_until": 1793379992
+      "fb_streak": 21,
+      "fb_skip_until": 1793384494
     },
     {
       "name": "WeChat",
@@ -124,7 +124,7 @@
       "official_site": "https://www.yy.com/web/pcyy_download/",
       "update_items": [],
       "detected_at": "2026-10-11 15:27",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.56",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793984760&P2=404&P3=2&P4=CIXXqON47knVC5ct69NfQ0PJfYSb9CAP7MkRDlCYyz2BAoTymJk6W141qyHr%2fgxxOj11TnSpIDpC99yOARqRJw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793984760&P2=404&P3=2&P4=CIXXqON47knVC5ct69NfQ0PJfYSb9CAP7MkRDlCYyz2BAoTymJk6W141qyHr%2fgxxOj11TnSpIDpC99yOARqRJw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793985652&P2=404&P3=2&P4=MFjZQLHz4Yjc0r5jnmu7SyaCrY6ZCkWjrVQGxJNsfrIX89xuTXnfvrXRW%2buH3ktSGrluNfmBOSpuSEq9bTWQrw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793985652&P2=404&P3=2&P4=MFjZQLHz4Yjc0r5jnmu7SyaCrY6ZCkWjrVQGxJNsfrIX89xuTXnfvrXRW%2buH3ktSGrluNfmBOSpuSEq9bTWQrw%3d%3d",
       "downloads": [],
       "size": 208486224,
       "size_mb": 198.8,
@@ -2416,8 +2416,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 20,
-      "fb_skip_until": 1793379992
+      "fb_streak": 21,
+      "fb_skip_until": 1793384494
     },
     {
       "name": "BitComet",
