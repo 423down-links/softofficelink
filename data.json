@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T06:06:10.307288+00:00",
+  "updated_at": "2026-10-30T06:21:41.112394+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.43",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe?v=1793339447165&n=ldinst_9.5.43_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe?v=1793341256744&n=ldinst_9.5.43_ld_407594_ld.exe",
       "downloads": [],
       "size": 602964448,
       "size_mb": 575.0,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.0.33",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.33.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.33.exe?v=1793339447126&n=ldinst_14.0.33_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.33.exe?v=1793341255487&n=ldinst_14.0.33_ld_412570_ld.exe",
       "downloads": [],
       "size": 744723432,
       "size_mb": 710.2,
@@ -92,17 +92,17 @@
       "icon": "搜",
       "icon_color": "linear-gradient(135deg, #ff6b35, #ff8c42)",
       "category": "输入法",
-      "version": "16.9.0.5523",
-      "download_url": "https://ime.gtimg.com/pc/build/_sogou_pinyin_16.9.0.5523_0.exe",
-      "download_url_with_params": "https://ime.gtimg.com/pc/build/_sogou_pinyin_16.9.0.5523_0.exe",
+      "version": "16.10.0.5858",
+      "download_url": "https://ime.gtimg.com/pc/build/_sogou_pinyin_16.10.0.5858_0.exe",
+      "download_url_with_params": "https://ime.gtimg.com/pc/build/_sogou_pinyin_16.10.0.5858_0.exe",
       "downloads": [],
-      "size": 224080264,
-      "size_mb": 213.7,
-      "last_modified": "2026-09-30",
+      "size": 220401832,
+      "size_mb": 210.2,
+      "last_modified": "2026-10-30",
       "md5": "",
       "official_site": "https://pinyin.sogou.com/windows/",
       "update_items": [],
-      "detected_at": "2026-10-09 09:56",
+      "detected_at": "2026-10-30 14:20",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -124,7 +124,7 @@
       "official_site": "https://www.yy.com/web/pcyy_download/",
       "update_items": [],
       "detected_at": "2026-10-11 15:27",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-10-28 16:21",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.56",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793945149&P2=404&P3=2&P4=JUKOY9WXW8inlPfDQ7uHzYDWYoLmqFn4ZKv1GrfjmFZwtuBfcLMwNfxSTFLan%2bx9%2bITpG3%2bykHYtBEv3yJysaw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793945149&P2=404&P3=2&P4=JUKOY9WXW8inlPfDQ7uHzYDWYoLmqFn4ZKv1GrfjmFZwtuBfcLMwNfxSTFLan%2bx9%2bITpG3%2bykHYtBEv3yJysaw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793946051&P2=404&P3=2&P4=ezquPhPxggBHnbC2HpC4Hcw52l17fW7HVnlC%2frKsX6K4wJNRN60IQZ1M87qLRMjA4MqDHVjxmBDSTSJho4f6NQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793946051&P2=404&P3=2&P4=ezquPhPxggBHnbC2HpC4Hcw52l17fW7HVnlC%2frKsX6K4wJNRN60IQZ1M87qLRMjA4MqDHVjxmBDSTSJho4f6NQ%3d%3d",
       "downloads": [],
       "size": 208486224,
       "size_mb": 198.8,
