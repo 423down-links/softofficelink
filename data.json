@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T11:52:26.285182+00:00",
+  "updated_at": "2026-10-30T12:06:28.672511+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-10-27 11:51",
-      "fb_streak": 16,
-      "fb_skip_until": 1793361110
+      "fb_streak": 17,
+      "fb_skip_until": 1793365588
     },
     {
       "name": "WeChat",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-10-28 16:21",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.56",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793965852&P2=404&P3=2&P4=EFn77seXSCChAwCvT7DxE61vAl84CntuJCxaAUZed1eIB0uwUzbgLoUkolakLpb7p7Ul0G8l6u9dBvpwHPX4Pg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793965852&P2=404&P3=2&P4=EFn77seXSCChAwCvT7DxE61vAl84CntuJCxaAUZed1eIB0uwUzbgLoUkolakLpb7p7Ul0G8l6u9dBvpwHPX4Pg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793966745&P2=404&P3=2&P4=iusSuJPbipuF3CTXfiVwJ4Fe%2bHoL9p7ct3j69%2bL7h3SAX%2bTxD8uk%2fuU%2bvqfzakkkQdcTForBDp4ETO67H57hkQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/da8a7421-0d6a-4e28-bf22-acacfab7f370?P1=1793966745&P2=404&P3=2&P4=iusSuJPbipuF3CTXfiVwJ4Fe%2bHoL9p7ct3j69%2bL7h3SAX%2bTxD8uk%2fuU%2bvqfzakkkQdcTForBDp4ETO67H57hkQ%3d%3d",
       "downloads": [],
       "size": 208486224,
       "size_mb": 198.8,
@@ -2038,6 +2038,10 @@
       "official_site": "https://nsaneforums.com/",
       "update_items": [
         {
+          "title": "Mullvad 16.0",
+          "url": "https://nsaneforums.com/topic/490921-mullvad-160/"
+        },
+        {
           "title": "Hasleo Backup Suite 6.0.2 Multilingual & WinPE English & German",
           "url": "https://nsaneforums.com/topic/490918-hasleo-backup-suite-602-multilingual-winpe-english-german/"
         },
@@ -2078,15 +2082,11 @@
           "url": "https://nsaneforums.com/topic/490899-kls-backup-pro-2027-v15003/"
         },
         {
-          "title": "Ascomp Synchredible Pro v9.120",
-          "url": "https://nsaneforums.com/topic/490897-ascomp-synchredible-pro-v9120/"
-        },
-        {
           "title": "Google Antigravity 2.28.2",
           "url": "https://nsaneforums.com/topic/490906-google-antigravity-2282/"
         }
       ],
-      "detected_at": "2026-10-30 19:05",
+      "detected_at": "2026-10-30 20:05",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2486,8 +2486,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 16,
-      "fb_skip_until": 1793361110
+      "fb_streak": 17,
+      "fb_skip_until": 1793365588
     },
     {
       "name": "BitComet",
