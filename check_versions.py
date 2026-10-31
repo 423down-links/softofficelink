@@ -251,16 +251,15 @@ PRODUCTS = [
         'icon': 'WV2',
         'icon_color': 'linear-gradient(135deg, #0078d4, #50e6ff)',
         'category': '系统组件',
-        # 固定版运行时（Fixed Version Runtime）x64 cab 完整离线包直链。
-        # 官方下载页把各版本 cab 链接写在内嵌 JSON 里、斜杠是 \u002F 转义，
-        # 页面同时列多个历史版本 → 还原转义后按版本号取最大，不能取第一个。
-        # 版本号以 cab 里的为准（可能比 Edge 稳定版 API 先放包）。
+        # 常青版（Evergreen）独立安装程序完整包 x64：fwlink 2124701 永远 302 到
+        # 当前最新的 MicrosoftEdgeWebView2RuntimeInstallerX64.exe（约 205MB），
+        # 不再使用固定版（Fixed Version）cab 直链。
         'detect_type': 'webview2',
         'check_url': 'https://developer.microsoft.com/zh-cn/microsoft-edge/webview2/',
         'version': '156.0.4314.56',
         'date': '2026-10-30',
         'skip_md5': True,
-        'download_url': 'https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/876df7fd-c9c1-4feb-8a51-a768caada6dd/Microsoft.WebView2.FixedVersionRuntime.156.0.4314.56.x64.cab',
+        'download_url': 'https://go.microsoft.com/fwlink/?linkid=2124701',
         'official_site': 'https://developer.microsoft.com/zh-cn/microsoft-edge/webview2/',
     },
     {
@@ -6707,58 +6706,60 @@ def detect_potplayer(product):
 
 
 def detect_webview2(product):
-    """Edge WebView2 固定版运行时（Fixed Version Runtime）x64 cab 完整离线包。
+    """Edge WebView2：下载地址使用常青版（Evergreen）独立安装程序完整包 x64。
 
-    官方下载页把各版本 cab 链接写在内嵌 JSON 里，斜杠是 \\u002F 转义；
-    还原后按版本号取**最大**的一条（页面同时列多个历史版本，不能取第一个）。
-    版本号以 cab 里的为准（可能比 Edge 稳定版 API 先放包）；
-    日期优先取 cab 的 Last-Modified（GMT 转北京时间），回退 Edge 发布日。
+    版本取 Edge 稳定版 CDP API —— 常青 WebView2 与 Edge Stable 同一版本线；
+    体积/日期 HEAD 常青安装包（fwlink 2124701 会 302 到当前最新的
+    MicrosoftEdgeWebView2RuntimeInstallerX64.exe，约 205MB）。
+    不再使用固定版（Fixed Version）cab 直链（cab 是按版本冻结的小包）。
     """
-    _fb = (product.get('version', ''), product.get('download_url', ''),
-           product.get('download_url', ''), product.get('size', 0),
+    import json as _json
+    import ssl as _ssl
+
+    dl = product.get('download_url') or 'https://go.microsoft.com/fwlink/?linkid=2124701'
+    _fb = (product.get('version', ''), dl, dl, product.get('size', 0),
            product.get('date', ''), '')
+
+    version = ''
     try:
-        req = urllib.request.Request(product['check_url'], headers={'User-Agent': UA})
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            html = resp.read().decode('utf-8', 'ignore')
+        ctx = _ssl.create_default_context()
+        ctx.check_hostname = False
+        ctx.verify_mode = _ssl.CERT_NONE
+        appid = 'msedge-stable-win-x64'
+        headers = {'User-Agent': 'Microsoft Edge Update/1.3.183.29;winhttp',
+                   'Content-Type': 'application/json'}
+        body = _json.dumps({'targetingAttributes': {
+            'IsInternalUser': True, 'Updater': 'MicrosoftEdgeUpdate',
+            'UpdaterVersion': '1.3.183.29'}}).encode()
+        url = ('https://msedge.api.cdp.microsoft.com/api/v2/contents/Browser/'
+               f'namespaces/Default/names/{appid}/versions/latest?action=select')
+        req = urllib.request.Request(url, data=body, headers=headers)
+        with urllib.request.urlopen(req, timeout=20, context=ctx) as resp:
+            data = _json.loads(resp.read().decode())
+        version = data.get('ContentId', {}).get('Version', '')
+        if version:
+            print(f"  Edge API 版本: {version}")
     except Exception as e:
-        print(f"  ⚠️ WebView2 下载页访问失败: {e}")
-        return _fb
+        print(f"  ⚠️ WebView2 版本获取失败: {e}")
 
-    html = html.replace('\\u002F', '/').replace('\\/', '/')
-    urls = re.findall(
-        r'(https://msedge\.sf\.dl\.delivery\.mp\.microsoft\.com/filestreamingservice/files/'
-        r'[0-9a-f-]+/Microsoft\.WebView2\.FixedVersionRuntime\.\d+\.\d+\.\d+\.\d+\.x64\.cab)',
-        html)
-    if not urls:
-        print("  ⚠️ WebView2 页面未解析到 x64 cab 直链")
-        return _fb
-
-    best_url, best_ver = '', ''
-    for u in set(urls):
-        m = re.search(r'FixedVersionRuntime\.(\d+\.\d+\.\d+\.\d+)\.x64\.cab', u)
-        if not m:
-            continue
-        v = m.group(1)
-        if not best_ver or _ver_tuple(v) > _ver_tuple(best_ver):
-            best_url, best_ver = u, v
-    if not best_ver:
+    if not version:
+        print("  ⚠️ WebView2 版本回退配置值")
         return _fb
 
     size = 0
     last_mod = ''
     try:
-        req = urllib.request.Request(best_url, method='HEAD', headers={'User-Agent': UA})
-        with urllib.request.urlopen(req, timeout=20) as resp:
+        req = urllib.request.Request(dl, method='HEAD', headers={'User-Agent': UA})
+        with urllib.request.urlopen(req, timeout=25) as resp:
             cl = resp.headers.get('Content-Length', '')
             if cl.isdigit() and int(cl) > 0:
                 size = int(cl)
             last_mod = resp.headers.get('Last-Modified', '')
     except Exception as e:
-        print(f"  ⚠️ WebView2 cab 探测失败: {e}")
+        print(f"  ⚠️ WebView2 常青安装包探测失败: {e}")
     date = parse_date(last_mod) or product.get('date', '')
-    print(f"  WebView2 固定版 cab: {best_ver}, {size/1024/1024:.0f}MB, {date}")
-    return best_ver, best_url, best_url, size, date, ''
+    print(f"  WebView2 常青版安装包: {size/1024/1024:.0f}MB, {date}")
+    return version, dl, dl, size, date, ''
 
 
 def detect_edge_api(product):
