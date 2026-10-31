@@ -7939,6 +7939,20 @@ def main():
         # 这样每个软件停在各自上次检出更新的时间点，不跟着工作流整体跳。
         if info is not None:
             old = old_data.get(name) or {}
+            # 发布时间口径：版本变了才算发布，取「本轮检测到该版本」的日期
+            # （并与安装包 Last-Modified 取较晚者）；版本没变就沿用旧日期。
+            # 原因：CDN 常提前上传/重新上传，LM 会早于真正上线日（如 360 浏览器
+            # 包 10-29 就上传了，10-31 才放出 17.1.1118 的版本号，29/30 号线上无更新）。
+            # 资源站（allow_no_size，无安装包）维持原逻辑。
+            if old and not allow_no_size:
+                _ov, _nv = str(old.get('version', '')), str(info.get('version', ''))
+                if _nv and _ov and _nv == _ov:
+                    if old.get('last_modified'):
+                        info['last_modified'] = old['last_modified']
+                elif _nv and _ov and _nv != _ov:
+                    _lm = str(info.get('last_modified') or '')
+                    _pub = RUN_TS[:10]
+                    info['last_modified'] = max(_pub, _lm) if _lm else _pub
             changed = (str(info.get('version', '')) != str(old.get('version', ''))
                        or str(info.get('last_modified', '')) != str(old.get('last_modified', ''))
                        or (info.get('update_items') or []) != (old.get('update_items') or [])
