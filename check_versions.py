@@ -655,7 +655,7 @@ PRODUCTS = [
     },
     {
         'name': 'PowerDirector',
-        'name_cn': 'PowerDirector 365',
+        'name_cn': '威力导演',
         'icon': 'PD',
         'icon_color': 'linear-gradient(135deg, #2c3e50, #f39c12)',
         'category': '视频编辑',
@@ -687,7 +687,7 @@ PRODUCTS = [
     },
     {
         'name': 'PhotoDirector',
-        'name_cn': 'PhotoDirector 365',
+        'name_cn': '相册大师',
         'icon': 'PhD',
         'icon_color': 'linear-gradient(135deg, #8e44ad, #3498db)',
         'category': '图像处理',
