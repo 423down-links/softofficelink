@@ -311,11 +311,6 @@ PRODUCTS = [
         'detect_type': 'scrape',
         'check_url': 'https://bbs.360.cn/thread-16184433-1-1.html',
         'version_regex': r'(17\.1\.\d+)\.64',
-        # 帖子里首行是最新更新日（后面还跟着 10-21、10-27 等历史记录），
-        # CDN 包 Last-Modified 只是提前上传时间（会早于公布日），
-        # 所以取页面里的最新日期作为发布时间。
-        'date_regex': r'(2026-\d{2}-\d{2})',
-        'prefer_scraped_date': True,
         'url_pattern': 'https://sedl.360tpcdn.com/se/360se{ver}.64.exe',
         'default_size_mb': 210.5,
         'param_format': '',
