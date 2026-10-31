@@ -674,6 +674,9 @@ PRODUCTS = [
         'cyberlink_full_installer_sr': ['VDE260910-01'],
         'cyberlink_full_installer_lang': 'Enu',
         'version_authority': 'official_installer',
+        # 完整包 SR 里带构建日（PTD261027-01 / VDE261019-01），CDN 又不给 LM（HEAD 403），
+        # 让检测器给出的日期直接上线上，不走「检测日」口径。
+        'date_authority': 'detector',
         'version': '25.0.1019.0',
         'base_version': '25.0.1019.0',
         'size': 722417392,
@@ -706,6 +709,9 @@ PRODUCTS = [
         # 版本口径换成「官方完整包文件名」，与线上旧值（1021，来自 nsane 标题）不可比，
         # 声明权威源让防降级放行这次 1021 → 1011 的口径切换
         'version_authority': 'official_installer',
+        # 完整包 SR 里带构建日（PTD261027-01 / VDE261019-01），CDN 又不给 LM（HEAD 403），
+        # 让检测器给出的日期直接上线上，不走「检测日」口径。
+        'date_authority': 'detector',
         # 试用通道的 DisplayBuildNumber 是安装框架版本（17.6.x），不能当产品版本号
         'cyberlink_trial_version_trusted': False,
         'base_version': '18.0.1011.0',
@@ -3826,6 +3832,50 @@ def _cyberlink_full_ver_from_name(fname):
     return ''
 
 
+def _cyberlink_date_from_version(ver):
+    """从完整包产品版本里的构建号推发布日：25.0.1027.0 → 2026-10-27。
+
+    CyberLink 的产品版本第 3 段是 MMDD 构建号（1027 = 10 月 27 日），
+    年份取当年，若算出来是未来日期则退回上一年。
+    """
+    m = re.match(r'[\d.]+\.(\d{2})(\d{2})\.', str(ver))
+    if not m:
+        return ''
+    mo, dd = int(m.group(1)), int(m.group(2))
+    if not (1 <= mo <= 12 and 1 <= dd <= 31):
+        return ''
+    try:
+        today = datetime.now(timezone(timedelta(hours=8))).date()
+        d = datetime(today.year, mo, dd).date()
+        if d > today:
+            d = datetime(today.year - 1, mo, dd).date()
+        return d.isoformat()
+    except ValueError:
+        return ''
+
+
+def _cyberlink_sr_candidates(product):
+    """生成完整包 SR 候选：配置里的 SR + 最近 N 天自动枚举。
+
+    CyberLink 每个构建都分配全新 SR（PTD261027-01 / VDE261019-01），
+    SR 一旦硬编码就永远只拿到那天的旧包 —— 线上停更的根因。
+    这里按「SR 前缀 + 最近 cyberlink_sr_lookback 天（默认 60）」枚举，
+    接口对无效 SR 返回 error（不给 link），对有效 SR 返回直链，取版本最大者。
+    """
+    srs = product.get('cyberlink_full_installer_sr') or []
+    if isinstance(srs, str):
+        srs = [srs]
+    srs = [x for x in srs if x]
+    prefix = product.get('cyberlink_sr_prefix') or (srs[0][:3] if srs else '')
+    days = int(product.get('cyberlink_sr_lookback', 60))
+    if not prefix:
+        return srs
+    now = datetime.now(timezone(timedelta(hours=8)))
+    gen = [f"{prefix}{(now - timedelta(days=i)).strftime('%y%m%d')}-01"
+           for i in range(days + 1)]
+    return srs + gen
+
+
 def _cyberlink_full_installer_link(product):
     """走官方 get-link-v2.jsp 拿「完整离线安装包」直链。
 
@@ -3835,39 +3885,47 @@ def _cyberlink_full_installer_link(product):
     pver = str(product.get('cyberlink_full_installer_version') or '')
     vtype = product.get('cyberlink_full_installer_vtype') or 'trial'
     lang = product.get('cyberlink_full_installer_lang') or 'Enu'
-    srs = product.get('cyberlink_full_installer_sr') or []
-    if isinstance(srs, str):
-        srs = [srs]
-    srs = [x for x in srs if x] or ['PTD260514-01']
+    srs = _cyberlink_sr_candidates(product)
     want = name.lower()
+    host = CYBERLINK_GETLINK_HOSTS[0]
 
-    for sr in srs:
+    def probe(sr):
         qs = ('?PRODUCTNAME={n}&PRODUCTVERSION={v}&VERSIONTYPE={t}&SR={sr}'
               '&VID=4.2.1.14316&LANGUAGE={lang}&ostype=Windows').format(
                   n=urllib.parse.quote(name), v=urllib.parse.quote(pver),
                   t=urllib.parse.quote(vtype), sr=urllib.parse.quote(sr),
                   lang=urllib.parse.quote(lang))
-        for host in CYBERLINK_GETLINK_HOSTS:
-            try:
-                req = urllib.request.Request(
-                    host + '/prog/util/downloader/get-link-v2.jsp' + qs,
-                    headers={'User-Agent': UA, 'Referer': 'https://www.cyberlink.com/'})
-                with urllib.request.urlopen(req, timeout=25) as resp:
-                    obj = json.loads(resp.read().decode('utf-8', 'ignore'))
-            except Exception as e:
-                print(f"  ⚠️ 完整包接口不可用({urllib.parse.urlparse(host).netloc}): {e}")
-                continue
-            link = str(obj.get('link') or '').strip()
-            if not link:
-                print(f"  ⚠️ 完整包接口无直链(SR={sr}): {obj.get('error', obj)}")
-                continue
-            fname = urllib.parse.unquote(link.rsplit('/', 1)[-1])
-            if want and want not in fname.lower():
-                print(f"  ⚠️ 完整包接口返回了别的产品({fname[:70]})，跳过")
-                continue
-            ver = _cyberlink_full_ver_from_name(fname)
-            print(f"  完整离线包: {fname[:90]}")
-            return link, str(obj.get('md5') or '').strip(), ver
+        try:
+            req = urllib.request.Request(
+                host + '/prog/util/downloader/get-link-v2.jsp' + qs,
+                headers={'User-Agent': UA, 'Referer': 'https://www.cyberlink.com/'})
+            with urllib.request.urlopen(req, timeout=12) as resp:
+                obj = json.loads(resp.read().decode('utf-8', 'ignore'))
+        except Exception:
+            return None
+        link = str(obj.get('link') or '').strip()
+        if not link:
+            return None
+        fname = urllib.parse.unquote(link.rsplit('/', 1)[-1])
+        if want and want not in fname.lower():
+            return None
+        ver = _cyberlink_full_ver_from_name(fname)
+        if not ver:
+            return None
+        return ver, link, str(obj.get('md5') or '').strip(), fname
+
+    best = None
+    try:
+        with ThreadPoolExecutor(max_workers=8) as ex:
+            for r in ex.map(probe, srs):
+                if r and (best is None or _ver_tuple(r[0]) > _ver_tuple(best[0])):
+                    best = r
+    except Exception as e:
+        print(f"  ⚠️ 完整包并发探测异常: {e}")
+    if best:
+        print(f"  完整离线包: {best[3][:90]}")
+        return best[1], best[2], best[0]
+    print(f"  ⚠️ 完整包接口未返回直链（枚举 {len(srs)} 个 SR 均无效）")
     return '', '', ''
 
 
@@ -3897,6 +3955,7 @@ def detect_cyberlink(product):
     # 文件名带真实构建号 → 版本号与下载包同源（不再出现「显示 1021、包的签名却是 0908」）。
     # 一旦命中就以它为准。
     full_ok = False
+    date_from_ver = False
     if product.get('cyberlink_full_installer'):
         url_full, md5_full, ver_full = _cyberlink_full_installer_link(product)
         if url_full:
@@ -3908,7 +3967,21 @@ def detect_cyberlink(product):
                 full_ok = True
                 _VER_SOURCE[product['name']] = product.get(
                     'version_authority', 'official_installer')
-                print(f"  官方完整包版本: {version}")
+                # 发布日取产品版本里的构建号（MMDD）：25.0.1027.0 / 18.0.1027.0
+                # → 2026-10-27。SR 里的日期只做兜底（PowerDirector 的 SR 会滞后，
+                # 如 VDE260916-01 对应的却是 1027 构建）。
+                # CDN 不给 Last-Modified（HEAD 403），配 date_authority='detector'
+                # 让这个日期直通线上，不被「检测日」抬高。
+                _vdate = _cyberlink_date_from_version(version)
+                if _vdate:
+                    date = _vdate
+                    date_from_ver = True
+                else:
+                    m_sr = re.search(r'(?:PTD|VDE|PTE|CDD|ADD)(\d{2})(\d{2})(\d{2})-',
+                                     urllib.parse.unquote(url_full))
+                    if m_sr:
+                        date = f"20{m_sr.group(1)}-{m_sr.group(2)}-{m_sr.group(3)}"
+                print(f"  官方完整包版本: {version} ({date})")
 
     pid = product.get('cyberlink_product_id')
     if pid:
@@ -3985,8 +4058,11 @@ def detect_cyberlink(product):
             # 否则新版本会被写回旧包的时间。
             if ddate:
                 if full_ok:
-                    # 完整包通道：版本就来自这个包，日期直接取包时间，不与旧配置值比大小
-                    date = ddate
+                    # 完整包通道：版本就来自这个包。日期优先用版本里的构建日
+                    # （1027 → 10-27）；包的 LM 是 CDN 上传时间，常晚一天，
+                    # 只有构建日拿不到时才用 LM。
+                    if not date_from_ver:
+                        date = ddate
                 else:
                     date = max(ddate, date) if date else ddate
     except Exception:
@@ -7951,9 +8027,14 @@ def main():
                     if old.get('last_modified'):
                         info['last_modified'] = old['last_modified']
                 elif _nv and _ov and _nv != _ov:
-                    _lm = str(info.get('last_modified') or '')
-                    _pub = RUN_TS[:10]
-                    info['last_modified'] = max(_pub, _lm) if _lm else _pub
+                    # 检测器自己给出了准确日期（如 CyberLink 完整包 SR 里的构建日）
+                    # 就直通，不再被「检测日」抬高。
+                    if product.get('date_authority') == 'detector':
+                        pass
+                    else:
+                        _lm = str(info.get('last_modified') or '')
+                        _pub = RUN_TS[:10]
+                        info['last_modified'] = max(_pub, _lm) if _lm else _pub
             changed = (str(info.get('version', '')) != str(old.get('version', ''))
                        or str(info.get('last_modified', '')) != str(old.get('last_modified', ''))
                        or (info.get('update_items') or []) != (old.get('update_items') or [])
