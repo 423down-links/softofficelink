@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T12:51:55.446690+00:00",
+  "updated_at": "2026-11-01T13:07:32.235893+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-10-28 16:21",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.58",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794142277&P2=404&P3=2&P4=lwDnFQWKE%2f8RChgRgngw5kZJPN48EdgkdT%2f5Dvsd2jG2Lplv9iMSOkkP40Mp2lJC4gT5fCohlbUsNjEj0GY7Nw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794142277&P2=404&P3=2&P4=lwDnFQWKE%2f8RChgRgngw5kZJPN48EdgkdT%2f5Dvsd2jG2Lplv9iMSOkkP40Mp2lJC4gT5fCohlbUsNjEj0GY7Nw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794143174&P2=404&P3=2&P4=m6N1dMJF7i5dZF%2fIJLhUoh0peLpSs4ikHm4EHWzwQqJwhxmpuJTQKxDvl5RlFejANIydlyXIb18%2f7xhEk7lwLQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794143174&P2=404&P3=2&P4=m6N1dMJF7i5dZF%2fIJLhUoh0peLpSs4ikHm4EHWzwQqJwhxmpuJTQKxDvl5RlFejANIydlyXIb18%2f7xhEk7lwLQ%3d%3d",
       "downloads": [],
       "size": 208507216,
       "size_mb": 198.8,
@@ -2177,7 +2177,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.3/CrystalDiskInfo9_9_3.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-10-11",
       "md5": "",
@@ -2331,7 +2331,7 @@
       "official_site": "https://mkvtoolnix.download/",
       "update_items": [],
       "detected_at": "2026-10-20 00:59",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
