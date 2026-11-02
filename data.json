@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T11:22:04.119061+00:00",
+  "updated_at": "2026-11-02T11:52:44.938842+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.43",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe?v=1793618480590&n=ldinst_9.5.43_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe?v=1793620283356&n=ldinst_9.5.43_ld_407594_ld.exe",
       "downloads": [],
       "size": 602964448,
       "size_mb": 575.0,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.0.34",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.34.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.34.exe?v=1793618480258&n=ldinst_14.0.34_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.34.exe?v=1793620283919&n=ldinst_14.0.34_ld_412570_ld.exe",
       "downloads": [],
       "size": 744727008,
       "size_mb": 710.2,
@@ -187,8 +187,8 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-10-28 16:21",
-      "fb_streak": 2,
-      "fb_skip_until": 1793618542
+      "fb_streak": 3,
+      "fb_skip_until": 1793623064
     },
     {
       "name": "WinHex",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.58",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794223276&P2=404&P3=2&P4=cd0xpTY48ffso1upMfSb61Us0qagwx1oDLsJZTixjQAcA2OMoe3n4WJ75l4STcVDjDK2U%2bnykkGqVeNZ6eQr8w%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794223276&P2=404&P3=2&P4=cd0xpTY48ffso1upMfSb61Us0qagwx1oDLsJZTixjQAcA2OMoe3n4WJ75l4STcVDjDK2U%2bnykkGqVeNZ6eQr8w%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794225079&P2=404&P3=2&P4=Mt6RM3faR783bAY9sm%2bvSIlPQzaeznxOW8I%2b8Lu8t%2b2Ut59aG3N4ZghTm1aqdO5t9FiOg4BvH1zf5hmuPdZHxg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794225079&P2=404&P3=2&P4=Mt6RM3faR783bAY9sm%2bvSIlPQzaeznxOW8I%2b8Lu8t%2b2Ut59aG3N4ZghTm1aqdO5t9FiOg4BvH1zf5hmuPdZHxg%3d%3d",
       "downloads": [],
       "size": 208507216,
       "size_mb": 198.8,
@@ -1491,17 +1491,17 @@
       "icon": "CC",
       "icon_color": "linear-gradient(135deg, #1abc9c, #16a085)",
       "category": "系统工具",
-      "version": "7.13.1573",
+      "version": "7.13.1591",
       "download_url": "https://bits.avcdn.net/productfamily_CCLEANER7/insttype_FREE/platform_WIN/installertype_FULL/build_RELEASE",
       "download_url_with_params": "https://bits.avcdn.net/productfamily_CCLEANER7/insttype_FREE/platform_WIN/installertype_FULL/build_RELEASE",
       "downloads": [],
       "size": 159196976,
       "size_mb": 151.8,
-      "last_modified": "2026-10-21",
+      "last_modified": "2026-11-02",
       "md5": "",
       "official_site": "https://www.ccleaner.com/zh-cn",
       "update_items": [],
-      "detected_at": "2026-10-22 00:49",
+      "detected_at": "2026-11-02 19:51",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2037,8 +2037,8 @@
       "official_site": "https://www.7-zip.org/",
       "update_items": [],
       "detected_at": "2026-10-22 12:29",
-      "fb_streak": 9,
-      "fb_skip_until": 1793618569
+      "fb_streak": 10,
+      "fb_skip_until": 1793623964
     },
     {
       "name": "pdfFactory Pro",
