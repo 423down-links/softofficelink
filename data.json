@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T21:52:05.719283+00:00",
+  "updated_at": "2026-11-02T22:06:39.065038+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-11-01 04:41",
-      "fb_streak": 38,
-      "fb_skip_until": 1793656340
+      "fb_streak": 39,
+      "fb_skip_until": 1793660799
     },
     {
       "name": "WeChat",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.58",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794261078&P2=404&P3=2&P4=CbVM%2fu4WwkcaOj3%2fHt3j8vbP10FPrX5lZKIKSimLxjDBo32yRBl8rVMGASiUkuPZavU3uB30zIyKCegAqcZq6A%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794261078&P2=404&P3=2&P4=CbVM%2fu4WwkcaOj3%2fHt3j8vbP10FPrX5lZKIKSimLxjDBo32yRBl8rVMGASiUkuPZavU3uB30zIyKCegAqcZq6A%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794261973&P2=404&P3=2&P4=AWdi%2bNBY878MFnSbzX4ciJewDKo8yqsqjHB%2fnImi6SGY3jdWEki68SXwTCg4YOIfRnnio0PE44I%2f%2fYf%2fjiHEHg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794261973&P2=404&P3=2&P4=AWdi%2bNBY878MFnSbzX4ciJewDKo8yqsqjHB%2fnImi6SGY3jdWEki68SXwTCg4YOIfRnnio0PE44I%2f%2fYf%2fjiHEHg%3d%3d",
       "downloads": [],
       "size": 208507216,
       "size_mb": 198.8,
@@ -1816,12 +1816,12 @@
         },
         {
           "name": "Boris FX Direct",
-          "version": "2.0.26",
-          "download_url": "https://borisfxdownloads.com/borisfx/store/borisfxdirect/BorisFXDirect-2.0.26-win.zip",
+          "version": "2.0.28",
+          "download_url": "https://borisfxdownloads.com/borisfx/store/borisfxdirect/BorisFXDirect-2.0.28-win.zip",
           "desc": "Boris FX 插件/资源中心：管理下载特效插件，也能检查 Vegas 更新"
         }
       ],
-      "detected_at": "2026-10-23 00:56",
+      "detected_at": "2026-11-03 06:06",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2415,8 +2415,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 78,
-      "fb_skip_until": 1793656340
+      "fb_streak": 79,
+      "fb_skip_until": 1793660799
     },
     {
       "name": "BitComet",
