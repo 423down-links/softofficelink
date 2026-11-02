@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T05:22:08.318467+00:00",
+  "updated_at": "2026-11-02T05:52:43.478868+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.43",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe?v=1793596882589&n=ldinst_9.5.43_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe?v=1793598691760&n=ldinst_9.5.43_ld_407594_ld.exe",
       "downloads": [],
       "size": 602964448,
       "size_mb": 575.0,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.0.34",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.34.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.34.exe?v=1793596887330&n=ldinst_14.0.34_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.34.exe?v=1793598691812&n=ldinst_14.0.34_ld_412570_ld.exe",
       "downloads": [],
       "size": 744727008,
       "size_mb": 710.2,
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.58",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794201679&P2=404&P3=2&P4=EpJm4iOjBAVP5u9Y8QbksU5hHqVYmhSvcuW62YQgrxUJkqF0b09v7QZZ%2bcsJ37gGbDf%2bwS1ZG5oQQgZpA9ryLw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794201679&P2=404&P3=2&P4=EpJm4iOjBAVP5u9Y8QbksU5hHqVYmhSvcuW62YQgrxUJkqF0b09v7QZZ%2bcsJ37gGbDf%2bwS1ZG5oQQgZpA9ryLw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794203487&P2=404&P3=2&P4=igINrQyO%2ba5rW%2fUP1lL0ZwLXKqfm0KNjQ4uG6GRVW9e1IBdLT7GbgcpQF8fdcFdbYc%2frk9omJAKUv2KWV9aXpQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794203487&P2=404&P3=2&P4=igINrQyO%2ba5rW%2fUP1lL0ZwLXKqfm0KNjQ4uG6GRVW9e1IBdLT7GbgcpQF8fdcFdbYc%2frk9omJAKUv2KWV9aXpQ%3d%3d",
       "downloads": [],
       "size": 208507216,
       "size_mb": 198.8,
@@ -334,7 +334,7 @@
       "official_site": "https://browser.360.cn/",
       "update_items": [],
       "detected_at": "2026-10-09 09:56",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -2037,8 +2037,8 @@
       "official_site": "https://www.7-zip.org/",
       "update_items": [],
       "detected_at": "2026-10-22 12:29",
-      "fb_streak": 5,
-      "fb_skip_until": 1793596963
+      "fb_streak": 6,
+      "fb_skip_until": 1793602363
     },
     {
       "name": "pdfFactory Pro",
