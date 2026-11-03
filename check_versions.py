@@ -436,10 +436,15 @@ PRODUCTS = [
         'icon': 'IE',
         'icon_color': 'linear-gradient(135deg, #e67e22, #d35400)',
         'category': '系统工具',
-        'detect_type': 'fixed',
-        'version': '12.1.1.185',
-        'date': '2026-10-15',
+        # 官网页面不写版本号，下载地址是固定 zip，fixed 模式只能显示人工填的旧版本。
+        # 官方 zip 的第一条目就是 Changelog.txt，首行含「版本 + 发布日期」，
+        # 用 16KB Range 请求读 zip 头部即可，不必下 3.6MB 整包。
+        'detect_type': 'zip_changelog',
+        'version': '12.2.0.187',
+        'date': '2026-11-01',
+        'date_authority': 'detector',
         'download_url': 'https://www.havysoft.cl/download/IE_Install.zip',
+        'zip_head_bytes': 16384,
         'official_site': 'https://www.havysoft.cl/descargar.html',
     },
     {
@@ -3532,6 +3537,65 @@ def _page_version_via_curl(url, regex, timeout=30):
         return m.group(1) if (m and m.group(1)) else ''
     except Exception:
         return ''
+
+
+def detect_zip_changelog(product):
+    """从官方 zip 包内首条目 Changelog.txt 读版本与发布日期（Range 只取前 16KB）。
+
+    InnoExtractor 官网不写版本号、下载地址是固定 zip，fixed 模式只能一直显示
+    人工填的旧版本 —— 这是线上长期检测不到新版的根因。官方 zip 的第一条目
+    就是 Changelog.txt，首行形如：
+        Changelog for InnoExtractor 2027 v12.2.0.187 (November 1, 2026):
+    只需一次 Range 请求拿 zip 头部（本地文件头 + deflate 流），解压首条目即可，
+    不用下 3.6MB 整包。读不到时回退配置值，不会把线上值降级。
+    """
+    import struct, zlib
+    url = product['download_url']
+    head_n = int(product.get('zip_head_bytes', 16384))
+    version = product.get('version', '')
+    date = product.get('date', '')
+    size = product.get('size', 0)
+    try:
+        req = urllib.request.Request(url, headers={'User-Agent': UA,
+                                                  'Range': f'bytes=0-{head_n - 1}'})
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            blob = resp.read(head_n)
+            cr = resp.headers.get('Content-Range') or ''
+            m_total = re.search(r'/(\d+)$', cr)
+            if m_total:
+                size = int(m_total.group(1))
+    except Exception as e:
+        print(f"  ⚠️ zip 头部读取失败: {e}")
+        return version, url, url, size, date, ''
+
+    try:
+        if blob[:4] != b'PK\x03\x04':
+            raise ValueError('不是 zip 本地文件头')
+        (_sig, _ver, _flags, method, _mt, _md, _crc, csize, usize,
+         nlen, elen) = struct.unpack('<IHHHHHIIIHH', blob[:30])
+        name = blob[30:30 + nlen].decode('utf-8', 'ignore')
+        off = 30 + nlen + elen
+        raw = blob[off:off + csize] if csize else blob[off:]
+        if method == 8:
+            text = zlib.decompressobj(-15).decompress(raw).decode('utf-8', 'ignore')
+        else:
+            text = raw.decode('utf-8', 'ignore')
+        print(f"  zip 首条目: {name}")
+    except Exception as e:
+        print(f"  ⚠️ zip 首条目解析失败: {e}")
+        return version, url, url, size, date, ''
+
+    m = re.search(r'v(\d+(?:\.\d+){2,3})', text)
+    if m:
+        version = m.group(1)
+    m = re.search(r'\(([A-Za-z]+ \d{1,2}, \d{4})\)', text)
+    if m:
+        try:
+            date = datetime.strptime(m.group(1), '%B %d, %Y').strftime('%Y-%m-%d')
+        except ValueError:
+            pass
+    print(f"  Changelog 版本: {version}  发布日期: {date}")
+    return version, url, url, size, date, ''
 
 
 def detect_fixed(product):
@@ -7774,6 +7838,8 @@ def find_latest(product):
         version, full_url, param_url, size, date, md5 = detect_ludashi(product)
     elif detect_type == 'fixed':
         version, full_url, param_url, size, date, md5 = detect_fixed(product)
+    elif detect_type == 'zip_changelog':
+        version, full_url, param_url, size, date, md5 = detect_zip_changelog(product)
     elif detect_type == 'cyberlink':
         version, full_url, param_url, size, date, md5 = detect_cyberlink(product)
     elif detect_type == 'scrape':
