@@ -1195,12 +1195,17 @@ PRODUCTS = [
         'icon_color': 'linear-gradient(135deg, #ea0000, #b30000)',
         'category': '办公软件',
         'detect_type': 'increment',
-        'base_version': '2600221996',
+        'base_version': '2600322075',
         'url_pattern': 'https://ardownload2.adobe.com/pub/adobe/acrobat/win/AcrobatDC/{ver}/AcrobatDCx64Upd{ver}.msp',
         'version_format': 'adobe_build',
-        'version_display': '2026.002.21996',
-        'adobe_max_jump': 700,
-        'adobe_probe_workers': 20,
+        'version_display': '2026.003.22075',
+        # 10 位号 = 年(2)+小版本(3)+构建(5)，小版本 +1 就跳 +100000，
+        # 只扫 base+1..+700 跨不过小版本（002→003 差 100079，线上长期停更的根因）。
+        # 结构探测：小版本 +0~+3，每段扫构建 +1~+200（Adobe 每次发布构建约 +65，
+        # 200 足够覆盖 2~3 次发布；基线每天都会跟到最新，不会累积成大缺口）。
+        'adobe_max_jump': 200,
+        'adobe_minor_jump': 3,
+        'adobe_probe_workers': 64,
         'detect_timeout': 150,
         'skip_md5': True,
         'official_site': 'https://www.adobe.com/devnet-docs/acrobatetk/tools/ReleaseNotesDC/index.html',
@@ -2577,22 +2582,52 @@ def carry_version_n(version, k):
     return '.'.join(parts)
 
 
-def adobe_build_probe(base_ver, exists_fn, max_jump=700, workers=20):
-    """Adobe build 号稀疏跳跃定位：并发探测 base 之后的号段，取最大存在版本
+def adobe_encode(display_ver):
+    """显示版本 → Adobe 10 位构建号：2026.003.22075 → 2600322075。
 
-    Adobe 每次小版本更新会跳过几十个序号（实测 21931 -> 21996，中间64个全部404），
-    逐个递增探测永远扫不到目标；且 CDN 仅保留存在的少数版本，存在性不单调
-    （实测 21995 不存在而 21996 存在），二分查找同样不适用。
-
-    实测 base+1..base+700 全量探测中只有目标版本存在，因此采用并发全扫：
-    20 并发下约 700 次请求 23 秒完成，可接受。
-
-    exists_fn(int_ver, workers) -> (list[int], int) 由调用方注入（内部并发+缓存）
-    返回命中的最大存在版本号（int），未命中返回 None
+    Adobe 的 10 位号是「年(2) + 小版本(3) + 构建(5)」拼接，数据文件里存的是
+    带点的显示版本，探测前必须先还原成 10 位号，否则拿 2026.002.21996 去和
+    2600221996 比大小会判成旧版本、永远从配置基线重新扫。
     """
-    base = int(base_ver)
-    cands = list(range(base + 1, base + max_jump + 1))
-    hits, _ = exists_fn(cands, workers)
+    m = re.match(r'^(\d{4})\.(\d{3})\.(\d{4,5})$', str(display_ver))
+    if not m:
+        return ''
+    return f"{m.group(1)[2:]}{m.group(2)}{m.group(3).zfill(5)}"
+
+
+def adobe_build_probe(base_ver, exists_fn, max_jump=400, workers=20,
+                      minor_jump=3, wrap_next_year=False):
+    """Adobe 构建号稀疏跳跃定位（结构感知）。
+
+    10 位号 = 年(2) + 小版本(3) + 构建(5)。小版本段每 +1，整号就跳 +100000，
+    而构建号每次只涨几十。所以「base+1..base+700」这类平铺扫描能覆盖同小版本
+    的后续构建，却永远跨不到下一个小版本：
+        2026.002.21996(2600221996) → 2026.003.22075(2600322075) 差 100079。
+    这正是 Acrobat 长期停在旧版的根因。
+
+    改为按结构拼候选：小版本 m ∈ [当前..当前+minor_jump]，每段都扫
+    构建 cur+1..cur+max_jump（构建号随时间单调增长，跨段也在这个窗口内）；
+    跨年时小版本会重置为 001，故 wrap_next_year 时补测 (年+1, 001..)。
+
+    exists_fn(cands, workers) -> (命中列表, 探测数)，由调用方注入（内部并发+缓存）
+    返回命中的最大 10 位号（int），未命中返回 None
+    """
+    s = str(base_ver)
+    if not (len(s) == 10 and s.isdigit()):
+        base = int(base_ver)
+        hits, _ = exists_fn(list(range(base + 1, base + max_jump + 1)), workers)
+        return max(hits) if hits else None
+
+    yy, minor, build = int(s[:2]), int(s[2:5]), int(s[5:])
+    cands = set()
+    years_minors = [(yy, minor + k) for k in range(minor_jump + 1)]
+    if wrap_next_year:
+        years_minors += [(yy + 1, 1 + k) for k in range(minor_jump + 1)]
+    for y, m in years_minors:
+        hi = min(build + max_jump, 99999)
+        for b in range(build + 1, hi + 1):
+            cands.add(y * 100000000 + m * 100000 + b)
+    hits, _ = exists_fn(sorted(cands), workers)
     return max(hits) if hits else None
 
 
@@ -2665,6 +2700,12 @@ def detect_increment(product):
     # 起点优先用线上已发布版本：base_version 只是「最低基线」，
     # 线上版本比它新就以线上版本为起点，避免配置落后导致探测永远追不上。
     live_ver = _LIVE_VERSIONS.get(product['name'], '')
+    # Adobe 线上存的是带点的显示版本（2026.002.21996），探测用的是 10 位构建号，
+    # 不还原就会把「2026」和「2600221996」比大小判成旧版，永远从配置基线重扫。
+    if product.get('version_format') == 'adobe_build' and '.' in str(live_ver):
+        _enc = adobe_encode(live_ver)
+        if _enc:
+            live_ver = _enc
     # 展示版本可能是四段（PE 读出的 build 号，如 Camtasia 26.2.4.20997），
     # 但安装包地址只按前三段拼（…/2624/camtasia.exe）；探测起点必须先截断，
     # 否则会拼出 262420997 这种不存在的目录，整轮探测全 404。
@@ -2810,10 +2851,14 @@ def detect_increment(product):
                 print(f"  ⏹ 列车扫描无命中，保留 {latest}")
             _train_done = True
 
-    # Adobe build 号稀疏跳跃：并发探测 base 之后的号段取最大命中版本
+    # Adobe build 号稀疏跳跃：按「年+小版本+构建」结构并发探测，取最大命中版本
     if product.get('version_format') == 'adobe_build':
-        max_jump = product.get('adobe_max_jump', 700)
-        workers = product.get('adobe_probe_workers', 20)
+        max_jump = product.get('adobe_max_jump', 400)
+        workers = product.get('adobe_probe_workers', 32)
+        minor_jump = product.get('adobe_minor_jump', 3)
+        # 小版本段每年重置为 001，跨年前后（11~1 月）多补测下一年
+        _bj_month = (datetime.now(timezone(timedelta(hours=8))).month)
+        wrap_next_year = _bj_month in (11, 12, 1)
         cur_int = int(latest) if str(latest).isdigit() else int(current)
         _cache = {}
         _lock = threading.Lock()
@@ -2835,8 +2880,10 @@ def detect_increment(product):
                         out.append(v)
             return out, len(cands)
 
-        print(f"  Adobe build 并发探测: 基线 {cur_int}, 扫描 +1~+{max_jump} ({workers}并发)")
-        found = adobe_build_probe(cur_int, _probe_many, max_jump=max_jump, workers=workers)
+        print(f"  Adobe 构建号结构探测: 基线 {cur_int}, 小版本 +0~+{minor_jump}, 构建 +1~+{max_jump} ({workers}并发)")
+        found = adobe_build_probe(cur_int, _probe_many, max_jump=max_jump,
+                                  workers=workers, minor_jump=minor_jump,
+                                  wrap_next_year=wrap_next_year)
         if found:
             fu, fok, fsize, fdate = get_version_url(str(found))
             if fok:
