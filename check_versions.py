@@ -1199,13 +1199,16 @@ PRODUCTS = [
         'url_pattern': 'https://ardownload2.adobe.com/pub/adobe/acrobat/win/AcrobatDC/{ver}/AcrobatDCx64Upd{ver}.msp',
         'version_format': 'adobe_build',
         'version_display': '2026.003.22075',
-        # 10 位号 = 年(2)+小版本(3)+构建(5)，小版本 +1 就跳 +100000，
-        # 只扫 base+1..+700 跨不过小版本（002→003 差 100079，线上长期停更的根因）。
-        # 结构探测：小版本 +0~+3，每段扫构建 +1~+200（Adobe 每次发布构建约 +65，
-        # 200 足够覆盖 2~3 次发布；基线每天都会跟到最新，不会累积成大缺口）。
-        'adobe_max_jump': 200,
-        'adobe_minor_jump': 3,
-        'adobe_probe_workers': 64,
+        # 版本锚点：winget 官方索引（社区对 Acrobat 更新当天跟进，Reader 与 Pro
+        # 同一条 continuous 轨道，版本号一致）。锚点命中后只需 1 次 CDN HEAD
+        # 验证 Pro 包存在，整轮 2~4 个请求；winget 不可用才退回结构扫描。
+        'winget_id': 'Adobe.Acrobat.Reader.64-bit',
+        # 结构扫描兜底（winget 挂掉时）：10 位号 = 年(2)+小版本(3)+构建(5)，
+        # 小版本 +1 整号跳 +100000，平铺扫描跨不过小版本（旧逻辑停更根因）。
+        # 窗口自适应：构建 +1~+64 起，命中点贴边就倍增扩窗（见 adobe_build_probe）。
+        'adobe_max_jump': 64,
+        'adobe_minor_jump': 2,
+        'adobe_probe_workers': 32,
         'detect_timeout': 150,
         'skip_md5': True,
         'official_site': 'https://www.adobe.com/devnet-docs/acrobatetk/tools/ReleaseNotesDC/index.html',
@@ -2585,29 +2588,36 @@ def carry_version_n(version, k):
 def adobe_encode(display_ver):
     """显示版本 → Adobe 10 位构建号：2026.003.22075 → 2600322075。
 
+    兼容 winget 的写法 26.003.22075（两位年）与裸 10 位号。
     Adobe 的 10 位号是「年(2) + 小版本(3) + 构建(5)」拼接，数据文件里存的是
     带点的显示版本，探测前必须先还原成 10 位号，否则拿 2026.002.21996 去和
     2600221996 比大小会判成旧版本、永远从配置基线重新扫。
     """
-    m = re.match(r'^(\d{4})\.(\d{3})\.(\d{4,5})$', str(display_ver))
+    s = str(display_ver).strip()
+    if re.match(r'^\d{10}$', s):
+        return s
+    m = re.match(r'^(?:20)?(\d{2})\.(\d{3})\.(\d{4,5})$', s)
     if not m:
         return ''
-    return f"{m.group(1)[2:]}{m.group(2)}{m.group(3).zfill(5)}"
+    return f"{m.group(1)}{m.group(2)}{m.group(3).zfill(5)}"
 
 
-def adobe_build_probe(base_ver, exists_fn, max_jump=400, workers=20,
-                      minor_jump=3, wrap_next_year=False):
-    """Adobe 构建号稀疏跳跃定位（结构感知）。
+def adobe_build_probe(base_ver, exists_fn, max_jump=64, workers=32,
+                      minor_jump=2, wrap_next_year=False):
+    """Adobe 构建号稀疏跳跃定位（结构感知 + 自适应扩窗）。
 
     10 位号 = 年(2) + 小版本(3) + 构建(5)。小版本段每 +1，整号就跳 +100000，
     而构建号每次只涨几十。所以「base+1..base+700」这类平铺扫描能覆盖同小版本
     的后续构建，却永远跨不到下一个小版本：
         2026.002.21996(2600221996) → 2026.003.22075(2600322075) 差 100079。
-    这正是 Acrobat 长期停在旧版的根因。
 
-    改为按结构拼候选：小版本 m ∈ [当前..当前+minor_jump]，每段都扫
-    构建 cur+1..cur+max_jump（构建号随时间单调增长，跨段也在这个窗口内）；
-    跨年时小版本会重置为 001，故 wrap_next_year 时补测 (年+1, 001..)。
+    两层优化：
+    1. 结构感知：候选按「小版本 m ∈ [当前..当前+minor_jump] × 构建轴」拼装，
+       每个构建号在所有候选小版本段各探一次（构建号跨段连续递增，22031 → 22075）。
+    2. 自适应窗口：首轮只扫构建 +1~+max_jump（常态：15 分钟一轮检测根本追得上
+       发布节奏，历史单次构建跳 ≤ 65，64 窗口足够）；只有当命中点贴近窗口上界
+       （说明基线严重落后或新版密集）才把窗口倍增重扫，避免常态下为了极罕见的
+       「停摆数月后恢复」场景付出 5 倍请求。构建号 99999 封顶，窗口不会越界。
 
     exists_fn(cands, workers) -> (命中列表, 探测数)，由调用方注入（内部并发+缓存）
     返回命中的最大 10 位号（int），未命中返回 None
@@ -2619,16 +2629,32 @@ def adobe_build_probe(base_ver, exists_fn, max_jump=400, workers=20,
         return max(hits) if hits else None
 
     yy, minor, build = int(s[:2]), int(s[2:5]), int(s[5:])
-    cands = set()
     years_minors = [(yy, minor + k) for k in range(minor_jump + 1)]
     if wrap_next_year:
         years_minors += [(yy + 1, 1 + k) for k in range(minor_jump + 1)]
-    for y, m in years_minors:
-        hi = min(build + max_jump, 99999)
-        for b in range(build + 1, hi + 1):
-            cands.add(y * 100000000 + m * 100000 + b)
-    hits, _ = exists_fn(sorted(cands), workers)
-    return max(hits) if hits else None
+
+    def _round(lo, hi):
+        cands = set()
+        for y, m in years_minors:
+            for b in range(lo, hi + 1):
+                if b <= 99999:
+                    cands.add(y * 100000000 + m * 100000 + b)
+        hits, _ = exists_fn(sorted(cands), workers)
+        return hits
+
+    # 自适应扩窗：首轮 [build+1, build+max_jump]；命中贴边（离上界 < 16）则倍增
+    lo, hi, span = build + 1, build + max_jump, max_jump
+    all_hits = []
+    while True:
+        hits = _round(lo, hi)
+        all_hits += hits
+        best_build = max((h % 100000 for h in hits), default=0)
+        if hits and best_build >= hi - 16 and hi < 99999:
+            lo, span = hi + 1, span * 2
+            hi = min(hi + span, 99999)
+            continue
+        break
+    return max(all_hits) if all_hits else None
 
 
 def _url_ver(version, product):
@@ -2851,11 +2877,11 @@ def detect_increment(product):
                 print(f"  ⏹ 列车扫描无命中，保留 {latest}")
             _train_done = True
 
-    # Adobe build 号稀疏跳跃：按「年+小版本+构建」结构并发探测，取最大命中版本
+    # Adobe build 号：winget 版本锚点优先，结构扫描只作兜底
     if product.get('version_format') == 'adobe_build':
-        max_jump = product.get('adobe_max_jump', 400)
+        max_jump = product.get('adobe_max_jump', 64)
         workers = product.get('adobe_probe_workers', 32)
-        minor_jump = product.get('adobe_minor_jump', 3)
+        minor_jump = product.get('adobe_minor_jump', 2)
         # 小版本段每年重置为 001，跨年前后（11~1 月）多补测下一年
         _bj_month = (datetime.now(timezone(timedelta(hours=8))).month)
         wrap_next_year = _bj_month in (11, 12, 1)
@@ -2880,27 +2906,59 @@ def detect_increment(product):
                         out.append(v)
             return out, len(cands)
 
-        print(f"  Adobe 构建号结构探测: 基线 {cur_int}, 小版本 +0~+{minor_jump}, 构建 +1~+{max_jump} ({workers}并发)")
-        found = adobe_build_probe(cur_int, _probe_many, max_jump=max_jump,
-                                  workers=workers, minor_jump=minor_jump,
-                                  wrap_next_year=wrap_next_year)
-        if found:
-            fu, fok, fsize, fdate = get_version_url(str(found))
-            if fok:
-                latest = str(found)
-                latest_size = fsize
-                latest_date = fdate
-                current = str(found)
-                print(f"  ✓ Adobe 探测命中: {latest}")
+        # 第一层：winget 版本锚点（社区发布当天更新，Reader 与 Pro 同轨同版本号）。
+        # 锚点给出的版本只需 1 次 CDN HEAD 验证 Pro 包真实存在即可采用，
+        # 整轮 2~4 个请求，替代数百个盲扫请求。失败再退回结构扫描。
+        _anchor_hit = False
+        if product.get('winget_id'):
+            _wg_ver = ''
+            for _att in range(2):        # winget 索引下载偶发 SSL 抖动，重试一次
+                _wg_ver = fetch_winget_version(product['winget_id'])
+                if _wg_ver:
+                    break
+            _anchor = adobe_encode(_wg_ver) if _wg_ver else ''
+            if _anchor:
+                print(f"  winget 锚点版本: {_wg_ver} → 构建号 {_anchor}")
+                if int(_anchor) > cur_int:
+                    _au, _aok, _asize, _adate = get_version_url(_anchor)
+                    if _aok:
+                        latest = _anchor
+                        latest_size = _asize
+                        latest_date = _adate
+                        current = _anchor
+                        _anchor_hit = True
+                        print(f"  ✓ 锚点命中且 Pro 包存在，直接采用: {_anchor}")
+                    else:
+                        print(f"  ⚠️ 锚点版本 {_anchor} 的 Pro 包不存在（Reader 先行发布），转结构扫描")
+                else:
+                    _anchor_hit = True   # 锚点不比基线新 = 已是最新，无需扫描
+                    print(f"  ✓ 锚点不新于基线 {cur_int}，确认为最新")
+
+        # 第二层：结构扫描兜底（winget 索引不可用 / Reader 先行 Pro 未铺包）
+        if not _anchor_hit:
+            print(f"  Adobe 构建号结构探测: 基线 {cur_int}, 小版本 +0~+{minor_jump}, 构建 +1~+{max_jump} ({workers}并发)")
+            found = adobe_build_probe(cur_int, _probe_many, max_jump=max_jump,
+                                      workers=workers, minor_jump=minor_jump,
+                                      wrap_next_year=wrap_next_year)
+            if found:
+                fu, fok, fsize, fdate = get_version_url(str(found))
+                if fok:
+                    latest = str(found)
+                    latest_size = fsize
+                    latest_date = fdate
+                    current = str(found)
+                    print(f"  ✓ Adobe 探测命中: {latest}")
+                else:
+                    print(f"  ⚠️ 命中 {found} 但复查失败，保留 {latest}")
             else:
-                print(f"  ⚠️ 命中 {found} 但复查失败，保留 {latest}")
-        else:
-            print(f"  ⏹ Adobe 探测未发现新版本，保留 {latest}")
+                print(f"  ⏹ Adobe 探测未发现新版本，保留 {latest}")
 
     # 多级进位递增探测（列车扫描已定位时跳过，省掉逐段探测与节流 sleep）
+    # Adobe 构建号是 10 位裸号，无段可进位；锚点/结构扫描已定位，主循环纯属浪费
+    _adobe_done = product.get('version_format') == 'adobe_build'
     carry_count = 0
     skip_count = 0
-    _loop_iters = 0 if _train_done else MAX_INCREMENT * (MAX_CARRY + 1)
+    _loop_iters = 0 if (_train_done or _adobe_done) else MAX_INCREMENT * (MAX_CARRY + 1)
     for _ in range(_loop_iters):
         next_ver = increment_version(current)
         url, exists, size, date = get_version_url(next_ver)
