@@ -2264,6 +2264,33 @@ PRODUCTS = [
         'skip_md5': True,
         'official_site': 'https://sweetscape.com/download/',
     },
+    {
+        'name': 'FurMark',
+        'name_cn': 'FurMark 显卡烤机',
+        'alias': '甜甜圈 显卡压力测试',
+        'icon': 'FM',
+        'icon_color': 'linear-gradient(135deg, #ff6b35, #d63031)',
+        'category': '硬件检测',
+        # 官方 changelog 首行就是最新版：<b>version 2.11.0.4 - 2026.10.30</b>，
+        # 版本 + 发布日期一次抓齐，比逐号递增探测稳得多（版本换小版本就跳号）。
+        # 下载目录按发布年份分：…/downloads/files/2026/fm2/…，用 {year} 拼。
+        'detect_type': 'scrape',
+        'check_url': 'https://www.geeks3d.com/furmark/changelog/',
+        'version_regex': r'version\s*(\d+\.\d+\.\d+\.\d+)\s*-',
+        'date_regex': r'version\s*\d+\.\d+\.\d+\.\d+\s*-\s*(\d{4}\.\d{2}\.\d{2})',
+        'prefer_scraped_version': True,
+        'prefer_scraped_date': True,
+        # changelog 日期是官方发布日，不让 CDN Last-Modified（上传日，常晚 1~2 天）覆盖
+        'date_authority': 'detector',
+        'url_pattern': 'https://gpumagick.com/downloads/files/{year}/fm2/FurMark_{ver}_win64.zip',
+        'version': '2.11.0.4',
+        'date': '2026-10-30',
+        'download_url': 'https://gpumagick.com/downloads/files/2026/fm2/FurMark_2.11.0.4_win64.zip',
+        'size': 40205002,
+        'size_mb': 38.3,
+        'skip_md5': True,
+        'official_site': 'https://www.geeks3d.com/furmark/',
+    },
 ]
 
 MAX_INCREMENT = 30  # 最多递增检测30个版本
@@ -6248,9 +6275,12 @@ def detect_scrape(product):
     # 应对下载路径只用大版本、而展示版本更完整（如 MKVToolNix releases/103.0/ 目录）
     if product.get('url_pattern'):
         _vp = version.split('.')
+        # {year}：下载目录按发布年份分（FurMark 的 .../downloads/files/2026/fm2/...），
+        # 取发布日年份；没有发布日就用今年，跨年自动跟到新目录
+        _year = (scraped_date or '')[:4] or str(datetime.now(timezone.utc).year)
         url = product['url_pattern'].format(
             ver=_url_ver(version, product), ver_dot=version.replace('.', ''),
-            ver_us=version.replace('.', '_'),
+            ver_us=version.replace('.', '_'), year=_year,
             major=_vp[0], major_minor='.'.join(_vp[:2]),
             major_minor_underscore='_'.join(_vp[:2]))
         print(f"  动态构造URL: {url}")
