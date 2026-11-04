@@ -454,7 +454,14 @@ PRODUCTS = [
         'icon_color': 'linear-gradient(135deg, #ff6b35, #f7931e)',
         'category': '系统工具',
         'detect_type': 'fixed',
-        'version': '16.0.0.34',
+        # 官网页面只给三段「V 16.1.0 | 32.7 MB」，完整四段版本（16.1.0.4）
+        # 只在安装包 PE 里，固定版本模式永远显示旧值 → 和 Driver Booster 一样
+        # 改读 PE FileVersion（只取前 64KB + 资源段的 Range 请求，不下整包），
+        # 页面版本作为 PE 失败时的兜底。
+        'pe_version': True,
+        'page_version_url': 'https://www.iobit.com/en/advanceduninstaller.php',
+        'page_version_regex': r'version_desc">V\s*([\d.]+)\s*\|',
+        'version': '16.1.0.4',
         'download_url': 'https://cdn.iobit.com/dl/iobituninstaller.exe',
         'official_site': 'https://www.iobit.com/en/advanceduninstaller.php',
     },
