@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T08:52:02.587769+00:00",
+  "updated_at": "2026-11-04T09:06:46.079978+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-04 16:51",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.58",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794387073&P2=404&P3=2&P4=Grcltf3mcZsfqegX9RfmHQD8xrVJ%2btNxj%2f9icTpH3YGTZDNbgkAkDXuYJAwCyAydRYdRD8gxj%2bZC6w%2beZpFsrw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794387073&P2=404&P3=2&P4=Grcltf3mcZsfqegX9RfmHQD8xrVJ%2btNxj%2f9icTpH3YGTZDNbgkAkDXuYJAwCyAydRYdRD8gxj%2bZC6w%2beZpFsrw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794387976&P2=404&P3=2&P4=D8qKMFlOnosWHnlAqrCY5eA7d2E7zRmdsKVsGLRoOrbkhTrbsk8jQwNfturinXNeK5FbFKs%2fCrIY4qcNbZ%2bxRw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794387976&P2=404&P3=2&P4=D8qKMFlOnosWHnlAqrCY5eA7d2E7zRmdsKVsGLRoOrbkhTrbsk8jQwNfturinXNeK5FbFKs%2fCrIY4qcNbZ%2bxRw%3d%3d",
       "downloads": [],
       "size": 208507216,
       "size_mb": 198.8,
@@ -1958,22 +1958,22 @@
       "icon": "M",
       "icon_color": "linear-gradient(135deg, #8e44ad, #6c3483)",
       "category": "资源站",
-      "version": "2026-11-03",
+      "version": "2026-11-04",
       "download_url": "https://w18.monkrus.ws/",
       "download_url_with_params": "https://w18.monkrus.ws/",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-11-03",
+      "last_modified": "2026-11-04",
       "md5": "",
       "official_site": "https://w18.monkrus.ws/",
       "update_items": [
         {
-          "title": "Windows 11 (v26H2) RUS-ENG -16in1- HWID-act (AIO)",
-          "url": "https://w18.monkrus.ws/2026/11/windows-11-v26h2-rus-eng-16in1-hwid-act.html"
+          "title": "Adobe Acrobat 2026 (v26.3.22075) x86 Multilingual",
+          "url": "https://w18.monkrus.ws/2026/11/adobe-acrobat-2026-v26322075-x86.html"
         }
       ],
-      "detected_at": "2026-11-03 19:06",
+      "detected_at": "2026-11-04 17:06",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
