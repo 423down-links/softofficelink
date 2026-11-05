@@ -2259,17 +2259,46 @@ PRODUCTS = [
         'icon': '010',
         'icon_color': 'linear-gradient(135deg, #00b894, #00a8ff)',
         'category': '开发工具',
-        # 官方便携版直链文件名带完整版本（010EditorWin64Portable17.0.zip），
-        # 发布页 https://sweetscape.com/download/ 也写 "Version: 17.0"；
-        # 新版本换目录/文件名 → increment 探测即可自动跟进，发布时间取包体 Last-Modified
-        'detect_type': 'increment',
-        'base_version': '17.0',
+        # 官方下载页直接写 "Version: 17.0.1"，便携版文件名也带三段版本
+        # （010EditorWin64Portable17.0.1.zip）。原来的两段 base_version=17.0
+        # 逐段递增只能生成 17.1 / 18.0，永远拼不出 17.0.1 → 线上停在 17.0。
+        # 改成从下载页抓版本再拼直链。
+        'detect_type': 'scrape',
+        'check_url': 'https://sweetscape.com/download/',
+        'version_regex': r'Version:\s*(\d+(?:\.\d+){1,3})',
+        'prefer_scraped_version': True,
         'url_pattern': 'https://download.sweetscape.com/010EditorWin64Portable{ver}.zip',
-        'max_skip': 2,
-        'max_carry': 2,
+        'version': '17.0.1',
+        'date': '2026-10-28',
+        'download_url': 'https://download.sweetscape.com/010EditorWin64Portable17.0.1.zip',
         # 34MB 的 zip，算 MD5 要整包下载，网络慢时会拖到检测超时 → 跳过
         'skip_md5': True,
         'official_site': 'https://sweetscape.com/download/',
+    },
+    {
+        'name': 'CPU-Z',
+        'name_cn': 'CPU-Z',
+        'icon': 'CZ',
+        'icon_color': 'linear-gradient(135deg, #00b894, #0984e3)',
+        'category': '硬件检测',
+        # 官网产品卡直接给「CPU-Z 3.02 + November 04th, 2026」，版本和发布日
+        # 一次抓齐；下载文件名也带版本（cpu-z_3.02-cn.zip），用 {ver} 拼直链。
+        'detect_type': 'scrape',
+        'check_url': 'https://www.cpuid.com/softwares/cpu-z.html',
+        'version_regex': r'CPU-Z\s*(\d+(?:\.\d+)+)</span>',
+        'date_regex': r'class="date"><span>([^<]+)</span>',
+        'prefer_scraped_version': True,
+        'prefer_scraped_date': True,
+        # 官网标注的发布日期就是正式版发布日，不被 CDN 上传时间覆盖
+        'date_authority': 'detector',
+        'url_pattern': 'https://download.cpuid.com/cpu-z/cpu-z_{ver}-cn.zip',
+        'version': '3.02',
+        'date': '2026-11-04',
+        'download_url': 'https://download.cpuid.com/cpu-z/cpu-z_3.02-cn.zip',
+        'size': 5519774,
+        'size_mb': 5.3,
+        'skip_md5': True,
+        'official_site': 'https://www.cpuid.com/softwares/cpu-z.html',
     },
     {
         'name': 'FurMark',
