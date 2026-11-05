@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T03:51:44.466411+00:00",
+  "updated_at": "2026-11-05T04:06:42.833040+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,8 +187,8 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-04 16:51",
-      "fb_streak": 2,
-      "fb_skip_until": 1793850723
+      "fb_streak": 0,
+      "fb_skip_until": 0
     },
     {
       "name": "WinHex",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.58",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794455464&P2=404&P3=2&P4=Sqxx%2bKr8v%2bb%2bSNwzqqU1AhtctRWmo%2b6nMUH41RCt8Oyyo76l29hGzpS3oeVHVdsasRzW0EETwrtSgBPkLpw0wg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794455464&P2=404&P3=2&P4=Sqxx%2bKr8v%2bb%2bSNwzqqU1AhtctRWmo%2b6nMUH41RCt8Oyyo76l29hGzpS3oeVHVdsasRzW0EETwrtSgBPkLpw0wg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794456365&P2=404&P3=2&P4=bxKuNF7d9jy783n9DkqM0AQ14caAjgi%2b0qS4jxAzpi%2bv%2bxX4fcemLgwW9L%2bCBtoVvamimuYigdCZfJ4l3csUMw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794456365&P2=404&P3=2&P4=bxKuNF7d9jy783n9DkqM0AQ14caAjgi%2b0qS4jxAzpi%2bv%2bxX4fcemLgwW9L%2bCBtoVvamimuYigdCZfJ4l3csUMw%3d%3d",
       "downloads": [],
       "size": 208507216,
       "size_mb": 198.8,
