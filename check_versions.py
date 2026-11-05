@@ -2321,6 +2321,8 @@ PRODUCTS = [
         # 发布时间就是版本号里的日期，不让 CDN 上传时间/检测日覆盖
         'date_authority': 'detector',
         'winget_id': 'Dio.PureCodec',
+        # 发布页抓不到时按天枚举 CDN 最近 30 天的包名兜底，确保不漏版
+        'date_version_probe': 30,
         'url_pattern': 'https://dl-t1.wmzhe.com/13/13163/PureCodec{ver}.exe',
         'version': '20261031',
         'date': '2026-10-31',
@@ -6340,6 +6342,27 @@ def detect_scrape(product):
         version = scraped_version
     else:
         version = default_version
+
+    # 日期号版本（YYYYMMDD）的「向后兜底探测」：发布站抓不到 / 被反爬 /
+    # 更新滞后时，直接按天枚举 CDN 上最近 N 天的包名，存在且体积合理就采用。
+    # 这样即使第三方发布页不更新，也不会让线上停在旧版（以 CDN 实物为准）。
+    _pd = int(product.get('date_version_probe', 0) or 0)
+    if _pd and re.fullmatch(r'20\d{6}', str(version or '')):
+        _today = datetime.now(timezone(timedelta(hours=8))).date()
+        _cands = [(_today - timedelta(days=_i)).strftime('%Y%m%d') for _i in range(_pd + 1)]
+        _cands = [v for v in _cands if v > str(version)]
+        if _cands:
+            def _probe_date(v):
+                u = product['url_pattern'].format(ver=v)
+                ok, sz, _d = check_url_follow(u, referer=product.get('referer'))
+                return (v, sz) if ok and sz > 10 * 1024 * 1024 else None
+            with ThreadPoolExecutor(max_workers=6) as _ex:
+                _hits = [r for r in _ex.map(_probe_date, _cands) if r]
+            if _hits:
+                _nv, _nsz = max(_hits)
+                print(f"  ℹ️ CDN 日期探测: {version} -> {_nv} ({_nsz / 1024 / 1024:.1f}MB)")
+                version = _nv
+                scraped_date = f"{_nv[:4]}-{_nv[4:6]}-{_nv[6:]}"
 
     # 下载链接：优先使用抓取到的，其次用配置的
     # 如果配置了url_pattern，根据版本号动态构造URL（如AIDA64）
