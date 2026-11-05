@@ -6899,8 +6899,20 @@ def detect_nvidia(product):
     if not exists:
         print(f"  ⚠️ WHQL 安装包不可用: {whql_url[:70]}...")
         size = 0
-    # 正式版（WHQL）直接给 us 直链；热补丁才走官方确认页（见上面的 hot 分支）
-    return whql_ver, whql_url, whql_url, size, date, ''
+    # 对外给官方「驱动详情页」，不给 CDN 直链：NVIDIA CDN 有防盗链（Zen/4.3），
+    # 只放行 Referer 为 nvidia 域的请求，用户从本站点进去一律 403。
+    # 接口返回的 DetailsURL 就指向这一版的官方页面（页面内再点下载才带正确 Referer）。
+    page = ''
+    m = re.search(r'"DetailsURL"\s*:\s*"([^"]+)"', body)
+    if m:
+        page = m.group(1).replace('\\/', '/')
+    if not page:
+        m = re.search(r'"ID"\s*:\s*"(\d+)"', body)
+        if m:
+            page = f'https://www.nvidia.cn/drivers/details/{m.group(1)}/'
+    if page:
+        print(f"  下载入口(官方驱动页): {page}")
+    return whql_ver, (page or whql_url), (page or whql_url), size, date, ''
 
 
 def detect_potplayer(product):

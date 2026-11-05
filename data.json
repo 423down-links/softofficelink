@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T04:06:42.833040+00:00",
+  "updated_at": "2026-11-05T04:14:53.218915+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -1744,8 +1744,8 @@
       "icon_color": "linear-gradient(135deg, #76b900, #5a9e00)",
       "category": "驱动程序",
       "version": "621.14",
-      "download_url": "https://us.download.nvidia.cn/Windows/621.14/621.14-desktop-win10-win11-64bit-international-dch-whql.exe",
-      "download_url_with_params": "https://us.download.nvidia.cn/Windows/621.14/621.14-desktop-win10-win11-64bit-international-dch-whql.exe",
+      "download_url": "https://www.nvidia.com/en-us/drivers/details/283968/",
+      "download_url_with_params": "https://www.nvidia.com/en-us/drivers/details/283968/",
       "downloads": [],
       "size": 1037274832,
       "size_mb": 989.2,
