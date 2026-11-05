@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T07:51:42.041791+00:00",
+  "updated_at": "2026-11-05T08:06:40.126206+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.58",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794469865&P2=404&P3=2&P4=nXLzwWDLQFcen%2fF5jeVq%2fC1r6CfCF7KDuQtWvIHWcWgtX0alLK8bKVqzwaEE3j1BCxL%2fJzWjdy6JZY%2fXWtFTWQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794469865&P2=404&P3=2&P4=nXLzwWDLQFcen%2fF5jeVq%2fC1r6CfCF7KDuQtWvIHWcWgtX0alLK8bKVqzwaEE3j1BCxL%2fJzWjdy6JZY%2fXWtFTWQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794470763&P2=404&P3=2&P4=RvuK3kiJ%2bh6vi2J%2bU2qbFcvk8Sy5y7Vt8%2f7MYlNuYK0znBdgwaVXsi37PS4MRDkOPKCRHvMLzLHEoM%2b3mbpWIA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794470763&P2=404&P3=2&P4=RvuK3kiJ%2bh6vi2J%2bU2qbFcvk8Sy5y7Vt8%2f7MYlNuYK0znBdgwaVXsi37PS4MRDkOPKCRHvMLzLHEoM%2b3mbpWIA%3d%3d",
       "downloads": [],
       "size": 208507216,
       "size_mb": 198.8,
@@ -1822,7 +1822,7 @@
         }
       ],
       "detected_at": "2026-11-03 06:06",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -1958,34 +1958,22 @@
       "icon": "M",
       "icon_color": "linear-gradient(135deg, #8e44ad, #6c3483)",
       "category": "资源站",
-      "version": "2026-11-04",
+      "version": "2026-11-05",
       "download_url": "https://w18.monkrus.ws/",
       "download_url_with_params": "https://w18.monkrus.ws/",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-11-04",
+      "last_modified": "2026-11-05",
       "md5": "",
       "official_site": "https://w18.monkrus.ws/",
       "update_items": [
         {
-          "title": "Adobe Substance 3D Stager v3.1.10 Multilingual",
-          "url": "https://w18.monkrus.ws/2026/11/adobe-substance-3d-stager-v3110.html"
-        },
-        {
-          "title": "Adobe Dimension v4.1.10 Multilingual",
-          "url": "https://w18.monkrus.ws/2026/11/adobe-dimension-v4110-multilingual.html"
-        },
-        {
-          "title": "Adobe Acrobat 2026 (v26.3.22075) x64 Multilingual",
-          "url": "https://w18.monkrus.ws/2026/11/adobe-acrobat-2026-v26322075-x64.html"
-        },
-        {
-          "title": "Adobe Acrobat 2026 (v26.3.22075) x86 Multilingual",
-          "url": "https://w18.monkrus.ws/2026/11/adobe-acrobat-2026-v26322075-x86.html"
+          "title": "Autodesk Inventor Pro 2027.2 RUS-ENG",
+          "url": "https://w18.monkrus.ws/2026/11/autodesk-inventor-pro-20272-rus-eng.html"
         }
       ],
-      "detected_at": "2026-11-04 22:06",
+      "detected_at": "2026-11-05 16:06",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2189,7 +2177,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-11-03",
       "md5": "",
