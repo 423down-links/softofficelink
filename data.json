@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T22:21:21.186160+00:00",
+  "updated_at": "2026-11-05T22:48:34.637916+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-11-01 04:41",
-      "fb_streak": 94,
-      "fb_skip_until": 1793917346
+      "fb_streak": 95,
+      "fb_skip_until": 1793922514
     },
     {
       "name": "WeChat",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794522050&P2=404&P3=2&P4=U7mEFA1IPo0Qtbxt9aOGfJx9AZ6ScOmT7855qwQp2qwrEdf991CsC9aSbWP4seGb3N9szH22Eiocooe%2bA5jX4Q%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794522050&P2=404&P3=2&P4=U7mEFA1IPo0Qtbxt9aOGfJx9AZ6ScOmT7855qwQp2qwrEdf991CsC9aSbWP4seGb3N9szH22Eiocooe%2bA5jX4Q%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794523640&P2=404&P3=2&P4=ilCO0%2fwnq4WH%2fF5qyvAzsWdpwhk4YCzZemZKSP0pYaDzdNxqzn%2bOocGN8slRke5KC6Q5ploO2Gu9ZRzwl6X0Aw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794523640&P2=404&P3=2&P4=ilCO0%2fwnq4WH%2fF5qyvAzsWdpwhk4YCzZemZKSP0pYaDzdNxqzn%2bOocGN8slRke5KC6Q5ploO2Gu9ZRzwl6X0Aw%3d%3d",
       "downloads": [],
       "size": 208393552,
       "size_mb": 198.7,
@@ -2394,8 +2394,8 @@
       "official_site": "https://hyperionics.com/hsdx/downloads.asp",
       "update_items": [],
       "detected_at": "2026-10-28 08:59",
-      "fb_streak": 2,
-      "fb_skip_until": 1793917336
+      "fb_streak": 3,
+      "fb_skip_until": 1793921614
     },
     {
       "name": "AOMEI Partition Assistant",
@@ -2415,8 +2415,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 134,
-      "fb_skip_until": 1793917346
+      "fb_streak": 135,
+      "fb_skip_until": 1793922514
     },
     {
       "name": "BitComet",
