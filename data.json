@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T06:22:02.114139+00:00",
+  "updated_at": "2026-11-05T06:52:02.537800+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.43",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe?v=1793859667571&n=ldinst_9.5.43_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe?v=1793861477485&n=ldinst_9.5.43_ld_407594_ld.exe",
       "downloads": [],
       "size": 602964448,
       "size_mb": 575.0,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.0.34",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.34.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.34.exe?v=1793859671912&n=ldinst_14.0.34_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.34.exe?v=1793861475192&n=ldinst_14.0.34_ld_412570_ld.exe",
       "downloads": [],
       "size": 744727008,
       "size_mb": 710.2,
@@ -124,7 +124,7 @@
       "official_site": "https://www.yy.com/web/pcyy_download/",
       "update_items": [],
       "detected_at": "2026-10-11 15:27",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "156.0.4314.58",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794464464&P2=404&P3=2&P4=cdZ8dX5s1jFAHb45dKjM26PuL1NfF4qBEe2aHRhyghm6rv8Tk6N64JkP5RQwOHJLOI0YXqSWkD%2bH49B92wZB4A%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794464464&P2=404&P3=2&P4=cdZ8dX5s1jFAHb45dKjM26PuL1NfF4qBEe2aHRhyghm6rv8Tk6N64JkP5RQwOHJLOI0YXqSWkD%2bH49B92wZB4A%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794466266&P2=404&P3=2&P4=bLtMOZTqO4IL%2b62Txxsky0WQNUEvGjYla5i2orH8wq5fz3DVbTqCthTvynexkbQW8I%2f3LqN1vek4asW%2fem%2bN1A%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/0fb7b582-d801-42c1-9886-aecb7d99c5cb?P1=1794466266&P2=404&P3=2&P4=bLtMOZTqO4IL%2b62Txxsky0WQNUEvGjYla5i2orH8wq5fz3DVbTqCthTvynexkbQW8I%2f3LqN1vek4asW%2fem%2bN1A%3d%3d",
       "downloads": [],
       "size": 208507216,
       "size_mb": 198.8,
@@ -1895,9 +1895,9 @@
       "icon": "BW",
       "icon_color": "linear-gradient(135deg, #9c27b0, #6a1b9a)",
       "category": "操作系统",
-      "version": "v2026.10.30",
-      "download_url": "https://www.wycad.com/306.html",
-      "download_url_with_params": "https://www.wycad.com/306.html",
+      "version": "v2026.10.31",
+      "download_url": "https://www.wycad.com/3114.html",
+      "download_url_with_params": "https://www.wycad.com/3114.html",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
@@ -1905,7 +1905,7 @@
       "md5": "",
       "official_site": "https://www.wycad.com/windows",
       "update_items": [],
-      "detected_at": "2026-11-05 12:51",
+      "detected_at": "2026-11-05 14:51",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
