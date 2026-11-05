@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T12:21:27.992895+00:00",
+  "updated_at": "2026-11-05T12:27:34.219436+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -2613,6 +2613,27 @@
       "official_site": "https://www.cpuid.com/softwares/cpu-z.html",
       "update_items": [],
       "detected_at": "2026-11-05 13:27",
+      "fb_streak": 0,
+      "fb_skip_until": 0
+    },
+    {
+      "name": "PureCodec",
+      "name_cn": "完美解码",
+      "alias": "PureCodec 播放器",
+      "icon": "PC",
+      "icon_color": "linear-gradient(135deg, #6c5ce7, #00b894)",
+      "category": "影音娱乐",
+      "version": "20261031",
+      "download_url": "https://dl-t1.wmzhe.com/13/13163/PureCodec20261031.exe",
+      "download_url_with_params": "https://dl-t1.wmzhe.com/13/13163/PureCodec20261031.exe",
+      "downloads": [],
+      "size": 170203136,
+      "size_mb": 162.3,
+      "last_modified": "2026-10-31",
+      "md5": "",
+      "official_site": "https://www.wmzhe.com/soft-13163.html",
+      "update_items": [],
+      "detected_at": "2026-11-05 20:27",
       "fb_streak": 0,
       "fb_skip_until": 0
     },

@@ -2301,6 +2301,37 @@ PRODUCTS = [
         'official_site': 'https://www.cpuid.com/softwares/cpu-z.html',
     },
     {
+        'name': 'PureCodec',
+        'name_cn': '完美解码',
+        'alias': 'PureCodec 播放器',
+        'icon': 'PC',
+        'icon_color': 'linear-gradient(135deg, #6c5ce7, #00b894)',
+        'category': '影音娱乐',
+        # ⚠️ 官方站页面（wmzhe.com/soft-13163.html）更新严重滞后（停在 20260630），
+        # 且下载按钮写死旧包名 + 签名参数 → 绝不能拿它当版本源，否则线上永远停旧版。
+        # 版本号本身就是发布日（YYYYMMDD），下载文件名同号（PureCodec{ver}.exe）。
+        # 用更新及时的发布页取版本；winget（Dio.PureCodec）作为第二源兜底取最大值。
+        'detect_type': 'scrape',
+        'check_url': 'https://www.ghxi.com/purecodec.html',
+        'version_regex': r'<title>PureCodec\s*(?:\(完美解码\))?\s*v(\d{4}\.\d{2}\.\d{2})',
+        'version_compact': True,
+        'date_from_version_ymd': True,
+        'prefer_scraped_version': True,
+        'prefer_scraped_date': True,
+        # 发布时间就是版本号里的日期，不让 CDN 上传时间/检测日覆盖
+        'date_authority': 'detector',
+        'winget_id': 'Dio.PureCodec',
+        'url_pattern': 'https://dl-t1.wmzhe.com/13/13163/PureCodec{ver}.exe',
+        'version': '20261031',
+        'date': '2026-10-31',
+        'download_url': 'https://dl-t1.wmzhe.com/13/13163/PureCodec20261031.exe',
+        # 安装包 160MB+，跳过 MD5（体积由探测结果覆盖，这里只作兜底）
+        'size': 170203136,
+        'size_mb': 162.3,
+        'skip_md5': True,
+        'official_site': 'https://www.wmzhe.com/soft-13163.html',
+    },
+    {
         'name': 'FurMark',
         'name_cn': 'FurMark 显卡烤机',
         'alias': '甜甜圈 显卡压力测试',
@@ -6185,6 +6216,12 @@ def detect_scrape(product):
                         scraped_version = '.'.join(groups)
                 else:
                     scraped_version = groups[0]
+                # version_compact：去掉点号（PureCodec 用日期号 2026.10.31 → 20261031）
+                if product.get('version_compact'):
+                    scraped_version = scraped_version.replace('.', '')
+                # 版本号本身就是发布日期（YYYYMMDD）：直接从版本号取日期
+                if product.get('date_from_version_ymd') and re.fullmatch(r'20\d{6}', scraped_version or ''):
+                    scraped_date = f'{scraped_version[:4]}-{scraped_version[4:6]}-{scraped_version[6:]}'
                 print(f"  官网版本: {scraped_version} (参考)")
 
         # 抓取发布日期
