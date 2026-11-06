@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T23:52:29.012965+00:00",
+  "updated_at": "2026-11-06T00:06:08.099908+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-04 16:51",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794527462&P2=404&P3=2&P4=ibKBB8JnfUeBDhXm%2bY6AZTk0OdWlQd2PGQ2i%2bUF4Uy3VdEzsdIMqbxulm5qED6mN5DyyVHQb%2forBu3bZN0picw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794527462&P2=404&P3=2&P4=ibKBB8JnfUeBDhXm%2bY6AZTk0OdWlQd2PGQ2i%2bUF4Uy3VdEzsdIMqbxulm5qED6mN5DyyVHQb%2forBu3bZN0picw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794528346&P2=404&P3=2&P4=Vjue56E95qhgVNiisRfl2gI43bMCnJSwUZLRyy%2b7i2Lqiu%2fdGRIR9%2ffJFSt1YbaDk5GoNdUEMi%2bz4x4%2fIbJfhA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794528346&P2=404&P3=2&P4=Vjue56E95qhgVNiisRfl2gI43bMCnJSwUZLRyy%2b7i2Lqiu%2fdGRIR9%2ffJFSt1YbaDk5GoNdUEMi%2bz4x4%2fIbJfhA%3d%3d",
       "downloads": [],
       "size": 208393552,
       "size_mb": 198.7,
@@ -2177,7 +2177,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-11-03",
       "md5": "",
