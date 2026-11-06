@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-06T20:06:06.420882+00:00",
+  "updated_at": "2026-11-06T20:21:49.065822+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.43",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe?v=1793994653318&n=ldinst_9.5.43_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe?v=1793996452879&n=ldinst_9.5.43_ld_407594_ld.exe",
       "downloads": [],
       "size": 602964448,
       "size_mb": 575.0,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.0.34",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.34.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.34.exe?v=1793994651924&n=ldinst_14.0.34_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.34.exe?v=1793996452593&n=ldinst_14.0.34_ld_412570_ld.exe",
       "downloads": [],
       "size": 744727008,
       "size_mb": 710.2,
@@ -124,7 +124,7 @@
       "official_site": "https://www.yy.com/web/pcyy_download/",
       "update_items": [],
       "detected_at": "2026-10-11 15:27",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794600342&P2=404&P3=2&P4=VUIGgKdrlqDESC99M1IES8ginVfvvBsQGNsfkC58as6CV2oVIPMA5UNYtjgI2dr8WAIT%2fQxZ6%2fFywAebD1jxdg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794600342&P2=404&P3=2&P4=VUIGgKdrlqDESC99M1IES8ginVfvvBsQGNsfkC58as6CV2oVIPMA5UNYtjgI2dr8WAIT%2fQxZ6%2fFywAebD1jxdg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794601248&P2=404&P3=2&P4=OBJF9HGIWsBwRrqPUQLdyJC7%2bS2oZLycONoflu4BKGMWD1CfPA5vfUrL%2b8Xu9OgJriDRuBiUdXTByIjCpQd2WA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794601248&P2=404&P3=2&P4=OBJF9HGIWsBwRrqPUQLdyJC7%2bS2oZLycONoflu4BKGMWD1CfPA5vfUrL%2b8Xu9OgJriDRuBiUdXTByIjCpQd2WA%3d%3d",
       "downloads": [],
       "size": 208393552,
       "size_mb": 198.7,
@@ -334,7 +334,7 @@
       "official_site": "https://browser.360.cn/",
       "update_items": [],
       "detected_at": "2026-10-09 09:56",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
