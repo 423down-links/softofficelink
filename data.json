@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T03:04:25.949721+00:00",
+  "updated_at": "2026-11-07T03:21:49.526038+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.43",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe?v=1794019850426&n=ldinst_9.5.43_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe?v=1794021672685&n=ldinst_9.5.43_ld_407594_ld.exe",
       "downloads": [],
       "size": 602964448,
       "size_mb": 575.0,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.0.34",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.34.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.34.exe?v=1794019850699&n=ldinst_14.0.34_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.34.exe?v=1794021664521&n=ldinst_14.0.34_ld_412570_ld.exe",
       "downloads": [],
       "size": 744727008,
       "size_mb": 710.2,
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-11-01 04:41",
-      "fb_streak": 116,
-      "fb_skip_until": 1794020774
+      "fb_streak": 117,
+      "fb_skip_until": 1794025309
     },
     {
       "name": "WeChat",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794625440&P2=404&P3=2&P4=l%2bCPNOYmIxq3hrnFWN0M2gN63A%2b0zLCv84KEcQx8o9coIxZTruabEXgkcZGeYH23kCUw61KRPHDHjN7Rj6F0Ng%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794625440&P2=404&P3=2&P4=l%2bCPNOYmIxq3hrnFWN0M2gN63A%2b0zLCv84KEcQx8o9coIxZTruabEXgkcZGeYH23kCUw61KRPHDHjN7Rj6F0Ng%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794626462&P2=404&P3=2&P4=TYjgOsUSFnf7BEynqvIeEhY8W9kCOfmkKEEyddtNF5JNeJiUfAe0WZX6lEHEGxzAaA6hWY0AzedNQVppQG15iA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794626462&P2=404&P3=2&P4=TYjgOsUSFnf7BEynqvIeEhY8W9kCOfmkKEEyddtNF5JNeJiUfAe0WZX6lEHEGxzAaA6hWY0AzedNQVppQG15iA%3d%3d",
       "downloads": [],
       "size": 208393552,
       "size_mb": 198.7,
@@ -2387,8 +2387,8 @@
       "download_url": "https://www.hyperionics.com/downloads/HS10SetupCN.exe",
       "download_url_with_params": "https://www.hyperionics.com/downloads/HS10SetupCN.exe",
       "downloads": [],
-      "size": 20379960,
-      "size_mb": 19.4,
+      "size": 20896152,
+      "size_mb": 19.9,
       "last_modified": "2026-11-07",
       "md5": "",
       "official_site": "https://hyperionics.com/hsdx/downloads.asp",
@@ -2415,8 +2415,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 156,
-      "fb_skip_until": 1794020774
+      "fb_streak": 157,
+      "fb_skip_until": 1794025309
     },
     {
       "name": "BitComet",
