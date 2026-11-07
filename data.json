@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T10:14:14.042644+00:00",
+  "updated_at": "2026-11-07T10:51:31.080566+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.43",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe?v=1794045053087&n=ldinst_9.5.43_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe?v=1794048658603&n=ldinst_9.5.43_ld_407594_ld.exe",
       "downloads": [],
       "size": 602964448,
       "size_mb": 575.0,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.0.34",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.34.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.34.exe?v=1794045050057&n=ldinst_14.0.34_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.34.exe?v=1794048655494&n=ldinst_14.0.34_ld_412570_ld.exe",
       "downloads": [],
       "size": 744727008,
       "size_mb": 710.2,
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-04 16:51",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794651174&P2=404&P3=2&P4=bm0b%2bpwuDNB%2b55EHaRH28kCn8t%2bBFWoeS2zJY0HpXKQ91hmOhILAwJZnxFHz6dZPp91fVhPoyf3cqSOLgZrQMQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794651174&P2=404&P3=2&P4=bm0b%2bpwuDNB%2b55EHaRH28kCn8t%2bBFWoeS2zJY0HpXKQ91hmOhILAwJZnxFHz6dZPp91fVhPoyf3cqSOLgZrQMQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794653451&P2=404&P3=2&P4=SKXbntVdDrthTfOA5kpYyP1sK4h%2fg5v4lXz4WfYJGFXzY0pqiu8wGt6UmdZiZOj5BP7OfJxVrNuFlCY8z%2bQnaQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794653451&P2=404&P3=2&P4=SKXbntVdDrthTfOA5kpYyP1sK4h%2fg5v4lXz4WfYJGFXzY0pqiu8wGt6UmdZiZOj5BP7OfJxVrNuFlCY8z%2bQnaQ%3d%3d",
       "downloads": [],
       "size": 208393552,
       "size_mb": 198.7,
@@ -1596,7 +1596,7 @@
       "icon": "79",
       "icon_color": "linear-gradient(135deg, #e74c3c, #c0392b)",
       "category": "便携软件",
-      "version": "2026.11.06",
+      "version": "2026.11.07",
       "download_url": "https://disk.yandex.ru/d/D8xbOSd7XAUbug",
       "download_url_with_params": "https://disk.yandex.ru/d/D8xbOSd7XAUbug",
       "downloads": [],
@@ -1606,7 +1606,7 @@
       "md5": "",
       "official_site": "https://disk.yandex.ru/d/D8xbOSd7XAUbug",
       "update_items": [],
-      "detected_at": "2026-11-07 16:50",
+      "detected_at": "2026-11-07 18:50",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2177,7 +2177,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-11-03",
       "md5": "",
