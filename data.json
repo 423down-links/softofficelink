@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-09T13:52:51.567805+00:00",
+  "updated_at": "2026-11-09T14:06:48.623314+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794837087&P2=404&P3=2&P4=lBIGqmjl6jZdS82QVZk%2bncFDn3LIlN1PDPMtGr%2fTlNWMb%2b%2fuFed3rJp%2frgOMNaHBk1qIL4JRVxiXUXbssNLCoQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794837087&P2=404&P3=2&P4=lBIGqmjl6jZdS82QVZk%2bncFDn3LIlN1PDPMtGr%2fTlNWMb%2b%2fuFed3rJp%2frgOMNaHBk1qIL4JRVxiXUXbssNLCoQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794837977&P2=404&P3=2&P4=POq4o4OPvzu5Q3UqaixNRSch0YD9LWDB2N9hNSA%2fprTRK5UGdsEvpFsS%2bsQzorR067wQV99z2nhva2jzMKYNzA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794837977&P2=404&P3=2&P4=POq4o4OPvzu5Q3UqaixNRSch0YD9LWDB2N9hNSA%2fprTRK5UGdsEvpFsS%2bsQzorR067wQV99z2nhva2jzMKYNzA%3d%3d",
       "downloads": [],
       "size": 208393552,
       "size_mb": 198.7,
@@ -1596,17 +1596,17 @@
       "icon": "79",
       "icon_color": "linear-gradient(135deg, #e74c3c, #c0392b)",
       "category": "便携软件",
-      "version": "2026.11.08",
+      "version": "2026.11.09",
       "download_url": "https://disk.yandex.ru/d/D8xbOSd7XAUbug",
       "download_url_with_params": "https://disk.yandex.ru/d/D8xbOSd7XAUbug",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-11-08",
+      "last_modified": "2026-11-09",
       "md5": "",
       "official_site": "https://disk.yandex.ru/d/D8xbOSd7XAUbug",
       "update_items": [],
-      "detected_at": "2026-11-08 18:51",
+      "detected_at": "2026-11-09 22:06",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2177,7 +2177,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-11-03",
       "md5": "",
@@ -2331,7 +2331,7 @@
       "official_site": "https://mkvtoolnix.download/",
       "update_items": [],
       "detected_at": "2026-10-20 00:59",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
