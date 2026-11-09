@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-09T11:52:23.522489+00:00",
+  "updated_at": "2026-11-09T12:06:45.534794+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-11-01 04:41",
-      "fb_streak": 160,
-      "fb_skip_until": 1794225134
+      "fb_streak": 161,
+      "fb_skip_until": 1794229605
     },
     {
       "name": "WeChat",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794829889&P2=404&P3=2&P4=kWQp0VpeX4iwzWt3un465l9o8ZpQ9gYLJxcoNBrb8XmqAKhdm02VO12QY8JcvfL0QpqIqY%2bCWD%2bljjOW8LMdgg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794829889&P2=404&P3=2&P4=kWQp0VpeX4iwzWt3un465l9o8ZpQ9gYLJxcoNBrb8XmqAKhdm02VO12QY8JcvfL0QpqIqY%2bCWD%2bljjOW8LMdgg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794830775&P2=404&P3=2&P4=Xnw160LuVMSfqrW7eyJ746JppQJR28k5cu0EaHbfOkl%2b1tLvKW2mHZH6egX0nid4nlaWngK0s0T7HMFxUzEBWA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794830775&P2=404&P3=2&P4=Xnw160LuVMSfqrW7eyJ746JppQJR28k5cu0EaHbfOkl%2b1tLvKW2mHZH6egX0nid4nlaWngK0s0T7HMFxUzEBWA%3d%3d",
       "downloads": [],
       "size": 208393552,
       "size_mb": 198.7,
@@ -2177,7 +2177,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-11-03",
       "md5": "",
@@ -2415,8 +2415,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 200,
-      "fb_skip_until": 1794225134
+      "fb_streak": 201,
+      "fb_skip_until": 1794229605
     },
     {
       "name": "BitComet",
