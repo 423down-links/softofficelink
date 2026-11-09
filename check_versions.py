@@ -1370,14 +1370,17 @@ PRODUCTS = [
         'icon': 'DF',
         'icon_color': 'linear-gradient(135deg, #8e44ad, #9b59b6)',
         'category': '图像处理',
-        # 同上：ProductVersion 才是产品版本（8.11.1.896），FileVersion 无/带构建号
-        # 注：官方安装包当前仍是 8.11.0.896（滞后一个修订版），配置 version_strict_prefix
-        # 让「同产品线的安装器版本」不覆盖人工核实的软件版本，等官方包同步后自动对齐。
+        # 同上：ProductVersion 才是产品版本（8.12.0.908），FileVersion 无/带构建号
+        # version_strict_prefix 只用于「官方包滞后一版」：PE 与本前缀同线且比配置旧时
+        # 保留配置版本；PE 一旦跳到新小版本（8.11 → 8.12）就以包为准。
         'detect_type': 'fixed',
         'pe_version': True,
         'pe_version_source': 'product',
-        'version_strict_prefix': '8.11',
-        'version': '8.11.1.896',
+        'version_strict_prefix': '8.12',
+        # 发布日期以安装包 Last-Modified 为准（官方上传日），不被检测日抬高
+        'date_authority': 'detector',
+        'version': '8.12.0.908',
+        'date': '2026-11-09',
         'skip_md5': True,
         'download_url': 'https://download-center.dxo.com/FilmPack/v8/Win/DxO_FilmPack8.exe',
         'official_site': 'https://www.dxo.com/dxo-filmpack/',
@@ -3798,9 +3801,18 @@ def detect_fixed(product):
                     cfg_ver = product.get('version')
                     strict_prefix = product.get('version_strict_prefix')
                     if cfg_ver and strict_prefix and pe_ver != cfg_ver:
-                        if pe_ver.startswith(strict_prefix) or cfg_ver.startswith(strict_prefix):
-                            print(f"  ℹ️ PE版本({pe_ver})与配置版本({cfg_ver})同产品线，保留配置版本")
+                        # 只在「安装包滞后」时保留配置版本：PE 仍在同一条产品线
+                        # （pe_ver 以 strict_prefix 开头）且配置版本比 PE 新。
+                        # ⚠️ 不能拿 cfg_ver 去比前缀——配置值永不更新，一旦写成
+                        # `or cfg_ver.startswith(...)` 就会永久冻结旧版本
+                        # （实测 DxO FilmPack 卡在 8.11.1.896，包已到 8.12.0.908）。
+                        if (pe_ver.startswith(strict_prefix)
+                                and _ver_tuple(cfg_ver) > _ver_tuple(pe_ver)):
+                            print(f"  ℹ️ 安装包滞后（PE {pe_ver} < 配置 {cfg_ver}），保留配置版本")
                             version = cfg_ver
+                        else:
+                            print(f"  ⬆️ 安装包已更新（PE {pe_ver} ≠ 配置 {cfg_ver}），采用 PE 版本")
+                            version = pe_ver
                 else:
                     pe_ver = _pe_version_cached(url)
                     if pe_ver:

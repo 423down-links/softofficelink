@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-09T16:22:24.957689+00:00",
+  "updated_at": "2026-11-09T16:26:02.987390+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -1659,17 +1659,17 @@
       "icon": "DF",
       "icon_color": "linear-gradient(135deg, #8e44ad, #9b59b6)",
       "category": "图像处理",
-      "version": "8.11.1.896",
+      "version": "8.12.0.908",
       "download_url": "https://download-center.dxo.com/FilmPack/v8/Win/DxO_FilmPack8.exe",
       "download_url_with_params": "https://download-center.dxo.com/FilmPack/v8/Win/DxO_FilmPack8.exe",
       "downloads": [],
       "size": 1541560112,
       "size_mb": 1470.1,
-      "last_modified": "2026-10-20",
+      "last_modified": "2026-11-09",
       "md5": "",
       "official_site": "https://www.dxo.com/dxo-filmpack/",
       "update_items": [],
-      "detected_at": "2026-10-20 22:26",
+      "detected_at": "2026-11-10 00:26",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
