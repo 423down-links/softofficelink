@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-09T07:52:10.244770+00:00",
+  "updated_at": "2026-11-09T08:00:10.828904+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-04 16:51",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.42",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794815484&P2=404&P3=2&P4=blPYxetkzTPDFnlVfLta939uUgaxIbsaqAstssGj6Xq5fQU2KswH3ylKw45s3%2boEKctY81MJ%2b7D97%2f4y7JH2GA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794815484&P2=404&P3=2&P4=blPYxetkzTPDFnlVfLta939uUgaxIbsaqAstssGj6Xq5fQU2KswH3ylKw45s3%2boEKctY81MJ%2b7D97%2f4y7JH2GA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794815971&P2=404&P3=2&P4=mlb8RrbOvGiGAD7fAFRDWNI9lrn%2bSUEi1uVK7zCXxiCLiGE80wff97IiWc5zS5ZuN6nIgYkXFUuo5N1Ajw8c%2bA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/18935307-3f0c-463a-9598-6e5ff8828563?P1=1794815971&P2=404&P3=2&P4=mlb8RrbOvGiGAD7fAFRDWNI9lrn%2bSUEi1uVK7zCXxiCLiGE80wff97IiWc5zS5ZuN6nIgYkXFUuo5N1Ajw8c%2bA%3d%3d",
       "downloads": [],
       "size": 208393552,
       "size_mb": 198.7,
@@ -1344,17 +1344,17 @@
       "icon": "GU",
       "icon_color": "linear-gradient(135deg, #e67e22, #d35400)",
       "category": "系统工具",
-      "version": "6.49.0.53",
+      "version": "6.50.0.54",
       "download_url": "https://download.glarysoft.com/gupsetup.exe",
       "download_url_with_params": "https://download.glarysoft.com/gupsetup.exe",
       "downloads": [],
-      "size": 28501016,
+      "size": 28503264,
       "size_mb": 27.2,
-      "last_modified": "2026-10-19",
+      "last_modified": "2026-11-09",
       "md5": "",
       "official_site": "https://www.glarysoft.com/glary-utilities-pro/download",
       "update_items": [],
-      "detected_at": "2026-10-19 21:21",
+      "detected_at": "2026-11-09 15:59",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
