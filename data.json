@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T03:22:14.290443+00:00",
+  "updated_at": "2026-11-10T03:28:46.683734+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.43",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe?v=1794280896443&n=ldinst_9.5.43_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe?v=1794281292814&n=ldinst_9.5.43_ld_407594_ld.exe",
       "downloads": [],
       "size": 602964448,
       "size_mb": 575.0,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.0.34",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.34.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.34.exe?v=1794280895706&n=ldinst_14.0.34_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.34.exe?v=1794281291578&n=ldinst_14.0.34_ld_412570_ld.exe",
       "downloads": [],
       "size": 744727008,
       "size_mb": 710.2,
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-11-01 04:41",
-      "fb_streak": 172,
-      "fb_skip_until": 1794280938
+      "fb_streak": 173,
+      "fb_skip_until": 1794284926
     },
     {
       "name": "WeChat",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.46",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794885687&P2=404&P3=2&P4=Y5a6K%2bWBcafCBwhEgK%2fDCl1sjUEjSolA4EeA0%2fYIoogKyBGOrI3iGaUkySDAR%2bBYeMRz%2bAOjhLtrm4Sl56xTbA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794885687&P2=404&P3=2&P4=Y5a6K%2bWBcafCBwhEgK%2fDCl1sjUEjSolA4EeA0%2fYIoogKyBGOrI3iGaUkySDAR%2bBYeMRz%2bAOjhLtrm4Sl56xTbA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794886091&P2=404&P3=2&P4=WXgD7rSawMc1s0613sehpmC3%2fZ%2f8IojJm1SwoJoUMx%2fA%2bc0nAh8vN7X4KyGW%2fr6jH4jOjrIRmriHPAeiqEpHcA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794886091&P2=404&P3=2&P4=WXgD7rSawMc1s0613sehpmC3%2fZ%2f8IojJm1SwoJoUMx%2fA%2bc0nAh8vN7X4KyGW%2fr6jH4jOjrIRmriHPAeiqEpHcA%3d%3d",
       "downloads": [],
       "size": 208458064,
       "size_mb": 198.8,
@@ -1176,17 +1176,17 @@
       "icon": "ACR",
       "icon_color": "linear-gradient(135deg, #fa0f00, #b30000)",
       "category": "图像工具",
-      "version": "18.7",
-      "download_url": "https://download.adobe.com/pub/adobe/photoshop/cameraraw/win/18.x/AdobeCameraRaw_x64_18_7.exe",
-      "download_url_with_params": "https://download.adobe.com/pub/adobe/photoshop/cameraraw/win/18.x/AdobeCameraRaw_x64_18_7.exe",
+      "version": "19.0",
+      "download_url": "https://download.adobe.com/pub/adobe/photoshop/cameraraw/win/19.x/AdobeCameraRaw_x64_19_0.exe",
+      "download_url_with_params": "https://download.adobe.com/pub/adobe/photoshop/cameraraw/win/19.x/AdobeCameraRaw_x64_19_0.exe",
       "downloads": [],
-      "size": 1836627408,
-      "size_mb": 1751.5,
-      "last_modified": "2026-09-28",
+      "size": 1839880768,
+      "size_mb": 1754.6,
+      "last_modified": "2026-11-10",
       "md5": "",
       "official_site": "https://helpx.adobe.com/cn/camera-raw/using/whats-new.html",
       "update_items": [],
-      "detected_at": "2026-10-09 09:56",
+      "detected_at": "2026-11-10 11:28",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2177,7 +2177,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-11-03",
       "md5": "",
@@ -2415,8 +2415,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 212,
-      "fb_skip_until": 1794280938
+      "fb_streak": 213,
+      "fb_skip_until": 1794284926
     },
     {
       "name": "BitComet",
