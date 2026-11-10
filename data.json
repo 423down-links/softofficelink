@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T08:21:46.478348+00:00",
+  "updated_at": "2026-11-10T08:45:15.063055+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -50,19 +50,19 @@
       "icon": "迅",
       "icon_color": "linear-gradient(135deg, #1e88e5, #00acc1)",
       "category": "下载工具",
-      "version": "25.1.43.1730",
-      "download_url": "https://down.sandai.net/thunder_pc/ThunderSetup25.1.43.1730xl.exe",
-      "download_url_with_params": "https://down.sandai.net/thunder_pc/ThunderSetup25.1.43.1730xl.exe",
+      "version": "25.1.44.1742",
+      "download_url": "https://down.sandai.net/thunder_pc/ThunderSetup25.1.44.1742xl.exe",
+      "download_url_with_params": "https://down.sandai.net/thunder_pc/ThunderSetup25.1.44.1742xl.exe",
       "downloads": [],
-      "size": 233210920,
-      "size_mb": 222.4,
-      "last_modified": "2026-11-01",
+      "size": 233874784,
+      "size_mb": 223.0,
+      "last_modified": "2026-11-10",
       "md5": "",
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
-      "detected_at": "2026-11-01 04:41",
-      "fb_streak": 176,
-      "fb_skip_until": 1794300702
+      "detected_at": "2026-11-10 16:45",
+      "fb_streak": 0,
+      "fb_skip_until": 0
     },
     {
       "name": "WeChat",
