@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T04:51:38.436465+00:00",
+  "updated_at": "2026-11-10T05:07:01.571884+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-11-01 04:41",
-      "fb_streak": 173,
-      "fb_skip_until": 1794284926
+      "fb_streak": 174,
+      "fb_skip_until": 1794290821
     },
     {
       "name": "WeChat",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.46",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794889295&P2=404&P3=2&P4=jpkD7P3SBHHv07PmRSWLuLD2uUGmjm65cXv22yY%2bcVSnCXIge51jmmtvWxD3Nw8YZYSsQo8DeRaesdOi5Tc84Q%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794889295&P2=404&P3=2&P4=jpkD7P3SBHHv07PmRSWLuLD2uUGmjm65cXv22yY%2bcVSnCXIge51jmmtvWxD3Nw8YZYSsQo8DeRaesdOi5Tc84Q%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794891986&P2=404&P3=2&P4=n0FPl97u%2bydI6lb1xbs9cymWu9nFFDVG8U5Y7mpUvZVU9iyrwDZcvsiFyj7zRUWHq3uXDKzXRjZNPn3XSdsCkQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794891986&P2=404&P3=2&P4=n0FPl97u%2bydI6lb1xbs9cymWu9nFFDVG8U5Y7mpUvZVU9iyrwDZcvsiFyj7zRUWHq3uXDKzXRjZNPn3XSdsCkQ%3d%3d",
       "downloads": [],
       "size": 208458064,
       "size_mb": 198.8,
@@ -2415,8 +2415,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 213,
-      "fb_skip_until": 1794284926
+      "fb_streak": 214,
+      "fb_skip_until": 1794290821
     },
     {
       "name": "BitComet",
