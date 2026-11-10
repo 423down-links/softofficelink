@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T17:51:46.387761+00:00",
+  "updated_at": "2026-11-10T18:06:11.346599+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.46",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794937854&P2=404&P3=2&P4=bmgk%2fEO%2fjQIiy1DPu9Xi1bJ4sHbhyrZ4NBQFPmSNfGvdRA9%2fvAsQEWbvuFsVlquQArN0cpMhoifE6o4BPas0ng%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794937854&P2=404&P3=2&P4=bmgk%2fEO%2fjQIiy1DPu9Xi1bJ4sHbhyrZ4NBQFPmSNfGvdRA9%2fvAsQEWbvuFsVlquQArN0cpMhoifE6o4BPas0ng%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794938748&P2=404&P3=2&P4=ZZSecbpsTPjdy1Y26dalHebqayHQthj9Zyk2PVPNlPQzl21T7VYqDSyLUNl7j5lPF0gwn%2fPfP8%2f6olZ5Frpnug%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794938748&P2=404&P3=2&P4=ZZSecbpsTPjdy1Y26dalHebqayHQthj9Zyk2PVPNlPQzl21T7VYqDSyLUNl7j5lPF0gwn%2fPfP8%2f6olZ5Frpnug%3d%3d",
       "downloads": [],
       "size": 208458064,
       "size_mb": 198.8,
@@ -476,15 +476,15 @@
       "downloads": [
         {
           "name": "x64",
-          "url": "https://download.visualstudio.microsoft.com/download/pr/78d061c5-9ef3-42ab-98ed-3309d1095dc4/9C02C9ED120F671B900E6B9471D890E3B2414117A7E53F4AE2E855466FA2B7C9/VC_redist.x64.exe"
+          "url": "https://aka.ms/vc14/vc_redist.x64.exe"
         },
         {
           "name": "x86",
-          "url": "https://download.visualstudio.microsoft.com/download/pr/78d061c5-9ef3-42ab-98ed-3309d1095dc4/7B0117E6E20E9E349029C000A8A2715A52CF37C15B6BB697B2908E8BC7066CDF/VC_redist.x86.exe"
+          "url": "https://aka.ms/vc14/vc_redist.x86.exe"
         },
         {
           "name": "arm64",
-          "url": "https://download.visualstudio.microsoft.com/download/pr/78d061c5-9ef3-42ab-98ed-3309d1095dc4/3C81BCF5B06156858362400D7066F65ECE38E8ACCB5E687FC65BEF5735F31FFC/VC_redist.arm64.exe"
+          "url": "https://aka.ms/vc14/vc_redist.arm64.exe"
         }
       ],
       "size": 18863624,
@@ -2198,7 +2198,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-11-03",
       "md5": "",
@@ -2436,8 +2436,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 223,
-      "fb_skip_until": 1794333110
+      "fb_streak": 224,
+      "fb_skip_until": 1794337571
     },
     {
       "name": "BitComet",
