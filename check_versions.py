@@ -1057,6 +1057,24 @@ PRODUCTS = [
         'official_site': 'https://www.poweriso.com/',
     },
     {
+        'name': 'BurnAware',
+        'name_cn': 'BurnAware',
+        'icon': 'BA',
+        'icon_color': 'linear-gradient(135deg, #ff6f00, #ffca28)',
+        'category': '光盘工具',
+        # 官网 download.html 上写「Download version 19.5」，直链文件名带版本
+        # （burnaware_pro_19.5_x64.exe）；旧版包已下架，URL 会 302 跳回首页。
+        'detect_type': 'scrape',
+        'check_url': 'https://www.burnaware.com/download.html',
+        'version_regex': 'Download version (\\d+\\.\\d+)',
+        'url_pattern': 'https://www.burnaware.com/downloads/burnaware_pro_{ver}_x64.exe',
+        'prefer_scraped_version': True,
+        'version': '19.5',
+        'skip_md5': True,
+        'detect_priority': 'fast',
+        'official_site': 'https://www.burnaware.com/',
+    },
+    {
         'name': 'Ventoy',
         'name_cn': 'Ventoy',
         'icon': 'VT',

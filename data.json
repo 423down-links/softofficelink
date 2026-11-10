@@ -1,5 +1,9 @@
 {
+<<<<<<< Updated upstream
   "updated_at": "2026-11-10T08:51:39.403093+00:00",
+=======
+  "updated_at": "2026-11-10T09:02:07.795675+00:00",
+>>>>>>> Stashed changes
   "products": [
     {
       "name": "LDPlayer 9",
@@ -1271,6 +1275,27 @@
       "official_site": "https://www.poweriso.com/",
       "update_items": [],
       "detected_at": "2026-10-09 09:56",
+      "fb_streak": 0,
+      "fb_skip_until": 0
+    },
+    {
+      "name": "BurnAware",
+      "name_cn": "BurnAware",
+      "alias": "",
+      "icon": "BA",
+      "icon_color": "linear-gradient(135deg, #ff6f00, #ffca28)",
+      "category": "光盘工具",
+      "version": "19.5",
+      "download_url": "https://www.burnaware.com/downloads/burnaware_pro_19.5_x64.exe",
+      "download_url_with_params": "https://www.burnaware.com/downloads/burnaware_pro_19.5_x64.exe",
+      "downloads": [],
+      "size": 34405368,
+      "size_mb": 32.8,
+      "last_modified": "2026-11-09",
+      "md5": "",
+      "official_site": "https://www.burnaware.com/",
+      "update_items": [],
+      "detected_at": "2026-11-10 17:02",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
