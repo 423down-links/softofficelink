@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T21:52:00.652585+00:00",
+  "updated_at": "2026-11-10T22:06:21.218779+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-04 16:51",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.46",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794952257&P2=404&P3=2&P4=m48ERRVUMCrwsRsr13VbDm7onklsjMTNRE902IDenM7nkbrVUhg%2bdJEkEeSr%2bD1BGyBx0ehSsVDPfHy4t%2bzo6g%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794952257&P2=404&P3=2&P4=m48ERRVUMCrwsRsr13VbDm7onklsjMTNRE902IDenM7nkbrVUhg%2bdJEkEeSr%2bD1BGyBx0ehSsVDPfHy4t%2bzo6g%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794953151&P2=404&P3=2&P4=HEp%2bhST9hhbh54PQmDtDvDLZ5%2b4di8kofFeBb%2bzEWrspu16jOLLst2Uo1FxH9ajTCfidjb0IR0MXmPbfuQPmAA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794953151&P2=404&P3=2&P4=HEp%2bhST9hhbh54PQmDtDvDLZ5%2b4di8kofFeBb%2bzEWrspu16jOLLst2Uo1FxH9ajTCfidjb0IR0MXmPbfuQPmAA%3d%3d",
       "downloads": [],
       "size": 208458064,
       "size_mb": 198.8,
@@ -2436,8 +2436,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 226,
-      "fb_skip_until": 1794347492
+      "fb_streak": 227,
+      "fb_skip_until": 1794351981
     },
     {
       "name": "BitComet",
