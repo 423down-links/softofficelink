@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T20:51:32.385512+00:00",
+  "updated_at": "2026-11-10T21:06:18.619470+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,8 +187,8 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-04 16:51",
-      "fb_streak": 1,
-      "fb_skip_until": 0
+      "fb_streak": 2,
+      "fb_skip_until": 1794346578
     },
     {
       "name": "WinHex",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.46",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794948651&P2=404&P3=2&P4=KKoRBDEsh0Iq6tGnYr%2bD480zBiurhiq2nxYb0kpNvumrE5uRWxUSPlNkPmeluuTNidZ%2fCQ2rVkUVizcKZNOKiA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794948651&P2=404&P3=2&P4=KKoRBDEsh0Iq6tGnYr%2bD480zBiurhiq2nxYb0kpNvumrE5uRWxUSPlNkPmeluuTNidZ%2fCQ2rVkUVizcKZNOKiA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794949549&P2=404&P3=2&P4=HIz1LD4WW2uqD%2bg3D6VwpzIrVyc7pI8Xjurg%2fG3Ixkn8DJqv8uuUumcrQ1zHo%2fH8nO9qTd3h3pELwfcuOkK2JA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794949549&P2=404&P3=2&P4=HIz1LD4WW2uqD%2bg3D6VwpzIrVyc7pI8Xjurg%2fG3Ixkn8DJqv8uuUumcrQ1zHo%2fH8nO9qTd3h3pELwfcuOkK2JA%3d%3d",
       "downloads": [],
       "size": 208458064,
       "size_mb": 198.8,
@@ -1082,7 +1082,7 @@
       "official_site": "https://goldwave.ca/",
       "update_items": [],
       "detected_at": "2026-10-09 09:56",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -2114,7 +2114,7 @@
       "download_url": "https://yamicsoft.com/windowsmanager/software/windowsmanager_portable.zip",
       "download_url_with_params": "https://yamicsoft.com/windowsmanager/software/windowsmanager_portable.zip",
       "downloads": [],
-      "size": 21625629,
+      "size": 21624890,
       "size_mb": 20.6,
       "last_modified": "2026-11-10",
       "md5": "",
@@ -2198,7 +2198,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-11-03",
       "md5": "",
