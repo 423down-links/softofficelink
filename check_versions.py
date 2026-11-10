@@ -395,19 +395,21 @@ PRODUCTS = [
         'icon': 'VC',
         'icon_color': 'linear-gradient(135deg, #a34aa2, #5c2d91)',
         'category': '运行环境',
-        'detect_type': 'fixed',
-        'version': '14.52.37025.0',
-        'date': '2026-10-15',
-        # 该安装包的 CDN Last-Modified / 数字签名日期（10-09）早于官方发布日，
-        # 用 prefer_config_date 固定为人工核实的发布日期，不被探测值覆盖。
-        'prefer_config_date': True,
+        'detect_type': 'vcredist',
+        # 版本以官方安装包 PE FileVersion 为准（见 detect_vcredist）：
+        # 先从微软官方直链档案取最大 14.x + 三平台官方 GUID 地址，再读 PE 复核。
+        # 官方 aka.ms/vc14 永久短链常滞后一两个版本（实测 14.51 vs 实际 14.52.37029），
+        # 所以只作兜底，不作唯一版本源。
+        'vc_archive_url': 'https://raw.githubusercontent.com/abbodi1406/vcredist/master/source_links/README.md',
+        'version': '14.52.37029.0',
+        'date': '2026-11-06',
         # 主链接用于 fixed 探测（HEAD 取体积），x64/x86/arm64 三平台走 downloads
         # 二级链接，前端渲染为平台按钮：左键直接下载，右键/长按弹菜单复制完整地址。
-        'download_url': 'https://download.visualstudio.microsoft.com/download/pr/98bcc84f-0a9c-417c-a681-d88411dbb90f/7ACA0477C32519E54D888102ECF02495C8C05F83D61858A73BF75958DDC29835/VC_redist.x64.exe',
+        'download_url': 'https://download.visualstudio.microsoft.com/download/pr/78d061c5-9ef3-42ab-98ed-3309d1095dc4/9C02C9ED120F671B900E6B9471D890E3B2414117A7E53F4AE2E855466FA2B7C9/VC_redist.x64.exe',
         'downloads': [
-            {'name': 'x64', 'url': 'https://download.visualstudio.microsoft.com/download/pr/98bcc84f-0a9c-417c-a681-d88411dbb90f/7ACA0477C32519E54D888102ECF02495C8C05F83D61858A73BF75958DDC29835/VC_redist.x64.exe'},
-            {'name': 'x86', 'url': 'https://download.visualstudio.microsoft.com/download/pr/9b86116f-5f77-4f8f-8eba-bcea3cbdddc6/067B997E8E2D444EDA6F5ADCE816FCAB23154192C4C04F8EEBB24B01A757F4BF/VC_redist.x86.exe'},
-            {'name': 'arm64', 'url': 'https://download.visualstudio.microsoft.com/download/pr/98bcc84f-0a9c-417c-a681-d88411dbb90f/D7396DB95BE3A5F0BC93E02BD915C856081DD5FED9F231A7065F26C57F60ADAC/VC_redist.arm64.exe'},
+            {'name': 'x64', 'url': 'https://download.visualstudio.microsoft.com/download/pr/78d061c5-9ef3-42ab-98ed-3309d1095dc4/9C02C9ED120F671B900E6B9471D890E3B2414117A7E53F4AE2E855466FA2B7C9/VC_redist.x64.exe'},
+            {'name': 'x86', 'url': 'https://download.visualstudio.microsoft.com/download/pr/78d061c5-9ef3-42ab-98ed-3309d1095dc4/7B0117E6E20E9E349029C000A8A2715A52CF37C15B6BB697B2908E8BC7066CDF/VC_redist.x86.exe'},
+            {'name': 'arm64', 'url': 'https://download.visualstudio.microsoft.com/download/pr/78d061c5-9ef3-42ab-98ed-3309d1095dc4/3C81BCF5B06156858362400D7066F65ECE38E8ACCB5E687FC65BEF5735F31FFC/VC_redist.arm64.exe'},
         ],
         'official_site': 'https://learn.microsoft.com/zh-cn/cpp/windows/latest-supported-vc-redist?view=msvc-170',
     },
@@ -7978,6 +7980,83 @@ def detect_borisfx_hub(product):
     return version, full_url, full_url, size, date, ''
 
 
+def detect_vcredist(product):
+    """Visual C++ v14 Redistributable：按官方安装包实物取版本，永不卡旧版。
+
+    官方文档只给 aka.ms/vc14 永久短链（永远指向最新「已公开发布」版），
+    VS 2026 的 14.5x 新构建往往先铺 CDN、短链滞后一两个版本
+    （实测短链 14.51，实际已 14.52.37029）。所以：
+      1) 从微软官方直链档案（abbodi1406/vcredist，只收录
+         download.visualstudio.microsoft.com 的官方 GUID 直链）取最大 14.x；
+      2) 读该 x64 包的 PE FileVersion 复核，与清单不符时以 PE 为准；
+      3) 清单不可用时退回 aka.ms/vc14 短链读 PE。
+    结果写回 product['downloads']，前端三平台按钮始终是最新官方包。
+    """
+    version = product.get('version', '')
+    dl = product.get('download_url', '')
+    size = 0
+    date = product.get('date', '')
+
+    def _pe(u):
+        try:
+            v = get_pe_version(u)
+            return v if re.fullmatch(r'\d+(?:\.\d+){1,3}', str(v or '')) else ''
+        except Exception:
+            return ''
+
+    urls = {}
+    archive = product.get('vc_archive_url')
+    if archive:
+        try:
+            raw, _h, _f = http_get(archive, timeout=25)
+            text = raw.decode('utf-8', 'ignore')
+            vers = [v for v in re.findall(r'^(\d+\.\d+\.\d+\.\d+)\s*$', text, re.M)
+                    if v.startswith('14.')]
+            if vers:
+                newest = max(vers, key=_ver_tuple)
+                i = text.find(newest)
+                seg = text[i:i + 900] if i >= 0 else ''
+                for p in ('x64', 'x86', 'arm64'):
+                    m = re.search(r'(https://download\.visualstudio\.microsoft\.com/\S*VC_redist\.'
+                                  + p + r'\.exe)', seg)
+                    if m:
+                        urls[p] = m.group(1)
+                if urls:
+                    version = newest
+                    print(f"  官方直链清单最新版: {version}")
+        except Exception as e:
+            print(f"  ⚠️ 官方直链清单不可用: {str(e)[:50]}")
+
+    x64 = urls.get('x64') or dl
+    pe_v = _pe(x64) if x64 else ''
+    if pe_v:
+        print(f"  PE FileVersion: {pe_v}")
+        if not version or _ver_tuple(pe_v) >= _ver_tuple(version):
+            version = pe_v
+
+    if not urls:
+        u = 'https://aka.ms/vc14/vc_redist.x64.exe'
+        pe_v = _pe(u)
+        if pe_v and (not version or _ver_tuple(pe_v) >= _ver_tuple(version)):
+            version, urls = pe_v, {'x64': u}
+            print(f"  aka.ms 短链版本: {pe_v}")
+
+    if x64:
+        ok, sz, lm = check_url_follow(x64, referer='https://visualstudio.microsoft.com/')
+        if ok:
+            size, date = sz, (parse_date(lm) or date)
+        dl = x64
+
+    if urls:
+        product['downloads'] = [
+            {'name': p, 'url': urls.get(p) or f'https://aka.ms/vc14/vc_redist.{p}.exe'}
+            for p in ('x64', 'x86', 'arm64')
+        ]
+
+    print(f"  版本: {version} | 体积: {size / 1024 / 1024:.1f}MB | 日期: {date}")
+    return version, dl, dl, size, date, ''
+
+
 def find_latest(product):
     """根据检测类型分发"""
     detect_type = product.get('detect_type', 'increment')
@@ -7988,6 +8067,8 @@ def find_latest(product):
         version, full_url, param_url, size, date, md5 = detect_ludashi(product)
     elif detect_type == 'fixed':
         version, full_url, param_url, size, date, md5 = detect_fixed(product)
+    elif detect_type == 'vcredist':
+        version, full_url, param_url, size, date, md5 = detect_vcredist(product)
     elif detect_type == 'zip_changelog':
         version, full_url, param_url, size, date, md5 = detect_zip_changelog(product)
     elif detect_type == 'cyberlink':

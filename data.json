@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T04:22:25.418257+00:00",
+  "updated_at": "2026-11-10T04:51:38.436465+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -470,30 +470,30 @@
       "icon": "VC",
       "icon_color": "linear-gradient(135deg, #a34aa2, #5c2d91)",
       "category": "运行环境",
-      "version": "14.52.37025.0",
-      "download_url": "https://download.visualstudio.microsoft.com/download/pr/98bcc84f-0a9c-417c-a681-d88411dbb90f/7ACA0477C32519E54D888102ECF02495C8C05F83D61858A73BF75958DDC29835/VC_redist.x64.exe",
-      "download_url_with_params": "https://download.visualstudio.microsoft.com/download/pr/98bcc84f-0a9c-417c-a681-d88411dbb90f/7ACA0477C32519E54D888102ECF02495C8C05F83D61858A73BF75958DDC29835/VC_redist.x64.exe",
+      "version": "14.52.37029.0",
+      "download_url": "https://download.visualstudio.microsoft.com/download/pr/78d061c5-9ef3-42ab-98ed-3309d1095dc4/9C02C9ED120F671B900E6B9471D890E3B2414117A7E53F4AE2E855466FA2B7C9/VC_redist.x64.exe",
+      "download_url_with_params": "https://download.visualstudio.microsoft.com/download/pr/78d061c5-9ef3-42ab-98ed-3309d1095dc4/9C02C9ED120F671B900E6B9471D890E3B2414117A7E53F4AE2E855466FA2B7C9/VC_redist.x64.exe",
       "downloads": [
         {
           "name": "x64",
-          "url": "https://download.visualstudio.microsoft.com/download/pr/98bcc84f-0a9c-417c-a681-d88411dbb90f/7ACA0477C32519E54D888102ECF02495C8C05F83D61858A73BF75958DDC29835/VC_redist.x64.exe"
+          "url": "https://download.visualstudio.microsoft.com/download/pr/78d061c5-9ef3-42ab-98ed-3309d1095dc4/9C02C9ED120F671B900E6B9471D890E3B2414117A7E53F4AE2E855466FA2B7C9/VC_redist.x64.exe"
         },
         {
           "name": "x86",
-          "url": "https://download.visualstudio.microsoft.com/download/pr/9b86116f-5f77-4f8f-8eba-bcea3cbdddc6/067B997E8E2D444EDA6F5ADCE816FCAB23154192C4C04F8EEBB24B01A757F4BF/VC_redist.x86.exe"
+          "url": "https://download.visualstudio.microsoft.com/download/pr/78d061c5-9ef3-42ab-98ed-3309d1095dc4/7B0117E6E20E9E349029C000A8A2715A52CF37C15B6BB697B2908E8BC7066CDF/VC_redist.x86.exe"
         },
         {
           "name": "arm64",
-          "url": "https://download.visualstudio.microsoft.com/download/pr/98bcc84f-0a9c-417c-a681-d88411dbb90f/D7396DB95BE3A5F0BC93E02BD915C856081DD5FED9F231A7065F26C57F60ADAC/VC_redist.arm64.exe"
+          "url": "https://download.visualstudio.microsoft.com/download/pr/78d061c5-9ef3-42ab-98ed-3309d1095dc4/3C81BCF5B06156858362400D7066F65ECE38E8ACCB5E687FC65BEF5735F31FFC/VC_redist.arm64.exe"
         }
       ],
-      "size": 18863152,
+      "size": 18863624,
       "size_mb": 18.0,
-      "last_modified": "2026-10-15",
+      "last_modified": "2026-11-10",
       "md5": "",
       "official_site": "https://learn.microsoft.com/zh-cn/cpp/windows/latest-supported-vc-redist?view=msvc-170",
       "update_items": [],
-      "detected_at": "2026-10-15 19:30",
+      "detected_at": "2026-11-10 12:51",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
