@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T06:52:28.730436+00:00",
+  "updated_at": "2026-11-11T07:06:22.644404+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -50,17 +50,17 @@
       "icon": "迅",
       "icon_color": "linear-gradient(135deg, #1e88e5, #00acc1)",
       "category": "下载工具",
-      "version": "25.1.44.1743",
-      "download_url": "https://down.sandai.net/thunder_pc/ThunderSetup25.1.44.1743xl.exe",
-      "download_url_with_params": "https://down.sandai.net/thunder_pc/ThunderSetup25.1.44.1743xl.exe",
+      "version": "25.1.44.1745",
+      "download_url": "https://down.sandai.net/thunder_pc/ThunderSetup25.1.44.1745xl.exe",
+      "download_url_with_params": "https://down.sandai.net/thunder_pc/ThunderSetup25.1.44.1745xl.exe",
       "downloads": [],
-      "size": 233878880,
-      "size_mb": 223.0,
-      "last_modified": "2026-11-10",
+      "size": 234081120,
+      "size_mb": 223.2,
+      "last_modified": "2026-11-11",
       "md5": "",
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
-      "detected_at": "2026-11-10 17:21",
+      "detected_at": "2026-11-11 15:05",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.46",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794984658&P2=404&P3=2&P4=ht%2fkVTcHsFlZ3G2ZOuVEKcrMd7QjjRI3XNlc6aGR4OA1hkt3dM2GoETy7YR%2brQTgceVQns%2bG3CDAMRc7pZtB7A%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794984658&P2=404&P3=2&P4=ht%2fkVTcHsFlZ3G2ZOuVEKcrMd7QjjRI3XNlc6aGR4OA1hkt3dM2GoETy7YR%2brQTgceVQns%2bG3CDAMRc7pZtB7A%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794985552&P2=404&P3=2&P4=fU2935A8BMAkXwnka6ugsrNcJY%2brwYg4EhSg9yOT%2fcSlaY7lYXeNaz35I3NZCngsVjuGPfvyHBKkQsDuTM%2fDBA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794985552&P2=404&P3=2&P4=fU2935A8BMAkXwnka6ugsrNcJY%2brwYg4EhSg9yOT%2fcSlaY7lYXeNaz35I3NZCngsVjuGPfvyHBKkQsDuTM%2fDBA%3d%3d",
       "downloads": [],
       "size": 208458064,
       "size_mb": 198.8,
@@ -2436,8 +2436,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 233,
-      "fb_skip_until": 1794379951
+      "fb_streak": 234,
+      "fb_skip_until": 1794384382
     },
     {
       "name": "BitComet",
