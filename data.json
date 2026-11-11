@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T06:22:19.474064+00:00",
+  "updated_at": "2026-11-11T06:52:28.730436+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.43",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe?v=1794378058530&n=ldinst_9.5.43_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe?v=1794379861152&n=ldinst_9.5.43_ld_407594_ld.exe",
       "downloads": [],
       "size": 602964448,
       "size_mb": 575.0,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.0.34",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.34.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.34.exe?v=1794378058982&n=ldinst_14.0.34_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.34.exe?v=1794379864042&n=ldinst_14.0.34_ld_412570_ld.exe",
       "downloads": [],
       "size": 744727008,
       "size_mb": 710.2,
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-04 16:51",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.46",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794982858&P2=404&P3=2&P4=WCFcRd%2fxCE9gPIYx%2fsav1sgNqRq%2bHohiUXCG%2biuhzX7YyQ02XcUMVyk9Mzol%2bFKj1U3YmAaqf3KOjEE8U2kl9g%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794982858&P2=404&P3=2&P4=WCFcRd%2fxCE9gPIYx%2fsav1sgNqRq%2bHohiUXCG%2biuhzX7YyQ02XcUMVyk9Mzol%2bFKj1U3YmAaqf3KOjEE8U2kl9g%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794984658&P2=404&P3=2&P4=ht%2fkVTcHsFlZ3G2ZOuVEKcrMd7QjjRI3XNlc6aGR4OA1hkt3dM2GoETy7YR%2brQTgceVQns%2bG3CDAMRc7pZtB7A%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794984658&P2=404&P3=2&P4=ht%2fkVTcHsFlZ3G2ZOuVEKcrMd7QjjRI3XNlc6aGR4OA1hkt3dM2GoETy7YR%2brQTgceVQns%2bG3CDAMRc7pZtB7A%3d%3d",
       "downloads": [],
       "size": 208458064,
       "size_mb": 198.8,
@@ -2114,7 +2114,7 @@
       "download_url": "https://yamicsoft.com/windowsmanager/software/windowsmanager_portable.zip",
       "download_url_with_params": "https://yamicsoft.com/windowsmanager/software/windowsmanager_portable.zip",
       "downloads": [],
-      "size": 21624890,
+      "size": 21624899,
       "size_mb": 20.6,
       "last_modified": "2026-11-10",
       "md5": "",
