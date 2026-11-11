@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T09:21:47.345467+00:00",
+  "updated_at": "2026-11-11T09:28:43.706771+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-04 16:51",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.46",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794993661&P2=404&P3=2&P4=eJi6iGnCOL6exB7g0eoffedo75n2jGOgi3MBdatYGvv7D4F%2ffSa6hRKeVJxhfXPWTzE9uKxZuIqAPKSo%2bSS6Nw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794993661&P2=404&P3=2&P4=eJi6iGnCOL6exB7g0eoffedo75n2jGOgi3MBdatYGvv7D4F%2ffSa6hRKeVJxhfXPWTzE9uKxZuIqAPKSo%2bSS6Nw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794994049&P2=404&P3=2&P4=bj857QCww09DmQgkBaJ%2foV9CNXm8Ls0M6m%2fQdYeFwpAZ%2f5cGXN3mnfORhPRtE%2fB1LfLNRHr%2bikniAQBT975kcA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794994049&P2=404&P3=2&P4=bj857QCww09DmQgkBaJ%2foV9CNXm8Ls0M6m%2fQdYeFwpAZ%2f5cGXN3mnfORhPRtE%2fB1LfLNRHr%2bikniAQBT975kcA%3d%3d",
       "downloads": [],
       "size": 208458064,
       "size_mb": 198.8,
@@ -578,7 +578,7 @@
       "official_site": "https://www.ntwind.com/software/winsnap.html",
       "update_items": [],
       "detected_at": "2026-10-28 01:06",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -1439,7 +1439,7 @@
       "official_site": "https://www.ntwind.com/software/wincam.html",
       "update_items": [],
       "detected_at": "2026-10-23 21:13",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -2436,8 +2436,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 235,
-      "fb_skip_until": 1794388912
+      "fb_streak": 236,
+      "fb_skip_until": 1794392923
     },
     {
       "name": "BitComet",
