@@ -547,6 +547,23 @@ PRODUCTS = [
         'official_site': 'https://github.com/adavak/win_iso_build/releases',
     },
     {
+        'name': 'MAS',
+        'name_cn': 'MAS 激活脚本',
+        'icon': 'MA',
+        'icon_color': 'linear-gradient(135deg, #4caf50, #8bc34a)',
+        'category': '系统工具',
+        # 只有 tag（3.14）没有 release 资产，下载页就是 release 页
+        'detect_type': 'github_release',
+        'repo': 'massgravel/Microsoft-Activation-Scripts',
+        'version_regex': r'v?(\d+\.\d+)$',
+        'version': '3.14',
+        'date': '2026-11-11',
+        'download_url': 'https://github.com/massgravel/Microsoft-Activation-Scripts/releases',
+        'official_site': 'https://github.com/massgravel/Microsoft-Activation-Scripts',
+        'allow_no_size': True,
+        'skip_md5': True,
+    },
+    {
         'name': 'Notepad4',
         'name_cn': 'Notepad4',
         'icon': 'N4',

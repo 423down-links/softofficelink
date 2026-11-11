@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T11:21:57.564089+00:00",
+  "updated_at": "2026-11-11T11:26:49.400648+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -641,6 +641,27 @@
       "official_site": "https://github.com/adavak/win_iso_build/releases",
       "update_items": [],
       "detected_at": "2026-11-11 08:50",
+      "fb_streak": 0,
+      "fb_skip_until": 0
+    },
+    {
+      "name": "MAS",
+      "name_cn": "MAS 激活脚本",
+      "alias": "",
+      "icon": "MA",
+      "icon_color": "linear-gradient(135deg, #4caf50, #8bc34a)",
+      "category": "系统工具",
+      "version": "3.14",
+      "download_url": "https://github.com/massgravel/Microsoft-Activation-Scripts/releases/tag/3.14",
+      "download_url_with_params": "https://github.com/massgravel/Microsoft-Activation-Scripts/releases/tag/3.14",
+      "downloads": [],
+      "size": 0,
+      "size_mb": 0,
+      "last_modified": "2026-11-11",
+      "md5": "",
+      "official_site": "https://github.com/massgravel/Microsoft-Activation-Scripts",
+      "update_items": [],
+      "detected_at": "2026-11-11 19:26",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
