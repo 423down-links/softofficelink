@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T10:21:34.557781+00:00",
+  "updated_at": "2026-11-11T10:51:45.689465+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.43",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe?v=1794392462628&n=ldinst_9.5.43_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.43.exe?v=1794394262398&n=ldinst_9.5.43_ld_407594_ld.exe",
       "downloads": [],
       "size": 602964448,
       "size_mb": 575.0,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.0.34",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.34.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.34.exe?v=1794392462041&n=ldinst_14.0.34_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.34.exe?v=1794394264489&n=ldinst_14.0.34_ld_412570_ld.exe",
       "downloads": [],
       "size": 744727008,
       "size_mb": 710.2,
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.46",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794997259&P2=404&P3=2&P4=KG6lcREPRw1g%2f0Gcq1AA7ikqFSIBVCpzenVFcrDmfjB8Hv3QPN6YbBwB6ZuLgFEjc2Am1G9DM7UIzjTadRk%2fJA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794997259&P2=404&P3=2&P4=KG6lcREPRw1g%2f0Gcq1AA7ikqFSIBVCpzenVFcrDmfjB8Hv3QPN6YbBwB6ZuLgFEjc2Am1G9DM7UIzjTadRk%2fJA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794999061&P2=404&P3=2&P4=R%2fYYzRmXQ10DY52i2%2b6u6NP9o1MeEXuYopBw0SRFkD9ahwMHQg5%2fPIjCzhImmOw6Bhqd4n3QTf%2bMsGnkmZhO0w%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1794999061&P2=404&P3=2&P4=R%2fYYzRmXQ10DY52i2%2b6u6NP9o1MeEXuYopBw0SRFkD9ahwMHQg5%2fPIjCzhImmOw6Bhqd4n3QTf%2bMsGnkmZhO0w%3d%3d",
       "downloads": [],
       "size": 208458064,
       "size_mb": 198.8,
@@ -2436,8 +2436,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 236,
-      "fb_skip_until": 1794392923
+      "fb_streak": 237,
+      "fb_skip_until": 1794397905
     },
     {
       "name": "BitComet",
