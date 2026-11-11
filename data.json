@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T11:07:42.041882+00:00",
+  "updated_at": "2026-11-11T11:08:45.024674+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -1785,17 +1785,17 @@
       "icon": "Ca",
       "icon_color": "linear-gradient(135deg, #ff6d00, #ff9100)",
       "category": "视频编辑",
-      "version": "26.2.5.21144",
-      "download_url": "https://download.techsmith.com/camtasiastudio/releases/2625/camtasia.exe",
-      "download_url_with_params": "https://download.techsmith.com/camtasiastudio/releases/2625/camtasia.exe",
+      "version": "27.0.0.21317",
+      "download_url": "https://download.techsmith.com/camtasiastudio/releases/2700/camtasia.exe",
+      "download_url_with_params": "https://download.techsmith.com/camtasiastudio/releases/2700/camtasia.exe",
       "downloads": [],
-      "size": 323462440,
-      "size_mb": 308.5,
-      "last_modified": "2026-11-03",
+      "size": 329053240,
+      "size_mb": 313.8,
+      "last_modified": "2026-11-11",
       "md5": "",
       "official_site": "https://www.techsmith.com/camtasia-version-history.html",
       "update_items": [],
-      "detected_at": "2026-11-03 22:51",
+      "detected_at": "2026-11-11 19:08",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
