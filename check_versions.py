@@ -2718,6 +2718,22 @@ def carry_version_n(version, k):
     return '.'.join(parts)
 
 
+def next_major_version(version):
+    """跨大版本跳板：首段 +1、其余段归 0（26.2.5 -> 27.0.0）。
+
+    carry_version 只在「倒数第二段」进位，26.2.5 一路进位要 minor 从 2 数到
+    27 才够得着 27.0.0；默认 MAX_CARRY=3 永远到不了，大版本发版就卡死
+    （Camtasia 26.2.5 → 27.0.0 实测卡了整版）。进位段全 404 后补探一次即可。
+    """
+    parts = version.split('.')
+    if not parts or not parts[0].isdigit():
+        return version
+    parts[0] = str(int(parts[0]) + 1)
+    for i in range(1, len(parts)):
+        parts[i] = '0'
+    return '.'.join(parts)
+
+
 def adobe_encode(display_ver):
     """显示版本 → Adobe 10 位构建号：2026.003.22075 → 2600322075。
 
@@ -3094,6 +3110,15 @@ def detect_increment(product):
     _adobe_done = product.get('version_format') == 'adobe_build'
     carry_count = 0
     skip_count = 0
+
+    def _probe_next_major(cur_v):
+        """进位段全 404 后，补探一次跨大版本跳板（26.2.5 → 27.0.0）。"""
+        mjv = next_major_version(cur_v)
+        if _ver_tuple(mjv) <= _ver_tuple(latest):
+            return None
+        _u, ok, s, d = get_version_url(mjv)
+        return (mjv, s, d) if ok else None
+
     _loop_iters = 0 if (_train_done or _adobe_done) else MAX_INCREMENT * (MAX_CARRY + 1)
     for _ in range(_loop_iters):
         next_ver = increment_version(current)
@@ -3130,9 +3155,22 @@ def detect_increment(product):
                         skip_count = 0
                         print(f"  ✓ 进位命中: {current}")
                         continue
+                    # 进位段（26.3.0/26.4.0/26.5.0）全空：大版本可能已跳段发布
+                    _mj = _probe_next_major(current)
+                    if _mj:
+                        current, latest, latest_size, latest_date = _mj[0], _mj[0], _mj[1], _mj[2]
+                        skip_count = 0
+                        print(f"  ✓ 跨大版本命中: {current}")
+                        continue
                     print(f"  ⏹ 进位段全无命中（已覆盖 {MAX_CARRY} 个段），停止探测")
                     break
                 else:
+                    _mj = _probe_next_major(current)
+                    if _mj:
+                        current, latest, latest_size, latest_date = _mj[0], _mj[0], _mj[1], _mj[2]
+                        skip_count = 0
+                        print(f"  ✓ 跨大版本命中: {current}")
+                        continue
                     print(f"  ⏹ 已进位{MAX_CARRY}次，停止探测")
                     break
             current = next_ver
