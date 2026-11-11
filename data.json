@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T11:26:49.400648+00:00",
+  "updated_at": "2026-11-11T11:35:25.275820+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -2550,6 +2550,43 @@
         }
       ],
       "detected_at": "2026-10-27 03:06",
+      "fb_streak": 0,
+      "fb_skip_until": 0
+    },
+    {
+      "name": "Microsoft .NET Runtime",
+      "name_cn": ".NET 运行时",
+      "alias": ".NET Runtime",
+      "icon": ".N",
+      "icon_color": "linear-gradient(135deg, #512bd4, #8a2be2)",
+      "category": "运行环境",
+      "version": "10.0.15",
+      "download_url": "https://github.com/dotnet/core/releases",
+      "download_url_with_params": "https://github.com/dotnet/core/releases",
+      "downloads": [],
+      "size": 0,
+      "size_mb": 0,
+      "last_modified": "2026-11-10",
+      "md5": "",
+      "official_site": "https://dotnet.microsoft.com/download/dotnet",
+      "update_items": [],
+      "version_list": [
+        {
+          "name": ".NET Runtime 10.0.15",
+          "version": "10.0.15",
+          "tag": "LTS",
+          "official_site": "https://github.com/dotnet/core/blob/main/release-notes/10.0/10.0.15/10.0.15.md",
+          "download_url": "https://github.com/dotnet/core/releases"
+        },
+        {
+          "name": ".NET Runtime 8.0.34",
+          "version": "8.0.34",
+          "tag": "LTS",
+          "official_site": "https://github.com/dotnet/core/blob/main/release-notes/8.0/8.0.34/8.0.34.md",
+          "download_url": "https://github.com/dotnet/core/releases"
+        }
+      ],
+      "detected_at": "2026-11-11 19:35",
       "fb_streak": 0,
       "fb_skip_until": 0
     },

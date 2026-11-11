@@ -2224,6 +2224,27 @@ PRODUCTS = [
         'skip_md5': True,
     },
     {
+        'name': 'Microsoft .NET Runtime',
+        'name_cn': '.NET 运行时',
+        'alias': '.NET Runtime',
+        'icon': '.N',
+        'icon_color': 'linear-gradient(135deg, #512bd4, #8a2be2)',
+        'category': '运行环境',
+        # 多版本线并列（10.0 LTS / 8.0 LTS），前端「点标题展开子版本」，
+        # 与 Java 共用 version_list 管道：dotnet 官方 releases-index 一次拿全，
+        # 版本线清单按 dotnet_lines 优先级降序（主版本取 10.0）。
+        'detect_type': 'dotnet_api',
+        'dotnet_api': 'https://dotnetcli.blob.core.windows.net/dotnet/release-metadata/releases-index.json',
+        'dotnet_lines': ['10.0', '8.0'],
+        'version': '10.0.15',
+        'date': '2026-11-10',
+        'download_url': 'https://github.com/dotnet/core/releases',
+        'official_site': 'https://dotnet.microsoft.com/download/dotnet',
+        # 下载页是各版本线入口，不是单一安装包
+        'allow_no_size': True,
+        'skip_md5': True,
+    },
+    {
         'name': 'SketchUp Pro 2027',
         'name_cn': 'SketchUp Pro 2027',
         'alias': 'SketchUp',
@@ -6987,6 +7008,94 @@ def detect_java_api(product):
     return display_version, main_download, main_download, 0, main_date, ''
 
 
+def detect_dotnet_api(product):
+    """.NET 官方发布元数据探测：一次请求拿全各版本线最新补丁号/日期/支持类型。
+
+    端点：https://dotnetcli.blob.core.windows.net/dotnet/release-metadata/releases-index.json
+    这是 dotnet 官方 update 检查用的同一份数据，每项含：
+      channel-version     版本线（10.0 / 8.0）
+      latest-release      该线最新补丁号（10.0.15）
+      latest-release-date 发布日期（2026-11-10）
+      release-type        lts / sts
+      support-phase       active / eol
+
+    为什么不走 GitHub Releases：dotnet/core 的 release 资产全是空的，下载散落在
+    各产品页；releases-index 一次就能拿到全部版本线，还能直接复用 Java 的
+    version_list 管道渲染成「点标题展开子版本」。
+    """
+    import json as _json
+
+    api = (product.get('dotnet_api')
+           or 'https://dotnetcli.blob.core.windows.net/dotnet/release-metadata/releases-index.json')
+    wanted = [str(x) for x in (product.get('dotnet_lines') or [])]
+
+    payload = None
+    try:
+        req = urllib.request.Request(api, headers={
+            'User-Agent': UA, 'Accept': 'application/json, text/plain, */*'})
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            payload = _json.loads(resp.read().decode('utf-8', errors='ignore'))
+    except Exception as e:
+        print(f"  ⚠️ .NET API错误: {e}")
+
+    def _fallback():
+        # 版本用配置兜底；子版本清单由上层沿用上次数据，避免展开列表整块消失
+        return (product.get('version', ''), product.get('download_url', ''),
+                product.get('download_url', ''), 0, '', '')
+
+    if payload is None:
+        return _fallback()
+
+    by_line = {}
+    for r in (payload.get('releases-index') or []):
+        line = str(r.get('channel-version') or '')
+        if line not in wanted:
+            continue
+        ver = str(r.get('latest-release') or '')
+        if not ver:
+            continue
+        by_line[line] = {
+            'version': ver,
+            'date': str(r.get('latest-release-date') or '')[:10],
+            'type': str(r.get('release-type') or '').lower(),
+        }
+
+    variants = []
+    for line in wanted:
+        info = by_line.get(line)
+        if not info:
+            continue
+        ver = info['version']
+        variants.append({
+            'name': f".NET Runtime {ver}",
+            'version': ver,
+            'tag': 'LTS' if info['type'] == 'lts' else 'STS',
+            'official_site': f'https://github.com/dotnet/core/blob/main/release-notes/{line}/{ver}/{ver}.md',
+            'download_url': 'https://github.com/dotnet/core/releases',
+        })
+
+    if not variants:
+        print("  ⚠️ .NET API未取到目标版本线")
+        return _fallback()
+
+    # 主版本按配置优先级取（dotnet_lines 已降序），不能按日期取：
+    # 8.0 先发补丁时会从 10.0.15 跳到 8.0.35（数值变小）被防降级拦掉
+    main_line = next((l for l in wanted if l in by_line), None)
+    if main_line is None:
+        return _fallback()
+    display_version = by_line[main_line]['version']
+    main_date = max((by_line[l]['date'] for l in by_line), default='')
+    main_download = product.get('download_url', '')
+
+    _java_versions[product['name']] = variants
+
+    print(f"  .NET API版本: 主 {display_version} ({main_date}), 共 {len(variants)} 条版本线")
+    for v in variants:
+        print(f"    └─ {v['version']} ({v['tag']})")
+
+    return display_version, main_download, main_download, 0, main_date, ''
+
+
 def _edge_stable_release():
     """Edge 稳定版官方发布信息：返回 (版本号, 发布日期北京时间)。
 
@@ -8258,6 +8367,8 @@ def find_latest(product):
         version, full_url, param_url, size, date, md5 = detect_hexhub_api(product)
     elif detect_type == 'java_api':
         version, full_url, param_url, size, date, md5 = detect_java_api(product)
+    elif detect_type == 'dotnet_api':
+        version, full_url, param_url, size, date, md5 = detect_dotnet_api(product)
     elif detect_type == 'startallback':
         version, full_url, param_url, size, date, md5 = detect_startallback(product)
     elif detect_type == 'bwcx':
