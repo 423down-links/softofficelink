@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T17:52:03.715799+00:00",
+  "updated_at": "2026-11-11T18:06:27.164673+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.46",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1795024266&P2=404&P3=2&P4=U%2fgG5EjEXlTZ723m0wt7tZ247DJ%2bM7z9md3Fu9Elj0e1p%2bYXIrJFrnkMUlb6R3kIG5q6fBer3VTOcKUlVyALTg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1795024266&P2=404&P3=2&P4=U%2fgG5EjEXlTZ723m0wt7tZ247DJ%2bM7z9md3Fu9Elj0e1p%2bYXIrJFrnkMUlb6R3kIG5q6fBer3VTOcKUlVyALTg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1795025164&P2=404&P3=2&P4=iwfujbkt59ZqduvGW1vbDaa1oALqaukoMv8r1C9lVvLP6SaV8O4nIBKYJ2h2DihzaaZUOhbVqYJUkAptDKsJjg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1795025164&P2=404&P3=2&P4=iwfujbkt59ZqduvGW1vbDaa1oALqaukoMv8r1C9lVvLP6SaV8O4nIBKYJ2h2DihzaaZUOhbVqYJUkAptDKsJjg%3d%3d",
       "downloads": [],
       "size": 208458064,
       "size_mb": 198.8,
@@ -2000,22 +2000,22 @@
       "icon": "M",
       "icon_color": "linear-gradient(135deg, #8e44ad, #6c3483)",
       "category": "资源站",
-      "version": "2026-11-05",
+      "version": "2026-11-11",
       "download_url": "https://w18.monkrus.ws/",
       "download_url_with_params": "https://w18.monkrus.ws/",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-11-05",
+      "last_modified": "2026-11-11",
       "md5": "",
       "official_site": "https://w18.monkrus.ws/",
       "update_items": [
         {
-          "title": "Autodesk Inventor Pro 2027.2 RUS-ENG",
-          "url": "https://w18.monkrus.ws/2026/11/autodesk-inventor-pro-20272-rus-eng.html"
+          "title": "Adobe Photoshop 2026 (v27.11.1) Multilingual",
+          "url": "https://w18.monkrus.ws/2026/11/adobe-photoshop-2026-v27111-multilingual.html"
         }
       ],
-      "detected_at": "2026-11-05 16:06",
+      "detected_at": "2026-11-12 02:06",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2219,7 +2219,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-11-03",
       "md5": "",
@@ -2457,8 +2457,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 240,
-      "fb_skip_until": 1794419787
+      "fb_streak": 241,
+      "fb_skip_until": 1794423987
     },
     {
       "name": "BitComet",
