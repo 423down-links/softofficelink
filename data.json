@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T13:21:58.892028+00:00",
+  "updated_at": "2026-11-11T16:56:27.610661+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.45",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.45.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.45.exe?v=1794403273683&n=ldinst_9.5.45_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.45.exe?v=1794416131002&n=ldinst_9.5.45_ld_407594_ld.exe",
       "downloads": [],
       "size": 602969064,
       "size_mb": 575.0,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.0.36",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.36.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.36.exe?v=1794403273648&n=ldinst_14.0.36_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.36.exe?v=1794416131849&n=ldinst_14.0.36_ld_412570_ld.exe",
       "downloads": [],
       "size": 745648616,
       "size_mb": 711.1,
@@ -187,8 +187,8 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-04 16:51",
-      "fb_streak": 1,
-      "fb_skip_until": 0
+      "fb_streak": 2,
+      "fb_skip_until": 1794417987
     },
     {
       "name": "WinHex",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.46",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1795008065&P2=404&P3=2&P4=I9miRjTqv6HwTsisQPvduXeI4Ia9RmOjtMLwzO0WnDSDlbF8hTuoyR%2bN8iwhkNJ854DnQ0mprOChfkFtB%2bHfCg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1795008065&P2=404&P3=2&P4=I9miRjTqv6HwTsisQPvduXeI4Ia9RmOjtMLwzO0WnDSDlbF8hTuoyR%2bN8iwhkNJ854DnQ0mprOChfkFtB%2bHfCg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1795020927&P2=404&P3=2&P4=f6AJlKQ%2fTjYPIiMgHKRcWyLQaFv1d1SQMy90rYr3OHYdlZntEd1Wpq47Ke9z3rExWGYvX3sESw7DJAZi6xYTtQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1795020927&P2=404&P3=2&P4=f6AJlKQ%2fTjYPIiMgHKRcWyLQaFv1d1SQMy90rYr3OHYdlZntEd1Wpq47Ke9z3rExWGYvX3sESw7DJAZi6xYTtQ%3d%3d",
       "downloads": [],
       "size": 208458064,
       "size_mb": 198.8,
@@ -1554,17 +1554,17 @@
       "icon": "4K",
       "icon_color": "linear-gradient(135deg, #e74c3c, #c0392b)",
       "category": "下载工具",
-      "version": "26.3.5",
-      "download_url": "https://dl.4kdownload.com/app/4kvideodownloaderplus_26.3.5_x64.zip",
-      "download_url_with_params": "https://dl.4kdownload.com/app/4kvideodownloaderplus_26.3.5_x64.zip",
+      "version": "26.4.0",
+      "download_url": "https://dl.4kdownload.com/app/4kvideodownloaderplus_26.4.0_x64.zip",
+      "download_url_with_params": "https://dl.4kdownload.com/app/4kvideodownloaderplus_26.4.0_x64.zip",
       "downloads": [],
-      "size": 239702320,
-      "size_mb": 228.6,
-      "last_modified": "2026-09-30",
+      "size": 237953493,
+      "size_mb": 226.9,
+      "last_modified": "2026-11-12",
       "md5": "",
       "official_site": "https://www.4kdownload.com/downloads/34",
       "update_items": [],
-      "detected_at": "2026-10-19 04:52",
+      "detected_at": "2026-11-12 00:55",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2219,7 +2219,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-11-03",
       "md5": "",
@@ -2457,8 +2457,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 239,
-      "fb_skip_until": 1794406918
+      "fb_streak": 240,
+      "fb_skip_until": 1794419787
     },
     {
       "name": "BitComet",
