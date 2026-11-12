@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T14:52:06.408488+00:00",
+  "updated_at": "2026-11-12T15:06:34.885473+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.46",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1795099866&P2=404&P3=2&P4=i1%2feS%2bJN5l58eSPwStmTZiUdQ1Qh%2bVIy4lsup5LSxkVGViECbX3FoCGcB0JvAPDzq0c05Doq57W1v2fe%2btVPdg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1795099866&P2=404&P3=2&P4=i1%2feS%2bJN5l58eSPwStmTZiUdQ1Qh%2bVIy4lsup5LSxkVGViECbX3FoCGcB0JvAPDzq0c05Doq57W1v2fe%2btVPdg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1795100762&P2=404&P3=2&P4=gnQJoWDCKG0dLMLE9QEnWvGSi4%2fx4CrYTiXby%2bxgToLWS98EIje8q2qcN4CqkrlSwXu%2fwPFT8%2fktuUfyqpGnJg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1795100762&P2=404&P3=2&P4=gnQJoWDCKG0dLMLE9QEnWvGSi4%2fx4CrYTiXby%2bxgToLWS98EIje8q2qcN4CqkrlSwXu%2fwPFT8%2fktuUfyqpGnJg%3d%3d",
       "downloads": [],
       "size": 208458064,
       "size_mb": 198.8,
@@ -1785,17 +1785,17 @@
       "icon": "NV",
       "icon_color": "linear-gradient(135deg, #76b900, #5a9e00)",
       "category": "驱动程序",
-      "version": "621.14",
-      "download_url": "https://www.nvidia.com/en-us/drivers/details/283968/",
-      "download_url_with_params": "https://www.nvidia.com/en-us/drivers/details/283968/",
+      "version": "621.24",
+      "download_url": "https://www.nvidia.com/en-us/drivers/details/285320/",
+      "download_url_with_params": "https://www.nvidia.com/en-us/drivers/details/285320/",
       "downloads": [],
-      "size": 1037274832,
-      "size_mb": 989.2,
-      "last_modified": "2026-11-04",
+      "size": 1038168736,
+      "size_mb": 990.1,
+      "last_modified": "2026-11-12",
       "md5": "",
       "official_site": "https://www.nvidia.com/en-us/geforce/forums/game-ready-drivers/13/",
       "update_items": [],
-      "detected_at": "2026-11-04 22:21",
+      "detected_at": "2026-11-12 23:06",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2223,7 +2223,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-11-03",
       "md5": "",
@@ -2461,8 +2461,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 256,
-      "fb_skip_until": 1794495134
+      "fb_streak": 257,
+      "fb_skip_until": 1794499594
     },
     {
       "name": "BitComet",
