@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T23:52:09.129885+00:00",
+  "updated_at": "2026-11-12T00:07:05.945969+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-04 16:51",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.46",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1795045867&P2=404&P3=2&P4=li3iGuUBTRp8qKsTT1ukETi9YbcrYyVST6Z%2bri9SI5yFqFLkv%2f5VK8mqmr6HM8UWwYXl6eZWLI6sflOiNGFjsg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1795045867&P2=404&P3=2&P4=li3iGuUBTRp8qKsTT1ukETi9YbcrYyVST6Z%2bri9SI5yFqFLkv%2f5VK8mqmr6HM8UWwYXl6eZWLI6sflOiNGFjsg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1795046770&P2=404&P3=2&P4=CGQ5zTHe39PzY5oHqwv%2fGoPEg8mZieDvISgza%2bH6u7aOcFQ3FLuXjC3x3HZtfnxQd6M8iWLqg%2fj%2fqRM3rfhw9A%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1795046770&P2=404&P3=2&P4=CGQ5zTHe39PzY5oHqwv%2fGoPEg8mZieDvISgza%2bH6u7aOcFQ3FLuXjC3x3HZtfnxQd6M8iWLqg%2fj%2fqRM3rfhw9A%3d%3d",
       "downloads": [],
       "size": 208458064,
       "size_mb": 198.8,
@@ -386,17 +386,17 @@
       "icon": "P",
       "icon_color": "linear-gradient(135deg, #ff6b35, #f7931e)",
       "category": "图像处理",
-      "version": "1.8.0",
-      "download_url": "https://downloads.topazlabs.com/deploy/TopazPhoto/1.8.0/TopazPhoto-1.8.0.msi",
-      "download_url_with_params": "https://downloads.topazlabs.com/deploy/TopazPhoto/1.8.0/TopazPhoto-1.8.0.msi",
+      "version": "1.8.1",
+      "download_url": "https://downloads.topazlabs.com/deploy/TopazPhoto/1.8.1/TopazPhoto-1.8.1.msi",
+      "download_url_with_params": "https://downloads.topazlabs.com/deploy/TopazPhoto/1.8.1/TopazPhoto-1.8.1.msi",
       "downloads": [],
-      "size": 1481494528,
-      "size_mb": 1412.9,
-      "last_modified": "2026-11-11",
+      "size": 1481474048,
+      "size_mb": 1412.8,
+      "last_modified": "2026-11-12",
       "md5": "",
       "official_site": "https://community.topazlabs.com/c/topaz-photo/topaz-photo-releases/117",
       "update_items": [],
-      "detected_at": "2026-11-11 08:05",
+      "detected_at": "2026-11-12 08:06",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
