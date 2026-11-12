@@ -885,7 +885,11 @@ PRODUCTS = [
         'version_regex': r'softwareVersion["\s:]+"?([\d.]+)',
         'date_regex': r'dateModified["\s:]+"?(\d{4}-\d{2}-\d{2})',
         'prefer_scraped_version': True,
-        'version': '9.8.58',
+        # 官网口径混乱：首页 JSON-LD 写 9.8.59，download.html 表格还停在 9.8.54，
+        # changelog 只到三段。版本改以安装包 PE 定版为准（当前 9.8.59.0），
+        # 官方把小修订写进 PE（如 9.8.59.12）时能直接读到，不被网页口径卡死。
+        'pe_version': True,
+        'version': '9.8.59',
         'download_url': 'https://files.hamrick.com/vuex6498.exe',
         'official_site': 'https://www.hamrick.com/',
     },
