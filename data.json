@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T06:52:42.993407+00:00",
+  "updated_at": "2026-11-12T07:07:49.405393+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,8 +187,8 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-12 11:21",
-      "fb_streak": 3,
-      "fb_skip_until": 1794466357
+      "fb_streak": 0,
+      "fb_skip_until": 0
     },
     {
       "name": "WinHex",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.46",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1795071074&P2=404&P3=2&P4=GJBaM%2fCFpJI7yFN10o4ei%2bWVa1F7NWhc3U3wOlEg2LbePk%2fXGBXD4wTTiGR3qVBHRnYbnfNWUqIbObVKyup8%2bw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1795071074&P2=404&P3=2&P4=GJBaM%2fCFpJI7yFN10o4ei%2bWVa1F7NWhc3U3wOlEg2LbePk%2fXGBXD4wTTiGR3qVBHRnYbnfNWUqIbObVKyup8%2bw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1795071962&P2=404&P3=2&P4=PTzjSdrXNYR49o%2bmamxp6i5CDa5tWVKruuo2j5gwQNs6UDB7I8rItWHqAZwCrAs4iYDSDi0%2bO36I0W3hoJ0lbg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1795071962&P2=404&P3=2&P4=PTzjSdrXNYR49o%2bmamxp6i5CDa5tWVKruuo2j5gwQNs6UDB7I8rItWHqAZwCrAs4iYDSDi0%2bO36I0W3hoJ0lbg%3d%3d",
       "downloads": [],
       "size": 208458064,
       "size_mb": 198.8,
@@ -2626,8 +2626,8 @@
       "download_url": "https://www.ludashi.com/pc/download/getDownloadUrl?type=2",
       "download_url_with_params": "https://www.ludashi.com/pc/download/getDownloadUrl?type=2",
       "downloads": [],
-      "size": 283336336,
-      "size_mb": 270.2,
+      "size": 284315880,
+      "size_mb": 271.1,
       "last_modified": "2026-11-06",
       "md5": "",
       "official_site": "https://www.ludashi.com/",
