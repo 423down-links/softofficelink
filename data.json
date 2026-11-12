@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T09:52:39.462210+00:00",
+  "updated_at": "2026-11-12T10:07:31.849298+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.46",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1795081865&P2=404&P3=2&P4=UnT%2bqtZ1mS9HYyyyBtHxngdCsEnqNK0B6OyrTrQczxewhwAV0EwAR6ynOy72oqxtJBIa2717ghc6GcjDBSPs%2bg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1795081865&P2=404&P3=2&P4=UnT%2bqtZ1mS9HYyyyBtHxngdCsEnqNK0B6OyrTrQczxewhwAV0EwAR6ynOy72oqxtJBIa2717ghc6GcjDBSPs%2bg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1795082770&P2=404&P3=2&P4=bI3LIjhLEKQM7IG7ylO2p9c0RazXFofAWHpKayItzFLcgJqLA7iRUrCtyDloqoRRmYlHwbBMVE3D7%2fj7dnFzgg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1795082770&P2=404&P3=2&P4=bI3LIjhLEKQM7IG7ylO2p9c0RazXFofAWHpKayItzFLcgJqLA7iRUrCtyDloqoRRmYlHwbBMVE3D7%2fj7dnFzgg%3d%3d",
       "downloads": [],
       "size": 208458064,
       "size_mb": 198.8,
@@ -739,8 +739,8 @@
       "download_url": "https://www.scootersoftware.com/files/BCompare-zh-5.2.8.33052.exe",
       "download_url_with_params": "https://www.scootersoftware.com/files/BCompare-zh-5.2.8.33052.exe",
       "downloads": [],
-      "size": 30408704,
-      "size_mb": 29.0,
+      "size": 28916416,
+      "size_mb": 27.6,
       "last_modified": "2026-11-11",
       "md5": "",
       "official_site": "https://www.scootersoftware.com/download/v5changelog",
@@ -2223,7 +2223,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-11-03",
       "md5": "",
@@ -2461,8 +2461,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 252,
-      "fb_skip_until": 1794477138
+      "fb_streak": 253,
+      "fb_skip_until": 1794481651
     },
     {
       "name": "BitComet",
