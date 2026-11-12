@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T11:51:53.453590+00:00",
+  "updated_at": "2026-11-12T12:06:35.875129+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,8 +187,8 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-12 11:21",
-      "fb_streak": 2,
-      "fb_skip_until": 1794484375
+      "fb_streak": 0,
+      "fb_skip_until": 0
     },
     {
       "name": "WinHex",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.46",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1795089064&P2=404&P3=2&P4=gBodLbo%2fcA3FOJOFsbQecB%2bZGhCFFbwv3lSSTJivw4KXGW3%2bU34r1rTBjvwlzfPHbP2bBqTng1U5TZY1wXhwRA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1795089064&P2=404&P3=2&P4=gBodLbo%2fcA3FOJOFsbQecB%2bZGhCFFbwv3lSSTJivw4KXGW3%2bU34r1rTBjvwlzfPHbP2bBqTng1U5TZY1wXhwRA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1795089965&P2=404&P3=2&P4=eCisXm274f0meueyYzAmJwFAN86uWdRZ3LvKWh9ePu6lnR9AhKUvAEyx%2ffypkkbo65HTE5D6EX4o0hXQms2VXQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/d9ec9bc7-1b5e-4a92-9ba1-42c505f7adc0?P1=1795089965&P2=404&P3=2&P4=eCisXm274f0meueyYzAmJwFAN86uWdRZ3LvKWh9ePu6lnR9AhKUvAEyx%2ffypkkbo65HTE5D6EX4o0hXQms2VXQ%3d%3d",
       "downloads": [],
       "size": 208458064,
       "size_mb": 198.8,
@@ -2223,7 +2223,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-11-03",
       "md5": "",
