@@ -880,17 +880,15 @@ PRODUCTS = [
         'icon': 'VS',
         'icon_color': 'linear-gradient(135deg, #27ae60, #2980b9)',
         'category': '图像工具',
-        'detect_type': 'scrape',
-        'check_url': 'https://www.hamrick.com/',
-        'version_regex': r'softwareVersion["\s:]+"?([\d.]+)',
-        'date_regex': r'dateModified["\s:]+"?(\d{4}-\d{2}-\d{2})',
-        'prefer_scraped_version': True,
-        # 官网口径混乱：首页 JSON-LD 写 9.8.59，download.html 表格还停在 9.8.54，
-        # changelog 只到三段。版本改以安装包 PE 定版为准（当前 9.8.59.0），
-        # 官方把小修订写进 PE（如 9.8.59.12）时能直接读到，不被网页口径卡死。
-        'pe_version': True,
-        'version': '9.8.59',
+        'detect_type': 'bundle_string',
+        # 官网只公示三段（首页 9.8.59 / download.html 甚至停在 9.8.54），
+        # 主程序真实四段号（9.8.59.12）写在包里；Windows 安装器被压过读不到，
+        # 官方 Linux .tgz 里是未压缩主程序，明文 "VueScan 9 x64 (9.8.59.12)"。
+        'bundle_url': 'https://files.hamrick.com/vuex6498.tgz',
+        'bundle_regex': r'VueScan 9 x64 \((9\.\d+\.\d+\.\d+)\)',
         'download_url': 'https://files.hamrick.com/vuex6498.exe',
+        'default_size_mb': 82.9,
+        'version': '9.8.59.12',
         'official_site': 'https://www.hamrick.com/',
     },
     {
@@ -4854,6 +4852,92 @@ def _pe_lm_key(lm):
     return s
 
 
+def _bundle_scan(url, pattern, is_gzip=True, timeout=180):
+    """流式下载（可选 gunzip）并按正则在流里找版本号，命中即中断传输。
+
+    VueScan 这类软件：Windows 安装包被 InstallShield 压过，里面主程序的真实
+    四段版本号（如 "VueScan 9 x64 (9.8.59.12)"）看不到；而官方 Linux .tgz 里
+    就是未压缩的 vuescan 主程序，同一版本号明文可读。所以扫 Linux 包即可，
+    既拿到完整四段号，又不用解开 Windows 安装器。
+    返回 (版本号, 文件大小, Last-Modified)，未命中返回 ('', 0, '')。
+    """
+    import zlib
+    # 版本串通常落在包内 30%-50% 处，只需前段；用 Range 少传，命中后再提前断开
+    req = urllib.request.Request(url, headers={'User-Agent': UA,
+                                              'Range': 'bytes=0-41943039'})
+    pat = pattern.encode() if isinstance(pattern, str) else pattern
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        cr = resp.headers.get('Content-Range', '') or ''
+        mcr = re.match(r'bytes \d+-\d+/(\d+)', cr)
+        size = int(mcr.group(1)) if mcr else int(resp.headers.get('Content-Length', 0) or 0)
+        lm = resp.headers.get('Last-Modified', '') or ''
+        dec = zlib.decompressobj(16 + zlib.MAX_WBITS) if is_gzip else None
+        buf = b''
+        while True:
+            chunk = resp.read(1 << 20)
+            if not chunk:
+                break
+            try:
+                out = dec.decompress(chunk) if dec is not None else chunk
+            except Exception:
+                break
+            # 保留尾部 4MB 窗口，防止匹配串跨块被截断
+            buf = (buf + out)[-4_000_000:]
+            m = re.search(pat, buf)
+            if m:
+                return m.group(1).decode(), size, lm
+            if dec is not None and dec.eof:
+                break
+    return '', 0, ''
+
+
+def get_bundle_version(url, pattern, is_gzip=True):
+    """带缓存 + 指纹校验的「包内版本号」读取。
+
+    与 PE 缓存同一套策略：TTL 内且 size/Last-Modified 未变则零下载；
+    文件被原地覆盖（官方偷偷换包）时指纹一变立刻重扫。
+    """
+    cache_key = url + '#bundle'
+    cache = _pe_cache_load()
+    with _pe_cache_lock:
+        hit = cache.get(cache_key)
+    if hit and (time.time() - hit.get('ts', 0)) < PE_CACHE_TTL:
+        if _pe_cache_fingerprint_stale(hit, url):
+            print(f"  包内版本失效(文件已更新): {hit['ver']} → 重新探测")
+        else:
+            print(f"  包内版本(缓存): {hit['ver']}")
+            return hit['ver']
+    ver, size, lm = _bundle_scan(url, pattern, is_gzip)
+    if ver:
+        with _pe_cache_lock:
+            _pe_cache[cache_key] = {'ver': ver, 'ts': time.time(), 'size': size, 'lm': lm}
+        _pe_cache_save()
+        return ver
+    return hit['ver'] if hit else ''
+
+
+def detect_bundle_string(product):
+    """从官方捆绑包内部读完整版本号（VueScan：官网只公示三段，包内才是四段）。"""
+    url = product.get('bundle_url') or product.get('download_url', '')
+    pattern = product.get('bundle_regex') or r'(\d+(?:\.\d+){1,3})'
+    ver = get_bundle_version(url, pattern, is_gzip=product.get('bundle_gzip', True))
+
+    dl = product.get('download_url', '')
+    size = 0
+    date = ''
+    try:
+        req = urllib.request.Request(dl, method='HEAD', headers={'User-Agent': UA})
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            size = int(resp.headers.get('Content-Length', 0) or 0)
+            date = _pe_lm_key(resp.headers.get('Last-Modified', ''))
+    except Exception:
+        pass
+    if not size:
+        size = int(float(product.get('default_size_mb') or 0) * 1048576)
+
+    return (ver or product.get('version', ''), dl, dl, size, date, '')
+
+
 def _get_pe_version_raw(url, referer=None, prefer_product_version=False):
     """从PE文件的.rsrc段读取FileVersion（四段版本号），只下载PE头和资源段，不需要下载整个文件。
     返回 (版本号, 文件大小, Last-Modified)，失败返回 ('', 0, '')。
@@ -8373,6 +8457,8 @@ def find_latest(product):
         version, full_url, param_url, size, date, md5 = detect_java_api(product)
     elif detect_type == 'dotnet_api':
         version, full_url, param_url, size, date, md5 = detect_dotnet_api(product)
+    elif detect_type == 'bundle_string':
+        version, full_url, param_url, size, date, md5 = detect_bundle_string(product)
     elif detect_type == 'startallback':
         version, full_url, param_url, size, date, md5 = detect_startallback(product)
     elif detect_type == 'bwcx':
