@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T14:09:22.239492+00:00",
+  "updated_at": "2026-11-13T14:23:29.201470+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.45",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.45.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.45.exe?v=1794577882322&n=ldinst_9.5.45_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.45.exe?v=1794579699709&n=ldinst_9.5.45_ld_407594_ld.exe",
       "downloads": [],
       "size": 602969064,
       "size_mb": 575.0,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.0.36",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.36.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.36.exe?v=1794577885792&n=ldinst_14.0.36_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.36.exe?v=1794579696775&n=ldinst_14.0.36_ld_412570_ld.exe",
       "downloads": [],
       "size": 745648616,
       "size_mb": 711.1,
@@ -61,7 +61,7 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-11-12 19:51",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-12 11:21",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.57",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/4033e7f0-9b8a-4ad5-b16d-5e6155387ce6?P1=1795183613&P2=404&P3=2&P4=ICQjgEaHrbbC1MtuVpxWPr8jtRuAaLXDY97erX8PymcG5VA6hhj5O%2fuCQuCUdIc%2bgU%2fTGz4mua7a0yG34fX%2fBA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/4033e7f0-9b8a-4ad5-b16d-5e6155387ce6?P1=1795183613&P2=404&P3=2&P4=ICQjgEaHrbbC1MtuVpxWPr8jtRuAaLXDY97erX8PymcG5VA6hhj5O%2fuCQuCUdIc%2bgU%2fTGz4mua7a0yG34fX%2fBA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/4033e7f0-9b8a-4ad5-b16d-5e6155387ce6?P1=1795184492&P2=404&P3=2&P4=Rfcw0F4ZYk3E0rOQmU99AMhCuuTEYSe1QIPLrwOQdUnRrO0xjnbk31O6LemsBGtfh3tmGDu6okhJga4hkJSOpw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/4033e7f0-9b8a-4ad5-b16d-5e6155387ce6?P1=1795184492&P2=404&P3=2&P4=Rfcw0F4ZYk3E0rOQmU99AMhCuuTEYSe1QIPLrwOQdUnRrO0xjnbk31O6LemsBGtfh3tmGDu6okhJga4hkJSOpw%3d%3d",
       "downloads": [],
       "size": 208658256,
       "size_mb": 199.0,
@@ -907,8 +907,8 @@
       "download_url": "https://wps-cn-ep.wpscdn.cn/wps/download/ep/WPS2023/WPSPro_12.1.0.26899.exe",
       "download_url_with_params": "https://wps-cn-ep.wpscdn.cn/wps/download/ep/WPS2023/WPSPro_12.1.0.26899.exe",
       "downloads": [],
-      "size": 438304768,
-      "size_mb": 418.0,
+      "size": 438720024,
+      "size_mb": 418.4,
       "last_modified": "2026-07-06",
       "md5": "",
       "official_site": "https://ep.wps.cn/download",
