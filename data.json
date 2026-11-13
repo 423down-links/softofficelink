@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T17:23:34.608901+00:00",
+  "updated_at": "2026-11-13T17:52:27.909764+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.45",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.45.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.45.exe?v=1794590521356&n=ldinst_9.5.45_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.45.exe?v=1794592284368&n=ldinst_9.5.45_ld_407594_ld.exe",
       "downloads": [],
       "size": 602969064,
       "size_mb": 575.0,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.0.36",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.36.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.36.exe?v=1794590515532&n=ldinst_14.0.36_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.36.exe?v=1794592284194&n=ldinst_14.0.36_ld_412570_ld.exe",
       "downloads": [],
       "size": 745648616,
       "size_mb": 711.1,
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-12 11:21",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.57",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/4033e7f0-9b8a-4ad5-b16d-5e6155387ce6?P1=1795195314&P2=404&P3=2&P4=RRNeATu3srEx5nPzxqg1J%2f%2b7%2fITJUr1l064Cyrp9eur7eJYoae2UQ%2fBQvGbr4FguSNbK6t8gGSgoffsDspN3LA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/4033e7f0-9b8a-4ad5-b16d-5e6155387ce6?P1=1795195314&P2=404&P3=2&P4=RRNeATu3srEx5nPzxqg1J%2f%2b7%2fITJUr1l064Cyrp9eur7eJYoae2UQ%2fBQvGbr4FguSNbK6t8gGSgoffsDspN3LA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/4033e7f0-9b8a-4ad5-b16d-5e6155387ce6?P1=1795197080&P2=404&P3=2&P4=ONfGXRa6ZC%2fxYm0iv1P7GD6Y0jJqbz8KeM5rhaKvJSHZjbbb1MyHPi%2f85ynCq%2bMsVEyIzC%2bm06Nsj5LTDRF0xQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/4033e7f0-9b8a-4ad5-b16d-5e6155387ce6?P1=1795197080&P2=404&P3=2&P4=ONfGXRa6ZC%2fxYm0iv1P7GD6Y0jJqbz8KeM5rhaKvJSHZjbbb1MyHPi%2f85ynCq%2bMsVEyIzC%2bm06Nsj5LTDRF0xQ%3d%3d",
       "downloads": [],
       "size": 208658256,
       "size_mb": 199.0,
@@ -1103,7 +1103,7 @@
       "official_site": "https://goldwave.ca/",
       "update_items": [],
       "detected_at": "2026-10-09 09:56",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -1638,17 +1638,17 @@
       "icon": "79",
       "icon_color": "linear-gradient(135deg, #e74c3c, #c0392b)",
       "category": "便携软件",
-      "version": "2026.11.12",
+      "version": "2026.11.13",
       "download_url": "https://disk.yandex.ru/d/D8xbOSd7XAUbug",
       "download_url_with_params": "https://disk.yandex.ru/d/D8xbOSd7XAUbug",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-11-12",
+      "last_modified": "2026-11-14",
       "md5": "",
       "official_site": "https://disk.yandex.ru/d/D8xbOSd7XAUbug",
       "update_items": [],
-      "detected_at": "2026-11-12 15:51",
+      "detected_at": "2026-11-14 01:51",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
