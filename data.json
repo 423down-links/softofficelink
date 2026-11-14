@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14T06:52:09.473778+00:00",
+  "updated_at": "2026-11-14T07:07:13.203316+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795243842&P2=404&P3=2&P4=PBPit2PF28xur1uEZUFSJUVPJeNj7NDMIMFCV8TeMmHpMc%2ftOaDMniuesHFnk5pKREOg713zCNELeYVHHJ36oA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795243842&P2=404&P3=2&P4=PBPit2PF28xur1uEZUFSJUVPJeNj7NDMIMFCV8TeMmHpMc%2ftOaDMniuesHFnk5pKREOg713zCNELeYVHHJ36oA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795244738&P2=404&P3=2&P4=foz564Y5NoFFELRDkfg%2bE2L8iSWae95VROpF3ALRznKxgosg36OmFhbrpXTyChcsapAsUkp1MmpbfZPRDnUXpw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795244738&P2=404&P3=2&P4=foz564Y5NoFFELRDkfg%2bE2L8iSWae95VROpF3ALRznKxgosg36OmFhbrpXTyChcsapAsUkp1MmpbfZPRDnUXpw%3d%3d",
       "downloads": [],
       "size": 208581456,
       "size_mb": 198.9,
@@ -2011,11 +2011,15 @@
       "official_site": "https://w18.monkrus.ws/",
       "update_items": [
         {
+          "title": "Adobe Premiere 2027 (v27.0) Multilingual",
+          "url": "https://w18.monkrus.ws/2026/11/adobe-premiere-2027-v270-multilingual.html"
+        },
+        {
           "title": "Adobe Premiere Pro 2026 (v26.5.3) Multilingual",
           "url": "https://w18.monkrus.ws/2026/11/adobe-premiere-pro-2026-v2653.html"
         }
       ],
-      "detected_at": "2026-11-14 14:05",
+      "detected_at": "2026-11-14 15:05",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
