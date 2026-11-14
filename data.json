@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14T02:41:53.623525+00:00",
+  "updated_at": "2026-11-14T02:52:06.143562+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.45",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.45.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.45.exe?v=1794622871259&n=ldinst_9.5.45_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.45.exe?v=1794624651751&n=ldinst_9.5.45_ld_407594_ld.exe",
       "downloads": [],
       "size": 602969064,
       "size_mb": 575.0,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.0.36",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.36.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.36.exe?v=1794622869856&n=ldinst_14.0.36_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.36.exe?v=1794624652778&n=ldinst_14.0.36_ld_412570_ld.exe",
       "downloads": [],
       "size": 745648616,
       "size_mb": 711.1,
@@ -124,8 +124,8 @@
       "official_site": "https://www.yy.com/web/pcyy_download/",
       "update_items": [],
       "detected_at": "2026-11-09 14:51",
-      "fb_streak": 3,
-      "fb_skip_until": 1794623857
+      "fb_streak": 4,
+      "fb_skip_until": 1794628326
     },
     {
       "name": "QQMusic",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795228824&P2=404&P3=2&P4=UnRMQIK56k7g5rZZYnI%2fw1Ol1PHZfcs6pofrPFUiS9kOcgPpenlvLYfXca%2fsXVKakHOOEPsSvUwRY4hzhmlGrA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795228824&P2=404&P3=2&P4=UnRMQIK56k7g5rZZYnI%2fw1Ol1PHZfcs6pofrPFUiS9kOcgPpenlvLYfXca%2fsXVKakHOOEPsSvUwRY4hzhmlGrA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795229446&P2=404&P3=2&P4=aHiPHy6%2f7%2fx6wc8YVrHBMaEzl9TdIueQXU7KawfHH3Mvsjp3pipKJZ1tGTbmh7nK7boBsQt2837Fkohzhh3%2bDA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795229446&P2=404&P3=2&P4=aHiPHy6%2f7%2fx6wc8YVrHBMaEzl9TdIueQXU7KawfHH3Mvsjp3pipKJZ1tGTbmh7nK7boBsQt2837Fkohzhh3%2bDA%3d%3d",
       "downloads": [],
       "size": 208581456,
       "size_mb": 198.9,
@@ -2223,7 +2223,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-11-03",
       "md5": "",
@@ -2626,8 +2626,8 @@
       "download_url": "https://www.ludashi.com/pc/download/getDownloadUrl?type=2",
       "download_url_with_params": "https://www.ludashi.com/pc/download/getDownloadUrl?type=2",
       "downloads": [],
-      "size": 284200040,
-      "size_mb": 271.0,
+      "size": 283336336,
+      "size_mb": 270.2,
       "last_modified": "2026-11-13",
       "md5": "",
       "official_site": "https://www.ludashi.com/",
