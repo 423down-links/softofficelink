@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14T13:52:43.391421+00:00",
+  "updated_at": "2026-11-14T14:07:22.294912+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,8 +187,8 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-12 11:21",
-      "fb_streak": 2,
-      "fb_skip_until": 1794664345
+      "fb_streak": 0,
+      "fb_skip_until": 0
     },
     {
       "name": "WinHex",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795269041&P2=404&P3=2&P4=H6FEwDn9XzHKV0QDtnUv8m0O00Ar2qN%2bA60Li%2bRyF0PW1KzEqSgx7LvHW9Aut%2bMqWecldUZDzDrzcHcwWgQhFg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795269041&P2=404&P3=2&P4=H6FEwDn9XzHKV0QDtnUv8m0O00Ar2qN%2bA60Li%2bRyF0PW1KzEqSgx7LvHW9Aut%2bMqWecldUZDzDrzcHcwWgQhFg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795269936&P2=404&P3=2&P4=Wn2JGeYCs6bJhOiUbs1q8PAouGiHuvQMMzpNu4%2f%2fHCQfn84ZXJY20swYsz%2f0oGeFDf4sWhicJ8Kmr3uCRX8lFQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795269936&P2=404&P3=2&P4=Wn2JGeYCs6bJhOiUbs1q8PAouGiHuvQMMzpNu4%2f%2fHCQfn84ZXJY20swYsz%2f0oGeFDf4sWhicJ8Kmr3uCRX8lFQ%3d%3d",
       "downloads": [],
       "size": 208581456,
       "size_mb": 198.9,
@@ -2223,7 +2223,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-11-03",
       "md5": "",
