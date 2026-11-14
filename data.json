@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14T08:52:26.800629+00:00",
+  "updated_at": "2026-11-14T09:07:09.602149+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795251040&P2=404&P3=2&P4=nWgNtDwNKOUv1xSLFZ0tX5OeYeZQg5H77rDrXucIG4BKDVEJY1PdqAMtg8JoGXbTlFqpgKEcpj4c%2f4fV9eL9oA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795251040&P2=404&P3=2&P4=nWgNtDwNKOUv1xSLFZ0tX5OeYeZQg5H77rDrXucIG4BKDVEJY1PdqAMtg8JoGXbTlFqpgKEcpj4c%2f4fV9eL9oA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795251931&P2=404&P3=2&P4=f5fw0RIN8qc0Fk9YDq1%2bAGFwEciVIHBAkmvi4UT5VKxyF8kMFPTvvn%2bO0MN%2b6Yfio6z2r07RAP8LNQbDfR8GZQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795251931&P2=404&P3=2&P4=f5fw0RIN8qc0Fk9YDq1%2bAGFwEciVIHBAkmvi4UT5VKxyF8kMFPTvvn%2bO0MN%2b6Yfio6z2r07RAP8LNQbDfR8GZQ%3d%3d",
       "downloads": [],
       "size": 208581456,
       "size_mb": 198.9,
@@ -2461,8 +2461,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 288,
-      "fb_skip_until": 1794646416
+      "fb_streak": 289,
+      "fb_skip_until": 1794650829
     },
     {
       "name": "BitComet",
