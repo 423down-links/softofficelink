@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14T17:52:25.157357+00:00",
+  "updated_at": "2026-11-14T18:07:01.916699+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795283449&P2=404&P3=2&P4=HMnCLWmpyjLEOBRiJV6FpcQq0QgBa6llLJjWwuf7XpNGI8hyzR4rQVh6CJ%2ftrO5rczXSJYf1ymy6WQ964wZa3w%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795283449&P2=404&P3=2&P4=HMnCLWmpyjLEOBRiJV6FpcQq0QgBa6llLJjWwuf7XpNGI8hyzR4rQVh6CJ%2ftrO5rczXSJYf1ymy6WQ964wZa3w%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795284342&P2=404&P3=2&P4=hPJ%2fpPjE0%2bko17ezUQ8mCrm2a%2fxPhwPl9c9jB6QSJBVUzZU6%2bHTVzAERkoAwRw944DO%2fMLSQ7jAK3EtEd8cr7Q%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795284342&P2=404&P3=2&P4=hPJ%2fpPjE0%2bko17ezUQ8mCrm2a%2fxPhwPl9c9jB6QSJBVUzZU6%2bHTVzAERkoAwRw944DO%2fMLSQ7jAK3EtEd8cr7Q%3d%3d",
       "downloads": [],
       "size": 208581456,
       "size_mb": 198.9,
@@ -1369,8 +1369,8 @@
       "download_url": "https://www.winxdvd.com/download/winxvideo-ai.exe",
       "download_url_with_params": "https://www.winxdvd.com/download/winxvideo-ai.exe",
       "downloads": [],
-      "size": 307232768,
-      "size_mb": 293.0,
+      "size": 307118576,
+      "size_mb": 292.9,
       "last_modified": "2026-09-20",
       "md5": "",
       "official_site": "https://www.winxdvd.com/winxvideo-ai/",
@@ -2011,6 +2011,14 @@
       "official_site": "https://w18.monkrus.ws/",
       "update_items": [
         {
+          "title": "Adobe Media Encoder 2027 (v27.0) Multilingual",
+          "url": "https://w18.monkrus.ws/2026/11/adobe-media-encoder-2027-v270.html"
+        },
+        {
+          "title": "Adobe Media Encoder 2026 (v26.5.3) Multilingual",
+          "url": "https://w18.monkrus.ws/2026/11/adobe-media-encoder-2026-v2653.html"
+        },
+        {
           "title": "Adobe Premiere 2027 (v27.0) Multilingual",
           "url": "https://w18.monkrus.ws/2026/11/adobe-premiere-2027-v270-multilingual.html"
         },
@@ -2019,7 +2027,7 @@
           "url": "https://w18.monkrus.ws/2026/11/adobe-premiere-pro-2026-v2653.html"
         }
       ],
-      "detected_at": "2026-11-14 15:05",
+      "detected_at": "2026-11-15 02:05",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2461,8 +2469,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 295,
-      "fb_skip_until": 1794679299
+      "fb_streak": 296,
+      "fb_skip_until": 1794683221
     },
     {
       "name": "BitComet",
