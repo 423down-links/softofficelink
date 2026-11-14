@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14T02:07:06.498719+00:00",
+  "updated_at": "2026-11-14T02:22:18.231570+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.45",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.45.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.45.exe?v=1794621089615&n=ldinst_9.5.45_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.45.exe?v=1794622871259&n=ldinst_9.5.45_ld_407594_ld.exe",
       "downloads": [],
       "size": 602969064,
       "size_mb": 575.0,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.0.36",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.36.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.36.exe?v=1794621089585&n=ldinst_14.0.36_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.36.exe?v=1794622869856&n=ldinst_14.0.36_ld_412570_ld.exe",
       "downloads": [],
       "size": 745648616,
       "size_mb": 711.1,
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795226737&P2=404&P3=2&P4=aB0aO%2f2yo2LsRW5Y34HhDL4MHR9LIjmZQwRN5FLHiWk6sshVQ%2fY1%2f6V4F6x3QrfB%2fsyHo7AfqEVmeZ3ZWg78kw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795226737&P2=404&P3=2&P4=aB0aO%2f2yo2LsRW5Y34HhDL4MHR9LIjmZQwRN5FLHiWk6sshVQ%2fY1%2f6V4F6x3QrfB%2fsyHo7AfqEVmeZ3ZWg78kw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795227665&P2=404&P3=2&P4=WFJQlrAYOSXi3Dot8yAaca5gSLXUAEzfiI%2bcSJbhzlCGwziu%2fFYrjGf5QfD7vPfRX0wituNfQgzbcBn6kIBdVw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795227665&P2=404&P3=2&P4=WFJQlrAYOSXi3Dot8yAaca5gSLXUAEzfiI%2bcSJbhzlCGwziu%2fFYrjGf5QfD7vPfRX0wituNfQgzbcBn6kIBdVw%3d%3d",
       "downloads": [],
       "size": 208581456,
       "size_mb": 198.9,
@@ -536,7 +536,7 @@
       "official_site": "https://www.havysoft.cl/descargar.html",
       "update_items": [],
       "detected_at": "2026-11-03 22:35",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -1050,17 +1050,17 @@
       "icon": "VS",
       "icon_color": "linear-gradient(135deg, #27ae60, #2980b9)",
       "category": "图像工具",
-      "version": "9.8.59.13",
+      "version": "9.8.59.14",
       "download_url": "https://files.hamrick.com/vuex6498.exe",
       "download_url_with_params": "https://files.hamrick.com/vuex6498.exe",
       "downloads": [],
-      "size": 86922192,
+      "size": 86900488,
       "size_mb": 82.9,
       "last_modified": "2026-11-14",
       "md5": "",
       "official_site": "https://www.hamrick.com/",
       "update_items": [],
-      "detected_at": "2026-11-14 02:51",
+      "detected_at": "2026-11-14 10:21",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2461,8 +2461,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 283,
-      "fb_skip_until": 1794622041
+      "fb_streak": 284,
+      "fb_skip_until": 1794626538
     },
     {
       "name": "BitComet",
