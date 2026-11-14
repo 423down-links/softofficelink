@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14T12:52:54.388070+00:00",
+  "updated_at": "2026-11-14T13:07:45.513510+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-12 11:21",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795265452&P2=404&P3=2&P4=m45iPGTCem6q%2fgqmDbjCHsS3iRx1ehH6PNKO%2bacTVx19AINg8JJ5OTt4EyrtYa5RMiapB0otIYNaO%2b0OhUIkfA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795265452&P2=404&P3=2&P4=m45iPGTCem6q%2fgqmDbjCHsS3iRx1ehH6PNKO%2bacTVx19AINg8JJ5OTt4EyrtYa5RMiapB0otIYNaO%2b0OhUIkfA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795266341&P2=404&P3=2&P4=Zs04Toq%2f6iNrtEJtkIU0bMbtk5xq4cQ6JtA1ZLvsfc7CPRt3J5KVaj%2fn1OvKTAya6fKiOBH3ZnCBfdh3vGRXrw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795266341&P2=404&P3=2&P4=Zs04Toq%2f6iNrtEJtkIU0bMbtk5xq4cQ6JtA1ZLvsfc7CPRt3J5KVaj%2fn1OvKTAya6fKiOBH3ZnCBfdh3vGRXrw%3d%3d",
       "downloads": [],
       "size": 208581456,
       "size_mb": 198.9,
@@ -2223,7 +2223,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-11-03",
       "md5": "",
@@ -2461,8 +2461,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 291,
-      "fb_skip_until": 1794660755
+      "fb_streak": 292,
+      "fb_skip_until": 1794665265
     },
     {
       "name": "BitComet",
@@ -2626,8 +2626,8 @@
       "download_url": "https://www.ludashi.com/pc/download/getDownloadUrl?type=2",
       "download_url_with_params": "https://www.ludashi.com/pc/download/getDownloadUrl?type=2",
       "downloads": [],
-      "size": 283336336,
-      "size_mb": 270.2,
+      "size": 284200040,
+      "size_mb": 271.0,
       "last_modified": "2026-11-13",
       "md5": "",
       "official_site": "https://www.ludashi.com/",
