@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T10:52:07.594216+00:00",
+  "updated_at": "2026-11-15T11:08:46.618873+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-11-12 19:51",
-      "fb_streak": 10,
-      "fb_skip_until": 1794740035
+      "fb_streak": 11,
+      "fb_skip_until": 1794744526
     },
     {
       "name": "WeChat",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795344679&P2=404&P3=2&P4=K7uJ9Z%2bZMAKi8FGTo982YeSZZIkfpgkrReSfBCVnNq%2bt9Ap1P7h71Lb2NEmnF0GAmjbKVoRtHSbWYT57Tne3VQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795344679&P2=404&P3=2&P4=K7uJ9Z%2bZMAKi8FGTo982YeSZZIkfpgkrReSfBCVnNq%2bt9Ap1P7h71Lb2NEmnF0GAmjbKVoRtHSbWYT57Tne3VQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795345577&P2=404&P3=2&P4=SiLQNPXCEmAs3F9VQzGp9DxsRDZMtcIXY2eQHYwuTtJG7qRNhyBcTHSKXi5ggOLOrfw8uAFHin%2fhlidzBrHaxw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795345577&P2=404&P3=2&P4=SiLQNPXCEmAs3F9VQzGp9DxsRDZMtcIXY2eQHYwuTtJG7qRNhyBcTHSKXi5ggOLOrfw8uAFHin%2fhlidzBrHaxw%3d%3d",
       "downloads": [],
       "size": 208581456,
       "size_mb": 198.9,
@@ -1050,17 +1050,17 @@
       "icon": "VS",
       "icon_color": "linear-gradient(135deg, #27ae60, #2980b9)",
       "category": "图像工具",
-      "version": "9.8.59.17",
+      "version": "9.8.59.18",
       "download_url": "https://files.hamrick.com/vuex6498.exe",
       "download_url_with_params": "https://files.hamrick.com/vuex6498.exe",
       "downloads": [],
-      "size": 86868648,
-      "size_mb": 82.8,
+      "size": 87009408,
+      "size_mb": 83.0,
       "last_modified": "2026-11-15",
       "md5": "",
       "official_site": "https://www.hamrick.com/",
       "update_items": [],
-      "detected_at": "2026-11-15 09:05",
+      "detected_at": "2026-11-15 19:06",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2231,7 +2231,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-11-03",
       "md5": "",
