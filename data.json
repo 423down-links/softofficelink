@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T05:51:43.126199+00:00",
+  "updated_at": "2026-11-15T06:07:59.285663+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-11-12 19:51",
-      "fb_streak": 6,
-      "fb_skip_until": 1794721995
+      "fb_streak": 7,
+      "fb_skip_until": 1794726479
     },
     {
       "name": "WeChat",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-12 11:21",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795326643&P2=404&P3=2&P4=ByA8DkwOgpGbPHPAg4Ct6GK9DPXm4w1JNrc7cX5ki0S9WDX2BiSj4HvdISey3qGnLl38w124b02doNtmmSLtkA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795326643&P2=404&P3=2&P4=ByA8DkwOgpGbPHPAg4Ct6GK9DPXm4w1JNrc7cX5ki0S9WDX2BiSj4HvdISey3qGnLl38w124b02doNtmmSLtkA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795327530&P2=404&P3=2&P4=SPcuXyJRwQcwZ0M5Ybz7dcVKHq5hTXNVHkkjg7CtsBjYK7h6M0b31fcIy6DyIFrFnwb%2f%2fSLXx7ITk4whhOcsFQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795327530&P2=404&P3=2&P4=SPcuXyJRwQcwZ0M5Ybz7dcVKHq5hTXNVHkkjg7CtsBjYK7h6M0b31fcIy6DyIFrFnwb%2f%2fSLXx7ITk4whhOcsFQ%3d%3d",
       "downloads": [],
       "size": 208581456,
       "size_mb": 198.9,
@@ -2231,7 +2231,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-11-03",
       "md5": "",
