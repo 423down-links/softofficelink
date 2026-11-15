@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T18:52:07.978325+00:00",
+  "updated_at": "2026-11-15T19:08:45.405585+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-11-12 19:51",
-      "fb_streak": 16,
-      "fb_skip_until": 1794768818
+      "fb_streak": 17,
+      "fb_skip_until": 1794773325
     },
     {
       "name": "WeChat",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795373486&P2=404&P3=2&P4=bvFuaAhv5QvqPQ%2fE9wlsJG2Jn4tOr4TfOki2CWlKMDs0RJGWcRZmumib2cS1TSSm6q3FtOw4oIY%2brcWoa6bkLQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795373486&P2=404&P3=2&P4=bvFuaAhv5QvqPQ%2fE9wlsJG2Jn4tOr4TfOki2CWlKMDs0RJGWcRZmumib2cS1TSSm6q3FtOw4oIY%2brcWoa6bkLQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795374376&P2=404&P3=2&P4=WFg5P5gAL6NhlsLjCWqKzeWbCFn9p2hPKPd0e4svKjXwZHva%2f%2bg9f8bgrNvY%2bU5Yw%2fhbEJo1CCKRgzTTyITC3A%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795374376&P2=404&P3=2&P4=WFg5P5gAL6NhlsLjCWqKzeWbCFn9p2hPKPd0e4svKjXwZHva%2f%2bg9f8bgrNvY%2bU5Yw%2fhbEJo1CCKRgzTTyITC3A%3d%3d",
       "downloads": [],
       "size": 208581456,
       "size_mb": 198.9,
@@ -2219,7 +2219,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-11-15",
       "md5": "",
