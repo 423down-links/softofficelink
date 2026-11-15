@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T08:52:07.295896+00:00",
+  "updated_at": "2026-11-15T09:06:48.947588+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-12 11:21",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795337481&P2=404&P3=2&P4=bumiJNFtpckJUb%2fWwDiWHSjdbgrT%2b2BFqsvBdDYvS5XQ6Bi4RfDq%2fd6xOTmpeMW0P3efhNG7yN%2faJpIdr2OfTA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795337481&P2=404&P3=2&P4=bumiJNFtpckJUb%2fWwDiWHSjdbgrT%2b2BFqsvBdDYvS5XQ6Bi4RfDq%2fd6xOTmpeMW0P3efhNG7yN%2faJpIdr2OfTA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795338373&P2=404&P3=2&P4=Y4KFeJmjl1j%2fB8nSS0rOBQdUnUGRfYQLGo732lL%2brMYt6NP5pKg6s3EzE5Nz1G3z8SpVilGNFOj7QvWGvvM%2ftw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795338373&P2=404&P3=2&P4=Y4KFeJmjl1j%2fB8nSS0rOBQdUnUGRfYQLGo732lL%2brMYt6NP5pKg6s3EzE5Nz1G3z8SpVilGNFOj7QvWGvvM%2ftw%3d%3d",
       "downloads": [],
       "size": 208581456,
       "size_mb": 198.9,
@@ -2469,8 +2469,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 307,
-      "fb_skip_until": 1794733568
+      "fb_streak": 308,
+      "fb_skip_until": 1794737208
     },
     {
       "name": "BitComet",
