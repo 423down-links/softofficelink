@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T02:52:02.339531+00:00",
+  "updated_at": "2026-11-16T03:08:55.569846+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-11-12 19:51",
-      "fb_streak": 22,
-      "fb_skip_until": 1794797628
+      "fb_streak": 23,
+      "fb_skip_until": 1794802135
     },
     {
       "name": "WeChat",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795402283&P2=404&P3=2&P4=bVZyr5pqyMZ972TYfesPsmcPvShqPDQMuuGJl7Ir6SiEU%2bCSh8Tt%2fm4Yj0hpA%2fWx3M1II9vW6HUIwFQNDRPt4Q%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795402283&P2=404&P3=2&P4=bVZyr5pqyMZ972TYfesPsmcPvShqPDQMuuGJl7Ir6SiEU%2bCSh8Tt%2fm4Yj0hpA%2fWx3M1II9vW6HUIwFQNDRPt4Q%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795403186&P2=404&P3=2&P4=lTNy%2b6w3th6mAwh2K5CJDbWD8YXKnwzmI8%2bMKvdZanPrwgLemKbL4%2fG%2bUHAn3VPuIaDHRDiUBsInmc82iD07Iw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795403186&P2=404&P3=2&P4=lTNy%2b6w3th6mAwh2K5CJDbWD8YXKnwzmI8%2bMKvdZanPrwgLemKbL4%2fG%2bUHAn3VPuIaDHRDiUBsInmc82iD07Iw%3d%3d",
       "downloads": [],
       "size": 208581456,
       "size_mb": 198.9,
@@ -2219,7 +2219,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-11-16",
       "md5": "",
