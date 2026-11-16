@@ -188,13 +188,15 @@ PRODUCTS = [
         'icon': 'X',
         'icon_color': 'linear-gradient(135deg, #667eea, #764ba2)',
         'category': '开发工具',
-        'detect_type': 'scrape',
-        'check_url': 'https://www.xshell.com/zh/xshell-update-history/',
-        'version_regex': r'Xshell\s*(\d+)\s*Build\s*(\d+)',
-        'version': '8.0.0110',
-        'date': '2026-09-03',
+        # 官网 2026-09 改版：更新历史页变 JS 壳，版本改由 netsarangapi 实时下发
+        'detect_type': 'netsarang_api',
+        'netsarang_product_code': '2',
+        'version': '8.0.0120',
+        'date': '2026-11-11',
         'download_url': 'https://www.xshell.com/zh/xshell-update-history/',
         'official_site': 'https://www.xshell.com/zh/xshell-update-history/',
+        # 更新历史页无安装包体积
+        'allow_no_size': True,
     },
     {
         'name': 'XMind',
@@ -7184,6 +7186,53 @@ def detect_dotnet_api(product):
     return display_version, main_download, main_download, 0, main_date, ''
 
 
+def detect_netsarang_api(product):
+    """NetSarang（Xshell/Xftp）更新日志接口探测。
+
+    官网 2026-09 改版后，更新历史页只剩 JS 壳（"正在加载版本历史…"），
+    静态 HTML 里没有任何版本号；版本由接口实时下发：
+      https://api.netsarangapi.com/l/h?productcode=<n>&languagestatus=2&_web_view=1
+    message 里首条即 "Xshell 8 Build 0120, Nov 11, 2026"。
+    """
+    import json as _json
+    import datetime as _dt
+
+    api = product.get('netsarang_api') or 'https://api.netsarangapi.com/l/h'
+    code = str(product.get('netsarang_product_code') or '2')
+    url = f"{api}?productcode={code}&languagestatus=2&_web_view=1"
+
+    def _fallback():
+        return (product.get('version', ''), product.get('download_url', ''),
+                product.get('download_url', ''), 0, '', '')
+
+    try:
+        req = urllib.request.Request(url, headers={
+            'User-Agent': UA, 'Accept': 'application/json'})
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            data = _json.loads(resp.read().decode('utf-8', errors='ignore'))
+    except Exception as e:
+        print(f"  ⚠️ NetSarang API错误: {e}")
+        return _fallback()
+
+    text = ' '.join(str(data.get(k) or '') for k in ('title', 'message'))
+    # 只认「Xshell N Build NNNN, Mon D, YYYY」，避免正文里旧 build 干扰
+    m = re.search(r'Xshell\s*(\d+)\s*Build\s*(\d+)\s*,\s*([A-Za-z]{3})\s+(\d{1,2}),\s*(\d{4})',
+                  text)
+    if not m:
+        print("  ⚠️ NetSarang API未解析到版本号")
+        return _fallback()
+
+    major, build, mon, day, year = m.group(1), m.group(2), m.group(3), m.group(4), m.group(5)
+    version = f"{major}.0.{int(build):04d}"
+    try:
+        date = _dt.datetime.strptime(f'{mon} {day} {year}', '%b %d %Y').strftime('%Y-%m-%d')
+    except Exception:
+        date = ''
+
+    print(f"  NetSarang API版本: {version} ({date}, Build {build})")
+    return (version, product.get('download_url', ''), product.get('download_url', ''), 0, date, '')
+
+
 def _edge_stable_release():
     """Edge 稳定版官方发布信息：返回 (版本号, 发布日期北京时间)。
 
@@ -8459,6 +8508,8 @@ def find_latest(product):
         version, full_url, param_url, size, date, md5 = detect_dotnet_api(product)
     elif detect_type == 'bundle_string':
         version, full_url, param_url, size, date, md5 = detect_bundle_string(product)
+    elif detect_type == 'netsarang_api':
+        version, full_url, param_url, size, date, md5 = detect_netsarang_api(product)
     elif detect_type == 'startallback':
         version, full_url, param_url, size, date, md5 = detect_startallback(product)
     elif detect_type == 'bwcx':
