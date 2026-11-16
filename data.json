@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T17:53:06.790729+00:00",
+  "updated_at": "2026-11-16T18:06:10.524682+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-12 11:21",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795456242&P2=404&P3=2&P4=cAlTGiFWVyhkbS9iE0006dOAvDBSlPzurCFpasUqfkI9KFtmSJRLl07R%2fb1Xb855FWN%2fbWdCwPLJ06qVM06JOg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795456242&P2=404&P3=2&P4=cAlTGiFWVyhkbS9iE0006dOAvDBSlPzurCFpasUqfkI9KFtmSJRLl07R%2fb1Xb855FWN%2fbWdCwPLJ06qVM06JOg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795457144&P2=404&P3=2&P4=dhWqvZaWWJJMG9UY9Bj65B%2f8OQWFBc%2bovHpWmz164KSDRkldDqDedzKazm6O7RVLUxcCqwlFS%2foGqdiLIs550A%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795457144&P2=404&P3=2&P4=dhWqvZaWWJJMG9UY9Bj65B%2f8OQWFBc%2bovHpWmz164KSDRkldDqDedzKazm6O7RVLUxcCqwlFS%2foGqdiLIs550A%3d%3d",
       "downloads": [],
       "size": 208581456,
       "size_mb": 198.9,
@@ -536,7 +536,7 @@
       "official_site": "https://www.havysoft.cl/descargar.html",
       "update_items": [],
       "detected_at": "2026-11-03 22:35",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -693,17 +693,17 @@
       "icon": "C+",
       "icon_color": "linear-gradient(135deg, #4285f4, #34a853)",
       "category": "浏览器",
-      "version": "1.20.0",
-      "download_url": "https://github.com/Bush2021/chrome_plus/releases/tag/1.20.0",
-      "download_url_with_params": "https://github.com/Bush2021/chrome_plus/releases/tag/1.20.0",
+      "version": "1.20.1",
+      "download_url": "https://github.com/Bush2021/chrome_plus/releases/tag/1.20.1",
+      "download_url_with_params": "https://github.com/Bush2021/chrome_plus/releases/tag/1.20.1",
       "downloads": [],
-      "size": 487515,
+      "size": 488920,
       "size_mb": 0.5,
-      "last_modified": "2026-11-10",
+      "last_modified": "2026-11-17",
       "md5": "",
       "official_site": "https://github.com/Bush2021/chrome_plus/releases",
       "update_items": [],
-      "detected_at": "2026-11-10 04:39",
+      "detected_at": "2026-11-17 02:05",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
