@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T06:22:07.145741+00:00",
+  "updated_at": "2026-11-16T06:52:26.225805+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -1428,17 +1428,17 @@
       "icon": "S11",
       "icon_color": "linear-gradient(135deg, #0078d4, #005a9e)",
       "category": "系统工具",
-      "version": "2.81",
+      "version": "2.8.2",
       "download_url": "https://stardock.cachefly.net/software/Start11/v2/Start11v2_Setup.exe",
       "download_url_with_params": "https://stardock.cachefly.net/software/Start11/v2/Start11v2_Setup.exe",
       "downloads": [],
-      "size": 57367304,
-      "size_mb": 54.7,
-      "last_modified": "2026-09-21",
+      "size": 57671680,
+      "size_mb": 55.0,
+      "last_modified": "2026-11-06",
       "md5": "",
       "official_site": "https://www.stardock.com/products/start11/history",
       "update_items": [],
-      "detected_at": "2026-10-29 01:51",
+      "detected_at": "2026-11-16 14:52",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
