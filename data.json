@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T23:08:10.659204+00:00",
+  "updated_at": "2026-11-16T23:17:44.354622+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -61,7 +61,7 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-11-12 19:51",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795475147&P2=404&P3=2&P4=dNyPzn1eSIZvxFa0024u4Qsl%2fd7YuMw0ccfQ9On9WTanfySYV19VUzyt9iH6%2fNXM0NyJhV7PgS7aC%2fAM1TXH%2bQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795475147&P2=404&P3=2&P4=dNyPzn1eSIZvxFa0024u4Qsl%2fd7YuMw0ccfQ9On9WTanfySYV19VUzyt9iH6%2fNXM0NyJhV7PgS7aC%2fAM1TXH%2bQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795475715&P2=404&P3=2&P4=Hy1glZm8yIxpk%2fm6OnN8qoreR1y2SvnOgulyEKD8VJGUvvvIfKVgk4AyKsFb61JMpBVausLkYg9DuNuRD50YMA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795475715&P2=404&P3=2&P4=Hy1glZm8yIxpk%2fm6OnN8qoreR1y2SvnOgulyEKD8VJGUvvvIfKVgk4AyKsFb61JMpBVausLkYg9DuNuRD50YMA%3d%3d",
       "downloads": [],
       "size": 208581456,
       "size_mb": 198.9,
