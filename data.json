@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T05:22:33.251424+00:00",
+  "updated_at": "2026-11-16T05:26:24.700035+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-11-12 19:51",
-      "fb_streak": 24,
-      "fb_skip_until": 1794806629
+      "fb_streak": 25,
+      "fb_skip_until": 1794810384
     },
     {
       "name": "WeChat",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-12 11:21",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795411292&P2=404&P3=2&P4=iRCd%2bwmQjPGX4qKDpW1HQmkhOob%2bpbAGEE3VNPJvnI%2bUMAokNNiki5sY%2bfcyQAl6tmzi0Jc4nucWRVJ8OnE7tg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795411292&P2=404&P3=2&P4=iRCd%2bwmQjPGX4qKDpW1HQmkhOob%2bpbAGEE3VNPJvnI%2bUMAokNNiki5sY%2bfcyQAl6tmzi0Jc4nucWRVJ8OnE7tg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795411436&P2=404&P3=2&P4=CS4%2fCO%2bFP1YdLsbkXHyswlC0RSUINj20%2bwm%2bkDO%2f8XfR2pqU%2biD7iJWWQ5gUAvf%2bzWy0z0c0kpNcDJI%2bh1OSGA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795411436&P2=404&P3=2&P4=CS4%2fCO%2bFP1YdLsbkXHyswlC0RSUINj20%2bwm%2bkDO%2f8XfR2pqU%2biD7iJWWQ5gUAvf%2bzWy0z0c0kpNcDJI%2bh1OSGA%3d%3d",
       "downloads": [],
       "size": 208581456,
       "size_mb": 198.9,
@@ -2215,17 +2215,17 @@
       "icon": "CD",
       "icon_color": "linear-gradient(135deg, #2f80ed, #1c4fd6)",
       "category": "系统工具",
-      "version": "9.9.4",
-      "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
-      "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.4/CrystalDiskInfo9_9_4.zip/download",
+      "version": "9.9.5",
+      "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
+      "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-11-16",
       "md5": "",
       "official_site": "https://crystalmark.info/en/software/crystaldiskinfo/",
       "update_items": [],
-      "detected_at": "2026-11-16 13:21",
+      "detected_at": "2026-11-16 13:23",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
