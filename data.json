@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T06:52:26.225805+00:00",
+  "updated_at": "2026-11-16T07:08:53.000616+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-11-12 19:51",
-      "fb_streak": 25,
-      "fb_skip_until": 1794810384
+      "fb_streak": 26,
+      "fb_skip_until": 1794816533
     },
     {
       "name": "WeChat",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-12 11:21",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795414877&P2=404&P3=2&P4=K060KQsUcMJyIdV6CCzKk9zSfXh611OcehRrEZqUp%2bIxKyyN%2bxyo6iAjev8ACvNiiaMYGIHQ8ksdprlgJQxvXQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795414877&P2=404&P3=2&P4=K060KQsUcMJyIdV6CCzKk9zSfXh611OcehRrEZqUp%2bIxKyyN%2bxyo6iAjev8ACvNiiaMYGIHQ8ksdprlgJQxvXQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795417583&P2=404&P3=2&P4=XCbUoYDT%2bxihaEcwLmTRzDrG2FegtKknrNtcUJCzSjhD%2fJX52lzp%2fvoAvmghQD6J7fhxHxzyCFVVyVqW54PvxA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795417583&P2=404&P3=2&P4=XCbUoYDT%2bxihaEcwLmTRzDrG2FegtKknrNtcUJCzSjhD%2fJX52lzp%2fvoAvmghQD6J7fhxHxzyCFVVyVqW54PvxA%3d%3d",
       "downloads": [],
       "size": 208581456,
       "size_mb": 198.9,
@@ -1432,8 +1432,8 @@
       "download_url": "https://stardock.cachefly.net/software/Start11/v2/Start11v2_Setup.exe",
       "download_url_with_params": "https://stardock.cachefly.net/software/Start11/v2/Start11v2_Setup.exe",
       "downloads": [],
-      "size": 57671680,
-      "size_mb": 55.0,
+      "size": 57367304,
+      "size_mb": 54.7,
       "last_modified": "2026-11-06",
       "md5": "",
       "official_site": "https://www.stardock.com/products/start11/history",
@@ -2000,22 +2000,22 @@
       "icon": "M",
       "icon_color": "linear-gradient(135deg, #8e44ad, #6c3483)",
       "category": "资源站",
-      "version": "2026-11-15",
+      "version": "2026-11-16",
       "download_url": "https://w18.monkrus.ws/",
       "download_url_with_params": "https://w18.monkrus.ws/",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-11-15",
+      "last_modified": "2026-11-16",
       "md5": "",
       "official_site": "https://w18.monkrus.ws/",
       "update_items": [
         {
-          "title": "Adobe Speech to Text v2.2.11 for Premiere 2027",
-          "url": "https://w18.monkrus.ws/2026/11/adobe-speech-to-text-v2211-for-premiere.html"
+          "title": "Adobe After Effects 2026 (v26.5.3) Multilingual",
+          "url": "https://w18.monkrus.ws/2026/11/adobe-after-effects-2026-v2653.html"
         }
       ],
-      "detected_at": "2026-11-15 20:06",
+      "detected_at": "2026-11-16 15:06",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2219,7 +2219,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-11-16",
       "md5": "",
