@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T07:54:27.120278+00:00",
+  "updated_at": "2026-11-16T08:07:09.614186+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795420422&P2=404&P3=2&P4=Un8JM6XRIsKNCiK1BDMbYWllVMmWpl6a%2byFLp90Tm4RCNM99PAhOHeBamAPRieW9qykA7OI8sqlwExyJp0kLNw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795420422&P2=404&P3=2&P4=Un8JM6XRIsKNCiK1BDMbYWllVMmWpl6a%2byFLp90Tm4RCNM99PAhOHeBamAPRieW9qykA7OI8sqlwExyJp0kLNw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795421205&P2=404&P3=2&P4=g2CZSF5lIlR0rwL%2btfK%2fiwl3ExFgNUvOQ0Iq5rzRcs%2bJvQtEL0%2bKecrqdX1P7id6C%2bpEYzNrCT0eT%2bEPxXh9og%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795421205&P2=404&P3=2&P4=g2CZSF5lIlR0rwL%2btfK%2fiwl3ExFgNUvOQ0Iq5rzRcs%2bJvQtEL0%2bKecrqdX1P7id6C%2bpEYzNrCT0eT%2bEPxXh9og%3d%3d",
       "downloads": [],
       "size": 208581456,
       "size_mb": 198.9,
@@ -2011,11 +2011,15 @@
       "official_site": "https://w18.monkrus.ws/",
       "update_items": [
         {
+          "title": "Adobe After Effects 2027 (v27.0) Multilingual",
+          "url": "https://w18.monkrus.ws/2026/11/adobe-after-effects-2027-v270.html"
+        },
+        {
           "title": "Adobe After Effects 2026 (v26.5.3) Multilingual",
           "url": "https://w18.monkrus.ws/2026/11/adobe-after-effects-2026-v2653.html"
         }
       ],
-      "detected_at": "2026-11-16 15:06",
+      "detected_at": "2026-11-16 16:06",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
