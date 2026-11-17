@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-17T13:21:45.678603+00:00",
+  "updated_at": "2026-11-17T13:53:10.215615+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.46",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe?v=1794921655738&n=ldinst_9.5.46_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe?v=1794923453792&n=ldinst_9.5.46_ld_407594_ld.exe",
       "downloads": [],
       "size": 602991072,
       "size_mb": 575.1,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.0.37",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe?v=1794921653063&n=ldinst_14.0.37_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe?v=1794923451699&n=ldinst_14.0.37_ld_412570_ld.exe",
       "downloads": [],
       "size": 745672168,
       "size_mb": 711.1,
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-11-12 19:51",
-      "fb_streak": 12,
-      "fb_skip_until": 1794921784
+      "fb_streak": 13,
+      "fb_skip_until": 1794927190
     },
     {
       "name": "WeChat",
@@ -82,7 +82,7 @@
       "official_site": "https://pc.weixin.qq.com/",
       "update_items": [],
       "detected_at": "2026-11-16 13:21",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-17 10:20",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795526443&P2=404&P3=2&P4=DT0f8HRWdcCI32csJ5nLdzRxb26cquY3eplIC3LsQ3JbpqMcRrFighjxN0Qk2O3nHk3WQit7xnF0RVT2OqifOg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795526443&P2=404&P3=2&P4=DT0f8HRWdcCI32csJ5nLdzRxb26cquY3eplIC3LsQ3JbpqMcRrFighjxN0Qk2O3nHk3WQit7xnF0RVT2OqifOg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795528244&P2=404&P3=2&P4=LC8ppx22EXGfXKBKrq9rG2wfdv5HYuer4VKz15l%2fHfEe%2bfikMfeB%2bmKrUyvmgTnzeo6Q7beK4CghpQSGw6bN%2fA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795528244&P2=404&P3=2&P4=LC8ppx22EXGfXKBKrq9rG2wfdv5HYuer4VKz15l%2fHfEe%2bfikMfeB%2bmKrUyvmgTnzeo6Q7beK4CghpQSGw6bN%2fA%3d%3d",
       "downloads": [],
       "size": 208581456,
       "size_mb": 198.9,
@@ -334,7 +334,7 @@
       "official_site": "https://browser.360.cn/",
       "update_items": [],
       "detected_at": "2026-10-09 09:56",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -1743,17 +1743,17 @@
       "icon": "DP",
       "icon_color": "linear-gradient(135deg, #16a085, #1abc9c)",
       "category": "图像处理",
-      "version": "10.3.0.530",
+      "version": "10.3.2.545",
       "download_url": "https://download-center.dxo.com/PhotoLab/v10/Win/DxO_PhotoLab10_Setup.exe",
       "download_url_with_params": "https://download-center.dxo.com/PhotoLab/v10/Win/DxO_PhotoLab10_Setup.exe",
       "downloads": [],
-      "size": 321195336,
+      "size": 321197520,
       "size_mb": 306.3,
-      "last_modified": "2026-11-09",
+      "last_modified": "2026-11-17",
       "md5": "",
       "official_site": "https://www.dxo.com/dxo-photolab/",
       "update_items": [],
-      "detected_at": "2026-11-09 21:51",
+      "detected_at": "2026-11-17 21:50",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2490,8 +2490,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 347,
-      "fb_skip_until": 1794921784
+      "fb_streak": 348,
+      "fb_skip_until": 1794927190
     },
     {
       "name": "BitComet",
@@ -2655,8 +2655,8 @@
       "download_url": "https://www.ludashi.com/pc/download/getDownloadUrl?type=2",
       "download_url_with_params": "https://www.ludashi.com/pc/download/getDownloadUrl?type=2",
       "downloads": [],
-      "size": 283336336,
-      "size_mb": 270.2,
+      "size": 284200040,
+      "size_mb": 271.0,
       "last_modified": "2026-11-13",
       "md5": "",
       "official_site": "https://www.ludashi.com/",
