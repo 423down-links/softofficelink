@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-17T06:38:26.234636+00:00",
+  "updated_at": "2026-11-17T07:09:23.979991+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -2186,8 +2186,8 @@
       "icon_color": "linear-gradient(135deg, #bf0000, #e74c3c)",
       "category": "网络工具",
       "version": "3.72.1",
-      "download_url": "https://prodownload.filezilla-project.org/pro/FileZilla_Pro_3.72.1_win64.zip",
-      "download_url_with_params": "https://prodownload.filezilla-project.org/pro/FileZilla_Pro_3.72.1_win64.zip",
+      "download_url": "https://soft.423down.cn/dl/filezilla-pro/3.72.1",
+      "download_url_with_params": "https://soft.423down.cn/dl/filezilla-pro/3.72.1",
       "downloads": [],
       "size": 19548043,
       "size_mb": 18.6,

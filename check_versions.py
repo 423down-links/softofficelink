@@ -1874,8 +1874,10 @@ PRODUCTS = [
         'max_carry': 3,
         # 包只有 18MB，但 MD5 下载器不走 UA/证书兜底，跳过避免每轮报警
         'skip_md5': True,
+        # 官方目录 UA 白名单，浏览器点开 403；对外用 Pages Function 流式代理
+        'public_url_pattern': 'https://soft.423down.cn/dl/filezilla-pro/{ver}',
         'version': '3.72.1',
-        'download_url': 'https://prodownload.filezilla-project.org/pro/FileZilla_Pro_3.72.1_win64.zip',
+        'download_url': 'https://soft.423down.cn/dl/filezilla-pro/3.72.1',
         'official_site': 'https://filezilla-project.org/',
     },
     {
@@ -3408,6 +3410,11 @@ def detect_increment(product):
         )
     else:
         param_url = full_url
+
+    # 展示/点击链接覆盖：官方直链有 UA 白名单时（浏览器点开 403），
+    # 对外用站点自身代理地址（public_url_pattern，支持 {ver}）
+    if product.get('public_url_pattern'):
+        param_url = product['public_url_pattern'].format(ver=latest)
 
     # 统一日期格式
     if latest_date:
