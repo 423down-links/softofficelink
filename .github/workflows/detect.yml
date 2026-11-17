@@ -62,6 +62,11 @@ jobs:
           name: detect-log-hourly
           path: /tmp/detect.log
           retention-days: 3
+      - name: Mirror UA-restricted packages to Release
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 tools/mirror_release.py
       - name: Embed & push (有变化)
         if: steps.detect.outputs.changed == 'true'
         run: |
@@ -140,6 +145,11 @@ jobs:
           name: detect-log-full
           path: /tmp/detect.log
           retention-days: 7
+      - name: Mirror UA-restricted packages to Release
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 tools/mirror_release.py
       - name: Embed & push (有变化)
         if: steps.detect.outputs.changed == 'true'
         run: |

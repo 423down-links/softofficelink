@@ -1874,10 +1874,11 @@ PRODUCTS = [
         'max_carry': 3,
         # 包只有 18MB，但 MD5 下载器不走 UA/证书兜底，跳过避免每轮报警
         'skip_md5': True,
-        # 官方目录 UA 白名单，浏览器点开 403；对外用 Pages Function 流式代理
-        'public_url_pattern': 'https://soft.423down.cn/dl/filezilla-pro/{ver}',
+        # 官方目录 UA 白名单 + 证书链异常（CF fetch 也 526），
+        # 免脚本方案：检测到新版自动镜像到公开仓 Release，这里指向镜像
+        'public_url_pattern': 'https://github.com/423down-links/softofficelink/releases/download/filezilla-pro-{ver}/FileZilla_Pro_{ver}_win64.zip',
         'version': '3.72.1',
-        'download_url': 'https://soft.423down.cn/dl/filezilla-pro/3.72.1',
+        'download_url': 'https://github.com/423down-links/softofficelink/releases/download/filezilla-pro-3.72.1/FileZilla_Pro_3.72.1_win64.zip',
         'official_site': 'https://filezilla-project.org/',
     },
     {
