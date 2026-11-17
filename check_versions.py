@@ -1843,8 +1843,13 @@ PRODUCTS = [
         # 注意：前端下载地址恒定 302 到 storage.advancedupdater.cloud，需跟随重定向判存在性
         # （check_url 默认跟随重定向，不存在的版本最终返回 404）。
         'detect_type': 'increment',
-        'base_version': '24.1',
+        'base_version': '24.2',
         'url_pattern': 'https://www.advancedinstaller.com/downloads/{ver}/advinst.msi',
+        # 官方除 24.2/ 外还发 24.2.1/ 这类补丁目录，只探两段永远看不到补丁
+        'patch_probe': True,
+        'max_patch': 9,
+        # 日期用安装包 HEAD 的真实 Last-Modified，不用检测当天
+        'date_authority': 'detector',
         'param_format': '',
         'channel': '',
         'max_skip': 3,      # 连续3个404后进位（24.x -> 25.0）
@@ -3234,6 +3239,30 @@ def detect_increment(product):
             latest_size = _ls
             latest_date = _ld or latest_date
             print(f"  补体积: {latest_size/1024/1024:.1f}MB")
+
+    # 三段补丁探测：部分软件（Advanced Installer）在 24.2/ 之外还有 24.2.1/ 这类补丁包，
+    # 只探 major.minor 会永远漏掉补丁号；主版本定下来后向上扫 .1/.2/... 取最大命中。
+    if product.get('patch_probe'):
+        _pmax = max(1, int(product.get('max_patch', 9)))
+        if len(latest.split('.')) == 2:
+            _best = None
+            _miss = 0
+            for _n in range(1, _pmax + 1):
+                _pv = f"{latest}.{_n}"
+                _pu, _pok, _ps, _pd = get_version_url(_pv, fast=True)
+                if _pok:
+                    _best = (_pv, _pu, _ps, _pd)
+                    _miss = 0
+                else:
+                    _miss += 1
+                    if _miss >= 2:  # 连续两档不存在就收手，避免无谓扫描
+                        break
+            if _best:
+                latest, _bu, _bs, _bd = _best
+                latest_size = _bs or latest_size
+                latest_date = _bd or latest_date
+                print(f"  三段补丁探测: {latest}"
+                      + (f" ({latest_size/1024/1024:.1f}MB)" if latest_size else ""))
 
     # 第2层：多源版本号探测
     # NSIS版本优先（安装包内部真实版本，最精确）

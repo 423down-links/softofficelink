@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-17T06:21:30.458717+00:00",
+  "updated_at": "2026-11-17T06:32:52.156640+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -2164,17 +2164,17 @@
       "icon": "AI",
       "icon_color": "linear-gradient(135deg, #3498db, #2980b9)",
       "category": "开发工具",
-      "version": "24.2",
-      "download_url": "https://www.advancedinstaller.com/downloads/24.2/advinst.msi",
-      "download_url_with_params": "https://www.advancedinstaller.com/downloads/24.2/advinst.msi",
+      "version": "24.2.1",
+      "download_url": "https://www.advancedinstaller.com/downloads/24.2.1/advinst.msi",
+      "download_url_with_params": "https://www.advancedinstaller.com/downloads/24.2.1/advinst.msi",
       "downloads": [],
-      "size": 316878848,
+      "size": 316870656,
       "size_mb": 302.2,
-      "last_modified": "2026-11-12",
+      "last_modified": "2026-11-13",
       "md5": "",
       "official_site": "https://www.advancedinstaller.com/",
       "update_items": [],
-      "detected_at": "2026-11-12 18:21",
+      "detected_at": "2026-11-17 14:32",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
