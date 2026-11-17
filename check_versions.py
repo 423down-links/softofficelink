@@ -3181,8 +3181,10 @@ def detect_increment(product):
                     else:
                         print(f"  ⚠️ 锚点版本 {_anchor} 的 Pro 包不存在（Reader 先行发布），转结构扫描")
                 else:
-                    _anchor_hit = True   # 锚点不比基线新 = 已是最新，无需扫描
-                    print(f"  ✓ 锚点不新于基线 {cur_int}，确认为最新")
+                    # winget 索引常滞后（社区手动跟进，Pro 包先上 CDN），
+                    # 「锚点不新」绝不能当成「确认为最新」，否则永远漏版
+                    # （2026.003.22110 上架 11-16，winget 还停在 .22075）
+                    print(f"  ℹ️ winget 锚点 {_anchor} 不新于基线 {cur_int}（索引滞后），转结构扫描")
 
         # 第二层：结构扫描兜底（winget 索引不可用 / Reader 先行 Pro 未铺包）
         if not _anchor_hit:
