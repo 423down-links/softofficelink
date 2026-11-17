@@ -3413,9 +3413,11 @@ def detect_increment(product):
         param_url = full_url
 
     # 展示/点击链接覆盖：官方直链有 UA 白名单时（浏览器点开 403），
-    # 对外用站点自身代理地址（public_url_pattern，支持 {ver}）
+    # 对外用中转地址（public_url_pattern，支持 {ver}）；
+    # ⚠️ download_url 取的是 full_url，param_url 只用于带参下载，两者都要覆盖
     if product.get('public_url_pattern'):
         param_url = product['public_url_pattern'].format(ver=latest)
+        full_url = param_url
 
     # 统一日期格式
     if latest_date:
