@@ -9,10 +9,12 @@ Cloudflare（Pages Functions / Worker）fetch 该站又报 526（证书链问题
 依赖：PATH 里有 gh 且已登录（Actions 用 GITHUB_TOKEN）。
 """
 import json
+import os
 import ssl
 import subprocess
 import sys
 import urllib.request
+import zipfile
 
 REPO = '423down-links/softofficelink'
 
@@ -47,6 +49,20 @@ def download(url, ua, path):
             f.write(chunk)
 
 
+def verify_zip(path, expected_size=0):
+    """完整性校验：拿不到完整包绝不能上传（半包会让用户解压报错）。"""
+    actual = os.path.getsize(path)
+    if actual < 100 * 1024:
+        raise RuntimeError(f'包过小，疑似错误页: {actual} 字节')
+    if expected_size and actual < expected_size * 0.9:
+        raise RuntimeError(f'包疑似截断: {actual} 字节 < 预期 {expected_size:.0f}')
+    with zipfile.ZipFile(path) as z:
+        bad = z.testzip()
+        if bad:
+            raise RuntimeError(f'zip CRC 校验失败: {bad}')
+        print(f'  校验通过: {actual / 1024 / 1024:.1f}MB, {len(z.namelist())} 个文件')
+
+
 def main():
     only = None
     if '--only' in sys.argv:
@@ -68,8 +84,14 @@ def main():
             continue
 
         path = f'/tmp/{asset}'
+        expected = float(p.get('size_mb') or 0) * 1024 * 1024
         print(f'{name} {ver}: 下载 {cfg["url"].format(ver=ver)}')
         download(cfg['url'].format(ver=ver), cfg['ua'], path)
+        try:
+            verify_zip(path, expected)
+        except Exception as e:
+            print(f'{name} {ver}: 校验失败，拒绝上传（{e}）')
+            sys.exit(1)
         r = subprocess.run(
             ['gh', 'release', 'create', tag, path, '--repo', REPO,
              '--title', f'{name} {ver}',
