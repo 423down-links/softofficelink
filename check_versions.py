@@ -1858,6 +1858,27 @@ PRODUCTS = [
         'official_site': 'https://www.advancedinstaller.com/',
     },
     {
+        'name': 'FileZilla Pro',
+        'name_cn': 'FileZilla Pro',
+        'icon': 'FZ',
+        'icon_color': 'linear-gradient(135deg, #bf0000, #e74c3c)',
+        'category': '网络工具',
+        # 免脚本：官方只读目录直接按版本号拼直链递增探测
+        # （3.72.1 存在，3.72.2/3.73.0 均 404），无需任何参数
+        'detect_type': 'increment',
+        'base_version': '3.72.1',
+        'url_pattern': 'https://prodownload.filezilla-project.org/pro/FileZilla_Pro_{ver}_win64.zip',
+        # 该目录只认 FileZilla 自家 UA，浏览器 UA 直接 403
+        'ua': 'FileZilla',
+        'max_skip': 3,
+        'max_carry': 3,
+        # 包只有 18MB，但 MD5 下载器不走 UA/证书兜底，跳过避免每轮报警
+        'skip_md5': True,
+        'version': '3.72.1',
+        'download_url': 'https://prodownload.filezilla-project.org/pro/FileZilla_Pro_3.72.1_win64.zip',
+        'official_site': 'https://filezilla-project.org/',
+    },
+    {
         'name': 'Operit',
         'name_cn': 'Operit AI',
         'icon': 'OP',
@@ -2467,7 +2488,7 @@ _http_cache = {}
 _http_cache_lock = threading.Lock()
 
 
-def check_url(url, referer=None, use_cache=True, get_fallback=True):
+def check_url(url, referer=None, use_cache=True, get_fallback=True, ua=None):
     """检测URL是否存在，返回 (exists, size, last_modified)
     302重定向到CDN签名URL时跟随重定向获取大小
 
@@ -2493,7 +2514,7 @@ def check_url(url, referer=None, use_cache=True, get_fallback=True):
         if hit and (time.time() - hit[0]) < HTTP_CACHE_TTL:
             return hit[1], hit[2], hit[3]
 
-    headers = {'User-Agent': UA}
+    headers = {'User-Agent': ua or UA}
     if referer:
         headers['Referer'] = referer
     try:
@@ -2533,7 +2554,30 @@ def check_url(url, referer=None, use_cache=True, get_fallback=True):
             return result
     except urllib.error.HTTPError:
         return False, 0, ''
-    except Exception:
+    except Exception as _e:
+        # 部分站点/中间代理证书链异常（自签、未知 CA），直接判"不存在"会把
+        # 整站误判成 404（FileZilla Pro 的 prodownload 就是这种）；退一次
+        # 不校验证书的 HEAD，仍按 HTTP 状态判定存在性。
+        if 'certificate' in str(_e).lower() or 'ssl' in str(_e).lower():
+            try:
+                import ssl as _s
+                ctx = _s.create_default_context()
+                ctx.check_hostname = False
+                ctx.verify_mode = _s.CERT_NONE
+                req = urllib.request.Request(url, method='HEAD', headers=headers)
+                with urllib.request.urlopen(req, timeout=8, context=ctx) as resp2:
+                    size = resp2.headers.get('Content-Length', '0') or '0'
+                    lm = resp2.headers.get('Last-Modified', '') or ''
+                    ok = resp2.status == 200
+                    result = (ok, int(size) if size.isdigit() else 0, lm)
+                    if use_cache and ok:
+                        with _http_cache_lock:
+                            _http_cache[key] = (time.time(),) + result
+                    return result
+            except urllib.error.HTTPError:
+                return False, 0, ''
+            except Exception:
+                return False, 0, ''
         return False, 0, ''
 
 
@@ -2961,7 +3005,8 @@ def detect_increment(product):
         major_minor_underscore = '_'.join(parts[:2])
         for pattern in url_patterns:
             test_url = pattern.format(ver=ver_full, ver_dot=ver_nodot, major=major, major_minor=major_minor, major_minor_underscore=major_minor_underscore)
-            exists, size, date = check_url(test_url, referer=referer, get_fallback=not fast)
+            exists, size, date = check_url(test_url, referer=referer, get_fallback=not fast,
+                                           ua=product.get('ua'))
             if exists:
                 return test_url, exists, size, date
         last_url = url_patterns[-1].format(ver=ver_full, ver_dot=ver_nodot, major=major, major_minor=major_minor, major_minor_underscore=major_minor_underscore)
@@ -3234,7 +3279,7 @@ def detect_increment(product):
             ver=_url_ver(latest, product), ver_dot=latest.replace('.', ''),
             major=_lp[0], major_minor='.'.join(_lp[:2]),
             major_minor_underscore='_'.join(_lp[:2]))
-        _lok, _ls, _ld = check_url(_lu, referer=referer, use_cache=False)
+        _lok, _ls, _ld = check_url(_lu, referer=referer, use_cache=False, ua=product.get('ua'))
         if _lok and _ls > 0:
             latest_size = _ls
             latest_date = _ld or latest_date
