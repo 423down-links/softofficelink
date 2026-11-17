@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-17T01:22:11.957658+00:00",
+  "updated_at": "2026-11-17T01:53:02.950697+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.45",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.45.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.45.exe?v=1794878447362&n=ldinst_9.5.45_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.45.exe?v=1794880242910&n=ldinst_9.5.45_ld_407594_ld.exe",
       "downloads": [],
       "size": 602969064,
       "size_mb": 575.0,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.0.36",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.36.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.36.exe?v=1794878449896&n=ldinst_14.0.36_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.36.exe?v=1794880243744&n=ldinst_14.0.36_ld_412570_ld.exe",
       "downloads": [],
       "size": 745648616,
       "size_mb": 711.1,
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-11-12 19:51",
-      "fb_streak": 3,
-      "fb_skip_until": 1794879498
+      "fb_streak": 4,
+      "fb_skip_until": 1794883982
     },
     {
       "name": "WeChat",
@@ -82,7 +82,7 @@
       "official_site": "https://pc.weixin.qq.com/",
       "update_items": [],
       "detected_at": "2026-11-16 13:21",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-12 11:21",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795483244&P2=404&P3=2&P4=EX6uP1GxoSVech1R30%2fV4afFneclBjZYsZVb%2b%2bwQKAq3ELFQzqJUfBTrlzuoxYnZJ%2fOihd8iPeFxsLGfbH%2fXNA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795483244&P2=404&P3=2&P4=EX6uP1GxoSVech1R30%2fV4afFneclBjZYsZVb%2b%2bwQKAq3ELFQzqJUfBTrlzuoxYnZJ%2fOihd8iPeFxsLGfbH%2fXNA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795485038&P2=404&P3=2&P4=gqy7HrP0rnJSwtZfrKoOG9y0k%2fGGGkfSOzUX2cEmm89%2fiQFFaNBzdESdJhcraMRLWN8oBJy%2bpRsfEAWF4VnYjA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795485038&P2=404&P3=2&P4=gqy7HrP0rnJSwtZfrKoOG9y0k%2fGGGkfSOzUX2cEmm89%2fiQFFaNBzdESdJhcraMRLWN8oBJy%2bpRsfEAWF4VnYjA%3d%3d",
       "downloads": [],
       "size": 208581456,
       "size_mb": 198.9,
@@ -2469,8 +2469,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 338,
-      "fb_skip_until": 1794878483
+      "fb_streak": 339,
+      "fb_skip_until": 1794883982
     },
     {
       "name": "BitComet",
@@ -2634,8 +2634,8 @@
       "download_url": "https://www.ludashi.com/pc/download/getDownloadUrl?type=2",
       "download_url_with_params": "https://www.ludashi.com/pc/download/getDownloadUrl?type=2",
       "downloads": [],
-      "size": 284200040,
-      "size_mb": 271.0,
+      "size": 283336336,
+      "size_mb": 270.2,
       "last_modified": "2026-11-13",
       "md5": "",
       "official_site": "https://www.ludashi.com/",
@@ -2683,7 +2683,7 @@
       "official_site": "https://sweetscape.com/download/",
       "update_items": [],
       "detected_at": "2026-11-05 13:27",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
