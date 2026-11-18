@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T12:07:35.809311+00:00",
+  "updated_at": "2026-11-18T12:22:57.734382+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.46",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe?v=1795002647626&n=ldinst_9.5.46_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe?v=1795004444104&n=ldinst_9.5.46_ld_407594_ld.exe",
       "downloads": [],
       "size": 602991072,
       "size_mb": 575.1,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.0.37",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe?v=1795002651561&n=ldinst_14.0.37_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe?v=1795004440995&n=ldinst_14.0.37_ld_412570_ld.exe",
       "downloads": [],
       "size": 745672168,
       "size_mb": 711.1,
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-11-12 19:51",
-      "fb_streak": 29,
-      "fb_skip_until": 1795003688
+      "fb_streak": 30,
+      "fb_skip_until": 1795008177
     },
     {
       "name": "WeChat",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795608386&P2=404&P3=2&P4=PI204qTaoPVa6a0F08oV9ECy1vcZ8LO1KIn4lZB9TkL1tE%2bnawOcLV1ExarCQBW2MRXVt0QcIcSI3Ac4GtJ6iw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795608386&P2=404&P3=2&P4=PI204qTaoPVa6a0F08oV9ECy1vcZ8LO1KIn4lZB9TkL1tE%2bnawOcLV1ExarCQBW2MRXVt0QcIcSI3Ac4GtJ6iw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795609234&P2=404&P3=2&P4=hnNB37O8n8MmqDjgVveZ1cIM2sVQv6bvBNM6arEDHegJEggnqea93vz8KJebl2ZavJkUWaRQJpsHqrCBh%2b6wKA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795609234&P2=404&P3=2&P4=hnNB37O8n8MmqDjgVveZ1cIM2sVQv6bvBNM6arEDHegJEggnqea93vz8KJebl2ZavJkUWaRQJpsHqrCBh%2b6wKA%3d%3d",
       "downloads": [],
       "size": 208581456,
       "size_mb": 198.9,
@@ -334,7 +334,7 @@
       "official_site": "https://browser.360.cn/",
       "update_items": [],
       "detected_at": "2026-10-09 09:56",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -536,8 +536,8 @@
       "official_site": "https://www.havysoft.cl/descargar.html",
       "update_items": [],
       "detected_at": "2026-11-03 22:35",
-      "fb_streak": 1,
-      "fb_skip_until": 0
+      "fb_streak": 2,
+      "fb_skip_until": 1795006377
     },
     {
       "name": "IObit Uninstaller",
@@ -2273,7 +2273,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-11-16",
       "md5": "",
@@ -2511,8 +2511,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 364,
-      "fb_skip_until": 1795003688
+      "fb_streak": 365,
+      "fb_skip_until": 1795008177
     },
     {
       "name": "BitComet",
