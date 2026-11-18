@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T06:52:09.813289+00:00",
+  "updated_at": "2026-11-18T07:08:05.084092+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-11-12 19:51",
-      "fb_streak": 25,
-      "fb_skip_until": 1794984789
+      "fb_streak": 26,
+      "fb_skip_until": 1794989285
     },
     {
       "name": "WeChat",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795589438&P2=404&P3=2&P4=P1nANI%2bQDpXUVWOL7XLDGRKM6%2bGIOKF%2boqMJfkBZx8FKYfxb8zw7qFAK8B5hpxi%2b6Jd5xGoHciSrSVH4Gt3lpg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795589438&P2=404&P3=2&P4=P1nANI%2bQDpXUVWOL7XLDGRKM6%2bGIOKF%2boqMJfkBZx8FKYfxb8zw7qFAK8B5hpxi%2b6Jd5xGoHciSrSVH4Gt3lpg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795590335&P2=404&P3=2&P4=JnyfAldJLryiNNDEfU8SxFgi6NhbiHLmBJ%2feSMZTup3YD5%2bx1QF3RC1wU6VCVJb9IotgHI%2f4RswNIZzlktc%2fWQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795590335&P2=404&P3=2&P4=JnyfAldJLryiNNDEfU8SxFgi6NhbiHLmBJ%2feSMZTup3YD5%2bx1QF3RC1wU6VCVJb9IotgHI%2f4RswNIZzlktc%2fWQ%3d%3d",
       "downloads": [],
       "size": 208581456,
       "size_mb": 198.9,
@@ -2000,34 +2000,26 @@
       "icon": "M",
       "icon_color": "linear-gradient(135deg, #8e44ad, #6c3483)",
       "category": "资源站",
-      "version": "2026-11-16",
+      "version": "2026-11-18",
       "download_url": "https://w18.monkrus.ws/",
       "download_url_with_params": "https://w18.monkrus.ws/",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-11-16",
+      "last_modified": "2026-11-18",
       "md5": "",
       "official_site": "https://w18.monkrus.ws/",
       "update_items": [
         {
-          "title": "Adobe Audition 2027 (v27.0) Multilingual",
-          "url": "https://w18.monkrus.ws/2026/11/adobe-audition-2027-v270-multilingual.html"
+          "title": "Adobe Acrobat 2026 (v26.3.22110) x64 Multilingual",
+          "url": "https://w18.monkrus.ws/2026/11/adobe-acrobat-2026-v26322110-x64.html"
         },
         {
-          "title": "Adobe Audition 2026 (v26.5.3) Multilingual",
-          "url": "https://w18.monkrus.ws/2026/11/adobe-audition-2026-v2653-multilingual.html"
-        },
-        {
-          "title": "Adobe After Effects 2027 (v27.0) Multilingual",
-          "url": "https://w18.monkrus.ws/2026/11/adobe-after-effects-2027-v270.html"
-        },
-        {
-          "title": "Adobe After Effects 2026 (v26.5.3) Multilingual",
-          "url": "https://w18.monkrus.ws/2026/11/adobe-after-effects-2026-v2653.html"
+          "title": "Adobe Acrobat 2026 (v26.3.22110) x86 Multilingual",
+          "url": "https://w18.monkrus.ws/2026/11/adobe-acrobat-2026-v26322110-x86.html"
         }
       ],
-      "detected_at": "2026-11-16 21:55",
+      "detected_at": "2026-11-18 15:05",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2511,8 +2503,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 360,
-      "fb_skip_until": 1794984789
+      "fb_streak": 361,
+      "fb_skip_until": 1794989285
     },
     {
       "name": "BitComet",
