@@ -1882,6 +1882,22 @@ PRODUCTS = [
         'official_site': 'https://filezilla-project.org/',
     },
     {
+        'name': 'Rufus',
+        'name_cn': 'Rufus',
+        'icon': 'RF',
+        'icon_color': 'linear-gradient(135deg, #2b579a, #4a90e2)',
+        'category': '系统工具',
+        # 免脚本：GitHub Release 直链按版本号拼，4.16 存在、4.17/4.18 均 404
+        'detect_type': 'increment',
+        'base_version': '4.16',
+        'url_pattern': 'https://github.com/pbatard/rufus/releases/download/v{ver}/rufus-{ver}p.exe',
+        'max_skip': 2,
+        'max_carry': 3,
+        'version': '4.16',
+        'download_url': 'https://github.com/pbatard/rufus/releases/download/v4.16/rufus-4.16p.exe',
+        'official_site': 'https://rufus.ie/',
+    },
+    {
         'name': 'Operit',
         'name_cn': 'Operit AI',
         'icon': 'OP',

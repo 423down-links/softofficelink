@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T04:06:46.527372+00:00",
+  "updated_at": "2026-11-18T04:09:45.470086+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -2196,6 +2196,27 @@
       "official_site": "https://filezilla-project.org/",
       "update_items": [],
       "detected_at": "2026-11-17 14:38",
+      "fb_streak": 0,
+      "fb_skip_until": 0
+    },
+    {
+      "name": "Rufus",
+      "name_cn": "Rufus",
+      "alias": "",
+      "icon": "RF",
+      "icon_color": "linear-gradient(135deg, #2b579a, #4a90e2)",
+      "category": "系统工具",
+      "version": "4.16",
+      "download_url": "https://github.com/pbatard/rufus/releases/download/v4.16/rufus-4.16p.exe",
+      "download_url_with_params": "https://github.com/pbatard/rufus/releases/download/v4.16/rufus-4.16p.exe",
+      "downloads": [],
+      "size": 1985016,
+      "size_mb": 1.9,
+      "last_modified": "2026-11-17",
+      "md5": "d7ee4de6fffb42098c657f8c771a0046",
+      "official_site": "https://rufus.ie/",
+      "update_items": [],
+      "detected_at": "2026-11-18 12:09",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
