@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T08:52:18.179556+00:00",
+  "updated_at": "2026-11-18T09:06:52.459593+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795596641&P2=404&P3=2&P4=blBnR6PryDbUFsUEpnQZIl8W1m7ynFF66C0JwZN6P8Xmqgw5fRjGYHNXS9SfEArYj635YbnZd43WFwRuYZHeoQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795596641&P2=404&P3=2&P4=blBnR6PryDbUFsUEpnQZIl8W1m7ynFF66C0JwZN6P8Xmqgw5fRjGYHNXS9SfEArYj635YbnZd43WFwRuYZHeoQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795597541&P2=404&P3=2&P4=G1CHoVE6rts5Dnq%2biuDQJ1J%2ffD1TXYkYhqcNPd7K1tC%2bHrtXIyyTt5P%2fgKMWjA%2fS3oE314Nwwx84VhVoiNFUDQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795597541&P2=404&P3=2&P4=G1CHoVE6rts5Dnq%2biuDQJ1J%2ffD1TXYkYhqcNPd7K1tC%2bHrtXIyyTt5P%2fgKMWjA%2fS3oE314Nwwx84VhVoiNFUDQ%3d%3d",
       "downloads": [],
       "size": 208581456,
       "size_mb": 198.9,
@@ -2011,6 +2011,10 @@
       "official_site": "https://w18.monkrus.ws/",
       "update_items": [
         {
+          "title": "Adobe Illustrator 2027 (v31.0) Multilingual",
+          "url": "https://w18.monkrus.ws/2026/11/adobe-illustrator-2027-v310-multilingual.html"
+        },
+        {
           "title": "Adobe Acrobat 2026 (v26.3.22110) x64 Multilingual",
           "url": "https://w18.monkrus.ws/2026/11/adobe-acrobat-2026-v26322110-x64.html"
         },
@@ -2019,7 +2023,7 @@
           "url": "https://w18.monkrus.ws/2026/11/adobe-acrobat-2026-v26322110-x86.html"
         }
       ],
-      "detected_at": "2026-11-18 15:05",
+      "detected_at": "2026-11-18 17:05",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2265,7 +2269,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-11-16",
       "md5": "",
