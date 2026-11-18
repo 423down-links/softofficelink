@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T10:41:01.169974+00:00",
+  "updated_at": "2026-11-18T10:52:10.265412+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.46",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe?v=1794998369815&n=ldinst_9.5.46_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe?v=1794999050291&n=ldinst_9.5.46_ld_407594_ld.exe",
       "downloads": [],
       "size": 602991072,
       "size_mb": 575.1,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.0.37",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe?v=1794998369126&n=ldinst_14.0.37_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe?v=1794999049143&n=ldinst_14.0.37_ld_412570_ld.exe",
       "downloads": [],
       "size": 745672168,
       "size_mb": 711.1,
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-17 10:20",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795603164&P2=404&P3=2&P4=giZToDuxQytnez03dZxWZRrtndjVrhrmVSb8uBS8bYlfxTr7WYwA%2bN2XlwwfgdnppZJm0MDxbG9VaQMjFXPVpQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795603164&P2=404&P3=2&P4=giZToDuxQytnez03dZxWZRrtndjVrhrmVSb8uBS8bYlfxTr7WYwA%2bN2XlwwfgdnppZJm0MDxbG9VaQMjFXPVpQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795603844&P2=404&P3=2&P4=UYdix%2bI8WuMqPrKJe9CGTslK%2bHuKMsCDFNlQnMaldwAkJ31crCUidsAFAyfdS5JZrJK%2fLq%2fNssUlteSjEm3FjA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795603844&P2=404&P3=2&P4=UYdix%2bI8WuMqPrKJe9CGTslK%2bHuKMsCDFNlQnMaldwAkJ31crCUidsAFAyfdS5JZrJK%2fLq%2fNssUlteSjEm3FjA%3d%3d",
       "downloads": [],
       "size": 208581456,
       "size_mb": 198.9,
@@ -536,7 +536,7 @@
       "official_site": "https://www.havysoft.cl/descargar.html",
       "update_items": [],
       "detected_at": "2026-11-03 22:35",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -1537,8 +1537,8 @@
       "download_url": "https://bits.avcdn.net/productfamily_CCLEANER7/insttype_FREE/platform_WIN/installertype_FULL/build_RELEASE",
       "download_url_with_params": "https://bits.avcdn.net/productfamily_CCLEANER7/insttype_FREE/platform_WIN/installertype_FULL/build_RELEASE",
       "downloads": [],
-      "size": 162423256,
-      "size_mb": 154.9,
+      "size": 159196976,
+      "size_mb": 151.8,
       "last_modified": "2026-11-02",
       "md5": "",
       "official_site": "https://www.ccleaner.com/zh-cn",
