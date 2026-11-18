@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T21:22:47.160880+00:00",
+  "updated_at": "2026-11-18T21:53:06.926880+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.46",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe?v=1795036844177&n=ldinst_9.5.46_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe?v=1795038644618&n=ldinst_9.5.46_ld_407594_ld.exe",
       "downloads": [],
       "size": 602991072,
       "size_mb": 575.1,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.0.37",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe?v=1795036843046&n=ldinst_14.0.37_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe?v=1795038643763&n=ldinst_14.0.37_ld_412570_ld.exe",
       "downloads": [],
       "size": 745672168,
       "size_mb": 711.1,
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-11-12 19:51",
-      "fb_streak": 36,
-      "fb_skip_until": 1795036985
+      "fb_streak": 37,
+      "fb_skip_until": 1795042386
     },
     {
       "name": "WeChat",
@@ -187,8 +187,8 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-17 10:20",
-      "fb_streak": 2,
-      "fb_skip_until": 1795037185
+      "fb_streak": 0,
+      "fb_skip_until": 0
     },
     {
       "name": "WinHex",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795641637&P2=404&P3=2&P4=I43EtFCLqi9Qs0CQuzVwi53p8M%2fktZ1C2u5kBGyhOlFJe1W3dOQksYZxS111lVXZet8ESS1qnnpbSfjSlsSjUg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795641637&P2=404&P3=2&P4=I43EtFCLqi9Qs0CQuzVwi53p8M%2fktZ1C2u5kBGyhOlFJe1W3dOQksYZxS111lVXZet8ESS1qnnpbSfjSlsSjUg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795643441&P2=404&P3=2&P4=SBvEDnDtm1xmAvYz0Xqu1sXSWH9U5vXgOXHiAkA2mYOgwUASSajdlo2niaLHuU6xW9HsWINyVUfFqTLMyjfHoA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795643441&P2=404&P3=2&P4=SBvEDnDtm1xmAvYz0Xqu1sXSWH9U5vXgOXHiAkA2mYOgwUASSajdlo2niaLHuU6xW9HsWINyVUfFqTLMyjfHoA%3d%3d",
       "downloads": [],
       "size": 208581456,
       "size_mb": 198.9,
@@ -1103,8 +1103,8 @@
       "official_site": "https://goldwave.ca/",
       "update_items": [],
       "detected_at": "2026-10-09 09:56",
-      "fb_streak": 2,
-      "fb_skip_until": 1795037185
+      "fb_streak": 0,
+      "fb_skip_until": 0
     },
     {
       "name": "EmEditor",
@@ -1365,17 +1365,17 @@
       "icon": "WV",
       "icon_color": "linear-gradient(135deg, #9b59b6, #8e44ad)",
       "category": "媒体工具",
-      "version": "4.11",
+      "version": "4.11.0.0",
       "download_url": "https://www.winxdvd.com/download/winxvideo-ai.exe",
       "download_url_with_params": "https://www.winxdvd.com/download/winxvideo-ai.exe",
       "downloads": [],
-      "size": 307232768,
-      "size_mb": 293.0,
+      "size": 307118576,
+      "size_mb": 292.9,
       "last_modified": "2026-11-19",
       "md5": "",
       "official_site": "https://www.winxdvd.com/winxvideo-ai/",
       "update_items": [],
-      "detected_at": "2026-11-19 05:20",
+      "detected_at": "2026-11-19 05:50",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2511,8 +2511,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 371,
-      "fb_skip_until": 1795036985
+      "fb_streak": 372,
+      "fb_skip_until": 1795042386
     },
     {
       "name": "BitComet",
