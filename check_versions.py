@@ -884,10 +884,10 @@ PRODUCTS = [
         'category': '图像工具',
         'detect_type': 'bundle_string',
         # 官网只公示三段（首页 9.8.59 / download.html 甚至停在 9.8.54），
-        # 主程序真实四段号（9.8.59.12）写在包里；Windows 安装器被压过读不到，
-        # 官方 Linux .tgz 里是未压缩主程序，明文 "VueScan 9 x64 (9.8.59.12)"。
+        # 主程序真实号写在包里：旧版是四段（9.8.59.12），9.8.60 起官方改回
+        # 三段（VueScan 9 x64 (9.8.60)）——正则必须 3/4 段都吃，否则永远停在旧版。
         'bundle_url': 'https://files.hamrick.com/vuex6498.tgz',
-        'bundle_regex': r'VueScan 9 x64 \((9\.\d+\.\d+\.\d+)\)',
+        'bundle_regex': r'VueScan 9 x64 \((9\.\d+\.\d+(?:\.\d+)?)\)',
         'download_url': 'https://files.hamrick.com/vuex6498.exe',
         'default_size_mb': 82.9,
         'version': '9.8.59.12',

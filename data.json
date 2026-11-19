@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19T02:23:51.880274+00:00",
+  "updated_at": "2026-11-19T02:41:34.544090+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -1050,17 +1050,17 @@
       "icon": "VS",
       "icon_color": "linear-gradient(135deg, #27ae60, #2980b9)",
       "category": "图像工具",
-      "version": "9.8.59.18",
+      "version": "9.8.60",
       "download_url": "https://files.hamrick.com/vuex6498.exe",
       "download_url_with_params": "https://files.hamrick.com/vuex6498.exe",
       "downloads": [],
       "size": 87072272,
       "size_mb": 83.0,
-      "last_modified": "2026-11-15",
+      "last_modified": "2026-11-19",
       "md5": "",
       "official_site": "https://www.hamrick.com/",
       "update_items": [],
-      "detected_at": "2026-11-15 19:06",
+      "detected_at": "2026-11-19 10:41",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
