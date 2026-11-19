@@ -8938,10 +8938,16 @@ def main():
             # 资源站（allow_no_size，无安装包）维持原逻辑。
             if old and not allow_no_size:
                 _ov, _nv = str(old.get('version', '')), str(info.get('version', ''))
-                if _nv and _ov and _nv == _ov:
+                # 4.11 与 4.11.0.0 是同一版本（PE 解析偶尔少一段），必须按
+                # 版本元组判等价，不能比字符串：否则每轮抖动都会被当成"版本变了"
+                # 把日期抬到当天，线上就会天天误报"今天更新"（Winxvideo 实测）。
+                _same = bool(_nv and _ov and (_nv == _ov or _ver_tuple(_nv) == _ver_tuple(_ov)))
+                if _same:
+                    # 保留段数更多的写法（4.11.0.0 优于 4.11）
+                    info['version'] = _ov if _ov.count('.') >= _nv.count('.') else _nv
                     if old.get('last_modified'):
                         info['last_modified'] = old['last_modified']
-                elif _nv and _ov and _nv != _ov:
+                elif _nv and _ov:
                     # 检测器自己给出了准确日期（如 CyberLink 完整包 SR 里的构建日）
                     # 就直通，不再被「检测日」抬高。
                     if product.get('date_authority') == 'detector':
