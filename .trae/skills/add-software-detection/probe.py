@@ -129,6 +129,17 @@ def emit(cfg, notes):
     for k, v in cfg.items():
         print(f"    '{k}': {v!r},")
     print('}')
+    print()
+    print('# 定型 checklist（近期踩坑总结，入库前逐条过）:')
+    print('# 1. 正则放宽段数: 数字段尾加 (?:\\.\\d+)?，或配 version_regex_alt 兜底候选，')
+    print('#    防官方段数口径变化后正则失配、永远停在旧版（VueScan 9.8.59.12→9.8.60 实测）')
+    print('# 2. 日期认官方页: 页面有发布日就配 date_regex + prefer_scraped_date，')
+    print('#    不用 CDN Last-Modified 当发布日期')
+    print('# 3. 第三方源必配兜底: 只信 winget/官网页面会滞后（Acrobat 实测），')
+    print('#    要有 CDN/结构扫描兜底或 use_newer_scraped')
+    print('# 4. 下载通道验证: 浏览器 UA 点开 4xx/证书报错的直链浏览器必挂')
+    print('#    （FileZilla UA 白名单实测），需镜像或代理')
+    print('# 5. 版本号展示口径与 PE/包内实际一致（段数、Build 写法）')
 
 
 def probe_github(url, name):
