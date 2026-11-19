@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19T08:52:05.117111+00:00",
+  "updated_at": "2026-11-19T09:06:54.510054+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -222,7 +222,7 @@
       "download_url": "https://www.xyplorer.com/download/xyplorer64_full_noinstall.zip",
       "download_url_with_params": "https://www.xyplorer.com/download/xyplorer64_full_noinstall.zip",
       "downloads": [],
-      "size": 14663106,
+      "size": 14680064,
       "size_mb": 14.0,
       "last_modified": "2026-11-18",
       "md5": "",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795683088&P2=404&P3=2&P4=nTkfBEWAd5DgugzyXcho%2f1ssk1Ko6vXnJyWJfWzeRAdkGGjI7a%2bpZzXYkZZlZflOaFqbVfXwVxotTb4ehvpu4Q%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795683088&P2=404&P3=2&P4=nTkfBEWAd5DgugzyXcho%2f1ssk1Ko6vXnJyWJfWzeRAdkGGjI7a%2bpZzXYkZZlZflOaFqbVfXwVxotTb4ehvpu4Q%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795683988&P2=404&P3=2&P4=SESPRe1eq4bqGV3N0x7ZnBNiQQ%2fQ%2fnrmfuROBLDtV04VjHD0dQuJeksqMmsJY05aO5cN%2f%2fENRMYOk6O7xVQFdA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795683988&P2=404&P3=2&P4=SESPRe1eq4bqGV3N0x7ZnBNiQQ%2fQ%2fnrmfuROBLDtV04VjHD0dQuJeksqMmsJY05aO5cN%2f%2fENRMYOk6O7xVQFdA%3d%3d",
       "downloads": [],
       "size": 208581456,
       "size_mb": 198.9,
