@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19T05:51:19.306619+00:00",
+  "updated_at": "2026-11-19T06:06:25.225592+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795672237&P2=404&P3=2&P4=KrBhgNaXNzvrQi3tJLnrsXf1NkGnw4g5YgsM5Xd3lAvqqFLjIyS%2fbrchtKCrR6vmRsvn83EGXrzgDa2JhJO6%2bA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795672237&P2=404&P3=2&P4=KrBhgNaXNzvrQi3tJLnrsXf1NkGnw4g5YgsM5Xd3lAvqqFLjIyS%2fbrchtKCrR6vmRsvn83EGXrzgDa2JhJO6%2bA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795673156&P2=404&P3=2&P4=D29lRpbfJ5XUW2nHFTVXhPLZ2M%2bR5Jo4Mdud9F73hQMiW%2frIphobJqThJ7B9ZYdZdZ6G73ZjLW0%2f8bcckNDOTw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795673156&P2=404&P3=2&P4=D29lRpbfJ5XUW2nHFTVXhPLZ2M%2bR5Jo4Mdud9F73hQMiW%2frIphobJqThJ7B9ZYdZdZ6G73ZjLW0%2f8bcckNDOTw%3d%3d",
       "downloads": [],
       "size": 208581456,
       "size_mb": 198.9,
@@ -2000,34 +2000,22 @@
       "icon": "M",
       "icon_color": "linear-gradient(135deg, #8e44ad, #6c3483)",
       "category": "资源站",
-      "version": "2026-11-18",
+      "version": "2026-11-19",
       "download_url": "https://w18.monkrus.ws/",
       "download_url_with_params": "https://w18.monkrus.ws/",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-11-18",
+      "last_modified": "2026-11-19",
       "md5": "",
       "official_site": "https://w18.monkrus.ws/",
       "update_items": [
         {
-          "title": "Adobe Lightroom Classic v16.0 Multilingual",
-          "url": "https://w18.monkrus.ws/2026/11/adobe-lightroom-classic-v160.html"
-        },
-        {
-          "title": "Adobe Illustrator 2027 (v31.0) Multilingual",
-          "url": "https://w18.monkrus.ws/2026/11/adobe-illustrator-2027-v310-multilingual.html"
-        },
-        {
-          "title": "Adobe Acrobat 2026 (v26.3.22110) x64 Multilingual",
-          "url": "https://w18.monkrus.ws/2026/11/adobe-acrobat-2026-v26322110-x64.html"
-        },
-        {
-          "title": "Adobe Acrobat 2026 (v26.3.22110) x86 Multilingual",
-          "url": "https://w18.monkrus.ws/2026/11/adobe-acrobat-2026-v26322110-x86.html"
+          "title": "Adobe Bridge 2027 (v17.0) Multilingual",
+          "url": "https://w18.monkrus.ws/2026/11/adobe-bridge-2027-v170-multilingual.html"
         }
       ],
-      "detected_at": "2026-11-18 20:06",
+      "detected_at": "2026-11-19 14:05",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2273,7 +2261,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-11-16",
       "md5": "",
