@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19T02:21:28.264617+00:00",
+  "updated_at": "2026-11-19T02:23:51.880274+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "157.0.4341.60",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795659640&P2=404&P3=2&P4=HB%2bRKdGgsx8dTifnTGuULdrvNpxTLUN7bt232ukPI5tJR%2b%2fW%2ffJC8hWD5oiFLxedNu16tsAvRIhNls%2bpn4rv2w%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795659640&P2=404&P3=2&P4=HB%2bRKdGgsx8dTifnTGuULdrvNpxTLUN7bt232ukPI5tJR%2b%2fW%2ffJC8hWD5oiFLxedNu16tsAvRIhNls%2bpn4rv2w%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795659795&P2=404&P3=2&P4=X1adyQBWPoqMZkFvvSk0CnOEgsKH7jNcHHuGH66MV0wYrg9PiUgLJncFj5dvVuAirh18W9fD4dzxM3PpPiv2Zg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c18bd13-434a-42c7-ad8e-5e5624ac547a?P1=1795659795&P2=404&P3=2&P4=X1adyQBWPoqMZkFvvSk0CnOEgsKH7jNcHHuGH66MV0wYrg9PiUgLJncFj5dvVuAirh18W9fD4dzxM3PpPiv2Zg%3d%3d",
       "downloads": [],
       "size": 208581456,
       "size_mb": 198.9,
@@ -536,8 +536,8 @@
       "official_site": "https://www.havysoft.cl/descargar.html",
       "update_items": [],
       "detected_at": "2026-11-03 22:35",
-      "fb_streak": 9,
-      "fb_skip_until": 1795054884
+      "fb_streak": 10,
+      "fb_skip_until": 1795058631
     },
     {
       "name": "IObit Uninstaller",
@@ -2273,7 +2273,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-11-16",
       "md5": "",
@@ -2676,8 +2676,8 @@
       "download_url": "https://www.ludashi.com/pc/download/getDownloadUrl?type=2",
       "download_url_with_params": "https://www.ludashi.com/pc/download/getDownloadUrl?type=2",
       "downloads": [],
-      "size": 284200040,
-      "size_mb": 271.0,
+      "size": 283336336,
+      "size_mb": 270.2,
       "last_modified": "2026-11-13",
       "md5": "",
       "official_site": "https://www.ludashi.com/",
