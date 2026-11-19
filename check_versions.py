@@ -6585,7 +6585,19 @@ def detect_scrape(product):
 
         # 抓取版本号（支持多捕获组，用.连接）
         regex = product.get('version_regex')
-        if regex:
+        # 多候选正则：version_regex 可配 list，或追加 version_regex_alt。
+        # 官方口径会变（段数增减、Build 写法变化），单条死正则一旦失配就
+        # 永远停在旧版（VueScan 四段变三段实测踩坑）；按顺序试到命中为止。
+        candidates = []
+        if isinstance(regex, (list, tuple)):
+            candidates.extend(regex)
+        elif regex:
+            candidates.append(regex)
+        if product.get('version_regex_alt'):
+            candidates.append(product['version_regex_alt'])
+        for regex in candidates:
+            if scraped_version:
+                break
             m = re.search(regex, html, re.I)
             # 取最后一个匹配（归档列表页：最新版本排在最后，如 BitComet 归档页）
             if product.get('version_regex_take') == 'last':
@@ -6608,6 +6620,13 @@ def detect_scrape(product):
                 if product.get('date_from_version_ymd') and re.fullmatch(r'20\d{6}', scraped_version or ''):
                     scraped_date = f'{scraped_version[:4]}-{scraped_version[4:6]}-{scraped_version[6:]}'
                 print(f"  官网版本: {scraped_version} (参考)")
+                # 口径变化告警：命中版本的段数与既有版本段数不一致
+                # （如 4 段变 3 段），说明官方写法变了，提示人工确认正则
+                _seg_new = len(scraped_version.split('.'))
+                _seg_old = len(str(default_version or '').split('.'))
+                if _seg_old and _seg_new != _seg_old:
+                    print(f"  ⚠️ 版本口径变化: 段数 {_seg_old}→{_seg_new} "
+                          f"({default_version} → {scraped_version})，请确认正则/展示口径")
 
         # 抓取发布日期
         date_regex = product.get('date_regex')
@@ -6714,7 +6733,7 @@ def detect_scrape(product):
         _VER_SOURCE[product['name']] = 'page'
         if default_version and default_version != scraped_version:
             print(f"  ℹ️ 使用官网抓取版本: {scraped_version} (配置版本: {default_version})")
-    elif use_newer and scraped_version and default_version and scraped_version > default_version:
+    elif use_newer and scraped_version and default_version and _ver_newer(scraped_version, default_version):
         version = scraped_version
         print(f"  ℹ️ 官网版本更新: {scraped_version} > {default_version}")
     elif default_version and default_version != '未知':
@@ -9004,6 +9023,7 @@ def main():
     # 按PRODUCTS顺序排序，确保所有产品都有结果
     results = []
     changed = []
+    date_fixes = []  # 日期单独修正（不算更新，只记账）
     for p in PRODUCTS:
         if p['name'] in results_dict and results_dict[p['name']] is not None:
             info = results_dict[p['name']]
@@ -9024,6 +9044,10 @@ def main():
                     info['fb_skip_until'] = int(time.time()) + min(
                         FB_BASE_SKIP + (streak - FB_STREAK_SKIP) * 900, FB_MAX_SKIP)
                     print(f"  ⏭️ {p['name_cn']} 连续失败 {streak} 轮，进入退避缓冲期")
+                    # 失明告警：退避期间不再探测，必须显眼留痕
+                    # （曾有产品静默失败 177 轮才被用户发现）
+                    _note(p['name'], '连续失败已退避',
+                          f'{streak} 轮未探通，缓冲中，长时间出现请排查源')
                 else:
                     info['fb_skip_until'] = _old.get('fb_skip_until', 0)
             else:
@@ -9060,8 +9084,23 @@ def main():
                     change_detail.append(f"更新清单 {len(old_items)}->{len(new_items)} 篇")
                 if old_vlist != new_vlist:
                     change_detail.append(f"子版本列表 {len(old_vlist)}->{len(new_vlist)} 条")
-                changed.append(f"{p['name_cn']}: {', '.join(change_detail)}")
-                is_changed = True
+                # 体检：版本没变但源侧体积/日期变了 = 官方原地换包或
+                # 版本口径盲区（正则/PE 没跟上），进问题清单提醒人工看一眼
+                if (old.get('version') == info.get('version')
+                        and (old.get('size_mb') != info.get('size_mb')
+                             or old.get('last_modified') != info.get('last_modified'))):
+                    _note(p['name'], '源变版本没变',
+                          f"大小 {old.get('size_mb')}->{info.get('size_mb')}MB, "
+                          f"日期 {old.get('last_modified')}->{info.get('last_modified')}")
+                # 日期单独变化只算修正、不算更新：版本/大小/链接都没动，
+                # 只是日期口径被校正，不能触发「今日更新」（Winxvideo 教训）
+                _only_date = (change_detail == [f"日期 {old.get('last_modified')}->{info.get('last_modified')}"])
+                if _only_date:
+                    date_fixes.append(f"{p['name_cn']}: {change_detail[0]}")
+                    is_changed = True
+                else:
+                    changed.append(f"{p['name_cn']}: {', '.join(change_detail)}")
+                    is_changed = True
         else:
             changed.append(f"{p['name_cn']}: 新增 -> {info.get('version')}")
             is_changed = True
@@ -9117,6 +9156,8 @@ def main():
         for pname, kind, detail in sorted(problems):
             cn = next((p['name_cn'] for p in PRODUCTS if p['name'] == pname), pname)
             print(f"   - {cn}: {kind} {detail}".rstrip())
+    if date_fixes:
+        print(f"\n🔧 日期修正（不算更新）: {', '.join(date_fixes)}")
     if timings:
         top = sorted(timings, reverse=True)[:5]
         print(f"\n🐢 最慢产品 Top5（用于定位优化点）:")
