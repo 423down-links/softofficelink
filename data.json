@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T05:51:54.556428+00:00",
+  "updated_at": "2026-11-20T06:08:24.311746+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-11-12 19:51",
-      "fb_streak": 6,
-      "fb_skip_until": 1795154010
+      "fb_streak": 7,
+      "fb_skip_until": 1795158504
     },
     {
       "name": "WeChat",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795758665&P2=404&P3=2&P4=KIR171B%2bobORnBnfcE4UG0SKC89w9iG%2bUcUOe1URJ9BUPFzyA6GV%2f43Aip5jk5nSmFdaL8xcnT9DoKVcbPZdfg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795758665&P2=404&P3=2&P4=KIR171B%2bobORnBnfcE4UG0SKC89w9iG%2bUcUOe1URJ9BUPFzyA6GV%2f43Aip5jk5nSmFdaL8xcnT9DoKVcbPZdfg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795759555&P2=404&P3=2&P4=e8N%2fHwtp0qmY6UsqOa5ecP%2f4Ah7ZrRVzJFhrYb6bvkRs1m8DwNK6v%2fU6rcLn9hraXQ7qln93WLBgKe6sSpsG9w%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795759555&P2=404&P3=2&P4=e8N%2fHwtp0qmY6UsqOa5ecP%2f4Ah7ZrRVzJFhrYb6bvkRs1m8DwNK6v%2fU6rcLn9hraXQ7qln93WLBgKe6sSpsG9w%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
