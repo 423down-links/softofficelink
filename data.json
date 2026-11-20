@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T01:52:01.037463+00:00",
+  "updated_at": "2026-11-20T02:08:24.996286+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-11-12 19:51",
-      "fb_streak": 3,
-      "fb_skip_until": 1795139606
+      "fb_streak": 4,
+      "fb_skip_until": 1795144104
     },
     {
       "name": "WeChat",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-17 10:20",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795744267&P2=404&P3=2&P4=X4hDBM%2b7xsMybzAvEaSvSYHV%2bXNlWJNxdiECc2kCyX8wH7hVwSBSqcBqqDc19PtAaVpBglFyPZyWlvIpPQNCYA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795744267&P2=404&P3=2&P4=X4hDBM%2b7xsMybzAvEaSvSYHV%2bXNlWJNxdiECc2kCyX8wH7hVwSBSqcBqqDc19PtAaVpBglFyPZyWlvIpPQNCYA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795745156&P2=404&P3=2&P4=brJYTaJJVlGB6pDnEX1mleOb9Ddjp%2f5EHFrevLFp2eL9jc8v8MqveF2IfatEGOhW897K6oCMkwjW8MC2RLb0PQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795745156&P2=404&P3=2&P4=brJYTaJJVlGB6pDnEX1mleOb9Ddjp%2f5EHFrevLFp2eL9jc8v8MqveF2IfatEGOhW897K6oCMkwjW8MC2RLb0PQ%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -2303,17 +2303,17 @@
       "icon": "UC",
       "icon_color": "linear-gradient(135deg, #536dfe, #304ffe)",
       "category": "视频转换",
-      "version": "18.0.5.80",
+      "version": "18.0.6.82",
       "download_url": "https://download.wondershare.com/cbs_down/uniconverter_64bit_full14204.exe",
       "download_url_with_params": "https://download.wondershare.com/cbs_down/uniconverter_64bit_full14204.exe",
       "downloads": [],
-      "size": 328026384,
-      "size_mb": 312.8,
-      "last_modified": "2026-11-13",
+      "size": 330227408,
+      "size_mb": 314.9,
+      "last_modified": "2026-11-20",
       "md5": "",
       "official_site": "https://www.wondershare.com/uniconverter/",
       "update_items": [],
-      "detected_at": "2026-11-13 16:21",
+      "detected_at": "2026-11-20 10:05",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
