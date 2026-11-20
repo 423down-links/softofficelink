@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T09:51:47.659903+00:00",
+  "updated_at": "2026-11-20T10:08:29.649600+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-11-12 19:51",
-      "fb_streak": 9,
-      "fb_skip_until": 1795168402
+      "fb_streak": 10,
+      "fb_skip_until": 1795172909
     },
     {
       "name": "WeChat",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795773059&P2=404&P3=2&P4=MMH%2fb5ZIUxZzhVQ%2flgOajbmADuwz5371itb9HAUk8k1a7CyEP62otRgbc0duocfsUg5lO5PktLKGX%2bsUHO88nQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795773059&P2=404&P3=2&P4=MMH%2fb5ZIUxZzhVQ%2flgOajbmADuwz5371itb9HAUk8k1a7CyEP62otRgbc0duocfsUg5lO5PktLKGX%2bsUHO88nQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795773960&P2=404&P3=2&P4=P0omTOP%2fflIjgMFd%2b8meHC0m7b%2fIxy0fLjSpVV%2bZ%2bKKcHbGESYI71YoHvF5MfK%2fQC8uCNICz0H3455KfOH0vFw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795773960&P2=404&P3=2&P4=P0omTOP%2fflIjgMFd%2b8meHC0m7b%2fIxy0fLjSpVV%2bZ%2bKKcHbGESYI71YoHvF5MfK%2fQC8uCNICz0H3455KfOH0vFw%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -861,17 +861,17 @@
       "icon": "PhD",
       "icon_color": "linear-gradient(135deg, #8e44ad, #3498db)",
       "category": "图像处理",
-      "version": "18.0.1109.0",
-      "download_url": "https://build.cyberlink.com/Retail/PhotoDirector/IPK6YMHXE4JLCAZ2/PhotoDirector_18.0.10.1109.1205_60b41909_9_Essential_PTD261109-01.exe",
-      "download_url_with_params": "https://build.cyberlink.com/Retail/PhotoDirector/IPK6YMHXE4JLCAZ2/PhotoDirector_18.0.10.1109.1205_60b41909_9_Essential_PTD261109-01.exe",
+      "version": "18.0.1119.0",
+      "download_url": "https://build.cyberlink.com/Retail/PhotoDirector/I0GGV18OO0UCBDR/PhotoDirector_18.0.0.1119.1727_4875782e_7_Ultra_PTD261116-01.exe",
+      "download_url_with_params": "https://build.cyberlink.com/Retail/PhotoDirector/I0GGV18OO0UCBDR/PhotoDirector_18.0.0.1119.1727_4875782e_7_Ultra_PTD261116-01.exe",
       "downloads": [],
-      "size": 698863736,
-      "size_mb": 666.5,
-      "last_modified": "2026-11-09",
-      "md5": "80437a97963a7179aab2e6089d63655a",
+      "size": 639202448,
+      "size_mb": 609.6,
+      "last_modified": "2026-11-19",
+      "md5": "eab3277b7b9ba986b7f0b647340ec277",
       "official_site": "https://www.cyberlink.com/products/photodirector/features_en_US.html",
       "update_items": [],
-      "detected_at": "2026-11-09 18:21",
+      "detected_at": "2026-11-20 18:05",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -1222,8 +1222,8 @@
       "download_url": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "download_url_with_params": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "downloads": [],
-      "size": 81329392,
-      "size_mb": 77.6,
+      "size": 81267664,
+      "size_mb": 77.5,
       "last_modified": "2026-11-19",
       "md5": "",
       "official_site": "https://www.wftpserver.com/",
@@ -2265,7 +2265,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-11-16",
       "md5": "",
@@ -2503,8 +2503,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 399,
-      "fb_skip_until": 1795168630
+      "fb_streak": 400,
+      "fb_skip_until": 1795172909
     },
     {
       "name": "BitComet",
