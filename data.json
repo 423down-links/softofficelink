@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T10:51:48.074191+00:00",
+  "updated_at": "2026-11-20T11:06:56.794493+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,8 +187,8 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-17 10:20",
-      "fb_streak": 1,
-      "fb_skip_until": 0
+      "fb_streak": 2,
+      "fb_skip_until": 1795174616
     },
     {
       "name": "WinHex",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795776661&P2=404&P3=2&P4=lljmDAZC54JbJXKM%2bF0yEdbcbU%2bCqcYyUlSIERC5KMAvP%2frawHvAZY2nF%2fgYnpqTnjh%2bWRdlmt4L6ab%2fVSyptg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795776661&P2=404&P3=2&P4=lljmDAZC54JbJXKM%2bF0yEdbcbU%2bCqcYyUlSIERC5KMAvP%2frawHvAZY2nF%2fgYnpqTnjh%2bWRdlmt4L6ab%2fVSyptg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795777579&P2=404&P3=2&P4=CA1SHIQmZeP0Hok23drgkdZxd%2bbXMJ9WL3aENJ2lJw134UNAe0AUay1ngR4ea%2fe2LU94esdEr4rXEQw1JMQwTw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795777579&P2=404&P3=2&P4=CA1SHIQmZeP0Hok23drgkdZxd%2bbXMJ9WL3aENJ2lJw134UNAe0AUay1ngR4ea%2fe2LU94esdEr4rXEQw1JMQwTw%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -2000,26 +2000,22 @@
       "icon": "M",
       "icon_color": "linear-gradient(135deg, #8e44ad, #6c3483)",
       "category": "资源站",
-      "version": "2026-11-19",
+      "version": "2026-11-20",
       "download_url": "https://w18.monkrus.ws/",
       "download_url_with_params": "https://w18.monkrus.ws/",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-11-19",
+      "last_modified": "2026-11-20",
       "md5": "",
       "official_site": "https://w18.monkrus.ws/",
       "update_items": [
         {
-          "title": "Adobe Animate 2027 (v27.0) Multilingual",
-          "url": "https://w18.monkrus.ws/2026/11/adobe-animate-2027-v270-multilingual.html"
-        },
-        {
-          "title": "Adobe Bridge 2027 (v17.0) Multilingual",
-          "url": "https://w18.monkrus.ws/2026/11/adobe-bridge-2027-v170-multilingual.html"
+          "title": "Autodesk AutoCAD 2027.1.1 RUS-ENG",
+          "url": "https://w18.monkrus.ws/2026/11/autodesk-autocad-202711-rus-eng.html"
         }
       ],
-      "detected_at": "2026-11-20 00:06",
+      "detected_at": "2026-11-20 19:06",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
