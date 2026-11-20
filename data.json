@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T00:51:56.072737+00:00",
+  "updated_at": "2026-11-20T01:08:26.014900+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-11-12 19:51",
-      "fb_streak": 2,
-      "fb_skip_until": 1795136014
+      "fb_streak": 3,
+      "fb_skip_until": 1795139606
     },
     {
       "name": "WeChat",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795740658&P2=404&P3=2&P4=ijyAhvoxXBWppSdxjtvJoWqhrFVhhAjQNueH62FWbSC5kvHSYbFs0Ggy7pTjGQWMWnH9J4XuLQf4X1ewxRWyug%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795740658&P2=404&P3=2&P4=ijyAhvoxXBWppSdxjtvJoWqhrFVhhAjQNueH62FWbSC5kvHSYbFs0Ggy7pTjGQWMWnH9J4XuLQf4X1ewxRWyug%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795741557&P2=404&P3=2&P4=OIiwfgHFaQJHdlEkWvCcXw7PgMu9Jck2HHhoVgm4JcBZV8ec6XJQDxsn1Hh1fdVZX0xOVM23c%2bpZxsVg3QdwWA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795741557&P2=404&P3=2&P4=OIiwfgHFaQJHdlEkWvCcXw7PgMu9Jck2HHhoVgm4JcBZV8ec6XJQDxsn1Hh1fdVZX0xOVM23c%2bpZxsVg3QdwWA%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -2503,8 +2503,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 392,
-      "fb_skip_until": 1795136008
+      "fb_streak": 393,
+      "fb_skip_until": 1795140506
     },
     {
       "name": "BitComet",
