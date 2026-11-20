@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T07:52:37.800049+00:00",
+  "updated_at": "2026-11-20T08:06:32.416469+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-17 10:20",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795765872&P2=404&P3=2&P4=Of3%2fWda0XbIhHCeEAeXsWv3CUq1QIwcNjoNQMLsI8mXzfGcK%2fpSqvwL0i1hiZDNNrBGpS2u8THmN4b1MeXGKpQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795765872&P2=404&P3=2&P4=Of3%2fWda0XbIhHCeEAeXsWv3CUq1QIwcNjoNQMLsI8mXzfGcK%2fpSqvwL0i1hiZDNNrBGpS2u8THmN4b1MeXGKpQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795766762&P2=404&P3=2&P4=fSEc0FZ42Y3vqmscpFam552mGWVR%2fv%2fXwXCqMwmWTXSMjzno6BFPqpLj%2bBLex6V3Uy%2bC0LX9etzA9hy48ncZqg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795766762&P2=404&P3=2&P4=fSEc0FZ42Y3vqmscpFam552mGWVR%2fv%2fXwXCqMwmWTXSMjzno6BFPqpLj%2bBLex6V3Uy%2bC0LX9etzA9hy48ncZqg%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -1937,17 +1937,17 @@
       "icon": "BW",
       "icon_color": "linear-gradient(135deg, #9c27b0, #6a1b9a)",
       "category": "操作系统",
-      "version": "v2026.11.1",
-      "download_url": "https://www.wycad.com/4740.html",
-      "download_url_with_params": "https://www.wycad.com/4740.html",
+      "version": "v2026.11.15",
+      "download_url": "https://www.wycad.com/1279.html",
+      "download_url_with_params": "https://www.wycad.com/1279.html",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-11-07",
+      "last_modified": "2026-11-20",
       "md5": "",
       "official_site": "https://www.wycad.com/windows",
       "update_items": [],
-      "detected_at": "2026-11-10 23:46",
+      "detected_at": "2026-11-20 16:06",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2265,7 +2265,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-11-16",
       "md5": "",
