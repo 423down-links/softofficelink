@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-21T01:21:44.680844+00:00",
+  "updated_at": "2026-11-21T01:53:30.862879+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.46",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe?v=1795224067534&n=ldinst_9.5.46_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe?v=1795225870895&n=ldinst_9.5.46_ld_407594_ld.exe",
       "downloads": [],
       "size": 602991072,
       "size_mb": 575.1,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.0.37",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe?v=1795224066991&n=ldinst_14.0.37_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe?v=1795225870303&n=ldinst_14.0.37_ld_412570_ld.exe",
       "downloads": [],
       "size": 745672168,
       "size_mb": 711.1,
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-11-12 19:51",
-      "fb_streak": 21,
-      "fb_skip_until": 1795224220
+      "fb_streak": 22,
+      "fb_skip_until": 1795229610
     },
     {
       "name": "WeChat",
@@ -187,8 +187,8 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-17 10:20",
-      "fb_streak": 3,
-      "fb_skip_until": 1795225030
+      "fb_streak": 0,
+      "fb_skip_until": 0
     },
     {
       "name": "WinHex",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795828862&P2=404&P3=2&P4=hh2sQ1ZSLqN3LOVzXMuabNGR8%2brdGPOiC7PhRe9LIhSzjUt73jifzTBYppAcp2cwlV%2fgzm0qpUsE7fH5xl9QVg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795828862&P2=404&P3=2&P4=hh2sQ1ZSLqN3LOVzXMuabNGR8%2brdGPOiC7PhRe9LIhSzjUt73jifzTBYppAcp2cwlV%2fgzm0qpUsE7fH5xl9QVg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795830665&P2=404&P3=2&P4=hR8mJwVez%2fc7i40Gquv7skULJEY%2bhbKgLCFYXwAygBQRZdmkhwPJq2SktoJk1G1lrdCHkTSNilFvLvX7hHu5EA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795830665&P2=404&P3=2&P4=hR8mJwVez%2fc7i40Gquv7skULJEY%2bhbKgLCFYXwAygBQRZdmkhwPJq2SktoJk1G1lrdCHkTSNilFvLvX7hHu5EA%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -1222,8 +1222,8 @@
       "download_url": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "download_url_with_params": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "downloads": [],
-      "size": 81329392,
-      "size_mb": 77.6,
+      "size": 81267664,
+      "size_mb": 77.5,
       "last_modified": "2026-11-19",
       "md5": "",
       "official_site": "https://www.wftpserver.com/",
@@ -2261,7 +2261,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-11-16",
       "md5": "",
@@ -2499,8 +2499,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 411,
-      "fb_skip_until": 1795224220
+      "fb_streak": 412,
+      "fb_skip_until": 1795229610
     },
     {
       "name": "BitComet",
