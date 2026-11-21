@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-21T19:21:44.563774+00:00",
+  "updated_at": "2026-11-21T19:51:11.145514+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,8 +187,8 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-17 10:20",
-      "fb_streak": 2,
-      "fb_skip_until": 1795289010
+      "fb_streak": 0,
+      "fb_skip_until": 0
     },
     {
       "name": "WinHex",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795893662&P2=404&P3=2&P4=OqBJ9LI0rQ%2fkXDY2IGX8XdL3UPg39xdDoJQH8TljIqw3gSbyQKiFUg%2b9hFqM7umYijmgr7AZlw6HARjvd%2bu9Mw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795893662&P2=404&P3=2&P4=OqBJ9LI0rQ%2fkXDY2IGX8XdL3UPg39xdDoJQH8TljIqw3gSbyQKiFUg%2b9hFqM7umYijmgr7AZlw6HARjvd%2bu9Mw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795895392&P2=404&P3=2&P4=gYWeOAF2Ny3rH%2bn%2fy5b6IBUK0%2bcIDZwWGX1kjTX8F6ZE5FjmvGdmQaMrn%2fNqT1Ejn53yKipUuRNwzPv1i6m9iQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795895392&P2=404&P3=2&P4=gYWeOAF2Ny3rH%2bn%2fy5b6IBUK0%2bcIDZwWGX1kjTX8F6ZE5FjmvGdmQaMrn%2fNqT1Ejn53yKipUuRNwzPv1i6m9iQ%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -536,7 +536,7 @@
       "official_site": "https://www.havysoft.cl/descargar.html",
       "update_items": [],
       "detected_at": "2026-11-03 22:35",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -1222,8 +1222,8 @@
       "download_url": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "download_url_with_params": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "downloads": [],
-      "size": 81267664,
-      "size_mb": 77.5,
+      "size": 81329392,
+      "size_mb": 77.6,
       "last_modified": "2026-11-19",
       "md5": "",
       "official_site": "https://www.wftpserver.com/",
@@ -2269,7 +2269,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-11-16",
       "md5": "",
