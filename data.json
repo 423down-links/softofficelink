@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-21T21:51:47.094481+00:00",
+  "updated_at": "2026-11-21T22:06:24.807896+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795902661&P2=404&P3=2&P4=UHFkEwHbCHeFlVfTJS8RLIpx4G5V5BttiG6pNE7xL33lJYf6Fo89DN7bOAA76tNjc5nDmcc%2bffvNnCzOOh3oxQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795902661&P2=404&P3=2&P4=UHFkEwHbCHeFlVfTJS8RLIpx4G5V5BttiG6pNE7xL33lJYf6Fo89DN7bOAA76tNjc5nDmcc%2bffvNnCzOOh3oxQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795903559&P2=404&P3=2&P4=MkpHMBQ0ztxLWVbrbO6wgSOlypIb5vqaVgIln8Onm8wj5uzQ%2fVncpIuX845pffMOjBkBcMSMwOD6tf5z6UxFlg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795903559&P2=404&P3=2&P4=MkpHMBQ0ztxLWVbrbO6wgSOlypIb5vqaVgIln8Onm8wj5uzQ%2fVncpIuX845pffMOjBkBcMSMwOD6tf5z6UxFlg%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -1222,8 +1222,8 @@
       "download_url": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "download_url_with_params": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "downloads": [],
-      "size": 81267664,
-      "size_mb": 77.5,
+      "size": 81329392,
+      "size_mb": 77.6,
       "last_modified": "2026-11-19",
       "md5": "",
       "official_site": "https://www.wftpserver.com/",
@@ -2269,7 +2269,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-11-16",
       "md5": "",
