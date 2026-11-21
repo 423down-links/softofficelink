@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-21T08:51:52.315721+00:00",
+  "updated_at": "2026-11-21T09:06:32.884983+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795855862&P2=404&P3=2&P4=PN%2b2lkG92%2bbmx2XrZXuYBTW09bj%2fpOlrMy0dFHLM8Hp%2f8z2M1v2IU4EAE%2bqrmdmtFlfIvAVWr83TALpXiJxVXw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795855862&P2=404&P3=2&P4=PN%2b2lkG92%2bbmx2XrZXuYBTW09bj%2fpOlrMy0dFHLM8Hp%2f8z2M1v2IU4EAE%2bqrmdmtFlfIvAVWr83TALpXiJxVXw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795856767&P2=404&P3=2&P4=L6O2mTgBGuPv9%2fvWiGd2XlFV%2bGVD6AQ9GUUaKZdR%2bycKqt2cv0kp1YulbS8F6k6%2ftuGd0%2fHAMWemknCnKoJBjQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795856767&P2=404&P3=2&P4=L6O2mTgBGuPv9%2fvWiGd2XlFV%2bGVD6AQ9GUUaKZdR%2bycKqt2cv0kp1YulbS8F6k6%2ftuGd0%2fHAMWemknCnKoJBjQ%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -2011,11 +2011,15 @@
       "official_site": "https://w18.monkrus.ws/",
       "update_items": [
         {
+          "title": "Autodesk 3ds Max 2027.3 Multilingual",
+          "url": "https://w18.monkrus.ws/2026/11/autodesk-3ds-max-20273-multilingual.html"
+        },
+        {
           "title": "Autodesk Revit 2027.4 Multilingual",
           "url": "https://w18.monkrus.ws/2026/11/autodesk-revit-20274-multilingual.html"
         }
       ],
-      "detected_at": "2026-11-21 14:05",
+      "detected_at": "2026-11-21 17:06",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
