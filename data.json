@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-21T20:08:32.783877+00:00",
+  "updated_at": "2026-11-21T20:22:45.470577+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.46",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe?v=1795288868523&n=ldinst_9.5.46_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe?v=1795292468890&n=ldinst_9.5.46_ld_407594_ld.exe",
       "downloads": [],
       "size": 602991072,
       "size_mb": 575.1,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.0.37",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe?v=1795288868448&n=ldinst_14.0.37_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe?v=1795292468895&n=ldinst_14.0.37_ld_412570_ld.exe",
       "downloads": [],
       "size": 745672168,
       "size_mb": 711.1,
@@ -124,8 +124,8 @@
       "official_site": "https://www.yy.com/web/pcyy_download/",
       "update_items": [],
       "detected_at": "2026-11-18 10:20",
-      "fb_streak": 2,
-      "fb_skip_until": 1795289010
+      "fb_streak": 0,
+      "fb_skip_until": 0
     },
     {
       "name": "QQMusic",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795896363&P2=404&P3=2&P4=OA2dHAlAPZWQll%2bz2LlAucpBSJL09Qw8dxaTs8VGJYQ8af5Zmx3mTEgU3NUPklvzpWMzy2%2fDIBS91DQaN5BQ7w%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795896363&P2=404&P3=2&P4=OA2dHAlAPZWQll%2bz2LlAucpBSJL09Qw8dxaTs8VGJYQ8af5Zmx3mTEgU3NUPklvzpWMzy2%2fDIBS91DQaN5BQ7w%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795897264&P2=404&P3=2&P4=Jw6dBXH1ap3S3EeImg4rR1qDRbh5lrN1ZH5i%2fbsFU0TiIROmwu8NWHQoYe2CyP9AEvfrX5p1cpQeyaI42lJseQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795897264&P2=404&P3=2&P4=Jw6dBXH1ap3S3EeImg4rR1qDRbh5lrN1ZH5i%2fbsFU0TiIROmwu8NWHQoYe2CyP9AEvfrX5p1cpQeyaI42lJseQ%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -536,7 +536,7 @@
       "official_site": "https://www.havysoft.cl/descargar.html",
       "update_items": [],
       "detected_at": "2026-11-03 22:35",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -1222,8 +1222,8 @@
       "download_url": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "download_url_with_params": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "downloads": [],
-      "size": 81329392,
-      "size_mb": 77.6,
+      "size": 81267664,
+      "size_mb": 77.5,
       "last_modified": "2026-11-19",
       "md5": "",
       "official_site": "https://www.wftpserver.com/",
