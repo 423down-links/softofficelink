@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-21T05:51:57.293564+00:00",
+  "updated_at": "2026-11-21T06:06:30.788422+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795845080&P2=404&P3=2&P4=QEVB%2bu2faW8D%2bpr%2bHglWsLlmAT8ATCFjYeLLITkly4pROwZeXMYvDa9C9eO4S8wTbdVIAX%2bS3wyQvmORqmilbg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795845080&P2=404&P3=2&P4=QEVB%2bu2faW8D%2bpr%2bHglWsLlmAT8ATCFjYeLLITkly4pROwZeXMYvDa9C9eO4S8wTbdVIAX%2bS3wyQvmORqmilbg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795845957&P2=404&P3=2&P4=iaAot7BT31GMhzjiYn6XriOHT9hzADim40Y0HLAChSWIZu5A2litfQ9mHNTSbt51R4y5bxFSMPZo2h1T8pzGiA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795845957&P2=404&P3=2&P4=iaAot7BT31GMhzjiYn6XriOHT9hzADim40Y0HLAChSWIZu5A2litfQ9mHNTSbt51R4y5bxFSMPZo2h1T8pzGiA%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -2000,22 +2000,22 @@
       "icon": "M",
       "icon_color": "linear-gradient(135deg, #8e44ad, #6c3483)",
       "category": "资源站",
-      "version": "2026-11-20",
+      "version": "2026-11-21",
       "download_url": "https://w18.monkrus.ws/",
       "download_url_with_params": "https://w18.monkrus.ws/",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-11-20",
+      "last_modified": "2026-11-21",
       "md5": "",
       "official_site": "https://w18.monkrus.ws/",
       "update_items": [
         {
-          "title": "Autodesk AutoCAD 2027.1.1 RUS-ENG",
-          "url": "https://w18.monkrus.ws/2026/11/autodesk-autocad-202711-rus-eng.html"
+          "title": "Autodesk Revit 2027.4 Multilingual",
+          "url": "https://w18.monkrus.ws/2026/11/autodesk-revit-20274-multilingual.html"
         }
       ],
-      "detected_at": "2026-11-20 19:06",
+      "detected_at": "2026-11-21 14:05",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2261,7 +2261,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-11-16",
       "md5": "",
