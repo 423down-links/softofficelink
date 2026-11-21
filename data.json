@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-21T22:53:41.602548+00:00",
+  "updated_at": "2026-11-21T23:06:29.427709+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-17 10:20",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795906276&P2=404&P3=2&P4=ad%2fJDc1APaYHv6wWY55F88zAyber5e7t3rxZb883TzwiQgFLCvrDG%2bd%2fE%2fCPlCstCjSdEfZhz7mbQJXiiZPPmQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795906276&P2=404&P3=2&P4=ad%2fJDc1APaYHv6wWY55F88zAyber5e7t3rxZb883TzwiQgFLCvrDG%2bd%2fE%2fCPlCstCjSdEfZhz7mbQJXiiZPPmQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795907155&P2=404&P3=2&P4=bPamziae9lT7VJvjOhaBcMXQitYtfhYN%2bFQUumvAJQGXkjuSIfCsANakQQlpxvlA8yxv2%2bxUxE76K4wP1eIZPw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795907155&P2=404&P3=2&P4=bPamziae9lT7VJvjOhaBcMXQitYtfhYN%2bFQUumvAJQGXkjuSIfCsANakQQlpxvlA8yxv2%2bxUxE76K4wP1eIZPw%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
