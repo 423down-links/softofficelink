@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-21T09:51:56.490748+00:00",
+  "updated_at": "2026-11-21T10:06:29.944221+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795859466&P2=404&P3=2&P4=ixRsmBGw34hlR59PFCBil7f6aXI8ZHpz8j9xIttzVGioXIOOmoPlRbDc8S6ZSoPi8AdHQSW4gXB%2bMQKrhff4%2fg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795859466&P2=404&P3=2&P4=ixRsmBGw34hlR59PFCBil7f6aXI8ZHpz8j9xIttzVGioXIOOmoPlRbDc8S6ZSoPi8AdHQSW4gXB%2bMQKrhff4%2fg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795860357&P2=404&P3=2&P4=VQetQvNvEfbr100ocXPCRfGXs82UvJ8%2fIoo3tOkFrQ1dvMk%2fVfy9vxr74XlcOR0ZAtKlVdcO%2bAKWdDT19JayLA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795860357&P2=404&P3=2&P4=VQetQvNvEfbr100ocXPCRfGXs82UvJ8%2fIoo3tOkFrQ1dvMk%2fVfy9vxr74XlcOR0ZAtKlVdcO%2bAKWdDT19JayLA%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -2011,6 +2011,10 @@
       "official_site": "https://w18.monkrus.ws/",
       "update_items": [
         {
+          "title": "Autodesk Maya 2027.3 Multilingual",
+          "url": "https://w18.monkrus.ws/2026/11/autodesk-maya-20273-multilingual.html"
+        },
+        {
           "title": "Autodesk 3ds Max 2027.3 Multilingual",
           "url": "https://w18.monkrus.ws/2026/11/autodesk-3ds-max-20273-multilingual.html"
         },
@@ -2019,7 +2023,7 @@
           "url": "https://w18.monkrus.ws/2026/11/autodesk-revit-20274-multilingual.html"
         }
       ],
-      "detected_at": "2026-11-21 17:06",
+      "detected_at": "2026-11-21 18:05",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
