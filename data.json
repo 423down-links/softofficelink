@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-21T03:52:03.629405+00:00",
+  "updated_at": "2026-11-21T04:07:04.368177+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,8 +187,8 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-17 10:20",
-      "fb_streak": 1,
-      "fb_skip_until": 0
+      "fb_streak": 2,
+      "fb_skip_until": 1795235824
     },
     {
       "name": "WinHex",
@@ -222,7 +222,7 @@
       "download_url": "https://www.xyplorer.com/download/xyplorer64_full_noinstall.zip",
       "download_url_with_params": "https://www.xyplorer.com/download/xyplorer64_full_noinstall.zip",
       "downloads": [],
-      "size": 14663106,
+      "size": 14680064,
       "size_mb": 14.0,
       "last_modified": "2026-11-18",
       "md5": "",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795837862&P2=404&P3=2&P4=OWmtzQ2vv5FWs1dZs09VasQSkpOsckzlGggtjFk1ygVhj%2fKi0TKs0qRBdmdz5mkYlcgx11lXP8o7%2bEcNuRM%2fyg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795837862&P2=404&P3=2&P4=OWmtzQ2vv5FWs1dZs09VasQSkpOsckzlGggtjFk1ygVhj%2fKi0TKs0qRBdmdz5mkYlcgx11lXP8o7%2bEcNuRM%2fyg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795838787&P2=404&P3=2&P4=O5NfdXoL58lELKERLaYeO3%2bgcM9oyBYm8XT5kwCX23FZk%2bsfIQQUmV69vMiJYrr%2beZcu0ENyW4sStcjQPi15ow%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795838787&P2=404&P3=2&P4=O5NfdXoL58lELKERLaYeO3%2bgcM9oyBYm8XT5kwCX23FZk%2bsfIQQUmV69vMiJYrr%2beZcu0ENyW4sStcjQPi15ow%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -1222,8 +1222,8 @@
       "download_url": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "download_url_with_params": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "downloads": [],
-      "size": 81267664,
-      "size_mb": 77.5,
+      "size": 81329392,
+      "size_mb": 77.6,
       "last_modified": "2026-11-19",
       "md5": "",
       "official_site": "https://www.wftpserver.com/",
@@ -2664,8 +2664,8 @@
       "download_url": "https://www.ludashi.com/pc/download/getDownloadUrl?type=2",
       "download_url_with_params": "https://www.ludashi.com/pc/download/getDownloadUrl?type=2",
       "downloads": [],
-      "size": 283336336,
-      "size_mb": 270.2,
+      "size": 284200040,
+      "size_mb": 271.0,
       "last_modified": "2026-11-13",
       "md5": "",
       "official_site": "https://www.ludashi.com/",
