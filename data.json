@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-22T19:53:37.061113+00:00",
+  "updated_at": "2026-11-22T20:06:30.986695+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795981872&P2=404&P3=2&P4=WIsMrvZvBCNq2%2fs3p61LO8w5krEqO9fhzrJP2YiDpTImOO6niMU9kGQDKx06ikLL2VhaZvbpxW5qcrMjIzktsA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795981872&P2=404&P3=2&P4=WIsMrvZvBCNq2%2fs3p61LO8w5krEqO9fhzrJP2YiDpTImOO6niMU9kGQDKx06ikLL2VhaZvbpxW5qcrMjIzktsA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795982757&P2=404&P3=2&P4=IDsiL82mKLesUF4B%2bFy8uHdkxeVMDJ%2bHbF1vhwLZb3uyLVOVUrw494tS3ZVmykkjLrmQLnlZtNHwWCDOJQnRww%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795982757&P2=404&P3=2&P4=IDsiL82mKLesUF4B%2bFy8uHdkxeVMDJ%2bHbF1vhwLZb3uyLVOVUrw494tS3ZVmykkjLrmQLnlZtNHwWCDOJQnRww%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -1103,7 +1103,7 @@
       "official_site": "https://goldwave.ca/",
       "update_items": [],
       "detected_at": "2026-10-09 09:56",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -1222,8 +1222,8 @@
       "download_url": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "download_url_with_params": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "downloads": [],
-      "size": 81329392,
-      "size_mb": 77.6,
+      "size": 81267664,
+      "size_mb": 77.5,
       "last_modified": "2026-11-19",
       "md5": "",
       "official_site": "https://www.wftpserver.com/",
@@ -2011,6 +2011,10 @@
       "official_site": "https://w18.monkrus.ws/",
       "update_items": [
         {
+          "title": "Adobe Lightroom Classic v16.0.1 Multilingual",
+          "url": "https://w18.monkrus.ws/2026/11/adobe-lightroom-classic-v1601.html"
+        },
+        {
           "title": "Adobe InCopy 2027 (v22.0) Multilingual",
           "url": "https://w18.monkrus.ws/2026/11/adobe-incopy-2027-v220-multilingual.html"
         },
@@ -2019,7 +2023,7 @@
           "url": "https://w18.monkrus.ws/2026/11/adobe-indesign-2027-v220-multilingual.html"
         }
       ],
-      "detected_at": "2026-11-22 16:05",
+      "detected_at": "2026-11-23 04:05",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2265,7 +2269,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-11-16",
       "md5": "",
