@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-22T08:46:03.212774+00:00",
+  "updated_at": "2026-11-22T09:08:42.654749+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-11-12 19:51",
-      "fb_streak": 45,
-      "fb_skip_until": 1795337612
+      "fb_streak": 46,
+      "fb_skip_until": 1795342122
     },
     {
       "name": "WeChat",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795941909&P2=404&P3=2&P4=Xx1f0n%2bvwMyxwZP2P2lXMeeMhOvf2tPU6qBmu7%2btVUMCiAkkcUw0YqVFhrjXMVjlgF1iIiKbCphO0E8FB4q7dw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795941909&P2=404&P3=2&P4=Xx1f0n%2bvwMyxwZP2P2lXMeeMhOvf2tPU6qBmu7%2btVUMCiAkkcUw0YqVFhrjXMVjlgF1iIiKbCphO0E8FB4q7dw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795943173&P2=404&P3=2&P4=IqHMaEaivM5XSMzBNeOC0syRNEehoYWZ8ttJIvl6z2A3dRZHXoJSi%2bKklrcDPnh4NGLs3wmASiSq2iH7RtGoLQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795943173&P2=404&P3=2&P4=IqHMaEaivM5XSMzBNeOC0syRNEehoYWZ8ttJIvl6z2A3dRZHXoJSi%2bKklrcDPnh4NGLs3wmASiSq2iH7RtGoLQ%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -1222,8 +1222,8 @@
       "download_url": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "download_url_with_params": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "downloads": [],
-      "size": 81267664,
-      "size_mb": 77.5,
+      "size": 81329392,
+      "size_mb": 77.6,
       "last_modified": "2026-11-19",
       "md5": "",
       "official_site": "https://www.wftpserver.com/",
@@ -2265,7 +2265,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-11-16",
       "md5": "",
@@ -2503,8 +2503,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 435,
-      "fb_skip_until": 1795337612
+      "fb_streak": 436,
+      "fb_skip_until": 1795342122
     },
     {
       "name": "BitComet",
