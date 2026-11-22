@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-22T07:53:32.576354+00:00",
+  "updated_at": "2026-11-22T08:06:21.119241+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795938668&P2=404&P3=2&P4=gyak28eh4xw0XR2uR4gqqYrOL6rYVhxSoxB1DCadt0qYcwht7NSbOx6Rx4IfMszkZiohGZg2tiSBM7x2UqU6KA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795938668&P2=404&P3=2&P4=gyak28eh4xw0XR2uR4gqqYrOL6rYVhxSoxB1DCadt0qYcwht7NSbOx6Rx4IfMszkZiohGZg2tiSBM7x2UqU6KA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795939552&P2=404&P3=2&P4=gh7duO4gKbVNhw4xWHD12U2TWH0c5ESS6is2WmQAmjgnhITGX7PtCHYPw2KjcbE1RfzXUeTR4IrMK%2bFE5BIA0g%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795939552&P2=404&P3=2&P4=gh7duO4gKbVNhw4xWHD12U2TWH0c5ESS6is2WmQAmjgnhITGX7PtCHYPw2KjcbE1RfzXUeTR4IrMK%2bFE5BIA0g%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -1222,8 +1222,8 @@
       "download_url": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "download_url_with_params": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "downloads": [],
-      "size": 81329392,
-      "size_mb": 77.6,
+      "size": 81267664,
+      "size_mb": 77.5,
       "last_modified": "2026-11-19",
       "md5": "",
       "official_site": "https://www.wftpserver.com/",
@@ -2000,30 +2000,26 @@
       "icon": "M",
       "icon_color": "linear-gradient(135deg, #8e44ad, #6c3483)",
       "category": "资源站",
-      "version": "2026-11-21",
+      "version": "2026-11-22",
       "download_url": "https://w18.monkrus.ws/",
       "download_url_with_params": "https://w18.monkrus.ws/",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-11-21",
+      "last_modified": "2026-11-22",
       "md5": "",
       "official_site": "https://w18.monkrus.ws/",
       "update_items": [
         {
-          "title": "Autodesk Maya 2027.3 Multilingual",
-          "url": "https://w18.monkrus.ws/2026/11/autodesk-maya-20273-multilingual.html"
+          "title": "Adobe InCopy 2027 (v22.0) Multilingual",
+          "url": "https://w18.monkrus.ws/2026/11/adobe-incopy-2027-v220-multilingual.html"
         },
         {
-          "title": "Autodesk 3ds Max 2027.3 Multilingual",
-          "url": "https://w18.monkrus.ws/2026/11/autodesk-3ds-max-20273-multilingual.html"
-        },
-        {
-          "title": "Autodesk Revit 2027.4 Multilingual",
-          "url": "https://w18.monkrus.ws/2026/11/autodesk-revit-20274-multilingual.html"
+          "title": "Adobe InDesign 2027 (v22.0) Multilingual",
+          "url": "https://w18.monkrus.ws/2026/11/adobe-indesign-2027-v220-multilingual.html"
         }
       ],
-      "detected_at": "2026-11-21 18:05",
+      "detected_at": "2026-11-22 16:05",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
