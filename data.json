@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-22T13:52:06.625849+00:00",
+  "updated_at": "2026-11-22T14:06:34.550452+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795960265&P2=404&P3=2&P4=Tx8S65ppK72lEIKOqygqZ48m0bxSwOwTjO%2fJDkfPfSmODQs4o%2bAm%2fA%2fT3Hb3YI5%2be8BEGWUCpqoPb7THIjZM5g%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795960265&P2=404&P3=2&P4=Tx8S65ppK72lEIKOqygqZ48m0bxSwOwTjO%2fJDkfPfSmODQs4o%2bAm%2fA%2fT3Hb3YI5%2be8BEGWUCpqoPb7THIjZM5g%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795961149&P2=404&P3=2&P4=VkyRaByPiLxYChgsVL6RbL6PzaegUTqdvq67zvMaKWepq0By%2bxZr65Ajf%2f%2floVC1gBxDNrnV8fiLSpJN3YEtsw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1795961149&P2=404&P3=2&P4=VkyRaByPiLxYChgsVL6RbL6PzaegUTqdvq67zvMaKWepq0By%2bxZr65Ajf%2f%2floVC1gBxDNrnV8fiLSpJN3YEtsw%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -1827,13 +1827,13 @@
       "icon": "Ve",
       "icon_color": "linear-gradient(135deg, #00b8d4, #0072bc)",
       "category": "视频编辑",
-      "version": "2027.0.0",
-      "download_url": "https://borisfxdownloads.com/borisfx/store/vegas/Vegas_Pro_2027.0.0.31_x64_RELEASE_261020_132721.exe",
-      "download_url_with_params": "https://borisfxdownloads.com/borisfx/store/vegas/Vegas_Pro_2027.0.0.31_x64_RELEASE_261020_132721.exe",
+      "version": "2027.0.1",
+      "download_url": "https://borisfxdownloads.com/borisfx/store/vegas/Vegas_Pro_2027.0.1.56_x64_RELEASE_261117_111904.exe",
+      "download_url_with_params": "https://borisfxdownloads.com/borisfx/store/vegas/Vegas_Pro_2027.0.1.56_x64_RELEASE_261117_111904.exe",
       "downloads": [],
-      "size": 760220056,
-      "size_mb": 725.0,
-      "last_modified": "2026-10-21",
+      "size": 760089816,
+      "size_mb": 724.9,
+      "last_modified": "2026-11-22",
       "md5": "",
       "official_site": "https://www.borisfx.com/vegas/",
       "update_items": [],
@@ -1863,7 +1863,7 @@
           "desc": "Boris FX 插件/资源中心：管理下载特效插件，也能检查 Vegas 更新"
         }
       ],
-      "detected_at": "2026-11-03 06:06",
+      "detected_at": "2026-11-22 22:05",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2265,7 +2265,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-11-16",
       "md5": "",
