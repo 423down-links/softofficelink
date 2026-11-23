@@ -1310,11 +1310,31 @@ PRODUCTS = [
         'icon': '4K',
         'icon_color': 'linear-gradient(135deg, #e74c3c, #c0392b)',
         'category': '下载工具',
-        'detect_type': 'increment',
-        'base_version': '26.3.3',
-        'url_pattern': 'https://dl.4kdownload.com/app/4kvideodownloaderplus_{ver}_x64.zip',
-        'version': '26.3.3',
-        'version_format': 'three_part',
+        # 官网下载页表格给完整四段版本（26.4.0.0406，末段 build 号 = 安装包界面口径），
+        # 而 CDN 文件名只带三段（26.4.0_x64.zip）——increment 探 URL 只能拿到三段、
+        # 日期也拿不到（CDN 无 Last-Modified）。改抓官方下载页：版本/日期/直链/体积一次拿全。
+        'detect_type': 'scrape',
+        'check_url': 'https://www.4kdownload.com/downloads/34',
+        # 多候选正则：段数放宽 2-4 段防官方口径变化（VueScan 教训），
+        # 首选锚定本产品标题取版本格，兜底取页面首个版本格，最后退回 CDN 文件名三段
+        'version_regex': [
+            r'links-list__title[^>]*>4K Video Downloader Plus[\s\S]{0,4000}?download__cell--version">(\d+(?:\.\d+){1,3})',
+            r'download__cell--version">(\d+(?:\.\d+){1,3})',
+        ],
+        'version_regex_alt': r'4kvideodownloaderplus_(\d+(?:\.\d+){1,3})_x64\.zip',
+        # 日期认官方页（铁律3，不用 CDN Last-Modified），锚定 Portable 行防串产品
+        'date_regex': r'download__cell--date">([^<]+)</td>[\s\S]{0,300}?id="videodownloaderplus_windows_x64_portable"',
+        'prefer_scraped_date': True,
+        'download_url_regex': r'(https://dl\.4kdownload\.com/app/4kvideodownloaderplus_[\d.]+_x64\.zip)',
+        'size_regex_mb': r'Portable\s*</span>[\s\S]{0,600}?download__cell--size">([\d.]+)\s*(KB|MB|GB)',
+        'prefer_scraped_version': True,
+        'version_authority': 'page',
+        # 官方页给的就是真实发布日（铁律3），直通不被"检测日"抬高
+        'date_authority': 'detector',
+        'version': '26.4.0.0406',
+        'date': '2026-11-11',
+        'download_url': 'https://dl.4kdownload.com/app/4kvideodownloaderplus_26.4.0_x64.zip',
+        'skip_md5': True,
         'official_site': 'https://www.4kdownload.com/downloads/34',
     },
     {
