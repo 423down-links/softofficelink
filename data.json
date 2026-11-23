@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23T17:51:38.331804+00:00",
+  "updated_at": "2026-11-23T18:06:18.131474+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796061047&P2=404&P3=2&P4=L9urerlH6CFDEjoPPHZe28u34rwh8fRPvvSqcHa%2bmi6%2bzD9SAIrJQ3%2fWYRib5LKpi3r5DjW9gd8h1CouaG2dgw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796061047&P2=404&P3=2&P4=L9urerlH6CFDEjoPPHZe28u34rwh8fRPvvSqcHa%2bmi6%2bzD9SAIrJQ3%2fWYRib5LKpi3r5DjW9gd8h1CouaG2dgw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796061952&P2=404&P3=2&P4=DXGhkCz4wkah%2fIjnAUir5iUiYmxM1LZ7NXPY704FCVEStLTTXCD32MompYG2BOxsn7J4cia8iWn4UYSZuNZD2A%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796061952&P2=404&P3=2&P4=DXGhkCz4wkah%2fIjnAUir5iUiYmxM1LZ7NXPY704FCVEStLTTXCD32MompYG2BOxsn7J4cia8iWn4UYSZuNZD2A%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -2261,7 +2261,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-11-16",
       "md5": "",
