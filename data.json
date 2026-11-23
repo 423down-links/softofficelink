@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23T16:52:25.911657+00:00",
+  "updated_at": "2026-11-23T17:08:19.570290+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-11-12 19:51",
-      "fb_streak": 69,
-      "fb_skip_until": 1795452814
+      "fb_streak": 70,
+      "fb_skip_until": 1795457299
     },
     {
       "name": "WeChat",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796057451&P2=404&P3=2&P4=OixYO4207koW2F5ZlAzsLG%2f8g0UHvcIvTS43KwuTovleqDELIuf0gtaR5BEQyGNJVXHgnxvXb2VhsM9XDsOFJQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796057451&P2=404&P3=2&P4=OixYO4207koW2F5ZlAzsLG%2f8g0UHvcIvTS43KwuTovleqDELIuf0gtaR5BEQyGNJVXHgnxvXb2VhsM9XDsOFJQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796058350&P2=404&P3=2&P4=abvGFnit0RoxnMHGYNJliXXf6AM%2boeWvbBZVaj4z%2bKHIC3ImxYmBnkJxPIkSYGRKKmv6C6S5RPMJzCgFsBLBMA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796058350&P2=404&P3=2&P4=abvGFnit0RoxnMHGYNJliXXf6AM%2boeWvbBZVaj4z%2bKHIC3ImxYmBnkJxPIkSYGRKKmv6C6S5RPMJzCgFsBLBMA%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -1369,8 +1369,8 @@
       "download_url": "https://www.winxdvd.com/download/winxvideo-ai.exe",
       "download_url_with_params": "https://www.winxdvd.com/download/winxvideo-ai.exe",
       "downloads": [],
-      "size": 307232768,
-      "size_mb": 293.0,
+      "size": 307118576,
+      "size_mb": 292.9,
       "last_modified": "2026-09-20",
       "md5": "",
       "official_site": "https://www.winxdvd.com/winxvideo-ai/",
@@ -2499,8 +2499,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 459,
-      "fb_skip_until": 1795452814
+      "fb_streak": 460,
+      "fb_skip_until": 1795457299
     },
     {
       "name": "BitComet",
