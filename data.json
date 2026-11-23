@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23T05:21:46.689688+00:00",
+  "updated_at": "2026-11-23T05:35:58.266589+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-17 10:20",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796016060&P2=404&P3=2&P4=hTbp%2f9OS0HI7%2f9ZhoYgH%2fJjQUkHL2HHSU09u1QWWnRjXMFNnAfyUEx2JhKUfW%2bONku9opiJr472HtjQCIrTFlg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796016060&P2=404&P3=2&P4=hTbp%2f9OS0HI7%2f9ZhoYgH%2fJjQUkHL2HHSU09u1QWWnRjXMFNnAfyUEx2JhKUfW%2bONku9opiJr472HtjQCIrTFlg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796016878&P2=404&P3=2&P4=Ig7gxpJE86e6WCJ37xyUGVpJib2UXSNqrdh7YgbJcoUPrPo%2fwcY9IevXVQcyx%2fulNC49kzSYkaNMRdh%2bm0F0yA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796016878&P2=404&P3=2&P4=Ig7gxpJE86e6WCJ37xyUGVpJib2UXSNqrdh7YgbJcoUPrPo%2fwcY9IevXVQcyx%2fulNC49kzSYkaNMRdh%2bm0F0yA%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -1554,17 +1554,17 @@
       "icon": "4K",
       "icon_color": "linear-gradient(135deg, #e74c3c, #c0392b)",
       "category": "下载工具",
-      "version": "26.4.0",
+      "version": "26.4.0.0406",
       "download_url": "https://dl.4kdownload.com/app/4kvideodownloaderplus_26.4.0_x64.zip",
       "download_url_with_params": "https://dl.4kdownload.com/app/4kvideodownloaderplus_26.4.0_x64.zip",
       "downloads": [],
-      "size": 237953493,
+      "size": 237921894,
       "size_mb": 226.9,
-      "last_modified": "2026-11-12",
+      "last_modified": "2026-11-11",
       "md5": "",
       "official_site": "https://www.4kdownload.com/downloads/34",
       "update_items": [],
-      "detected_at": "2026-11-12 00:55",
+      "detected_at": "2026-11-23 13:34",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
