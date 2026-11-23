@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23T12:52:19.533229+00:00",
+  "updated_at": "2026-11-23T13:08:19.869969+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-11-12 19:51",
-      "fb_streak": 66,
-      "fb_skip_until": 1795438450
+      "fb_streak": 67,
+      "fb_skip_until": 1795442899
     },
     {
       "name": "WeChat",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796043076&P2=404&P3=2&P4=TiJzTQB6UqKG4VeA99wlBYwy7WZ5pv26Cy5dOx7KKOXVHG6fKr3s0Law12Zyg%2fRi%2b8EpDNqbz236uZPEUHixsQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796043076&P2=404&P3=2&P4=TiJzTQB6UqKG4VeA99wlBYwy7WZ5pv26Cy5dOx7KKOXVHG6fKr3s0Law12Zyg%2fRi%2b8EpDNqbz236uZPEUHixsQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796043950&P2=404&P3=2&P4=khu9fGNP%2f3lmj2sv%2fPyG3BwkkVT5MThyxmVv1Z6IYpr61Qx9IfXW42O45f4RJQCErxZWHM3dwlyvn3VL3SJctw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796043950&P2=404&P3=2&P4=khu9fGNP%2f3lmj2sv%2fPyG3BwkkVT5MThyxmVv1Z6IYpr61Qx9IfXW42O45f4RJQCErxZWHM3dwlyvn3VL3SJctw%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -2507,8 +2507,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 456,
-      "fb_skip_until": 1795438450
+      "fb_streak": 457,
+      "fb_skip_until": 1795442899
     },
     {
       "name": "BitComet",
