@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-24T03:21:42.091927+00:00",
+  "updated_at": "2026-11-24T03:52:25.723950+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.46",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe?v=1795490461986&n=ldinst_9.5.46_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe?v=1795492314138&n=ldinst_9.5.46_ld_407594_ld.exe",
       "downloads": [],
       "size": 602991072,
       "size_mb": 575.1,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.0.37",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe?v=1795490460339&n=ldinst_14.0.37_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe?v=1795492313197&n=ldinst_14.0.37_ld_412570_ld.exe",
       "downloads": [],
       "size": 745672168,
       "size_mb": 711.1,
@@ -50,19 +50,19 @@
       "icon": "迅",
       "icon_color": "linear-gradient(135deg, #1e88e5, #00acc1)",
       "category": "下载工具",
-      "version": "25.1.50.1750",
-      "download_url": "https://down.sandai.net/thunder_pc/ThunderSetup25.1.50.1750xl.exe",
-      "download_url_with_params": "https://down.sandai.net/thunder_pc/ThunderSetup25.1.50.1750xl.exe",
+      "version": "25.1.50.1751",
+      "download_url": "https://down.sandai.net/thunder_pc/ThunderSetup25.1.50.1751xl.exe",
+      "download_url_with_params": "https://down.sandai.net/thunder_pc/ThunderSetup25.1.50.1751xl.exe",
       "downloads": [],
-      "size": 233916256,
+      "size": 233929568,
       "size_mb": 223.1,
-      "last_modified": "2026-11-12",
+      "last_modified": "2026-11-24",
       "md5": "",
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
-      "detected_at": "2026-11-12 19:51",
-      "fb_streak": 77,
-      "fb_skip_until": 1795490597
+      "detected_at": "2026-11-24 11:51",
+      "fb_streak": 0,
+      "fb_skip_until": 0
     },
     {
       "name": "WeChat",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-17 10:20",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796095254&P2=404&P3=2&P4=QkHn87kOB0x%2byC09etaoj4dbmqe5qPQPuAA%2fVKIpLcvv7NQ%2bcWhPjT4XjaXQWYgXPpQAgpZXbBSp6fHyRTNffA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796095254&P2=404&P3=2&P4=QkHn87kOB0x%2byC09etaoj4dbmqe5qPQPuAA%2fVKIpLcvv7NQ%2bcWhPjT4XjaXQWYgXPpQAgpZXbBSp6fHyRTNffA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796097110&P2=404&P3=2&P4=i7pLRhU3z1FpH6hvRZcjBiQF%2bqE1%2bcvaiX3KFoYWxHro6gRL2bug4u%2bTNwDZAN0C9TP6P2saq1Y3Rf59NlX4kQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796097110&P2=404&P3=2&P4=i7pLRhU3z1FpH6hvRZcjBiQF%2bqE1%2bcvaiX3KFoYWxHro6gRL2bug4u%2bTNwDZAN0C9TP6P2saq1Y3Rf59NlX4kQ%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -2499,8 +2499,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 467,
-      "fb_skip_until": 1795490597
+      "fb_streak": 468,
+      "fb_skip_until": 1795495945
     },
     {
       "name": "BitComet",
