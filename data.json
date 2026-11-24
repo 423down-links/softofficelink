@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-24T05:33:27.729787+00:00",
+  "updated_at": "2026-11-24T05:48:28.710749+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-17 10:20",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796103177&P2=404&P3=2&P4=PfTDcBpKtUNa2H9RIKA5fL7%2fsEVSn88an4A%2fCptcp%2bgY%2fFVn5kvCGSp8h0YZLVw%2f5uvtNnxMy%2f%2fxYbQrWWWw1A%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796103177&P2=404&P3=2&P4=PfTDcBpKtUNa2H9RIKA5fL7%2fsEVSn88an4A%2fCptcp%2bgY%2fFVn5kvCGSp8h0YZLVw%2f5uvtNnxMy%2f%2fxYbQrWWWw1A%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796104079&P2=404&P3=2&P4=ZI8fCnBnSuWYwKE%2fzNpISukYGJ28cjsfjUOr3Otq0WOZaaODGFecI4hFjjnAlSuFhltFcQjTfWTJol8eTI5zYA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796104079&P2=404&P3=2&P4=ZI8fCnBnSuWYwKE%2fzNpISukYGJ28cjsfjUOr3Otq0WOZaaODGFecI4hFjjnAlSuFhltFcQjTfWTJol8eTI5zYA%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -1222,8 +1222,8 @@
       "download_url": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "download_url_with_params": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "downloads": [],
-      "size": 81267664,
-      "size_mb": 77.5,
+      "size": 81329392,
+      "size_mb": 77.6,
       "last_modified": "2026-11-19",
       "md5": "",
       "official_site": "https://www.wftpserver.com/",
