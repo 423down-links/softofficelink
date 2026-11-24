@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-24T21:51:45.815599+00:00",
+  "updated_at": "2026-11-24T22:06:18.991582+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796161855&P2=404&P3=2&P4=FrCK1hwBeeXuVfMjTjEtg7Kn5YpkXwVciHU9ppQZSo7TjxcXRDOjHBsmkcHokLfo%2bgiJmzCvMuxrL96x3Fz7Pw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796161855&P2=404&P3=2&P4=FrCK1hwBeeXuVfMjTjEtg7Kn5YpkXwVciHU9ppQZSo7TjxcXRDOjHBsmkcHokLfo%2bgiJmzCvMuxrL96x3Fz7Pw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796162748&P2=404&P3=2&P4=Eyw4TP3NhHZ5UkC4455cFlgykspuI2evzcgp%2fkFRrF%2fqvlh%2frySAUYgoc%2bfYGXRjmviZtloi5r3MZE88wCE4mA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796162748&P2=404&P3=2&P4=Eyw4TP3NhHZ5UkC4455cFlgykspuI2evzcgp%2fkFRrF%2fqvlh%2frySAUYgoc%2bfYGXRjmviZtloi5r3MZE88wCE4mA%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -397,7 +397,7 @@
       "official_site": "https://community.topazlabs.com/c/topaz-photo/topaz-photo-releases/117",
       "update_items": [],
       "detected_at": "2026-11-20 07:05",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -418,7 +418,7 @@
       "official_site": "https://community.topazlabs.com/c/topaz-gigapixel/topaz-gigapixel-releases/128",
       "update_items": [],
       "detected_at": "2026-11-20 06:05",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -439,7 +439,7 @@
       "official_site": "https://community.topazlabs.com/c/topaz-video/topaz-video-releases/122",
       "update_items": [],
       "detected_at": "2026-11-04 06:06",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -1222,8 +1222,8 @@
       "download_url": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "download_url_with_params": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "downloads": [],
-      "size": 81329392,
-      "size_mb": 77.6,
+      "size": 81267664,
+      "size_mb": 77.5,
       "last_modified": "2026-11-19",
       "md5": "",
       "official_site": "https://www.wftpserver.com/",
