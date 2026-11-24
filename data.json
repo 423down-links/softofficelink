@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-24T02:51:55.647758+00:00",
+  "updated_at": "2026-11-24T03:06:29.169933+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-17 10:20",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -222,7 +222,7 @@
       "download_url": "https://www.xyplorer.com/download/xyplorer64_full_noinstall.zip",
       "download_url_with_params": "https://www.xyplorer.com/download/xyplorer64_full_noinstall.zip",
       "downloads": [],
-      "size": 14680064,
+      "size": 14663106,
       "size_mb": 14.0,
       "last_modified": "2026-11-18",
       "md5": "",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796093452&P2=404&P3=2&P4=e9%2bYh08IVDZOE4crF%2b0VU31ALy2sm4rM6Vpi9eTWTLpD3hKsFsPpZxgES6xsxa9Ub1QXbKO%2f89wzElyJQNhh8Q%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796093452&P2=404&P3=2&P4=e9%2bYh08IVDZOE4crF%2b0VU31ALy2sm4rM6Vpi9eTWTLpD3hKsFsPpZxgES6xsxa9Ub1QXbKO%2f89wzElyJQNhh8Q%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796094351&P2=404&P3=2&P4=eAP3Xafscu7B2vLHgXZJTA2R3BL0l6nOyotGCd4uTr6mt3iQBXBhY4xuRCBb84gSLRl6goewkkWojp8zg6Vrhg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796094351&P2=404&P3=2&P4=eAP3Xafscu7B2vLHgXZJTA2R3BL0l6nOyotGCd4uTr6mt3iQBXBhY4xuRCBb84gSLRl6goewkkWojp8zg6Vrhg%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -2261,7 +2261,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-11-16",
       "md5": "",
@@ -2664,8 +2664,8 @@
       "download_url": "https://www.ludashi.com/pc/download/getDownloadUrl?type=2",
       "download_url_with_params": "https://www.ludashi.com/pc/download/getDownloadUrl?type=2",
       "downloads": [],
-      "size": 284200040,
-      "size_mb": 271.0,
+      "size": 283336336,
+      "size_mb": 270.2,
       "last_modified": "2026-11-13",
       "md5": "",
       "official_site": "https://www.ludashi.com/",
