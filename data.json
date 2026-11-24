@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-24T17:06:22.612923+00:00",
+  "updated_at": "2026-11-24T17:09:14.334978+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796144754&P2=404&P3=2&P4=dDjEztZ5S6frKy5%2b94vbnLx4TIhwC5fL7FlDVDujkXeIDeUHpWsElSEsHQnwr01KEy0PtJXRWGLmeM9hEYpV5Q%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796144754&P2=404&P3=2&P4=dDjEztZ5S6frKy5%2b94vbnLx4TIhwC5fL7FlDVDujkXeIDeUHpWsElSEsHQnwr01KEy0PtJXRWGLmeM9hEYpV5Q%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796144926&P2=404&P3=2&P4=aw3PLHiJhJbdFo8dh0ChTonHUKG3cCQZZa8kgcgKivs7mOnBLso36GGW3dKDfy0AOfhiXLLCjnSzO7lPP8t%2bnw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796144926&P2=404&P3=2&P4=aw3PLHiJhJbdFo8dh0ChTonHUKG3cCQZZa8kgcgKivs7mOnBLso36GGW3dKDfy0AOfhiXLLCjnSzO7lPP8t%2bnw%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -1638,17 +1638,17 @@
       "icon": "79",
       "icon_color": "linear-gradient(135deg, #e74c3c, #c0392b)",
       "category": "便携软件",
-      "version": "2026.11.22",
+      "version": "2026.09.19",
       "download_url": "https://disk.yandex.ru/d/D8xbOSd7XAUbug",
       "download_url_with_params": "https://disk.yandex.ru/d/D8xbOSd7XAUbug",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-11-22",
+      "last_modified": "2026-11-25",
       "md5": "",
       "official_site": "https://disk.yandex.ru/d/D8xbOSd7XAUbug",
       "update_items": [],
-      "detected_at": "2026-11-22 15:05",
+      "detected_at": "2026-11-25 01:08",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
