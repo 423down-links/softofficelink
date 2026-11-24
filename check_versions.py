@@ -785,12 +785,26 @@ PRODUCTS = [
         'icon': 'W',
         'icon_color': 'linear-gradient(135deg, #e74c3c, #f39c12)',
         'category': '办公软件',
-        'detect_type': 'fixed',
+        # 官方下载中心的数据接口（ep.wps.cn/download 页 JS 的数据源）：href 即最新
+        # 安装包直链，文件名带完整版本号（WPSPro_12.1.0.29161.exe），版本/直链全自动。
+        # 原 fixed 纯手动维护，版本一停就是几个月（26899 停了 4 个月实测），根治。
+        'detect_type': 'scrape',
+        'check_url': 'https://www.wps.cn/epDownload',
+        # 多候选正则 + 段数放宽 2-4 段防官方口径变化（VueScan 教训）；
+        # 首选锚定 WPS2023 路径防串到 PDF 等其他产品，兜底纯文件名
+        'version_regex': [
+            r'WPS2023/WPSPro_(\d+(?:\.\d+){1,3})\.exe',
+            r'WPSPro_(\d+(?:\.\d+){1,3})\.exe',
+        ],
+        'download_url_regex': r'(https://[^"]+?/WPS2023/WPSPro_[\d.]+\.exe)',
         'referer': 'https://ep.wps.cn/',
-        'version': '12.1.0.26899',
-        'size': 418 * 1024 * 1024,
-        'date': '2026-07-06',
-        'download_url': 'https://wps-cn-ep.wpscdn.cn/wps/download/ep/WPS2023/WPSPro_12.1.0.26899.exe',
+        # 接口无发布日：用包体 Last-Modified 直通（=真实上架日，不被"检测日"抬高）
+        'date_authority': 'detector',
+        'version_authority': 'page',
+        'version': '12.1.0.29161',
+        'date': '2026-10-19',
+        'download_url': 'https://wps-cn-ep.wpscdn.cn/wps/download/ep/WPS2023/WPSPro_12.1.0.29161.exe',
+        'skip_md5': True,
         'official_site': 'https://ep.wps.cn/download',
     },
     {
