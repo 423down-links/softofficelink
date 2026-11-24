@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-24T17:09:14.334978+00:00",
+  "updated_at": "2026-11-24T17:21:42.136576+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.46",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe?v=1795539059456&n=ldinst_9.5.46_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe?v=1795540867235&n=ldinst_9.5.46_ld_407594_ld.exe",
       "downloads": [],
       "size": 602991072,
       "size_mb": 575.1,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.0.37",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe?v=1795539062641&n=ldinst_14.0.37_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe?v=1795540864013&n=ldinst_14.0.37_ld_412570_ld.exe",
       "downloads": [],
       "size": 745672168,
       "size_mb": 711.1,
@@ -124,7 +124,7 @@
       "official_site": "https://www.yy.com/web/pcyy_download/",
       "update_items": [],
       "detected_at": "2026-11-18 10:20",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796144926&P2=404&P3=2&P4=aw3PLHiJhJbdFo8dh0ChTonHUKG3cCQZZa8kgcgKivs7mOnBLso36GGW3dKDfy0AOfhiXLLCjnSzO7lPP8t%2bnw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796144926&P2=404&P3=2&P4=aw3PLHiJhJbdFo8dh0ChTonHUKG3cCQZZa8kgcgKivs7mOnBLso36GGW3dKDfy0AOfhiXLLCjnSzO7lPP8t%2bnw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796145661&P2=404&P3=2&P4=B5r7YU1wtSWTl%2b0XC1Z%2bdA6KqvZDrW3m1uFb%2ffZOUcj8dn4Cchdk5vBLvlB8aUTVs%2betOsP5OytLRN8%2bMW8aLw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796145661&P2=404&P3=2&P4=B5r7YU1wtSWTl%2b0XC1Z%2bdA6KqvZDrW3m1uFb%2ffZOUcj8dn4Cchdk5vBLvlB8aUTVs%2betOsP5OytLRN8%2bMW8aLw%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -1145,8 +1145,8 @@
       "official_site": "https://tracker-software.com/product/pdf-xchange-editor/history",
       "update_items": [],
       "detected_at": "2026-11-10 11:21",
-      "fb_streak": 1,
-      "fb_skip_until": 0
+      "fb_streak": 2,
+      "fb_skip_until": 1795542702
     },
     {
       "name": "PDF-XChange Pro",
@@ -1222,8 +1222,8 @@
       "download_url": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "download_url_with_params": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "downloads": [],
-      "size": 81329392,
-      "size_mb": 77.6,
+      "size": 81267664,
+      "size_mb": 77.5,
       "last_modified": "2026-11-19",
       "md5": "",
       "official_site": "https://www.wftpserver.com/",
@@ -1638,7 +1638,7 @@
       "icon": "79",
       "icon_color": "linear-gradient(135deg, #e74c3c, #c0392b)",
       "category": "便携软件",
-      "version": "2026.09.19",
+      "version": "2026.11.22",
       "download_url": "https://disk.yandex.ru/d/D8xbOSd7XAUbug",
       "download_url_with_params": "https://disk.yandex.ru/d/D8xbOSd7XAUbug",
       "downloads": [],
@@ -1648,7 +1648,7 @@
       "md5": "",
       "official_site": "https://disk.yandex.ru/d/D8xbOSd7XAUbug",
       "update_items": [],
-      "detected_at": "2026-11-25 01:08",
+      "detected_at": "2026-11-25 01:20",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
