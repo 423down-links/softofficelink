@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-24T04:51:47.088992+00:00",
+  "updated_at": "2026-11-24T05:07:25.928333+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796100660&P2=404&P3=2&P4=kQU41TRfTypTYktci0uNY0%2fhZ9J3N9iQqTJu%2b41fEz0UkvWTYMhIvTjW2x9e%2fne3rTV1MvVXV26ZA1OdrTfLpQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796100660&P2=404&P3=2&P4=kQU41TRfTypTYktci0uNY0%2fhZ9J3N9iQqTJu%2b41fEz0UkvWTYMhIvTjW2x9e%2fne3rTV1MvVXV26ZA1OdrTfLpQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796101618&P2=404&P3=2&P4=bB1xkDhXNLvAG2NJo7rEb88qc9W3RqgiuLsq5SZwY06DW9%2b6uUaN7exWYmBXmVWYSKy4826y2kEqDVn4W5oImQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796101618&P2=404&P3=2&P4=bB1xkDhXNLvAG2NJo7rEb88qc9W3RqgiuLsq5SZwY06DW9%2b6uUaN7exWYmBXmVWYSKy4826y2kEqDVn4W5oImQ%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -1222,8 +1222,8 @@
       "download_url": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "download_url_with_params": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "downloads": [],
-      "size": 81267664,
-      "size_mb": 77.5,
+      "size": 81329392,
+      "size_mb": 77.6,
       "last_modified": "2026-11-19",
       "md5": "",
       "official_site": "https://www.wftpserver.com/",
@@ -2499,8 +2499,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 468,
-      "fb_skip_until": 1795495945
+      "fb_streak": 469,
+      "fb_skip_until": 1795500445
     },
     {
       "name": "BitComet",
