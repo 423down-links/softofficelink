@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23T23:53:42.483430+00:00",
+  "updated_at": "2026-11-24T00:06:20.430163+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796082676&P2=404&P3=2&P4=CsRHn%2bBqp4cBJxHTDzwHWoeGzwLFJxgFb92wEMGTtNHZyJN0e1HadTLcaYNXbIv9a8ofar2NWMqSZOsoxdAt2g%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796082676&P2=404&P3=2&P4=CsRHn%2bBqp4cBJxHTDzwHWoeGzwLFJxgFb92wEMGTtNHZyJN0e1HadTLcaYNXbIv9a8ofar2NWMqSZOsoxdAt2g%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796083556&P2=404&P3=2&P4=iT5GphOfpiGyS1YW2G6DgrE1l%2fmRzHTuAJJcDXspKtbGBaIJ1sIR1FsZUBi8VkdskvoMwJX5PaLIwTdicf4eqg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796083556&P2=404&P3=2&P4=iT5GphOfpiGyS1YW2G6DgrE1l%2fmRzHTuAJJcDXspKtbGBaIJ1sIR1FsZUBi8VkdskvoMwJX5PaLIwTdicf4eqg%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -1222,8 +1222,8 @@
       "download_url": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "download_url_with_params": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "downloads": [],
-      "size": 81329392,
-      "size_mb": 77.6,
+      "size": 81267664,
+      "size_mb": 77.5,
       "last_modified": "2026-11-19",
       "md5": "",
       "official_site": "https://www.wftpserver.com/",
