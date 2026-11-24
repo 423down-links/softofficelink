@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-24T00:51:48.153725+00:00",
+  "updated_at": "2026-11-24T01:10:13.348261+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -61,8 +61,8 @@
       "official_site": "https://www.xunlei.com/",
       "update_items": [],
       "detected_at": "2026-11-12 19:51",
-      "fb_streak": 75,
-      "fb_skip_until": 1795481622
+      "fb_streak": 76,
+      "fb_skip_until": 1795486213
     },
     {
       "name": "WeChat",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796086258&P2=404&P3=2&P4=SnOFPTq7oGzX%2bB%2bY8mst0Ama4KU68lRXIr59b%2fRSF%2bzm90C1NVoshJTJfmS8doMQhz75j1Aj6JuSQrE2q9YfVw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796086258&P2=404&P3=2&P4=SnOFPTq7oGzX%2bB%2bY8mst0Ama4KU68lRXIr59b%2fRSF%2bzm90C1NVoshJTJfmS8doMQhz75j1Aj6JuSQrE2q9YfVw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796087264&P2=404&P3=2&P4=G6f1EBLD7FuJh8HKj75E21TcWhh%2fH%2f6ZoJ5Iv1VaEyvLOGuOpjPWzHZvZNzBUdDbJ5MPmpD73i%2brtsmHiRpFyw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796087264&P2=404&P3=2&P4=G6f1EBLD7FuJh8HKj75E21TcWhh%2fH%2f6ZoJ5Iv1VaEyvLOGuOpjPWzHZvZNzBUdDbJ5MPmpD73i%2brtsmHiRpFyw%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -2499,8 +2499,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 465,
-      "fb_skip_until": 1795481622
+      "fb_streak": 466,
+      "fb_skip_until": 1795486213
     },
     {
       "name": "BitComet",
@@ -2713,7 +2713,7 @@
       "official_site": "https://sweetscape.com/download/",
       "update_items": [],
       "detected_at": "2026-11-24 01:21",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
