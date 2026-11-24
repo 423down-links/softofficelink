@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-24T18:06:28.909667+00:00",
+  "updated_at": "2026-11-24T18:21:45.450313+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.46",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe?v=1795542662136&n=ldinst_9.5.46_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe?v=1795544464560&n=ldinst_9.5.46_ld_407594_ld.exe",
       "downloads": [],
       "size": 602991072,
       "size_mb": 575.1,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.0.37",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe?v=1795542661913&n=ldinst_14.0.37_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe?v=1795544461927&n=ldinst_14.0.37_ld_412570_ld.exe",
       "downloads": [],
       "size": 745672168,
       "size_mb": 711.1,
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-17 10:20",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796148352&P2=404&P3=2&P4=VO7Gx7q1%2f5HaiH%2bUW93rUNvmI28PFAhC8cRbGo3LHRfmXAX3WgtTuu6NqqbKNAbxO%2f%2bidFIxpeSqdM3iySsbUA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796148352&P2=404&P3=2&P4=VO7Gx7q1%2f5HaiH%2bUW93rUNvmI28PFAhC8cRbGo3LHRfmXAX3WgtTuu6NqqbKNAbxO%2f%2bidFIxpeSqdM3iySsbUA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796149257&P2=404&P3=2&P4=nxlBUVlKP%2fOp4mRkp2Tkl4QZndGg%2b5knPOMoz53YqXy7nSKnedk%2fULFb2vLqQfjiNnOUK2M0jUo5WvhvO4oyeg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796149257&P2=404&P3=2&P4=nxlBUVlKP%2fOp4mRkp2Tkl4QZndGg%2b5knPOMoz53YqXy7nSKnedk%2fULFb2vLqQfjiNnOUK2M0jUo5WvhvO4oyeg%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -1145,8 +1145,8 @@
       "official_site": "https://tracker-software.com/product/pdf-xchange-editor/history",
       "update_items": [],
       "detected_at": "2026-11-10 11:21",
-      "fb_streak": 2,
-      "fb_skip_until": 1795542702
+      "fb_streak": 3,
+      "fb_skip_until": 1795547205
     },
     {
       "name": "PDF-XChange Pro",
@@ -2503,8 +2503,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 478,
-      "fb_skip_until": 1795543582
+      "fb_streak": 479,
+      "fb_skip_until": 1795548105
     },
     {
       "name": "BitComet",
