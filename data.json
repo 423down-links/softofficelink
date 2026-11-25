@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25T00:07:23.458146+00:00",
+  "updated_at": "2026-11-25T00:22:56.527589+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.46",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe?v=1795562471348&n=ldinst_9.5.46_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe?v=1795566090701&n=ldinst_9.5.46_ld_407594_ld.exe",
       "downloads": [],
       "size": 602991072,
       "size_mb": 575.1,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.0.37",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe?v=1795562472374&n=ldinst_14.0.37_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe?v=1795566091131&n=ldinst_14.0.37_ld_412570_ld.exe",
       "downloads": [],
       "size": 745672168,
       "size_mb": 711.1,
@@ -124,7 +124,7 @@
       "official_site": "https://www.yy.com/web/pcyy_download/",
       "update_items": [],
       "detected_at": "2026-11-18 10:20",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796169968&P2=404&P3=2&P4=YlL9iCiGCxQ%2fWfM1WkZASKlsF%2f%2f8bWkhbdEgUeFzbqfVsQmz%2biSVCVe%2bgY7qMhuNgZBuz15Kel3HIkp6EOhEHw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796169968&P2=404&P3=2&P4=YlL9iCiGCxQ%2fWfM1WkZASKlsF%2f%2f8bWkhbdEgUeFzbqfVsQmz%2biSVCVe%2bgY7qMhuNgZBuz15Kel3HIkp6EOhEHw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796170888&P2=404&P3=2&P4=MiYbQxAtY50%2bPMt%2fPvcQ1qAeyQnO0e%2fPLTFemYBowP3Jvtc3%2b5OZEj%2bFpXeFcngst8xSm0hwTzFz52Q4BKB4Jg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796170888&P2=404&P3=2&P4=MiYbQxAtY50%2bPMt%2fPvcQ1qAeyQnO0e%2fPLTFemYBowP3Jvtc3%2b5OZEj%2bFpXeFcngst8xSm0hwTzFz52Q4BKB4Jg%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -1145,8 +1145,8 @@
       "official_site": "https://tracker-software.com/product/pdf-xchange-editor/history",
       "update_items": [],
       "detected_at": "2026-11-10 11:21",
-      "fb_streak": 6,
-      "fb_skip_until": 1795562510
+      "fb_streak": 7,
+      "fb_skip_until": 1795569776
     },
     {
       "name": "PDF-XChange Pro",
@@ -2717,7 +2717,7 @@
       "official_site": "https://sweetscape.com/download/",
       "update_items": [],
       "detected_at": "2026-11-24 01:21",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
