@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25T19:52:26.995114+00:00",
+  "updated_at": "2026-11-25T20:05:06.485630+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,8 +187,8 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-17 10:20",
-      "fb_streak": 2,
-      "fb_skip_until": 1795636338
+      "fb_streak": 0,
+      "fb_skip_until": 0
     },
     {
       "name": "WinHex",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796241083&P2=404&P3=2&P4=Nyv217WgJeZnf%2fVx9q0n2JiEwVQ7xekS9RNnrBVt9CbKhdyszCfdGvf4tgIO7oYObR3MXIohZFYT5CBEWevwWQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796241083&P2=404&P3=2&P4=Nyv217WgJeZnf%2fVx9q0n2JiEwVQ7xekS9RNnrBVt9CbKhdyszCfdGvf4tgIO7oYObR3MXIohZFYT5CBEWevwWQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796241835&P2=404&P3=2&P4=Wv6zDKFyY3Ikn05ZJTJZG0h0n%2fG98CRmw6Z%2b6TUNcPt3vuIO1nVcIxHk77A4K0YiWTiP8BQt6%2bnJ%2foj8UlH0Rg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796241835&P2=404&P3=2&P4=Wv6zDKFyY3Ikn05ZJTJZG0h0n%2fG98CRmw6Z%2b6TUNcPt3vuIO1nVcIxHk77A4K0YiWTiP8BQt6%2bnJ%2foj8UlH0Rg%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -1166,8 +1166,8 @@
       "official_site": "https://www.pdf-xchange.com/product/pdf-xchange-pro",
       "update_items": [],
       "detected_at": "2026-11-10 11:06",
-      "fb_streak": 22,
-      "fb_skip_until": 1795636342
+      "fb_streak": 23,
+      "fb_skip_until": 1795640706
     },
     {
       "name": "AnyDesk",
@@ -1222,8 +1222,8 @@
       "download_url": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "download_url_with_params": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "downloads": [],
-      "size": 81267664,
-      "size_mb": 77.5,
+      "size": 81329392,
+      "size_mb": 77.6,
       "last_modified": "2026-11-19",
       "md5": "",
       "official_site": "https://www.wftpserver.com/",
@@ -2503,8 +2503,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 497,
-      "fb_skip_until": 1795636342
+      "fb_streak": 498,
+      "fb_skip_until": 1795640706
     },
     {
       "name": "BitComet",
