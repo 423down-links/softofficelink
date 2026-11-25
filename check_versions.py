@@ -712,9 +712,9 @@ PRODUCTS = [
         'cyberlink_full_installer_sr': ['VDE260910-01'],
         'cyberlink_full_installer_lang': 'Enu',
         'version_authority': 'official_installer',
-        # 完整包 SR 里带构建日（PTD261027-01 / VDE261019-01），CDN 又不给 LM（HEAD 403），
-        # 让检测器给出的日期直接上线上，不走「检测日」口径。
-        'date_authority': 'detector',
+        # 构建日 ≠ 发布日（25.0.1124 构建 11-24、11-25 才上线；1019 构建 10-20 上线，
+        # 实测普遍 +1 天）。检测 15 分钟一轮、检测日=上线日，故不配 date_authority，
+        # 走默认 max(检测日, 构建日) 口径，防「构建日当发布日」再犯（2026-11-25 用户纠正）。
         'version': '25.0.1019.0',
         'base_version': '25.0.1019.0',
         'size': 722417392,
@@ -747,9 +747,8 @@ PRODUCTS = [
         # 版本口径换成「官方完整包文件名」，与线上旧值（1021，来自 nsane 标题）不可比，
         # 声明权威源让防降级放行这次 1021 → 1011 的口径切换
         'version_authority': 'official_installer',
-        # 完整包 SR 里带构建日（PTD261027-01 / VDE261019-01），CDN 又不给 LM（HEAD 403），
-        # 让检测器给出的日期直接上线上，不走「检测日」口径。
-        'date_authority': 'detector',
+        # 构建日 ≠ 发布日（18.0.1123 构建 11-23、11-24 才上线；1011 构建 10-12 上线），
+        # 不配 date_authority，走默认 max(检测日, 构建日) 口径，同 PowerDirector。
         # 试用通道的 DisplayBuildNumber 是安装框架版本（17.6.x），不能当产品版本号
         'cyberlink_trial_version_trusted': False,
         'base_version': '18.0.1011.0',
@@ -4559,11 +4558,12 @@ def detect_cyberlink(product):
                 full_ok = True
                 _VER_SOURCE[product['name']] = product.get(
                     'version_authority', 'official_installer')
-                # 发布日取产品版本里的构建号（MMDD）：25.0.1027.0 / 18.0.1027.0
-                # → 2026-10-27。SR 里的日期只做兜底（PowerDirector 的 SR 会滞后，
+                # 日期先记产品版本里的构建号（MMDD）：25.0.1027.0 → 2026-10-27。
+                # ⚠️ 构建日 ≠ 发布日（实测普遍 +1 天才上线），这里只作日期输入；
+                # 发布日由上层 max(检测日, 构建日) 口径决定（检测 15 分钟一轮=上线日），
+                # 不要配 date_authority='detector' 直通（2026-11-25 用户纠正过）。
+                # SR 里的日期只做兜底（PowerDirector 的 SR 会滞后，
                 # 如 VDE260916-01 对应的却是 1027 构建）。
-                # CDN 不给 Last-Modified（HEAD 403），配 date_authority='detector'
-                # 让这个日期直通线上，不被「检测日」抬高。
                 _vdate = _cyberlink_date_from_version(version)
                 if _vdate:
                     date = _vdate
