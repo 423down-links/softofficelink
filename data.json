@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25T15:23:42.611792+00:00",
+  "updated_at": "2026-11-25T16:08:51.009917+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796224886&P2=404&P3=2&P4=PIwiSnHSwvDzQZlgbvHn3BsYnLNU5yBA7HnY0Cr4fs3OW6pM0gnxUhX7l0vuegPzwpC47RMFcRd%2boUDoI2K9iw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796224886&P2=404&P3=2&P4=PIwiSnHSwvDzQZlgbvHn3BsYnLNU5yBA7HnY0Cr4fs3OW6pM0gnxUhX7l0vuegPzwpC47RMFcRd%2boUDoI2K9iw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796227605&P2=404&P3=2&P4=PtS%2feHnLBHZrFJCMFb5sIaJZMTJyBQsTsZQZjic60bDIwQPh6mBBoGcga5sxNeRbfUSw2dVjK9pkd4zeRHkAuA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796227605&P2=404&P3=2&P4=PtS%2feHnLBHZrFJCMFb5sIaJZMTJyBQsTsZQZjic60bDIwQPh6mBBoGcga5sxNeRbfUSw2dVjK9pkd4zeRHkAuA%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -1103,7 +1103,7 @@
       "official_site": "https://goldwave.ca/",
       "update_items": [],
       "detected_at": "2026-10-09 09:56",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -1166,8 +1166,8 @@
       "official_site": "https://www.pdf-xchange.com/product/pdf-xchange-pro",
       "update_items": [],
       "detected_at": "2026-11-10 11:06",
-      "fb_streak": 19,
-      "fb_skip_until": 1795622027
+      "fb_streak": 20,
+      "fb_skip_until": 1795626531
     },
     {
       "name": "AnyDesk",
@@ -2265,7 +2265,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-11-16",
       "md5": "",
@@ -2503,8 +2503,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 494,
-      "fb_skip_until": 1795622027
+      "fb_streak": 495,
+      "fb_skip_until": 1795626531
     },
     {
       "name": "BitComet",
