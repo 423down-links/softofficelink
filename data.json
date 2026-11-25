@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25T02:52:36.750298+00:00",
+  "updated_at": "2026-11-25T03:07:45.835507+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-17 10:20",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796179877&P2=404&P3=2&P4=GxwtOtm0NGdHdQ7QUNkfPtHktTZvnBoOfoqIgrURQe7Of36OzJWGCiC%2fphh2%2bGbDrneFbJ%2fqbHATdL%2b6mrOOPg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796179877&P2=404&P3=2&P4=GxwtOtm0NGdHdQ7QUNkfPtHktTZvnBoOfoqIgrURQe7Of36OzJWGCiC%2fphh2%2bGbDrneFbJ%2fqbHATdL%2b6mrOOPg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796180776&P2=404&P3=2&P4=Tvzoe8X8kkyhenrJexnf5iv8KRk6uJg3CeewK8zD1OWr30UyjncLetRU0xF27xCyJPkt6chqaZhHSwZ4q3G88g%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796180776&P2=404&P3=2&P4=Tvzoe8X8kkyhenrJexnf5iv8KRk6uJg3CeewK8zD1OWr30UyjncLetRU0xF27xCyJPkt6chqaZhHSwZ4q3G88g%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -2265,7 +2265,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-11-16",
       "md5": "",
@@ -2668,8 +2668,8 @@
       "download_url": "https://www.ludashi.com/pc/download/getDownloadUrl?type=2",
       "download_url_with_params": "https://www.ludashi.com/pc/download/getDownloadUrl?type=2",
       "downloads": [],
-      "size": 283336336,
-      "size_mb": 270.2,
+      "size": 284201112,
+      "size_mb": 271.0,
       "last_modified": "2026-11-24",
       "md5": "",
       "official_site": "https://www.ludashi.com/",
