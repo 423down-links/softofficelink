@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25T09:07:55.017876+00:00",
+  "updated_at": "2026-11-25T09:23:06.947855+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -8,17 +8,17 @@
       "icon": "9",
       "icon_color": "linear-gradient(135deg, #ff6b35, #f7931e)",
       "category": "模拟器",
-      "version": "9.5.46",
-      "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe?v=1795596691498&n=ldinst_9.5.46_ld_407594_ld.exe",
+      "version": "9.5.47",
+      "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.47.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.47.exe?v=1795598489718&n=ldinst_9.5.47_ld_407594_ld.exe",
       "downloads": [],
-      "size": 602991072,
+      "size": 603017184,
       "size_mb": 575.1,
-      "last_modified": "2026-11-17",
+      "last_modified": "2026-11-25",
       "md5": "",
       "official_site": "https://www.ldmnq.com/",
       "update_items": [],
-      "detected_at": "2026-11-17 17:50",
+      "detected_at": "2026-11-25 17:21",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -29,17 +29,17 @@
       "icon": "14",
       "icon_color": "linear-gradient(135deg, #00d4ff, #7b2ff7)",
       "category": "模拟器",
-      "version": "14.0.37",
-      "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe?v=1795596693654&n=ldinst_14.0.37_ld_412570_ld.exe",
+      "version": "14.0.38",
+      "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.38.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.38.exe?v=1795598489316&n=ldinst_14.0.38_ld_412570_ld.exe",
       "downloads": [],
-      "size": 745672168,
+      "size": 745687008,
       "size_mb": 711.1,
-      "last_modified": "2026-11-17",
+      "last_modified": "2026-11-25",
       "md5": "",
       "official_site": "https://www.ldmnq.com/",
       "update_items": [],
-      "detected_at": "2026-11-17 17:50",
+      "detected_at": "2026-11-25 17:21",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796202391&P2=404&P3=2&P4=B2uuJipVNtzxxhAPFCuWoijIoHaXYwea3%2fsZ41wk3GcXX3WkJ6xU7V%2fKYu%2fOkVHjCEvtMVKyaxnY0VJFDBPbbQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796202391&P2=404&P3=2&P4=B2uuJipVNtzxxhAPFCuWoijIoHaXYwea3%2fsZ41wk3GcXX3WkJ6xU7V%2fKYu%2fOkVHjCEvtMVKyaxnY0VJFDBPbbQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796203283&P2=404&P3=2&P4=kWu7s4FNWWfFeR2Qxw5H4gGZ7k9fkGvtaObxl0cBsTftpqWYTwiEHd4%2bBPBWeYyNptZbQnZVM4q3EJ0Gm68knQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796203283&P2=404&P3=2&P4=kWu7s4FNWWfFeR2Qxw5H4gGZ7k9fkGvtaObxl0cBsTftpqWYTwiEHd4%2bBPBWeYyNptZbQnZVM4q3EJ0Gm68knQ%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -1145,8 +1145,8 @@
       "official_site": "https://tracker-software.com/product/pdf-xchange-editor/history",
       "update_items": [],
       "detected_at": "2026-11-10 11:21",
-      "fb_streak": 12,
-      "fb_skip_until": 1795596765
+      "fb_streak": 13,
+      "fb_skip_until": 1795602186
     },
     {
       "name": "PDF-XChange Pro",
@@ -1166,8 +1166,8 @@
       "official_site": "https://www.pdf-xchange.com/product/pdf-xchange-pro",
       "update_items": [],
       "detected_at": "2026-11-10 11:06",
-      "fb_streak": 14,
-      "fb_skip_until": 1795597700
+      "fb_streak": 15,
+      "fb_skip_until": 1795602186
     },
     {
       "name": "AnyDesk",
@@ -1222,8 +1222,8 @@
       "download_url": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "download_url_with_params": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "downloads": [],
-      "size": 81267664,
-      "size_mb": 77.5,
+      "size": 81329392,
+      "size_mb": 77.6,
       "last_modified": "2026-11-19",
       "md5": "",
       "official_site": "https://www.wftpserver.com/",
@@ -2265,7 +2265,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-11-16",
       "md5": "",
@@ -2503,8 +2503,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 489,
-      "fb_skip_until": 1795597700
+      "fb_streak": 490,
+      "fb_skip_until": 1795602186
     },
     {
       "name": "BitComet",
