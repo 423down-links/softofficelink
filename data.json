@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25T18:52:22.954875+00:00",
+  "updated_at": "2026-11-25T19:07:14.362714+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-17 10:20",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796237482&P2=404&P3=2&P4=FVKknDmNeDpTbXW1ON%2b9EHRSakLBuiIpZalc3tJ3LWiB4DLw2Fz8W9j1zkvsj0fDaKjWiwBgTvI0PLRntTWfqQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796237482&P2=404&P3=2&P4=FVKknDmNeDpTbXW1ON%2b9EHRSakLBuiIpZalc3tJ3LWiB4DLw2Fz8W9j1zkvsj0fDaKjWiwBgTvI0PLRntTWfqQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796238378&P2=404&P3=2&P4=YCNYOJFZIjvf4j1YB720tF96HO7w49jj8Lecc8DMjJxmS%2bBoD6wV35Kw6NFylVQThrXNgzVD6cDPzMDCP8ZhGg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796238378&P2=404&P3=2&P4=YCNYOJFZIjvf4j1YB720tF96HO7w49jj8Lecc8DMjJxmS%2bBoD6wV35Kw6NFylVQThrXNgzVD6cDPzMDCP8ZhGg%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -536,7 +536,7 @@
       "official_site": "https://www.havysoft.cl/descargar.html",
       "update_items": [],
       "detected_at": "2026-11-03 22:35",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -1222,8 +1222,8 @@
       "download_url": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "download_url_with_params": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "downloads": [],
-      "size": 81267664,
-      "size_mb": 77.5,
+      "size": 81329392,
+      "size_mb": 77.6,
       "last_modified": "2026-11-19",
       "md5": "",
       "official_site": "https://www.wftpserver.com/",
