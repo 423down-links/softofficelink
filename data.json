@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25T01:27:51.360557+00:00",
+  "updated_at": "2026-11-25T01:52:47.790070+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.46",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe?v=1795569685539&n=ldinst_9.5.46_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.46.exe?v=1795571489889&n=ldinst_9.5.46_ld_407594_ld.exe",
       "downloads": [],
       "size": 602991072,
       "size_mb": 575.1,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.0.37",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe?v=1795569684696&n=ldinst_14.0.37_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.37.exe?v=1795571489238&n=ldinst_14.0.37_ld_412570_ld.exe",
       "downloads": [],
       "size": 745672168,
       "size_mb": 711.1,
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796174783&P2=404&P3=2&P4=UVtlFZdFNbdJIaefOTCRytc6sdV3MzFEWAF1n7U9uYWi4W5dqa4Qbhb7JbmuX7gpFpiD1hrS4DXJPS1yI63oXw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796174783&P2=404&P3=2&P4=UVtlFZdFNbdJIaefOTCRytc6sdV3MzFEWAF1n7U9uYWi4W5dqa4Qbhb7JbmuX7gpFpiD1hrS4DXJPS1yI63oXw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796176287&P2=404&P3=2&P4=VOzox0KYQZndraoVR9bKr6p%2b0XUc%2b1fxdqnpC8vpiKw%2bL7jnfFV1kfZStnYfvr%2fbxYfbd9KO%2bnSLy33NS3I6Tw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796176287&P2=404&P3=2&P4=VOzox0KYQZndraoVR9bKr6p%2b0XUc%2b1fxdqnpC8vpiKw%2bL7jnfFV1kfZStnYfvr%2fbxYfbd9KO%2bnSLy33NS3I6Tw%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -1145,8 +1145,8 @@
       "official_site": "https://tracker-software.com/product/pdf-xchange-editor/history",
       "update_items": [],
       "detected_at": "2026-11-10 11:21",
-      "fb_streak": 7,
-      "fb_skip_until": 1795569776
+      "fb_streak": 8,
+      "fb_skip_until": 1795575167
     },
     {
       "name": "PDF-XChange Pro",
@@ -2668,8 +2668,8 @@
       "download_url": "https://www.ludashi.com/pc/download/getDownloadUrl?type=2",
       "download_url_with_params": "https://www.ludashi.com/pc/download/getDownloadUrl?type=2",
       "downloads": [],
-      "size": 283336336,
-      "size_mb": 270.2,
+      "size": 284201112,
+      "size_mb": 271.0,
       "last_modified": "2026-11-24",
       "md5": "",
       "official_site": "https://www.ludashi.com/",
