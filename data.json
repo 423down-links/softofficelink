@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25T20:52:34.212029+00:00",
+  "updated_at": "2026-11-25T21:07:26.694933+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796244686&P2=404&P3=2&P4=AsqEolZ8TjqOWXAnAvhs22L%2bO9cpmOALr0o4biFrYvzn2M9t95i11rBjWtE8tMHxFwRYYXLH41web2hH5LBH%2bQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796244686&P2=404&P3=2&P4=AsqEolZ8TjqOWXAnAvhs22L%2bO9cpmOALr0o4biFrYvzn2M9t95i11rBjWtE8tMHxFwRYYXLH41web2hH5LBH%2bQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796245582&P2=404&P3=2&P4=OSTb2JkStKT4U8snNd7uhnFyDFEPV%2bUBocQ0NLxUNfKJcgKo5lEOPaYhu9wnEXCc7iJOpMoxK8U%2f9uApGxEbaQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796245582&P2=404&P3=2&P4=OSTb2JkStKT4U8snNd7uhnFyDFEPV%2bUBocQ0NLxUNfKJcgKo5lEOPaYhu9wnEXCc7iJOpMoxK8U%2f9uApGxEbaQ%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -1166,8 +1166,8 @@
       "official_site": "https://www.pdf-xchange.com/product/pdf-xchange-pro",
       "update_items": [],
       "detected_at": "2026-11-10 11:06",
-      "fb_streak": 23,
-      "fb_skip_until": 1795640706
+      "fb_streak": 24,
+      "fb_skip_until": 1795644446
     },
     {
       "name": "AnyDesk",
@@ -1222,8 +1222,8 @@
       "download_url": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "download_url_with_params": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "downloads": [],
-      "size": 81329392,
-      "size_mb": 77.6,
+      "size": 81267664,
+      "size_mb": 77.5,
       "last_modified": "2026-11-19",
       "md5": "",
       "official_site": "https://www.wftpserver.com/",
@@ -2503,8 +2503,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 498,
-      "fb_skip_until": 1795640706
+      "fb_streak": 499,
+      "fb_skip_until": 1795644446
     },
     {
       "name": "BitComet",
