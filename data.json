@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25T05:52:51.680850+00:00",
+  "updated_at": "2026-11-25T06:08:26.544691+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,8 +187,8 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-17 10:20",
-      "fb_streak": 2,
-      "fb_skip_until": 1795585995
+      "fb_streak": 3,
+      "fb_skip_until": 1795589606
     },
     {
       "name": "WinHex",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796190680&P2=404&P3=2&P4=nhv1YubXt9KurJqAKqb7b72jJiv6JsJFpBZR2pxHLKEyyHD49ShTHklrFtaE%2fGG3cDD%2bdX0y1vD3iHPZydsRLg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796190680&P2=404&P3=2&P4=nhv1YubXt9KurJqAKqb7b72jJiv6JsJFpBZR2pxHLKEyyHD49ShTHklrFtaE%2fGG3cDD%2bdX0y1vD3iHPZydsRLg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796191602&P2=404&P3=2&P4=fGGYWPmnZd7Qle6H%2bkkFNhPXfMNaWbaRlrRKpzs7AotagWkxrWXSO5cD%2bLHOHDVHmwqbe23hMMxWE%2fQsoVyAGQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796191602&P2=404&P3=2&P4=fGGYWPmnZd7Qle6H%2bkkFNhPXfMNaWbaRlrRKpzs7AotagWkxrWXSO5cD%2bLHOHDVHmwqbe23hMMxWE%2fQsoVyAGQ%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -1222,8 +1222,8 @@
       "download_url": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "download_url_with_params": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "downloads": [],
-      "size": 81267664,
-      "size_mb": 77.5,
+      "size": 81329392,
+      "size_mb": 77.6,
       "last_modified": "2026-11-19",
       "md5": "",
       "official_site": "https://www.wftpserver.com/",
