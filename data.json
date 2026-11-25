@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25T04:53:15.076326+00:00",
+  "updated_at": "2026-11-25T05:07:41.382707+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-17 10:20",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796187080&P2=404&P3=2&P4=SQpbc0%2buufNgMg5%2bWV1dcyTu1%2ft7guqzcnpd%2buXNEYI0m3qyDHxEoVouJk4dBn4pYzx2jxk53yVoeusHMFOo3Q%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796187080&P2=404&P3=2&P4=SQpbc0%2buufNgMg5%2bWV1dcyTu1%2ft7guqzcnpd%2buXNEYI0m3qyDHxEoVouJk4dBn4pYzx2jxk53yVoeusHMFOo3Q%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796187973&P2=404&P3=2&P4=PZPFxjIu1ZWhCAJdgNuw9WsgGVjCHQl8r3HwUnZd8l6D7ixFgLD%2bQsB74knZ4UCf5AUSFiXVGPGl6MK1DD7JTQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796187973&P2=404&P3=2&P4=PZPFxjIu1ZWhCAJdgNuw9WsgGVjCHQl8r3HwUnZd8l6D7ixFgLD%2bQsB74knZ4UCf5AUSFiXVGPGl6MK1DD7JTQ%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -1103,7 +1103,7 @@
       "official_site": "https://goldwave.ca/",
       "update_items": [],
       "detected_at": "2026-10-09 09:56",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -1369,8 +1369,8 @@
       "download_url": "https://www.winxdvd.com/download/winxvideo-ai.exe",
       "download_url_with_params": "https://www.winxdvd.com/download/winxvideo-ai.exe",
       "downloads": [],
-      "size": 307232768,
-      "size_mb": 293.0,
+      "size": 307118576,
+      "size_mb": 292.9,
       "last_modified": "2026-09-20",
       "md5": "",
       "official_site": "https://www.winxdvd.com/winxvideo-ai/",
