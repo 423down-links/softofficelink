@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25T10:18:20.555749+00:00",
+  "updated_at": "2026-11-25T10:53:04.558559+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.47",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.47.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.47.exe?v=1795600290480&n=ldinst_9.5.47_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.47.exe?v=1795603892866&n=ldinst_9.5.47_ld_407594_ld.exe",
       "downloads": [],
       "size": 603017184,
       "size_mb": 575.1,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.0.38",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.38.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.38.exe?v=1795600288883&n=ldinst_14.0.38_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.38.exe?v=1795603892038&n=ldinst_14.0.38_ld_412570_ld.exe",
       "downloads": [],
       "size": 745687008,
       "size_mb": 711.1,
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.33",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796206615&P2=404&P3=2&P4=Chy%2fkaPHqI4nQh7w6Q94WkJb2h5jPOSW7%2foKytrzRH%2bVNvWQEa0a%2fBS4FlSDvZcLXrXCjbW78KPdqKXv1RzLLw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796206615&P2=404&P3=2&P4=Chy%2fkaPHqI4nQh7w6Q94WkJb2h5jPOSW7%2foKytrzRH%2bVNvWQEa0a%2fBS4FlSDvZcLXrXCjbW78KPdqKXv1RzLLw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796208686&P2=404&P3=2&P4=mOKx6g%2bzs%2fJ1rrIgEErsEDLU%2bgEFVPpoVJj4LoKiHs40ZjMcX2I3YZV0V5o%2br0cvoPGMdE3ji%2f8Vcg20g%2f1tNg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/9e8f4c58-fcda-4455-9edb-bb8ab5830e9e?P1=1796208686&P2=404&P3=2&P4=mOKx6g%2bzs%2fJ1rrIgEErsEDLU%2bgEFVPpoVJj4LoKiHs40ZjMcX2I3YZV0V5o%2br0cvoPGMdE3ji%2f8Vcg20g%2f1tNg%3d%3d",
       "downloads": [],
       "size": 286474064,
       "size_mb": 273.2,
@@ -1145,8 +1145,8 @@
       "official_site": "https://tracker-software.com/product/pdf-xchange-editor/history",
       "update_items": [],
       "detected_at": "2026-11-10 11:21",
-      "fb_streak": 13,
-      "fb_skip_until": 1795602186
+      "fb_streak": 14,
+      "fb_skip_until": 1795607584
     },
     {
       "name": "PDF-XChange Pro",
@@ -1166,8 +1166,8 @@
       "official_site": "https://www.pdf-xchange.com/product/pdf-xchange-pro",
       "update_items": [],
       "detected_at": "2026-11-10 11:06",
-      "fb_streak": 15,
-      "fb_skip_until": 1795602186
+      "fb_streak": 16,
+      "fb_skip_until": 1795607584
     },
     {
       "name": "AnyDesk",
@@ -1222,8 +1222,8 @@
       "download_url": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "download_url_with_params": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "downloads": [],
-      "size": 81329392,
-      "size_mb": 77.6,
+      "size": 81267664,
+      "size_mb": 77.5,
       "last_modified": "2026-11-19",
       "md5": "",
       "official_site": "https://www.wftpserver.com/",
@@ -2503,8 +2503,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 490,
-      "fb_skip_until": 1795602186
+      "fb_streak": 491,
+      "fb_skip_until": 1795607584
     },
     {
       "name": "BitComet",
@@ -2668,8 +2668,8 @@
       "download_url": "https://www.ludashi.com/pc/download/getDownloadUrl?type=2",
       "download_url_with_params": "https://www.ludashi.com/pc/download/getDownloadUrl?type=2",
       "downloads": [],
-      "size": 284201112,
-      "size_mb": 271.0,
+      "size": 283336336,
+      "size_mb": 270.2,
       "last_modified": "2026-11-24",
       "md5": "",
       "official_site": "https://www.ludashi.com/",
