@@ -140,6 +140,9 @@ def emit(cfg, notes):
     print('# 4. 下载通道验证: 浏览器 UA 点开 4xx/证书报错的直链浏览器必挂')
     print('#    （FileZilla UA 白名单实测），需镜像或代理')
     print('# 5. 版本号展示口径与 PE/包内实际一致（段数、Build 写法）')
+    print('# 6. 构建日≠发布日: 版本号/文件名里的 MMDD 构建号、包体编译日只是构建时间，')
+    print('#    发布时间走检测日口径（别配 date_authority=detector）；只有官方页明示的')
+    print('#    发布日才直通（CyberLink 构建 11-24、11-25 才上线实测）')
 
 
 def probe_github(url, name):
