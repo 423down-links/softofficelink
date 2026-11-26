@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26T04:06:51.002862+00:00",
+  "updated_at": "2026-11-26T04:14:33.535034+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-17 10:20",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.45",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796270780&P2=404&P3=2&P4=SWxQiTh0bhyQVe3ObL8nYgibL9q%2bVxgCwJjYe4ds0fZDIDtQzHcBNwJB%2f%2bccPK6SLAxWBxdOH4LmYGBC2UgXqg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796270780&P2=404&P3=2&P4=SWxQiTh0bhyQVe3ObL8nYgibL9q%2bVxgCwJjYe4ds0fZDIDtQzHcBNwJB%2f%2bccPK6SLAxWBxdOH4LmYGBC2UgXqg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796271239&P2=404&P3=2&P4=mCSjAdYMGQY1sP171Lakh%2b3DovuTJgXmuO7AbJ%2bPxNDnGMP38Yly%2faM3Lavx11rjvnBPEkQ0i0NBbzL9ghMZwQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796271239&P2=404&P3=2&P4=mCSjAdYMGQY1sP171Lakh%2b3DovuTJgXmuO7AbJ%2bPxNDnGMP38Yly%2faM3Lavx11rjvnBPEkQ0i0NBbzL9ghMZwQ%3d%3d",
       "downloads": [],
       "size": 286801232,
       "size_mb": 273.5,
@@ -1958,17 +1958,17 @@
       "icon": "ID",
       "icon_color": "linear-gradient(135deg, #4caf50, #2e7d32)",
       "category": "下载工具",
-      "version": "6.43 Build 18",
-      "download_url": "https://mirror2.internetdownloadmanager.com/idman643build11.exe",
-      "download_url_with_params": "https://mirror2.internetdownloadmanager.com/idman643build11.exe",
+      "version": "6.43 Build 19",
+      "download_url": "https://download.internetdownloadmanager.com/idman643build19.exe",
+      "download_url_with_params": "https://download.internetdownloadmanager.com/idman643build19.exe",
       "downloads": [],
       "size": 12332432,
       "size_mb": 11.8,
-      "last_modified": "2026-11-05",
+      "last_modified": "2026-11-25",
       "md5": "",
       "official_site": "https://www.internetdownloadmanager.com/news.html",
       "update_items": [],
-      "detected_at": "2026-11-05 06:06",
+      "detected_at": "2026-11-26 12:13",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
