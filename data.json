@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26T10:52:19.098014+00:00",
+  "updated_at": "2026-11-26T11:06:47.340411+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.45",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796295078&P2=404&P3=2&P4=OaXdwVZhgSAsSJlAQUoFiReueRvY0mSaBFEP3usPKo15dZ3DBm77kbVO0xBtZpQAdWxE%2bBUppABqWFD8h%2bcaEw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796295078&P2=404&P3=2&P4=OaXdwVZhgSAsSJlAQUoFiReueRvY0mSaBFEP3usPKo15dZ3DBm77kbVO0xBtZpQAdWxE%2bBUppABqWFD8h%2bcaEw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796295972&P2=404&P3=2&P4=jTFf3xFPk58ZFcdHMatFb6NCT4dIfCLw%2bHAxtZOyMrhc7Xj8yAXtiI68w%2fqOJtLHBp1D5dtIAM%2fIOIRN16teiw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796295972&P2=404&P3=2&P4=jTFf3xFPk58ZFcdHMatFb6NCT4dIfCLw%2bHAxtZOyMrhc7Xj8yAXtiI68w%2fqOJtLHBp1D5dtIAM%2fIOIRN16teiw%3d%3d",
       "downloads": [],
       "size": 286801232,
       "size_mb": 273.5,
@@ -355,7 +355,7 @@
       "official_site": "https://bbs.360.cn/thread-16184433-1-1.html",
       "update_items": [],
       "detected_at": "2026-11-16 14:21",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -376,7 +376,7 @@
       "official_site": "https://chromex.360.cn/",
       "update_items": [],
       "detected_at": "2026-10-23 14:51",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -1166,8 +1166,8 @@
       "official_site": "https://www.pdf-xchange.com/product/pdf-xchange-pro",
       "update_items": [],
       "detected_at": "2026-11-10 11:06",
-      "fb_streak": 34,
-      "fb_skip_until": 1795690330
+      "fb_streak": 35,
+      "fb_skip_until": 1795694807
     },
     {
       "name": "AnyDesk",
@@ -2499,8 +2499,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 509,
-      "fb_skip_until": 1795690330
+      "fb_streak": 510,
+      "fb_skip_until": 1795694807
     },
     {
       "name": "BitComet",
