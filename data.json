@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26T08:06:56.421004+00:00",
+  "updated_at": "2026-11-26T08:24:01.487303+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.45",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796285177&P2=404&P3=2&P4=fXCRvedmodzyy1wcn2cIOAaM%2fefrLasiDY3km4H3g3UWRD8VDfCHwLZuEGeA%2fSPoZGSKnyMdl8tQ8GVw%2fCgG2w%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796285177&P2=404&P3=2&P4=fXCRvedmodzyy1wcn2cIOAaM%2fefrLasiDY3km4H3g3UWRD8VDfCHwLZuEGeA%2fSPoZGSKnyMdl8tQ8GVw%2fCgG2w%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796286196&P2=404&P3=2&P4=Z0rNYXGubnlxxiJxGIyPMwGHHq74u4r6%2b2NOGVbE050ECZM6oLu5YxPcVonHPFB8VfVyX9yuwCPk2NIfNnEPEQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796286196&P2=404&P3=2&P4=Z0rNYXGubnlxxiJxGIyPMwGHHq74u4r6%2b2NOGVbE050ECZM6oLu5YxPcVonHPFB8VfVyX9yuwCPk2NIfNnEPEQ%3d%3d",
       "downloads": [],
       "size": 286801232,
       "size_mb": 273.5,
@@ -1166,8 +1166,8 @@
       "official_site": "https://www.pdf-xchange.com/product/pdf-xchange-pro",
       "update_items": [],
       "detected_at": "2026-11-10 11:06",
-      "fb_streak": 32,
-      "fb_skip_until": 1795681342
+      "fb_streak": 33,
+      "fb_skip_until": 1795685041
     },
     {
       "name": "AnyDesk",
@@ -2261,7 +2261,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-11-16",
       "md5": "",
@@ -2499,8 +2499,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 507,
-      "fb_skip_until": 1795681342
+      "fb_streak": 508,
+      "fb_skip_until": 1795685041
     },
     {
       "name": "BitComet",
@@ -2776,6 +2776,27 @@
       "official_site": "https://www.geeks3d.com/furmark/",
       "update_items": [],
       "detected_at": "2026-11-04 02:01",
+      "fb_streak": 0,
+      "fb_skip_until": 0
+    },
+    {
+      "name": "EZ CD Audio Converter",
+      "name_cn": "EZ CD Audio Converter",
+      "alias": "EZ CD 音乐转换器",
+      "icon": "EZ",
+      "icon_color": "linear-gradient(135deg, #00897b, #26a69a)",
+      "category": "影音娱乐",
+      "version": "14.0.7.1",
+      "download_url": "https://www.poikosoft.com/download/ez_cd_audio_converter_setup.exe",
+      "download_url_with_params": "https://www.poikosoft.com/download/ez_cd_audio_converter_setup.exe",
+      "downloads": [],
+      "size": 0,
+      "size_mb": 0,
+      "last_modified": "2026-11-26",
+      "md5": "",
+      "official_site": "https://download.poikosoft.com/",
+      "update_items": [],
+      "detected_at": "2026-11-26 16:23",
       "fb_streak": 0,
       "fb_skip_until": 0
     }
