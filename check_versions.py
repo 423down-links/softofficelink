@@ -2529,6 +2529,30 @@ PRODUCTS = [
         'skip_md5': True,
         'official_site': 'https://www.geeks3d.com/furmark/',
     },
+    {
+        'name': 'EZ CD Audio Converter',
+        'name_cn': 'EZ CD Audio Converter',
+        'alias': 'EZ CD 音乐转换器',
+        'icon': 'EZ',
+        'icon_color': 'linear-gradient(135deg, #00897b, #26a69a)',
+        'category': '影音娱乐',
+        # 固定直链永远指最新安装包，版本从包体 PE 读取（= About 框口径 14.0.7.1，
+        # 四段式，MooSoft 9 月包 14.0.4.1 同款）。包一换（大小/Last-Modified 变）
+        # 即检出新版，PE 缓存按包指纹命中、不重复下载。
+        # ⚠️ 不用官网页面当版本源：全是滞后混乱的营销口径（history 页实时只到
+        #    14.0 且无日期、下载页镜像 13.1/13.2.1 各说各话）；日期用包体
+        #    Last-Modified（铁律3，官方无可靠发布日）。
+        # ⚠️ 用户给的 ..._x64.exe 直链实测 404（服务器回 "404 - Not Found"），
+        #    真实下载链接是官网 Free Download 按钮的 ez_cd_audio_converter_setup.exe。
+        'detect_type': 'fixed',
+        'download_url': 'https://www.poikosoft.com/download/ez_cd_audio_converter_setup.exe',
+        'pe_version': True,
+        'version_authority': 'pe',
+        'version': '14.0.7.1',
+        'date': '2026-11-26',
+        'skip_md5': True,
+        'official_site': 'https://download.poikosoft.com/',
+    },
 ]
 
 MAX_INCREMENT = 30  # 最多递增检测30个版本
