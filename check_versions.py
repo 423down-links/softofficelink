@@ -1663,10 +1663,24 @@ PRODUCTS = [
         'category': '下载工具',
         'detect_type': 'scrape',
         'check_url': 'https://www.internetdownloadmanager.com/news.html',
-        'version_regex': r'(\d+\.\d+)\s+Build\s+(\d+)',
+        # 多候选正则：首选锚定「What's new in version」条目（新闻页按新到旧排，首条=最新），
+        # 兜底全页通用；两组捕获按 Build 口径拼 6.43.0.19，idm_build 再转回「6.43 Build 19」
+        'version_regex': [
+            r"What's new in version (\d+\.\d+)\s+Build\s+(\d+)",
+            r'(\d+\.\d+)\s+Build\s+(\d+)',
+        ],
         'version_format': 'idm_build',
-        'date_regex': r'([A-Z][a-z]+ \d+, 20\d{2})',
-        'download_url': 'https://mirror2.internetdownloadmanager.com/idman643build11.exe',
+        # 日期锚定同一条目，认官方「Released:」发布日直通（铁律3，不被检测日抬高）
+        'date_regex': r"What's new in version \d+\.\d+\s+Build\s+\d+[\s\S]{0,300}?Released:\s*([A-Za-z]+ \d+, 20\d{2})",
+        'prefer_scraped_date': True,
+        'date_authority': 'detector',
+        # 直链自动跟版本（idman643build19.exe），不再手写死
+        'download_url_regex': r'(https?://[^"\'\s]+idman\d*build\d+\.exe)',
+        'prefer_scraped_version': True,
+        'version_authority': 'page',
+        'version': '6.43.0.19',
+        'date': '2026-11-25',
+        'download_url': 'https://download.internetdownloadmanager.com/idman643build19.exe',
         'skip_md5': True,
         'detect_timeout': 120,
         'official_site': 'https://www.internetdownloadmanager.com/news.html',
@@ -6460,7 +6474,7 @@ def detect_gitlab_release(product):
 
 
 def _ver_tuple(v):
-    """把版本号转成可比较的元组，缺失段补0，非数字段忽略。
+    """把版本号转成可比较的元组，缺失段补0。
     例：'12.11.9.9' -> (12, 11, 9, 9)；'9.35' -> (9, 35, 0)
     日期型版本（资源站用，如 '2026-10-06'）按 YYYYMMDD 折成单个整数，
     否则按 '.' 切分只会取到年份，月/日丢失导致不同日期被判定相等。
@@ -6474,10 +6488,11 @@ def _ver_tuple(v):
     if m:
         y, mo, d = int(m.group(1)), int(m.group(2)), int(m.group(3))
         return (y * 10000 + mo * 100 + d, 0, 0, 0)
-    parts = []
-    for p in s.split('.'):
-        m = re.match(r'^(\d+)', p)
-        parts.append(int(m.group(1)) if m else 0)
+    # 串里所有数字段都参与比较（'6.43 Build 19' -> (6, 43, 19)）。
+    # 只取每段开头数字会把 "6.43 Build 19" 和 "6.43 Build 18" 都解析成
+    # (6, 43, 0, 0)、「版本等价」当成没更新整个吞掉（IDM 停更实测）；
+    # SR-6/SR-5 这类后缀同理。仍保底等价：'4.11' 与 '4.11.0.0' 都是 (4,11,0,0)。
+    parts = [int(x) for x in re.findall(r'\d+', s)]
     while len(parts) < 4:
         parts.append(0)
     return tuple(parts[:4])
