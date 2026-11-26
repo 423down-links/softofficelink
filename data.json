@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26T11:22:09.419753+00:00",
+  "updated_at": "2026-11-26T11:52:12.789768+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.48",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.48.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.48.exe?v=1795692081295&n=ldinst_9.5.48_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.48.exe?v=1795693900842&n=ldinst_9.5.48_ld_407594_ld.exe",
       "downloads": [],
       "size": 601159136,
       "size_mb": 573.3,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.0.39",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.39.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.39.exe?v=1795692079326&n=ldinst_14.0.39_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.0.39.exe?v=1795693895584&n=ldinst_14.0.39_ld_412570_ld.exe",
       "downloads": [],
       "size": 743417312,
       "size_mb": 709.0,
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.45",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796296874&P2=404&P3=2&P4=Oj%2fHC1AOUwVA8KnG2j%2b0uQQWMRnzgNitnXvu%2bzKSpNpQ2pT0BLkGr5xsQKumpRX7WQmrO%2f2sl3XZcjJImgjgUw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796296874&P2=404&P3=2&P4=Oj%2fHC1AOUwVA8KnG2j%2b0uQQWMRnzgNitnXvu%2bzKSpNpQ2pT0BLkGr5xsQKumpRX7WQmrO%2f2sl3XZcjJImgjgUw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796298693&P2=404&P3=2&P4=Dhdugf3VN49l1z%2bSL1CEfKpxa%2f5d9AHBwNKkBAngvPIjSYFkps2fcI1H3xqO6iDmfaPYGaeDnVYoV4Ju8p3AFw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796298693&P2=404&P3=2&P4=Dhdugf3VN49l1z%2bSL1CEfKpxa%2f5d9AHBwNKkBAngvPIjSYFkps2fcI1H3xqO6iDmfaPYGaeDnVYoV4Ju8p3AFw%3d%3d",
       "downloads": [],
       "size": 286801232,
       "size_mb": 273.5,
@@ -1103,7 +1103,7 @@
       "official_site": "https://goldwave.ca/",
       "update_items": [],
       "detected_at": "2026-10-09 09:56",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -2261,7 +2261,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "downloads": [],
-      "size": 5754,
+      "size": 5733,
       "size_mb": 0.0,
       "last_modified": "2026-11-16",
       "md5": "",
