@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26T06:52:10.920879+00:00",
+  "updated_at": "2026-11-26T07:07:10.527094+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.45",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796280687&P2=404&P3=2&P4=i3tUNniFrvUzyoPcHSrpzZs4g2aZaPzjx4cfOuOouKy0U4Blf4Bg4FhRZEnddyOC%2feUNAwT%2frQzb7wzYVjROyA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796280687&P2=404&P3=2&P4=i3tUNniFrvUzyoPcHSrpzZs4g2aZaPzjx4cfOuOouKy0U4Blf4Bg4FhRZEnddyOC%2feUNAwT%2frQzb7wzYVjROyA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796281598&P2=404&P3=2&P4=h7VwMtU6Sc97TyHuDEvLJJxQWxN%2b%2fXFG8yCk2KslWPZZpmWiGkXl8A1hCwu5moiSwJV5Qx%2fKiMkJ4%2fTfCxEPdA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796281598&P2=404&P3=2&P4=h7VwMtU6Sc97TyHuDEvLJJxQWxN%2b%2fXFG8yCk2KslWPZZpmWiGkXl8A1hCwu5moiSwJV5Qx%2fKiMkJ4%2fTfCxEPdA%3d%3d",
       "downloads": [],
       "size": 286801232,
       "size_mb": 273.5,
@@ -1222,8 +1222,8 @@
       "download_url": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "download_url_with_params": "https://www.wftpserver.com/download/WingFtpServer.exe",
       "downloads": [],
-      "size": 81329392,
-      "size_mb": 77.6,
+      "size": 81267664,
+      "size_mb": 77.5,
       "last_modified": "2026-11-19",
       "md5": "",
       "official_site": "https://www.wftpserver.com/",
@@ -2000,26 +2000,22 @@
       "icon": "M",
       "icon_color": "linear-gradient(135deg, #8e44ad, #6c3483)",
       "category": "资源站",
-      "version": "2026-11-24",
+      "version": "2026-11-26",
       "download_url": "https://w18.monkrus.ws/",
       "download_url_with_params": "https://w18.monkrus.ws/",
       "downloads": [],
       "size": 0,
       "size_mb": 0,
-      "last_modified": "2026-11-24",
+      "last_modified": "2026-11-26",
       "md5": "",
       "official_site": "https://w18.monkrus.ws/",
       "update_items": [
         {
-          "title": "Adobe Acrobat 2026 (v26.3.22120) x64 Multilingual",
-          "url": "https://w18.monkrus.ws/2026/11/adobe-acrobat-2026-v26322120-x64.html"
-        },
-        {
-          "title": "Adobe Acrobat 2026 (v26.3.22120) x86 Multilingual",
-          "url": "https://w18.monkrus.ws/2026/11/adobe-acrobat-2026-v26322120-x86.html"
+          "title": "Civil 3D (.1.1) Addon for Autodesk AutoCAD 2027 RUS-ENG",
+          "url": "https://w18.monkrus.ws/2026/11/civil-3d-11-addon-for-autodesk-autocad.html"
         }
       ],
-      "detected_at": "2026-11-24 16:05",
+      "detected_at": "2026-11-26 15:06",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
@@ -2265,7 +2261,7 @@
       "download_url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "download_url_with_params": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.5/CrystalDiskInfo9_9_5.zip/download",
       "downloads": [],
-      "size": 5733,
+      "size": 5754,
       "size_mb": 0.0,
       "last_modified": "2026-11-16",
       "md5": "",
