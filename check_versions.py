@@ -2550,6 +2550,8 @@ PRODUCTS = [
         'version_authority': 'pe',
         'version': '14.0.7.1',
         'date': '2026-11-26',
+        # 站点 CDN 间歇 502（探测拿不到体积时的展示兜底，真实体积测到即覆盖）
+        'size': int(40.8 * 1024 * 1024),
         'skip_md5': True,
         'official_site': 'https://download.poikosoft.com/',
     },
