@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26T03:52:19.241771+00:00",
+  "updated_at": "2026-11-26T04:06:51.002862+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-17 10:20",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.45",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796269881&P2=404&P3=2&P4=A%2f0VpXdqNlJatFzmabtDOxNAFk3mzyW2JAsMf6dBDgENSZNSxCYGHhtVUxg5V%2be7eWXWdsvB1WQEWS%2fKOA5aYg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796269881&P2=404&P3=2&P4=A%2f0VpXdqNlJatFzmabtDOxNAFk3mzyW2JAsMf6dBDgENSZNSxCYGHhtVUxg5V%2be7eWXWdsvB1WQEWS%2fKOA5aYg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796270780&P2=404&P3=2&P4=SWxQiTh0bhyQVe3ObL8nYgibL9q%2bVxgCwJjYe4ds0fZDIDtQzHcBNwJB%2f%2bccPK6SLAxWBxdOH4LmYGBC2UgXqg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796270780&P2=404&P3=2&P4=SWxQiTh0bhyQVe3ObL8nYgibL9q%2bVxgCwJjYe4ds0fZDIDtQzHcBNwJB%2f%2bccPK6SLAxWBxdOH4LmYGBC2UgXqg%3d%3d",
       "downloads": [],
       "size": 286801232,
       "size_mb": 273.5,
@@ -2668,8 +2668,8 @@
       "download_url": "https://www.ludashi.com/pc/download/getDownloadUrl?type=2",
       "download_url_with_params": "https://www.ludashi.com/pc/download/getDownloadUrl?type=2",
       "downloads": [],
-      "size": 283336336,
-      "size_mb": 270.2,
+      "size": 284201112,
+      "size_mb": 271.0,
       "last_modified": "2026-11-24",
       "md5": "",
       "official_site": "https://www.ludashi.com/",
