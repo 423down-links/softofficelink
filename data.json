@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26T20:06:17.843161+00:00",
+  "updated_at": "2026-11-26T20:21:40.649180+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.48",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.48.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.48.exe?v=1795722666380&n=ldinst_9.5.48_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.48.exe?v=1795724461459&n=ldinst_9.5.48_ld_407594_ld.exe",
       "downloads": [],
       "size": 601159136,
       "size_mb": 573.3,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.1.0",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.1.0.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.1.0.exe?v=1795722666604&n=ldinst_14.1.0_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.1.0.exe?v=1795724461966&n=ldinst_14.1.0_ld_412570_ld.exe",
       "downloads": [],
       "size": 745979872,
       "size_mb": 711.4,
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.45",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796328351&P2=404&P3=2&P4=elWYscSn63i3mctUVzOQmtB%2bF0P6mCH3bKMErOJTG60krAM0pixiAxfNBfLnVXuRfX%2bXK6Z8BqaZtPquDDUNiw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796328351&P2=404&P3=2&P4=elWYscSn63i3mctUVzOQmtB%2bF0P6mCH3bKMErOJTG60krAM0pixiAxfNBfLnVXuRfX%2bXK6Z8BqaZtPquDDUNiw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796329258&P2=404&P3=2&P4=biIgeWRO7qMeLrQHMzSCtRRTtET9llpQp7fL8IEzk9jfeXxITJ%2fJXae8ZQW1ZJr%2bi41qYYiVPi9AMmgOIl5bVg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796329258&P2=404&P3=2&P4=biIgeWRO7qMeLrQHMzSCtRRTtET9llpQp7fL8IEzk9jfeXxITJ%2fJXae8ZQW1ZJr%2bi41qYYiVPi9AMmgOIl5bVg%3d%3d",
       "downloads": [],
       "size": 286801232,
       "size_mb": 273.5,
@@ -1166,8 +1166,8 @@
       "official_site": "https://www.pdf-xchange.com/product/pdf-xchange-pro",
       "update_items": [],
       "detected_at": "2026-11-10 11:06",
-      "fb_streak": 41,
-      "fb_skip_until": 1795723597
+      "fb_streak": 42,
+      "fb_skip_until": 1795728100
     },
     {
       "name": "AnyDesk",
@@ -2499,8 +2499,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 516,
-      "fb_skip_until": 1795723597
+      "fb_streak": 517,
+      "fb_skip_until": 1795728100
     },
     {
       "name": "BitComet",
