@@ -103,6 +103,7 @@ PRODUCTS = [
         'thunder_minor_span': 40,     # 深度扫描：第 3 段窗口（13 → 53）
         'thunder_seg_span': 8,        # 深度扫描：build 十位段窗口（163 → 171）
         'thunder_deep_budget': 900,   # 深度扫描请求预算（防 CDN 限流封 IP）
+        'thunder_deep_interval': 21600,  # 深度扫描降频间隔（秒，默认 6h；提示触发不受限）
         'thunder_workers': 8,
         'detect_timeout': 150,        # 深度扫描是兜底路径，留足时间
         'skip_md5': True,             # 安装包 200MB+，不做 MD5
@@ -968,8 +969,13 @@ PRODUCTS = [
         'param_format': '',
         'channel': '',
         'check_url': 'https://tracker-software.com/product/pdf-xchange-editor/history',
-        'version_regex': r'(\d+\.\d+\.\d+\.\d+)',
-        'date_regex': r'Released\s*<span class="release-date-value"[^>]*>\s*([A-Za-z]+ \d{1,2}(?:st|nd|rd|th)?, \d{4})',
+        # 多候选正则（防再犯清单1）：首选锚定「Build」条目（页面新→旧排列，首条=最新），
+        # 兜底取首个四段号；日期兼容 span 包裹与纯文本两种写法
+        'version_regex': [
+            r'Build\s*(\d+\.\d+\.\d+\.\d+)',
+            r'(\d+\.\d+\.\d+\.\d+)',
+        ],
+        'date_regex': r'Released\s*(?:<span[^>]*>)?\s*([A-Za-z]+ \d{1,2}(?:st|nd|rd|th)?, \d{4})',
         'official_site': 'https://tracker-software.com/product/pdf-xchange-editor/history',
     },
     {
@@ -3210,7 +3216,15 @@ def detect_increment(product):
             except LookupError:
                 html = raw.decode('utf-8', errors='ignore')
             if version_regex:
-                m = re.search(version_regex, html)
+                # 多候选正则与 detect_scrape 同口径：list 按顺序试到命中（防单条
+                # 正则因官方口径变化失配后永远停在旧版，VueScan 教训）
+                _pats = (version_regex if isinstance(version_regex, (list, tuple))
+                         else [version_regex])
+                m = None
+                for _pat in _pats:
+                    m = re.search(_pat, html)
+                    if m:
+                        break
                 if m:
                     scraped_ver = m.group(1)
                     print(f"  页面版本: {scraped_ver}")
@@ -3921,14 +3935,27 @@ def detect_thunder_cdn(product):
             if minor_scan:
                 best = minor_scan
 
-        # 第 3 步：深度扫描兜底
+        # 第 3 步：深度扫描兜底（降频：远场兜底近场已全覆盖，默认 6h 一次即可；
+        # 每轮近千个请求既慢又容易触发 CDN 限流。论坛提示给出更新号时立即跑不受限。
+        # 上次扫描时间记在 pe 缓存里（'thunder#deep_scan_ts'，TTL 同为 6h）。
         if not best:
             need_deep = hint_adopted or _days >= 3
             if need_deep:
-                deep = _thunder_deep_scan(pre, live_minor, live_build, url_pattern, referer,
-                                          seg_span, minor_span, workers, budget)
-                if deep:
-                    best = deep
+                interval = product.get('thunder_deep_interval', 21600)
+                _c = _pe_cache_load()
+                with _pe_cache_lock:
+                    _last_ts = float(_c.get('thunder#deep_scan_ts', {}).get('ts', 0) or 0)
+                if not hint_adopted and _last_ts and time.time() - _last_ts < interval:
+                    print(f"  距上次深度扫描不足 {interval // 3600} 小时，本轮跳过远场兜底")
+                else:
+                    deep = _thunder_deep_scan(pre, live_minor, live_build, url_pattern, referer,
+                                              seg_span, minor_span, workers, budget)
+                    with _pe_cache_lock:
+                        _pe_cache['thunder#deep_scan_ts'] = {'ts': time.time(),
+                                                             'ver': 'deep-scan-attempt'}
+                    _pe_cache_save()
+                    if deep:
+                        best = deep
             else:
                 print(f"  线上包 {_d} 仍新（{_days} 天），跳过深度扫描")
 
@@ -4914,6 +4941,7 @@ def detect_lanzou(product):
 
 _pe_cache = {}
 _pe_cache_lock = threading.Lock()
+_pe_cache_loaded = False
 # PE 版本缓存纳入 git：CI 全新环境也能复用，避免重复 Range 下载，
 # 同时防止偶发网络失败导致版本号被"降级"回配置里的旧值。
 # 缓存键 = URL（原地覆盖的包最多延迟 PE_CACHE_TTL 才发现新版本；
@@ -4923,42 +4951,52 @@ PE_CACHE_TTL = 6 * 3600
 
 
 def _pe_cache_load():
-    """加载 PE 缓存并做 TTL 自适应续期：TTL 过期但 Last-Modified/size 没变
-    说明二进制没换（CDN 可能缓存很久），主动发一次 HEAD 探测，没变就续期。
-    这样既不会把过期缓存泄漏给调用方，又避免了固定 TTL 导致的无效 Range 下载。"""
-    global _pe_cache
+    """加载 PE 缓存并做 TTL 自适应续期（每进程只加载一次，续期 HEAD 并发）：
+    TTL 过期但 Last-Modified/size 没变说明二进制没换（CDN 可能缓存很久），
+    发一次 HEAD 没变就续期，避免固定 TTL 导致的无效 Range 下载。
+    ⚠️ 原实现在「缓存全空/续期全失败」时每次调用都会重读重试，过期条目
+    的续期 HEAD 还是串行的（全量轮实测拖慢每个产品数秒），这里用 loaded
+    标志保证每进程只处理一次，续期改并发。"""
+    global _pe_cache, _pe_cache_loaded
     with _pe_cache_lock:
-        if _pe_cache:
+        if _pe_cache_loaded:
             return _pe_cache
-        try:
-            with open(PE_CACHE_FILE, 'r', encoding='utf-8') as f:
-                raw = json.load(f)
-            now = time.time()
-            expired = []
-            for k, v in (raw.get('entries') or {}).items():
-                age = now - v.get('ts', 0)
-                if age < PE_CACHE_TTL:
+        _pe_cache_loaded = True
+    try:
+        with open(PE_CACHE_FILE, 'r', encoding='utf-8') as f:
+            raw = json.load(f)
+        now = time.time()
+        expired = []
+        for k, v in (raw.get('entries') or {}).items():
+            age = now - v.get('ts', 0)
+            if age < PE_CACHE_TTL:
+                with _pe_cache_lock:
                     _pe_cache[k] = v
-                else:
-                    expired.append((k, v))
-            # 过期但 LM/size 没变 → 续期（省掉 Range 下载）
-            for url, hit in expired:
-                try:
-                    req = urllib.request.Request(url, method='HEAD',
-                                                 headers={'User-Agent': UA})
-                    with urllib.request.urlopen(req, timeout=15) as resp:
-                        cur_lm = resp.headers.get('Last-Modified', '') or ''
-                        cur_size = int(resp.headers.get('Content-Length', 0) or 0)
-                    if cur_lm and cur_lm == hit.get('lm') and (not hit.get('size')
-                            or cur_size == hit['size']):
-                        hit['ts'] = now
+            else:
+                expired.append((k, v))
+        # 过期但 LM/size 没变 → 续期（并发 HEAD，不拖慢首个命中产品）
+        def _renew(item):
+            url, hit = item
+            try:
+                req = urllib.request.Request(url, method='HEAD',
+                                             headers={'User-Agent': UA})
+                with urllib.request.urlopen(req, timeout=15) as resp:
+                    cur_lm = resp.headers.get('Last-Modified', '') or ''
+                    cur_size = int(resp.headers.get('Content-Length', 0) or 0)
+                if cur_lm and cur_lm == hit.get('lm') and (not hit.get('size')
+                        or cur_size == hit['size']):
+                    hit['ts'] = now
+                    with _pe_cache_lock:
                         _pe_cache[url] = hit
-                        print(f"  PE缓存续期(HEAD): {hit['ver']} ({os.path.basename(url)[:40]})")
-                except Exception as _e:
-                    pass
-        except Exception:
-            pass
-        return _pe_cache
+                    print(f"  PE缓存续期(HEAD): {hit.get('ver', '')} ({os.path.basename(url)[:40]})")
+            except Exception:
+                pass
+        if expired:
+            with ThreadPoolExecutor(max_workers=min(8, len(expired))) as _ex:
+                list(_ex.map(_renew, expired))
+    except Exception:
+        pass
+    return _pe_cache
 
 
 def _pe_cache_save():
@@ -8973,6 +9011,9 @@ def main():
     parser.add_argument('--allow-remove', default='',
                         help='显式声明本轮允许从线上结果中移除的产品名（逗号分隔）；'
                              '故意下线某个产品时用它绕过产品数量守卫')
+    parser.add_argument('--allow-downgrade', default='',
+                        help='显式声明本轮允许版本口径切换（数值变小）的产品名（逗号分隔）；'
+                             '绕过版本集体倒退熔断')
     args = parser.parse_args()
 
     # 读取上次成功数据，用于检测失败时保留
@@ -9100,12 +9141,26 @@ def main():
         no_size_ok = info is not None and allow_no_size
         if not no_size_ok and (info is None or (info.get('size_mb', 0) == 0 and name in old_data and old_data[name].get('size_mb', 0) > 0)):
             if name in old_data:
-                info = old_data[name].copy()
-                fresh = False
-                _bump('fallback')
-                if status == 'ok':
-                    _note(name, '无体积', f"沿用 v{info['version']}")
-                print(f"  ⚠️ 保留上次数据: v{info['version']}, {info['size_mb']}MB")
+                # 下载源暂时不可用但版本是新的（页面源正常、下载主机挂了，如
+                # PDF-XChange downloads-11 整机断连实测）：别把整轮连版本一起丢掉
+                # ——版本/日期/直链照用，体积/MD5 沿用旧值，下载源恢复后自动校正。
+                _new_v = str((info or {}).get('version') or '')
+                _old_v = str(old_data[name].get('version') or '')
+                if (info is not None and _new_v and _old_v
+                        and _ver_tuple(_new_v) > _ver_tuple(_old_v)):
+                    info['size'] = old_data[name].get('size', 0)
+                    info['size_mb'] = old_data[name].get('size_mb', 0)
+                    if not info.get('md5'):
+                        info['md5'] = old_data[name].get('md5', '')
+                    _note(name, '下载源无体积', f"版本已更新 {_old_v}->{_new_v}，体积沿用旧值")
+                    print(f"  ⚠️ 下载源暂不可用（无体积），版本/日期照用、体积沿用 {info['size_mb']}MB")
+                else:
+                    info = old_data[name].copy()
+                    fresh = False
+                    _bump('fallback')
+                    if status == 'ok':
+                        _note(name, '无体积', f"沿用 v{info['version']}")
+                    print(f"  ⚠️ 保留上次数据: v{info['version']}, {info['size_mb']}MB")
             elif status != 'timeout':
                 _bump('failed')
 
@@ -9314,6 +9369,7 @@ def main():
     # 写回 data.json 就等于静默截断线上数据。这里在写盘前拦下并明确报出少了谁。
     allow_remove = {x.strip() for x in args.allow_remove.split(',') if x.strip()}
     result_names = {r.get('name') for r in results}
+    results_by_name = {r.get('name'): r for r in results}
     # 允许用英文名 name 或中文名 name_cn 声明下线
     lost_all = [n for n in old_data if n not in result_names]
     lost = [n for n in lost_all
@@ -9338,6 +9394,35 @@ def main():
                    if p['name'] not in result_names and p['name'] not in old_data]
     if missing_new:
         print(f"\n⚠️ 新增产品本轮未产出结果（不写入线上）: {', '.join(missing_new)}")
+
+    # ===== 版本集体倒退熔断 =====
+    # 数量守卫只防「产品消失」，防不了「版本集体打回旧值」：沙箱旧快照整棵
+    # 回滚、或探测器集体抽风时，一次写盘会把大量产品版本倒退（2026-10-15 实测
+    # 14 款被回滚）。逐产品按 _ver_tuple 数值比较，倒退 ≥3 款即中止写盘并点名。
+    allow_down = {x.strip() for x in args.allow_downgrade.split(',') if x.strip()}
+    down = []
+    for _n, _op in old_data.items():
+        _np = results_by_name.get(_n)
+        if not _np:
+            continue
+        ov, nv = str(_op.get('version') or ''), str(_np.get('version') or '')
+        if not ov or not nv or _n in allow_down:
+            continue
+        if _ver_tuple(nv) < _ver_tuple(ov):
+            down.append(f"{_n}: {ov} -> {nv}")
+    if len(down) >= 3:
+        print(f"\n❌ 版本集体倒退熔断：{len(down)} 款产品版本倒退（≥3）")
+        for s in down:
+            print(f"   - {s}")
+        print("   疑似旧快照回滚 / 探测器集体异常。请先核对，"
+              "确属口径切换则用 --allow-downgrade \"产品名\" 显式声明。")
+        if args.no_save:
+            print("   本轮为 --no-save 演练，不写盘，仅提示。")
+        else:
+            print("   本轮不写 data.json，线上数据保持原样。")
+            sys.exit(3)
+    elif down:
+        print(f"\nℹ️ {len(down)} 款版本数值变小（未达熔断阈值）: {'; '.join(down)}")
 
     data = {
         'updated_at': datetime.now(timezone.utc).isoformat(),

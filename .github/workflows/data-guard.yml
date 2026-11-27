@@ -1,0 +1,26 @@
+# 版本集体倒退熔断（审计项2 的 push 侧防线）：
+# 任何推送（含手工推的旧快照）只要让 data.json 里 ≥3 款产品版本集体倒退，
+# 本工作流立刻红叉点名报警（产品数量守卫只管条数，看不见版本回滚）。
+# 正常的检测提交只会上涨或单点口径切换，不会触发。
+name: Data Guard
+on:
+  push:
+    branches: [main]
+    paths: ['data.json']
+jobs:
+  rollback-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.x'
+      - name: 对照上一提交检查版本集体倒退
+        run: |
+          if ! git show HEAD~1:data.json > /tmp/old_data.json 2>/dev/null; then
+            echo "无上一提交的 data.json，跳过"
+            exit 0
+          fi
+          python tools/check_no_rollback.py /tmp/old_data.json data.json --threshold 3

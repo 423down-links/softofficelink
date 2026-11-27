@@ -85,7 +85,7 @@ jobs:
           git config user.name "GitHub Action"
           git add -A
           git commit -m "detect(hourly): $(grep '🔄 版本变化' /tmp/detect.log | sed 's/🔄 版本变化: //')"
-          git push origin HEAD:main
+          bash tools/push_main.sh
       - name: Refresh caches only (无变化)
         if: steps.detect.outputs.changed != 'true'
         run: |
@@ -105,7 +105,7 @@ jobs:
           git add md5_cache.json pe_version_cache.json startallback_dll_cache.json data.json
           git diff --staged --quiet && { echo "无变化，跳过"; exit 0; }
           git commit -m "chore: refresh probe caches"
-          git push origin HEAD:main
+          bash tools/push_main.sh
 
   detect-full:
     if: github.event.schedule == '5,35 * * * *' || (github.event_name == 'workflow_dispatch' && inputs.mode == 'full')
@@ -168,7 +168,7 @@ jobs:
           git config user.name "GitHub Action"
           git add -A
           git commit -m "detect(full): $(grep '🔄 版本变化' /tmp/detect.log | sed 's/🔄 版本变化: //')"
-          git push origin HEAD:main
+          bash tools/push_main.sh
       - name: Refresh caches only (无变化)
         if: steps.detect.outputs.changed != 'true'
         run: |
@@ -188,4 +188,4 @@ jobs:
           git add md5_cache.json pe_version_cache.json startallback_dll_cache.json data.json
           git diff --staged --quiet && { echo "无变化，跳过"; exit 0; }
           git commit -m "chore: refresh probe caches"
-          git push origin HEAD:main
+          bash tools/push_main.sh
