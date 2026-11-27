@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-27T03:44:16.269472+00:00",
+  "updated_at": "2026-11-27T04:06:12.463508+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-17 10:20",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.45",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796355827&P2=404&P3=2&P4=bDwKYZ5e65lHECb4mXmD6cbzYIliIRM0V00MZbthBnyoezxYgMREYFtxXKJ0tXohigkdEH5YNqTORHssM8sjCQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796355827&P2=404&P3=2&P4=bDwKYZ5e65lHECb4mXmD6cbzYIliIRM0V00MZbthBnyoezxYgMREYFtxXKJ0tXohigkdEH5YNqTORHssM8sjCQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796357146&P2=404&P3=2&P4=M88YDgoNPYbbXDKZ5dgjnXA4n2KUbjsJAllHj%2fsNYYN70iEJLFkqrWHYc8G9gvcu8R%2fiR%2bLrdk6O%2fBq0UBI%2buQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796357146&P2=404&P3=2&P4=M88YDgoNPYbbXDKZ5dgjnXA4n2KUbjsJAllHj%2fsNYYN70iEJLFkqrWHYc8G9gvcu8R%2fiR%2bLrdk6O%2fBq0UBI%2buQ%3d%3d",
       "downloads": [],
       "size": 286801232,
       "size_mb": 273.5,
@@ -1103,7 +1103,7 @@
       "official_site": "https://goldwave.ca/",
       "update_items": [],
       "detected_at": "2026-10-09 09:56",
-      "fb_streak": 0,
+      "fb_streak": 1,
       "fb_skip_until": 0
     },
     {
@@ -1166,8 +1166,8 @@
       "official_site": "https://www.pdf-xchange.com/product/pdf-xchange-pro",
       "update_items": [],
       "detected_at": "2026-11-10 11:06",
-      "fb_streak": 47,
-      "fb_skip_until": 1795751539
+      "fb_streak": 48,
+      "fb_skip_until": 1795755972
     },
     {
       "name": "AnyDesk",
@@ -2488,19 +2488,19 @@
       "icon": "AO",
       "icon_color": "linear-gradient(135deg, #f39c12, #d35400)",
       "category": "磁盘工具",
-      "version": "10.12.2",
+      "version": "11.0.0",
       "download_url": "https://www.diskpart.com/ss/download/pa/PAssist_TechDemo.exe",
       "download_url_with_params": "https://www.diskpart.com/ss/download/pa/PAssist_TechDemo.exe",
       "downloads": [],
       "size": 74994704,
       "size_mb": 71.5,
-      "last_modified": "2026-10-19",
+      "last_modified": "2026-11-27",
       "md5": "",
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
-      "detected_at": "2026-10-22 00:49",
-      "fb_streak": 522,
-      "fb_skip_until": 1795751539
+      "detected_at": "2026-11-27 12:05",
+      "fb_streak": 0,
+      "fb_skip_until": 0
     },
     {
       "name": "BitComet",
