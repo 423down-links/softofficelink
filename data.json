@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-27T08:21:48.566398+00:00",
+  "updated_at": "2026-11-27T08:52:13.054247+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.48",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.48.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.48.exe?v=1795767662166&n=ldinst_9.5.48_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.48.exe?v=1795769482847&n=ldinst_9.5.48_ld_407594_ld.exe",
       "downloads": [],
       "size": 601159136,
       "size_mb": 573.3,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.1.0",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.1.0.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.1.0.exe?v=1795767662345&n=ldinst_14.1.0_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.1.0.exe?v=1795769482160&n=ldinst_14.1.0_ld_412570_ld.exe",
       "downloads": [],
       "size": 745979872,
       "size_mb": 711.4,
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.45",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796372456&P2=404&P3=2&P4=aPHnKxUazXnQ3l1Ipq7r0o8npVyTGbtFF8Wsm8AovzfNbXPo81QZ0X96EeW1ZkO3Me4XjkB1kcSWZGPRtk4P%2bA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796372456&P2=404&P3=2&P4=aPHnKxUazXnQ3l1Ipq7r0o8npVyTGbtFF8Wsm8AovzfNbXPo81QZ0X96EeW1ZkO3Me4XjkB1kcSWZGPRtk4P%2bA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796374275&P2=404&P3=2&P4=S2ZZPq6aJyvBJ6M%2bLYlnDlJ0gbMxuyJWkgLge39YkleHo8rEKEKQQt0cu0cigAp6O88vBmn6ccYzfNyljeC8vQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796374275&P2=404&P3=2&P4=S2ZZPq6aJyvBJ6M%2bLYlnDlJ0gbMxuyJWkgLge39YkleHo8rEKEKQQt0cu0cigAp6O88vBmn6ccYzfNyljeC8vQ%3d%3d",
       "downloads": [],
       "size": 286801232,
       "size_mb": 273.5,
@@ -1103,8 +1103,8 @@
       "official_site": "https://goldwave.ca/",
       "update_items": [],
       "detected_at": "2026-10-09 09:56",
-      "fb_streak": 1,
-      "fb_skip_until": 0
+      "fb_streak": 2,
+      "fb_skip_until": 1795771333
     },
     {
       "name": "EmEditor",
@@ -1145,8 +1145,8 @@
       "official_site": "https://tracker-software.com/product/pdf-xchange-editor/history",
       "update_items": [],
       "detected_at": "2026-11-10 11:21",
-      "fb_streak": 44,
-      "fb_skip_until": 1795767697
+      "fb_streak": 45,
+      "fb_skip_until": 1795773133
     },
     {
       "name": "PDF-XChange Pro",
