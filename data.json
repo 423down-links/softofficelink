@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-27T06:06:30.867741+00:00",
+  "updated_at": "2026-11-27T06:21:39.864277+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.48",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.48.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.48.exe?v=1795758672855&n=ldinst_9.5.48_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.48.exe?v=1795760465553&n=ldinst_9.5.48_ld_407594_ld.exe",
       "downloads": [],
       "size": 601159136,
       "size_mb": 573.3,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.1.0",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.1.0.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.1.0.exe?v=1795758674812&n=ldinst_14.1.0_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.1.0.exe?v=1795760464954&n=ldinst_14.1.0_ld_412570_ld.exe",
       "downloads": [],
       "size": 745979872,
       "size_mb": 711.4,
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.45",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796364355&P2=404&P3=2&P4=meatTKJQHhkDGenEZX9M3Ns4P9NCF1EahjoR%2bWul7uhnCNEnWytH%2fjccvg%2bV6%2fC5vyHebIACm15NXZwky2svFg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796364355&P2=404&P3=2&P4=meatTKJQHhkDGenEZX9M3Ns4P9NCF1EahjoR%2bWul7uhnCNEnWytH%2fjccvg%2bV6%2fC5vyHebIACm15NXZwky2svFg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796365256&P2=404&P3=2&P4=lN5hu%2btXt%2bGFJfASbcyE4lkIxhEWcoiqo7V7NtoYGcUSAPubDKaYk1vn%2bjLSC3DFsTGLKqSyW%2f37obZx57SUHg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796365256&P2=404&P3=2&P4=lN5hu%2btXt%2bGFJfASbcyE4lkIxhEWcoiqo7V7NtoYGcUSAPubDKaYk1vn%2bjLSC3DFsTGLKqSyW%2f37obZx57SUHg%3d%3d",
       "downloads": [],
       "size": 286801232,
       "size_mb": 273.5,
