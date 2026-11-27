@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-27T02:52:19.733392+00:00",
+  "updated_at": "2026-11-27T03:05:20.970004+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.48",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.48.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.48.exe?v=1795747863485&n=ldinst_9.5.48_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.48.exe?v=1795748678778&n=ldinst_9.5.48_ld_407594_ld.exe",
       "downloads": [],
       "size": 601159136,
       "size_mb": 573.3,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.1.0",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.1.0.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.1.0.exe?v=1795747863056&n=ldinst_14.1.0_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.1.0.exe?v=1795748679679&n=ldinst_14.1.0_ld_412570_ld.exe",
       "downloads": [],
       "size": 745979872,
       "size_mb": 711.4,
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-17 10:20",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.45",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796352659&P2=404&P3=2&P4=k1jKex7hpd2QEh%2b%2fvFXadtDs7NhGUed5glyLkezEN1OeouOd7A1p1vAxs1bxMw5CzCgRBCabE6afAlPZK%2fIdYQ%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796352659&P2=404&P3=2&P4=k1jKex7hpd2QEh%2b%2fvFXadtDs7NhGUed5glyLkezEN1OeouOd7A1p1vAxs1bxMw5CzCgRBCabE6afAlPZK%2fIdYQ%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796353472&P2=404&P3=2&P4=bdu1xNGMpk%2bKU88Uv6XxsHPufHd93i%2fN6dEC7FlqUuFqIQop0pw%2f8ClgmqcjmOcLtQFnhGrgJwK8DKT5PXFTzw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796353472&P2=404&P3=2&P4=bdu1xNGMpk%2bKU88Uv6XxsHPufHd93i%2fN6dEC7FlqUuFqIQop0pw%2f8ClgmqcjmOcLtQFnhGrgJwK8DKT5PXFTzw%3d%3d",
       "downloads": [],
       "size": 286801232,
       "size_mb": 273.5,
@@ -334,7 +334,7 @@
       "official_site": "https://browser.360.cn/",
       "update_items": [],
       "detected_at": "2026-10-09 09:56",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -1103,8 +1103,8 @@
       "official_site": "https://goldwave.ca/",
       "update_items": [],
       "detected_at": "2026-10-09 09:56",
-      "fb_streak": 2,
-      "fb_skip_until": 1795747945
+      "fb_streak": 0,
+      "fb_skip_until": 0
     },
     {
       "name": "EmEditor",
@@ -1145,8 +1145,8 @@
       "official_site": "https://tracker-software.com/product/pdf-xchange-editor/history",
       "update_items": [],
       "detected_at": "2026-11-10 11:21",
-      "fb_streak": 40,
-      "fb_skip_until": 1795747926
+      "fb_streak": 41,
+      "fb_skip_until": 1795752320
     },
     {
       "name": "PDF-XChange Pro",
