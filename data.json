@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-27T11:52:12.879766+00:00",
+  "updated_at": "2026-11-27T12:06:25.012174+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,8 +187,8 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-17 10:20",
-      "fb_streak": 1,
-      "fb_skip_until": 0
+      "fb_streak": 2,
+      "fb_skip_until": 1795782985
     },
     {
       "name": "WinHex",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.45",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796385054&P2=404&P3=2&P4=Cn%2fDU0%2fUjm0NRToqsTKNPxtaHZUOOMySlpcDhNKs7TlZMQBcaPh79pV0z1wbQ6j4cRDb%2byNkjq%2b0j8RguM%2bOSA%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796385054&P2=404&P3=2&P4=Cn%2fDU0%2fUjm0NRToqsTKNPxtaHZUOOMySlpcDhNKs7TlZMQBcaPh79pV0z1wbQ6j4cRDb%2byNkjq%2b0j8RguM%2bOSA%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796385955&P2=404&P3=2&P4=Kh%2fxBYo37HYelrfo9zRoapGfrPaNTrtdLCL045Tqgm8iReBVXWi0ROT1sL0iLOHUhkXjC2qCJ9N0%2brOwby8%2bjQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796385955&P2=404&P3=2&P4=Kh%2fxBYo37HYelrfo9zRoapGfrPaNTrtdLCL045Tqgm8iReBVXWi0ROT1sL0iLOHUhkXjC2qCJ9N0%2brOwby8%2bjQ%3d%3d",
       "downloads": [],
       "size": 286801232,
       "size_mb": 273.5,
@@ -1103,8 +1103,8 @@
       "official_site": "https://goldwave.ca/",
       "update_items": [],
       "detected_at": "2026-10-09 09:56",
-      "fb_streak": 4,
-      "fb_skip_until": 1795780313
+      "fb_streak": 0,
+      "fb_skip_until": 0
     },
     {
       "name": "EmEditor",
@@ -1166,8 +1166,8 @@
       "official_site": "https://www.pdf-xchange.com/product/pdf-xchange-pro",
       "update_items": [],
       "detected_at": "2026-11-10 11:06",
-      "fb_streak": 53,
-      "fb_skip_until": 1795780313
+      "fb_streak": 54,
+      "fb_skip_until": 1795784785
     },
     {
       "name": "AnyDesk",
@@ -2499,8 +2499,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-11-27 12:05",
-      "fb_streak": 7,
-      "fb_skip_until": 1795780313
+      "fb_streak": 8,
+      "fb_skip_until": 1795784785
     },
     {
       "name": "BitComet",
@@ -2713,7 +2713,7 @@
       "official_site": "https://sweetscape.com/download/",
       "update_items": [],
       "detected_at": "2026-11-24 01:21",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
