@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-27T12:57:01.015950+00:00",
+  "updated_at": "2026-11-27T13:12:52.777678+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.45",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796388980&P2=404&P3=2&P4=Yym5KWrYqhT%2bRPVOIphPuREdBor53qs%2fBCw5a1OMxD4paXwY802n85VwtGSmSjMA3y5sKFW%2bjtQ70wHD0IHNUg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796388980&P2=404&P3=2&P4=Yym5KWrYqhT%2bRPVOIphPuREdBor53qs%2fBCw5a1OMxD4paXwY802n85VwtGSmSjMA3y5sKFW%2bjtQ70wHD0IHNUg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796389934&P2=404&P3=2&P4=Vxx13Xl8kWZbfi1TqUCniD8%2fJZM%2fJzAwa6Ty%2blJLYXfont351UFTNp7m%2bZWlsGt36cQsk4Rmk2yOO5FyGl75hQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796389934&P2=404&P3=2&P4=Vxx13Xl8kWZbfi1TqUCniD8%2fJZM%2fJzAwa6Ty%2blJLYXfont351UFTNp7m%2bZWlsGt36cQsk4Rmk2yOO5FyGl75hQ%3d%3d",
       "downloads": [],
       "size": 286801232,
       "size_mb": 273.5,
@@ -1166,8 +1166,8 @@
       "official_site": "https://www.pdf-xchange.com/product/pdf-xchange-pro",
       "update_items": [],
       "detected_at": "2026-11-10 11:06",
-      "fb_streak": 54,
-      "fb_skip_until": 1795784785
+      "fb_streak": 55,
+      "fb_skip_until": 1795788772
     },
     {
       "name": "AnyDesk",
@@ -2499,8 +2499,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-11-27 12:05",
-      "fb_streak": 8,
-      "fb_skip_until": 1795784785
+      "fb_streak": 9,
+      "fb_skip_until": 1795788772
     },
     {
       "name": "BitComet",
