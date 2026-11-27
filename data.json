@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-27T13:51:46.998052+00:00",
+  "updated_at": "2026-11-27T14:06:41.634828+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-17 10:20",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.45",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796392255&P2=404&P3=2&P4=fszI2V46HgVwI0yb1Cg14JgDS9i3UCW7UHbzHSvttSIw1EyXbdGylZ7gCiLtfBtNrubREBwJzUnBmlKoUqM4Bg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796392255&P2=404&P3=2&P4=fszI2V46HgVwI0yb1Cg14JgDS9i3UCW7UHbzHSvttSIw1EyXbdGylZ7gCiLtfBtNrubREBwJzUnBmlKoUqM4Bg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796393169&P2=404&P3=2&P4=mvObWt6fm21mie7Gitr27DG1oHyYdVpdG74v1Bzm%2bQgRqVgsKutD0X7wv4Sv%2brLUnYKxA%2bx27qMnaMFqvuLdFQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796393169&P2=404&P3=2&P4=mvObWt6fm21mie7Gitr27DG1oHyYdVpdG74v1Bzm%2bQgRqVgsKutD0X7wv4Sv%2brLUnYKxA%2bx27qMnaMFqvuLdFQ%3d%3d",
       "downloads": [],
       "size": 286801232,
       "size_mb": 273.5,
@@ -714,17 +714,17 @@
       "icon": "WM",
       "icon_color": "linear-gradient(135deg, #e67e22, #f39c12)",
       "category": "文件对比",
-      "version": "2.16.58.2",
-      "download_url": "https://github.com/WinMerge/winmerge/releases/tag/v2.16.60",
-      "download_url_with_params": "https://github.com/WinMerge/winmerge/releases/tag/v2.16.60",
+      "version": "2.16.60.2",
+      "download_url": "https://github.com/WinMerge/winmerge/releases/tag/v2.16.60.2",
+      "download_url_with_params": "https://github.com/WinMerge/winmerge/releases/tag/v2.16.60.2",
       "downloads": [],
-      "size": 253974280,
-      "size_mb": 242.2,
-      "last_modified": "2026-10-27",
+      "size": 258606147,
+      "size_mb": 246.6,
+      "last_modified": "2026-11-27",
       "md5": "",
       "official_site": "https://github.com/WinMerge/winmerge/releases",
       "update_items": [],
-      "detected_at": "2026-10-27 21:06",
+      "detected_at": "2026-11-27 22:06",
       "fb_streak": 0,
       "fb_skip_until": 0
     },
