@@ -2697,6 +2697,94 @@ def _curl_get_headers(url, referer=None):
         return 0, ''
 
 
+# ===== 浏览器指纹兜底（TLS/JA3 拦截类站点专用） =====
+# 某些站点（如 poikosoft.com，SiteGround CDN）对非浏览器 TLS 指纹一律回 502/断流，
+# urllib/curl 全被拦、真实浏览器却正常（实测 Safari 指纹连拿 200 + Content-Length）。
+# 这类「下载通道拦截」会让 HEAD/PE 探测长期失败、版本冻结在旧值（IDM 后又一停更根因）。
+# 解法：urlopen 失败（网络级异常，或 403/429/5xx 拦截类状态码）时用 curl_cffi 伪装
+# Safari 浏览器指纹重试一次；404 等真实状态码不重试（increment 扫描靠 404 判不存在，
+# 重试会让扫描请求量翻倍）。curl_cffi 未安装时静默跳过，行为与原来一致。
+class _ImpersonateResp:
+    """把 curl_cffi 响应包装成 urllib 风格（status/headers/read/with/geturl）"""
+
+    def __init__(self, cr, method='GET'):
+        self._cr = cr
+        self._iter = cr.iter_content(chunk_size=65536) if method != 'HEAD' else iter(())
+        self._buf = b''
+        self.status = cr.status_code
+        self.headers = cr.headers
+        self.url = cr.url
+
+    def geturl(self):
+        return self.url
+
+    def read(self, n=-1):
+        want = n if (n is not None and n >= 0) else 1 << 62
+        while len(self._buf) < want:
+            try:
+                self._buf += next(self._iter)
+            except StopIteration:
+                break
+        if n is None or n < 0:
+            out, self._buf = self._buf, b''
+            return out
+        out, self._buf = self._buf[:n], self._buf[n:]
+        return out
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *a):
+        try:
+            self._cr.close()
+        except Exception:
+            pass
+        return False
+
+
+def _impersonate_open(req, timeout=None):
+    """curl_cffi 浏览器指纹请求；库不可用/仍失败返回 None（调用方抛原异常）"""
+    try:
+        from curl_cffi import requests as _crq
+    except Exception:
+        return None
+    try:
+        url = req.full_url if hasattr(req, 'full_url') else req
+        method = req.get_method() if hasattr(req, 'get_method') else 'GET'
+        headers = dict(req.header_items()) if hasattr(req, 'header_items') else dict(getattr(req, 'headers', {}))
+        # 剥掉调用方 UA：伪造的是 Safari TLS 指纹，再带自己的 UA 会被
+        # 「指纹与 UA 不匹配」判定为机器人照样拦（实测 502），让 curl_cffi 用 Safari 自带头。
+        # 注意 urllib 会把头键规范成 'User-agent' 这种写法，必须大小写无关过滤
+        headers = {k: v for k, v in headers.items() if k.lower() != 'user-agent'}
+        r = _crq.request(method, url, headers=headers,
+                         impersonate='safari17_0', timeout=timeout or 30,
+                         allow_redirects=True, stream=True)
+        return _ImpersonateResp(r, method)
+    except Exception:
+        return None
+
+
+_urlopen_orig = urllib.request.urlopen
+# 拦截/限流/网关类状态码才重试；404/410 是 increment 扫描的「不存在」信号，绝不重试
+_IMPERSONATE_RETRY_CODES = {403, 407, 429, 502, 503, 520, 521, 522, 523, 524, 525, 526}
+
+
+def _urlopen_smart(req, *args, **kw):
+    try:
+        return _urlopen_orig(req, *args, **kw)
+    except Exception as e:
+        code = getattr(e, 'code', None)
+        if code is not None and code not in _IMPERSONATE_RETRY_CODES:
+            raise
+        resp = _impersonate_open(req, kw.get('timeout') or (args[0] if args else None))
+        if resp is None:
+            raise
+        return resp
+
+
+urllib.request.urlopen = _urlopen_smart
+
+
 def check_url_follow(url, referer=None):
     """检测URL（跟随重定向），返回 (exists, size, last_modified)
     用于fixed模式，因为有些固定地址会302到CDN
