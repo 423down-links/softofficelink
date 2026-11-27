@@ -2561,6 +2561,28 @@ PRODUCTS = [
         'skip_md5': True,
         'official_site': 'https://download.poikosoft.com/',
     },
+    {
+        'name': 'Drive SnapShot',
+        'name_cn': 'Drive SnapShot 磁盘快照',
+        'alias': 'Drive Snapshot 磁盘克隆备份',
+        'icon': 'DS',
+        'icon_color': 'linear-gradient(135deg, #455a64, #78909c)',
+        'category': '磁盘工具',
+        # 官网下载页（/en/idown.htm）给的直链是 /download2/actual/snapshot64.exe
+        # （actual=当前版通道，包一换即检出）。
+        # ⚠️ 用户给的 /download/snapshot64.exe 是旧路径，一直停在 1.51.1868 老包，别用。
+        # 版本口径 = 资源管理器「文件版本」= VS_FIXEDFILEINFO 二进制版本 1.52.0.25849
+        # （字符串表写压缩式 1.52.25849，正则按字符串读会拿错口径 → pe_version_source='binary'）。
+        # 日期用包体 Last-Modified（铁律3）。
+        'detect_type': 'fixed',
+        'download_url': 'https://www.drivesnapshot.de/download2/actual/snapshot64.exe',
+        'pe_version': True,
+        'pe_version_source': 'binary',
+        'version_authority': 'pe',
+        'version': '1.52.0.25849',
+        'date': '2026-11-27',
+        'official_site': 'https://www.drivesnapshot.de/en/idown.htm',
+    },
 ]
 
 MAX_INCREMENT = 30  # 最多递增检测30个版本
@@ -4231,6 +4253,7 @@ def detect_fixed(product):
     version = product.get('version', '最新版')
     # PE 版本来源开关：'product' 时优先读 ProductVersion（DxO 专用）
     prefer_product_version = product.get('pe_version_source', '') == 'product'
+    pe_src = product.get('pe_version_source', '')
     # DLL PE版本探测：从7z SFX安装器中提取DLL读取版本号
     if product.get('dll_pe_version') and not is_webpage:
         try:
@@ -4249,7 +4272,8 @@ def detect_fixed(product):
         cached_pe = ''
         cache_hot = False
         # 与 get_pe_version 保持一致的缓存键（product 模式单独一份，避免读到 FileVersion）
-        _head_key = url + ('#product' if prefer_product_version else '')
+        _head_key = url + ('#product' if prefer_product_version
+                           else ('#binary' if pe_src == 'binary' else ''))
         try:
             _c = _pe_cache_load()
             with _pe_cache_lock:
@@ -4270,6 +4294,7 @@ def detect_fixed(product):
             try:
                 pe_ver = get_pe_version(url, referer=product.get('referer'),
                                         prefer_product_version=prefer_product_version,
+                                        pe_source=pe_src,
                                         head_fingerprint=(detected_size, detected_date))
                 if pe_ver:
                     print(f"  PE版本: {pe_ver}")
@@ -5072,7 +5097,8 @@ def _range_download(url, headers, start, end, workers=8, timeout=60, min_chunk=6
         return _single()
 
 
-def get_pe_version(url, referer=None, prefer_product_version=False, head_fingerprint=None):
+def get_pe_version(url, referer=None, prefer_product_version=False, head_fingerprint=None,
+                   pe_source=''):
     """读取 PE 文件版本，带 URL 级缓存。
 
     热跑加速的关键：缓存键 = URL，命中且未过期时**零网络请求**直接返回。
@@ -5093,9 +5119,10 @@ def get_pe_version(url, referer=None, prefer_product_version=False, head_fingerp
     （DxO / PotPlayer 专用：ProductVersion 才是官方产品版本；
     其它软件不能开，如 R-Studio 干脆没有 ProductVersion）。
     """
-    # 缓存键要区分版本来源：同一 URL 在 product/file 两种模式下读出的值不同，
+    # 缓存键要区分版本来源：同一 URL 在 product/file/binary 三种模式下读出的值不同，
     # 共用 'url' 会互相污染（先把 FileVersion 写进缓存，product 模式就命中脏值）。
-    cache_key = url + ('#product' if prefer_product_version else '')
+    cache_key = url + ('#product' if prefer_product_version
+                       else ('#binary' if pe_source == 'binary' else ''))
     cache = _pe_cache_load()
     with _pe_cache_lock:
         hit = cache.get(cache_key)
@@ -5107,7 +5134,7 @@ def get_pe_version(url, referer=None, prefer_product_version=False, head_fingerp
             print(f"  PE版本(缓存): {hit['ver']}")
             return hit['ver']
 
-    ver, size, lm = _get_pe_version_raw(url, referer, prefer_product_version)
+    ver, size, lm = _get_pe_version_raw(url, referer, prefer_product_version, pe_source)
     if ver:
         with _pe_cache_lock:
             _pe_cache[cache_key] = {'ver': ver, 'ts': time.time(), 'size': size, 'lm': lm}
@@ -5260,7 +5287,7 @@ def detect_bundle_string(product):
     return (ver or product.get('version', ''), dl, dl, size, date, '')
 
 
-def _get_pe_version_raw(url, referer=None, prefer_product_version=False):
+def _get_pe_version_raw(url, referer=None, prefer_product_version=False, pe_source=''):
     """从PE文件的.rsrc段读取FileVersion（四段版本号），只下载PE头和资源段，不需要下载整个文件。
     返回 (版本号, 文件大小, Last-Modified)，失败返回 ('', 0, '')。
 
@@ -5325,6 +5352,16 @@ def _get_pe_version_raw(url, referer=None, prefer_product_version=False):
                 raw_size = struct.unpack_from('<I', pe_data, off+16)[0]
                 # 4. 下载.rsrc段（最多2MB），大区间内部分片并发
                 rsrc = download_range(raw_offset, raw_offset + min(raw_size, 2*1024*1024), workers=16)
+                # pe_version_source='binary'：读 VS_FIXEDFILEINFO 二进制版本（资源管理器
+                # 「文件版本」口径）。Drive SnapShot 字符串表写压缩式 1.52.25849，
+                # 二进制/展示口径是 1.52.0.25849，字符串正则会拿错口径。
+                if pe_source == 'binary':
+                    sig_pos = rsrc.find(struct.pack('<I', 0xFEEF04BD))
+                    if sig_pos >= 0:
+                        _fms, _fls = struct.unpack_from('<II', rsrc, sig_pos + 8)
+                        bver = f'{_fms >> 16}.{_fms & 0xFFFF}.{_fls >> 16}.{_fls & 0xFFFF}'
+                        print(f"  PE FileVersion(二进制): {bver}")
+                        return bver, size, lm
                 # 5. 解析版本信息（UTF-16LE编码）
                 text = rsrc.decode('utf-16-le', errors='replace')
                 # ⚠️ 版本来源可选：pe_version_source='product' 时优先 ProductVersion。

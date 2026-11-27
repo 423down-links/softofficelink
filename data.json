@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-27T12:52:14.648236+00:00",
+  "updated_at": "2026-11-27T12:55:20.984415+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -2797,6 +2797,27 @@
       "official_site": "https://download.poikosoft.com/",
       "update_items": [],
       "detected_at": "2026-11-27 17:20",
+      "fb_streak": 0,
+      "fb_skip_until": 0
+    },
+    {
+      "name": "Drive SnapShot",
+      "name_cn": "Drive SnapShot 磁盘快照",
+      "alias": "Drive Snapshot 磁盘克隆备份",
+      "icon": "DS",
+      "icon_color": "linear-gradient(135deg, #455a64, #78909c)",
+      "category": "磁盘工具",
+      "version": "1.52.0.25849",
+      "download_url": "https://www.drivesnapshot.de/download2/actual/snapshot64.exe",
+      "download_url_with_params": "https://www.drivesnapshot.de/download2/actual/snapshot64.exe",
+      "downloads": [],
+      "size": 1556264,
+      "size_mb": 1.5,
+      "last_modified": "2026-11-27",
+      "md5": "",
+      "official_site": "https://www.drivesnapshot.de/en/idown.htm",
+      "update_items": [],
+      "detected_at": "2026-11-27 20:55",
       "fb_streak": 0,
       "fb_skip_until": 0
     }
