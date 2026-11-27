@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26T23:51:45.572208+00:00",
+  "updated_at": "2026-11-27T00:06:54.754506+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.45",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796341860&P2=404&P3=2&P4=C%2fw1zGOyLKz9JayNALNbkv3Hw3SJlH1GLk22yHOKae3sWWQ0Dwow0JJzi8cdxkFmGxsLDTbfsSBLqry4Nhfjbw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796341860&P2=404&P3=2&P4=C%2fw1zGOyLKz9JayNALNbkv3Hw3SJlH1GLk22yHOKae3sWWQ0Dwow0JJzi8cdxkFmGxsLDTbfsSBLqry4Nhfjbw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796342748&P2=404&P3=2&P4=WjfxkvT1Z1blgb5BJ1K2BkKpy38RCBD%2fOBrhk1HyAljbhhf%2bKozPi07Nj27ijYne%2blNrGJlUqvjQO1nI7En6oA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796342748&P2=404&P3=2&P4=WjfxkvT1Z1blgb5BJ1K2BkKpy38RCBD%2fOBrhk1HyAljbhhf%2bKozPi07Nj27ijYne%2blNrGJlUqvjQO1nI7En6oA%3d%3d",
       "downloads": [],
       "size": 286801232,
       "size_mb": 273.5,
@@ -1166,8 +1166,8 @@
       "official_site": "https://www.pdf-xchange.com/product/pdf-xchange-pro",
       "update_items": [],
       "detected_at": "2026-11-10 11:06",
-      "fb_streak": 44,
-      "fb_skip_until": 1795737127
+      "fb_streak": 45,
+      "fb_skip_until": 1795741614
     },
     {
       "name": "AnyDesk",
@@ -2216,8 +2216,8 @@
       "icon_color": "linear-gradient(135deg, #6366f1, #8b5cf6)",
       "category": "安卓应用",
       "version": "1.12.2",
-      "download_url": "https://github.com/AAswordman/Operit/releases/download/v1.12.2/app-release.apk",
-      "download_url_with_params": "https://github.com/AAswordman/Operit/releases/download/v1.12.2/app-release.apk",
+      "download_url": "https://github.com/AAswordman/Operit/releases",
+      "download_url_with_params": "https://github.com/AAswordman/Operit/releases",
       "downloads": [],
       "size": 404265417,
       "size_mb": 385.5,
@@ -2499,8 +2499,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-10-22 00:49",
-      "fb_streak": 519,
-      "fb_skip_until": 1795737127
+      "fb_streak": 520,
+      "fb_skip_until": 1795741614
     },
     {
       "name": "BitComet",
