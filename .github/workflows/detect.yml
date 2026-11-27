@@ -45,7 +45,7 @@ jobs:
         run: |
           set -o pipefail
           rc=0
-          output=$(python check_versions.py --priority fast,normal,resource --parallel 8 2>&1 | tee /tmp/detect.log) || rc=$?
+          output=$(python check_versions.py --priority fast,normal,resource --parallel 16 2>&1 | tee /tmp/detect.log) || rc=$?
           echo "$output"
           echo "changed=$(echo "$output" | grep -q 'CHANGED=true' && echo true || echo false)" >> $GITHUB_OUTPUT
           if [ "$rc" = "3" ]; then
@@ -128,7 +128,7 @@ jobs:
         run: |
           set -o pipefail
           rc=0
-          output=$(python check_versions.py --priority fast,normal,slow --parallel 8 2>&1 | tee /tmp/detect.log) || rc=$?
+          output=$(python check_versions.py --priority fast,normal,slow --parallel 16 2>&1 | tee /tmp/detect.log) || rc=$?
           echo "$output"
           echo "changed=$(echo "$output" | grep -q 'CHANGED=true' && echo true || echo false)" >> $GITHUB_OUTPUT
           if [ "$rc" = "3" ]; then

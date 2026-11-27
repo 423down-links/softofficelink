@@ -38,8 +38,8 @@ DEFAULT_DETECT_TIMEOUT = 60
 # 这样探测函数一定能在看门狗超时前返回，把已抓到的部分结果提交，
 # 而不是被整体丢弃后回退到昨天的数据（站点抽风时的关键保护）。
 SITE_DETECT_BUDGET = 45
-# 全量检测的默认并行线程数
-DEFAULT_PARALLEL = 8
+# 全量检测的默认并行线程数（探测是网络 I/O 密集型，线程可远超 CPU 核数）
+DEFAULT_PARALLEL = 16
 # 单个产品的重试次数（1=不重试）
 DEFAULT_RETRY = 1
 # ===== fallback 退避 =====
@@ -3688,21 +3688,36 @@ def _thunder_minor_scan(pre, live_minor, seg0, url_pattern, referer,
         25.1.41.1710 → 25.1.43.1730 → 25.1.44.1741/1742
     但提示源（论坛帖/官网）实测会停在线上版本，此时只扫「同 minor 更高 build」
     永远够不到跨 minor 的新版（25.1.43.1730 的 1731~1755 全是空段）。
-    这里以线上 (minor, seg) 为起点往后逐段探，每段按 minor 从 +1 开始、
-    10 个 build 一批，命中即停：正常情况第一段第一个 minor 就命中（10 个请求）。
 
-    最坏请求数 = seg_forward × minor_forward × 10（默认 3×8×10 = 240）。
+    效率关键（实测旧写法空态要 90s，占满全轮墙钟）：旧逻辑每块直接 10 个
+    build 全扫、块间串行（3 段 × 8 minor × 10 = 240 个 HEAD）。改成
+    「锚点先探」：每块只撒 build 0/2 两个锚点（实测所有已知段的覆盖点），
+    全部锚点一批并发探完（48 个 HEAD、一两波），再只对有命中的块按
+    版本降序做 10 build 全扫定最新号。空块成本 10→2 个请求，空态总请求
+    240→48、墙钟 90s→几秒；命中路径不变，且取的是最高块（旧写法先命中
+    最低块、还要等下一轮才跳到更高版本）。
     """
+    # 1. 锚点并发撒网：(minor, seg) → 锚点版本
+    anchors = []
     for seg in range(seg0 + 1, seg0 + seg_forward + 1):
         for m in range(live_minor + 1, live_minor + minor_forward + 1):
-            combos = [f'{pre}.{m}.{seg * 10 + b}' for b in range(10)]
-            hits = _thunder_probe_batch(combos, url_pattern, referer, workers)
-            if hits:
-                best_ver = max(hits, key=_ver_tuple)
-                size, lm = hits[best_ver]
-                print(f"  ✓ 跨 minor 扫描命中: {best_ver}"
-                      f"（seg={seg}, minor={m}, {size/1024/1024:.1f}MB）")
-                return best_ver, url_pattern.format(ver=best_ver), size, lm
+            anchors.append((m, seg, f'{pre}.{m}.{seg * 10}'))
+            anchors.append((m, seg, f'{pre}.{m}.{seg * 10 + 2}'))
+    hits = _thunder_probe_batch([v for _, _, v in anchors], url_pattern, referer,
+                                max(workers, 24))
+    if not hits:
+        return None
+    # 2. 有命中的块按版本降序（minor 大者优先）逐块全扫，首个块的最高号即最新版
+    blocks = sorted({(m, seg) for m, seg, v in anchors if v in hits}, reverse=True)
+    for m, seg in blocks:
+        combos = [f'{pre}.{m}.{seg * 10 + b}' for b in range(10)]
+        bh = _thunder_probe_batch(combos, url_pattern, referer, workers)
+        if bh:
+            best_ver = max(bh, key=_ver_tuple)
+            size, lm = bh[best_ver]
+            print(f"  ✓ 跨 minor 扫描命中: {best_ver}"
+                  f"（seg={seg}, minor={m}, {size/1024/1024:.1f}MB）")
+            return best_ver, url_pattern.format(ver=best_ver), size, lm
     return None
 
 
@@ -5309,6 +5324,31 @@ def _get_pe_version_raw(url, referer=None, prefer_product_version=False):
 
 
 def get_nsis_install_version(url, referer=None):
+    """NSIS 版本读取入口：按 (size + Last-Modified) 指纹缓存（复用 PE 缓存基建，
+    '#nsis' 键）。包没换就零网络请求——微信这类大安装包原来每轮都要重拉
+    NSIS 头（实测 46s/轮），缓存后稳态约 1s；文件一换指纹失效自动重读。"""
+    cache_key = url + '#nsis'
+    cache = _pe_cache_load()
+    with _pe_cache_lock:
+        hit = cache.get(cache_key)
+    if hit and hit.get('ver') and (time.time() - hit.get('ts', 0)) < PE_CACHE_TTL:
+        if not _pe_cache_fingerprint_stale(hit, url, referer):
+            print(f"  NSIS版本(缓存): {hit['ver']}")
+            return hit['ver']
+        print(f"  NSIS缓存失效(文件已更新): {hit['ver']} → 重新探测")
+    ver = _nsis_install_version_raw(url, referer)
+    if ver:
+        try:
+            _ok, _sz, _lm = check_url(url, referer=referer, get_fallback=False)
+        except Exception:
+            _sz, _lm = 0, ''
+        with _pe_cache_lock:
+            _pe_cache[cache_key] = {'ver': ver, 'ts': time.time(), 'size': _sz, 'lm': _lm}
+        _pe_cache_save()
+    return ver
+
+
+def _nsis_install_version_raw(url, referer=None):
     """从NSIS安装包中提取install.7z内的版本号文件夹名称。
     高效探测：只下载NSIS头部(2MB)搜索7z签名，再下载install.7z头部(4KB)读取文件列表。
     返回版本号字符串，失败返回空字符串。
