@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-28T05:51:58.123358+00:00",
+  "updated_at": "2026-11-28T06:07:08.244928+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -187,7 +187,7 @@
       "official_site": "https://xmind.cn/",
       "update_items": [],
       "detected_at": "2026-11-17 10:20",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.45",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796449872&P2=404&P3=2&P4=l8fT8L%2foat8YzYasXHsA3R0eQ7tFJgSC2YUl0C3nhYmBMNbLwgAlf6Z7N%2fDsAmJDPku%2bS1imAA4kOZ71eBLp%2bw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796449872&P2=404&P3=2&P4=l8fT8L%2foat8YzYasXHsA3R0eQ7tFJgSC2YUl0C3nhYmBMNbLwgAlf6Z7N%2fDsAmJDPku%2bS1imAA4kOZ71eBLp%2bw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796450799&P2=404&P3=2&P4=Bh%2fu8eXFi6rJTpemVw1CP7a4HoRwzSM2fmNqjBoN2ro0f92sqP6keot1g4YuuW5IeMRWsS31ladwtLVvQQ0VkQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796450799&P2=404&P3=2&P4=Bh%2fu8eXFi6rJTpemVw1CP7a4HoRwzSM2fmNqjBoN2ro0f92sqP6keot1g4YuuW5IeMRWsS31ladwtLVvQQ0VkQ%3d%3d",
       "downloads": [],
       "size": 286801232,
       "size_mb": 273.5,
@@ -1166,8 +1166,8 @@
       "official_site": "https://www.pdf-xchange.com/product/pdf-xchange-pro",
       "update_items": [],
       "detected_at": "2026-11-10 11:06",
-      "fb_streak": 67,
-      "fb_skip_until": 1795845124
+      "fb_streak": 68,
+      "fb_skip_until": 1795849628
     },
     {
       "name": "AnyDesk",
@@ -2499,8 +2499,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-11-27 12:05",
-      "fb_streak": 21,
-      "fb_skip_until": 1795845124
+      "fb_streak": 22,
+      "fb_skip_until": 1795849628
     },
     {
       "name": "BitComet",
