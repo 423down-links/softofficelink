@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-28T18:52:02.408041+00:00",
+  "updated_at": "2026-11-28T19:06:26.495774+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.45",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796496668&P2=404&P3=2&P4=KZ5tQXgcozzj4qUrr8eciGp3WI9ObUbGpHi25eNmqyI5j%2bsKr0P7a%2fZKGKME96bIB6oL0zj3UcTuisFqa%2fTCSg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796496668&P2=404&P3=2&P4=KZ5tQXgcozzj4qUrr8eciGp3WI9ObUbGpHi25eNmqyI5j%2bsKr0P7a%2fZKGKME96bIB6oL0zj3UcTuisFqa%2fTCSg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796497565&P2=404&P3=2&P4=SoohLblU8h7XFznbzTMxth6r7nx3nja6wuOmo3wQeGm8mipfoJj5z9W3XTTvO9Rzrg7Fty5CD0%2f4mBg2Lwg1Bw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796497565&P2=404&P3=2&P4=SoohLblU8h7XFznbzTMxth6r7nx3nja6wuOmo3wQeGm8mipfoJj5z9W3XTTvO9Rzrg7Fty5CD0%2f4mBg2Lwg1Bw%3d%3d",
       "downloads": [],
       "size": 286801232,
       "size_mb": 273.5,
@@ -802,8 +802,8 @@
       "download_url": "https://github.com/c0re100/qBittorrent-Enhanced-Edition/releases/tag/release-5.3.1.10",
       "download_url_with_params": "https://github.com/c0re100/qBittorrent-Enhanced-Edition/releases/tag/release-5.3.1.10",
       "downloads": [],
-      "size": 29627225,
-      "size_mb": 28.3,
+      "size": 234590344,
+      "size_mb": 223.7,
       "last_modified": "2026-11-29",
       "md5": "",
       "official_site": "https://github.com/c0re100/qBittorrent-Enhanced-Edition/releases",
@@ -1103,8 +1103,8 @@
       "official_site": "https://goldwave.ca/",
       "update_items": [],
       "detected_at": "2026-10-09 09:56",
-      "fb_streak": 6,
-      "fb_skip_until": 1795891923
+      "fb_streak": 0,
+      "fb_skip_until": 0
     },
     {
       "name": "EmEditor",
@@ -1166,8 +1166,8 @@
       "official_site": "https://www.pdf-xchange.com/product/pdf-xchange-pro",
       "update_items": [],
       "detected_at": "2026-11-10 11:06",
-      "fb_streak": 77,
-      "fb_skip_until": 1795891923
+      "fb_streak": 78,
+      "fb_skip_until": 1795896386
     },
     {
       "name": "AnyDesk",
@@ -2499,8 +2499,8 @@
       "official_site": "https://www.diskpart.com/download.html?theme_id=10040",
       "update_items": [],
       "detected_at": "2026-11-27 12:05",
-      "fb_streak": 31,
-      "fb_skip_until": 1795891923
+      "fb_streak": 32,
+      "fb_skip_until": 1795896386
     },
     {
       "name": "BitComet",
