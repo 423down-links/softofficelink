@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-28T19:06:26.495774+00:00",
+  "updated_at": "2026-11-28T19:21:47.643579+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.48",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.48.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.48.exe?v=1795891874861&n=ldinst_9.5.48_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.48.exe?v=1795893673661&n=ldinst_9.5.48_ld_407594_ld.exe",
       "downloads": [],
       "size": 601159136,
       "size_mb": 573.3,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.1.0",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.1.0.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.1.0.exe?v=1795891873949&n=ldinst_14.1.0_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.1.0.exe?v=1795893673890&n=ldinst_14.1.0_ld_412570_ld.exe",
       "downloads": [],
       "size": 745979872,
       "size_mb": 711.4,
@@ -124,7 +124,7 @@
       "official_site": "https://www.yy.com/web/pcyy_download/",
       "update_items": [],
       "detected_at": "2026-11-18 10:20",
-      "fb_streak": 1,
+      "fb_streak": 0,
       "fb_skip_until": 0
     },
     {
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.45",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796497565&P2=404&P3=2&P4=SoohLblU8h7XFznbzTMxth6r7nx3nja6wuOmo3wQeGm8mipfoJj5z9W3XTTvO9Rzrg7Fty5CD0%2f4mBg2Lwg1Bw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796497565&P2=404&P3=2&P4=SoohLblU8h7XFznbzTMxth6r7nx3nja6wuOmo3wQeGm8mipfoJj5z9W3XTTvO9Rzrg7Fty5CD0%2f4mBg2Lwg1Bw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796498463&P2=404&P3=2&P4=cbWHPN2OOS1Ee0epjqgZRMOYvejMpclUCAAbiqtiJeWOjJVqxlbjdEKGYuk6tDe%2fmHPgRcmJGjBp7MAgc1leEw%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796498463&P2=404&P3=2&P4=cbWHPN2OOS1Ee0epjqgZRMOYvejMpclUCAAbiqtiJeWOjJVqxlbjdEKGYuk6tDe%2fmHPgRcmJGjBp7MAgc1leEw%3d%3d",
       "downloads": [],
       "size": 286801232,
       "size_mb": 273.5,
@@ -802,8 +802,8 @@
       "download_url": "https://github.com/c0re100/qBittorrent-Enhanced-Edition/releases/tag/release-5.3.1.10",
       "download_url_with_params": "https://github.com/c0re100/qBittorrent-Enhanced-Edition/releases/tag/release-5.3.1.10",
       "downloads": [],
-      "size": 234590344,
-      "size_mb": 223.7,
+      "size": 286819505,
+      "size_mb": 273.5,
       "last_modified": "2026-11-29",
       "md5": "",
       "official_site": "https://github.com/c0re100/qBittorrent-Enhanced-Edition/releases",
