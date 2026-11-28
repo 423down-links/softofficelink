@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-28T13:06:50.815241+00:00",
+  "updated_at": "2026-11-28T13:22:04.337616+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.48",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.48.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.48.exe?v=1795868482456&n=ldinst_9.5.48_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.48.exe?v=1795872098504&n=ldinst_9.5.48_ld_407594_ld.exe",
       "downloads": [],
       "size": 601159136,
       "size_mb": 573.3,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.1.0",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.1.0.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.1.0.exe?v=1795868483242&n=ldinst_14.1.0_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.1.0.exe?v=1795872095054&n=ldinst_14.1.0_ld_412570_ld.exe",
       "downloads": [],
       "size": 745979872,
       "size_mb": 711.4,
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.45",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796475980&P2=404&P3=2&P4=NbvHyHw21de6K4qAfzPsaNsbPZRKFq4IjxSRZC06TobvQYfTsZKNW1unZik0xwK6vmI5JP5kAVIDEUSnKOSO1A%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796475980&P2=404&P3=2&P4=NbvHyHw21de6K4qAfzPsaNsbPZRKFq4IjxSRZC06TobvQYfTsZKNW1unZik0xwK6vmI5JP5kAVIDEUSnKOSO1A%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796476889&P2=404&P3=2&P4=gUULn1yx8IGK4A1NNlMV85XA7iSkYNYkDys2On%2f%2f7bsWW8OiTG%2fzt403DYRPvjeQYdmVAywQeLgPPfMl8WGVmg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796476889&P2=404&P3=2&P4=gUULn1yx8IGK4A1NNlMV85XA7iSkYNYkDys2On%2f%2f7bsWW8OiTG%2fzt403DYRPvjeQYdmVAywQeLgPPfMl8WGVmg%3d%3d",
       "downloads": [],
       "size": 286801232,
       "size_mb": 273.5,
@@ -1103,8 +1103,8 @@
       "official_site": "https://goldwave.ca/",
       "update_items": [],
       "detected_at": "2026-10-09 09:56",
-      "fb_streak": 1,
-      "fb_skip_until": 0
+      "fb_streak": 2,
+      "fb_skip_until": 1795873924
     },
     {
       "name": "EmEditor",
