@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-28T01:51:58.723025+00:00",
+  "updated_at": "2026-11-28T01:55:18.889384+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -10,7 +10,7 @@
       "category": "模拟器",
       "version": "9.5.48",
       "download_url": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.48.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.48.exe?v=1795830678070&n=ldinst_9.5.48_ld_407594_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian9/ldinst_9.5.48.exe?v=1795830890149&n=ldinst_9.5.48_ld_407594_ld.exe",
       "downloads": [],
       "size": 601159136,
       "size_mb": 573.3,
@@ -31,7 +31,7 @@
       "category": "模拟器",
       "version": "14.1.0",
       "download_url": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.1.0.exe",
-      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.1.0.exe?v=1795830678005&n=ldinst_14.1.0_ld_412570_ld.exe",
+      "download_url_with_params": "https://lddl01.ldmnq.com/download/leidian14/ldinst_14.1.0.exe?v=1795830891070&n=ldinst_14.1.0_ld_412570_ld.exe",
       "downloads": [],
       "size": 745979872,
       "size_mb": 711.4,
@@ -124,8 +124,8 @@
       "official_site": "https://www.yy.com/web/pcyy_download/",
       "update_items": [],
       "detected_at": "2026-11-18 10:20",
-      "fb_streak": 2,
-      "fb_skip_until": 1795830718
+      "fb_streak": 0,
+      "fb_skip_until": 0
     },
     {
       "name": "QQMusic",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.45",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796435469&P2=404&P3=2&P4=AZ9Y9oU6hoe6%2biTPEMvPl%2fo9Ea4GvuSNfhJCO1kaRMBAxbI%2fyMiq4ilgF7WPqAxTtS4dmnxOUU%2bwSWWRpMXmHw%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796435469&P2=404&P3=2&P4=AZ9Y9oU6hoe6%2biTPEMvPl%2fo9Ea4GvuSNfhJCO1kaRMBAxbI%2fyMiq4ilgF7WPqAxTtS4dmnxOUU%2bwSWWRpMXmHw%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796435683&P2=404&P3=2&P4=B6Qt3gOsPvjIYiLJ8KD0PZjJwrQM2lT29mvcVX%2bUGHKGpOSfPPkt6t4myenhB9UcxtDZ3VYwgb3A0jNOP%2bh2%2bg%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796435683&P2=404&P3=2&P4=B6Qt3gOsPvjIYiLJ8KD0PZjJwrQM2lT29mvcVX%2bUGHKGpOSfPPkt6t4myenhB9UcxtDZ3VYwgb3A0jNOP%2bh2%2bg%3d%3d",
       "downloads": [],
       "size": 286801232,
       "size_mb": 273.5,
