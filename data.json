@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-28T16:52:03.635685+00:00",
+  "updated_at": "2026-11-28T17:06:35.006142+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.45",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796489471&P2=404&P3=2&P4=arfkheIjZTd3aevtaYPzt78A4MwL81llqD5fDuLZdhJk%2bgpSBDhp7V9eMjQM%2fo739I9aPoeacHEthRd9NMDMjg%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796489471&P2=404&P3=2&P4=arfkheIjZTd3aevtaYPzt78A4MwL81llqD5fDuLZdhJk%2bgpSBDhp7V9eMjQM%2fo739I9aPoeacHEthRd9NMDMjg%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796490365&P2=404&P3=2&P4=aqnv4klgExq3qCbU2Q1o%2ftOFFgLpTC%2bpTDgUbirLSXJC0%2bNRsZM79S9DkUtET%2fuQb%2be2fxkYmSSzWw3j4%2b%2bfUQ%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796490365&P2=404&P3=2&P4=aqnv4klgExq3qCbU2Q1o%2ftOFFgLpTC%2bpTDgUbirLSXJC0%2bNRsZM79S9DkUtET%2fuQb%2be2fxkYmSSzWw3j4%2b%2bfUQ%3d%3d",
       "downloads": [],
       "size": 286801232,
       "size_mb": 273.5,
@@ -2790,8 +2790,8 @@
       "download_url": "https://www.poikosoft.com/download/ez_cd_audio_converter_setup.exe",
       "download_url_with_params": "https://www.poikosoft.com/download/ez_cd_audio_converter_setup.exe",
       "downloads": [],
-      "size": 42781900,
-      "size_mb": 40.8,
+      "size": 42868960,
+      "size_mb": 40.9,
       "last_modified": "2026-11-27",
       "md5": "",
       "official_site": "https://download.poikosoft.com/",
