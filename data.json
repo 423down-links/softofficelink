@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-28T13:51:55.065029+00:00",
+  "updated_at": "2026-11-28T14:06:43.038540+00:00",
   "products": [
     {
       "name": "LDPlayer 9",
@@ -240,8 +240,8 @@
       "icon_color": "linear-gradient(135deg, #0078d4, #00bcf2)",
       "category": "浏览器",
       "version": "158.0.4370.45",
-      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796478664&P2=404&P3=2&P4=SoUFrBM0poBwN1HD7Zk0Ri5vmWCSvcVYQSGZgsoOgb2a4f9ojLv2D41m3g3eDg%2fGV3sbeHWF9CSwrO1wyQfH4A%3d%3d",
-      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796478664&P2=404&P3=2&P4=SoUFrBM0poBwN1HD7Zk0Ri5vmWCSvcVYQSGZgsoOgb2a4f9ojLv2D41m3g3eDg%2fGV3sbeHWF9CSwrO1wyQfH4A%3d%3d",
+      "download_url": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796479571&P2=404&P3=2&P4=DOUo97CMh0DsYBVNH5cNd3M4UwY1qYqn5WBfBYHqc4%2bJytWiCky1Yl2VwZsCzJF0eqqa4KQW1MPcNYd3xK5ZkA%3d%3d",
+      "download_url_with_params": "https://msedge.sb.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/3af439ee-e912-41b6-9af3-6378da419631?P1=1796479571&P2=404&P3=2&P4=DOUo97CMh0DsYBVNH5cNd3M4UwY1qYqn5WBfBYHqc4%2bJytWiCky1Yl2VwZsCzJF0eqqa4KQW1MPcNYd3xK5ZkA%3d%3d",
       "downloads": [],
       "size": 286801232,
       "size_mb": 273.5,
@@ -1103,8 +1103,8 @@
       "official_site": "https://goldwave.ca/",
       "update_items": [],
       "detected_at": "2026-10-09 09:56",
-      "fb_streak": 2,
-      "fb_skip_until": 1795873924
+      "fb_streak": 3,
+      "fb_skip_until": 1795877503
     },
     {
       "name": "EmEditor",
@@ -2790,8 +2790,8 @@
       "download_url": "https://www.poikosoft.com/download/ez_cd_audio_converter_setup.exe",
       "download_url_with_params": "https://www.poikosoft.com/download/ez_cd_audio_converter_setup.exe",
       "downloads": [],
-      "size": 42868960,
-      "size_mb": 40.9,
+      "size": 42781900,
+      "size_mb": 40.8,
       "last_modified": "2026-11-27",
       "md5": "",
       "official_site": "https://download.poikosoft.com/",
